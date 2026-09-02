@@ -1,2 +1,3 @@
-# spotgo-docs
-SpotGo Documentation
+This is the documentation for the SpotGo mobile application.
+
+In progress...
