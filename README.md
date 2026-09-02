@@ -1,0 +1,2 @@
+# spotgo-docs
+SpotGo Documentation
