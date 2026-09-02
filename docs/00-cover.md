@@ -77,7 +77,8 @@ Proyecto
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | --- | --- | --- | --- |
-| 0.1.0 | 9/1/26 | @AdrixRyz | docs: agregar estructura inicial de la documentación |
+| 0.1.0 | 1/9/26 | @AdrixRyz | docs: agregar estructura inicial de la documentación |
+| 0.1.1 | 1/9/26 | @AdrixRyz | docs: agregar los puntos de Startup Profile |
 
 # Project Report Collaboration Insights
 
