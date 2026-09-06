@@ -83,6 +83,7 @@ Proyecto
 | 0.1.3 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Competidores |
 | 0.1.4 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Entrevistas |
 | 0.1.5 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Needfinding |
+| 0.1.6 | 5/9/26 | @AdrixRyz | docs: agregar los puntos de Requirements specification |
 
 # Project Report Collaboration Insights
 
