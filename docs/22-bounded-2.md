@@ -1,4 +1,4 @@
-### 2.6.2. Bounded Context: <Bounded Context 2 Name>
+### 2.6.2. Bounded Context: Occupancy & Monitoring
 
 #### *2.6.2.1. Domain Layer*
 

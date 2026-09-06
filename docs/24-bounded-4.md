@@ -1,4 +1,4 @@
-### 2.6.4. Bounded Context: <Bounded Context 4 Name>
+### 2.6.4. Bounded Context: Payment management
 
 #### *2.6.4.1. Domain Layer*
 

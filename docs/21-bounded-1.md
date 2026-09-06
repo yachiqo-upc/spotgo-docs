@@ -1,4 +1,4 @@
-### 2.6.1. Bounded Context: <Bounded Context 1 Name>
+### 2.6.1. Bounded Context: Profiles & Vehicules Management
 
 #### *2.6.1.1. Domain Layer*
 

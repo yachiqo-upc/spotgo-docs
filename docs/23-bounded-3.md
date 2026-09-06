@@ -1,4 +1,4 @@
-### 2.6.3. Bounded Context: <Bounded Context 3 Name>
+### 2.6.3. Bounded Context: Parking infraestructure
 
 #### *2.6.3.1. Domain Layer*
 

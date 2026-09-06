@@ -82,6 +82,7 @@ Proyecto
 | 0.1.2 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Solution Profile |
 | 0.1.3 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Análisis competitivo |
 | 0.1.4 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Entrevistas |
+| 0.1.5 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Needfinding |
 
 # Project Report Collaboration Insights
 
@@ -148,7 +149,7 @@ A continuación, se detallan las actividades realizadas en cada entrega, la part
 2.5.3.2. Software Architecture Container Level Diagrams  
 2.5.3.3. Software Architecture Deployment Diagrams  
 2.6. Tactical-Level Domain-Driven Design  
-[**2.6.1. Bounded Context: <Bounded Context 1 Name>**](21-bounded-1.md)  
+[**2.6.1. Bounded Context: Profiles & Vehicules Management**](21-bounded-1.md)  
 2.6.1.1. Domain Layer  
 2.6.1.2. Interface Layer  
 2.6.1.3. Application Layer  
@@ -157,7 +158,7 @@ A continuación, se detallan las actividades realizadas en cada entrega, la part
 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.1.6.2. Bounded Context Database Design Diagram  
-[**2.6.2. Bounded Context: <Bounded Context 2 Name>**](22-bounded-2.md)  
+[**2.6.2. Bounded Context: Occupancy & Monitoring**](22-bounded-2.md)  
 2.6.2.1. Domain Layer  
 2.6.2.2. Interface Layer  
 2.6.2.3. Application Layer  
@@ -166,7 +167,7 @@ A continuación, se detallan las actividades realizadas en cada entrega, la part
 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.2.6.2. Bounded Context Database Design Diagram  
-[**2.6.3. Bounded Context: <Bounded Context 3 Name>**](23-bounded-3.md)  
+[**2.6.3. Bounded Context: Parking infraestructure**](23-bounded-3.md)  
 2.6.3.1. Domain Layer  
 2.6.3.2. Interface Layer  
 2.6.3.3. Application Layer  
@@ -175,7 +176,7 @@ A continuación, se detallan las actividades realizadas en cada entrega, la part
 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.3.6.2. Bounded Context Database Design Diagram  
-[**2.6.4. Bounded Context: <Bounded Context 4 Name>**](24-bounded-4.md)  
+[**2.6.4. Bounded Context: Payment management**](24-bounded-4.md)  
 2.6.4.1. Domain Layer  
 2.6.4.2. Interface Layer  
 2.6.4.3. Application Layer  
@@ -184,6 +185,15 @@ A continuación, se detallan las actividades realizadas en cada entrega, la part
 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.4.6.2. Bounded Context Database Design Diagram  
+[**2.6.5. Bounded Context: IAM**](25-bounded-5.md)  
+2.6.5.1. Domain Layer  
+2.6.5.2. Interface Layer  
+2.6.5.3. Application Layer  
+2.6.5.4. Infrastructure Layer  
+2.6.5.5. Bounded Context Software Architecture Component Level Diagrams  
+2.6.5.6. Bounded Context Software Architecture Code Level Diagrams  
+2.6.5.6.1. Bounded Context Domain Layer Class Diagrams  
+2.6.5.6.2. Bounded Context Database Design Diagram  
 
 [**Conclusiones**](70-conclusions.md)  
 [**Glosario**](80-glossary.md)  

@@ -236,15 +236,80 @@ Se trata de conductores que utilizan estacionamientos en centros comerciales, un
 
 ### 2.3.1. User Personas
 
+**Primer Segmento Objetivo (Administradores o personal operativo de estacionamiento)**
+
+*Figura 2 (User Persona 1)*
+![User Persona 1](../assets/images/figures/02-user-persona-1.png)
+
+**Segundo Segmento Objetivo (Conductores y usuarios finales)**
+
+*Figura 3 (User Persona 2)*
+![User Persona 2](../assets/images/figures/03-user-persona-2.png)
+
 ### 2.3.2. User Task Matrix
+
+**Primer Segmento Objetivo (Administradores o personal operativo de estacionamiento)**
+
+*Figura 4 (User Task Matrix 1)*
+![User Task Matrix 1](../assets/images/figures/04-u-task-matrix-1.png)
+
+**Segundo Segmento Objetivo (Conductores y usuarios finales)**
+
+*Figura 5 (User Task Matrix 2)*
+![User Task Matrix 2](../assets/images/figures/05-u-task-matrix-2.png)
 
 ### 2.3.3. User Journey Mapping
 
+**Primer Segmento Objetivo (Administradores o personal operativo de estacionamiento)**
+
+*Figura 6 (User Journey Map 1)*
+![User Journey Map 1](../assets/images/figures/06-u-journey-map-1.png)
+
+**Segundo Segmento Objetivo (Conductores y usuarios finales)**
+
+*Figura 7 (User Journey Map 2)*
+![User Journey Map 2](../assets/images/figures/07-u-journey-map-2.png)
+
 ### 2.3.4. Empathy Mapping
+
+**Primer Segmento Objetivo (Administradores o personal operativo de estacionamiento)**
+
+*Figura 8 (Empathy Map 1)*
+![User Empathy Map 1](../assets/images/figures/08-empathy-map-1.png)
+
+**Segundo Segmento Objetivo (Conductores y usuarios finales)**
+
+*Figura 9 (Empathy Map 2)*
+![User Empathy Map 2](../assets/images/figures/09-empathy-map-2.png)
 
 ### 2.3.5. Big Picture EventStorming
 
+Se utilizó la guía Step-by-Step Guide de Philippe Bourgau, proporcionada en la rúbrica del Final Problem Statement, para llevar a cabo el proceso de Big Picture Event Storming, siguiendo sus etapas:
+
+- Open
+- Explore
+- Close
+
+**Miro Board Link:** [https://miro.com/welcomeonboard/V2xyaEY4TCtuVTdxSEYvWlJwdFNGZkkvNmJnSDc2dUhrWkQ4MjlvOFB2dVQzd3hadHFBVXpROVE4UGFDbVI3NXY1NDFuam5BMVg3R1hKZEswQWV3TThSN09OOXpNNklYZDlJV2R6Z2hjSFNhMzdnWWd5bFhjK2t6My9sb3FHWm9nbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=707342021580](https://miro.com/welcomeonboard/V2xyaEY4TCtuVTdxSEYvWlJwdFNGZkkvNmJnSDc2dUhrWkQ4MjlvOFB2dVQzd3hadHFBVXpROVE4UGFDbVI3NXY1NDFuam5BMVg3R1hKZEswQWV3TThSN09OOXpNNklYZDlJV2R6Z2hjSFNhMzdnWWd5bFhjK2t6My9sb3FHWm9nbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=707342021580)
+
+*Figura 10 (Big Picture EventStorming)*
+![Big Picture EventStorming](../assets/images/figures/10-big-picture-event-storming.jpg)
+
 ### 2.3.6. Ubiquitous Language
+
+- **Parking Spot (Espacio de estacionamiento):** Espacio físico individual dentro de un estacionamiento destinado a la ubicación de un vehículo.
+- **Parking Zone (Zona de estacionamiento):** Área del estacionamiento que agrupa múltiples *Parking Spots* y puede estar asociada a uno o más tipos de usuario definidos por la administración.
+- **User Profile (Perfil de usuario):** Clasificación asignada a un conductor que determina las zonas del estacionamiento que puede utilizar. Puede representar categorías como *Visitor*, *Taxi Driver* o *Authorized User*.
+- **Occupancy Status (Estado de ocupación):** Estado actual de un *Parking Spot* o una *Parking Zone*, utilizado para determinar su disponibilidad. Puede ser *Available* u *Occupied*.
+- **Zone Assignment (Asignación de zona):** Proceso mediante el cual se determina qué *Parking Zone* corresponde a un conductor según su *User Profile*.
+- **Unauthorized Parking (Estacionamiento indebido):** Situación que ocurre cuando un vehículo utiliza un *Parking Spot* perteneciente a una *Parking Zone* que no corresponde a su *User Profile*.
+- **Occupancy Monitoring (Monitoreo de ocupación):** Proceso mediante el cual el sistema obtiene y mantiene actualizada la información sobre la ocupación de los espacios y zonas del estacionamiento.
+- **Availability (Disponibilidad):** Información que indica la existencia de espacios libres dentro de una *Parking Zone*.
+- **Unauthorized Parking Alert (Alerta por estacionamiento indebido):** Notificación generada cuando se identifica un posible uso de una zona que no corresponde al perfil del conductor.
+- **Dashboard (Panel de control):** Interfaz utilizada por administradores y personal operativo para consultar la ocupación, gestionar zonas, identificar incidencias y revisar información relacionada con el estacionamiento.
+- **Occupancy Report (Reporte de ocupación):** Información histórica o resumida sobre la utilización de los espacios y zonas del estacionamiento, utilizada para apoyar decisiones operativas.
+- **Parking Administrator (Administrador de estacionamiento):** Usuario encargado de gestionar la configuración, supervisión y organización de las zonas y usuarios del estacionamiento.
+- **Driver (Conductor):** Usuario que accede al estacionamiento y consulta información de disponibilidad y zonas permitidas según su perfil.
 
 ## 2.4. Requirements specification
 
