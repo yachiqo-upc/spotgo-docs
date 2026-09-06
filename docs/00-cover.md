@@ -78,9 +78,10 @@ Proyecto
 | Versión | Fecha | Autor | Descripción de modificación |
 | --- | --- | --- | --- |
 | 0.1.0 | 2/9/26 | @AdrixRyz | docs: agregar estructura inicial de la documentación |
-| 0.1.1 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Startup Profile |
-| 0.1.2 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Solution Profile |
-| 0.1.3 | 5/9/26 | @AdrixRyz | docs: agregar los puntos de Análisis competitivo |
+| 0.1.1 | 2/9/26 | @AdrixRyz | docs: agregar los puntos de Startup Profile |
+| 0.1.2 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Solution Profile |
+| 0.1.3 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Análisis competitivo |
+| 0.1.4 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Entrevistas |
 
 # Project Report Collaboration Insights
 
