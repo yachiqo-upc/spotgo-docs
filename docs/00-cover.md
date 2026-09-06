@@ -78,9 +78,9 @@ Proyecto
 | Versión | Fecha | Autor | Descripción de modificación |
 | --- | --- | --- | --- |
 | 0.1.0 | 2/9/26 | @AdrixRyz | docs: agregar estructura inicial de la documentación |
-| 0.1.1 | 2/9/26 | @AdrixRyz | docs: agregar los puntos de Startup Profile |
+| 0.1.1 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Startup Profile |
 | 0.1.2 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Solution Profile |
-| 0.1.3 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Análisis competitivo |
+| 0.1.3 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Competidores |
 | 0.1.4 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Entrevistas |
 | 0.1.5 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Needfinding |
 
@@ -88,10 +88,9 @@ Proyecto
 
 **Repositorio de la documentación del proyecto:** [https://github.com/yachiqo-upc/spotgo-docs](https://github.com/yachiqo-upc/spotgo-docs)
 
-A continuación, se detallan las actividades realizadas en cada entrega, la participación de los miembros del equipo, y las evidencias correspondientes.
-
 **AV1**
 
+*Report Insights AV1*
 ![Report Insights AV1](../assets/images/others/report-insights-av1.png)
 
 # Contenido
