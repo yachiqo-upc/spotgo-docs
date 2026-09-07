@@ -84,6 +84,8 @@ Proyecto
 | 0.1.4 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Entrevistas |
 | 0.1.5 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Needfinding |
 | 0.1.6 | 5/9/26 | @AdrixRyz | docs: agregar los puntos de Requirements specification |
+| 0.1.7 | 6/9/26 | @briicarhuaz | docs: agregar los puntos de EventStorming |
+| 0.1.8 | 7/9/26 | @IamAndreek | docs: agregar los puntos de Context Mapping y Software Architecture |
 
 # Project Report Collaboration Insights
 

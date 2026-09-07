@@ -42,7 +42,7 @@ Ofrecemos un ecosistema de desarrollo móvil flexible y a medida para cualquier 
 | ![Nestor Photo](../assets/images/team-photos/nestor-photo.png) | Rojas Tello, Nestor Alonso (U202317099) | Estudiante de Ingeniería de Software. Tengo conocimientos en C++, Python, JavaScript y CSS. Me considero una persona colaborativa, responsable y con disposición para resolver dudas y proponer soluciones ante cualquier desafío. |
 | ![Cesar Photo](../assets/images/team-photos/cesar-photo.png) | Contreras Rojas, Cesar Jair (U20241D995) | Estudiante de ingeniería de Software. He practicado con Python, C++, Java entre otros. Me considero alguien responsable, colaborativo, amable y dispuesto a ayudar a mis compañeros, soy alguien que se esfuerza por encontrar soluciones a problemas. |
 | ![Briguite Photo](../assets/images/team-photos/briguite-photo.png) | Carhuaz Centeno, Briguite Eryka (U20241D932) | Descripción faltante. |
-| ![Sofia Photo](../assets/images/team-photos/sofia-photo.png) | Cotrina Siclla, Sofia Alessandra (U20231B120) | Descripción faltante. |
+| ![Sofia Photo](../assets/images/team-photos/sofia-photo.png) | Cotrina Siclla, Sofia Alessandra (U20231B120) | Estudiante de Ingeniería de Software con conocimientos en C++, C#, Python y Java, con un enfoque principal orientado al desarrollo Frontend y diseño en Figma. Me considero una persona creativa, colaborativa y comprometida con el trabajo en equipo, dispuesta a aportar soluciones visuales e interfaces atractivas para los proyectos. |
 
 ## 1.2. Solution Profile
 

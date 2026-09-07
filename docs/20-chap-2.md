@@ -20,8 +20,8 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 
 |     | SpotGo | Apparka | iPark | Parkopedia |
 | --- | --- | --- | --- | --- |
-| Overview | Sistema de gestión de estacionamientos que monitorea la ocupación por zonas, clasifica usuarios y genera alertas para apoyar la supervisión operativa. | Empresa peruana de gestión de estacionamientos con app para ubicación, disponibilidad, pagos, reservas y servicios empresariales. | Solución peruana en la nube para gestión digital de estacionamientos, pagos, registro vehicular y control operativo. | Plataforma global de datos de estacionamiento con información estática, disponibilidad dinámica, reservas, pagos e integraciones. |
-| Ventaja competitiva | Organización por zonas según tipo de usuario, monitoreo actualizado y apoyo al control operativo desde una misma solución. | Amplia presencia en Perú, operación directa de estacionamientos y servicios digitales integrados. | Integra gestión administrativa, pagos digitales, control vehicular y aforo en tiempo real. | Cobertura global, gran volumen de datos y fuerte integración con vehículos y servicios de movilidad. |
+| Overview | Aplicación móvil y servicios backend para organizar estacionamientos por zonas y perfiles, consultar disponibilidad, reservar y pagar espacios, administrar suscripciones y comprobantes electrónicos, y guiar al Driver hasta su destino. | Empresa peruana de gestión de estacionamientos con app para ubicación, disponibilidad, pagos, reservas y servicios empresariales. | Solución peruana en la nube para gestión digital de estacionamientos, pagos, registro vehicular y control operativo. | Plataforma global de datos de estacionamiento con información estática, disponibilidad dinámica, reservas, pagos e integraciones. |
+| Ventaja competitiva | Integra clasificación por perfiles, sensores por Parking Spot, monitoreo actualizado, reservas, pagos, Smart Routing y apoyo operativo desde una experiencia móvil. | Amplia presencia en Perú, operación directa de estacionamientos y servicios digitales integrados. | Integra gestión administrativa, pagos digitales, control vehicular y aforo en tiempo real. | Cobertura global, gran volumen de datos y fuerte integración con vehículos y servicios de movilidad. |
 
 *Perfil de marketing*
 
@@ -34,9 +34,9 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 
 |     | SpotGo | Apparka | iPark | Parkopedia |
 | --- | --- | --- | --- | --- |
-| Productos y Servicios | Monitoreo de ocupación por zonas, clasificación de usuarios, visualización de disponibilidad, alertas y panel administrativo. | Ubicación, disponibilidad, pagos, reservas, abonados y administración de estacionamientos. | Registro vehicular, pagos, facturación, aforo y portal administrativo. | Datos de parking, disponibilidad, reservas, pagos y APIs. |
+| Productos y Servicios | Aplicación móvil para disponibilidad por zonas, perfiles de usuario, reservas, pagos digitales, suscripciones, facturación electrónica, Smart Routing y navegación automática; incluye monitoreo por sensores, alertas, reportes y funciones operativas. | Ubicación, disponibilidad, pagos, reservas, abonados y administración de estacionamientos. | Registro vehicular, pagos, facturación, aforo y portal administrativo. | Datos de parking, disponibilidad, reservas, pagos y APIs. |
 | Precios y costos | Modelo preliminar basado en suscripción para operadores de estacionamientos; los costos de implementación dependerán de los mecanismos de monitoreo requeridos. | Tarifas variables según estacionamiento, servicio o modalidad de abonado. | Modelo de suscripción con planes según capacidad y requerimientos. | Gratuito para usuarios finales; servicios B2B y licenciamiento de datos. |
-| Canales de distribución | App móvil y servicios backend integrados. | App móvil, web y red física de estacionamientos. | Plataforma web, app e integraciones con dispositivos. | Web, app, APIs y sistemas integrados en vehículos. |
+| Canales de distribución | App móvil, Landing Page y servicios backend integrados con la infraestructura del estacionamiento. | App móvil, web y red física de estacionamientos. | Plataforma web, app e integraciones con dispositivos. | Web, app, APIs y sistemas integrados en vehículos. |
 
 *Análisis SWOT*
 
@@ -56,7 +56,7 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
    - La solución ofrecerá información actualizada sobre la disponibilidad por zonas, permitiendo a conductores y personal operativo tomar decisiones con mayor rapidez.
 
 3. Gestión centralizada para administradores.
-   - El panel administrativo permitirá consultar ocupación, distribución de zonas e incidencias desde un único entorno, facilitando la supervisión operativa.
+   - La aplicación móvil administrativa permitirá consultar ocupación, distribución de zonas e incidencias desde un único entorno, facilitando la supervisión operativa.
 
 4. Experiencia de búsqueda enfocada en disponibilidad.
    - Los conductores podrán consultar qué zonas presentan disponibilidad y cuáles pueden utilizar según su clasificación, con el objetivo de reducir recorridos innecesarios.
@@ -109,7 +109,7 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 
 ### 2.2.2. Registro de entrevistas
 
-**Needfinding Interviews Link:** 
+**Needfinding Interviews Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQBqZCnYsXk5TbTE0vg1_trYAcXeX9iY3VyxVWvInncaOEI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bKCoNf](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQBqZCnYsXk5TbTE0vg1_trYAcXeX9iY3VyxVWvInncaOEI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bKCoNf)
 
 **Primer Segmento Objetivo (Administradores o personal operativo de estacionamiento)**
 
@@ -140,7 +140,7 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 | Screenshot: | ![Entrevista S1 3](../assets/images/interviews/needfinding/entrevista-1-3.png) |
 | --- | --- |
 | Inicia: | 10:44 |
-| Duración:| 6:16 |
+| Duración:| 6:18 |
 | Nombre completo: | Juan Vega |
 | Edad: | 30 años |
 | Distrito: | La Victoria |
@@ -152,8 +152,8 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 
 | Screenshot: | ![Entrevista S2 1](../assets/images/interviews/needfinding/entrevista-2-1.png) |
 | --- | --- |
-| Inicia: | 17:01 |
-| Duración:| 3:53 |
+| Inicia: | 17:02 |
+| Duración:| 3:51 |
 | Nombre completo: | Emiliano Lozano |
 | Edad: | 51 años |
 | Distrito: | San Martin de Porres |
@@ -164,7 +164,7 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 | Screenshot: | ![Entrevista S2 2](../assets/images/interviews/needfinding/entrevista-2-2.png) |
 | --- | --- |
 | Inicia: | 20:54 |
-| Duración:| 7:05 |
+| Duración:| 7:06 |
 | Nombre completo: | Angel Pariona |
 | Edad: | 23 años |
 | Distrito: | Lince |
@@ -174,9 +174,9 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 
 | Screenshot: | ![Entrevista S2 3](../assets/images/interviews/needfinding/entrevista-2-3.png) |
 | --- | --- |
-| Inicia: |  |
-| Duración:|  |
-| Nombre completo: |  |
+| Inicia: | 28:00 |
+| Duración:| 3:58 |
+| Nombre completo: | Jorge Luis |
 | Edad: |  |
 | Distrito: |  |
 | Resumen: |  |
@@ -297,40 +297,83 @@ Se utilizó la guía Step-by-Step Guide de Philippe Bourgau, proporcionada en la
 
 ### 2.3.6. Ubiquitous Language
 
-- **Parking Spot (Espacio de estacionamiento):** Espacio físico individual dentro de un estacionamiento destinado a la ubicación de un vehículo.
-- **Vehicle (Vehículo):** Medio de transporte asociado a un Driver y utilizado para ocupar un Parking Spot.
+- **Parking Spot (Espacio de estacionamiento):** Espacio físico individual dentro de un estacionamiento destinado a la ubicación de un solo vehículo.
+- **Vehicle (Vehículo):** Medio de transporte asociado a un Driver, identificado mediante un registro de la cuenta y utilizado para ocupar un Parking Spot. El modelo no almacena imágenes ni datos de placas.
 - **Parking Zone (Zona de estacionamiento):** Área del estacionamiento que agrupa múltiples *Parking Spots* y puede estar asociada a uno o más tipos de usuario definidos por la administración.
-- **User Profile (Perfil de usuario):** Clasificación asignada a un conductor que determina las zonas del estacionamiento que puede utilizar. Puede representar categorías como *Visitor*, *Taxi Driver* o *Authorized User*.
-- **Occupancy Status (Estado de ocupación):** Estado actual de un *Parking Spot* o una *Parking Zone*, utilizado para determinar su disponibilidad. Puede ser *Available* u *Occupied*.
+- **User Profile (Perfil de usuario):** Clasificación asignada a un conductor que determina las zonas del estacionamiento que puede utilizar. Puede representar categorías como *Visitor*, *Taxi Driver* o *Staff*.
+- **Occupancy Status (Estado de ocupación):** Estado físico actual de un *Parking Spot*, utilizado para determinar su disponibilidad operativa. Puede ser *Available*, *Occupied* o *Unavailable*. El estado *Reserved* pertenece a la Reservation y no reemplaza el estado físico del espacio.
+- **Reservation Status (Estado de reserva):** Estado comercial y operativo de una *Reservation*. Puede ser *Reserved*, *Active*, *Completed*, *Cancelled*, *No-show* u *Overstayed*.
 - **Zone Assignment (Asignación de zona):** Proceso mediante el cual se determina qué *Parking Zone* corresponde a un conductor según su *User Profile*.
-- **Unauthorized Parking (Estacionamiento indebido):** Situación que ocurre cuando un vehículo utiliza un *Parking Spot* perteneciente a una *Parking Zone* que no corresponde a su *User Profile*.
-- **Occupancy Monitoring (Monitoreo de ocupación):** Proceso mediante el cual el sistema obtiene y mantiene actualizada la información sobre la ocupación de los espacios y zonas del estacionamiento.
+- **Unauthorized Parking (Estacionamiento indebido):** Situación que ocurre cuando un vehículo utiliza un *Parking Spot* o una *Parking Zone* sin una Reservation, Manual Parking Assignment o Zone Assignment válida para su User Profile.
+- **Occupancy Monitoring (Monitoreo de ocupación):** Proceso mediante el cual el sistema obtiene y mantiene actualizada, en un máximo de 5 segundos, la información sobre la ocupación de los espacios y zonas del estacionamiento a partir de sensores instalados en cada *Parking Spot*.
+
+- **Occupancy Sensor (Sensor de ocupación):** Dispositivo instalado en un *Parking Spot* para detectar si el espacio está disponible u ocupado y comunicar el cambio de estado al sistema.
+- **Sensor Health (Salud del sensor):** Estado operativo de un *Occupancy Sensor*, utilizado para identificar si el dispositivo comunica datos correctamente o requiere revisión. Cuando el sensor no comunica datos confiables, el *Occupancy Status* correspondiente es *Unavailable*.
+- **Digital Parking Map (Mapa digital del estacionamiento):** Representación de la infraestructura del estacionamiento que identifica sus Parking Spots, Parking Zones, accesos y destinos de navegación.
 - **Availability (Disponibilidad):** Información que indica la existencia de espacios libres dentro de una *Parking Zone*.
-- **Unauthorized Parking Alert (Alerta por estacionamiento indebido):** Notificación generada cuando se identifica un posible uso de una zona que no corresponde al perfil del conductor.
+- **Reservation (Reserva):** Registro pagado mediante el cual un Driver obtiene el uso de un *Parking Spot* dentro de una *Parking Zone* en una fecha, hora de inicio y duración determinadas. La Reservation se asocia con un Vehicle y mantiene su Reservation Status durante todo el ciclo de uso.
+- **Parking Session (Sesión de estacionamiento):** Registro de la ocupación real de un *Parking Spot*, iniciado cuando el sensor detecta ocupación durante una Reservation o una asignación manual, y finalizado cuando el sensor detecta la salida o el administrador cierra la operación.
+- **Manual Parking Assignment (Asignación manual de estacionamiento):** Registro creado por el Parking Administrator para asociar un vehículo externo con un Parking Spot y un periodo de uso autorizado.
+- **Virtual Receipt (Comprobante virtual):** Confirmación digital de una reserva o pago que contiene la información necesaria para identificar la operación y el espacio asignado.
+- **Check-in / Check-out (Ingreso / Salida):** Eventos que marcan el inicio y el final de la estadía de un vehículo en el estacionamiento. En este proyecto, la asociación entre la Reservation y el Vehicle se simula mediante la Reservation, mientras que los sensores solo confirman la ocupación física del Parking Spot.
+- **Digital Payment (Pago digital):** Transacción económica realizada desde la aplicación móvil para pagar una estadía, una reserva o un servicio contratado.
+- **Payment Token (Token de pago):** Referencia segura proporcionada por la pasarela de pagos que permite reutilizar un método de pago autorizado sin almacenar los datos completos de la tarjeta.
+- **Outstanding Balance (Saldo pendiente):** Importe que no pudo cobrarse mediante el Payment Token y que debe regularizarse antes de crear nuevas Reservations.
+- **Subscription (Suscripción):** Plan de acceso periódico de SpotGo. Puede corresponder a *Free*, *Plus Monthly* por 30 días o *Plus Annual* por 12 meses, con descuentos fijos por operación, prioridad de reserva, acceso a zonas especiales y condiciones de renovación definidas para cada plan. *Free* aplica 0 %, *Plus Monthly* aplica 10 % y *Plus Annual* aplica 15 %.
+- **Electronic Invoice (Comprobante electrónico):** Documento tributario generado a partir de una operación registrada, como una boleta o factura electrónica.
+- **Smart Routing (Enrutamiento inteligente):** Proceso que calcula una ruta hacia el *Parking Spot* o la *Parking Zone* asignada considerando el perfil del Driver, la disponibilidad y el mapa digital del estacionamiento.
+- **Navigation Route (Ruta de navegación):** Secuencia de indicaciones que guía al Driver desde su punto de ingreso o ubicación actual hasta el destino asignado dentro del estacionamiento.
+- **Unauthorized Parking Alert (Alerta por estacionamiento indebido):** Notificación generada cuando un Parking Spot aparece ocupado sin una Reservation o Manual Parking Assignment válida. La alerta identifica el Parking Spot y el momento del evento, pero no identifica automáticamente el Vehicle.
 - **Dashboard (Panel de control):** Interfaz utilizada por administradores y personal operativo para consultar la ocupación, gestionar zonas, identificar incidencias y revisar información relacionada con el estacionamiento.
 - **Occupancy Report (Reporte de ocupación):** Información histórica o resumida sobre la utilización de los espacios y zonas del estacionamiento, utilizada para apoyar decisiones operativas.
 - **Parking Administrator (Administrador de estacionamiento):** Usuario encargado de gestionar la configuración, supervisión y organización de las zonas y usuarios del estacionamiento.
+- **Tenant (Cliente B2B):** Estacionamiento o entidad operativa registrada en SpotGo, con su propia configuración de zonas, perfiles, usuarios y facturación del servicio.
+- **SuperAdmin (Administrador de plataforma):** Usuario encargado de registrar *Tenants*, administrar configuraciones de clientes B2B y consultar la facturación asociada al servicio de SpotGo.
 - **Driver (Conductor):** Usuario que accede al estacionamiento y consulta información de disponibilidad y zonas permitidas según su perfil.
 
 ## 2.4. Requirements specification
 
 La especificación de requisitos de SpotGo se construye a partir de la problemática, las entrevistas, los User Personas, el Ubiquitous Language y las hipótesis definidas en los capítulos anteriores. Su propósito es traducir las necesidades de los conductores y del personal de estacionamiento en comportamientos verificables del producto.
 
-Para este ciclo se ajusta el alcance del avance anterior hacia una solución mobile-first. El producto principal será una aplicación móvil con experiencias diferenciadas para los siguientes actores:
+El producto principal es una aplicación móvil con experiencias diferenciadas para los siguientes actores:
 
 - **Driver:** consulta la disponibilidad por Parking Zone e identifica las zonas que puede utilizar según su User Profile.
 - **Parking Administrator:** configura Parking Zones y perfiles, supervisa el Occupancy Status, atiende incidencias y consulta Occupancy Reports desde la aplicación móvil.
-- **Developer:** implementa los servicios RESTful y las capacidades técnicas que permiten sincronizar la aplicación móvil, conservar información local y documentar los contratos de integración.
+- **SuperAdmin:** registra Tenants B2B y habilita la configuración inicial de nuevos estacionamientos.
+- **Visitor:** consulta la propuesta de valor en la Landing Page y accede al destino oficial de la aplicación móvil.
+- **Developer:** implementa los servicios RESTful, integra los sensores de ocupación y desarrolla las capacidades técnicas que permiten sincronizar la aplicación móvil, conservar información local y documentar los contratos de integración.
 
 La solución también contempla una Landing Page estática como producto digital de apoyo para comunicar la propuesta de valor de SpotGo. La Landing Page no reemplaza la aplicación móvil ni se considera parte del flujo operativo del estacionamiento.
 
-El alcance funcional se concentra en la organización por zonas, la clasificación de usuarios, la visualización actualizada de disponibilidad, el monitoreo de ocupación, las alertas por uso indebido y los reportes operativos. El mecanismo concreto para obtener los datos de ocupación se mantiene abierto hasta completar la investigación técnica correspondiente. Por ello, esta especificación no fija sensores por Parking Spot, cámaras, barreras ni otra tecnología específica.
+El alcance funcional se concentra en la organización por zonas, la clasificación de usuarios, la visualización actualizada de disponibilidad, el monitoreo de ocupación, las alertas por uso indebido y los reportes operativos. También incluye pagos digitales, reservas de estacionamientos, suscripciones, facturación electrónica, Smart Routing y navegación automática hacia un espacio.
 
-De acuerdo con las decisiones de alcance ya establecidas, no se incluyen en esta versión los pagos digitales, las reservas, las suscripciones, la facturación electrónica, el Smart Routing, la navegación automática hacia un espacio, las integraciones municipales ni un panel web administrativo independiente.
+El Occupancy Monitoring se realizará mediante un *Occupancy Sensor* instalado en cada *Parking Spot*. La solución debe operar en estacionamientos interiores y exteriores y comunicar los cambios de *Occupancy Status*, dejándolos disponibles para la aplicación móvil en un máximo de 5 segundos. Cada *Parking Spot* tendrá capacidad para un solo vehículo y cada *Vehicle* podrá mantener como máximo un *Parking Spot* activo. Los sensores únicamente detectan si el espacio está ocupado; no identifican el vehículo que lo ocupa. La asociación entre Reservation y Vehicle se simula mediante los registros del sistema y no se contempla almacenar imágenes ni datos de placas.
+
+Las Reservations se crean para un *Parking Spot* específico dentro de una *Parking Zone*, con fecha, hora de inicio y duración. El Digital Payment debe aprobarse antes de asignar el Reservation Status *Reserved*. El Driver puede llegar en cualquier momento dentro del periodo reservado; si el sensor mantiene un Sensor Health operativo y nunca registra ocupación durante todo ese periodo, la Reservation se marca como *No-show* y se devuelve el importe pagado. Una llegada tardía no modifica la hora final ni el importe de la Reservation.
+
+La duración mínima de una Reservation corresponde a una fracción de cobro configurada por el estacionamiento. No existe una duración máxima global, pero la hora final debe permanecer dentro del horario operativo del estacionamiento. Una Reservation puede crearse como máximo 3 días calendario antes de su hora de inicio y no puede solaparse con otra Reservation o Parking Spot activo del mismo Vehicle. Durante el proceso de pago, el espacio seleccionado mantiene un bloqueo temporal para evitar asignaciones simultáneas.
+
+La ocupación física y la reserva se controlan como estados independientes. El Occupancy Status puede ser *Available*, *Occupied* o *Unavailable*, mientras que el Reservation Status puede ser *Reserved*, *Active*, *Completed*, *Cancelled*, *No-show* u *Overstayed*. Si el Driver se retira antes de la hora final, el Parking Spot puede quedar físicamente *Available*, pero la Reservation continúa protegida hasta su finalización y no genera devolución.
+
+Al superar la hora final de la Reservation se aplica una tolerancia de 5 minutos. Si el Parking Spot continúa ocupado después de la tolerancia, el sistema calcula el sobretiempo según la fracción configurada por el estacionamiento y realiza el cobro adicional mediante el Payment Token del Driver. Los descuentos fijos definidos para cada Subscription también se aplican a estos cobros. Si el cobro falla, se registra un Outstanding Balance, se notifica al Driver, se permiten nuevos intentos con el mismo u otro método y se bloquean nuevas Reservations hasta regularizarlo.
+
+Cuando el sensor registra la salida del vehículo, la Parking Session se cierra. Al concluir la Reservation, el sistema marca su Reservation Status como *Completed* si no existe sobretiempo pendiente; si existió sobretiempo, conserva el registro del cobro adicional y completa la operación cuando el saldo correspondiente queda regularizado.
+
+Las Reservations pueden cancelarse, modificarse o extenderse según la disponibilidad. Una cancelación antes del inicio devuelve el importe pagado; una cancelación después del inicio o una salida anticipada no genera devolución. Una modificación actualiza el horario o espacio únicamente cuando la nueva asignación es válida y cualquier diferencia de precio queda confirmada. Una extensión no puede afectar una Reservation posterior. Si un espacio reservado está ocupado antes del inicio o por una estadía excedida, el sistema busca un Parking Spot disponible y compatible, notifica al Driver y actualiza la Reservation, el Virtual Receipt y la Navigation Route. Si no existe una alternativa, se ofrecen otros estacionamientos o la cancelación con devolución completa.
+
+Los vehículos externos no generan una ocupación válida por sí mismos. El Parking Administrator debe registrarlos mediante un Manual Parking Assignment y asignarles un Parking Spot, sin utilizar espacios ya reservados. Las incidencias de sensores marcan el espacio como *Unavailable*, bloquean nuevas Reservations y requieren resolución administrativa; las Reservations afectadas se reasignan o reciben devolución completa.
+
+Los planes se organizan como *Free*, *Plus Monthly* y *Plus Annual*. Free permite reservar sin descuento (0 %) y sin zonas especiales. Plus Monthly ofrece prioridad para nuevas Reservations, acceso a zonas especiales y un descuento fijo del 10 % por reserva y por fracción u hora. La prioridad se aplica entre solicitudes que todavía no fueron confirmadas y no desplaza Reservations ya pagadas. Plus Annual conserva esos beneficios y aplica un descuento fijo del 15 % por reserva y por fracción u hora. Estos porcentajes representan descuentos por operación y se aplican también al sobretiempo; no se acumulan con otro descuento de la misma operación.
+
+El sistema envía notificaciones por inicio próximo, inicio y finalización de Reservation, sobretiempo, reasignaciones, pagos exitosos o fallidos, devoluciones y saldos pendientes. Las acciones realizadas por un Parking Administrator se conservan en una bitácora de auditoría con el usuario, la acción, la fecha, la hora y los datos modificados.
+
+De acuerdo con las decisiones de alcance ya establecidas, no se incluyen en esta versión las integraciones municipales ni un panel web administrativo independiente.
+
+Las User Stories de SpotGo se organizan por capacidades funcionales, técnicas y de investigación para mantener claridad, trazabilidad y verificabilidad. La Landing Page se mantiene como producto digital complementario y el resto de capacidades operativas, comerciales y administrativas se especifica para la aplicación móvil y sus servicios backend. La tabla de trazabilidad al final de esta sección relaciona las capacidades del producto con los requisitos definidos.
 
 ### 2.4.1. User Stories
 
-Las siguientes User Stories especifican los requisitos funcionales, técnicos y de investigación del alcance mobile-first. Cada historia se relaciona con una Epic, tiene una prioridad de negocio y contiene criterios de aceptación comprobables. La prioridad **High** identifica capacidades directamente vinculadas con los Business Goals; **Medium** corresponde a capacidades de soporte; y **Low** corresponde a documentación o mejoras posteriores.
+Las siguientes User Stories especifican los requisitos funcionales, técnicos y de investigación del alcance mobile-first. Cada historia se relaciona con una Epic, tiene una prioridad de negocio y contiene criterios de aceptación comprobables. La prioridad **High** identifica capacidades directamente vinculadas con los Business Goals; **Medium** corresponde a capacidades de soporte; y **Low** corresponde a documentación o capacidades complementarias.
 
 Los criterios de aceptación se expresan con la estructura Gherkin **Given - When - Then**, se redactan en tiempo presente y tercera persona, y describen resultados observables sin fijar detalles innecesarios de interfaz. Las Technical Stories utilizan el rol Developer cuando la capacidad no tiene interacción directa con un usuario final. Las Spike Stories expresan una investigación que debe cerrarse con resultados documentados y evidencia suficiente para reducir la incertidumbre.
 
@@ -338,11 +381,12 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 
 | Epic ID | Title | Description |
 | --- | --- | --- |
-| E1 | Driver Mobile Experience | Capacidades móviles que permiten al Driver consultar Availability e identificar las Parking Zones que puede utilizar según su User Profile. |
+| E1 | Driver Mobile Experience | Capacidades móviles que permiten al Driver registrarse, consultar Availability, reservar y pagar un servicio, y llegar mediante Smart Routing a la Parking Zone o Parking Spot que le corresponde. |
 | E2 | Parking Organization and Profiles | Configuración de Parking Spots, Parking Zones, usuarios, vehículos y perfiles por parte del Parking Administrator. |
-| E3 | Occupancy Monitoring and Operations | Monitoreo de Occupancy Status, dashboard operativo, alertas por Unauthorized Parking y Occupancy Reports. |
+| E3 | Occupancy Monitoring and Operations | Monitoreo de Occupancy Status mediante sensores por Parking Spot, dashboard operativo, alertas por Unauthorized Parking y Occupancy Reports. |
 | E4 | Digital Presence and Mobile Quality | Landing Page estática, accesibilidad e internacionalización de los productos digitales de SpotGo. |
-| E5 | Services and Technical Enablement | Servicios RESTful, autenticación, persistencia local, sincronización, documentación y validaciones técnicas necesarias para la aplicación móvil. |
+| E5 | Services and Technical Enablement | Servicios RESTful, integración de sensores, autenticación, persistencia local, sincronización, documentación y validaciones técnicas necesarias para la aplicación móvil. |
+| E6 | Monetization and Billing | Reservations, pagos digitales, cobros adicionales, devoluciones, suscripciones, confirmaciones asíncronas, comprobantes electrónicos y consulta de facturación B2C y B2B. |
 
 **User Stories**
 
@@ -356,7 +400,7 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Epic | E1 - Driver Mobile Experience |
 | Title | Consult Availability by Zone |
 | Description | **As a** Driver,<br>**I want** to consult current Availability by Parking Zone,<br>**so that** I can identify where a Parking Spot may be available. |
-| Acceptance Criteria | **Scenario 1: Zone with availability**<br>**Given** una Parking Zone contiene al menos un Parking Spot con Occupancy Status *Available*<br>**When** el Driver solicita la Availability actual<br>**Then** la aplicación informa la cantidad de Parking Spots disponibles y el momento de la última actualización.<br><br>**Scenario 2: Zone without availability**<br>**Given** todos los Parking Spots de una Parking Zone tienen Occupancy Status *Occupied*<br>**When** el Driver solicita la Availability actual<br>**Then** la aplicación informa que la zona no tiene Parking Spots disponibles. |
+| Acceptance Criteria | **Scenario 1: Zone with availability**<br>**Given** una Parking Zone contiene al menos un Parking Spot con Occupancy Status *Available*, Sensor Health operativo y sin una Reservation o Manual Parking Assignment vigente<br>**When** el Driver solicita la Availability actual<br>**Then** la aplicación informa la cantidad de Parking Spots disponibles y el momento de la última actualización.<br><br>**Scenario 2: Zone without availability**<br>**Given** todos los Parking Spots de una Parking Zone están *Occupied*, tienen una Reservation con Reservation Status *Reserved* o *Active*, tienen un Manual Parking Assignment vigente o están *Unavailable*<br>**When** el Driver solicita la Availability actual<br>**Then** la aplicación informa que la zona no tiene Parking Spots disponibles y no ofrece espacios *Unavailable* para reservar.<br><br>**Scenario 3: Manual refresh**<br>**Given** el Driver visualiza una Availability previamente sincronizada<br>**When** solicita una actualización de la información<br>**Then** la aplicación obtiene el estado más reciente disponible y muestra el momento de la nueva actualización. |
 
 ***US02 - Configure Parking Zones***
 
@@ -367,8 +411,8 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Priority | High |
 | Epic | E2 - Parking Organization and Profiles |
 | Title | Configure Parking Zones |
-| Description | **As a** Parking Administrator,<br>**I want** to create Parking Zones and associate them with User Profiles,<br>**so that** the parking facility can organize its Parking Spots according to its operating rules. |
-| Acceptance Criteria | **Scenario 1: Valid zone configuration**<br>**Given** existen Parking Spots registrados y los datos de la zona son válidos<br>**When** el Parking Administrator crea una Parking Zone y asocia los Parking Spots seleccionados<br>**Then** el sistema guarda la relación entre la zona, sus espacios y los User Profiles autorizados.<br><br>**Scenario 2: Conflicting spot assignment**<br>**Given** un Parking Spot ya pertenece a otra Parking Zone<br>**When** el Parking Administrator intenta guardarlo en una nueva zona<br>**Then** el sistema identifica el conflicto y no guarda la nueva relación hasta que la asignación sea resuelta. |
+| Description | **As a** Parking Administrator,<br>**I want** to create Parking Zones, associate them with User Profiles and configure their operating rules,<br>**so that** the parking facility can organize its Parking Spots and apply consistent reservation and billing conditions. |
+| Acceptance Criteria | **Scenario 1: Valid zone configuration**<br>**Given** existen Parking Spots registrados y los datos de la zona son válidos<br>**When** el Parking Administrator crea una Parking Zone y asocia los Parking Spots seleccionados<br>**Then** el sistema guarda la relación entre la zona, sus espacios y los User Profiles autorizados.<br><br>**Scenario 2: Conflicting spot assignment**<br>**Given** un Parking Spot ya pertenece a otra Parking Zone<br>**When** el Parking Administrator intenta guardarlo en una nueva zona<br>**Then** el sistema identifica el conflicto y no guarda la nueva relación hasta que la asignación sea resuelta.<br><br>**Scenario 3: Operating rules configuration**<br>**Given** el Parking Administrator proporciona un horario operativo válido y una unidad de fracción de cobro positiva<br>**When** guarda las reglas de la Parking Zone o del estacionamiento<br>**Then** el sistema solo permite Reservations dentro del horario operativo y calcula el tiempo adicional utilizando la fracción configurada. |
 
 ***US03 - Register and Classify User and Vehicle***
 
@@ -380,7 +424,7 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Epic | E2 - Parking Organization and Profiles |
 | Title | Register and Classify User and Vehicle |
 | Description | **As a** Parking Administrator,<br>**I want** to register a Driver and associate a vehicle with a User Profile,<br>**so that** the system can determine the Parking Zones that correspond to the driver. |
-| Acceptance Criteria | **Scenario 1: Valid registration**<br>**Given** los datos del Driver, del vehículo y del User Profile son válidos<br>**When** el Parking Administrator registra la información<br>**Then** el sistema almacena la asociación entre el Driver, el vehículo y el User Profile seleccionado.<br><br>**Scenario 2: Invalid or duplicated data**<br>**Given** falta un dato obligatorio o el identificador del vehículo ya está registrado<br>**When** el Parking Administrator intenta guardar el registro<br>**Then** el sistema rechaza la operación y conserva sin cambios los registros existentes. |
+| Acceptance Criteria | **Scenario 1: Valid registration**<br>**Given** los datos del Driver, del vehículo y del User Profile son válidos<br>**When** el Parking Administrator registra la información<br>**Then** el sistema almacena la asociación entre el Driver, el vehículo y el User Profile seleccionado.<br><br>**Scenario 2: Invalid or duplicated data**<br>**Given** falta un dato obligatorio o el identificador interno del vehículo ya está registrado<br>**When** el Parking Administrator intenta guardar el registro<br>**Then** el sistema rechaza la operación y conserva sin cambios los registros existentes.<br><br>**Scenario 3: External vehicle assignment**<br>**Given** un vehículo externo ingresa al estacionamiento y el Parking Administrator tiene autorización para registrarlo<br>**When** crea un Manual Parking Assignment<br>**Then** el sistema asocia el vehículo con un Parking Spot y un periodo de uso autorizado, siempre que el espacio tenga Occupancy Status *Available*, Sensor Health operativo y no tenga una Reservation vigente.<br><br>**Scenario 4: Reserved or unavailable spot conflict**<br>**Given** el Parking Spot solicitado para un vehículo externo tiene una Reservation vigente o está *Unavailable*<br>**When** el Parking Administrator intenta crear el Manual Parking Assignment<br>**Then** el sistema rechaza la asignación y solicita seleccionar un espacio disponible o iniciar el proceso de reasignación. |
 
 ***US04 - View Permitted Zones***
 
@@ -404,9 +448,9 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Epic | E3 - Occupancy Monitoring and Operations |
 | Title | Monitor Occupancy by Zone |
 | Description | **As a** Parking Administrator,<br>**I want** to monitor the Occupancy Status of Parking Spots grouped by Parking Zone,<br>**so that** I can supervise the current operation of the parking facility. |
-| Acceptance Criteria | **Scenario 1: Current monitoring data**<br>**Given** existen estados de ocupación registrados para los Parking Spots<br>**When** el Parking Administrator solicita el monitoreo actual<br>**Then** el sistema agrupa la información por Parking Zone y calcula la cantidad de espacios *Available* y *Occupied*.<br><br>**Scenario 2: Occupancy change**<br>**Given** cambia el Occupancy Status de un Parking Spot<br>**When** el sistema procesa la actualización<br>**Then** recalcula la Availability de la Parking Zone relacionada y la información queda disponible para la siguiente consulta. |
+| Acceptance Criteria | **Scenario 1: Current monitoring data**<br>**Given** los *Occupancy Sensors* transmiten el estado actual de los *Parking Spots* en un estacionamiento interior o exterior y existen Reservations o Manual Parking Assignments vigentes<br>**When** el Parking Administrator solicita el monitoreo actual<br>**Then** el sistema agrupa la información por *Parking Zone* y muestra por separado el Occupancy Status (*Available*, *Occupied* o *Unavailable*) y el Reservation Status de cada espacio.<br><br>**Scenario 2: Occupancy change within the maximum time**<br>**Given** un *Occupancy Sensor* instalado en un *Parking Spot* detecta un cambio de ocupación<br>**When** el sistema recibe el evento del sensor<br>**Then** actualiza el Occupancy Status, recalcula la Availability de la Parking Zone relacionada y deja la información disponible para la aplicación móvil en un máximo de 5 segundos.<br><br>**Scenario 3: Sensor unavailable**<br>**Given** un *Occupancy Sensor* deja de transmitir datos confiables<br>**When** el sistema detecta la incidencia<br>**Then** marca el Parking Spot como *Unavailable*, bloquea nuevas Reservations, evita cobros automáticos basados en lecturas no confiables, notifica al Parking Administrator y activa la revisión de Reservations afectadas. |
 
-***US06 - Generate Unauthorized Parking Alert***
+***US06 - Generate Operational Alerts***
 
 | Campo | Especificación |
 | --- | --- |
@@ -414,9 +458,9 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | User | Parking Administrator |
 | Priority | High |
 | Epic | E3 - Occupancy Monitoring and Operations |
-| Title | Generate Unauthorized Parking Alert |
-| Description | **As a** Parking Administrator,<br>**I want** to receive an alert when a vehicle uses a non-permitted Parking Zone,<br>**so that** I can review and address possible parking infractions. |
-| Acceptance Criteria | **Scenario 1: Unauthorized use detected**<br>**Given** el sistema conoce el User Profile del vehículo y la Parking Zone ocupada no está permitida para ese perfil<br>**When** se valida la relación entre el vehículo, la zona y el perfil<br>**Then** el sistema crea una Unauthorized Parking Alert con la zona, el Parking Spot, el perfil y el momento del evento.<br><br>**Scenario 2: Alert resolution**<br>**Given** existe una Unauthorized Parking Alert pendiente<br>**When** el Parking Administrator registra que la incidencia fue revisada<br>**Then** el sistema cambia el estado de la alerta a resuelta y conserva su historial. |
+| Title | Generate Operational Alerts |
+| Description | **As a** Parking Administrator,<br>**I want** to receive alerts about unauthorized parking and critical capacity conditions,<br>**so that** I can review incidents and react before the operation is affected. |
+| Acceptance Criteria | **Scenario 1: Unauthorized or unvalidated occupancy detected**<br>**Given** un Parking Spot tiene Occupancy Status *Occupied* y no existe una Reservation vigente ni un Manual Parking Assignment que autorice su uso<br>**When** el sistema valida la ocupación contra las autorizaciones registradas<br>**Then** crea una Unauthorized Parking Alert con la Parking Zone, el Parking Spot y el momento del evento, la clasifica como ocupación no validada y no intenta identificar el vehículo mediante imágenes o datos de placas.<br><br>**Scenario 2: Reservation conflict detected**<br>**Given** una Reservation futura tiene asignado un Parking Spot que continúa ocupado por una Parking Session anterior<br>**When** el sistema detecta el conflicto<br>**Then** inicia la búsqueda de un Parking Spot disponible y compatible, conserva el registro de la incidencia y notifica al Parking Administrator y al Driver cuando la reasignación o la alternativa sea confirmada.<br><br>**Scenario 3: High capacity detected**<br>**Given** la ocupación total del estacionamiento supera el 95 por ciento de los Parking Spots operativos disponibles para uso<br>**When** el sistema evalúa el nivel de ocupación<br>**Then** crea una alerta crítica de High Capacity y la pone a disposición del Parking Administrator.<br><br>**Scenario 4: Alert resolution**<br>**Given** existe una alerta operativa pendiente<br>**When** el Parking Administrator registra que la incidencia fue revisada<br>**Then** el sistema cambia el estado de la alerta a resuelta y conserva su historial. |
 
 ***US07 - Use the Operational Mobile Dashboard***
 
@@ -427,8 +471,8 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Priority | High |
 | Epic | E3 - Occupancy Monitoring and Operations |
 | Title | Use the Operational Mobile Dashboard |
-| Description | **As a** Parking Administrator,<br>**I want** to consult a centralized operational summary in the mobile application,<br>**so that** I can review occupancy, Availability and pending incidents in one place. |
-| Acceptance Criteria | **Scenario 1: Current operational summary**<br>**Given** el Parking Administrator tiene acceso autorizado y existen datos operativos<br>**When** solicita el resumen actual<br>**Then** el sistema devuelve la cantidad total de Parking Spots, la Availability por Parking Zone y las Unauthorized Parking Alerts pendientes.<br><br>**Scenario 2: Zone detail**<br>**Given** el Parking Administrator solicita información de una Parking Zone específica<br>**When** el sistema procesa la consulta<br>**Then** devuelve únicamente los Parking Spots y estados relacionados con esa zona junto con su última actualización. |
+| Description | **As a** Parking Administrator,<br>**I want** to consult a centralized operational summary and live occupancy map in the mobile application,<br>**so that** I can review occupancy, Availability and pending incidents in one place. |
+| Acceptance Criteria | **Scenario 1: Current operational summary**<br>**Given** el Parking Administrator tiene acceso autorizado y existen datos operativos<br>**When** solicita el resumen actual<br>**Then** el sistema devuelve la cantidad total de Parking Spots, la Availability por Parking Zone, las Reservations activas, los saldos pendientes y las alertas operativas pendientes.<br><br>**Scenario 2: Color-coded zone detail**<br>**Given** el Parking Administrator solicita información de una Parking Zone específica<br>**When** el sistema procesa la consulta<br>**Then** devuelve el mapa de ocupación de la zona con los Parking Spots diferenciados por Occupancy Status, Reservation Status y Sensor Health, y permite filtrar la vista por User Profile o Parking Zone.<br><br>**Scenario 3: Administrative audit**<br>**Given** el Parking Administrator realiza una modificación sobre una configuración, asignación, Reservation o incidencia<br>**When** el sistema confirma la operación<br>**Then** registra el usuario, la acción, la fecha, la hora y los datos anteriores y nuevos en la bitácora de auditoría. |
 
 ***US08 - Generate Occupancy Reports***
 
@@ -440,19 +484,19 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Epic | E3 - Occupancy Monitoring and Operations |
 | Title | Generate Occupancy Reports |
 | Description | **As a** Parking Administrator,<br>**I want** to consult Occupancy Reports grouped by period and Parking Zone,<br>**so that** I can identify usage patterns and support operational decisions. |
-| Acceptance Criteria | **Scenario 1: Period with historical data**<br>**Given** existen registros de Occupancy Status para el periodo solicitado<br>**When** el Parking Administrator genera el Occupancy Report<br>**Then** el sistema agrupa los datos por Parking Zone y periodo e informa los patrones de utilización disponibles.<br><br>**Scenario 2: Period without data**<br>**Given** no existen registros para el periodo solicitado<br>**When** el Parking Administrator genera el Occupancy Report<br>**Then** el sistema informa que no hay datos disponibles y no infiere valores inexistentes. |
+| Acceptance Criteria | **Scenario 1: Period with historical data**<br>**Given** existen registros de Occupancy Status, Reservations y Parking Sessions para el periodo solicitado<br>**When** el Parking Administrator genera el Occupancy Report<br>**Then** el sistema agrupa los datos por Parking Zone y periodo e informa los patrones de utilización, Reservations no utilizadas, sobretiempos e incidencias disponibles.<br><br>**Scenario 2: Period without data**<br>**Given** no existen registros para el periodo solicitado<br>**When** el Parking Administrator genera el Occupancy Report<br>**Then** el sistema informa que no hay datos disponibles y no infiere valores inexistentes. |
 
-***US09 - Access Mobile Functions by Role***
+***US09 - Authenticate and Access Mobile Functions by Role***
 
 | Campo | Especificación |
 | --- | --- |
 | Story ID | US09 |
-| User | Driver or Parking Administrator |
+| User | Driver, Parking Administrator or SuperAdmin |
 | Priority | Medium |
 | Epic | E5 - Services and Technical Enablement |
-| Title | Access Mobile Functions by Role |
-| Description | **As a** Driver or Parking Administrator,<br>**I want** to access SpotGo with my authorized account,<br>**so that** I can use only the capabilities related to my role. |
-| Acceptance Criteria | **Scenario 1: Valid access**<br>**Given** la cuenta está activa y las credenciales son válidas<br>**When** el usuario solicita acceso a SpotGo<br>**Then** el sistema autentica al usuario y habilita las capacidades asociadas con su rol.<br><br>**Scenario 2: Invalid or expired access**<br>**Given** las credenciales son inválidas o la sesión ya no es válida<br>**When** el usuario solicita acceso a información protegida<br>**Then** el sistema rechaza la solicitud y no entrega datos de ocupación, perfiles o zonas restringidas. |
+| Title | Authenticate and Access Mobile Functions by Role |
+| Description | **As a** Driver, Parking Administrator or SuperAdmin,<br>**I want** to access SpotGo with my authorized account,<br>**so that** I can use only the capabilities related to my role. |
+| Acceptance Criteria | **Scenario 1: Valid access**<br>**Given** la cuenta está activa y las credenciales son válidas<br>**When** el usuario solicita acceso a SpotGo<br>**Then** el sistema autentica al usuario, crea una sesión válida y habilita las capacidades asociadas con su rol.<br><br>**Scenario 2: Invalid or expired access**<br>**Given** las credenciales son inválidas o la sesión ya no es válida<br>**When** el usuario solicita acceso a información protegida<br>**Then** el sistema rechaza la solicitud y no entrega datos de ocupación, perfiles o zonas restringidas. |
 
 ***US10 - Support Accessibility and Languages in the Mobile Application***
 
@@ -475,7 +519,7 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Priority | Medium |
 | Epic | E4 - Digital Presence and Mobile Quality |
 | Title | Communicate the Value Proposition on the Landing Page |
-| Description | **As a** Visitor,<br>**I want** to understand the problem, value proposition and main capabilities of SpotGo,<br>**so that** I can evaluate the product and access the mobile application. |
+| Description | **As a** Visitor,<br>**I want** to understand the problem, value proposition and main capabilities of SpotGo through a fast static Landing Page,<br>**so that** I can evaluate the product and access the mobile application. |
 | Acceptance Criteria | **Scenario 1: Public content**<br>**Given** el Visitor accede a la Landing Page pública<br>**When** el contenido se carga<br>**Then** la página comunica el problema, la propuesta de valor y las capacidades principales de SpotGo sin requerir autenticación.<br><br>**Scenario 2: Mobile viewport**<br>**Given** el Visitor accede desde un dispositivo móvil<br>**When** consulta la Landing Page<br>**Then** el contenido permanece legible, se adapta al tamaño disponible y mantiene un acceso claro a la información de la aplicación móvil. |
 
 ***US12 - Navigate from the Landing Page to the Mobile Product***
@@ -490,6 +534,210 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Description | **As a** Visitor,<br>**I want** to navigate between the sections of the Landing Page and reach the mobile product destination,<br>**so that** I can continue from product information to the application. |
 | Acceptance Criteria | **Scenario 1: Section navigation**<br>**Given** el Visitor solicita una sección disponible de la Landing Page<br>**When** se procesa la navegación<br>**Then** el sistema dirige al contenido correspondiente sin perder el contexto de la página.<br><br>**Scenario 2: Mobile product destination**<br>**Given** el Visitor solicita acceder al producto móvil<br>**When** se procesa el enlace de acceso<br>**Then** la Landing Page dirige al destino oficial de descarga o acceso de la aplicación móvil. |
 
+***US13 - Register Client Account***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US13 |
+| User | Driver |
+| Priority | High |
+| Epic | E1 - Driver Mobile Experience |
+| Title | Register Client Account |
+| Description | **As a** Driver,<br>**I want** to create an account in the SpotGo mobile application,<br>**so that** I can use the smart parking services. |
+| Acceptance Criteria | **Scenario 1: Successful registration**<br>**Given** el Driver proporciona datos personales obligatorios y un correo electrónico no registrado<br>**When** envía la solicitud de registro<br>**Then** el sistema crea la cuenta activa y asigna el User Profile *Visitor* por defecto.<br><br>**Scenario 2: Existing email or invalid data**<br>**Given** el correo electrónico ya está registrado o falta un dato obligatorio<br>**When** el Driver envía la solicitud de registro<br>**Then** el sistema rechaza la operación, informa la causa y no crea una cuenta duplicada. |
+
+***US14 - Register B2B Tenant***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US14 |
+| User | SuperAdmin |
+| Priority | High |
+| Epic | E2 - Parking Organization and Profiles |
+| Title | Register B2B Tenant |
+| Description | **As a** SuperAdmin,<br>**I want** to register a parking facility as a Tenant,<br>**so that** its administrator can configure and operate SpotGo for that facility. |
+| Acceptance Criteria | **Scenario 1: Successful Tenant registration**<br>**Given** el SuperAdmin proporciona la información obligatoria de un estacionamiento que no está registrado y los datos del Parking Administrator<br>**When** confirma el registro del Tenant<br>**Then** el sistema crea el Tenant, habilita su configuración inicial y envía una invitación de acceso al Parking Administrator registrado.<br><br>**Scenario 2: Missing required information**<br>**Given** falta el nombre del estacionamiento u otro dato obligatorio<br>**When** el SuperAdmin intenta confirmar el registro<br>**Then** el sistema rechaza la operación y no crea el Tenant incompleto. |
+
+***US15 - Assign Staff Profile***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US15 |
+| User | Parking Administrator |
+| Priority | High |
+| Epic | E2 - Parking Organization and Profiles |
+| Title | Assign Staff Profile |
+| Description | **As a** Parking Administrator,<br>**I want** to assign or revoke the Staff User Profile for a registered vehicle,<br>**so that** employees can access the restricted Parking Zones defined for staff. |
+| Acceptance Criteria | **Scenario 1: Assign Staff profile**<br>**Given** el vehículo está registrado y el Parking Administrator tiene autorización para modificar perfiles<br>**When** asigna el User Profile *Staff* al vehículo<br>**Then** el sistema actualiza el perfil y aplica las zonas permitidas para Staff.<br><br>**Scenario 2: Revoke Staff profile**<br>**Given** un vehículo tiene el User Profile *Staff* activo<br>**When** el Parking Administrator revoca ese perfil<br>**Then** el sistema devuelve el vehículo al User Profile *Visitor* por defecto y retira las autorizaciones exclusivas de Staff. |
+
+***US16 - Upload Parking Croquis***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US16 |
+| User | Parking Administrator |
+| Priority | Medium |
+| Epic | E2 - Parking Organization and Profiles |
+| Title | Upload Parking Croquis |
+| Description | **As a** Parking Administrator,<br>**I want** to upload the croquis of the parking facility,<br>**so that** the system can use it as the basis for a Digital Parking Map. |
+| Acceptance Criteria | **Scenario 1: Valid croquis**<br>**Given** el Parking Administrator selecciona un archivo de imagen PNG o JPG válido<br>**When** lo envía para configuración<br>**Then** el sistema acepta el archivo y lo deja disponible para el proceso de generación del mapa.<br><br>**Scenario 2: Invalid format**<br>**Given** el archivo seleccionado es un PDF, un documento de texto o un formato no admitido<br>**When** el Parking Administrator intenta enviarlo<br>**Then** el sistema rechaza el archivo e informa que el formato no es válido. |
+
+***US17 - Generate Digital Parking Map***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US17 |
+| User | Parking Administrator |
+| Priority | Medium |
+| Epic | E2 - Parking Organization and Profiles |
+| Title | Generate Digital Parking Map |
+| Description | **As a** Parking Administrator,<br>**I want** the system to process the uploaded croquis,<br>**so that** it can initialize the Digital Parking Map, Parking Spots and Parking Zones. |
+| Acceptance Criteria | **Scenario 1: Map generation**<br>**Given** existe un croquis válido y el análisis identifica la infraestructura necesaria<br>**When** el Parking Administrator inicia la generación<br>**Then** el sistema crea el mapa base, registra los Parking Spots identificados y los inicializa con Occupancy Status *Available* hasta recibir datos operativos.<br><br>**Scenario 2: Unclear croquis**<br>**Given** el croquis no tiene suficiente claridad para identificar los elementos del estacionamiento<br>**When** el Parking Administrator inicia la generación<br>**Then** el sistema no publica un mapa incompleto, informa la limitación y permite continuar con una configuración manual. |
+
+***US27 - Register Vehicle***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US27 |
+| User | Driver |
+| Priority | High |
+| Epic | E1 - Driver Mobile Experience |
+| Title | Register Vehicle |
+| Description | **As a** Driver,<br>**I want** to register a Vehicle from my account,<br>**so that** I can select it when I make a Reservation. |
+| Acceptance Criteria | **Scenario 1: Successful vehicle registration**<br>**Given** el Driver tiene una cuenta activa y proporciona la información obligatoria del Vehicle<br>**When** guarda el registro desde la vista de vehículos<br>**Then** el sistema crea el Vehicle, lo asocia con la cuenta y lo deja disponible para seleccionarlo en una Reservation, sin almacenar imágenes ni datos de placas.<br><br>**Scenario 2: Invalid or duplicated vehicle**<br>**Given** falta información obligatoria o el Vehicle ya está asociado con la cuenta del Driver<br>**When** el Driver intenta guardar el registro<br>**Then** el sistema rechaza la operación, informa la causa y conserva los registros existentes. |
+
+***US18 - Manage Reservations and Virtual Receipts***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US18 |
+| User | Driver |
+| Priority | High |
+| Epic | E1 - Driver Mobile Experience |
+| Title | Manage Reservations and Virtual Receipts |
+| Description | **As a** Driver,<br>**I want** to reserve a Parking Spot within a permitted Parking Zone and manage the reservation during its lifecycle,<br>**so that** I can use the assigned space for my registered Vehicle and receive updated operation records. |
+| Acceptance Criteria | **Scenario 1: Successful reservation**<br>**Given** el Driver tiene un Vehicle registrado, un método de pago válido, existe una Parking Zone permitida y dicha zona contiene un Parking Spot *Available* con Sensor Health operativo<br>**When** el Driver selecciona el Vehicle, elige la Parking Zone, selecciona el Parking Spot, indica una fecha, hora de inicio y duración válidas, y completa el Digital Payment<br>**Then** el sistema crea la Reservation con Reservation Status *Reserved*, bloquea el espacio para otros Drivers y genera un Virtual Receipt con la zona, el espacio, el vehículo y la vigencia.<br><br>**Scenario 2: Vehicle required**<br>**Given** el Driver no tiene un Vehicle registrado en su cuenta<br>**When** intenta iniciar una Reservation<br>**Then** el sistema no permite continuar y solicita registrar un Vehicle antes de seleccionar un espacio.<br><br>**Scenario 3: Space no longer available**<br>**Given** el Parking Spot seleccionado dejó de estar *Available* o fue reservado por otro Driver antes de confirmar la Reservation<br>**When** el Driver intenta finalizar la operación<br>**Then** el sistema libera cualquier bloqueo temporal, no crea una Reservation para ese espacio e informa que debe seleccionar otra alternativa.<br><br>**Scenario 4: Payment rejected**<br>**Given** el proveedor de pagos rechaza el Digital Payment de la Reservation<br>**When** el sistema recibe el resultado de la operación<br>**Then** libera el bloqueo temporal, no confirma la Reservation ni genera el Virtual Receipt.<br><br>**Scenario 5: No-show and refund**<br>**Given** una Reservation pagada tiene Sensor Health operativo y el sensor nunca registra Occupancy Status *Occupied* durante todo el periodo reservado<br>**When** finaliza el periodo reservado<br>**Then** el sistema marca la Reservation como *No-show*, libera el Parking Spot y devuelve el importe pagado.<br><br>**Scenario 6: Late arrival within the reserved period**<br>**Given** una Reservation tiene Reservation Status *Reserved* y el Driver llega después de la hora de inicio, pero antes de la hora final<br>**When** el Occupancy Sensor registra la ocupación del Parking Spot<br>**Then** el sistema cambia la Reservation a *Active*, registra la Parking Session y mantiene la hora final y el importe originales.<br><br>**Scenario 7: Cancellation before start**<br>**Given** una Reservation pagada aún no ha iniciado<br>**When** el Driver solicita cancelarla<br>**Then** el sistema cambia el Reservation Status a *Cancelled*, libera el espacio y devuelve el importe pagado.<br><br>**Scenario 8: Reservation modification or extension**<br>**Given** el Driver solicita cambiar el horario, el espacio o extender la duración de una Reservation<br>**When** la nueva asignación es válida, compatible con su User Profile y no afecta Reservations posteriores<br>**Then** el sistema actualiza la Reservation, recalcula cualquier diferencia de precio y genera un Virtual Receipt actualizado antes de confirmar el cambio.<br><br>**Scenario 9: Reservation reassigned**<br>**Given** una Reservation tiene asignado un Parking Spot ocupado antes de su inicio o por una Parking Session excedida<br>**When** el sistema confirma una alternativa disponible y compatible<br>**Then** actualiza la Reservation, el Virtual Receipt y la Navigation Route, y notifica al Driver.<br><br>**Scenario 10: No compatible alternative**<br>**Given** una Reservation debe ser reasignada y no existe un Parking Spot compatible disponible<br>**When** el sistema procesa el conflicto<br>**Then** ofrece estacionamientos alternativos o cancela la Reservation con devolución completa.<br><br>**Scenario 11: Early departure**<br>**Given** una Parking Session activa detecta que el Driver abandonó el Parking Spot antes de la hora final<br>**When** el Occupancy Sensor registra el espacio como *Available*<br>**Then** el sistema mantiene la Reservation protegida hasta su hora final, no devuelve el importe y no permite que otro Driver reserve ese espacio durante el periodo vigente.<br><br>**Scenario 12: One active Parking Spot per Vehicle**<br>**Given** el Vehicle ya tiene un Parking Spot o Reservation activa<br>**When** el Driver intenta obtener una segunda asignación<br>**Then** el sistema rechaza la nueva asignación y conserva como máximo un Parking Spot activo para ese Vehicle. |
+
+***US19 - Process Reservation and Additional Payments***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US19 |
+| User | Driver |
+| Priority | High |
+| Epic | E6 - Monetization and Billing |
+| Title | Process Reservation and Additional Payments |
+| Description | **As a** Driver,<br>**I want** to pay for my Reservation and any additional parking time through a saved payment method,<br>**so that** SpotGo can confirm my space and settle the actual duration of my Parking Session. |
+| Acceptance Criteria | **Scenario 1: Saved payment method**<br>**Given** el Driver agrega y autoriza un método de pago mediante el proveedor configurado<br>**When** el proveedor confirma la autorización<br>**Then** el sistema guarda el Payment Token asociado al perfil del Driver, no almacena los datos completos del método y lo deja disponible para futuras operaciones.<br><br>**Scenario 2: Successful reservation payment**<br>**Given** el Driver tiene una solicitud válida para un Parking Spot seleccionado y un Payment Token autorizado<br>**When** confirma el Digital Payment mediante el proveedor configurado<br>**Then** el sistema registra la transacción como aprobada, confirma la Reservation, notifica el resultado y permite generar el Virtual Receipt.<br><br>**Scenario 3: Declined reservation payment**<br>**Given** el proveedor de pagos rechaza el Digital Payment de la Reservation<br>**When** el sistema recibe el resultado de la operación<br>**Then** registra el pago como fallido, informa al Driver, libera el bloqueo temporal y no confirma la Reservation ni el Parking Spot seleccionado.<br><br>**Scenario 4: Additional time after tolerance**<br>**Given** una Parking Session continúa con Occupancy Status *Occupied* después de la hora final de la Reservation y de los 5 minutos de tolerancia<br>**When** el sistema calcula el tiempo adicional<br>**Then** marca la Reservation como *Overstayed*, genera un cobro según la fracción configurada por el estacionamiento y aplica el descuento fijo correspondiente al Subscription activo del Driver.<br><br>**Scenario 5: Successful additional charge**<br>**Given** existe un cobro adicional calculado y el Payment Token está autorizado<br>**When** el proveedor confirma la transacción<br>**Then** registra el cobro como aprobado, actualiza el historial de pagos, notifica el resultado y genera el comprobante electrónico correspondiente.<br><br>**Scenario 6: Failed additional charge**<br>**Given** el proveedor no puede completar el cobro adicional mediante el Payment Token<br>**When** el sistema recibe el resultado fallido<br>**Then** registra un Outstanding Balance, notifica al Driver, permite reintentar con el mismo u otro método de pago y bloquea nuevas Reservations hasta regularizar el saldo. |
+
+***US20 - Manage Subscription Plans***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US20 |
+| User | Driver |
+| Priority | Medium |
+| Epic | E6 - Monetization and Billing |
+| Title | Manage Subscription Plans |
+| Description | **As a** Driver,<br>**I want** to consult, select and manage the Free, Plus Monthly and Plus Annual Subscription plans,<br>**so that** I can obtain the benefits that match my parking usage. |
+| Acceptance Criteria | **Scenario 1: Free Plan**<br>**Given** el Driver selecciona el plan *Free*<br>**When** el sistema activa el plan<br>**Then** permite consultar Availability, buscar estacionamiento y reservar espacios con la tarifa normal, aplica un descuento por operación de 0 % y no habilita Parking Zones especiales.<br><br>**Scenario 2: Plus Monthly Plan**<br>**Given** el Driver selecciona el plan *Plus Monthly* y el Digital Payment es aprobado<br>**When** el sistema confirma la compra<br>**Then** activa la Subscription por 30 días, prioriza sus Reservations, habilita el acceso a Parking Zones especiales y aplica un descuento fijo del 10 % a las reservas y cobros por fracción u hora.<br><br>**Scenario 3: Plus Annual Plan**<br>**Given** el Driver selecciona el plan *Plus Annual* y el Digital Payment es aprobado<br>**When** el sistema confirma la compra<br>**Then** activa la Subscription por 12 meses, conserva los beneficios de Plus Monthly, habilita el acceso a Parking Zones especiales y aplica un descuento fijo del 15 % a las reservas y cobros por fracción u hora.<br><br>**Scenario 4: Subscription discount on overstay**<br>**Given** el Driver tiene una Subscription activa y genera un cobro por sobretiempo<br>**When** el sistema calcula el importe adicional<br>**Then** aplica 0 %, 10 % o 15 % según el plan activo antes de procesar el cobro, sin acumular otro descuento sobre la misma operación.<br><br>**Scenario 5: Change or cancel plan**<br>**Given** el Driver tiene un plan activo<br>**When** solicita cambiarlo, mejorarlo o cancelar su renovación<br>**Then** el sistema valida el pago y las condiciones de disponibilidad, conserva los beneficios vigentes hasta la fecha aplicable y no genera una renovación cancelada. |
+
+***TS04 - Generate Electronic Billing***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | TS04 |
+| User | Developer |
+| Priority | High |
+| Epic | E6 - Monetization and Billing |
+| Title | Generate Electronic Billing |
+| Description | **As a** Developer,<br>**I want** the billing service to generate and update the applicable Electronic Invoice for approved payments, additional charges and refunds,<br>**so that** SpotGo can provide a consistent fiscal record for each parking operation. |
+| Acceptance Criteria | **Scenario 1: Generate Boleta**<br>**Given** existe un Digital Payment aprobado y el Driver proporciona un DNI válido<br>**When** el servicio de facturación procesa la operación<br>**Then** genera y asocia una Boleta electrónica con el pago y la Reservation o Parking Session correspondiente.<br><br>**Scenario 2: Generate Factura**<br>**Given** el solicitante requiere una Factura y proporciona un RUC válido<br>**When** el servicio de facturación procesa el Digital Payment aprobado<br>**Then** genera una Factura electrónica y la asocia con la información tributaria proporcionada.<br><br>**Scenario 3: Additional charge or refund**<br>**Given** una Reservation o Parking Session genera un cobro adicional aprobado o una devolución autorizada<br>**When** el servicio de facturación procesa el ajuste<br>**Then** genera o actualiza el comprobante electrónico asociado, conserva la relación con la operación original y refleja el importe ajustado. |
+
+***US21 - View Digital Receipts***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US21 |
+| User | Driver |
+| Priority | Medium |
+| Epic | E6 - Monetization and Billing |
+| Title | View Digital Receipts |
+| Description | **As a** Driver,<br>**I want** to consult my payment history and obtain my Virtual Receipts and Electronic Invoices,<br>**so that** I can track my parking operations and expenses. |
+| Acceptance Criteria | **Scenario 1: Download receipt**<br>**Given** el Driver tiene una Reservation, Parking Session, Subscription o cobro adicional registrado en su historial<br>**When** solicita el comprobante<br>**Then** el sistema permite consultar sus datos y descargar una copia en PDF.<br><br>**Scenario 2: Send receipt by email**<br>**Given** el Driver consulta una operación con un Virtual Receipt o Electronic Invoice disponible<br>**When** solicita enviarlo a su correo registrado<br>**Then** el sistema envía el documento asociado y conserva la operación en el historial.<br><br>**Scenario 3: Refund or outstanding balance**<br>**Given** una operación tiene una devolución o un Outstanding Balance asociado<br>**When** el Driver consulta su historial<br>**Then** el sistema muestra el estado del ajuste, el importe correspondiente y la relación con la operación original. |
+
+***US22 - Manage B2B Billing***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US22 |
+| User | Parking Administrator |
+| Priority | Medium |
+| Epic | E6 - Monetization and Billing |
+| Title | Manage B2B Billing |
+| Description | **As a** Parking Administrator,<br>**I want** to consult the invoices for the SpotGo service and update the Tenant's tax information,<br>**so that** I can control the B2B billing of my parking facility. |
+| Acceptance Criteria | **Scenario 1: Consult SaaS invoices**<br>**Given** el Parking Administrator tiene un Tenant activo y existen facturas del servicio SpotGo<br>**When** solicita el historial de facturación B2B<br>**Then** el sistema muestra las facturas disponibles con su estado, fecha y monto.<br><br>**Scenario 2: Update tax information**<br>**Given** el Parking Administrator está autorizado para modificar los datos tributarios del Tenant<br>**When** actualiza el RUC o la dirección con información válida<br>**Then** el sistema guarda los nuevos datos y los utiliza en las futuras facturas B2B. |
+
+***US23 - Watch Product Promotional Video***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US23 |
+| User | Visitor |
+| Priority | Low |
+| Epic | E4 - Digital Presence and Mobile Quality |
+| Title | Watch Product Promotional Video |
+| Description | **As a** Visitor,<br>**I want** to watch a promotional video on the Landing Page,<br>**so that** I can understand SpotGo through an example of its operation. |
+| Acceptance Criteria | **Scenario 1: Video available**<br>**Given** el Visitor accede a la sección audiovisual de la Landing Page y el recurso está disponible<br>**When** solicita reproducirlo<br>**Then** el video se presenta dentro de la página.<br><br>**Scenario 2: Video unavailable**<br>**Given** el recurso audiovisual no puede cargarse<br>**When** se muestra la sección<br>**Then** la Landing Page presenta una alternativa visual estática y mantiene el acceso al resto del contenido. |
+
+***US24 - Switch Landing Page Language***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US24 |
+| User | Visitor |
+| Priority | Medium |
+| Epic | E4 - Digital Presence and Mobile Quality |
+| Title | Switch Landing Page Language |
+| Description | **As a** Visitor,<br>**I want** to switch the Landing Page between Spanish and English,<br>**so that** I can understand the product information in my preferred language. |
+| Acceptance Criteria | **Scenario 1: Switch to English**<br>**Given** la Landing Page se muestra en español y existe una traducción en inglés<br>**When** el Visitor selecciona inglés<br>**Then** el contenido disponible cambia al idioma inglés sin perder la sección que estaba consultando.<br><br>**Scenario 2: Switch back to Spanish**<br>**Given** la Landing Page se muestra en inglés<br>**When** el Visitor selecciona español<br>**Then** el contenido disponible vuelve al español sin recargar la navegación completa. |
+
+***TS05 - Confirm Payments Asynchronously***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | TS05 |
+| User | Developer |
+| Priority | High |
+| Epic | E6 - Monetization and Billing |
+| Title | Confirm Payments Asynchronously |
+| Description | **As a** Developer,<br>**I want** to process asynchronous payment notifications for Reservations, Subscriptions, additional charges and refunds,<br>**so that** SpotGo can keep transactions, Reservation Status, Parking Sessions and billing records consistent. |
+| Acceptance Criteria | **Scenario 1: Reservation payment succeeded event**<br>**Given** el proveedor de pagos envía una notificación de pago aprobado con un identificador válido para una Reservation<br>**When** el backend procesa el evento<br>**Then** actualiza la transacción a aprobada, confirma la Reservation, permite generar el comprobante y notifica al Driver.<br><br>**Scenario 2: Additional charge succeeded event**<br>**Given** el proveedor de pagos envía una notificación de cobro adicional aprobado con un identificador válido<br>**When** el backend procesa el evento<br>**Then** registra el cobro, actualiza el historial de la Parking Session y permite generar el comprobante electrónico asociado.<br><br>**Scenario 3: Payment failed event**<br>**Given** el proveedor de pagos envía una notificación de pago rechazado con un identificador válido<br>**When** el backend procesa el evento<br>**Then** actualiza la transacción a fallida, registra un Outstanding Balance cuando corresponda, no confirma la operación pendiente si se trata de una Reservation y notifica al Driver.<br><br>**Scenario 4: Refund event**<br>**Given** el proveedor de pagos confirma una devolución autorizada para una Reservation<br>**When** el backend procesa el evento<br>**Then** actualiza la transacción, conserva la relación con la operación original y deja disponible el estado de devolución para el Driver. |
+
+***US25 - Calculate Smart Routing***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US25 |
+| User | Driver |
+| Priority | High |
+| Epic | E1 - Driver Mobile Experience |
+| Title | Calculate Smart Routing |
+| Description | **As a** Driver,<br>**I want** SpotGo to calculate Smart Routing to an eligible Parking Zone or Parking Spot,<br>**so that** I can follow the most appropriate path according to my User Profile and the current Availability. |
+| Acceptance Criteria | **Scenario 1: Route to eligible destination**<br>**Given** el Driver tiene una Parking Zone permitida y existe un destino disponible en el Digital Parking Map<br>**When** solicita Smart Routing desde su punto de ingreso o ubicación actual<br>**Then** el sistema calcula una Navigation Route que respeta el User Profile y conduce al destino asignado.<br><br>**Scenario 2: No eligible destination**<br>**Given** no existe un Parking Spot disponible dentro de las Parking Zones permitidas<br>**When** el Driver solicita Smart Routing<br>**Then** el sistema informa que no puede calcular un destino válido y no lo dirige a una zona no autorizada. |
+
+***US26 - Navigate Automatically to the Assigned Parking Spot***
+
+| Campo | Especificación |
+| --- | --- |
+| Story ID | US26 |
+| User | Driver |
+| Priority | High |
+| Epic | E1 - Driver Mobile Experience |
+| Title | Navigate Automatically to the Assigned Parking Spot |
+| Description | **As a** Driver,<br>**I want** the mobile application to start and update navigation to my assigned Parking Spot,<br>**so that** I can reach it without searching manually inside the parking facility. |
+| Acceptance Criteria | **Scenario 1: Start automatic navigation**<br>**Given** el Driver tiene una Reservation o asignación activa y existe una Navigation Route válida<br>**When** inicia el desplazamiento hacia el estacionamiento<br>**Then** la aplicación comienza la navegación hacia el Parking Zone y Parking Spot asignados y comunica el destino vigente.<br><br>**Scenario 2: Destination changes**<br>**Given** el Parking Spot deja de estar disponible o el Parking Administrator modifica la asignación<br>**When** el sistema confirma un nuevo destino válido<br>**Then** la aplicación informa el cambio y actualiza automáticamente la Navigation Route sin dirigir al Driver a un espacio no disponible. |
+
 ***TS01 - Synchronize Mobile Data through RESTful Services***
 
 | Campo | Especificación |
@@ -499,8 +747,8 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Priority | High |
 | Epic | E5 - Services and Technical Enablement |
 | Title | Synchronize Mobile Data through RESTful Services |
-| Description | **As a** Developer,<br>**I want** RESTful services to expose the configured zones, profiles and occupancy data,<br>**so that** the mobile application can synchronize the information required by each actor. |
-| Acceptance Criteria | **Scenario 1: Authorized request**<br>**Given** la aplicación móvil envía una solicitud válida y autorizada de zonas o Availability<br>**When** el servicio procesa la solicitud<br>**Then** responde con la información actual y con un esquema consistente para el consumo móvil.<br><br>**Scenario 2: Invalid or unauthorized request**<br>**Given** la solicitud contiene datos inválidos o no cuenta con autorización<br>**When** el servicio la procesa<br>**Then** responde con un error identificable y no expone información protegida. |
+| Description | **As a** Developer,<br>**I want** RESTful services to expose zones, profiles, vehicles, occupancy, Reservations, Parking Sessions, payments and billing data,<br>**so that** the mobile application can synchronize the information required by each actor. |
+| Acceptance Criteria | **Scenario 1: Authorized operational request**<br>**Given** la aplicación móvil envía una solicitud válida y autorizada de zonas, Availability, Vehicles, Reservations, Parking Sessions o estados de operación<br>**When** el servicio procesa la solicitud<br>**Then** responde con la información actual, incluyendo Occupancy Status, Reservation Status y Sensor Health cuando corresponda, mediante un esquema consistente para el consumo móvil.<br><br>**Scenario 2: Transaction and billing request**<br>**Given** la aplicación móvil envía una solicitud válida y autorizada sobre un Digital Payment, Payment Token, Subscription, Outstanding Balance o Electronic Invoice<br>**When** el servicio procesa la solicitud<br>**Then** responde con el estado actual de la operación y su relación con el Driver o Tenant correspondiente.<br><br>**Scenario 3: Invalid or unauthorized request**<br>**Given** la solicitud contiene datos inválidos o no cuenta con autorización<br>**When** el servicio la procesa<br>**Then** responde con un error identificable y no expone información protegida. |
 
 ***TS02 - Persist and Synchronize Data on the Mobile Device***
 
@@ -524,9 +772,9 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Epic | E5 - Services and Technical Enablement |
 | Title | Document the RESTful Service Contract |
 | Description | **As a** Developer,<br>**I want** the active RESTful services to have documented requests and responses,<br>**so that** the mobile application team can integrate them consistently. |
-| Acceptance Criteria | **Scenario 1: Complete endpoint documentation**<br>**Given** existen endpoints activos del producto<br>**When** el Developer consulta la documentación<br>**Then** encuentra los verbos, parámetros, respuestas, errores y ejemplos correspondientes a cada endpoint.<br><br>**Scenario 2: Contract example**<br>**Given** el Developer ejecuta una solicitud válida con los datos de ejemplo<br>**When** el servicio procesa la solicitud<br>**Then** la respuesta obtenida respeta el contrato documentado. |
+| Acceptance Criteria | **Scenario 1: Complete endpoint documentation**<br>**Given** existen endpoints activos del producto<br>**When** el Developer consulta la documentación OpenAPI/Swagger<br>**Then** encuentra los verbos, parámetros, respuestas, errores y ejemplos correspondientes a cada endpoint.<br><br>**Scenario 2: Contract example**<br>**Given** el Developer ejecuta desde la documentación una solicitud válida con los datos de ejemplo<br>**When** el servicio procesa la solicitud<br>**Then** la respuesta obtenida respeta el contrato documentado y muestra un resultado verificable. |
 
-***SP01 - Investigate the Occupancy Monitoring Mechanism***
+***SP01 - Validate Sensor-Based Occupancy Monitoring***
 
 | Campo | Especificación |
 | --- | --- |
@@ -534,9 +782,9 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | User | Developer |
 | Priority | High |
 | Epic | E5 - Services and Technical Enablement |
-| Title | Investigate the Occupancy Monitoring Mechanism |
-| Description | **As a** Developer,<br>**I want** to evaluate viable mechanisms for obtaining Occupancy Status data,<br>**so that** the team can select an approach compatible with the pilot without prematurely fixing a hardware solution. |
-| Acceptance Criteria | **Scenario 1: Alternatives comparison**<br>**Given** están definidos los datos de ocupación que necesita SpotGo<br>**When** el equipo evalúa al menos dos alternativas viables<br>**Then** documenta la comparación de calidad de datos, costo, mantenimiento, conectividad, privacidad y esfuerzo de integración.<br><br>**Scenario 2: Spike closure**<br>**Given** la comparación técnica está completa<br>**When** el equipo cierra el spike<br>**Then** existe un informe con la recomendación, sus restricciones, riesgos y evidencia de una prueba de concepto, prueba técnica o flujo de datos de ejemplo. |
+| Title | Validate Sensor-Based Occupancy Monitoring |
+| Description | **As a** Developer,<br>**I want** to validate Occupancy Sensors installed in every Parking Spot,<br>**so that** SpotGo can receive reliable Occupancy Status updates within a maximum of 5 seconds in indoor and outdoor parking facilities without claiming to identify the vehicle. |
+| Acceptance Criteria | **Scenario 1: Sensor validation**<br>**Given** existen *Occupancy Sensors* instalados en los *Parking Spots* de prueba<br>**When** el equipo ejecuta pruebas en condiciones interiores y exteriores<br>**Then** documenta la precisión, latencia, conectividad, alimentación, mantenimiento y requisitos de integración de los sensores, dejando explícito que solo detectan ocupación física.<br><br>**Scenario 2: Occupancy event integration**<br>**Given** un *Occupancy Sensor* detecta que un vehículo ocupa o libera un *Parking Spot*<br>**When** el backend procesa el evento recibido<br>**Then** actualiza el *Occupancy Status*, recalcula la *Availability* de la *Parking Zone* relacionada y deja la información disponible para la aplicación móvil en un máximo de 5 segundos sin identificar imágenes, placas o el vehículo específico.<br><br>**Scenario 3: Sensor unavailable**<br>**Given** un *Occupancy Sensor* deja de comunicar datos confiables<br>**When** el backend confirma la falla o desconexión<br>**Then** marca el Parking Spot como *Unavailable*, bloquea nuevas Reservations y conserva la incidencia para resolución del Parking Administrator. |
 
 ***SP02 - Investigate the Mobile Synchronization Strategy***
 
@@ -555,122 +803,110 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Lean UX item | Related requirements |
 | --- | --- |
 | FA01 / HS01 - Monitoreo de ocupación por zonas | US05, TS01, TS02, SP01 |
-| FA02 / HS02 - Registro y clasificación de usuarios | US03, US09 |
-| FA03 / HS03 - Asignación de zonas según tipo de usuario | US02, US04 |
-| FA04 / HS04 - Sistema de alertas por uso indebido | US06, US07 |
-| FA05 / HS05 - Panel de control para administradores | US07 |
-| FA06 / HS06 - Visualización actualizada de disponibilidad | US01, US04, TS01 |
+| FA02 / HS02 - Registro y clasificación de usuarios y vehículos | US03, US09, US13, US15, US27 |
+| FA03 / HS03 - Asignación de zonas según tipo de usuario | US02, US04, US15, US16, US17 |
+| FA04 / HS04 - Sistema de alertas operativas | US06, US07 |
+| FA05 / HS05 - Panel de control para administradores | US07, US22 |
+| FA06 / HS06 - Visualización actualizada de disponibilidad | US01, US04, US18, US25, US26, TS01 |
 | FA07 / HS07 - Reportes de ocupación | US08, TS03 |
+| FA08 / HS08 - Reservas, pagos y confirmación de operaciones | US18, US19, TS05 |
+| FA09 / HS09 - Suscripciones y facturación electrónica | US20, US21, TS04 |
+| FA10 / HS10 - Configuración de infraestructura y clientes B2B | US14, US16, US17 |
 
 ### 2.4.2. Impact Mapping
 
-El Impact Mapping de SpotGo se actualiza para representar el alcance mobile-first y conectar los resultados esperados con los actores y requisitos priorizados. Los Business Goals son metas iniciales de validación; no representan resultados ya alcanzados. Se formulan con criterios SMART porque especifican una métrica, un valor objetivo, un contexto y un plazo.
+El Impact Mapping de SpotGo representa el alcance mobile-first y conecta los resultados esperados con los actores y requisitos priorizados. Los Business Goals son metas iniciales de validación; no representan resultados ya alcanzados. Se formulan con criterios SMART porque especifican una métrica, un valor objetivo, un contexto y un plazo.
 
 Los actores se toman de los User Personas definidos previamente: **Carlos Ramirez**, de tipo *Guardian*, representa al Parking Administrator; y **Andres Salazar**, de tipo *Rational*, representa al Driver. Las relaciones del mapa siguen la secuencia Business Goal, Actor/Persona, Impact, Deliverable y User Story.
 
-La línea base para BG02 y BG03 deberá levantarse antes de iniciar los pilotos, registrando el tiempo de búsqueda de los conductores y la cantidad de incidencias de estacionamiento indebido durante un periodo comparable. Así, los porcentajes planteados podrán verificarse con datos observables y no solo con percepciones.
+Para calcular BG02 y BG03 se utiliza una línea base registrada antes de iniciar los pilotos, que incluye el tiempo de búsqueda de los conductores y la cantidad de incidencias de estacionamiento indebido durante un periodo comparable. Así, los porcentajes planteados se verifican con datos observables y no solo con percepciones. Las capacidades de Reservation, Digital Payment, Subscription y Electronic Billing se relacionan con BG01 porque su validación requiere comprobar el recorrido móvil completo del Driver en los estacionamientos piloto.
 
 | Business Goal | Actor / Persona | Impact | Deliverable | User Stories relacionadas |
 | --- | --- | --- | --- | --- |
-| **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Carlos Ramirez - Parking Administrator | Configura las Parking Zones y los User Profiles de acuerdo con las reglas de cada estacionamiento. | Módulo móvil para configurar Parking Zones y asociar perfiles. | **US02:** Como Parking Administrator, deseo configurar las Parking Zones y asociarlas con perfiles, para organizar la operación del estacionamiento.<br>**US03:** Como Parking Administrator, deseo registrar y clasificar vehículos, para determinar las zonas permitidas. |
-| **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Andres Salazar - Driver | Consulta la Availability y utiliza la Parking Zone que corresponde a su User Profile. | Consulta móvil de Availability y zonas permitidas según el perfil. | **US01:** Como Driver, deseo consultar la Availability por Parking Zone, para identificar dónde puede existir un Parking Spot disponible.<br>**US04:** Como Driver, deseo conocer las zonas permitidas según mi perfil, para evitar utilizar áreas no autorizadas. |
-| **BG02:** Reducir en 20% el tiempo promedio de búsqueda reportado por los conductores en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Andres Salazar - Driver | Consulta información actualizada antes de recorrer el estacionamiento y reduce recorridos innecesarios. | Vista móvil de Availability por zona y sincronización de datos de disponibilidad. | **US01:** Como Driver, deseo consultar la Availability por zona, para identificar una zona con posibilidad de espacio.<br>**US04:** Como Driver, deseo consultar mis zonas permitidas, para enfocar mi búsqueda en áreas que puedo utilizar.<br>**TS01:** Como Developer, deseo sincronizar Availability mediante servicios RESTful, para entregar datos consistentes a la aplicación móvil. |
-| **BG03:** Reducir en 15% las incidencias de estacionamiento indebido en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Carlos Ramirez - Parking Administrator | Monitorea el Occupancy Status, atiende Unauthorized Parking Alerts y revisa patrones de uso. | Dashboard móvil, alertas por Unauthorized Parking y Occupancy Reports. | **US05:** Como Parking Administrator, deseo monitorear el Occupancy Status por zona, para supervisar la operación.<br>**US06:** Como Parking Administrator, deseo recibir alertas por uso indebido, para revisar las incidencias.<br>**US07:** Como Parking Administrator, deseo consultar un resumen operativo, para controlar ocupación y alertas.<br>**US08:** Como Parking Administrator, deseo consultar Occupancy Reports, para apoyar decisiones operativas. |
+| **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Carlos Ramirez - Parking Administrator | Configura y opera el Tenant, la infraestructura, los perfiles y la información de facturación de acuerdo con las reglas de cada estacionamiento. | Capacidades móviles para configurar infraestructura, Parking Zones, User Profiles y facturación B2B. | **US02:** Como Parking Administrator, deseo configurar las Parking Zones y asociarlas con perfiles, para organizar la operación del estacionamiento.<br>**US03:** Como Parking Administrator, deseo registrar y clasificar vehículos, para determinar las zonas permitidas.<br>**US15:** Como Parking Administrator, deseo asignar el User Profile Staff, para controlar el acceso de empleados.<br>**US16:** Como Parking Administrator, deseo cargar el croquis, para configurar la infraestructura.<br>**US17:** Como Parking Administrator, deseo generar el Digital Parking Map, para representar los espacios operativos.<br>**US22:** Como Parking Administrator, deseo consultar la facturación B2B, para controlar el servicio contratado. |
+| **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Andres Salazar - Driver | Se registra, registra su Vehicle y completa desde la app el recorrido de Reservation, Digital Payment o Subscription, Virtual Receipt y Electronic Invoice. | Experiencia móvil de registro de vehículo, reservas, pagos, suscripciones, comprobantes y confirmación de operaciones. | **US13:** Como Driver, deseo crear una cuenta, para utilizar los servicios de estacionamiento.<br>**US27:** Como Driver, deseo registrar un Vehicle, para seleccionarlo al reservar.<br>**US18:** Como Driver, deseo reservar un espacio y recibir un Virtual Receipt, para conocer mi asignación.<br>**US19:** Como Driver, deseo pagar digitalmente, para completar la operación sin una caja física.<br>**US20:** Como Driver, deseo administrar una Subscription, para usar el servicio durante su vigencia.<br>**US21:** Como Driver, deseo consultar mis comprobantes, para controlar mis operaciones y gastos.<br>**TS04:** Como Developer, deseo generar Electronic Invoices, para respaldar los pagos aprobados.<br>**TS05:** Como Developer, deseo confirmar pagos de forma asíncrona, para mantener consistentes las operaciones. |
+| **BG02:** Reducir en 20% el tiempo promedio de búsqueda reportado por los conductores en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Andres Salazar - Driver | Consulta información actualizada, identifica una zona permitida y sigue una ruta hasta el espacio asignado, reduciendo recorridos innecesarios. | Vista móvil de Availability, sincronización, Smart Routing y navegación automática hacia el destino. | **US01:** Como Driver, deseo consultar la Availability por zona, para identificar una zona con posibilidad de espacio.<br>**US04:** Como Driver, deseo consultar mis zonas permitidas, para enfocar mi búsqueda en áreas que puedo utilizar.<br>**US18:** Como Driver, deseo recibir la asignación de mi Reservation, para conocer mi destino.<br>**US25:** Como Driver, deseo calcular Smart Routing, para obtener una ruta compatible con mi perfil y disponibilidad.<br>**US26:** Como Driver, deseo navegar automáticamente hasta mi Parking Spot, para no buscarlo manualmente.<br>**TS01:** Como Developer, deseo sincronizar Availability mediante servicios RESTful, para entregar datos consistentes a la aplicación móvil.<br>**TS02:** Como Developer, deseo conservar datos sincronizados localmente, para responder ante interrupciones temporales. |
+| **BG03:** Reducir en 15% las incidencias de estacionamiento indebido en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Carlos Ramirez - Parking Administrator | Monitorea el Occupancy Status proveniente de sensores, atiende alertas operativas y revisa patrones de uso. | Dashboard móvil con mapa de ocupación, alertas por Unauthorized Parking, alertas de High Capacity y Occupancy Reports. | **US05:** Como Parking Administrator, deseo monitorear el Occupancy Status por zona, para supervisar la operación.<br>**US06:** Como Parking Administrator, deseo recibir alertas operativas, para revisar usos indebidos y alta capacidad.<br>**US07:** Como Parking Administrator, deseo consultar un resumen operativo y mapa en vivo, para controlar ocupación y alertas.<br>**US08:** Como Parking Administrator, deseo consultar Occupancy Reports, para apoyar decisiones operativas.<br>**SP01:** Como Developer, deseo validar el monitoreo basado en sensores, para actualizar la ocupación en un máximo de 5 segundos. |
 
-*Impact Map*
+*Figura 11 (Impact Map)*
 ![Impact Map](../assets/diagrams/impact-map.svg)
 
-La figura presenta la relación visual entre los tres Business Goals, los User Personas, los cambios de comportamiento esperados, los entregables y las historias que los habilitan. La versión anterior del mapa contenía elementos del alcance web que ya no forman parte de esta especificación; por ello se presenta una versión actualizada y coherente con las historias de esta sección.
+La figura presenta una vista ejecutiva de la relación entre los tres Business Goals, los User Personas, los cambios de comportamiento esperados, los entregables y las historias principales que los habilitan. La tabla desarrolla el detalle completo de las capacidades de pagos, reservas, suscripciones, facturación, Smart Routing y navegación automática. El producto principal es la aplicación móvil y la Landing Page se mantiene como producto digital complementario.
 
 ### 2.4.3. Product Backlog
 
 El Product Backlog ordena los requisitos por valor para el negocio y por contribución a los Business Goals. El orden no representa necesariamente la secuencia técnica de implementación. Por ese motivo, las historias de autenticación y soporte aparecen después de las capacidades que validan directamente la propuesta de valor. Las historias de la Landing Page se incluyen desde el Sprint 1, tal como solicita la rúbrica.
 
-Los Story Points utilizan la escala de Fibonacci permitida por la rúbrica: 1, 2, 3, 5 y 8. Los Sprints propuestos son una primera distribución de trabajo y deberán confirmarse en el Sprint Planning con el equipo.
+Los Story Points utilizan la escala de Fibonacci permitida por la rúbrica: 1, 2, 3, 5 y 8. Los Sprints representan una distribución inicial de trabajo basada en el valor de negocio y las dependencias funcionales.
 
 | # Orden | User Story Id | Título | Story Points | Sprint |
 | --- | --- | --- | ---: | --- |
 | 1 | US01 | Consult Availability by Zone | 5 | Sprint 1 |
-| 2 | US02 | Configure Parking Zones | 5 | Sprint 1 |
-| 3 | US03 | Register and Classify User and Vehicle | 3 | Sprint 1 |
-| 4 | US04 | View Permitted Zones | 3 | Sprint 1 |
-| 5 | US05 | Monitor Occupancy by Zone | 5 | Sprint 2 |
-| 6 | US06 | Generate Unauthorized Parking Alert | 3 | Sprint 2 |
-| 7 | US07 | Use the Operational Mobile Dashboard | 5 | Sprint 2 |
-| 8 | US08 | Generate Occupancy Reports | 3 | Sprint 3 |
-| 9 | US11 | Communicate the Value Proposition on the Landing Page | 3 | Sprint 1 |
-| 10 | US12 | Navigate from the Landing Page to the Mobile Product | 2 | Sprint 1 |
-| 11 | TS01 | Synchronize Mobile Data through RESTful Services | 5 | Sprint 1 |
-| 12 | TS02 | Persist and Synchronize Data on the Mobile Device | 5 | Sprint 2 |
-| 13 | SP01 | Investigate the Occupancy Monitoring Mechanism | 3 | Sprint 1 |
-| 14 | SP02 | Investigate the Mobile Synchronization Strategy | 3 | Sprint 1 |
-| 15 | US09 | Access Mobile Functions by Role | 3 | Sprint 2 |
-| 16 | US10 | Support Accessibility and Languages in the Mobile Application | 3 | Sprint 3 |
-| 17 | TS03 | Document the RESTful Service Contract | 2 | Sprint 3 |
+| 2 | US04 | View Permitted Zones | 3 | Sprint 1 |
+| 3 | US13 | Register Client Account | 3 | Sprint 1 |
+| 4 | US27 | Register Vehicle | 3 | Sprint 1 |
+| 5 | US18 | Manage Reservations and Virtual Receipts | 5 | Sprint 1 |
+| 6 | US25 | Calculate Smart Routing | 5 | Sprint 2 |
+| 7 | US26 | Navigate Automatically to the Assigned Parking Spot | 5 | Sprint 2 |
+| 8 | US19 | Process Reservation and Additional Payments | 5 | Sprint 2 |
+| 9 | TS05 | Confirm Payments Asynchronously | 3 | Sprint 2 |
+| 10 | TS04 | Generate Electronic Billing | 5 | Sprint 2 |
+| 11 | US20 | Manage Subscription Plans | 5 | Sprint 3 |
+| 12 | US21 | View Digital Receipts | 2 | Sprint 3 |
+| 13 | US02 | Configure Parking Zones | 5 | Sprint 1 |
+| 14 | US03 | Register and Classify User and Vehicle | 3 | Sprint 1 |
+| 15 | US14 | Register B2B Tenant | 3 | Sprint 1 |
+| 16 | US16 | Upload Parking Croquis | 5 | Sprint 1 |
+| 17 | US17 | Generate Digital Parking Map | 5 | Sprint 1 |
+| 18 | US15 | Assign Staff Profile | 2 | Sprint 2 |
+| 19 | SP01 | Validate Sensor-Based Occupancy Monitoring | 3 | Sprint 1 |
+| 20 | US05 | Monitor Occupancy by Zone | 5 | Sprint 2 |
+| 21 | US06 | Generate Operational Alerts | 3 | Sprint 2 |
+| 22 | US07 | Use the Operational Mobile Dashboard | 5 | Sprint 2 |
+| 23 | US08 | Generate Occupancy Reports | 3 | Sprint 3 |
+| 24 | TS01 | Synchronize Mobile Data through RESTful Services | 5 | Sprint 1 |
+| 25 | TS02 | Persist and Synchronize Data on the Mobile Device | 5 | Sprint 2 |
+| 26 | US22 | Manage B2B Billing | 3 | Sprint 3 |
+| 27 | US09 | Authenticate and Access Mobile Functions by Role | 3 | Sprint 2 |
+| 28 | US11 | Communicate the Value Proposition on the Landing Page | 3 | Sprint 1 |
+| 29 | US12 | Navigate from the Landing Page to the Mobile Product | 2 | Sprint 1 |
+| 30 | US23 | Watch Product Promotional Video | 2 | Sprint 1 |
+| 31 | US24 | Switch Landing Page Language | 3 | Sprint 1 |
+| 32 | US10 | Support Accessibility and Languages in the Mobile Application | 3 | Sprint 3 |
+| 33 | TS03 | Document the RESTful Service Contract | 2 | Sprint 3 |
+| 34 | SP02 | Investigate the Mobile Synchronization Strategy | 3 | Sprint 1 |
 
-La priorización pone al inicio las capacidades que permiten validar el valor principal de SpotGo: consultar disponibilidad, organizar zonas, clasificar usuarios y operar el monitoreo. Las Spike Stories permanecen en el Sprint 1 porque reducen incertidumbre antes de fijar la solución de Occupancy Monitoring y la estrategia de sincronización móvil.
+La priorización pone al inicio las capacidades que permiten validar el valor principal de SpotGo: consultar disponibilidad, registrar el vehículo, reservar, pagar, llegar al espacio y comprobar la operación. Las historias de configuración e infraestructura se mantienen en los primeros sprints porque habilitan los flujos de Driver; las historias de autenticación y soporte aparecen después de las capacidades de valor, y las historias de la Landing Page se mantienen en el Sprint 1 como solicita la rúbrica. Las Spike Stories permanecen en el Sprint 1 porque reducen incertidumbre antes de fijar la solución de Occupancy Monitoring y la estrategia de sincronización móvil.
 
 **Evidencia del Product Backlog en Trello**
 
-La rúbrica solicita una captura del tablero y una referencia al URL público del Product Backlog. El avance recibido no incluye ese tablero ni un enlace público verificable, por lo que no se inventa una URL. Debe incorporarse la evidencia real del equipo en los siguientes espacios:
+La rúbrica solicita una captura del tablero y una referencia al URL público del Product Backlog.
 
-- **Trello Board Link:**
+**Trello Board Link:**
 
-- **Trello Board Evidence:**
+*Figura 12 (Trello Board Evidence)*
+![Trello Board Evidence](../assets/images/figures/12-trello-board-evidence.png)
 
 La tabla anterior deja listo el contenido que debe reflejarse en la herramienta y permite comprobar la correspondencia entre el orden, los Story Points y los Sprints.
 
 ## 2.5. Strategic-Level Domain-Driven Design
 
 ### 2.5.1. EventStorming
-Con el objetivo de comprender los principales procesos del dominio de SpotGo
-y establecer una base para la posterior identificación de contextos
-delimitados, se realizó una sesión de EventStorming utilizando Miro como
-herramienta colaborativa.
 
-El tablero completo utilizado durante el proceso puede consultarse en el
-siguiente enlace:
+Con el objetivo de comprender los principales procesos del dominio de SpotGo y establecer una base para la posterior identificación de contextos delimitados, se realizó una sesión de EventStorming utilizando Miro como herramienta colaborativa.
 
-**[Ver EventStorming completo de SpotGo en Miro](https://miro.com/app/board/uXjVHfgY7ok=/)**
+**Miro Board Link:** [https://miro.com/app/board/uXjVHfgY7ok=/](https://miro.com/app/board/uXjVHfgY7ok=/)
 
-El proceso se desarrolló de manera incremental. Inicialmente se identificaron
-los principales eventos de dominio relacionados con el registro de usuarios
-y vehículos, la búsqueda de estacionamiento, la disponibilidad de zonas, la
-ocupación de espacios, la detección de usos no autorizados y las operaciones
-administrativas del estacionamiento.
+El proceso se desarrolló de manera incremental. Inicialmente se identificaron los principales eventos de dominio relacionados con el registro de usuarios y vehículos, la búsqueda de estacionamiento, la disponibilidad de zonas, la ocupación de espacios, la detección de usos no autorizados y las operaciones administrativas del estacionamiento.
 
-Posteriormente, los eventos fueron organizados en una línea de tiempo para
-representar su secuencia y las posibles bifurcaciones del flujo. Sobre este
-mismo modelo se incorporaron progresivamente actores, servicios externos,
-puntos de dolor y puntos pivote. Finalmente, se añadieron los comandos que
-originan los eventos, las políticas que representan reglas de negocio y los
-modelos de lectura necesarios para consultar información relevante del
-dominio.
+Posteriormente, los eventos fueron organizados en una línea de tiempo para representar su secuencia y las posibles bifurcaciones del flujo. Sobre este mismo modelo se incorporaron progresivamente actores, servicios externos, puntos de dolor y puntos pivote. Finalmente, se añadieron los comandos que originan los eventos, las políticas que representan reglas de negocio y los modelos de lectura necesarios para consultar información relevante del dominio.
 
-La construcción se realizó de manera acumulativa, de forma que cada etapa
-mantuvo los elementos identificados previamente y agregó una nueva capa de
-información. Esto permitió enriquecer progresivamente el modelo sin perder
-la trazabilidad de los procesos inicialmente descubiertos.
+La construcción se realizó de manera acumulativa, de forma que cada etapa mantuvo los elementos identificados previamente y agregó una nueva capa de información. Esto permitió enriquecer progresivamente el modelo sin perder la trazabilidad de los procesos inicialmente descubiertos.
 
-![EventStorming inicial](../assets/images/event-storming/event-storming-inicial.png)
+*Figura 13 (Design Level EventStorming)*
+![Design Level EventStorming](../assets/images/figures/13-design-level-event-storming.png)
 
-*Figura 1. Etapas iniciales del EventStorming de SpotGo.*
-
-![EventStorming intermedio](../assets/images/event-storming/event-storming-intermedio.png)
-
-*Figura 2. Incorporación de actores, puntos de dolor y otros elementos del dominio.*
-
-![EventStorming final](../assets/images/event-storming/event-storming-final.png)
-
-*Figura 3. Modelo final del EventStorming de SpotGo.*
-
-Como resultado, el EventStorming permitió visualizar las principales
-responsabilidades del dominio y reconocer agrupaciones de comportamiento
-relacionadas con identidad y acceso, perfiles y vehículos, infraestructura
-del estacionamiento, ocupación y disponibilidad, y operaciones del
-estacionamiento. Estas agrupaciones fueron utilizadas como punto de partida
-para el proceso de Candidate Context Discovery desarrollado en la siguiente
-sección.
+Como resultado, el EventStorming permitió visualizar las principales responsabilidades del dominio y reconocer agrupaciones de comportamiento relacionadas con identidad y acceso, perfiles y vehículos, infraestructura del estacionamiento, ocupación y disponibilidad, y operaciones del estacionamiento. Estas agrupaciones fueron utilizadas como punto de partida para el proceso de Candidate Context Discovery desarrollado en la siguiente sección.
 
 #### *2.5.1.1. Candidate Context Discovery*
 
