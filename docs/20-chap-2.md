@@ -623,6 +623,54 @@ La tabla anterior deja listo el contenido que debe reflejarse en la herramienta 
 ## 2.5. Strategic-Level Domain-Driven Design
 
 ### 2.5.1. EventStorming
+Con el objetivo de comprender los principales procesos del dominio de SpotGo
+y establecer una base para la posterior identificación de contextos
+delimitados, se realizó una sesión de EventStorming utilizando Miro como
+herramienta colaborativa.
+
+El tablero completo utilizado durante el proceso puede consultarse en el
+siguiente enlace:
+
+**[Ver EventStorming completo de SpotGo en Miro](https://miro.com/app/board/uXjVHfgY7ok=/)**
+
+El proceso se desarrolló de manera incremental. Inicialmente se identificaron
+los principales eventos de dominio relacionados con el registro de usuarios
+y vehículos, la búsqueda de estacionamiento, la disponibilidad de zonas, la
+ocupación de espacios, la detección de usos no autorizados y las operaciones
+administrativas del estacionamiento.
+
+Posteriormente, los eventos fueron organizados en una línea de tiempo para
+representar su secuencia y las posibles bifurcaciones del flujo. Sobre este
+mismo modelo se incorporaron progresivamente actores, servicios externos,
+puntos de dolor y puntos pivote. Finalmente, se añadieron los comandos que
+originan los eventos, las políticas que representan reglas de negocio y los
+modelos de lectura necesarios para consultar información relevante del
+dominio.
+
+La construcción se realizó de manera acumulativa, de forma que cada etapa
+mantuvo los elementos identificados previamente y agregó una nueva capa de
+información. Esto permitió enriquecer progresivamente el modelo sin perder
+la trazabilidad de los procesos inicialmente descubiertos.
+
+![EventStorming inicial](../assets/images/event-storming/event-storming-inicial.png)
+
+*Figura 1. Etapas iniciales del EventStorming de SpotGo.*
+
+![EventStorming intermedio](../assets/images/event-storming/event-storming-intermedio.png)
+
+*Figura 2. Incorporación de actores, puntos de dolor y otros elementos del dominio.*
+
+![EventStorming final](../assets/images/event-storming/event-storming-final.png)
+
+*Figura 3. Modelo final del EventStorming de SpotGo.*
+
+Como resultado, el EventStorming permitió visualizar las principales
+responsabilidades del dominio y reconocer agrupaciones de comportamiento
+relacionadas con identidad y acceso, perfiles y vehículos, infraestructura
+del estacionamiento, ocupación y disponibilidad, y operaciones del
+estacionamiento. Estas agrupaciones fueron utilizadas como punto de partida
+para el proceso de Candidate Context Discovery desarrollado en la siguiente
+sección.
 
 #### *2.5.1.1. Candidate Context Discovery*
 
