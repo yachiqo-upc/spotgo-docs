@@ -164,11 +164,11 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 | Screenshot: | ![Entrevista S2 2](../assets/images/interviews/needfinding/entrevista-2-2.png) |
 | --- | --- |
 | Inicia: | 20:54 |
-| Duración:|  |
-| Nombre completo: |  |
-| Edad: |  |
-| Distrito: |  |
-| Resumen: |  |
+| Duración:| 7:05 |
+| Nombre completo: | Angel Pariona |
+| Edad: | 23 años |
+| Distrito: | Lince |
+| Resumen: | Angel menciona que encuentra difícil hallar estacionamiento debido a zonas no autorizadas o cocheras ocupadas, especialmente cerca de cines y parques de agua, demorando entre 10 a 15 minutos. Califica la organización actual como muy poco ordenada porque los vehículos no respetan los espacios y generan bloqueos ante la falta de fiscalización municipal. Ante la falta de espacio, da vueltas por las cuadras o se aleja un poco más, calificando la situación de frustrante por la pérdida de tiempo. Considera que una aplicación sería muy útil si le señala zonas libres, muestra la seguridad del lugar y permite reservar espacios. Sugiere medir mejor los tiempos y buscar estacionamiento en horas punta, valorando que un sistema así reduciría significativamente el tiempo de búsqueda en Lima. |
 
 **Entrevista 3**
 
