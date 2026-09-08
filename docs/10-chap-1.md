@@ -125,7 +125,8 @@ SpotGo busca alcanzar los siguientes objetivos:
 - Proporcionar información que facilite la toma de decisiones operativas por parte de los administradores.
 - Permitir que los Drivers registrados administren sus perfiles y registren los vehículos que utilizarán en futuras Reservations.
 - Permitir que los Parking Administrators creen Guest Reservations para conductores que llegan directamente al estacionamiento sin una cuenta registrada.
-- Procesar Reservations, Digital Payments, Subscriptions y Electronic Invoices desde la aplicación móvil.
+- Procesar las Reservations de Drivers registrados, Digital Payments, Subscriptions y Electronic Invoices desde la aplicación móvil.
+- Permitir que las Guest Reservations se paguen físicamente al Parking Administrator mediante efectivo o POS, fuera de SpotGo.
 - Mostrar Parking Zones cercanas mediante Google Maps y permitir que el Driver abra la ruta en la aplicación de Google Maps.
 
 **Restricciones de la solución**
@@ -234,7 +235,7 @@ Sabremos que la solución es exitosa cuando observemos una reducción en el tiem
 
 - **FA07 - Reportes de ocupación:** Creemos que los reportes de ocupación permitirán a los administradores analizar patrones de utilización del estacionamiento y utilizar esta información para apoyar sus decisiones operativas.
 
-- **FA08 - Reservations y pagos digitales:** Creemos que permitir a los Drivers registrados crear Reservations y Digital Payments desde la aplicación, y a los Parking Administrators crear Guest Reservations, permitirá asegurar un Parking Spot y completar la operación sin depender de una caja física.
+- **FA08 - Reservations y pagos:** Creemos que permitir a los Drivers registrados crear Reservations y Digital Payments desde la aplicación, y a los Parking Administrators crear Guest Reservations con pago físico mediante efectivo o POS fuera de SpotGo, permitirá asegurar un Parking Spot y completar cada operación según su flujo.
 
 - **FA09 - Subscriptions y Electronic Invoices:** Creemos que ofrecer Subscription Plans y Electronic Invoices permitirá a los Drivers administrar sus beneficios y consultar comprobantes de sus operaciones.
 
@@ -258,7 +259,7 @@ A partir de los Feature Assumptions identificados, se plantean los siguientes Hy
 
 - **HS07 - Reportes de ocupación:** Creemos que lograremos mejorar la toma de decisiones relacionadas con la utilización de los espacios si los administradores pueden analizar información histórica y patrones de ocupación mediante una funcionalidad de generación de reportes.
 
-- **HS08 - Reservations y pagos digitales:** Creemos que lograremos mejorar la experiencia de operación si los Drivers registrados pueden seleccionar un Vehicle, reservar un Parking Spot y completar el Digital Payment desde la aplicación, mientras los Parking Administrators pueden registrar Guest Reservations para conductores no registrados.
+- **HS08 - Reservations y pagos:** Creemos que lograremos mejorar la experiencia de operación si los Drivers registrados pueden seleccionar un Vehicle, reservar un Parking Spot y completar el Digital Payment desde la aplicación, mientras los Parking Administrators pueden registrar Guest Reservations después de recibir el pago físico en efectivo o POS.
 
 - **HS09 - Subscriptions y Electronic Invoices:** Creemos que lograremos mejorar el seguimiento de las operaciones si los Drivers pueden administrar sus Subscriptions y consultar Electronic Invoices asociadas a sus pagos.
 
