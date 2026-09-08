@@ -151,7 +151,7 @@ Proyecto
 2.5.3.2. Software Architecture Container Level Diagrams  
 2.5.3.3. Software Architecture Deployment Diagrams  
 2.6. Tactical-Level Domain-Driven Design  
-[**2.6.1. Bounded Context: Profiles & Vehicules Management**](21-bounded-1.md)  
+[**2.6.1. Bounded Context: Profiles & Vehicles Management**](21-bounded-1.md)  
 2.6.1.1. Domain Layer  
 2.6.1.2. Interface Layer  
 2.6.1.3. Application Layer  
@@ -169,7 +169,7 @@ Proyecto
 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.2.6.2. Bounded Context Database Design Diagram  
-[**2.6.3. Bounded Context: Parking infraestructure**](23-bounded-3.md)  
+[**2.6.3. Bounded Context: Parking Infrastructure**](23-bounded-3.md)  
 2.6.3.1. Domain Layer  
 2.6.3.2. Interface Layer  
 2.6.3.3. Application Layer  
@@ -178,7 +178,7 @@ Proyecto
 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.3.6.2. Bounded Context Database Design Diagram  
-[**2.6.4. Bounded Context: Payment management**](24-bounded-4.md)  
+[**2.6.4. Bounded Context: Payments & Billing**](24-bounded-4.md)  
 2.6.4.1. Domain Layer  
 2.6.4.2. Interface Layer  
 2.6.4.3. Application Layer  
@@ -187,7 +187,7 @@ Proyecto
 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.4.6.2. Bounded Context Database Design Diagram  
-[**2.6.5. Bounded Context: IAM**](25-bounded-5.md)  
+[**2.6.5. Bounded Context: Identity & Access Management**](25-bounded-5.md)  
 2.6.5.1. Domain Layer  
 2.6.5.2. Interface Layer  
 2.6.5.3. Application Layer  

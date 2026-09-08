@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1120" viewBox="0 0 1800 1120" role="img" aria-labelledby="title desc">
   <title id="title">Impact Map de SpotGo - alcance mobile-first</title>
-  <desc id="desc">Mapa de impacto que relaciona tres objetivos de negocio SMART con los actores Carlos Ramirez y Andres Salazar, sus impactos, entregables y las principales user stories del alcance mobile-first, incluyendo reservas, pagos, monitoreo y navegación.</desc>
+  <desc id="desc">Mapa de impacto que relaciona tres objetivos de negocio SMART con los actores Carlos Ramirez y Andres Salazar, sus impactos, entregables y las principales user stories del alcance mobile-first, incluyendo reservas, pagos, monitoreo e integración con Google Maps.</desc>
   <style>
     .bg { fill: #343840; }
     .top { fill: #292d34; }
@@ -56,14 +56,14 @@
   <rect class="deliverable" x="1088" y="140" width="294" height="78" rx="6" />
   <text class="text" x="1106" y="169"><tspan x="1106" dy="0">Configuración móvil de</tspan><tspan x="1106" dy="22">Parking Zones y perfiles.</tspan></text>
   <rect class="deliverable" x="1088" y="250" width="294" height="78" rx="6" />
-  <text class="text" x="1106" y="279"><tspan x="1106" dy="0">Experiencia móvil de</tspan><tspan x="1106" dy="22">reserva, pago y navegación.</tspan></text>
+  <text class="text" x="1106" y="279"><tspan x="1106" dy="0">Experiencia móvil de</tspan><tspan x="1106" dy="22">reserva, pago y Google Maps.</tspan></text>
 
   <rect class="story" x="1438" y="130" width="324" height="98" rx="6" />
   <text class="label" x="1456" y="158">US02 / US03</text>
-  <text class="small" x="1456" y="182"><tspan x="1456" dy="0">Configurar zonas y registrar</tspan><tspan x="1456" dy="19">y clasificar usuarios/vehículos.</tspan></text>
+  <text class="small" x="1456" y="182"><tspan x="1456" dy="0">Configurar zonas y crear</tspan><tspan x="1456" dy="19">Guest Reservations.</tspan></text>
   <rect class="story" x="1438" y="240" width="324" height="98" rx="6" />
   <text class="label" x="1456" y="268">US13 / US27 / US18 / US19 / US25 / US26</text>
-  <text class="small" x="1456" y="292"><tspan x="1456" dy="0">Registro, reserva, pago,</tspan><tspan x="1456" dy="19">Smart Routing y navegación.</tspan></text>
+  <text class="small" x="1456" y="292"><tspan x="1456" dy="0">Registro, reserva, pago,</tspan><tspan x="1456" dy="19">Parking Zones cercanas y Google Maps.</tspan></text>
 
   <!-- Business Goal 2 -->
   <rect class="goal" x="38" y="410" width="294" height="190" rx="6" />

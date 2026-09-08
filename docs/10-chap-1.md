@@ -31,7 +31,7 @@ Ofrecemos un ecosistema de desarrollo móvil flexible y a medida para cualquier 
 - Almacenamiento de datos local en el dispositivo para garantizar su uso continuo en entornos sin conexión a internet.
 - Integración con servicios web RESTful propios para la sincronización y consumo de información en tiempo real.
 - Diseño inclusivo con soporte de internacionalización (i18n) y accesibilidad (a11y) para todo tipo de público.
-- Conexión con SDKs y servicios de terceros como pasarelas de pago, mapas y notificaciones push.
+- Conexión con SDKs y servicios de terceros como mapas y notificaciones push, manteniendo el procesamiento de pagos en un servicio interno.
 - Investigación e integración autónoma de tecnologías emergentes para resolver retos técnicos específicos.
 
 ### 1.1.2. Perfiles de integrantes del equipo
@@ -114,7 +114,7 @@ Para el contexto peruano, la magnitud específica del problema será contrastada
 
 **Objetivos de la solución**
 
-La solución propuesta busca alcanzar los siguientes objetivos:
+SpotGo busca alcanzar los siguientes objetivos:
 
 - Reducir el tiempo requerido por los conductores para identificar espacios disponibles.
 - Facilitar la organización y distribución de espacios según los diferentes tipos de usuario.
@@ -123,21 +123,29 @@ La solución propuesta busca alcanzar los siguientes objetivos:
 - Facilitar la supervisión del flujo y distribución de vehículos.
 - Mejorar la experiencia de los conductores durante el proceso de estacionamiento.
 - Proporcionar información que facilite la toma de decisiones operativas por parte de los administradores.
+- Permitir que los Drivers registrados administren sus perfiles y registren los vehículos que utilizarán en futuras Reservations.
+- Permitir que los Parking Administrators creen Guest Reservations para conductores que llegan directamente al estacionamiento sin una cuenta registrada.
+- Procesar Reservations, Digital Payments, Subscriptions y Electronic Invoices desde la aplicación móvil.
+- Mostrar Parking Zones cercanas mediante Google Maps y permitir que el Driver abra la ruta en la aplicación de Google Maps.
 
-**Restricciones preliminares**
+**Restricciones de la solución**
 
-La propuesta considera inicialmente las siguientes restricciones:
+La solución considera las siguientes restricciones:
 
 - La solución estará orientada principalmente a estacionamientos con alta afluencia de vehículos.
 - La disponibilidad de información en tiempo real dependerá de los mecanismos de monitoreo e integración implementados en el estacionamiento.
-- La solución se enfocará inicialmente en la gestión y visualización de disponibilidad por zonas, evitando garantizar la disponibilidad futura de un espacio específico.
+- La solución se enfocará en la gestión y visualización de disponibilidad por zonas, evitando garantizar la disponibilidad futura de un espacio específico.
 - La clasificación de usuarios dependerá de los tipos de usuario previamente configurados para cada estacionamiento.
 - La solución requerirá conectividad para aquellas funcionalidades que necesiten sincronización con los servicios backend.
-- El alcance inicial estará centrado en administradores, personal operativo y conductores, considerando a clientes, taxistas y otros usuarios autorizados como tipos de conductores cuando corresponda.
+- El alcance estará centrado en administradores, personal operativo y conductores, considerando a clientes, taxistas y otros usuarios autorizados como perfiles de los Drivers cuando corresponda.
+- Los Vehicles pertenecen a un Driver y pueden seleccionarse en futuras Reservations; el User Profile del Driver determina las Parking Zones que puede utilizar.
+- Los conductores no registrados podrán tener una Guest Reservation creada por un Parking Administrator. La placa se ingresará manualmente y se conservará únicamente en el registro de esa Reservation.
+- SpotGo no utilizará OCR, inteligencia artificial ni sensores para leer o identificar placas o vehículos. Los sensores solo detectarán la ocupación física del Parking Spot.
+- SpotGo mostrará Parking Zones cercanas mediante Google Maps y delegará el cálculo de la ruta a la aplicación de Google Maps.
 
 ### 1.2.2. Lean UX Process
 
-El Lean UX Process permite establecer y validar las principales suposiciones relacionadas con el problema, los usuarios, los resultados esperados y las funcionalidades propuestas.
+El Lean UX Process permite establecer y validar las principales suposiciones relacionadas con el problema, los usuarios, los resultados esperados y las funcionalidades del producto.
 
 A partir del análisis inicial del dominio de estacionamientos de alta demanda, se establecen el Lean UX Problem Statement, los principales assumptions y los Hypothesis Statements que posteriormente serán contrastados mediante investigación y validación con representantes de los segmentos objetivo.
 
@@ -147,9 +155,9 @@ El estado actual de la gestión de estacionamientos de alta demanda se ha enfoca
 
 Las soluciones y procesos utilizados actualmente no siempre permiten integrar eficientemente información actualizada sobre la ocupación con una organización de zonas destinada a clientes, taxistas y otros usuarios autorizados.
 
-Nuestra solución abordará esta brecha mediante una plataforma inteligente de gestión de estacionamientos que permita monitorear la ocupación, organizar zonas según el tipo de usuario y proporcionar información que facilite la identificación y administración de espacios disponibles.
+Nuestra solución abordará esta brecha mediante una plataforma de gestión de estacionamientos que permita monitorear la ocupación, organizar zonas según el tipo de usuario y proporcionar información que facilite la identificación y administración de espacios disponibles.
 
-Nuestro enfoque inicial estará dirigido a administradores y personal operativo de estacionamientos de alta demanda, así como a conductores que utilizan estos espacios.
+Nuestro enfoque estará dirigido a administradores y personal operativo de estacionamientos de alta demanda, así como a Drivers registrados y conductores no registrados que utilizan estos espacios.
 
 Sabremos que la solución es exitosa cuando observemos una reducción en el tiempo requerido por los conductores para identificar espacios disponibles, una disminución de incidencias relacionadas con el uso indebido de zonas y una mejora en el control de ocupación por parte del personal administrativo.
 
@@ -214,7 +222,7 @@ Sabremos que la solución es exitosa cuando observemos una reducción en el tiem
 
 - **FA01 - Monitoreo de ocupación por zonas:** Creemos que el monitoreo de ocupación por zonas permitirá al personal operativo conocer con mayor precisión la disponibilidad existente en el estacionamiento.
 
-- **FA02 - Registro y clasificación de usuarios:** Creemos que el registro y clasificación de usuarios permitirá diferenciar entre clientes, taxistas y otros usuarios autorizados para gestionar adecuadamente las zonas correspondientes.
+- **FA02 - Registro de Drivers, perfiles y vehículos:** Creemos que permitir a los Drivers registrar sus Vehicles y administrar su User Profile permitirá diferenciar entre clientes, taxistas y otros usuarios autorizados para gestionar adecuadamente las zonas correspondientes.
 
 - **FA03 - Asignación de zonas según tipo de usuario:** Creemos que la asignación de zonas según el tipo de usuario permitirá reducir el uso indebido de espacios y mejorar la distribución de vehículos.
 
@@ -222,17 +230,23 @@ Sabremos que la solución es exitosa cuando observemos una reducción en el tiem
 
 - **FA05 - Panel de control para administradores:** Creemos que un panel de control permitirá a los administradores supervisar de manera centralizada la ocupación y distribución de las diferentes zonas.
 
-- **FA06 - Visualización actualizada de disponibilidad:** Creemos que proporcionar información actualizada sobre la disponibilidad permitirá a los conductores identificar con mayor rapidez las zonas en las que pueden encontrar espacios disponibles.
+- **FA06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que proporcionar información actualizada sobre la disponibilidad y mostrar Parking Zones cercanas mediante Google Maps permitirá a los conductores identificar con mayor rapidez dónde estacionar y cómo llegar.
 
 - **FA07 - Reportes de ocupación:** Creemos que los reportes de ocupación permitirán a los administradores analizar patrones de utilización del estacionamiento y utilizar esta información para apoyar sus decisiones operativas.
 
+- **FA08 - Reservations y pagos digitales:** Creemos que permitir a los Drivers registrados crear Reservations y Digital Payments desde la aplicación, y a los Parking Administrators crear Guest Reservations, permitirá asegurar un Parking Spot y completar la operación sin depender de una caja física.
+
+- **FA09 - Subscriptions y Electronic Invoices:** Creemos que ofrecer Subscription Plans y Electronic Invoices permitirá a los Drivers administrar sus beneficios y consultar comprobantes de sus operaciones.
+
+- **FA10 - Configuración de infraestructura y clientes B2B:** Creemos que permitir la configuración de Parking Spots, Parking Zones y Tenants facilitará la incorporación y operación de nuevos estacionamientos en SpotGo.
+
 #### *1.2.2.3. Lean UX Hypothesis Statements*
 
-A partir de los Feature Assumptions identificados, se plantean los siguientes Hypothesis Statements. Cada hipótesis relaciona un resultado esperado del negocio con los usuarios, beneficios y funcionalidades propuestas.
+A partir de los Feature Assumptions identificados, se plantean los siguientes Hypothesis Statements. Cada hipótesis relaciona un resultado esperado del negocio con los usuarios, beneficios y funcionalidades identificadas.
 
 - **HS01 - Monitoreo de ocupación por zonas:** Creemos que lograremos mejorar el control sobre la ocupación del estacionamiento si los administradores y el personal operativo pueden conocer oportunamente la disponibilidad de las diferentes zonas mediante una funcionalidad de monitoreo de ocupación por zonas.
 
-- **HS02 - Registro y clasificación de usuarios:** Creemos que lograremos mejorar la organización de los usuarios dentro del estacionamiento si el personal operativo puede identificar y clasificar a los conductores según categorías como clientes, taxistas u otros usuarios autorizados mediante una funcionalidad de registro y clasificación de usuarios.
+- **HS02 - Registro de Drivers, perfiles y vehículos:** Creemos que lograremos mejorar la organización de los usuarios dentro del estacionamiento si los Drivers pueden registrar sus Vehicles y el Parking Administrator puede gestionar los User Profiles según categorías como clientes, taxistas u otros usuarios autorizados.
 
 - **HS03 - Asignación de zonas según tipo de usuario:** Creemos que lograremos reducir las incidencias relacionadas con el uso indebido de espacios si los conductores pueden identificar las zonas que les corresponden y el personal operativo puede gestionar su distribución mediante una funcionalidad de asignación de zonas según el tipo de usuario.
 
@@ -240,13 +254,19 @@ A partir de los Feature Assumptions identificados, se plantean los siguientes Hy
 
 - **HS05 - Panel de control para administradores:** Creemos que lograremos mejorar la eficiencia en la supervisión del estacionamiento si los administradores y el personal operativo pueden consultar de manera centralizada la ocupación, distribución e incidencias mediante un panel de control administrativo.
 
-- **HS06 - Visualización actualizada de disponibilidad:** Creemos que lograremos reducir el tiempo y esfuerzo requerido para encontrar estacionamiento si los conductores pueden identificar las zonas que presentan disponibilidad mediante una funcionalidad de visualización actualizada de ocupación.
+- **HS06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que lograremos reducir el tiempo y esfuerzo requerido para encontrar estacionamiento si los conductores pueden consultar la disponibilidad, identificar Parking Zones cercanas y abrir una ruta externa en Google Maps.
 
 - **HS07 - Reportes de ocupación:** Creemos que lograremos mejorar la toma de decisiones relacionadas con la utilización de los espacios si los administradores pueden analizar información histórica y patrones de ocupación mediante una funcionalidad de generación de reportes.
 
+- **HS08 - Reservations y pagos digitales:** Creemos que lograremos mejorar la experiencia de operación si los Drivers registrados pueden seleccionar un Vehicle, reservar un Parking Spot y completar el Digital Payment desde la aplicación, mientras los Parking Administrators pueden registrar Guest Reservations para conductores no registrados.
+
+- **HS09 - Subscriptions y Electronic Invoices:** Creemos que lograremos mejorar el seguimiento de las operaciones si los Drivers pueden administrar sus Subscriptions y consultar Electronic Invoices asociadas a sus pagos.
+
+- **HS10 - Configuración de infraestructura y clientes B2B:** Creemos que lograremos facilitar la adopción de SpotGo si los Parking Administrators y SuperAdmins pueden configurar la infraestructura, los perfiles, los Tenants y las condiciones operativas del servicio.
+
 #### 1.2.2.4. Lean UX Canvas
 
-El Lean UX Canvas sintetiza los principales elementos identificados durante el proceso Lean UX, incluyendo el problema de negocio, los segmentos objetivo, los resultados esperados, los beneficios para los usuarios, las soluciones propuestas y las hipótesis que deberán ser validadas durante el desarrollo del proyecto.
+El Lean UX Canvas sintetiza los principales elementos identificados durante el proceso Lean UX, incluyendo el problema de negocio, los segmentos objetivo, los resultados esperados, los beneficios para los usuarios, las soluciones del producto y las hipótesis que deberán ser validadas durante el desarrollo del proyecto.
 
 **Canva Link:** [https://canva.link/i0pin0nnlvbg3rd](https://canva.link/i0pin0nnlvbg3rd)
 
@@ -277,7 +297,7 @@ Este segmento está conformado por las personas responsables de supervisar, cont
 
 **Segundo Segmento Objetivo: Conductores y usuarios finales**
 
-Este segmento está conformado por personas que utilizan estacionamientos en establecimientos de alta afluencia. Dentro de este segmento pueden existir diferentes tipos de conductores, como clientes, taxistas y otros usuarios autorizados, cuya clasificación permitirá determinar las zonas que pueden utilizar.
+Este segmento está conformado por personas que utilizan estacionamientos en establecimientos de alta afluencia. Dentro de este segmento pueden existir diferentes tipos de conductores, como clientes, taxistas y otros usuarios autorizados, cuya clasificación mediante el User Profile del Driver permitirá determinar las zonas que pueden utilizar. También se consideran conductores no registrados que llegan directamente al estacionamiento y pueden recibir una Guest Reservation creada por un Parking Administrator.
 
 - Datos demográficos:
   - **Edad:** Personas adultas habilitadas para conducir. Según estadísticas del MTC, durante 2025 se emitieron 801 474 licencias de conducir en el Perú, de las cuales 256 252 correspondieron a nuevas licencias, lo que permite contextualizar la magnitud del segmento de conductores en el país.
@@ -289,7 +309,7 @@ Este segmento está conformado por personas que utilizan estacionamientos en est
   - **Beneficios buscados:** Reducir el tiempo y esfuerzo dedicado a encontrar estacionamiento, identificar zonas disponibles y contar con una experiencia más organizada.
 - Interacción esperada con la solución:
   - **Frecuencia de uso:** Se espera que utilicen la solución cada vez que accedan a un estacionamiento que forme parte de la plataforma.
-  - **Principales actividades:** Consultar disponibilidad, identificar zonas habilitadas según su clasificación y utilizar la información proporcionada para dirigirse hacia una zona con disponibilidad.
+  - **Principales actividades:** Consultar disponibilidad, identificar zonas habilitadas según su User Profile, registrar o seleccionar un Vehicle, crear Reservations y abrir rutas externas hacia Parking Zones cercanas mediante Google Maps.
 
 **Relación entre los segmentos objetivo**
 
@@ -297,6 +317,6 @@ Ambos segmentos participan en un mismo proceso, pero presentan necesidades difer
 
 Los administradores y el personal operativo necesitan información que les permita supervisar, organizar y controlar el estacionamiento. Por su parte, los conductores necesitan información que les permita identificar zonas disponibles y reducir el esfuerzo requerido para encontrar estacionamiento.
 
-La solución propuesta busca conectar ambas necesidades mediante información actualizada sobre la ocupación y una organización de los espacios basada en los tipos de usuario.
+SpotGo busca conectar ambas necesidades mediante información actualizada sobre la ocupación, una organización de los espacios basada en los User Profiles y flujos diferenciados para Drivers registrados y conductores invitados.
 
 Las características inicialmente planteadas para ambos segmentos constituyen supuestos preliminares y deberán ser contrastadas mediante las entrevistas de Needfinding y fuentes estadísticas relacionadas con el dominio. Los resultados obtenidos permitirán posteriormente construir los User Personas y demás artefactos correspondientes al proceso de Needfinding.

@@ -1,4 +1,4 @@
-### 2.6.5. Bounded Context: IAM
+### 2.6.5. Bounded Context: Identity & Access Management
 
 #### *2.6.5.1. Domain Layer*
 
@@ -12,6 +12,6 @@
 
 #### *2.6.5.6. Bounded Context Software Architecture Code Level Diagrams*
 
-#### ***2.6.2.5.1. Bounded Context Domain Layer Class Diagrams***
+#### ***2.6.5.6.1. Bounded Context Domain Layer Class Diagrams***
 
-#### ***2.6.2.5.2. Bounded Context Database Design Diagram***
+#### ***2.6.5.6.2. Bounded Context Database Design Diagram***

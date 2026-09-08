@@ -1,4 +1,4 @@
-### 2.6.3. Bounded Context: Parking infraestructure
+### 2.6.3. Bounded Context: Parking Infrastructure
 
 #### *2.6.3.1. Domain Layer*
 
@@ -12,6 +12,6 @@
 
 #### *2.6.3.6. Bounded Context Software Architecture Code Level Diagrams*
 
-#### ***2.6.2.3.1. Bounded Context Domain Layer Class Diagrams***
+#### ***2.6.3.6.1. Bounded Context Domain Layer Class Diagrams***
 
-#### ***2.6.2.3.2. Bounded Context Database Design Diagram***
+#### ***2.6.3.6.2. Bounded Context Database Design Diagram***
