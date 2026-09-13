@@ -911,6 +911,22 @@ A partir del análisis de los eventos, comandos y políticas representados en el
 
 #### *2.5.1.1. Candidate Context Discovery*
 
+A partir del **Design-Level EventStorming** se agruparon los eventos, comandos, políticas y responsabilidades relacionadas para identificar posibles límites dentro del dominio de SpotGo. Este análisis permitió reconocer cinco contextos candidatos, cada uno con responsabilidades y reglas de negocio diferenciadas.
+
+| Contexto candidato | Responsabilidad principal | Clasificación |
+| --- | --- | --- |
+| **Profiles & Vehicles Management** | Gestionar los datos del Driver, sus Vehicles y los perfiles asociados. | Supporting Domain |
+| **Identity & Access Management** | Gestionar credenciales, sesiones y autorización según el rol del usuario. | Generic Domain |
+| **Parking Infrastructure** | Gestionar Parking Zones, Parking Spots, disponibilidad y el ciclo de las Reservations. | Core Domain |
+| **Payments & Billing** | Gestionar pagos digitales, Payment Tokens, devoluciones, saldos y Subscriptions. | Supporting Domain |
+| **Occupancy & Monitoring** | Monitorear la ocupación de los espacios mediante sensores y gestionar incidencias operativas. | Core Domain |
+
+Los contextos **Parking Infrastructure** y **Occupancy & Monitoring** fueron clasificados como **Core Domain**, debido a que concentran las capacidades más relacionadas con la propuesta de valor de SpotGo: la asignación organizada de espacios y el monitoreo de su ocupación.
+
+Por otro lado, **Profiles & Vehicles Management** y **Payments & Billing** cumplen funciones de soporte para completar los principales procesos del sistema, mientras que **Identity & Access Management** se considera un **Generic Domain**, ya que la autenticación y autorización son capacidades comunes en distintos sistemas de software.
+
+También se identificaron capacidades como Reservations, Guest Reservations, Subscriptions, navegación y notificaciones. Sin embargo, no fueron consideradas Bounded Contexts independientes: las Reservations forman parte de Parking Infrastructure, las Subscriptions pertenecen a Payments & Billing y Google Maps junto con el Servicio de notificaciones se mantienen como servicios externos.
+
 #### *2.5.1.2. Domain Message Flows Modeling*
 
 A partir de los Bounded Contexts identificados se modelaron los principales mensajes que intercambian entre sí. El objetivo de este diagrama es mostrar cómo colaboran los contextos de SpotGo sin repetir todo el flujo temporal del EventStorming.
