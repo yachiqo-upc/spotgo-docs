@@ -77,15 +77,15 @@ Proyecto
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | --- | --- | --- | --- |
-| 0.1.0 | 2/9/26 | @AdrixRyz | docs: agregar estructura inicial de la documentación |
-| 0.1.1 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Startup Profile |
-| 0.1.2 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Solution Profile |
-| 0.1.3 | 3/9/26 | @AdrixRyz | docs: agregar los puntos de Competidores |
-| 0.1.4 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Entrevistas |
-| 0.1.5 | 4/9/26 | @AdrixRyz | docs: agregar los puntos de Needfinding |
-| 0.1.6 | 5/9/26 | @AdrixRyz | docs: agregar los puntos de Requirements specification |
-| 0.1.7 | 6/9/26 | @briicarhuaz | docs: agregar los puntos de EventStorming |
-| 0.1.8 | 7/9/26 | @IamAndreek | docs: agregar los puntos de Context Mapping y Software Architecture |
+| 0.1.0 | 02/09/26 | @AdrixRyz | docs: agregar estructura inicial de la documentación |
+| 0.1.1 | 03/09/26 | @AdrixRyz | docs: agregar los puntos de Startup Profile |
+| 0.1.2 | 04/09/26 | @AdrixRyz | docs: agregar los puntos de Solution Profile |
+| 0.1.3 | 05/09/26 | @AdrixRyz | docs: agregar los puntos de Competidores |
+| 0.1.4 | 06/09/26 | @AdrixRyz | docs: agregar los puntos de Entrevistas |
+| 0.1.5 | 07/09/26 | @AdrixRyz | docs: agregar los puntos de Needfinding |
+| 0.1.6 | 08/09/26 | @AdrixRyz | docs: agregar los puntos de Requirements specification |
+| 0.1.7 | 09/09/26 | @briicarhuaz | docs: agregar los puntos de EventStorming |
+| 0.1.8 | 10/09/26 | @IamAndreek | docs: agregar los puntos de Context Mapping y Software Architecture |
 
 # Project Report Collaboration Insights
 
@@ -160,7 +160,7 @@ Proyecto
 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.1.6.2. Bounded Context Database Design Diagram  
-[**2.6.2. Bounded Context: Occupancy & Monitoring**](22-bounded-2.md)  
+[**2.6.2. Bounded Context: Identity & Access Management**](22-bounded-2.md)  
 2.6.2.1. Domain Layer  
 2.6.2.2. Interface Layer  
 2.6.2.3. Application Layer  
@@ -187,7 +187,7 @@ Proyecto
 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams  
 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams  
 2.6.4.6.2. Bounded Context Database Design Diagram  
-[**2.6.5. Bounded Context: Identity & Access Management**](25-bounded-5.md)  
+[**2.6.5. Bounded Context: Occupancy & Monitoring**](25-bounded-5.md)  
 2.6.5.1. Domain Layer  
 2.6.5.2. Interface Layer  
 2.6.5.3. Application Layer  

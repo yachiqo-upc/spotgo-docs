@@ -4,7 +4,7 @@
   <rect x="12" y="12" width="1576" height="68" rx="20" fill="#2F6FED" opacity="0.16" />
   <circle cx="44" cy="46" r="10" fill="#2F6FED" opacity="0.9" />
   <text x="68" y="50" font-family="Arial, Helvetica, sans-serif" font-size="31" fill="#0f172a" font-weight="bold"><tspan x="68" dy="0">Bounded Context Canvas — Infraestructura de Estacionamiento</tspan></text>
-  
+
     <g>
       <rect x="28" y="122" width="760" height="76" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="122" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
@@ -38,7 +38,7 @@
       <rect x="28" y="729" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="763" x2="788" y2="763" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="753" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Ubiquitous Language</tspan></text>
-      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Availability,</tspan><tspan x="44" dy="27.0">Reservation, Guest Reservation, Digital Parking Map,</tspan><tspan x="44" dy="27.0">Reassignment, Smart Routing.</tspan></text>
+      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Availability,</tspan><tspan x="44" dy="27.0">Reservation, Guest Reservation, Digital Parking Map,</tspan><tspan x="44" dy="27.0">Reassignment.</tspan></text>
     </g>
     <g>
       <rect x="28" y="883" width="760" height="300" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -47,7 +47,7 @@
       <text x="44" y="907" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Business Decisions</tspan></text>
       <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Una reserva incluye zona, espacio, fecha, hora de inicio y</tspan><tspan x="44" dy="25.650000000000002">  duración</tspan><tspan x="44" dy="25.650000000000002">• El espacio se bloquea temporalmente mientras se confirma el</tspan><tspan x="44" dy="25.650000000000002">  pago</tspan><tspan x="44" dy="25.650000000000002">• Las modificaciones y extensiones requieren disponibilidad</tspan><tspan x="44" dy="25.650000000000002">• Una reasignación ocurre ante conflicto de ocupación o</tspan><tspan x="44" dy="25.650000000000002">  indisponibilidad</tspan><tspan x="44" dy="25.650000000000002">• Si no hay espacio compatible, se ofrece alternativa o</tspan><tspan x="44" dy="25.650000000000002">  devolución</tspan></text>
     </g>
-  
+
     <g>
       <rect x="806" y="122" width="766" height="240" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />

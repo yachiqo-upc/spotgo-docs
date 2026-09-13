@@ -1,4 +1,4 @@
-### 2.6.5. Bounded Context: Identity & Access Management
+### 2.6.5. Bounded Context: Occupancy & Monitoring
 
 #### *2.6.5.1. Domain Layer*
 

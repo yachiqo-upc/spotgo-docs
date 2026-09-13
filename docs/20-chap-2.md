@@ -290,9 +290,10 @@ Se utilizó la guía Step-by-Step Guide de Philippe Bourgau, proporcionada en la
 - Explore
 - Close
 
-**Miro Board Link:** [https://miro.com/welcomeonboard/V2xyaEY4TCtuVTdxSEYvWlJwdFNGZkkvNmJnSDc2dUhrWkQ4MjlvOFB2dVQzd3hadHFBVXpROVE4UGFDbVI3NXY1NDFuam5BMVg3R1hKZEswQWV3TThSN09OOXpNNklYZDlJV2R6Z2hjSFNhMzdnWWd5bFhjK2t6My9sb3FHWm9nbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=707342021580](https://miro.com/welcomeonboard/V2xyaEY4TCtuVTdxSEYvWlJwdFNGZkkvNmJnSDc2dUhrWkQ4MjlvOFB2dVQzd3hadHFBVXpROVE4UGFDbVI3NXY1NDFuam5BMVg3R1hKZEswQWV3TThSN09OOXpNNklYZDlJV2R6Z2hjSFNhMzdnWWd5bFhjK2t6My9sb3FHWm9nbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=707342021580)
+**Miro Board Link:** [https://miro.com/app/board/uXjVHoqrvyc=/](https://miro.com/app/board/uXjVHoqrvyc=/)
 
-El modelo actualizado excluye OCR, inteligencia artificial, lectura automática de placas y cualquier identificación automática del vehículo. Para conductores no registrados, el Parking Administrator ingresa manualmente la placa dentro de una Guest Reservation; ese dato pertenece únicamente al registro de la Reservation. Los Occupancy Sensors solo detectan la ocupación física del Parking Spot.
+*Figura 10 (Big Picture EventStorming)*
+![Big Picture EventStorming](../assets/diagrams/big-picture-event-storming.svg)
 
 ### 2.3.6. Ubiquitous Language
 
@@ -903,12 +904,10 @@ Asimismo, se modeló el comportamiento operativo relacionado con la ocupación d
 
 A partir del análisis de los eventos, comandos y políticas representados en el EventStorming se identificaron cinco principales áreas de responsabilidad dentro del dominio: **Profiles & Vehicles Management**, **Identity & Access Management**, **Parking Infrastructure**, **Payments & Billing** y **Occupancy & Monitoring**. Estos grupos sirven como base para el posterior descubrimiento de los Bounded Contexts y el modelado de los mensajes intercambiados entre ellos.
 
-
-**Miro Board:** [SpotGo - EventStorming](https://miro.com/app/board/uXjVHoqrvyc=/)
+**Miro Board Link:** [https://miro.com/app/board/uXjVHoqrvyc=/](https://miro.com/app/board/uXjVHoqrvyc=/)
 
 *Figura 13. Design-Level EventStorming*
-
-![Design-Level EventStorming](../assets/images/figures/design-level-event-storming.svg)
+![Design-Level EventStorming](../assets/diagrams/design-level-event-storming.svg)
 
 #### *2.5.1.1. Candidate Context Discovery*
 
@@ -941,34 +940,31 @@ Los principales mensajes entre contextos son:
 Este modelo permite mantener separadas las responsabilidades de cada Bounded Context y hacer explícitas las dependencias necesarias para completar los principales procesos de SpotGo.
 
 *Figura 14. Domain Message Flows Modeling*
-
-![Domain Message Flows Modeling](../assets/images/figures/SpotGo%20EventStorming%20-%20Domain%20Message%20Flows%20Modeling.jpg)
+![Domain Message Flows Modeling](../assets/images/figures/14-domain-message-flows-modeling.jpg)
 
 #### *2.5.1.3. Bounded Context Canvases*
 
 A partir de los cinco Bounded Contexts identificados se elaboraron sus respectivos **Bounded Context Canvases**. Estos permiten definir de forma más clara el propósito, responsabilidades, lenguaje ubicuo, reglas de negocio, comunicaciones y dependencias de cada contexto dentro de SpotGo.
 
-##### Profiles & Vehicles Management
+***Profiles & Vehicles Management***
 
 Este contexto administra la información del **Driver**, sus **Vehicles** y los perfiles asociados. Su responsabilidad es mantener estos datos disponibles para que otros contextos puedan validar si un conductor y su vehículo se encuentran habilitados para realizar determinadas operaciones.
 
 Se clasifica como **Supporting Domain**, ya que brinda soporte a los procesos principales del sistema, especialmente a la creación de Reservations y a la validación de usuarios.
 
 *Figura 15. Profiles & Vehicles Management Bounded Context Canvas*
+![Profiles & Vehicles Management Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-1.svg)
 
-![Profiles & Vehicles Management Bounded Context Canvas](../assets/images/figures/01-gestion-perfiles-vehiculos.svg)
-
-##### Identity & Access Management
+***Identity & Access Management***
 
 Este contexto se encarga de la autenticación y autorización de los usuarios de SpotGo. Administra credenciales, sesiones y roles para determinar qué operaciones puede realizar cada usuario dentro del sistema.
 
 Se clasifica como **Generic Domain**, debido a que la gestión de identidad y acceso es una capacidad común presente en diferentes sistemas de software.
 
 *Figura 16. Identity & Access Management Bounded Context Canvas*
+![Identity & Access Management Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-2.svg)
 
-![Identity & Access Management Bounded Context Canvas](../assets/images/figures/02-gestion-identidad-acceso.svg)
-
-##### Parking Infrastructure
+***Parking Infrastructure***
 
 Este contexto administra la estructura del estacionamiento, incluyendo **Parking Zones**, **Parking Spots**, disponibilidad, mapa digital y el ciclo de las **Reservations** y **Guest Reservations**.
 
@@ -977,20 +973,18 @@ Se considera un **Core Domain**, ya que concentra capacidades centrales de SpotG
 Además, se comunica con Payments & Billing para procesar pagos, con Occupancy & Monitoring para conocer el estado operativo de los espacios y con Google Maps para la navegación hacia el Parking Spot asignado.
 
 *Figura 17. Parking Infrastructure Bounded Context Canvas*
+![Parking Infrastructure Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-3.svg)
 
-![Parking Infrastructure Bounded Context Canvas](../assets/images/figures/03-infraestructura-estacionamiento.svg)
-
-##### Payments & Billing
+***Payments & Billing***
 
 Este contexto administra las operaciones financieras de SpotGo, incluyendo **Payment Tokens**, **Digital Payments**, devoluciones, cobros adicionales, saldos pendientes, comprobantes y **Subscriptions**.
 
 Se clasifica como **Supporting Domain**, ya que permite completar los procesos comerciales asociados a las Reservations. Una de sus reglas principales es que SpotGo no almacena los datos completos de las tarjetas, sino identificadores seguros de pago.
 
 *Figura 18. Payments & Billing Bounded Context Canvas*
+![Payments & Billing Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-4.svg)
 
-![Payments & Billing Bounded Context Canvas](../assets/images/figures/04-pagos-facturacion.svg)
-
-##### Occupancy & Monitoring
+***Occupancy & Monitoring***
 
 Este contexto supervisa la ocupación física de los **Parking Spots** mediante sensores y administra las **Parking Sessions**. También permite detectar situaciones como No-show, sobretiempo, fallas de sensores, conflictos de ocupación y otras incidencias operativas.
 
@@ -999,8 +993,7 @@ Se considera un **Core Domain**, debido a que el monitoreo de la disponibilidad 
 En este contexto se mantiene una separación entre el estado de una Reservation y el estado físico del Parking Spot. Los sensores detectan únicamente si el espacio se encuentra ocupado o disponible, sin identificar automáticamente qué Vehicle lo está utilizando.
 
 *Figura 19. Occupancy & Monitoring Bounded Context Canvas*
-
-![Occupancy & Monitoring Bounded Context Canvas](../assets/images/figures/05-ocupacion-monitoreo.svg)
+![Occupancy & Monitoring Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-5.svg)
 
 En conjunto, estos canvases permiten establecer límites claros entre las responsabilidades de cada Bounded Context y sirven como base para el posterior diseño de la arquitectura de software de SpotGo.
 
