@@ -177,9 +177,9 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 | Inicia: | 28:00 |
 | Duración:| 3:58 |
 | Nombre completo: | Jorge Luis |
-| Edad: |  |
-| Distrito: |  |
-| Resumen: |  |
+| Edad: | 26 |
+| Distrito: | El Tambo |
+| Resumen: | Jorge Luis mencionó que buscar estacionamiento en lugares concurridos suele ser complicado, ya que puede tomar varios minutos encontrar un espacio libre y esto genera estrés. También señaló que la falta de señalización y organización dificulta orientarse dentro de algunos estacionamientos. Considera que una aplicación que muestre la disponibilidad de espacios por zonas y guíe al conductor ayudaría a reducir el tiempo de búsqueda y mejorar la experiencia al estacionar. |
 
 ### 2.2.3. Análisis de entrevistas
 
