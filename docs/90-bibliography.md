@@ -6,12 +6,12 @@ S. Saki y T. Hagen, “What drives drivers to start cruising for parking? Modeli
 
 R. I. Xiao y M. Jaller, “Prediction framework for parking search cruising time and emissions in dense urban areas,” *Transportation*, vol. 52, pp. 1289–1317, 2025. doi: 10.1007/s11116-023-10455-4.
 
-Ministerio de Transportes y Comunicaciones, “Anuario Estadístico 2025,” Lima, Perú, 2026. [En línea]. Disponible en: https://www.gob.pe/institucion/mtc/informes-publicaciones/8195835-anuario-estadistico-2025
+Ministerio de Transportes y Comunicaciones, “Anuario Estadístico 2025,” Lima, Perú, 2026. [En línea]. https://www.gob.pe/institucion/mtc/informes-publicaciones/8195835-anuario-estadistico-2025
 
-Ministerio de Transportes y Comunicaciones, “Estadística - Servicios de Transporte Terrestre por Carretera - Servicios Complementarios: Licencias de Conducir 2016–2025,” Lima, Perú, 2026. [En línea]. Disponible en: https://www.gob.pe/institucion/mtc/informes-publicaciones/344891-estadistica-servicios-de-transporte-terrestre-por-carretera-servicios-complementarios
+Ministerio de Transportes y Comunicaciones, “Estadística - Servicios de Transporte Terrestre por Carretera - Servicios Complementarios: Licencias de Conducir 2016–2025,” Lima, Perú, 2026. [En línea]. https://www.gob.pe/institucion/mtc/informes-publicaciones/344891-estadistica-servicios-de-transporte-terrestre-por-carretera-servicios-complementarios
 
-Apparka, “Apparka - Soluciones de estacionamiento y servicios empresariales,” 2026. [En línea]. Disponible en: https://apparka.pe/
+Apparka, “Apparka - Soluciones de estacionamiento y servicios empresariales,” 2026. [En línea]. https://apparka.pe/
 
-iPark, “iPark - Solución de Parking Digital,” 2026. [En línea]. Disponible en: https://ipark.pe/
+iPark, “iPark - Solución de Parking Digital,” 2026. [En línea]. https://ipark.pe/
 
-Parkopedia, “Parking Data,” Parkopedia Business, 2026. [En línea]. Disponible en: https://business.parkopedia.com/parking-data
+Parkopedia, “Parking Data,” Parkopedia Business, 2026. [En línea]. https://business.parkopedia.com/parking-data

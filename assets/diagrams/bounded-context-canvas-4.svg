@@ -3,14 +3,14 @@
   <rect x="12" y="12" width="1576" height="1426" rx="20" fill="#fbfdff" stroke="#dbe4f0" stroke-width="2" />
   <rect x="12" y="12" width="1576" height="68" rx="20" fill="#C97A10" opacity="0.16" />
   <circle cx="44" cy="46" r="10" fill="#C97A10" opacity="0.9" />
-  <text x="68" y="50" font-family="Arial, Helvetica, sans-serif" font-size="31" fill="#0f172a" font-weight="bold"><tspan x="68" dy="0">Bounded Context Canvas — Pagos y Facturación</tspan></text>
+  <text x="68" y="55" font-family="Arial, Helvetica, sans-serif" font-size="31" fill="#0f172a" font-weight="bold"><tspan x="68" dy="0">Bounded Context Canvas — Payments &amp; Billing</tspan></text>
   
     <g>
       <rect x="28" y="122" width="760" height="76" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="122" width="760" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="28" y1="156" x2="788" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="44" dy="0">Name</tspan></text>
-      <text x="44" y="182" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Pagos y Facturación</tspan></text>
+      <text x="44" y="182" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Payments &amp; Billing</tspan></text>
     </g>
     <g>
       <rect x="28" y="212" width="760" height="190" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -60,7 +60,7 @@
       <rect x="806" y="376" width="766" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="806" y1="410" x2="1572" y2="410" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="400" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="822" dy="0">Outbound Communication</tspan></text>
-      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ReservationPaymentApproved / ReservationPaymentRejected</tspan><tspan x="822" dy="27.0">  hacia Infraestructura de Estacionamiento</tspan><tspan x="822" dy="27.0">• AdditionalChargeProcessed</tspan><tspan x="822" dy="27.0">• OutstandingBalanceGenerated / BalanceRegularized</tspan><tspan x="822" dy="27.0">• RefundCompleted</tspan><tspan x="822" dy="27.0">• PaymentEvents hacia Servicio de notificaciones</tspan></text>
+      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ReservationPaymentApproved / ReservationPaymentRejected</tspan><tspan x="822" dy="27.0">  hacia Parking Infrastructure</tspan><tspan x="822" dy="27.0">• AdditionalChargeProcessed</tspan><tspan x="822" dy="27.0">• OutstandingBalanceGenerated / BalanceRegularized</tspan><tspan x="822" dy="27.0">• RefundCompleted</tspan><tspan x="822" dy="27.0">• PaymentEvents hacia Servicio de notificaciones</tspan></text>
     </g>
     <g>
       <rect x="806" y="620" width="766" height="150" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
