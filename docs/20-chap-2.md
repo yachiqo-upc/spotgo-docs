@@ -595,18 +595,6 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Description | **As a** Parking Administrator,<br>**I want** the system to process the uploaded Floor Plan,<br>**so that** it can initialize the Digital Parking Map, Parking Spots and Parking Zones. |
 | Acceptance Criteria | **Scenario 1: Map generation**<br>**Given** a valid Floor Plan exists and the Parking Administrator has defined the required infrastructure<br>**When** the Parking Administrator starts the generation<br>**Then** the system creates the base map, registers the defined Parking Spots, and initializes them with Occupancy Status *Available* until operational data is received.<br><br>**Scenario 2: Unclear Floor Plan**<br>**Given** the Floor Plan information is insufficient to configure the parking facility elements<br>**When** the Parking Administrator starts the generation<br>**Then** the system does not publish an incomplete map, reports the limitation, and allows the administrator to continue with manual configuration. |
 
-***US27 - Register Vehicle***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US27 |
-| User | Driver |
-| Priority | High |
-| Epic | E1 - Driver Mobile Experience |
-| Title | Register Vehicle |
-| Description | **As a** Driver,<br>**I want** to register a Vehicle from my account,<br>**so that** I can select it when I make a Reservation. |
-| Acceptance Criteria | **Scenario 1: Successful vehicle registration**<br>**Given** the Driver has an active account and provides the required Vehicle information<br>**When** the Driver saves the registration from the vehicle view<br>**Then** the system creates the Vehicle, associates it with the Driver, and makes it available for selection in a Reservation. The Vehicle does not store the license plate as permanent data.<br><br>**Scenario 2: Invalid or duplicated vehicle**<br>**Given** required information is missing or the Vehicle is already associated with the Driver's account<br>**When** the Driver attempts to save the registration<br>**Then** the system rejects the operation, reports the cause, and preserves the existing records. |
-
 ***US18 - Manage Reservations and Virtual Receipts***
 
 | Field | Specification |
@@ -642,18 +630,6 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Title | Manage Subscription Plans |
 | Description | **As a** Driver,<br>**I want** to consult, select and manage the Free, Plus Monthly and Plus Annual Subscription plans,<br>**so that** I can obtain the benefits that match my parking usage. |
 | Acceptance Criteria | **Scenario 1: Free Plan**<br>**Given** the Driver selects the *Free* plan<br>**When** the system activates the plan<br>**Then** it allows the Driver to consult Availability, search for parking, and reserve spaces at the regular rate, applies a 0% discount per operation, and does not enable special Parking Zones.<br><br>**Scenario 2: Plus Monthly Plan**<br>**Given** the Driver selects the *Plus Monthly* plan and the Digital Payment is approved<br>**When** the system confirms the purchase<br>**Then** it activates the Subscription for 30 days, prioritizes the Driver's Reservations, enables access to special Parking Zones, and applies a fixed 10% discount to Reservations and per-fraction or hourly charges.<br><br>**Scenario 3: Plus Annual Plan**<br>**Given** the Driver selects the *Plus Annual* plan and the Digital Payment is approved<br>**When** the system confirms the purchase<br>**Then** it activates the Subscription for 12 months, retains the Plus Monthly benefits, enables access to special Parking Zones, and applies a fixed 15% discount to Reservations and per-fraction or hourly charges.<br><br>**Scenario 4: Subscription discount on overstay**<br>**Given** the Driver has an active Subscription and incurs an overstay charge<br>**When** the system calculates the additional amount<br>**Then** it applies 0%, 10%, or 15% according to the active plan before processing the charge, without applying another discount to the same operation.<br><br>**Scenario 5: Change or cancel plan**<br>**Given** the Driver has an active plan<br>**When** the Driver requests to change, upgrade, or cancel its renewal<br>**Then** the system validates the payment and availability conditions, preserves the benefits through the applicable date, and does not create a canceled renewal. |
-
-***TS04 - Generate Electronic Billing***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | TS04 |
-| User | Developer |
-| Priority | High |
-| Epic | E6 - Monetization and Billing |
-| Title | Generate Electronic Billing |
-| Description | **As a** Developer,<br>**I want** the billing service to generate and update the applicable Electronic Invoice for approved Digital Payments, additional digital charges and refunds,<br>**so that** SpotGo can provide a consistent fiscal record for each registered Driver operation. |
-| Acceptance Criteria | **Scenario 1: Generate Electronic Receipt**<br>**Given** an approved Digital Payment exists and the Driver provides a valid DNI<br>**When** the billing service processes the operation<br>**Then** it generates and associates an *Electronic Receipt* with the payment and the corresponding Reservation or Parking Session.<br><br>**Scenario 2: Generate Electronic Invoice**<br>**Given** the requester requires an *Electronic Invoice* and provides a valid RUC<br>**When** the billing service processes the approved Digital Payment<br>**Then** it generates an *Electronic Invoice* and associates it with the provided tax information.<br><br>**Scenario 3: Additional charge or refund**<br>**Given** a Reservation or Parking Session generates an approved additional charge or an authorized refund<br>**When** the billing service processes the adjustment<br>**Then** it generates or updates the associated electronic receipt, retains the relationship with the original operation, and reflects the adjusted amount. |
 
 ***US21 - View Digital Receipts***
 
@@ -703,18 +679,6 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Description | **As a** Public Visitor,<br>**I want** to switch the Landing Page between Spanish and English,<br>**so that** I can understand the product information in my preferred language. |
 | Acceptance Criteria | **Scenario 1: Switch to English**<br>**Given** the Landing Page is displayed in Spanish and an English translation exists<br>**When** the Public Visitor selects English<br>**Then** the available content switches to English without losing the section being viewed.<br><br>**Scenario 2: Switch back to Spanish**<br>**Given** the Landing Page is displayed in English<br>**When** the Public Visitor selects Spanish<br>**Then** the available content returns to Spanish without reloading the entire navigation. |
 
-***TS05 - Confirm Payments Asynchronously***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | TS05 |
-| User | Developer |
-| Priority | High |
-| Epic | E6 - Monetization and Billing |
-| Title | Confirm Payments Asynchronously |
-| Description | **As a** Developer,<br>**I want** to process asynchronous payment notifications for registered Driver Reservations, Subscriptions, additional digital charges and refunds,<br>**so that** SpotGo can keep Digital Payments, Reservation Status, Parking Sessions and billing records consistent without processing Guest Reservation payments. |
-| Acceptance Criteria | **Scenario 1: Reservation payment succeeded event**<br>**Given** the internal payment service sends an approved payment notification with a valid identifier for a Reservation belonging to a registered Driver<br>**When** the backend processes the event<br>**Then** it updates the transaction to approved, confirms the Reservation, allows the receipt to be generated, and notifies the Driver.<br><br>**Scenario 2: Additional charge succeeded event**<br>**Given** the internal payment service sends an approved additional charge notification with a valid identifier<br>**When** the backend processes the event<br>**Then** it records the charge, updates the Parking Session history, and allows the associated electronic receipt to be generated.<br><br>**Scenario 3: Payment failed event**<br>**Given** the internal payment service sends a rejected payment notification with a valid identifier<br>**When** the backend processes the event<br>**Then** it updates the transaction to failed, records an Outstanding Balance when applicable, does not confirm the pending operation if it is a Reservation, and notifies the Driver.<br><br>**Scenario 4: Refund event**<br>**Given** the internal payment service confirms an authorized refund for a Reservation belonging to a registered Driver<br>**When** the backend processes the event<br>**Then** it updates the transaction, retains the relationship with the original operation, and makes the refund status available to the Driver. |
-
 ***US25 - View Nearby Parking Zones***
 
 | Field | Specification |
@@ -738,6 +702,18 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Title | Open Route in Google Maps |
 | Description | **As a** Driver,<br>**I want** to open the selected Parking Zone in Google Maps,<br>**so that** Google Maps can calculate the route from my location to the parking facility. |
 | Acceptance Criteria | **Scenario 1: Open external route**<br>**Given** the Driver has a selected Parking Zone with a valid location<br>**When** the Driver requests to open the route<br>**Then** SpotGo opens Google Maps with the Parking Zone as the destination and does not calculate an internal route within the parking facility.<br><br>**Scenario 2: Google Maps unavailable**<br>**Given** the Google Maps application is not installed or cannot be opened<br>**When** the Driver requests the route<br>**Then** SpotGo offers a compatible web link or informs the Driver that external navigation cannot be opened.<br><br>**Scenario 3: Destination updated**<br>**Given** the selected Parking Zone is no longer available or its configured location changes<br>**When** the system confirms the new destination<br>**Then** the application informs the Driver of the change and generates a new link to the valid Parking Zone. |
+
+***US27 - Register Vehicle***
+
+| Field | Specification |
+| --- | --- |
+| Story ID | US27 |
+| User | Driver |
+| Priority | High |
+| Epic | E1 - Driver Mobile Experience |
+| Title | Register Vehicle |
+| Description | **As a** Driver,<br>**I want** to register a Vehicle from my account,<br>**so that** I can select it when I make a Reservation. |
+| Acceptance Criteria | **Scenario 1: Successful vehicle registration**<br>**Given** the Driver has an active account and provides the required Vehicle information<br>**When** the Driver saves the registration from the vehicle view<br>**Then** the system creates the Vehicle, associates it with the Driver, and makes it available for selection in a Reservation. The Vehicle does not store the license plate as permanent data.<br><br>**Scenario 2: Invalid or duplicated vehicle**<br>**Given** required information is missing or the Vehicle is already associated with the Driver's account<br>**When** the Driver attempts to save the registration<br>**Then** the system rejects the operation, reports the cause, and preserves the existing records. |
 
 ***TS01 - Synchronize Mobile Data through RESTful Services***
 
@@ -774,6 +750,30 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Title | Document the RESTful Service Contract |
 | Description | **As a** Developer,<br>**I want** the active RESTful services to have documented requests and responses,<br>**so that** the mobile application team can integrate them consistently. |
 | Acceptance Criteria | **Scenario 1: Complete endpoint documentation**<br>**Given** active product endpoints exist<br>**When** the Developer consults the OpenAPI/Swagger documentation<br>**Then** the Developer finds the verbs, parameters, responses, errors, and examples corresponding to each endpoint.<br><br>**Scenario 2: Contract example**<br>**Given** the Developer executes a valid request with the example data from the documentation<br>**When** the service processes the request<br>**Then** the response conforms to the documented contract and shows a verifiable result. |
+
+***TS04 - Generate Electronic Billing***
+
+| Field | Specification |
+| --- | --- |
+| Story ID | TS04 |
+| User | Developer |
+| Priority | High |
+| Epic | E6 - Monetization and Billing |
+| Title | Generate Electronic Billing |
+| Description | **As a** Developer,<br>**I want** the billing service to generate and update the applicable Electronic Invoice for approved Digital Payments, additional digital charges and refunds,<br>**so that** SpotGo can provide a consistent fiscal record for each registered Driver operation. |
+| Acceptance Criteria | **Scenario 1: Generate Electronic Receipt**<br>**Given** an approved Digital Payment exists and the Driver provides a valid DNI<br>**When** the billing service processes the operation<br>**Then** it generates and associates an *Electronic Receipt* with the payment and the corresponding Reservation or Parking Session.<br><br>**Scenario 2: Generate Electronic Invoice**<br>**Given** the requester requires an *Electronic Invoice* and provides a valid RUC<br>**When** the billing service processes the approved Digital Payment<br>**Then** it generates an *Electronic Invoice* and associates it with the provided tax information.<br><br>**Scenario 3: Additional charge or refund**<br>**Given** a Reservation or Parking Session generates an approved additional charge or an authorized refund<br>**When** the billing service processes the adjustment<br>**Then** it generates or updates the associated electronic receipt, retains the relationship with the original operation, and reflects the adjusted amount. |
+
+***TS05 - Confirm Payments Asynchronously***
+
+| Field | Specification |
+| --- | --- |
+| Story ID | TS05 |
+| User | Developer |
+| Priority | High |
+| Epic | E6 - Monetization and Billing |
+| Title | Confirm Payments Asynchronously |
+| Description | **As a** Developer,<br>**I want** to process asynchronous payment notifications for registered Driver Reservations, Subscriptions, additional digital charges and refunds,<br>**so that** SpotGo can keep Digital Payments, Reservation Status, Parking Sessions and billing records consistent without processing Guest Reservation payments. |
+| Acceptance Criteria | **Scenario 1: Reservation payment succeeded event**<br>**Given** the internal payment service sends an approved payment notification with a valid identifier for a Reservation belonging to a registered Driver<br>**When** the backend processes the event<br>**Then** it updates the transaction to approved, confirms the Reservation, allows the receipt to be generated, and notifies the Driver.<br><br>**Scenario 2: Additional charge succeeded event**<br>**Given** the internal payment service sends an approved additional charge notification with a valid identifier<br>**When** the backend processes the event<br>**Then** it records the charge, updates the Parking Session history, and allows the associated electronic receipt to be generated.<br><br>**Scenario 3: Payment failed event**<br>**Given** the internal payment service sends a rejected payment notification with a valid identifier<br>**When** the backend processes the event<br>**Then** it updates the transaction to failed, records an Outstanding Balance when applicable, does not confirm the pending operation if it is a Reservation, and notifies the Driver.<br><br>**Scenario 4: Refund event**<br>**Given** the internal payment service confirms an authorized refund for a Reservation belonging to a registered Driver<br>**When** the backend processes the event<br>**Then** it updates the transaction, retains the relationship with the original operation, and makes the refund status available to the Driver. |
 
 ***SP01 - Validate Sensor-Based Occupancy Monitoring***
 
@@ -883,10 +883,10 @@ La priorización pone al inicio las capacidades que permiten validar el valor pr
 
 La rúbrica solicita una captura del tablero y una referencia al URL público del Product Backlog.
 
-**Trello Board Link:**
+**Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo)
 
 *Figura 12 (Trello Board Evidence)*
-![Trello Board Evidence](../assets/images/figures/12-trello-board-evidence.png)
+![Trello Board Evidence](../assets/images/others/trello-board-evidence.png)
 
 La tabla anterior deja listo el contenido que debe reflejarse en la herramienta y permite comprobar la correspondencia entre el orden, los Story Points y los Sprints.
 
