@@ -17,7 +17,7 @@
       <rect x="28" y="212" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="246" x2="788" y2="246" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="236" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Purpose</tspan></text>
-      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Organizar la infraestructura del estacionamiento y coordinar</tspan><tspan x="44" dy="27.0">la búsqueda, disponibilidad, asignación y ciclo de vida de</tspan><tspan x="44" dy="27.0">las reservas y reservas de invitados, además de actualizar</tspan><tspan x="44" dy="27.0">la navegación hacia la Parking Zone seleccionada.</tspan></text>
+      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Organizar la infraestructura del estacionamiento y coordinar</tspan><tspan x="44" dy="27.0">la búsqueda, disponibilidad, asignación y ciclo de vida de</tspan><tspan x="44" dy="27.0">las Reservations y las Guest Parking Sessions, además de</tspan><tspan x="44" dy="27.0">actualizar la navegación hacia la Parking Zone seleccionada.</tspan></text>
     </g>
     <g>
       <rect x="28" y="416" width="760" height="165" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -67,7 +67,7 @@
       <rect x="806" y="620" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="806" y1="654" x2="1572" y2="654" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="644" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="822" dy="0">Assumptions</tspan></text>
-      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Las reservas de invitado requieren confirmación previa de</tspan><tspan x="822" dy="27.0">pago físico fuera de SpotGo. La topología se representa</tspan><tspan x="822" dy="27.0">mediante zonas y espacios. Google Maps calcula externamente</tspan><tspan x="822" dy="27.0">la ruta hacia la Parking Zone seleccionada.</tspan></text>
+      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Las Guest Parking Sessions no requieren reserva y se</tspan><tspan x="822" dy="27.0">registran al ingreso; el pago físico se confirma fuera de</tspan><tspan x="822" dy="27.0">SpotGo al finalizar la sesión. Google Maps calcula</tspan><tspan x="822" dy="27.0">externamente la ruta hacia la Parking Zone seleccionada.</tspan></text>
     </g>
     <g>
       <rect x="806" y="784" width="766" height="180" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
