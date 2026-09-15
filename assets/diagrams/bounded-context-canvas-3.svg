@@ -31,14 +31,14 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Reserva, Reserva de</tspan><tspan x="44" dy="27.0">invitado, Administrador de estacionamiento, Conductor.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Reserva, Sesión de</tspan><tspan x="44" dy="27.0">invitado, Administrador de estacionamiento, Conductor.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="729" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="763" x2="788" y2="763" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="753" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Ubiquitous Language</tspan></text>
-      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Availability,</tspan><tspan x="44" dy="27.0">Reservation, Guest Reservation, Digital Parking Map,</tspan><tspan x="44" dy="27.0">Reassignment.</tspan></text>
+      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Availability,</tspan><tspan x="44" dy="27.0">Reservation, Guest Parking Session, Digital Parking Map,</tspan><tspan x="44" dy="27.0">Reassignment.</tspan></text>
     </g>
     <g>
       <rect x="28" y="883" width="760" height="300" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -53,7 +53,7 @@
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="806" y1="156" x2="1572" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="822" dy="0">Inbound Communication</tspan></text>
-      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Configurar tenant, zonas y espacios</tspan><tspan x="822" dy="27.0">• Cargar floor plan / generar mapa digital</tspan><tspan x="822" dy="27.0">• Buscar disponibilidad</tspan><tspan x="822" dy="27.0">• Crear, modificar, extender o cancelar reserva</tspan><tspan x="822" dy="27.0">• Crear reserva de invitado</tspan><tspan x="822" dy="27.0">• Recibir ReservationPaymentApproved / ReservationPaymentRejected</tspan><tspan x="822" dy="27.0">• Recibir conflictos de ocupación o fallas del sensor</tspan></text>
+      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Configurar tenant, zonas y espacios</tspan><tspan x="822" dy="27.0">• Cargar floor plan / generar mapa digital</tspan><tspan x="822" dy="27.0">• Buscar disponibilidad</tspan><tspan x="822" dy="27.0">• Crear, modificar, extender o cancelar reserva</tspan><tspan x="822" dy="27.0">• Registrar Guest Parking Session</tspan><tspan x="822" dy="27.0">• Recibir ReservationPaymentApproved / ReservationPaymentRejected</tspan><tspan x="822" dy="27.0">• Recibir conflictos de ocupación o fallas del sensor</tspan></text>
     </g>
     <g>
       <rect x="806" y="376" width="766" height="230" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />

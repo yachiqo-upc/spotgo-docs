@@ -124,10 +124,10 @@ SpotGo busca alcanzar los siguientes objetivos:
 - Mejorar la experiencia de los conductores durante el proceso de estacionamiento.
 - Proporcionar información que facilite la toma de decisiones operativas por parte de los administradores.
 - Permitir que los Drivers registrados administren sus perfiles y registren los vehículos que utilizarán en futuras Reservations.
-- Permitir que los Parking Administrators creen Guest Reservations para conductores que llegan directamente al estacionamiento sin una cuenta registrada.
+- Permitir que los Parking Administrators registren Guest Parking Sessions para conductores que llegan directamente al estacionamiento sin una cuenta registrada.
 - Procesar las Reservations de Drivers registrados, Digital Payments, Subscriptions y Electronic Invoices desde la aplicación móvil.
-- Permitir que las Guest Reservations se paguen físicamente al Parking Administrator mediante efectivo o POS, fuera de SpotGo.
-- Mostrar Parking Zones cercanas mediante Google Maps y permitir que el Driver abra la ruta en la aplicación de Google Maps.
+- Permitir que los Guest Drivers paguen físicamente al Parking Administrator mediante efectivo o POS al finalizar su Guest Parking Session, fuera de SpotGo.
+- Mostrar en un mapa integrado mediante Google Maps las Parking Zones registradas por SpotGo, junto con sus detalles operativos, y permitir que el Driver registrado abra la ruta en la aplicación de Google Maps.
 
 **Restricciones de la solución**
 
@@ -135,14 +135,14 @@ La solución considera las siguientes restricciones:
 
 - La solución estará orientada principalmente a estacionamientos con alta afluencia de vehículos.
 - La disponibilidad de información en tiempo real dependerá de los mecanismos de monitoreo e integración implementados en el estacionamiento.
-- La solución se enfocará en la gestión y visualización de disponibilidad por zonas, evitando garantizar la disponibilidad futura de un espacio específico.
+- La solución mostrará la disponibilidad general por zonas; cuando un Driver registrado complete una Reservation, el sistema podrá asignarle un Parking Spot específico durante el periodo reservado.
 - La clasificación de usuarios dependerá de los tipos de usuario previamente configurados para cada estacionamiento.
 - La solución requerirá conectividad para aquellas funcionalidades que necesiten sincronización con los servicios backend.
 - El alcance estará centrado en administradores, personal operativo y conductores, considerando a clientes, taxistas y otros usuarios autorizados como perfiles de los Drivers cuando corresponda.
 - Los Vehicles pertenecen a un Driver y pueden seleccionarse en futuras Reservations; el User Profile del Driver determina las Parking Zones que puede utilizar.
-- Los conductores no registrados podrán tener una Guest Reservation creada por un Parking Administrator. La placa se ingresará manualmente y se conservará únicamente en el registro de esa Reservation.
+- Los conductores no registrados podrán tener una Guest Parking Session creada por un Parking Administrator al llegar al estacionamiento. La placa se ingresará manualmente y se conservará únicamente en el registro de esa sesión.
 - SpotGo no utilizará OCR, inteligencia artificial ni sensores para leer o identificar placas o vehículos. Los sensores solo detectarán la ocupación física del Parking Spot.
-- SpotGo mostrará Parking Zones cercanas mediante Google Maps y delegará el cálculo de la ruta a la aplicación de Google Maps.
+- SpotGo integrará Google Maps para renderizar el mapa y mostrar las Parking Zones registradas por SpotGo con sus datos operativos; la aplicación de Google Maps calculará la ruta externa hacia la Parking Zone seleccionada.
 
 ### 1.2.2. Lean UX Process
 
@@ -231,15 +231,17 @@ Sabremos que la solución es exitosa cuando observemos una reducción en el tiem
 
 - **FA05 - Panel de control para administradores:** Creemos que un panel de control permitirá a los administradores supervisar de manera centralizada la ocupación y distribución de las diferentes zonas.
 
-- **FA06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que proporcionar información actualizada sobre la disponibilidad y mostrar Parking Zones cercanas mediante Google Maps permitirá a los conductores identificar con mayor rapidez dónde estacionar y cómo llegar.
+- **FA06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que proporcionar información actualizada sobre la disponibilidad y mostrar las Parking Zones registradas por SpotGo en un mapa integrado mediante Google Maps permitirá a los conductores identificar con mayor rapidez dónde estacionar y cómo llegar.
 
 - **FA07 - Reportes de ocupación:** Creemos que los reportes de ocupación permitirán a los administradores analizar patrones de utilización del estacionamiento y utilizar esta información para apoyar sus decisiones operativas.
 
-- **FA08 - Reservations y pagos:** Creemos que permitir a los Drivers registrados crear Reservations y Digital Payments desde la aplicación, y a los Parking Administrators crear Guest Reservations con pago físico mediante efectivo o POS fuera de SpotGo, permitirá asegurar un Parking Spot y completar cada operación según su flujo.
+- **FA08 - Reservations y pagos:** Creemos que permitir a los Drivers registrados crear Reservations y Digital Payments desde la aplicación, y a los Parking Administrators registrar Guest Parking Sessions con pago físico mediante efectivo o POS al finalizar la estadía, permitirá completar cada operación según su flujo.
 
 - **FA09 - Subscriptions y Electronic Invoices:** Creemos que ofrecer Subscription Plans y Electronic Invoices permitirá a los Drivers administrar sus beneficios y consultar comprobantes de sus operaciones.
 
 - **FA10 - Configuración de infraestructura y clientes B2B:** Creemos que permitir la configuración de Parking Spots, Parking Zones y Tenants facilitará la incorporación y operación de nuevos estacionamientos en SpotGo.
+
+- **FA11 - Presencia digital y calidad móvil:** Creemos que una Landing Page estática, accesible y disponible en español e inglés ayudará a comunicar el valor de SpotGo y facilitará el acceso a la aplicación móvil.
 
 #### *1.2.2.3. Lean UX Hypothesis Statements*
 
@@ -255,15 +257,17 @@ A partir de los Feature Assumptions identificados, se plantean los siguientes Hy
 
 - **HS05 - Panel de control para administradores:** Creemos que lograremos mejorar la eficiencia en la supervisión del estacionamiento si los administradores y el personal operativo pueden consultar de manera centralizada la ocupación, distribución e incidencias mediante un panel de control administrativo.
 
-- **HS06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que lograremos reducir el tiempo y esfuerzo requerido para encontrar estacionamiento si los conductores pueden consultar la disponibilidad, identificar Parking Zones cercanas y abrir una ruta externa en Google Maps.
+- **HS06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que lograremos reducir el tiempo y esfuerzo requerido para encontrar estacionamiento si los conductores pueden consultar la disponibilidad, identificar las Parking Zones registradas por SpotGo en un mapa integrado y abrir una ruta externa en Google Maps.
 
 - **HS07 - Reportes de ocupación:** Creemos que lograremos mejorar la toma de decisiones relacionadas con la utilización de los espacios si los administradores pueden analizar información histórica y patrones de ocupación mediante una funcionalidad de generación de reportes.
 
-- **HS08 - Reservations y pagos:** Creemos que lograremos mejorar la experiencia de operación si los Drivers registrados pueden seleccionar un Vehicle, reservar un Parking Spot y completar el Digital Payment desde la aplicación, mientras los Parking Administrators pueden registrar Guest Reservations después de recibir el pago físico en efectivo o POS.
+- **HS08 - Reservations y pagos:** Creemos que lograremos mejorar la experiencia de operación si los Drivers registrados pueden seleccionar un Vehicle, reservar un Parking Spot y completar el Digital Payment desde la aplicación, mientras los Parking Administrators pueden registrar Guest Parking Sessions y liquidarlas mediante pago físico en efectivo o POS al finalizar la estadía.
 
 - **HS09 - Subscriptions y Electronic Invoices:** Creemos que lograremos mejorar el seguimiento de las operaciones si los Drivers pueden administrar sus Subscriptions y consultar Electronic Invoices asociadas a sus pagos.
 
 - **HS10 - Configuración de infraestructura y clientes B2B:** Creemos que lograremos facilitar la adopción de SpotGo si los Parking Administrators y SuperAdmins pueden configurar la infraestructura, los perfiles, los Tenants y las condiciones operativas del servicio.
+
+- **HS11 - Presencia digital y calidad móvil:** Creemos que lograremos mejorar la comprensión y adopción inicial de SpotGo si los visitantes pueden conocer la propuesta de valor, navegar hacia la aplicación y consultar la Landing Page en su idioma mediante una experiencia accesible.
 
 #### 1.2.2.4. Lean UX Canvas
 
@@ -298,7 +302,7 @@ Este segmento está conformado por las personas responsables de supervisar, cont
 
 **Segundo Segmento Objetivo: Conductores y usuarios finales**
 
-Este segmento está conformado por personas que utilizan estacionamientos en establecimientos de alta afluencia. Dentro de este segmento pueden existir diferentes tipos de conductores, como clientes, taxistas y otros usuarios autorizados, cuya clasificación mediante el User Profile del Driver permitirá determinar las zonas que pueden utilizar. También se consideran conductores no registrados que llegan directamente al estacionamiento y pueden recibir una Guest Reservation creada por un Parking Administrator.
+Este segmento está conformado por personas que utilizan estacionamientos en establecimientos de alta afluencia. Dentro de este segmento pueden existir diferentes tipos de conductores, como clientes, taxistas y otros usuarios autorizados, cuya clasificación mediante el User Profile del Driver permitirá determinar las zonas que pueden utilizar. También se consideran conductores no registrados que llegan directamente al estacionamiento y pueden tener una Guest Parking Session registrada por un Parking Administrator, sin crear una cuenta ni una Reservation.
 
 - Datos demográficos:
   - **Edad:** Personas adultas habilitadas para conducir. Según estadísticas del MTC, durante 2025 se emitieron 801 474 licencias de conducir en el Perú, de las cuales 256 252 correspondieron a nuevas licencias, lo que permite contextualizar la magnitud del segmento de conductores en el país.
@@ -310,7 +314,7 @@ Este segmento está conformado por personas que utilizan estacionamientos en est
   - **Beneficios buscados:** Reducir el tiempo y esfuerzo dedicado a encontrar estacionamiento, identificar zonas disponibles y contar con una experiencia más organizada.
 - Interacción esperada con la solución:
   - **Frecuencia de uso:** Se espera que utilicen la solución cada vez que accedan a un estacionamiento que forme parte de la plataforma.
-  - **Principales actividades:** Consultar disponibilidad, identificar zonas habilitadas según su User Profile, registrar o seleccionar un Vehicle, crear Reservations y abrir rutas externas hacia Parking Zones cercanas mediante Google Maps.
+  - **Principales actividades:** Los Drivers registrados consultan disponibilidad, identifican zonas habilitadas según su User Profile, registran o seleccionan un Vehicle, crean Reservations y abren rutas externas hacia Parking Zones mediante Google Maps. Los Guest Drivers llegan directamente al estacionamiento y son atendidos por un Parking Administrator, quien registra su Guest Parking Session.
 
 **Relación entre los segmentos objetivo**
 

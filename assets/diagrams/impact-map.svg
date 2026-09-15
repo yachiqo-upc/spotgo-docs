@@ -60,7 +60,7 @@
 
   <rect class="story" x="1438" y="130" width="324" height="98" rx="6" />
   <text class="label" x="1456" y="158">US02 / US03</text>
-  <text class="small" x="1456" y="182"><tspan x="1456" dy="0">Configurar zonas y crear</tspan><tspan x="1456" dy="19">Guest Reservations.</tspan></text>
+  <text class="small" x="1456" y="182"><tspan x="1456" dy="0">Configurar zonas y registrar</tspan><tspan x="1456" dy="19">Guest Parking Sessions.</tspan></text>
   <rect class="story" x="1438" y="240" width="324" height="98" rx="6" />
   <text class="label" x="1456" y="268">US13 / US27 / US18 / US19 / US25 / US26</text>
   <text class="small" x="1456" y="292"><tspan x="1456" dy="0">Registro, reserva, pago,</tspan><tspan x="1456" dy="19">Parking Zones cercanas y Google Maps.</tspan></text>
