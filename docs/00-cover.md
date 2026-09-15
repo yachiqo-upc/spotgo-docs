@@ -77,15 +77,12 @@ Proyecto
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | --- | --- | --- | --- |
-| 0.1.0 | 02/09/26 | @AdrixRyz | docs: agregar estructura inicial de la documentación |
-| 0.1.1 | 03/09/26 | @AdrixRyz | docs: agregar los puntos de Startup Profile |
-| 0.1.2 | 04/09/26 | @AdrixRyz | docs: agregar los puntos de Solution Profile |
-| 0.1.3 | 05/09/26 | @AdrixRyz | docs: agregar los puntos de Competidores |
-| 0.1.4 | 06/09/26 | @AdrixRyz | docs: agregar los puntos de Entrevistas |
-| 0.1.5 | 07/09/26 | @AdrixRyz | docs: agregar los puntos de Needfinding |
-| 0.1.6 | 08/09/26 | @AdrixRyz | docs: agregar los puntos de Requirements specification |
-| 0.1.7 | 09/09/26 | @briicarhuaz | docs: agregar los puntos de EventStorming |
-| 0.1.8 | 10/09/26 | @IamAndreek | docs: agregar los puntos de Context Mapping y Software Architecture |
+| 0.1.0 | 04/09/26 | @AdrixRyz | docs: agregar todos los puntos previos de SpotGo hasta Needfinding |
+| 0.1.1 | 07/09/26 | @AdrixRyz | docs: agregar los puntos de Requirements specification |
+| 0.1.2 | 10/09/26 | @briicarhuaz | docs: agregar los puntos de EventStorming |
+| 0.1.3 | 12/09/26 | @IamAndreek | docs: agregar los puntos de Context Mapping y Software Architecture |
+| 0.1.4 | 14/09/26 | @nes-ro | docs: agregar parte de los puntos de Tactical-Level Domain-Driven Design |
+| 0.1.5 | 15/09/26 | @CesarJrCR | docs: agregar parte de los puntos de Tactical-Level Domain-Driven Design |
 
 # Project Report Collaboration Insights
 
@@ -202,11 +199,38 @@ Proyecto
 [**Bibliografía**](90-bibliography.md)  
 [**Anexos**](99-annexes.md)
 
+<div style="page-break-before: always;"></div>
+
 # Student Outcome
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 | --- | --- | --- |
-| Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software | **Ruiz Mideyros, Adrian (U20241E177)**<br>**AV1:** Text<br><br>**Rojas Tello, Nestor Alonso (U202317099)**<br>**AV1:** Text<br><br>**Contreras Rojas, Cesar Jair (U20241D995)**<br>**AV1:** Text<br><br>**Carhuaz Centeno, Briguite Eryka (U20241D932)**<br>**AV1:** Text<br><br>**Cotrina Siclla, Sofia Alessandra (U20231B120)**<br>**AV1:** Text | **AV1:** Text |
-| Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. | **Ruiz Mideyros, Adrian (U20241E177)**<br>**AV1:** Text<br><br>**Rojas Tello, Nestor Alonso (U202317099)**<br>**AV1:** Text<br><br>**Contreras Rojas, Cesar Jair (U20241D995)**<br>**AV1:** Text<br><br>**Carhuaz Centeno, Briguite Eryka (U20241D932)**<br>**AV1:** Text<br><br>**Cotrina Siclla, Sofia Alessandra (U20231B120)**<br>**AV1:** Text | **AV1:** Text |
+| Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software | **Ruiz Mideyros, Adrian (U20241E177)**<br>**AV1:** Durante esta entrega asumí la organización y consolidación de los contenidos iniciales de SpotGo hasta Needfinding. También incorporé Requirements Specification, relacionando el problema con las User Stories, el Impact Mapping y el Product Backlog.<br><br>**Rojas Tello, Nestor Alonso (U202317099)**<br>**AV1:** Mi participación se concentró en aplicar conceptos de Domain-Driven Design a la perspectiva táctica. Incorporé la parte asignada y revisé cómo expresarla dentro de la documentación del proyecto.<br><br>**Contreras Rojas, Cesar Jair (U20241D995)**<br>**AV1:** Para completar mi participación, incorporaré la parte asignada de Tactical-Level Domain-Driven Design, ampliando el diseño táctico y documentando sus elementos principales.<br><br>**Carhuaz Centeno, Briguite Eryka (U20241D932)**<br>**AV1:** Trabajé en los contenidos y evidencias de EventStorming, organizando eventos, relaciones y procesos relevantes para la solución.<br><br>**Cotrina Siclla, Sofia Alessandra (U20231B120)**<br>**AV1:** Mi aporte se enfocó en explicar la estructura y las relaciones de la solución mediante Context Mapping y Software Architecture. | **AV1:** Durante esta entrega, el equipo aplicó conocimientos de Lean UX, investigación de usuarios, especificación de requisitos, EventStorming, Context Mapping, arquitectura de software y Tactical-Level Domain-Driven Design. Estos aportes permitieron definir mejor el problema, los requisitos, el dominio y la estructura de la solución. |
+| Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. | **Ruiz Mideyros, Adrian (U20241E177)**<br>**AV1:** Al integrar las primeras secciones comprendí que no bastaba con describir SpotGo, sino que debía aplicar técnicas para justificar la propuesta y convertirla en requisitos. Esto me permitió reconocer la importancia de seguir fortaleciendo mis conocimientos de análisis y comunicación de soluciones de software.<br><br>**Rojas Tello, Nestor Alonso (U202317099)**<br>**AV1:** La elaboración de la parte táctica me mostró que DDD requiere estudiarse con profundidad para representar correctamente las responsabilidades y reglas de cada contexto. También identifiqué la necesidad de relacionar el diseño táctico con las decisiones estratégicas.<br><br>**Contreras Rojas, Cesar Jair (U20241D995)**<br>**AV1:** Completar una parte de Tactical-Level Domain-Driven Design representa una oportunidad para seguir aprendiendo a detallar reglas, clases y componentes. Al desarrollar esta parte, aplicaré los conceptos revisados y documentaré lo aprendido.<br><br>**Carhuaz Centeno, Briguite Eryka (U20241D932)**<br>**AV1:** Al trabajar con EventStorming reconocí que comprender el dominio requiere analizarlo desde diferentes perspectivas. También pude aplicar una técnica para ordenar eventos y procesos, identificando la necesidad de seguir aprendiendo métodos de análisis.<br><br>**Cotrina Siclla, Sofia Alessandra (U20231B120)**<br>**AV1:** Al elaborar Context Mapping y Software Architecture comprendí que las decisiones de diseño deben explicar cómo se organizan las responsabilidades y relaciones de la solución. Esta experiencia me permitió reconocer la necesidad de continuar desarrollando mis conocimientos de arquitectura. | **AV1:** El trabajo permitió reconocer que una solución de software requiere aprendizaje continuo y colaboración entre áreas. Cada integrante profundizó en una perspectiva específica y aplicó ese aprendizaje a un entregable concreto, identificando conocimientos que deberán seguir desarrollándose en las siguientes etapas. |
 
 # Objetivos SMART
+
+**Ruiz Mideyros, Adrian (U20241E177)**
+
+- Durante mi primer año como profesional, participaré en la implementación de al menos 3 servicios REST utilizando Spring Boot o ASP.NET Core, incluyendo pruebas automatizadas y documentación OpenAPI, con el propósito de prepararme para trabajar como desarrollador backend.
+- Durante los doce meses posteriores a mi graduación, conseguiré al menos 2 certificaciones relacionados con desarrollo con IA y aplicaré lo aprendido en al menos 2 proyectos, documentando los resultados en mi portafolio profesional.
+
+**Rojas Tello, Nestor Alonso (U202317099)**
+
+-
+-
+
+**Contreras Rojas, Cesar Jair (U20241D995)**
+
+-
+-
+
+**Carhuaz Centeno, Briguite Eryka (U20241D932)**
+
+-
+-
+
+**Cotrina Siclla, Sofia Alessandra (U20231B120)**
+
+-
+-
