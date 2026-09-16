@@ -31,8 +31,11 @@ Ofrecemos un ecosistema de desarrollo móvil flexible y a medida para cualquier 
 - Almacenamiento de datos local en el dispositivo para garantizar su uso continuo en entornos sin conexión a internet.
 - Integración con servicios web RESTful propios para la sincronización y consumo de información en tiempo real.
 - Diseño inclusivo con soporte de internacionalización (i18n) y accesibilidad (a11y) para todo tipo de público.
-- Conexión con SDKs y servicios de terceros como la Google Maps API y Firebase Cloud Messaging, manteniendo el procesamiento de pagos en un servicio interno.
-- Investigación e integración autónoma de tecnologías emergentes para resolver retos técnicos específicos.
+- Conexión con SDKs y servicios de terceros como la Google Maps API (Google, s. f.) y Firebase Cloud Messaging (Firebase, s. f.), manteniendo el procesamiento de pagos en un servicio interno.
+- Integración de Firebase Cloud Messaging como feature de aprendizaje autónomo: el equipo investiga y evalúa el registro de dispositivos, los permisos, la entrega y el manejo de notificaciones push, y aplica la alternativa seleccionada para comunicar eventos de Reservations, Digital Payments y Occupancy Monitoring, documentando las decisiones y limitaciones.
+- Política de idioma: todos los productos digitales, mensajes, interfaces y documentación de SpotGo utilizan English (en_US) por defecto y ofrecen Latin American Spanish (es_419) como alternativa.
+
+La selección de criterios para la experiencia de usuario móvil y el uso de prototipos se fundamenta en investigaciones recientes sobre atributos, métodos de evaluación y procesos de diseño de aplicaciones móviles (Alshammare et al., 2025; İlhan, 2025).
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
@@ -52,7 +55,7 @@ Actualmente, los estacionamientos ubicados en establecimientos con alta afluenci
 
 En periodos de alta demanda, la falta de información actualizada sobre la ocupación puede provocar que los conductores recorran diferentes zonas en busca de un espacio disponible. Asimismo, la ausencia de una organización adecuada según el tipo de usuario puede ocasionar el uso indebido de determinadas zonas y dificultar la supervisión por parte del personal operativo.
 
-La problemática asociada a la búsqueda de estacionamiento ha sido estudiada en diferentes entornos urbanos. Assemi, Baker y Paz (2020), a partir de una investigación realizada con conductores en una zona urbana de alta densidad, encontraron que el 35 % de los participantes empleó más de cinco minutos buscando estacionamiento. Los autores señalan además que disponer de información confiable y en tiempo real sobre estacionamientos puede contribuir a disminuir el tiempo total de viaje y la congestión asociada a la búsqueda de espacios. Asimismo, investigaciones recientes evidencian que la dificultad para encontrar espacios disponibles influye en el comportamiento de búsqueda de los conductores y que esta actividad puede generar efectos relacionados con congestión y emisiones adicionales.
+La problemática asociada a la búsqueda de estacionamiento ha sido estudiada en diferentes entornos urbanos. Assemi et al. (2020), a partir de una investigación realizada con conductores en una zona urbana de alta densidad, encontraron que el 35 % de los participantes empleó más de cinco minutos buscando estacionamiento. Los autores señalan además que disponer de información confiable y en tiempo real sobre estacionamientos puede contribuir a disminuir el tiempo total de viaje y la congestión asociada a la búsqueda de espacios. Investigaciones recientes sobre el inicio de la búsqueda muestran que la escasez de espacios, la velocidad de circulación y las características del destino influyen en el momento en que los conductores comienzan a buscar estacionamiento (Saki & Hagen, 2024; Xiao & Jaller, 2025). Asimismo, la simulación de decisiones de búsqueda evidencia que el precio, la distancia a pie y el tiempo de búsqueda intervienen en la elección entre alternativas de estacionamiento (Fulman et al., 2025).
 
 Para comprender y delimitar la problemática se aplica la técnica 5W2H, considerando las preguntas Who, What, When, Where, Why, How y How Much.
 
@@ -126,7 +129,7 @@ SpotGo busca alcanzar los siguientes objetivos:
 - Permitir que los Drivers creen su cuenta con credenciales de SpotGo o mediante Google Authentication.
 - Permitir que los Drivers registrados administren sus perfiles y registren los vehículos que utilizarán en futuras Reservations.
 - Permitir que los Parking Administrators registren Guest Parking Sessions para Guests que llegan directamente al estacionamiento sin una cuenta registrada.
-- Procesar las Reservations de Drivers registrados, Digital Payments, Subscriptions y Electronic Invoices desde la aplicación móvil.
+- Procesar las Reservations de Drivers registrados, Digital Payments, Subscriptions, Virtual Receipts y Electronic Billing desde la aplicación móvil.
 - Permitir que los Guests paguen físicamente al Parking Administrator mediante efectivo o POS al finalizar su Guest Parking Session, fuera de SpotGo.
 - Mostrar un Digital Parking Map integrado mediante la Google Maps API con las Parking Zones registradas por SpotGo, junto con sus detalles operativos, y permitir que el Driver registrado abra la ruta en la aplicación de Google Maps.
 
@@ -238,7 +241,7 @@ Sabremos que la solución es exitosa cuando observemos una reducción en el tiem
 
 - **FA08 - Reservations y pagos:** Creemos que permitir a los Drivers registrados crear Reservations y Digital Payments desde la aplicación, y a los Parking Administrators registrar Guest Parking Sessions con pago físico mediante efectivo o POS al finalizar la estadía, permitirá completar cada operación según su flujo.
 
-- **FA09 - Subscriptions y Electronic Invoices:** Creemos que ofrecer Subscription Plans y Electronic Invoices permitirá a los Drivers administrar sus beneficios y consultar comprobantes de sus operaciones.
+- **FA09 - Subscriptions y Electronic Billing:** Creemos que ofrecer Subscription Plans y Electronic Billing permitirá a los Drivers administrar sus beneficios y consultar los comprobantes de sus operaciones.
 
 - **FA10 - Configuración de infraestructura y clientes B2B:** Creemos que permitir la configuración de Parking Spots, Parking Zones y Tenants facilitará la incorporación y operación de nuevos estacionamientos en SpotGo.
 
@@ -264,7 +267,7 @@ A partir de los Feature Assumptions identificados, se plantean los siguientes Hy
 
 - **HS08 - Reservations y pagos:** Creemos que lograremos mejorar la experiencia de operación si los Drivers registrados pueden seleccionar un Vehicle, reservar un Parking Spot y completar el Digital Payment desde la aplicación, mientras los Parking Administrators pueden registrar Guest Parking Sessions y liquidarlas mediante pago físico en efectivo o POS al finalizar la estadía.
 
-- **HS09 - Subscriptions y Electronic Invoices:** Creemos que lograremos mejorar el seguimiento de las operaciones si los Drivers pueden administrar sus Subscriptions y consultar Electronic Invoices asociadas a sus pagos.
+- **HS09 - Subscriptions y Electronic Billing:** Creemos que lograremos mejorar el seguimiento de las operaciones si los Drivers pueden administrar sus Subscriptions y consultar los comprobantes asociados a sus pagos.
 
 - **HS10 - Configuración de infraestructura y clientes B2B:** Creemos que lograremos facilitar la adopción de SpotGo si los Parking Administrators y SuperAdmins pueden configurar la infraestructura, los perfiles, los Tenants y las condiciones operativas del servicio.
 
@@ -283,7 +286,7 @@ El Lean UX Canvas sintetiza los principales elementos identificados durante el p
 
 La solución está dirigida inicialmente a dos segmentos objetivo relacionados directamente con la problemática: los administradores o miembros del personal operativo de estacionamientos y los conductores que utilizan estos espacios.
 
-Para contextualizar estos segmentos en el entorno peruano, se consideran estadísticas oficiales del Ministerio de Transportes y Comunicaciones (MTC) relacionadas con el parque automotor y las licencias de conducir. Estas características serán complementadas y contrastadas mediante las entrevistas realizadas a representantes de cada segmento.
+Para contextualizar estos segmentos en el entorno peruano, se consideran estadísticas oficiales del Ministerio de Transportes y Comunicaciones (MTC, 2026a, 2026b) relacionadas con el parque automotor y las licencias de conducir. Estas características serán complementadas y contrastadas mediante las entrevistas realizadas a representantes de cada segmento.
 
 **Primer Segmento Objetivo: Administradores o personal operativo de estacionamiento**
 
@@ -306,7 +309,7 @@ Este segmento está conformado por las personas responsables de supervisar, cont
 Este segmento está conformado por personas que utilizan estacionamientos en establecimientos de alta afluencia. Los usuarios con cuenta participan como Drivers y el User Profile del Driver determina las zonas que puede utilizar. También se consideran Guests que llegan directamente al estacionamiento y pueden tener una Guest Parking Session registrada por un Parking Administrator, sin crear una cuenta ni una Reservation.
 
 - Datos demográficos:
-  - **Edad:** Personas adultas habilitadas para conducir. Según estadísticas del MTC, durante 2025 se emitieron 801 474 licencias de conducir en el Perú, de las cuales 256 252 correspondieron a nuevas licencias, lo que permite contextualizar la magnitud del segmento de conductores en el país.
+  - **Edad:** Personas adultas habilitadas para conducir. Según el Ministerio de Transportes y Comunicaciones (MTC, 2026b), durante 2025 se emitieron 801 474 licencias de conducir en el Perú, de las cuales 256 252 correspondieron a nuevas licencias, lo que permite contextualizar la magnitud del segmento de conductores en el país.
   - **Ocupación:** Diversa, debido a que comprende compradores, trabajadores, taxistas y otras personas que pueden utilizar los establecimientos como Drivers o Guests.
   - **País de residencia:** Perú.
 - Datos conductuales:
