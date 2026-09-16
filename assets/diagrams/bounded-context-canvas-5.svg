@@ -17,7 +17,7 @@
       <rect x="28" y="212" width="760" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="28" y1="246" x2="788" y2="246" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="236" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="44" dy="0">Purpose</tspan></text>
-      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Mantener una representación operacional de la ocupación</tspan><tspan x="44" dy="27.0">física de los espacios mediante sensores, administrar las</tspan><tspan x="44" dy="27.0">sesiones de estacionamiento y detectar incidencias que</tspan><tspan x="44" dy="27.0">requieran alertas, cobros o reasignaciones.</tspan></text>
+      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Mantener una representación operacional de Occupancy</tspan><tspan x="44" dy="27.0">física mediante Occupancy Sensors, administrar las Parking</tspan><tspan x="44" dy="27.0">Sessions y detectar incidencias que requieran Unauthorized</tspan><tspan x="44" dy="27.0">Parking Alerts, Additional Charges o Reassignments.</tspan></text>
     </g>
     <g>
       <rect x="28" y="416" width="760" height="165" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -31,7 +31,7 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Sensor de ocupación, Estado de ocupación, Estado del sensor,</tspan><tspan x="44" dy="27.0">Sesión de estacionamiento, Alerta, Reporte de ocupación.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Occupancy Sensor, Occupancy Status, Sensor Health, Parking</tspan><tspan x="44" dy="27.0">Session, Unauthorized Parking Alert, Occupancy Report.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -45,7 +45,7 @@
       <rect x="28" y="883" width="760" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="28" y1="917" x2="788" y2="917" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="907" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="44" dy="0">Business Decisions</tspan></text>
-      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• El sensor verifica la ocupación en un máximo de 5 segundos</tspan><tspan x="44" dy="25.650000000000002">• Los sensores detectan ocupación, no la identidad del vehículo</tspan><tspan x="44" dy="25.650000000000002">• Si el sensor falla, el espacio pasa a Unavailable</tspan><tspan x="44" dy="25.650000000000002">• No se generan cobros automáticos de sobretiempo sin datos</tspan><tspan x="44" dy="25.650000000000002">  confiables</tspan><tspan x="44" dy="25.650000000000002">• Reservation Status y Occupancy Status evolucionan de forma</tspan><tspan x="44" dy="25.650000000000002">  independiente</tspan></text>
+      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• El Occupancy Sensor verifica el Occupancy Status en un</tspan><tspan x="44" dy="25.650000000000002">  máximo de 5 segundos</tspan><tspan x="44" dy="25.650000000000002">• Los Occupancy Sensors detectan ocupación, no la identidad</tspan><tspan x="44" dy="25.650000000000002">  del Vehicle</tspan><tspan x="44" dy="25.650000000000002">• Si el sensor falla, el Parking Spot pasa a Unavailable</tspan><tspan x="44" dy="25.650000000000002">• No se generan Additional Charges automáticos de Overstayed</tspan><tspan x="44" dy="25.650000000000002">  sin datos confiables</tspan><tspan x="44" dy="25.650000000000002">• Reservation Status y Occupancy Status evolucionan de forma</tspan><tspan x="44" dy="25.650000000000002">  independiente</tspan></text>
     </g>
   
     <g>
@@ -53,7 +53,7 @@
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="806" y1="156" x2="1572" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Inbound Communication</tspan></text>
-      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Recibir lecturas de sensores</tspan><tspan x="822" dy="27.0">• Recibir ReservationCreated / ReservationReassigned</tspan><tspan x="822" dy="27.0">• Resolver alertas administrativas</tspan><tspan x="822" dy="27.0">• Recibir cambios de configuración de zonas y espacios</tspan></text>
+      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Recibir lecturas de Occupancy Sensors</tspan><tspan x="822" dy="27.0">• Recibir ReservationCreated / ReservationReassigned</tspan><tspan x="822" dy="27.0">• Resolver Unauthorized Parking Alerts</tspan><tspan x="822" dy="27.0">• Recibir cambios de configuración de Parking Zones y</tspan><tspan x="822" dy="27.0">  Parking Spots</tspan></text>
     </g>
     <g>
       <rect x="806" y="376" width="766" height="230" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -67,20 +67,20 @@
       <rect x="806" y="620" width="766" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="806" y1="654" x2="1572" y2="654" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="644" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Assumptions</tspan></text>
-      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Cada espacio cuenta con un sensor capaz de comunicar su</tspan><tspan x="822" dy="27.0">estado. El sistema conserva históricos operativos suficientes</tspan><tspan x="822" dy="27.0">para reportes, alertas y análisis de comportamiento.</tspan></text>
+      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Cada Parking Spot cuenta con un Occupancy Sensor capaz de</tspan><tspan x="822" dy="27.0">comunicar su Occupancy Status. El sistema conserva históricos</tspan><tspan x="822" dy="27.0">operativos suficientes para Occupancy Reports, Alerts y análisis</tspan><tspan x="822" dy="27.0">de comportamiento.</tspan></text>
     </g>
     <g>
       <rect x="806" y="784" width="766" height="180" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="784" width="766" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="806" y1="818" x2="1572" y2="818" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="808" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Verification Metrics</tspan></text>
-      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Latencia sensor→aplicación</tspan><tspan x="822" dy="27.0">• Disponibilidad de sensores</tspan><tspan x="822" dy="27.0">• Exactitud del estado de ocupación</tspan><tspan x="822" dy="27.0">• Tiempo medio de resolución de alertas</tspan><tspan x="822" dy="27.0">• N.º de falsos positivos de ocupación</tspan></text>
+      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Latencia de Occupancy Sensor a la aplicación</tspan><tspan x="822" dy="27.0">• Disponibilidad de Occupancy Sensors</tspan><tspan x="822" dy="27.0">• Exactitud del Occupancy Status</tspan><tspan x="822" dy="27.0">• Tiempo medio de resolución de Alerts</tspan><tspan x="822" dy="27.0">• N.º de falsos positivos de Occupancy</tspan></text>
     </g>
     <g>
       <rect x="806" y="978" width="766" height="130" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="978" width="766" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="806" y1="1012" x2="1572" y2="1012" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Open Questions</tspan></text>
-      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿El umbral de alta capacidad será fijo o configurable?</tspan><tspan x="822" dy="27.0">• ¿Cuánto tiempo se conservará el historial de ocupación y</tspan><tspan x="822" dy="27.0">  fallas?</tspan></text>
+      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿El umbral de High Capacity será fijo o configurable?</tspan><tspan x="822" dy="27.0">• ¿Cuánto tiempo se conservará el historial de Occupancy y</tspan><tspan x="822" dy="27.0">  Sensor Failures?</tspan></text>
     </g>
 </svg>

@@ -17,7 +17,7 @@
       <rect x="28" y="212" width="760" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="28" y1="246" x2="788" y2="246" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="236" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="44" dy="0">Purpose</tspan></text>
-      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Gestionar las consecuencias económicas de las reservas y</tspan><tspan x="44" dy="27.0">suscripciones mediante métodos de pago tokenizados, cobros</tspan><tspan x="44" dy="27.0">digitales, reembolsos, comprobantes, saldos pendientes y</tspan><tspan x="44" dy="27.0">cargos adicionales por sobretiempo.</tspan></text>
+      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Gestionar las consecuencias económicas de las Reservations y</tspan><tspan x="44" dy="27.0">Subscriptions mediante Payment Tokens, Digital Payments,</tspan><tspan x="44" dy="27.0">Refunds, Receipts, Outstanding Balances y Additional Charges</tspan><tspan x="44" dy="27.0">por operaciones Overstayed.</tspan></text>
     </g>
     <g>
       <rect x="28" y="416" width="760" height="165" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -31,21 +31,21 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Método de pago tokenizado, Pago digital, Comprobante,</tspan><tspan x="44" dy="27.0">Devolución, Saldo pendiente, Suscripción.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Payment Token, Digital Payment, Receipt, Refund,</tspan><tspan x="44" dy="27.0">Outstanding Balance, Subscription, Additional Charge.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="729" width="760" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="28" y1="763" x2="788" y2="763" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="753" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="44" dy="0">Ubiquitous Language</tspan></text>
-      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Payment Token, Digital Payment, Outstanding Balance,</tspan><tspan x="44" dy="27.0">Subscription, Refund, Additional Charge, Receipt, Electronic</tspan><tspan x="44" dy="27.0">Invoice.</tspan></text>
+      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Payment Token, Digital Payment, Outstanding Balance,</tspan><tspan x="44" dy="27.0">Subscription, Refund, Additional Charge, Receipt,</tspan><tspan x="44" dy="27.0">Electronic Receipt, Electronic Invoice.</tspan></text>
     </g>
     <g>
       <rect x="28" y="883" width="760" height="300" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="883" width="760" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="28" y1="917" x2="788" y2="917" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="907" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="44" dy="0">Business Decisions</tspan></text>
-      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• No se almacenan datos completos de tarjeta, solo tokens</tspan><tspan x="44" dy="25.650000000000002">• El Digital Payment de una Reservation de un Driver</tspan><tspan x="44" dy="25.650000000000002">  registrado debe confirmarse antes de crear la reserva</tspan><tspan x="44" dy="25.650000000000002">• Un cobro digital fallido genera saldo pendiente y puede</tspan><tspan x="44" dy="25.650000000000002">  bloquear nuevas reservas</tspan><tspan x="44" dy="25.650000000000002">• Los descuentos de suscripción también aplican al sobretiempo</tspan><tspan x="44" dy="25.650000000000002">• Los pagos físicos de las Guest Parking Sessions se</tspan><tspan x="44" dy="25.650000000000002">  gestionan fuera de este contexto al finalizar la sesión</tspan></text>
+      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• No se almacenan datos completos de tarjeta, solo Payment</tspan><tspan x="44" dy="25.650000000000002">  Tokens</tspan><tspan x="44" dy="25.650000000000002">• El Digital Payment de una Reservation de un Driver</tspan><tspan x="44" dy="25.650000000000002">  registrado debe confirmarse antes de crear la Reservation</tspan><tspan x="44" dy="25.650000000000002">• Un Digital Payment fallido genera Outstanding Balance y</tspan><tspan x="44" dy="25.650000000000002">  puede bloquear nuevas Reservations</tspan><tspan x="44" dy="25.650000000000002">• Los descuentos de Subscription también aplican al Overstayed</tspan><tspan x="44" dy="25.650000000000002">• El pago físico de las Guest Parking Sessions se</tspan><tspan x="44" dy="25.650000000000002">  gestiona fuera de este contexto al finalizar la Session</tspan></text>
     </g>
   
     <g>
@@ -53,7 +53,7 @@
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="806" y1="156" x2="1572" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="822" dy="0">Inbound Communication</tspan></text>
-      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Guardar método de pago mediante token</tspan><tspan x="822" dy="27.0">• Procesar pago de reserva</tspan><tspan x="822" dy="27.0">• Procesar cobro adicional por sobretiempo</tspan><tspan x="822" dy="27.0">• Solicitar devolución</tspan><tspan x="822" dy="27.0">• Gestionar suscripción y descuentos</tspan><tspan x="822" dy="27.0">• Reintentar cobros fallidos</tspan></text>
+      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Guardar Payment Token</tspan><tspan x="822" dy="27.0">• Procesar Digital Payment de Reservation</tspan><tspan x="822" dy="27.0">• Procesar Additional Charge por Overstayed</tspan><tspan x="822" dy="27.0">• Solicitar Refund</tspan><tspan x="822" dy="27.0">• Gestionar Subscription y descuentos</tspan><tspan x="822" dy="27.0">• Reintentar Digital Payments fallidos</tspan></text>
     </g>
     <g>
       <rect x="806" y="376" width="766" height="230" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -67,20 +67,20 @@
       <rect x="806" y="620" width="766" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="806" y1="654" x2="1572" y2="654" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="644" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="822" dy="0">Assumptions</tspan></text>
-      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">La confirmación de pago puede ser asíncrona. Los importes,</tspan><tspan x="822" dy="27.0">descuentos y fracciones de cobro provienen de las reglas</tspan><tspan x="822" dy="27.0">configuradas del estacionamiento.</tspan></text>
+      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">La confirmación de Digital Payment puede ser asíncrona.</tspan><tspan x="822" dy="27.0">Los importes, descuentos y fracciones de cobro provienen de</tspan><tspan x="822" dy="27.0">las reglas configuradas del estacionamiento.</tspan></text>
     </g>
     <g>
       <rect x="806" y="784" width="766" height="180" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="784" width="766" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="806" y1="818" x2="1572" y2="818" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="808" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="822" dy="0">Verification Metrics</tspan></text>
-      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Tasa de aprobación de pagos</tspan><tspan x="822" dy="27.0">• Tiempo medio de confirmación</tspan><tspan x="822" dy="27.0">• Tiempo de regularización de saldo pendiente</tspan><tspan x="822" dy="27.0">• % de cobros adicionales recuperados</tspan><tspan x="822" dy="27.0">• Tiempo medio de devolución</tspan></text>
+      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Tasa de aprobación de Digital Payments</tspan><tspan x="822" dy="27.0">• Tiempo medio de confirmación</tspan><tspan x="822" dy="27.0">• Tiempo de regularización de Outstanding Balance</tspan><tspan x="822" dy="27.0">• % de Additional Charges recuperados</tspan><tspan x="822" dy="27.0">• Tiempo medio de Refund</tspan></text>
     </g>
     <g>
       <rect x="806" y="978" width="766" height="130" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="978" width="766" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="806" y1="1012" x2="1572" y2="1012" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="822" dy="0">Open Questions</tspan></text>
-      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿Qué proveedor administrará los tokens de pago?</tspan><tspan x="822" dy="27.0">• ¿Cuál será la estrategia exacta de reintentos y manejo de</tspan><tspan x="822" dy="27.0">  fraude?</tspan></text>
+      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿Qué proveedor administrará los Payment Tokens?</tspan><tspan x="822" dy="27.0">• ¿Cuál será la estrategia exacta de Retries y manejo de</tspan><tspan x="822" dy="27.0">  Fraud?</tspan></text>
     </g>
 </svg>

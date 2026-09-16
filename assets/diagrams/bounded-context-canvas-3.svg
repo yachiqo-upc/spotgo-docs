@@ -17,7 +17,7 @@
       <rect x="28" y="212" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="246" x2="788" y2="246" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="236" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Purpose</tspan></text>
-      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Organizar la infraestructura del estacionamiento y coordinar</tspan><tspan x="44" dy="27.0">la búsqueda, disponibilidad, asignación y ciclo de vida de</tspan><tspan x="44" dy="27.0">las Reservations y las Guest Parking Sessions, además de</tspan><tspan x="44" dy="27.0">actualizar la navegación hacia la Parking Zone seleccionada.</tspan></text>
+      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Organizar el Parking Infrastructure y coordinar la búsqueda,</tspan><tspan x="44" dy="27.0">Availability, Assignment y ciclo de vida de las Reservations y</tspan><tspan x="44" dy="27.0">Guest Parking Sessions, además de actualizar la navegación</tspan><tspan x="44" dy="27.0">externa hacia la Parking Zone seleccionada.</tspan></text>
     </g>
     <g>
       <rect x="28" y="416" width="760" height="165" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -31,21 +31,21 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Reserva, Sesión de</tspan><tspan x="44" dy="27.0">invitado, Administrador de estacionamiento, Conductor.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Reservation, Guest,</tspan><tspan x="44" dy="27.0">Guest Parking Session, Parking Administrator, Driver.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="729" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="763" x2="788" y2="763" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="753" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Ubiquitous Language</tspan></text>
-      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Availability,</tspan><tspan x="44" dy="27.0">Reservation, Guest Parking Session, Digital Parking Map,</tspan><tspan x="44" dy="27.0">Reassignment.</tspan></text>
+      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Availability,</tspan><tspan x="44" dy="27.0">Reservation, Guest, Guest Parking Session,</tspan><tspan x="44" dy="27.0">Digital Parking Map, Reassignment.</tspan></text>
     </g>
     <g>
       <rect x="28" y="883" width="760" height="300" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="883" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="917" x2="788" y2="917" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="907" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Business Decisions</tspan></text>
-      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Una reserva incluye zona, espacio, fecha, hora de inicio y</tspan><tspan x="44" dy="25.650000000000002">  duración</tspan><tspan x="44" dy="25.650000000000002">• El espacio se bloquea temporalmente mientras se confirma el</tspan><tspan x="44" dy="25.650000000000002">  pago</tspan><tspan x="44" dy="25.650000000000002">• Las modificaciones y extensiones requieren disponibilidad</tspan><tspan x="44" dy="25.650000000000002">• Una reasignación ocurre ante conflicto de ocupación o</tspan><tspan x="44" dy="25.650000000000002">  indisponibilidad</tspan><tspan x="44" dy="25.650000000000002">• Si no hay espacio compatible, se ofrece alternativa o</tspan><tspan x="44" dy="25.650000000000002">  devolución</tspan></text>
+      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Una Reservation incluye Parking Zone, Parking Spot, fecha,</tspan><tspan x="44" dy="25.650000000000002">  hora de inicio y duración</tspan><tspan x="44" dy="25.650000000000002">• El Parking Spot se bloquea temporalmente mientras se</tspan><tspan x="44" dy="25.650000000000002">  confirma el Digital Payment</tspan><tspan x="44" dy="25.650000000000002">• Las modificaciones y extensiones requieren Availability</tspan><tspan x="44" dy="25.650000000000002">• Una Reassignment ocurre ante un Occupancy Conflict o un</tspan><tspan x="44" dy="25.650000000000002">  estado Unavailable</tspan><tspan x="44" dy="25.650000000000002">• Si no hay Parking Spot compatible, se ofrece una alternativa</tspan><tspan x="44" dy="25.650000000000002">  o un Refund</tspan></text>
     </g>
 
     <g>
@@ -53,7 +53,7 @@
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="806" y1="156" x2="1572" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="822" dy="0">Inbound Communication</tspan></text>
-      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Configurar tenant, zonas y espacios</tspan><tspan x="822" dy="27.0">• Cargar floor plan / generar mapa digital</tspan><tspan x="822" dy="27.0">• Buscar disponibilidad</tspan><tspan x="822" dy="27.0">• Crear, modificar, extender o cancelar reserva</tspan><tspan x="822" dy="27.0">• Registrar Guest Parking Session</tspan><tspan x="822" dy="27.0">• Recibir ReservationPaymentApproved / ReservationPaymentRejected</tspan><tspan x="822" dy="27.0">• Recibir conflictos de ocupación o fallas del sensor</tspan></text>
+      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Configurar Tenant, Parking Zones y Parking Spots</tspan><tspan x="822" dy="27.0">• Cargar Floor Plan / generar Digital Parking Map</tspan><tspan x="822" dy="27.0">• Buscar Availability</tspan><tspan x="822" dy="27.0">• Crear, modificar, extender o cancelar Reservation</tspan><tspan x="822" dy="27.0">• Registrar Guest Parking Session</tspan><tspan x="822" dy="27.0">• Recibir ReservationPaymentApproved / ReservationPaymentRejected</tspan><tspan x="822" dy="27.0">• Recibir Occupancy Conflicts o Sensor Failures</tspan></text>
     </g>
     <g>
       <rect x="806" y="376" width="766" height="230" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -67,20 +67,20 @@
       <rect x="806" y="620" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="806" y1="654" x2="1572" y2="654" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="644" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="822" dy="0">Assumptions</tspan></text>
-      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Las Guest Parking Sessions no requieren reserva y se</tspan><tspan x="822" dy="27.0">registran al ingreso; el pago físico se confirma fuera de</tspan><tspan x="822" dy="27.0">SpotGo al finalizar la sesión. Google Maps calcula</tspan><tspan x="822" dy="27.0">externamente la ruta hacia la Parking Zone seleccionada.</tspan></text>
+      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Las Guest Parking Sessions no requieren Reservation y se</tspan><tspan x="822" dy="27.0">registran al ingreso; el pago físico se confirma fuera de</tspan><tspan x="822" dy="27.0">SpotGo al finalizar la sesión. Google Maps calcula</tspan><tspan x="822" dy="27.0">externamente la ruta hacia la Parking Zone seleccionada.</tspan></text>
     </g>
     <g>
       <rect x="806" y="784" width="766" height="180" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="784" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="806" y1="818" x2="1572" y2="818" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="808" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="822" dy="0">Verification Metrics</tspan></text>
-      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Tiempo medio de búsqueda de disponibilidad</tspan><tspan x="822" dy="27.0">• Tasa de reservas confirmadas</tspan><tspan x="822" dy="27.0">• N.º de reservas dobles evitadas</tspan><tspan x="822" dy="27.0">• Tasa de reasignaciones exitosas</tspan><tspan x="822" dy="27.0">• Tiempo desde pago aprobado hasta reserva confirmada</tspan></text>
+      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Tiempo medio de búsqueda de Availability</tspan><tspan x="822" dy="27.0">• Tasa de Reservations confirmadas</tspan><tspan x="822" dy="27.0">• N.º de Reservations dobles evitadas</tspan><tspan x="822" dy="27.0">• Tasa de Reassignments exitosas</tspan><tspan x="822" dy="27.0">• Tiempo desde Digital Payment aprobado hasta</tspan><tspan x="822" dy="27.0">  Reservation confirmada</tspan></text>
     </g>
     <g>
       <rect x="806" y="978" width="766" height="130" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="978" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="806" y1="1012" x2="1572" y2="1012" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="822" dy="0">Open Questions</tspan></text>
-      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿Cuál es el tiempo de expiración del bloqueo temporal?</tspan><tspan x="822" dy="27.0">• ¿Cómo se priorizan múltiples espacios compatibles en una</tspan><tspan x="822" dy="27.0">  reasignación?</tspan></text>
+      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿Cuál es el tiempo de expiración del Temporary Lock?</tspan><tspan x="822" dy="27.0">• ¿Cómo se priorizan múltiples Parking Spots compatibles en</tspan><tspan x="822" dy="27.0">  una Reassignment?</tspan></text>
     </g>
 </svg>

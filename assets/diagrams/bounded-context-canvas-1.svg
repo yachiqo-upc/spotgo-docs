@@ -17,7 +17,7 @@
       <rect x="28" y="212" width="760" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="28" y1="246" x2="788" y2="246" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="236" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="44" dy="0">Purpose</tspan></text>
-      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Gestionar la identidad de negocio del conductor, sus datos,</tspan><tspan x="44" dy="27.0">sus vehículos y los perfiles asociados, y exponer la</tspan><tspan x="44" dy="27.0">información necesaria para validar elegibilidad antes de</tspan><tspan x="44" dy="27.0">reservar o ejecutar operaciones dentro de SpotGo.</tspan></text>
+      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Gestionar la identidad de negocio del Driver, sus datos,</tspan><tspan x="44" dy="27.0">sus Vehicles y los User Profiles asociados, y exponer la</tspan><tspan x="44" dy="27.0">información necesaria para validar elegibilidad antes de</tspan><tspan x="44" dy="27.0">crear Reservations o ejecutar operaciones dentro de SpotGo.</tspan></text>
     </g>
     <g>
       <rect x="28" y="416" width="760" height="165" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -31,21 +31,21 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Conductor, Vehículo, Perfil de usuario, Visitante, Staff,</tspan><tspan x="44" dy="27.0">Administrador de estacionamiento.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Driver, Vehicle, User Profile, Staff, Parking Administrator.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="729" width="760" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="28" y1="763" x2="788" y2="763" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="753" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="44" dy="0">Ubiquitous Language</tspan></text>
-      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Driver, Vehicle, User Profile, Visitor, Staff, Profile</tspan><tspan x="44" dy="27.0">Assignment, Vehicle Association, Driver Data.</tspan></text>
+      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Driver, Vehicle, User Profile, Staff, Profile Assignment,</tspan><tspan x="44" dy="27.0">Vehicle Association, Driver Data.</tspan></text>
     </g>
     <g>
       <rect x="28" y="883" width="760" height="300" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="883" width="760" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="28" y1="917" x2="788" y2="917" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="907" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="44" dy="0">Business Decisions</tspan></text>
-      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Un conductor debe tener un vehículo asociado antes de crear</tspan><tspan x="44" dy="25.650000000000002">  una reserva</tspan><tspan x="44" dy="25.650000000000002">• El perfil pertenece al conductor y determina restricciones</tspan><tspan x="44" dy="25.650000000000002">  operativas</tspan><tspan x="44" dy="25.650000000000002">• La asignación o revocación de Staff solo puede realizarla un</tspan><tspan x="44" dy="25.650000000000002">  actor autorizado</tspan><tspan x="44" dy="25.650000000000002">• Los vehículos externos no crean registros persistentes de</tspan><tspan x="44" dy="25.650000000000002">  conductor/vehículo</tspan></text>
+      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Un Driver debe tener un Vehicle asociado antes de crear</tspan><tspan x="44" dy="25.650000000000002">  una Reservation</tspan><tspan x="44" dy="25.650000000000002">• El User Profile pertenece al Driver y determina restricciones</tspan><tspan x="44" dy="25.650000000000002">  operativas</tspan><tspan x="44" dy="25.650000000000002">• La asignación o revocación del User Profile Staff solo puede</tspan><tspan x="44" dy="25.650000000000002">  realizarla un actor autorizado</tspan><tspan x="44" dy="25.650000000000002">• Los Vehicles externos no crean registros persistentes de</tspan><tspan x="44" dy="25.650000000000002">  Driver o Vehicle</tspan></text>
     </g>
   
     <g>
@@ -53,34 +53,34 @@
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="806" y1="156" x2="1572" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Inbound Communication</tspan></text>
-      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Registrar conductor</tspan><tspan x="822" dy="27.0">• Registrar y asociar vehículo</tspan><tspan x="822" dy="27.0">• Asignar perfil de usuario</tspan><tspan x="822" dy="27.0">• Revocar perfil Staff</tspan><tspan x="822" dy="27.0">• Consultar conductor, vehículo y perfil desde</tspan><tspan x="822" dy="27.0">  Parking Infrastructure</tspan></text>
+      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Registrar Driver</tspan><tspan x="822" dy="27.0">• Registrar y asociar Vehicle</tspan><tspan x="822" dy="27.0">• Asignar User Profile</tspan><tspan x="822" dy="27.0">• Revocar User Profile Staff</tspan><tspan x="822" dy="27.0">• Consultar Driver, Vehicle y User Profile desde</tspan><tspan x="822" dy="27.0">  Parking Infrastructure</tspan></text>
     </g>
     <g>
       <rect x="806" y="376" width="766" height="230" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="376" width="766" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="806" y1="410" x2="1572" y2="410" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="400" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Outbound Communication</tspan></text>
-      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• DriverRegistered</tspan><tspan x="822" dy="27.0">• VehicleAssociated</tspan><tspan x="822" dy="27.0">• ProfileAssigned / ProfileRevoked</tspan><tspan x="822" dy="27.0">• DriverProfileValidated hacia Parking</tspan><tspan x="822" dy="27.0">  Infrastructure</tspan><tspan x="822" dy="27.0">• Datos de elegibilidad hacia Identity &amp; Access Management</tspan></text>
+      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• DriverRegistered</tspan><tspan x="822" dy="27.0">• VehicleAssociated</tspan><tspan x="822" dy="27.0">• ProfileAssigned / ProfileRevoked</tspan><tspan x="822" dy="27.0">• DriverProfileValidated hacia Parking</tspan><tspan x="822" dy="27.0">  Infrastructure</tspan><tspan x="822" dy="27.0">• Eligibility Data hacia Identity &amp; Access Management</tspan></text>
     </g>
     <g>
       <rect x="806" y="620" width="766" height="150" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="620" width="766" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="806" y1="654" x2="1572" y2="654" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="644" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Assumptions</tspan></text>
-      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Este contexto es la fuente autorizada de datos del conductor</tspan><tspan x="822" dy="27.0">y del vehículo. Los perfiles pueden variar según la operación</tspan><tspan x="822" dy="27.0">del tenant, pero la asociación conductor–vehículo debe</tspan><tspan x="822" dy="27.0">mantenerse consistente.</tspan></text>
+      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Este contexto es la fuente autorizada de datos del Driver</tspan><tspan x="822" dy="27.0">y del Vehicle. Los User Profiles pueden variar según la</tspan><tspan x="822" dy="27.0">operación del Tenant, pero la asociación Driver–Vehicle</tspan><tspan x="822" dy="27.0">debe mantenerse consistente.</tspan></text>
     </g>
     <g>
       <rect x="806" y="784" width="766" height="180" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="784" width="766" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="806" y1="818" x2="1572" y2="818" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="808" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Verification Metrics</tspan></text>
-      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• % de vehículos correctamente asociados</tspan><tspan x="822" dy="27.0">• Tiempo medio de consulta de elegibilidad</tspan><tspan x="822" dy="27.0">• N.º de inconsistencias conductor–perfil</tspan><tspan x="822" dy="27.0">• N.º de asignaciones o revocaciones inválidas</tspan></text>
+      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• % de Vehicles correctamente asociados</tspan><tspan x="822" dy="27.0">• Tiempo medio de consulta de elegibilidad</tspan><tspan x="822" dy="27.0">• N.º de inconsistencias Driver–User Profile</tspan><tspan x="822" dy="27.0">• N.º de Profile Assignments o revocaciones inválidas</tspan></text>
     </g>
     <g>
       <rect x="806" y="978" width="766" height="130" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="978" width="766" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="806" y1="1012" x2="1572" y2="1012" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Open Questions</tspan></text>
-      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿El perfil Staff es global o específico por tenant?</tspan><tspan x="822" dy="27.0">• ¿Qué ocurre con una reserva confirmada si cambia el perfil</tspan><tspan x="822" dy="27.0">  del conductor?</tspan></text>
+      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿El User Profile Staff es global o específico por Tenant?</tspan><tspan x="822" dy="27.0">• ¿Qué ocurre con una Reservation confirmada si cambia el User Profile</tspan><tspan x="822" dy="27.0">  del Driver?</tspan></text>
     </g>
 </svg>

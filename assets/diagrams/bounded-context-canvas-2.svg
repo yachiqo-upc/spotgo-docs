@@ -17,7 +17,7 @@
       <rect x="28" y="212" width="760" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="28" y1="246" x2="788" y2="246" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="236" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="44" dy="0">Purpose</tspan></text>
-      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Autenticar a los usuarios de SpotGo y autorizar el acceso a</tspan><tspan x="44" dy="27.0">capacidades del sistema según sus credenciales y rol,</tspan><tspan x="44" dy="27.0">garantizando que solo actores válidos ejecuten operaciones</tspan><tspan x="44" dy="27.0">permitidas.</tspan></text>
+      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Autenticar a los Users de SpotGo y autorizar el acceso a</tspan><tspan x="44" dy="27.0">las capacidades del sistema según sus Credentials y Role,</tspan><tspan x="44" dy="27.0">garantizando que solo actores válidos ejecuten operaciones</tspan><tspan x="44" dy="27.0">permitidas.</tspan></text>
     </g>
     <g>
       <rect x="28" y="416" width="760" height="165" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -31,21 +31,21 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Usuario autenticado, Rol, Credencial, Sesión, Administrador</tspan><tspan x="44" dy="27.0">de estacionamiento, SuperAdmin.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Authenticated User, Role, Credential, Session,</tspan><tspan x="44" dy="27.0">Parking Administrator, SuperAdmin.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="729" width="760" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="28" y1="763" x2="788" y2="763" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="753" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="44" dy="0">Ubiquitous Language</tspan></text>
-      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Credential, Session, Role, Access, Login, Access Rejected,</tspan><tspan x="44" dy="27.0">Driver, Parking Administrator, SuperAdmin.</tspan></text>
+      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Credential, Session, Role, Access, Login,</tspan><tspan x="44" dy="27.0">Google Authentication, Access Rejected, Driver,</tspan><tspan x="44" dy="27.0">Parking Administrator, SuperAdmin.</tspan></text>
     </g>
     <g>
       <rect x="28" y="883" width="760" height="300" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="883" width="760" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="28" y1="917" x2="788" y2="917" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="907" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="44" dy="0">Business Decisions</tspan></text>
-      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Solo credenciales válidas permiten iniciar sesión</tspan><tspan x="44" dy="25.650000000000002">• Las funciones disponibles dependen del rol del usuario</tspan><tspan x="44" dy="25.650000000000002">• Una revocación de rol impide nuevas operaciones asociadas a</tspan><tspan x="44" dy="25.650000000000002">  ese rol</tspan><tspan x="44" dy="25.650000000000002">• La autorización es previa a las operaciones críticas</tspan></text>
+      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Solo las Credentials válidas permiten iniciar Login</tspan><tspan x="44" dy="25.650000000000002">• Las funciones disponibles dependen del Role del User</tspan><tspan x="44" dy="25.650000000000002">• Una revocación de Role impide nuevas operaciones asociadas a</tspan><tspan x="44" dy="25.650000000000002">  ese Role</tspan><tspan x="44" dy="25.650000000000002">• La autorización es previa a las Critical Operations</tspan></text>
     </g>
   
     <g>
@@ -53,34 +53,34 @@
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="806" y1="156" x2="1572" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="822" dy="0">Inbound Communication</tspan></text>
-      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Registrar credenciales</tspan><tspan x="822" dy="27.0">• Iniciar sesión</tspan><tspan x="822" dy="27.0">• Validar credenciales y rol</tspan><tspan x="822" dy="27.0">• Recibir cambios de perfil o rol desde Profiles &amp;</tspan><tspan x="822" dy="27.0">  Vehicles Management</tspan></text>
+      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Registrar Credentials</tspan><tspan x="822" dy="27.0">• Iniciar Login</tspan><tspan x="822" dy="27.0">• Validar Credentials y Role</tspan><tspan x="822" dy="27.0">• Recibir cambios de User Profile o Role desde Profiles &amp;</tspan><tspan x="822" dy="27.0">  Vehicles Management</tspan></text>
     </g>
     <g>
       <rect x="806" y="376" width="766" height="230" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="376" width="766" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="806" y1="410" x2="1572" y2="410" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="400" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="822" dy="0">Outbound Communication</tspan></text>
-      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• SessionStarted</tspan><tspan x="822" dy="27.0">• AccessRejected</tspan><tspan x="822" dy="27.0">• AccessGrantedByRole hacia la app y hacia Parking</tspan><tspan x="822" dy="27.0">  Infrastructure</tspan><tspan x="822" dy="27.0">• Señales de revocación de acceso</tspan></text>
+      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• SessionStarted</tspan><tspan x="822" dy="27.0">• AccessRejected</tspan><tspan x="822" dy="27.0">• AccessGrantedByRole hacia la aplicación y hacia Parking</tspan><tspan x="822" dy="27.0">  Infrastructure</tspan><tspan x="822" dy="27.0">• Señales de revocación de Access</tspan></text>
     </g>
     <g>
       <rect x="806" y="620" width="766" height="150" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="620" width="766" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="806" y1="654" x2="1572" y2="654" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="644" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="822" dy="0">Assumptions</tspan></text>
-      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">La autenticación se modela como capacidad interna del</tspan><tspan x="822" dy="27.0">sistema. No se depende de Google Auth ni de un proveedor de</tspan><tspan x="822" dy="27.0">identidad externo para el alcance académico del proyecto.</tspan></text>
+      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">La autenticación se modela como capacidad interna del</tspan><tspan x="822" dy="27.0">sistema, con Google Authentication como opción para que los</tspan><tspan x="822" dy="27.0">Drivers creen su cuenta o inicien Login mediante Google.</tspan></text>
     </g>
     <g>
       <rect x="806" y="784" width="766" height="180" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="784" width="766" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="806" y1="818" x2="1572" y2="818" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="808" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="822" dy="0">Verification Metrics</tspan></text>
-      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Tasa de autenticaciones exitosas</tspan><tspan x="822" dy="27.0">• Tasa de accesos correctamente rechazados</tspan><tspan x="822" dy="27.0">• Latencia de inicio de sesión</tspan><tspan x="822" dy="27.0">• Tiempo de propagación de una revocación de rol</tspan></text>
+      <text x="822" y="844" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Tasa de autenticaciones exitosas</tspan><tspan x="822" dy="27.0">• Tasa de Access correctamente rechazados</tspan><tspan x="822" dy="27.0">• Latencia de Login</tspan><tspan x="822" dy="27.0">• Tiempo de propagación de una revocación de Role</tspan></text>
     </g>
     <g>
       <rect x="806" y="978" width="766" height="130" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="978" width="766" height="34" rx="12" fill="#6A5ACD" opacity="0.12" />
       <line x1="806" y1="1012" x2="1572" y2="1012" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6A5ACD" font-weight="bold"><tspan x="822" dy="0">Open Questions</tspan></text>
-      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿Se incorporará MFA en el futuro?</tspan><tspan x="822" dy="27.0">• ¿Cuál será la política de recuperación de cuenta y</tspan><tspan x="822" dy="27.0">  expiración de sesiones?</tspan></text>
+      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿Se incorporará MFA en el futuro?</tspan><tspan x="822" dy="27.0">• ¿Cuál será la política de recuperación de Account y</tspan><tspan x="822" dy="27.0">  expiración de Sessions?</tspan></text>
     </g>
 </svg>
