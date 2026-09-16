@@ -1,0 +1,332 @@
+@startuml spotgo-domain-class-diagram
+skinparam classAttributeIconSize 0
+skinparam monochrome false
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+title SpotGo Domain Class Diagram (Domain-Driven Design)
+
+' =====================================================================
+' BOUNDED CONTEXT 1: PROFILES & VEHICLES MANAGEMENT
+' =====================================================================
+package "Profiles & Vehicles Management Context" #E1F5FE {
+    class Driver <<AggregateRoot>> {
+        - UUID id
+        - UUID userId
+        - FullName fullName
+        - Email email
+        - UserProfileType profileType
+        - List<Vehicle> vehicles
+        + registerVehicle(brand: String, model: String, color: String): Vehicle
+        + removeVehicle(vehicleId: UUID): Void
+        + assignProfileType(newType: UserProfileType): Void
+    }
+
+    class Vehicle <<Entity>> {
+        - UUID id
+        - UUID driverId
+        - String brand
+        - String model
+        - String color
+        - VehicleStatus status
+    }
+
+    class FullName <<ValueObject>> {
+        - String firstName
+        - String lastName
+        + getFullName(): String
+    }
+
+    enum UserProfileType <<Enum>> {
+        VISITOR
+        STAFF
+        TAXI_DRIVER
+        VIP
+    }
+
+    enum VehicleStatus <<Enum>> {
+        ACTIVE
+        INACTIVE
+    }
+
+    interface DriverRepository <<Repository>> {
+        + findById(id: UUID): Driver
+        + findByUserId(userId: UUID): Driver
+        + save(driver: Driver): Void
+    }
+
+    Driver "1" *-- "0..*" Vehicle : posee >
+    Driver "1" *-- "1" FullName
+    Driver "1" --> "1" UserProfileType : clasificado_como >
+    Vehicle "1" --> "1" VehicleStatus
+}
+
+' =====================================================================
+' BOUNDED CONTEXT 2: IDENTITY & ACCESS MANAGEMENT (IAM)
+' =====================================================================
+package "Identity & Access Management Context" #F3E5F5 {
+    class UserAccount <<AggregateRoot>> {
+        - UUID id
+        - String email
+        - String passwordHash
+        - UserRole role
+        - Boolean isActive
+        + authenticate(password: String): Boolean
+        + changePassword(newHash: String): Void
+    }
+
+    class Tenant <<AggregateRoot>> {
+        - UUID id
+        - String companyName
+        - String ruc
+        - String contactEmail
+        - Boolean isActive
+        + activate(): Void
+        + suspend(): Void
+    }
+
+    enum UserRole <<Enum>> {
+        SUPER_ADMIN
+        PARKING_ADMIN
+        DRIVER
+    }
+
+    interface UserRepository <<Repository>> {
+        + findById(id: UUID): UserAccount
+        + findByEmail(email: String): UserAccount
+        + save(user: UserAccount): Void
+    }
+
+    UserAccount "1" --> "1" UserRole : asignado_con >
+}
+
+' =====================================================================
+' BOUNDED CONTEXT 3: PARKING INFRASTRUCTURE
+' =====================================================================
+package "Parking Infrastructure Context" #E8F5E9 {
+    class ParkingFacility <<AggregateRoot>> {
+        - UUID id
+        - UUID tenantId
+        - String name
+        - Coordinates coordinates
+        - List<ParkingZone> zones
+        + addZone(zone: ParkingZone): Void
+        + calculateTotalCapacity(): Integer
+    }
+
+    class ParkingZone <<Entity>> {
+        - UUID id
+        - String name
+        - UserProfileType allowedProfile
+        - String colorCode
+        - List<ParkingSpot> spots
+        + addSpot(spot: ParkingSpot): Void
+    }
+
+    class ParkingSpot <<Entity>> {
+        - UUID id
+        - String spotCode
+        - Boolean isActive
+    }
+
+    class Reservation <<AggregateRoot>> {
+        - UUID id
+        - UUID driverId
+        - UUID vehicleId
+        - UUID spotId
+        - Timestamp startTime
+        - Timestamp endTime
+        - ReservationStatus status
+        + confirmPayment(): Void
+        + markAsNoShow(): Void
+        + cancel(): Void
+    }
+
+    class GuestParkingSession <<AggregateRoot>> {
+        - UUID id
+        - UUID spotId
+        - String licensePlate
+        - Timestamp checkInTime
+        - Timestamp checkOutTime
+        - Money calculatedAmount
+        - Boolean isPaid
+        + closeSession(checkOut: Timestamp, amount: Money): Void
+    }
+
+    class Coordinates <<ValueObject>> {
+        - Decimal latitude
+        - Decimal longitude
+    }
+
+    enum ReservationStatus <<Enum>> {
+        RESERVED
+        ACTIVE
+        COMPLETED
+        CANCELLED
+        NO_SHOW
+        OVERSTAYED
+    }
+
+    interface ParkingFacilityRepository <<Repository>> {
+        + findById(id: UUID): ParkingFacility
+        + findByTenantId(tenantId: UUID): List<ParkingFacility>
+        + save(facility: ParkingFacility): Void
+    }
+
+    ParkingFacility "1" *-- "1..*" ParkingZone : contiene >
+    ParkingFacility "1" *-- "1" Coordinates
+    ParkingZone "1" *-- "1..*" ParkingSpot : dividida_en >
+    Reservation "1" --> "1" ReservationStatus
+}
+
+' =====================================================================
+' BOUNDED CONTEXT 4: PAYMENTS & BILLING
+' =====================================================================
+package "Payments & Billing Context" #FFF3E0 {
+    class DigitalPayment <<AggregateRoot>> {
+        - UUID id
+        - UUID reservationId
+        - UUID driverId
+        - Money amount
+        - PaymentStatus status
+        - Timestamp processedAt
+        + processPayment(): Boolean
+        + refund(): Void
+    }
+
+    class Subscription <<AggregateRoot>> {
+        - UUID id
+        - UUID driverId
+        - SubscriptionPlan plan
+        - Timestamp startDate
+        - Timestamp endDate
+        - Boolean autoRenew
+        + getDiscountPercentage(): Decimal
+        + cancel(): Void
+    }
+
+    class Receipt <<AggregateRoot>> {
+        - UUID id
+        - UUID paymentId
+        - String receiptNumber
+        - DocumentType documentType
+        - Money totalAmount
+        - Timestamp issuedAt
+        + generatePdf(): String
+    }
+
+    class OutstandingBalance <<AggregateRoot>> {
+        - UUID id
+        - UUID driverId
+        - Money pendingAmount
+        - Boolean isCleared
+        + clearBalance(): Void
+    }
+
+    class Money <<ValueObject>> {
+        - Decimal amount
+        - String currency
+    }
+
+    enum SubscriptionPlan <<Enum>> {
+        FREE
+        PLUS_MONTHLY
+        PLUS_ANNUAL
+    }
+
+    enum PaymentStatus <<Enum>> {
+        PENDING
+        APPROVED
+        REJECTED
+        REFUNDED
+    }
+
+    enum DocumentType <<Enum>> {
+        ELECTRONIC_RECEIPT
+        ELECTRONIC_INVOICE
+    }
+
+    DigitalPayment "1" *-- "1" Money
+    DigitalPayment "1" --> "1" PaymentStatus
+    Subscription "1" --> "1" SubscriptionPlan
+    Receipt "1" *-- "1" Money
+    Receipt "1" --> "1" DocumentType
+    OutstandingBalance "1" *-- "1" Money
+}
+
+' =====================================================================
+' BOUNDED CONTEXT 5: OCCUPANCY & MONITORING
+' =====================================================================
+package "Occupancy & Monitoring Context" #FCE4EC {
+    class OccupancySensor <<AggregateRoot>> {
+        - UUID id
+        - UUID spotId
+        - String macAddress
+        - Integer batteryLevel
+        - SensorHealthStatus healthStatus
+        + ping(): Void
+        + reportStatus(status: OccupancyStatus): OccupancyEvent
+    }
+
+    class ParkingSession <<AggregateRoot>> {
+        - UUID id
+        - UUID spotId
+        - UUID reservationId
+        - Timestamp entryTime
+        - Timestamp exitTime
+        - SessionState state
+        + completeSession(): Void
+    }
+
+    class OperationalAlert <<AggregateRoot>> {
+        - UUID id
+        - UUID spotId
+        - AlertType alertType
+        - Timestamp createdAt
+        - Boolean isResolved
+        + resolve(): Void
+    }
+
+    class OccupancyEvent <<ValueObject>> {
+        - OccupancyStatus status
+        - Timestamp changedAt
+    }
+
+    enum OccupancyStatus <<Enum>> {
+        AVAILABLE
+        OCCUPIED
+        UNAVAILABLE
+    }
+
+    enum SensorHealthStatus <<Enum>> {
+        OPERATIONAL
+        LOW_BATTERY
+        DISCONNECTED
+    }
+
+    enum AlertType <<Enum>> {
+        UNAUTHORIZED_PARKING
+        HIGH_CAPACITY
+        SENSOR_FAILURE
+    }
+
+    OccupancySensor "1" *-- "0..*" OccupancyEvent : emite >
+    OccupancySensor "1" --> "1" SensorHealthStatus
+    OccupancyEvent "1" --> "1" OccupancyStatus
+    OperationalAlert "1" --> "1" AlertType
+}
+
+' =====================================================================
+' RELACIONES INTER-CONTEXTOS (Referencias por ID / Débiles)
+' =====================================================================
+Driver .up.> UserAccount : "referencia (userId)"
+ParkingFacility .up.> Tenant : "pertenece_a (tenantId)"
+Reservation .up.> Driver : "realizada_por (driverId)"
+Reservation .up.> ParkingSpot : "asigna (spotId)"
+GuestParkingSession .up.> ParkingSpot : "ocupa (spotId)"
+DigitalPayment .up.> Reservation : "paga (reservationId)"
+Receipt .up.> DigitalPayment : "respalda (paymentId)"
+OccupancySensor .up.> ParkingSpot : "monitorea (spotId)"
+ParkingSession .up.> Reservation : "vincula (reservationId)"
+
+@enduml
