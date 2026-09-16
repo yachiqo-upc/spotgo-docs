@@ -1034,12 +1034,85 @@ En conjunto, estos canvases permiten establecer límites claros entre las respon
 
 #### *2.5.2. Context Mapping*
 
-#### *2.5.3. Software Architecture*
+#### 2.5.3. Software Architecture
 
-#### ***2.5.3.1. Software Architecture Context Level Diagrams***
+#### 2.5.3.1. Software Architecture Context Level Diagrams
 
-#### ***2.5.3.2. Software Architecture Container Level Diagrams***
+El **Diagrama de Contexto** constituye el primer nivel de abstracción del Modelo C4. Su propósito es delimitar el alcance de **SpotGo** y representar su interacción con los principales actores humanos y sistemas externos.
 
-#### ***2.5.3.3. Software Architecture Deployment Diagrams***
+![Context Level Diagram](../assets/diagrams/Context_Level_Diagram.png)
+
+El diagrama identifica tres actores principales. El **Driver** utiliza la aplicación para consultar la disponibilidad de espacios, registrar sus vehículos, realizar reservas y efectuar pagos. El **Parking Administrator** utiliza la solución para administrar la infraestructura del estacionamiento, así como los perfiles, reservas y operaciones asociadas. Finalmente, el **SuperAdmin** administra los *Tenants* y realiza la configuración inicial de los estacionamientos.
+
+En cuanto a las integraciones externas, SpotGo se comunica con los **Sensores Físicos IoT** para recibir información sobre la ocupación y el estado de los sensores. Asimismo, utiliza **Google Maps** para proporcionar rutas hacia el estacionamiento o el espacio asignado y **Firebase Cloud Messaging (FCM)** para el envío de notificaciones relacionadas con cuentas, reservas, pagos, ocupación y otros eventos operativos.
+
+
+#### 2.5.3.2. Software Architecture Container Level Diagrams
+
+El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y permite descomponer SpotGo en sus principales unidades de software. En esta vista se observa una arquitectura organizada alrededor de una aplicación móvil, una aplicación web y un **API Gateway**, junto con cinco contextos de negocio que encapsulan las principales responsabilidades funcionales de la plataforma.
+
+![Container Level Diagram](../assets/diagrams/Container_Level_Diagram.png)
+
+La solución cuenta con los siguientes contenedores principales:
+
+1. **SpotGo Mobile App:** Aplicación móvil desarrollada con **Flutter / Kotlin**, utilizada principalmente por el Driver y el Parking Administrator para acceder a las funcionalidades de la plataforma.
+
+2. **SpotGo Web App:** Aplicación web desarrollada con **Angular / Vue.js**, que comprende la Landing Page y las funcionalidades administrativas utilizadas por el Parking Administrator y el SuperAdmin.
+
+3. **API Gateway:** Punto único de entrada a los servicios internos de SpotGo, encargado de enrutar las solicitudes provenientes de las aplicaciones cliente hacia los diferentes contextos de negocio mediante **HTTPS / REST**.
+
+4. **Gestión de Identidad y Acceso:** Contenedor responsable de la autenticación de usuarios, gestión de credenciales y sesiones, autorización basada en roles, administración de cuentas y registro de acciones administrativas.
+
+5. **Gestión de Perfiles y Vehículos:** Contenedor encargado de gestionar la información de los conductores, perfiles, vehículos asociados y relaciones con los *Tenants*.
+
+6. **Infraestructura de Estacionamiento:** Contenedor encargado de administrar las zonas, espacios, disponibilidad, reservas, asignaciones y reasignaciones dentro de los estacionamientos.
+
+7. **Pagos y Facturación:** Contenedor responsable de gestionar los pagos digitales tokenizados, suscripciones, cobros por sobretiempo, reembolsos, comprobantes y saldos pendientes.
+
+8. **Ocupación y Monitoreo:** Contenedor encargado de recibir información de los sensores IoT, determinar la ocupación real, supervisar el estado de los sensores, detectar conflictos y generar eventos relacionados con el sobretiempo.
+
+Cada contexto de negocio mantiene además una **base de datos PostgreSQL independiente**, permitiendo separar la persistencia de información según las responsabilidades de cada dominio. Los servicios se comunican entre sí mediante **HTTPS / REST** y, para determinados procesos, mediante eventos asíncronos.
+
+**Components Diagram - Gestión de Identidad y Acceso**
+
+El contexto de **Gestión de Identidad y Acceso** se descompone en componentes especializados que permiten separar las responsabilidades relacionadas con la seguridad y administración de las cuentas. Esta organización contempla la autenticación de credenciales, la gestión de sesiones y tokens, la autorización según roles, la administración del estado de las cuentas y el registro de las acciones realizadas por los administradores.
+
+![Identity Components Diagram](../assets/diagrams/Identity_Components_Diagram.png)
+
+**Components Diagram - Gestión de Perfiles y Vehículos**
+
+El contexto de **Gestión de Perfiles y Vehículos** organiza las funcionalidades relacionadas con la información de los conductores y los vehículos registrados en la plataforma. Sus componentes permiten mantener los datos del conductor, administrar los vehículos asociados, gestionar los perfiles de usuario y establecer la relación correspondiente con los *Tenants* y la configuración B2B.
+
+![Profile Components Diagram](../assets/diagrams/Profile_Components_Diagram.png)
+
+**Components Diagram - Infraestructura de Estacionamiento**
+
+El contexto de **Infraestructura de Estacionamiento** concentra las funcionalidades necesarias para administrar la estructura física y operativa de los estacionamientos. Esta organización permite gestionar las zonas, espacios, disponibilidad y reservas, así como los procesos de asignación, reasignación y navegación hacia los espacios correspondientes.
+
+![Parking Components Diagram](../assets/diagrams/Parking_Components_Diagram.png)
+
+**Components Diagram - Pagos y Facturación**
+
+El contexto de **Pagos y Facturación** agrupa las responsabilidades relacionadas con las operaciones económicas realizadas dentro de SpotGo. Su estructura permite gestionar el procesamiento de pagos digitales, los métodos de pago mediante tokens, las suscripciones, los cobros adicionales por sobretiempo, los reembolsos, la generación de comprobantes y los saldos pendientes derivados de pagos fallidos.
+
+![Payment Components Diagram](../assets/diagrams/Payment_Components_Diagram.png)
+
+**Components Diagram - Ocupación y Monitoreo**
+
+El contexto de **Ocupación y Monitoreo** se encarga de gestionar la información proveniente de los sensores físicos instalados en los estacionamientos. Su estructura permite recibir los datos IoT, determinar el estado de ocupación de los espacios, supervisar la salud de los sensores, detectar conflictos entre la ocupación real y las reservas y generar eventos relacionados con situaciones de sobretiempo.
+
+![Occupancy Components Diagram](../assets/diagrams/Occupancy_Components_Diagram.png)
+
+#### 2.5.3.3. Software Architecture Deployment Diagrams
+
+El **Diagrama de Despliegue** representa la distribución física de los elementos de software de SpotGo sobre la infraestructura tecnológica utilizada durante el entorno de producción. Esta vista permite relacionar las aplicaciones cliente con los servidores de aplicación, la infraestructura de bases de datos, la red de sensores IoT y los servicios externos empleados por la solución.
+
+![Deployment Diagram](../assets/diagrams/Deployment_Diagram.png)
+
+La infraestructura contempla un **Driver Device**, utilizado para ejecutar la aplicación móvil, y un **Administrator Device**, desde el cual se accede a la aplicación web. Ambos dispositivos se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de recibir y enrutar las solicitudes hacia los servicios de SpotGo.
+
+Dentro de la infraestructura cloud se encuentra el **Application Server**, donde se ejecutan los cinco servicios correspondientes a los contextos de negocio. La persistencia se concentra en un **PostgreSQL Server**, alojado dentro de la **Database Infrastructure**, donde se mantienen las bases de datos independientes de cada contexto.
+
+Finalmente, la **Parking Infrastructure** incorpora una red de sensores físicos IoT que se comunica con el servicio de **Ocupación y Monitoreo** mediante **MQTT / HTTP**. La arquitectura también contempla los servicios externos de **Google Maps** y **Firebase Cloud Messaging**, utilizados respectivamente para las funcionalidades de navegación y el envío de notificaciones.
 
 ## 2.6. Tactical-Level Domain-Driven Design
