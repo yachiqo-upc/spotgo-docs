@@ -60,7 +60,7 @@
       <rect x="806" y="376" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="806" y1="410" x2="1572" y2="410" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="400" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="822" dy="0">Outbound Communication</tspan></text>
-      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ProcessReservationPayment / ProcessRefund hacia Payments &amp;</tspan><tspan x="822" dy="27.0">  Billing</tspan><tspan x="822" dy="27.0">• ReservationCreated / ReservationUpdated /</tspan><tspan x="822" dy="27.0">  ReservationReassigned hacia Occupancy &amp; Monitoring</tspan><tspan x="822" dy="27.0">• RouteRequested hacia Google Maps</tspan><tspan x="822" dy="27.0">• ReservationEvents hacia Servicio de notificaciones</tspan></text>
+      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ProcessReservationPayment / ProcessRefund hacia Payments &amp;</tspan><tspan x="822" dy="27.0">  Billing</tspan><tspan x="822" dy="27.0">• ReservationCreated / ReservationUpdated /</tspan><tspan x="822" dy="27.0">  ReservationReassigned hacia Occupancy &amp; Monitoring</tspan><tspan x="822" dy="27.0">• RouteRequested hacia Google Maps</tspan><tspan x="822" dy="27.0">• ReservationEvents hacia Firebase Cloud Messaging</tspan></text>
     </g>
     <g>
       <rect x="806" y="620" width="766" height="150" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />

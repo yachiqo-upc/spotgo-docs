@@ -199,8 +199,6 @@ Proyecto
 [**Bibliografía**](90-bibliography.md)  
 [**Anexos**](99-annexes.md)
 
-<div style="page-break-before: always;"></div>
-
 # Student Outcome
 
 | Criterio específico | Acciones realizadas | Conclusiones |
@@ -213,7 +211,7 @@ Proyecto
 **Ruiz Mideyros, Adrian (U20241E177)**
 
 - Durante mi primer año como profesional, participaré en la implementación de al menos 3 servicios REST utilizando Spring Boot o ASP.NET Core, incluyendo pruebas automatizadas y documentación OpenAPI, con el propósito de prepararme para trabajar como desarrollador backend.
-- Durante los doce meses posteriores a mi graduación, conseguiré al menos 2 certificaciones relacionados con desarrollo con IA y aplicaré lo aprendido en al menos 2 proyectos, documentando los resultados en mi portafolio profesional.
+- Durante los doce meses posteriores a mi graduación, conseguiré al menos 2 certificaciones relacionadas con el desarrollo de soluciones con IA y aplicaré lo aprendido en al menos 2 proyectos, documentando los resultados en mi portafolio profesional.
 
 **Rojas Tello, Nestor Alonso (U202317099)**
 

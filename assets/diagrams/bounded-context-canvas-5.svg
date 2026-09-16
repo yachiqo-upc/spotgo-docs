@@ -60,7 +60,7 @@
       <rect x="806" y="376" width="766" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="806" y1="410" x2="1572" y2="410" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="400" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Outbound Communication</tspan></text>
-      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• OccupancyStatusUpdated</tspan><tspan x="822" dy="27.0">• ParkingSessionStarted / ParkingSessionEnded</tspan><tspan x="822" dy="27.0">• AdditionalChargeRequested hacia Payments &amp; Billing</tspan><tspan x="822" dy="27.0">• OccupancyConflictDetected / SensorFailureDetected hacia</tspan><tspan x="822" dy="27.0">  Parking Infrastructure</tspan><tspan x="822" dy="27.0">• MonitoringEvents hacia Servicio de notificaciones</tspan></text>
+      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• OccupancyStatusUpdated</tspan><tspan x="822" dy="27.0">• ParkingSessionStarted / ParkingSessionEnded</tspan><tspan x="822" dy="27.0">• AdditionalChargeRequested hacia Payments &amp; Billing</tspan><tspan x="822" dy="27.0">• OccupancyConflictDetected / SensorFailureDetected hacia</tspan><tspan x="822" dy="27.0">  Parking Infrastructure</tspan><tspan x="822" dy="27.0">• MonitoringEvents hacia Firebase Cloud Messaging</tspan></text>
     </g>
     <g>
       <rect x="806" y="620" width="766" height="150" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />

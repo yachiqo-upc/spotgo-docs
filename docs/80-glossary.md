@@ -51,7 +51,7 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **en_US:** Locale de English utilizado como idioma predeterminado en los productos, mensajes, interfaces y documentación de SpotGo.
 - **es_419:** Locale de Latin American Spanish ofrecido como alternativa de idioma.
 - **External Navigation Link:** Enlace que abre la aplicación de Google Maps con una Parking Zone como destino para que dicha aplicación calcule la ruta.
-- **Firebase Cloud Messaging:** Servicio externo de notificaciones push. El backend decide el evento que se comunica y FCM entrega el mensaje al dispositivo registrado.
+- **Firebase Cloud Messaging:** Servicio externo de notificaciones push. El backend decide el evento que se comunica y Firebase Cloud Messaging entrega el mensaje al dispositivo registrado.
 - **Figma:** Herramienta utilizada para elaborar wireframes, mockups y prototipos de las interfaces.
 - **Google Authentication:** Mecanismo externo que permite a un Driver crear una cuenta o iniciar sesión mediante una cuenta de Google. No crea cuentas de Parking Administrator ni de SuperAdmin.
 - **Google Maps API:** API utilizada para mostrar el mapa integrado dentro de SpotGo. SpotGo proporciona las ubicaciones y detalles de sus Parking Zones; la aplicación de Google Maps calcula la ruta externa hacia la zona seleccionada.

@@ -113,7 +113,7 @@ Durante los periodos de alta demanda, esta situación puede generar recorridos i
 
 La magnitud del problema varía según factores como la capacidad del estacionamiento, el nivel de ocupación y los periodos de mayor demanda. La evidencia revisada muestra que la búsqueda de estacionamiento puede incrementar el tiempo de circulación y contribuir a la congestión vehicular.
 
-Para el contexto peruano, la magnitud específica del problema será contrastada mediante las entrevistas realizadas a los segmentos objetivo.
+Para el contexto peruano, la magnitud específica del problema se contrasta mediante las entrevistas realizadas a los segmentos objetivo.
 
 **Objetivos de la solución**
 
@@ -131,7 +131,7 @@ SpotGo busca alcanzar los siguientes objetivos:
 - Permitir que los Parking Administrators registren Guest Parking Sessions para Guests que llegan directamente al estacionamiento sin una cuenta registrada.
 - Procesar las Reservations de Drivers registrados, Digital Payments, Subscriptions, Virtual Receipts y Electronic Billing desde la aplicación móvil.
 - Permitir que los Guests paguen físicamente al Parking Administrator mediante efectivo o POS al finalizar su Guest Parking Session, fuera de SpotGo.
-- Mostrar un Digital Parking Map integrado mediante la Google Maps API con las Parking Zones registradas por SpotGo, junto con sus detalles operativos, y permitir que el Driver registrado abra la ruta en la aplicación de Google Maps.
+- Mostrar un mapa integrado mediante la Google Maps API con las Parking Zones registradas por SpotGo, junto con sus detalles operativos, y permitir que el Driver registrado abra la ruta en la aplicación de Google Maps.
 
 **Restricciones de la solución**
 
@@ -146,13 +146,13 @@ La solución considera las siguientes restricciones:
 - Los Vehicles pertenecen a un Driver y pueden seleccionarse en futuras Reservations; el User Profile del Driver determina las Parking Zones que puede utilizar.
 - Los Guests podrán tener una Guest Parking Session creada por un Parking Administrator al llegar al estacionamiento. La placa se ingresará manualmente y se conservará únicamente en el registro de esa sesión.
 - SpotGo no utilizará OCR, inteligencia artificial ni sensores para leer o identificar placas o vehículos. Los sensores solo detectarán la ocupación física del Parking Spot.
-- SpotGo integrará la Google Maps API para renderizar el Digital Parking Map y mostrar las Parking Zones registradas por SpotGo con sus datos operativos; la aplicación de Google Maps calculará la ruta externa hacia la Parking Zone seleccionada.
+- SpotGo integrará la Google Maps API para renderizar el mapa integrado y mostrar las Parking Zones registradas por SpotGo con sus datos operativos; la aplicación de Google Maps calculará la ruta externa hacia la Parking Zone seleccionada.
 
 ### 1.2.2. Lean UX Process
 
 El Lean UX Process permite establecer y validar las principales suposiciones relacionadas con el problema, los usuarios, los resultados esperados y las funcionalidades del producto.
 
-A partir del análisis inicial del dominio de estacionamientos de alta demanda, se establecen el Lean UX Problem Statement, los principales assumptions y los Hypothesis Statements que posteriormente serán contrastados mediante investigación y validación con representantes de los segmentos objetivo.
+A partir del análisis inicial del dominio de estacionamientos de alta demanda, se establecen el Lean UX Problem Statement, los principales assumptions y los Hypothesis Statements, que se contrastan mediante investigación y validación con representantes de los segmentos objetivo.
 
 #### *1.2.2.1. Lean UX Problem Statements*
 
@@ -235,7 +235,7 @@ Sabremos que la solución es exitosa cuando observemos una reducción en el tiem
 
 - **FA05 - Panel de control para administradores:** Creemos que un panel de control permitirá a los administradores supervisar de manera centralizada la ocupación y distribución de las diferentes zonas.
 
-- **FA06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que proporcionar información actualizada sobre la disponibilidad y mostrar las Parking Zones registradas por SpotGo en un Digital Parking Map integrado mediante Google Maps permitirá a los conductores identificar con mayor rapidez dónde estacionar y cómo llegar.
+- **FA06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que proporcionar información actualizada sobre la disponibilidad y mostrar las Parking Zones registradas por SpotGo en un mapa integrado mediante Google Maps permitirá a los conductores identificar con mayor rapidez dónde estacionar y cómo llegar.
 
 - **FA07 - Reportes de ocupación:** Creemos que los reportes de ocupación permitirán a los administradores analizar patrones de utilización del estacionamiento y utilizar esta información para apoyar sus decisiones operativas.
 
@@ -261,7 +261,7 @@ A partir de los Feature Assumptions identificados, se plantean los siguientes Hy
 
 - **HS05 - Panel de control para administradores:** Creemos que lograremos mejorar la eficiencia en la supervisión del estacionamiento si los administradores y el personal operativo pueden consultar de manera centralizada la ocupación, distribución e incidencias mediante un panel de control administrativo.
 
-- **HS06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que lograremos reducir el tiempo y esfuerzo requerido para encontrar estacionamiento si los conductores pueden consultar la disponibilidad, identificar las Parking Zones registradas por SpotGo en un Digital Parking Map y abrir una ruta externa en Google Maps.
+- **HS06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que lograremos reducir el tiempo y esfuerzo requerido para encontrar estacionamiento si los conductores pueden consultar la disponibilidad, identificar las Parking Zones registradas por SpotGo en un mapa integrado y abrir una ruta externa en Google Maps.
 
 - **HS07 - Reportes de ocupación:** Creemos que lograremos mejorar la toma de decisiones relacionadas con la utilización de los espacios si los administradores pueden analizar información histórica y patrones de ocupación mediante una funcionalidad de generación de reportes.
 
@@ -286,7 +286,7 @@ El Lean UX Canvas sintetiza los principales elementos identificados durante el p
 
 La solución está dirigida inicialmente a dos segmentos objetivo relacionados directamente con la problemática: los administradores o miembros del personal operativo de estacionamientos y los conductores que utilizan estos espacios.
 
-Para contextualizar estos segmentos en el entorno peruano, se consideran estadísticas oficiales del Ministerio de Transportes y Comunicaciones (MTC, 2026a, 2026b) relacionadas con el parque automotor y las licencias de conducir. Estas características serán complementadas y contrastadas mediante las entrevistas realizadas a representantes de cada segmento.
+Para contextualizar estos segmentos en el entorno peruano, se consideran estadísticas oficiales del Ministerio de Transportes y Comunicaciones (MTC, 2026a, 2026b) relacionadas con el parque automotor y las licencias de conducir. Estas características se complementan y contrastan mediante las entrevistas realizadas a representantes de cada segmento.
 
 **Primer Segmento Objetivo: Administradores o personal operativo de estacionamiento**
 
@@ -297,7 +297,7 @@ Este segmento está conformado por las personas responsables de supervisar, cont
   - **Ocupación:** Personal de seguridad, supervisores, operadores o administradores responsables de la gestión y supervisión de estacionamientos.
   - **País de residencia:** Perú.
 - Datos conductuales:
-  - **Dominio:** Poseen conocimientos relacionados con la operación de estacionamientos, supervisión de espacios y control del flujo de vehículos, cuyo nivel específico será contrastado mediante las entrevistas.
+  - **Dominio:** Poseen conocimientos relacionados con la operación de estacionamientos, supervisión de espacios y control del flujo de vehículos, cuyo nivel específico se contrasta mediante las entrevistas.
   - **Necesidades:** Supervisar la ocupación, controlar el flujo de vehículos, identificar incidencias y mantener una adecuada organización de las zonas.
   - **Beneficios buscados:** Mejorar la organización del estacionamiento, reducir el esfuerzo requerido para supervisar la ocupación y disponer de información actualizada para tomar decisiones operativas.
 - Interacción esperada con la solución:
@@ -328,4 +328,4 @@ Los administradores y el personal operativo necesitan información que les permi
 
 SpotGo busca conectar ambas necesidades mediante información actualizada sobre la ocupación, una organización de los espacios basada en los User Profiles y flujos diferenciados para Drivers y Guests.
 
-Las características inicialmente planteadas para ambos segmentos constituyen supuestos preliminares y deberán ser contrastadas mediante las entrevistas de Needfinding y fuentes estadísticas relacionadas con el dominio. Los resultados obtenidos permitirán posteriormente construir los User Personas y demás artefactos correspondientes al proceso de Needfinding.
+Las características inicialmente planteadas para ambos segmentos constituyeron supuestos preliminares y se contrastaron mediante las entrevistas de Needfinding y fuentes estadísticas relacionadas con el dominio. Los resultados obtenidos permitieron construir los User Personas y demás artefactos correspondientes al proceso de Needfinding.
