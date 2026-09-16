@@ -26,7 +26,7 @@ Ofrecemos un ecosistema de desarrollo móvil flexible y a medida para cualquier 
 
 **Características principales**
 
-- Desarrollo de aplicaciones móviles nativas y multiplataforma con Kotlin, Flutter y KMP para todo tipo de dispositivos.
+- Desarrollo de una aplicación móvil multiplataforma con Flutter y de integraciones nativas para Android con Kotlin.
 - Modelado del negocio con Domain-Driven Design para adaptar la solución a las reglas de cualquier industria.
 - Almacenamiento de datos local en el dispositivo para garantizar su uso continuo en entornos sin conexión a internet.
 - Integración con servicios web RESTful propios para la sincronización y consumo de información en tiempo real.

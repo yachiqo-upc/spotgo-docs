@@ -944,7 +944,7 @@ Los contextos **Parking Infrastructure** y **Occupancy & Monitoring** fueron cla
 
 Por otro lado, **Profiles & Vehicles Management** y **Payments & Billing** cumplen funciones de soporte para completar los principales procesos del sistema, mientras que **Identity & Access Management** se considera un **Generic Domain**, ya que la autenticación y autorización son capacidades comunes en distintos sistemas de software.
 
-También se identificaron capacidades como Reservations, Guest Parking Sessions, Subscriptions, navegación y notificaciones. Sin embargo, no fueron consideradas Bounded Contexts independientes: las Reservations y Guest Parking Sessions forman parte de Parking Infrastructure, las Subscriptions pertenecen a Payments & Billing y Google Maps junto con Firebase Cloud Messaging se mantienen como servicios externos.
+También se identificaron capacidades como Reservations, Parking Sessions, Guest Parking Sessions, Subscriptions, navegación y notificaciones. Sin embargo, no fueron consideradas Bounded Contexts independientes: las Reservations, Parking Sessions y Guest Parking Sessions forman parte de Parking Infrastructure, las Subscriptions pertenecen a Payments & Billing y Google Maps junto con Firebase Cloud Messaging se mantienen como servicios externos.
 
 #### *2.5.1.2. Domain Message Flows Modeling*
 
@@ -1021,7 +1021,7 @@ Se clasifica como **Supporting Domain**, ya que permite completar los procesos c
 
 **Occupancy & Monitoring**
 
-Este contexto supervisa la ocupación física de los **Parking Spots** mediante sensores y administra las **Parking Sessions**. También permite detectar situaciones como No-show, sobretiempo, fallas de sensores, conflictos de ocupación y otras incidencias operativas.
+Este contexto supervisa la ocupación física de los **Parking Spots** mediante sensores y analiza los eventos relacionados con las **Parking Sessions**, cuya administración pertenece a Parking Infrastructure. También permite detectar situaciones como No-show, sobretiempo, fallas de sensores, conflictos de ocupación y otras incidencias operativas.
 
 Se considera un **Core Domain**, debido a que el monitoreo de la disponibilidad y ocupación constituye una de las capacidades principales de SpotGo.
 
@@ -1034,12 +1034,17 @@ En conjunto, estos canvases permiten establecer límites claros entre las respon
 
 ### 2.5.2. Context Mapping
 
+...
+
+*Figura 20 (Context Map)*
+
 ### 2.5.3. Software Architecture
 
 #### *2.5.3.1. Software Architecture Context Level Diagrams*
 
 El **Diagrama de Contexto** constituye el primer nivel de abstracción del Modelo C4. Su propósito es delimitar el alcance de **SpotGo** y representar su interacción con los principales actores humanos y sistemas externos.
 
+*Figura 21 (Context Level Diagram)*
 ![Context Level Diagram](../assets/diagrams/context-level-diagram.png)
 
 El diagrama identifica tres actores principales. El **Driver** utiliza la aplicación para consultar la disponibilidad de espacios, registrar sus vehículos, realizar reservas y efectuar pagos. El **Parking Administrator** utiliza la solución para administrar la infraestructura del estacionamiento, así como los perfiles, reservas y operaciones asociadas. Finalmente, el **SuperAdmin** administra los **Tenants** y realiza la configuración inicial de los estacionamientos.
@@ -1050,17 +1055,18 @@ En cuanto a las integraciones externas, SpotGo se comunica con los **Sensores F�
 
 El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y permite descomponer SpotGo en sus principales unidades de software. En esta vista se observa una arquitectura organizada alrededor de una aplicación móvil, una aplicación web y un **API Gateway**, junto con cinco contextos de negocio que encapsulan las principales responsabilidades funcionales de la plataforma.
 
+*Figura 22 (Container Level Diagram)*
 ![Container Level Diagram](../assets/diagrams/container-level-diagram.png)
 
 La solución cuenta con los siguientes contenedores principales:
 
-1. **SpotGo Mobile App:** Aplicación móvil desarrollada con Flutter y Kotlin, utilizada principalmente por el Driver y el Parking Administrator para acceder a las funcionalidades de la plataforma.
+1. **SpotGo Mobile App:** Aplicación móvil multiplataforma desarrollada con Flutter, complementada con integraciones nativas para Android mediante Kotlin, y utilizada principalmente por el Driver y el Parking Administrator para acceder a las funcionalidades de la plataforma.
 
 2. **SpotGo Web App:** Aplicación web desarrollada con Angular que comprende la Landing Page y las funcionalidades administrativas utilizadas por el Parking Administrator y el SuperAdmin.
 
 3. **API Gateway:** Punto único de entrada a los servicios internos de SpotGo, encargado de enrutar las solicitudes provenientes de las aplicaciones cliente hacia los diferentes contextos de negocio mediante HTTPS / REST.
 
-4. **Profiles & Vehicles Management:** Contenedor encargado de gestionar la información de los conductores, perfiles, vehículos asociados y relaciones con los *Tenants*.
+4. **Profiles & Vehicles Management:** Contenedor encargado de gestionar la información de los conductores, perfiles, vehículos asociados y referencias de asignación a los *Tenants* administrados por Parking Infrastructure.
 
 5. **Identity & Access Management:** Contenedor responsable de la autenticación de usuarios, gestión de credenciales y sesiones, autorización basada en roles, administración de cuentas y registro de acciones administrativas.
 
@@ -1072,40 +1078,11 @@ La solución cuenta con los siguientes contenedores principales:
 
 Cada contexto de negocio mantiene además una base de datos PostgreSQL independiente, permitiendo separar la persistencia de información según las responsabilidades de cada dominio. Los servicios se comunican entre sí mediante HTTPS / REST y, para determinados procesos, mediante eventos asíncronos.
 
-**Components Diagram - Profiles & Vehicles Management**
-
-El contexto de **Profiles & Vehicles Management** organiza las funcionalidades relacionadas con la información de los conductores y los vehículos registrados en la plataforma. Sus componentes permiten mantener los datos del conductor, administrar los vehículos asociados, gestionar los perfiles de usuario y establecer la relación correspondiente con los *Tenants* y la configuración B2B.
-
-![Profile Components Diagram](../assets/diagrams/components-diagram-profiles.png)
-
-**Components Diagram - Identity & Access Management**
-
-El contexto de **Identity & Access Managemento** se descompone en componentes especializados que permiten separar las responsabilidades relacionadas con la seguridad y administración de las cuentas. Esta organización contempla la autenticación de credenciales, la gestión de sesiones y tokens, la autorización según roles, la administración del estado de las cuentas y el registro de las acciones realizadas por los administradores.
-
-![Identity Components Diagram](../assets/diagrams/components-diagram-identity.png)
-
-**Components Diagram - Parking Infrastructure**
-
-El contexto de **Parking Infrastructure** concentra las funcionalidades necesarias para administrar la estructura física y operativa de los estacionamientos. Esta organización permite gestionar las zonas, espacios, disponibilidad y reservas, así como los procesos de asignación, reasignación y navegación hacia los espacios correspondientes.
-
-![Parking Components Diagram](../assets/diagrams/components-diagram-parking.png)
-
-**Components Diagram - Payments & Billing**
-
-El contexto de **Payments & Billingn** agrupa las responsabilidades relacionadas con las operaciones económicas realizadas dentro de SpotGo. Su estructura permite gestionar el procesamiento de pagos digitales, los métodos de pago mediante tokens, las suscripciones, los cobros adicionales por sobretiempo, los reembolsos, la generación de comprobantes y los saldos pendientes derivados de pagos fallidos.
-
-![Payment Components Diagram](../assets/diagrams/components-diagram-payment.png)
-
-**Components Diagram - Occupancy & Monitoring**
-
-El contexto de **Occupancy & Monitoring** se encarga de gestionar la información proveniente de los sensores físicos instalados en los estacionamientos. Su estructura permite recibir los datos IoT, determinar el estado de ocupación de los espacios, supervisar la salud de los sensores, detectar conflictos entre la ocupación real y las reservas y generar eventos relacionados con situaciones de sobretiempo.
-
-![Occupancy Components Diagram](../assets/diagrams/components-diagram-occupancy.png)
-
 #### *2.5.3.3. Software Architecture Deployment Diagrams*
 
 El **Diagrama de Despliegue** representa la distribución física de los elementos de software de SpotGo sobre la infraestructura tecnológica utilizada durante el entorno de producción. Esta vista permite relacionar las aplicaciones cliente con los servidores de aplicación, la infraestructura de bases de datos, la red de sensores IoT y los servicios externos empleados por la solución.
 
+*Figura 23 (Deployment Diagram)*
 ![Deployment Diagram](../assets/diagrams/deployment-diagram.png)
 
 La infraestructura contempla un **Driver Device**, utilizado para ejecutar la aplicación móvil, y un **Administrator Device**, desde el cual se accede a la aplicación web. Ambos dispositivos se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de recibir y enrutar las solicitudes hacia los servicios de SpotGo.
@@ -1115,3 +1092,22 @@ Dentro de la infraestructura cloud se encuentra el **Application Server**, donde
 Finalmente, la **Parking Infrastructure** incorpora una red de sensores físicos IoT que se comunica con el servicio de **Ocupación y Monitoreo** mediante **MQTT / HTTP**. La arquitectura también contempla los servicios externos de **Google Maps** y **Firebase Cloud Messaging**, utilizados respectivamente para las funcionalidades de navegación y el envío de notificaciones.
 
 ## 2.6. Tactical-Level Domain-Driven Design
+
+El diseño táctico traduce los límites identificados durante el diseño estratégico en modelos de dominio concretos para SpotGo. Cada bounded context mantiene un lenguaje ubicuo, reglas de negocio, agregados, servicios y contratos propios, de modo que sus responsabilidades puedan evolucionar sin convertir la base de datos o el modelo de un contexto en una dependencia directa de los demás. En esta sección se desarrollan los cinco bounded contexts definidos para la solución: Profiles & Vehicles Management, Identity & Access Management, Parking Infrastructure, Payments & Billing y Occupancy & Monitoring.
+
+La propuesta se organiza en cuatro capas. La Domain Layer contiene las entidades, objetos de valor, agregados, fábricas, servicios de dominio e interfaces de repositorio. La Interface Layer expone controladores REST y consumidores de eventos. La Application Layer coordina comandos, casos de uso y manejadores de eventos, mientras que la Infrastructure Layer implementa la persistencia, los adaptadores de integración y la mensajería. Las tablas de cada contexto describen el contenido que deberá representarse posteriormente en los diagramas de componentes, clases y base de datos; dichos diagramas serán incorporados por el equipo.
+
+Como línea base tecnológica, el backend se implementará con Java y Spring Boot, con una base de datos PostgreSQL independiente por bounded context. La aplicación móvil multiplataforma se desarrollará con Flutter y podrá incorporar módulos o integraciones nativas en Kotlin para Android. La comunicación de la solución utilizará APIs REST sobre HTTPS y mensajería asíncrona cuando el flujo lo requiera. Google Maps y Firebase Cloud Messaging se mantienen como servicios externos, mientras que el proveedor de pagos se considera un servicio interno de SpotGo.
+
+Los contextos se integran mediante contratos REST, identificadores y eventos de dominio. Un bounded context no accederá directamente a las tablas de otro ni establecerá claves foráneas entre bases de datos independientes. Cuando un modelo necesite identificar información administrada por otro contexto, conservará únicamente la referencia necesaria y validará su vigencia mediante una API o un evento. Esta regla mantiene la autonomía de cada contexto y evita duplicar la responsabilidad de las reglas de negocio.
+
+**Criterios transversales de operación**
+
+| Aspecto | Política adoptada |
+| --- | --- |
+| Temporary Lock | Al iniciar el pago digital de una reserva se crea un bloqueo temporal del espacio por 10 minutos. Durante ese periodo el espacio no puede ser asignado a otra reserva. Un pago aprobado dentro del plazo transforma la intención en una reserva confirmada; un rechazo, cancelación o vencimiento libera el espacio. Una aprobación recibida después del vencimiento no reactiva el bloqueo y pasa por un flujo de conciliación y reembolso o revisión. |
+| Reintentos de pago | El proveedor interno recibe una clave de idempotencia por operación. Los errores transitorios, como timeout, indisponibilidad de red o respuesta 5xx, se reintentan con espera progresiva. Los rechazos definitivos, tokens inválidos, fondos insuficientes o respuestas asociadas a fraude no se reintentan automáticamente. Las operaciones de invitados pagadas en efectivo o POS no ingresan al flujo digital ni generan reintentos en Payments & Billing. |
+| Retención del historial | Como política base propuesta, las reservas, sesiones, pagos, comprobantes, reembolsos, saldos y auditorías se conservan durante cinco años. Las lecturas de sensores en bruto se conservan durante doce meses y los reportes o agregados de ocupación durante veinticuatro meses. Los plazos son configurables y cualquier investigación, reclamo o auditoría abierta suspende la eliminación. Al finalizar el plazo, los datos personales se anonimizan o eliminan cuando no sean necesarios para conservar estadísticas agregadas. |
+| Expiración de sesiones de acceso | El token de acceso dura 15 minutos. El token de renovación dura siete días, se rota al utilizarse y se revoca al cerrar sesión, cambiar credenciales o detectar un evento de seguridad. En la aplicación web administrativa se aplica una expiración por inactividad de 30 minutos y una duración máxima de ocho horas por sesión. |
+| Guest Parking Session | La sesión de un invitado no se cierra automáticamente solo por el paso del tiempo, porque su entrada, salida y pago físico son confirmados manualmente por personal autorizado. Si permanece abierta durante 24 horas, se genera una alerta de revisión; este umbral puede configurarse sin cambiar la regla de cierre manual. |
+| Sobretiempo y ocupación | La tolerancia operativa para detectar sobretiempo es de cinco minutos. La ocupación física y el estado de una reserva se mantienen independientes. No se genera un cobro adicional únicamente con una lectura no confiable ni se infiere la identidad del vehículo a partir del sensor. |
