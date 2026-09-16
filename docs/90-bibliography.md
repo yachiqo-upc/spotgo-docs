@@ -47,7 +47,7 @@ Flutter team. (s. f.). *Flutter documentation*. https://docs.flutter.dev/
 
 Google. (s. f.). *Google Maps Platform documentation*. https://developers.google.com/maps/documentation
 
-JetBrains. (s. f.). *Kotlin Multiplatform documentation*. https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html
+JetBrains. (s. f.). *Kotlin documentation*. https://kotlinlang.org/docs/home.html
 
 OpenAPI Initiative. (s. f.). *OpenAPI specification*. https://spec.openapis.org/oas/latest.html
 

@@ -11,7 +11,7 @@ La capa de dominio representa las reglas que determinan cuándo un Driver tiene 
 | Elemento | Tipo | Responsabilidad y reglas principales | Atributos u operaciones relevantes |
 | --- | --- | --- | --- |
 | Driver | Aggregate Root | Representa al conductor registrado y sus datos de perfil. Solo un Driver registrado puede tener información persistente en este contexto. | driverId, identityRef, datos personales y de contacto, estado; register(), updateData(), activate(), deactivate(). |
-| Vehicle | Entity | Representa un vehículo asociado a un Driver. Un Driver puede registrar varios vehículos, pero cada Vehicle pertenece a un único Driver. | vehicleId, driverId, placa o datos de identificación, marca, modelo, color y estado; updateData(), activate(), deactivate(). |
+| Vehicle | Entity | Representa un vehículo asociado a un Driver. Un Driver puede registrar varios vehículos, pero cada Vehicle pertenece a un único Driver. | vehicleId, driverId, placa registrada, marca, modelo, color y estado; updateData(), activate(), deactivate(). |
 | User Profile | Entity | Representa el perfil operativo asociado a una identidad. Su tipo puede ser Driver o Staff. No admite el tipo Visitor y no almacena credenciales. | profileId, identityRef, profileType, estado, fechas de creación y actualización; changeStatus(), isOperational(). |
 | Staff Assignment | Entity | Registra la asignación de un perfil Staff a un Tenant mediante una referencia externa. El Tenant es administrado por Parking Infrastructure. | assignmentId, profileId, tenantId, vigencia y estado; assign(), endAssignment(), isValidAt(). |
 | Profile Type | Enumeration | Define los tipos de perfil persistente permitidos en SpotGo. | DRIVER, STAFF. |
@@ -40,8 +40,8 @@ La Interface Layer recibe solicitudes del API Gateway y eventos provenientes de 
 | User Profile Controller | REST/HTTPS | Consulta y administra el User Profile de una identidad autorizada. | Consultar perfil operativo y actualizar su estado. |
 | Staff Assignment Controller | REST/HTTPS | Registra o finaliza asignaciones de perfiles Staff a un Tenant. | Asignar Staff, consultar asignaciones y finalizar asignación. |
 | Eligibility Controller | REST/HTTPS interno | Expone una consulta para que Parking Infrastructure valide Driver y Vehicle antes de crear una Reservation. | Validar elegibilidad y devolver resultado con referencias de Driver y Vehicle. |
-| Identity Event Consumer | Evento asíncrono | Recibe la creación, validación o suspensión de una identidad para sincronizar la referencia mínima del perfil. | IdentityCreated, IdentityValidated, AccountSuspended. |
-| Profile Event Publisher | Evento asíncrono | Publica cambios que otros contextos necesitan conocer sin compartir la base de datos. | DriverProfileValidated, VehicleRegistered, VehicleDeactivated, StaffProfileAssigned. |
+| Identity Event Consumer | Evento asíncrono | Recibe la validación, asignación de rol o suspensión de una identidad para sincronizar la referencia mínima del perfil. | IdentityValidated, RoleAssigned, AccountSuspended. |
+| Profile Event Publisher | Evento asíncrono | Publica cambios que otros contextos necesitan conocer sin compartir la base de datos. | DriverProfileCreated, DriverProfileValidated, VehicleRegistered, VehicleDeactivated, StaffProfileAssigned. |
 
 Las respuestas no exponen credenciales, tokens ni información de pago. Cuando la solicitud se origina en la aplicación móvil, Flutter consume la API REST; las capacidades específicas de Android pueden invocarse mediante una integración nativa en Kotlin sin modificar el modelo de dominio.
 
@@ -56,13 +56,14 @@ La Application Layer coordina los casos de uso del contexto. Cada command handle
 | Register Vehicle | Register Vehicle Handler | Crea un Vehicle asociado a un Driver activo y publica VehicleRegistered. |
 | Update Vehicle | Update Vehicle Handler | Actualiza los datos descriptivos del Vehicle sin modificar reservas existentes. |
 | Activate or Deactivate Vehicle | Change Vehicle Status Handler | Cambia el estado del Vehicle y publica el cambio para futuras validaciones. |
-| Assign Staff Profile | Assign Staff Profile Handler | Crea una Staff Assignment para un tenantId referenciado externamente, después de validar la identidad y el rol recibido. |
+| Provision Staff Profile | Provision Staff Profile Handler | Crea un perfil STAFF y una Staff Assignment para un tenantId referenciado externamente, después de validar la identidad y el rol recibido; no modifica un Driver. |
 | End Staff Assignment | End Staff Assignment Handler | Finaliza la asignación sin eliminar el historial de auditoría. |
 | Validate Driver Eligibility | Validate Driver Eligibility Handler | Comprueba Driver, User Profile y Vehicle, y devuelve un resultado consumible por Parking Infrastructure. |
 
 | Domain Event | Event Handler o consumidor relacionado | Acción |
 | --- | --- | --- |
 | IdentityValidated | Identity Validated Handler | Habilita la sincronización o actualización de la referencia de identidad. |
+| RoleAssigned | Role Assignment Handler | Sincroniza el rol recibido y, si corresponde a STAFF, habilita la provisión o actualización del perfil Staff sin crear ni modificar un Driver. |
 | AccountSuspended | Account Suspended Handler | Marca como no operativo el perfil asociado, sin borrar su historial. |
 | DriverProfileCreated | Profile Notification Handler | Registra la disponibilidad del nuevo Driver para consultas internas. |
 | DriverProfileValidated | Parking Eligibility Publisher | Informa a Parking Infrastructure que la referencia del Driver y sus datos mínimos son válidos. |
@@ -93,7 +94,7 @@ El contexto conservará únicamente identificadores de otros bounded contexts, c
 
 El diagrama de componentes de Profiles & Vehicles Management deberá mostrar el límite del bounded context, sus componentes internos, la base de datos propia y las dependencias con Identity & Access Management y Parking Infrastructure. La aplicación móvil Flutter y el cliente Android nativo en Kotlin deben aparecer como consumidores externos a través del API Gateway, no como componentes del dominio.
 
-*Figura 24 (Profiles & Vehicles Management Component Level Diagram)*
+*Figura 25 (Profiles & Vehicles Management Component Level Diagram)*
 ![Profiles & Vehicles Management Component Level Diagram](../assets/diagrams/components-diagram-profiles.png)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
@@ -103,11 +104,11 @@ El diagrama de componentes de Profiles & Vehicles Management deberá mostrar el 
 | User Profile Component | Administra perfiles DRIVER y STAFF. | User Profile Controller, User Profile Repository, Identity Context Client. |
 | Staff Assignment Component | Gestiona la asignación de Staff a un tenantId. | Staff Assignment Controller, User Profile Repository, Tenant Reference Adapter. |
 | Driver Eligibility Component | Orquesta la validación de Driver, perfil y Vehicle para una operación. | Eligibility Controller, Driver Eligibility Service, repositorios. |
-| Profile & Vehicle Database | Persiste el modelo del contexto. | Implementaciones de repositorio. |
+| Profiles & Vehicles Database | Persiste el modelo del contexto. | Implementaciones de repositorio. |
 | Identity & Access Management Adapter | Obtiene el estado mínimo de la identidad y el rol. | REST/HTTPS y eventos de identidad. |
 | Profile Event Publisher | Publica cambios de perfiles y vehículos. | Broker o canal de eventos asíncronos. |
 
-Las relaciones visuales deben indicar que los controladores llaman a la Application Layer, los manejadores utilizan la Domain Layer, los repositorios acceden únicamente a Profile & Vehicle Database y los adaptadores se comunican con otros contextos mediante contratos. No debe aparecer un componente Visitor ni una base de datos compartida.
+Las relaciones visuales deben indicar que los controladores llaman a la Application Layer, los manejadores utilizan la Domain Layer, los repositorios acceden únicamente a Profiles & Vehicles Database y los adaptadores se comunican con otros contextos mediante contratos. No debe aparecer un componente Visitor ni una base de datos compartida.
 
 #### *2.6.1.6. Bounded Context Software Architecture Code Level Diagrams*
 
@@ -115,7 +116,7 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 
 #### ***2.6.1.6.1. Bounded Context Domain Layer Class Diagrams***
 
-*Figura 25 (Profiles & Vehicles Management Domain Layer Class Diagram)*
+*Figura 26 (Profiles & Vehicles Management Domain Layer Class Diagram)*
 
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -140,8 +141,8 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 | Relación | Multiplicidad y dirección | Significado |
 | --- | --- | --- |
 | Driver — Vehicle | Driver 1 a Vehicle 0..*; navegación desde Driver hacia Vehicle | Un Driver puede tener cero o varios vehículos registrados. |
-| Driver — UserProfile | Driver 1 a UserProfile 0..1; navegación desde Driver hacia su perfil de Driver | Un Driver puede tener un perfil operativo persistente. |
-| UserProfile — StaffAssignment | UserProfile 1 a StaffAssignment 0..*; navegación desde el perfil Staff | Un perfil Staff puede tener asignaciones en distintos periodos o tenants. |
+| Driver — UserProfile | Driver 1 a UserProfile 1; navegación desde Driver hacia su perfil de Driver | Cada Driver creado por el registro público tiene un perfil DRIVER operativo, salvo que este se encuentre inactivo o suspendido. |
+| UserProfile — StaffAssignment | UserProfile STAFF 1 a StaffAssignment 0..*; navegación desde el perfil Staff | Un perfil STAFF puede tener asignaciones en distintos periodos o Tenants; un perfil DRIVER no participa en esta relación. |
 | DriverEligibilityService ..> Driver | Dependencia dirigida | El servicio valida el estado del Driver. |
 | DriverEligibilityService ..> Vehicle | Dependencia dirigida | El servicio valida la propiedad y el estado del Vehicle. |
 | DriverRepository ..> Driver | Implementación de persistencia | El repositorio trabaja con el agregado Driver. |
@@ -151,20 +152,20 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 
 El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no como foreign keys entre bases de datos independientes.
 
-*Figura 26 (Profiles & Vehicles Management Database Design Diagram)*
+*Figura 27 (Profiles & Vehicles Management Database Design Diagram)*
 
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
 | drivers | driver_id, identity_ref, first_name, last_name, email, phone, status, created_at, updated_at | driver_id PK; identity_ref UNIQUE NOT NULL; status restringido a ACTIVE, INACTIVE o SUSPENDED. |
 | vehicles | vehicle_id, driver_id, plate, make, model, color, status, created_at, updated_at | vehicle_id PK; driver_id FK a drivers; plate UNIQUE cuando tenga valor; status restringido a ACTIVE o INACTIVE. |
-| user_profiles | profile_id, identity_ref, driver_id, profile_type, status, created_at, updated_at | profile_id PK; identity_ref UNIQUE NOT NULL; driver_id FK nullable a drivers; profile_type solo DRIVER o STAFF; no existe valor VISITOR. |
+| user_profiles | profile_id, identity_ref, driver_id, profile_type, status, created_at, updated_at | profile_id PK; identity_ref UNIQUE NOT NULL; driver_id FK a drivers y nullable únicamente para STAFF; profile_type solo DRIVER o STAFF; un perfil DRIVER requiere driver_id y un perfil STAFF no lo utiliza; no existe valor VISITOR. |
 | staff_assignments | assignment_id, profile_id, tenant_id, valid_from, valid_to, status | assignment_id PK; profile_id FK a user_profiles; tenant_id es referencia lógica a Parking Infrastructure; valid_to no puede ser menor que valid_from. |
 
 | Relación de datos | Cardinalidad | Regla |
 | --- | --- | --- |
 | drivers — vehicles | 1 a 0..* | Todo Vehicle persistente pertenece a un Driver registrado. |
-| drivers — user_profiles | 1 a 0..1 para perfiles DRIVER | El perfil de Driver puede vincularse mediante driver_id; los perfiles STAFF no requieren driver_id. |
+| drivers — user_profiles | 1 a 1 para perfiles DRIVER | Todo Driver tiene un único perfil DRIVER vinculado mediante driver_id; los perfiles STAFF no requieren driver_id. |
 | user_profiles — staff_assignments | 1 a 0..* | Las asignaciones conservan su historial y se consulta cuál está vigente. |
 | identity_ref — Identity & Access Management | Referencia externa | Se valida por API o evento; no se crea FK entre bases de datos. |
 | tenant_id — Parking Infrastructure | Referencia externa | Se valida contra Tenant; el Tenant no se duplica en esta base. |

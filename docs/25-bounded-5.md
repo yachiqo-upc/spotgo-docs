@@ -20,7 +20,7 @@ La capa de dominio representa sensores, lecturas, estados físicos y reglas de m
 | Occupancy Conflict | Entity | Representa una diferencia entre el estado físico observado y la expectativa registrada para una Reservation o Parking Session. | conflictId, spotId, reservationRef, sessionRef, detectedAt, type, severity, status; detect(), classify(), resolve(). |
 | Occupancy Alert | Entity | Representa una alerta operativa que requiere visualización o atención. | alertId, tenantId, zoneId, spotId, type, severity, createdAt, status; raise(), acknowledge(), close(). |
 | Unauthorized Parking Alert | Entity | Especialización de Occupancy Alert para ocupación sin una expectativa válida de operación. | alertId, spotId, detectedAt, evidenceRef, status; raise(), resolve(). |
-| High Capacity Policy | Value Object | Define la condición de alta capacidad del estacionamiento. La línea base es mayor al 95 por ciento de ocupación. | thresholdPercentage, evaluate(); threshold configurable sin bajar la regla documentada para la línea base. |
+| High Capacity Policy | Value Object | Define la condición de alta capacidad del estacionamiento. En este avance, la alerta se activa cuando la ocupación supera el 95 por ciento. | thresholdPercentage = 95, evaluate(); el evento se genera cuando percentage > thresholdPercentage. |
 | Sensor Health Snapshot | Value Object | Resume la última señal, calidad y fecha de comunicación de un sensor. | health, lastSeenAt, failureReason; isOperational(), isExpired(). |
 | Occupancy Evidence | Value Object | Agrupa la información necesaria para evaluar confiabilidad sin identificar un vehículo. | readingRef, quality, sensorHealth, observedAt; isReliable(). |
 | Occupancy Report | Aggregate Root | Representa un reporte o agregado de ocupación para la operación administrativa. | reportId, tenantId, interval, totals, generatedAt, status; generate(), publish(). |
@@ -41,11 +41,11 @@ Las reglas principales del modelo son:
 
 | Regla | Aplicación |
 | --- | --- |
-| Frecuencia de sensor | El sistema espera una actualización como máximo cada cinco segundos según la línea base del proyecto. |
+| Frecuencia de sensor | El estado físico actualizado debe estar disponible para las consultas en un máximo de cinco segundos desde la recepción de una lectura válida. |
 | Falla de sensor | Si no existe una lectura confiable o la salud del sensor es FAILED, el spot se reporta como UNAVAILABLE para fines de disponibilidad. |
 | Sin identificación de vehículo | Las lecturas no contienen placa, driverId ni vehicleId. La asociación con una Reservation se realiza mediante referencias y reglas de conflicto, nunca por reconocimiento automático. |
 | Estados independientes | Occupancy Status y Reservation Status se conservan separados y se relacionan mediante eventos. |
-| Alta capacidad | Se genera una condición de High Capacity cuando la ocupación supera el 95 por ciento, salvo que una configuración operativa autorizada defina otro umbral. |
+| Alta capacidad | En este avance se genera una condición de High Capacity cuando la ocupación supera el 95 por ciento de los Parking Spots operativos disponibles. |
 | Cobro adicional | Solo se publica AdditionalChargeRequested cuando la evidencia es confiable y Parking Infrastructure confirma la relación operativa. |
 | Retención | Las lecturas en bruto se conservan doce meses y los reportes agregados veinticuatro meses como política base propuesta, con suspensión ante incidentes o auditorías. |
 
@@ -58,7 +58,7 @@ La Interface Layer recibe mensajes de los sensores por MQTT o HTTP y expone cons
 | Sensor Event Consumer | MQTT/HTTP | Recibe mensajes de ocupación y los transforma en comandos de aplicación. | OccupancyReadingReceived. |
 | Sensor Administration Controller | REST/HTTPS | Registra sensores, consulta su salud y administra su configuración. | Registrar sensor, asignar spot, consultar estado, desactivar sensor. |
 | Occupancy Monitoring Controller | REST/HTTPS | Expone el estado actual y la disponibilidad física observada. | Consultar estado por tenant, zona o spot. |
-| Alert Controller | REST/HTTPS | Permite a Staff consultar, reconocer y cerrar alertas. | Listar alertas, acknowledge, close y consultar severidad. |
+| Alert Controller | REST/HTTPS | Permite a Staff consultar, reconocer y cerrar alertas. | Listar alertas, reconocer, cerrar y consultar severidad. |
 | Occupancy Report Controller | REST/HTTPS | Expone reportes y agregados para el dashboard administrativo. | Generar, consultar y filtrar reportes por intervalo. |
 | Parking Event Consumer | Evento asíncrono | Recibe expectativas operativas sin asumir propiedad de Reservation o Parking Session. | ReservationCreated, ReservationReassigned, ParkingSessionStarted, ParkingSessionCompleted. |
 | Monitoring Event Publisher | Evento asíncrono | Publica estados, fallas, conflictos y solicitudes de cargos adicionales. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected, AdditionalChargeRequested. |
@@ -80,18 +80,20 @@ La Application Layer normaliza los mensajes, valida su idempotencia, actualiza e
 | Detect Unauthorized Occupancy | Detect Unauthorized Occupancy Handler | Genera una alerta cuando existe ocupación sin una expectativa operativa válida, sin identificar al vehículo. |
 | Evaluate Overstay | Evaluate Overstay Handler | Aplica cinco minutos de tolerancia y solicita cargo adicional únicamente con evidencia confiable. |
 | Evaluate High Capacity | Evaluate High Capacity Handler | Calcula el porcentaje de ocupación y genera alerta si supera 95 por ciento. |
-| Resolve Occupancy Alert | Resolve Alert Handler | Registra reconocimiento y cierre por personal autorizado. |
+| Resolve Occupancy Alert | Resolve Occupancy Alert Handler | Registra reconocimiento y cierre por personal autorizado. |
 | Generate Occupancy Report | Generate Occupancy Report Handler | Construye un reporte del intervalo solicitado sin modificar lecturas históricas. |
 
 | Domain Event | Event Handler o consumidor relacionado | Acción |
 | --- | --- | --- |
+| OccupancyReadingReceived | Process Occupancy Reading Handler | Recibe una lectura externa, valida su formato e idempotencia y actualiza el estado físico. |
 | ReservationCreated | Reservation Expectation Handler | Registra la expectativa de ocupación para el spot y periodo, usando reservationId como referencia. |
 | ReservationReassigned | Reservation Expectation Handler | Actualiza la expectativa del spot anterior y del nuevo spot. |
 | ParkingSessionStarted | Session Expectation Handler | Relaciona la expectativa operativa con el spot sin transferir la propiedad de Parking Session. |
+| ParkingSessionCompleted | Session Expectation Handler | Retira o cierra la expectativa operativa asociada con el spot cuando termina la sesión. |
 | OccupancyStatusUpdated | Parking Availability Consumer | Parking Infrastructure actualiza su Availability Projection. |
 | SensorFailureDetected | Parking Availability Consumer | Parking Infrastructure considera el spot UNAVAILABLE y revisa posibles Reservations afectadas. |
 | OccupancyConflictDetected | Parking Conflict Consumer | Parking Infrastructure analiza reasignación, indisponibilidad o alerta. |
-| UnauthorizedParkingDetected | Alert Notification Handler | Envía una alerta a Staff o Parking Administrator mediante el canal configurado. |
+| UnauthorizedParkingDetected | Alert Notification Handler | Envía una alerta a Staff mediante el canal configurado. |
 | HighCapacityReached | Capacity Notification Handler | Publica la condición para el dashboard y las notificaciones operativas. |
 | AdditionalChargeRequested | Payment Charge Consumer | Payments & Billing procesa el cargo si la solicitud contiene evidencia suficiente. |
 | OccupancyReportGenerated | Report Distribution Handler | Pone el reporte a disposición del dashboard administrativo. |
@@ -123,7 +125,7 @@ El monitor de salud debe comprobar que una lectura no supere el intervalo operat
 
 El diagrama de componentes deberá mostrar el límite de Occupancy & Monitoring, la entrada de sensores mediante MQTT/HTTP, los componentes internos de estado, salud, conflictos, sobretiempo, alertas y reportes, y la base de datos PostgreSQL propia. También deberá mostrar las dependencias asíncronas con Parking Infrastructure y Payments & Billing, además de la integración con Firebase Cloud Messaging.
 
-*Figura 36 (Occupancy & Monitoring Component Level Diagram)*
+*Figura 37 (Occupancy & Monitoring Component Level Diagram)*
 ![Occupancy & Monitoring Component Level Diagram](../assets/diagrams/components-diagram-occupancy.png)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
@@ -133,13 +135,13 @@ El diagrama de componentes deberá mostrar el límite de Occupancy & Monitoring,
 | Sensor Health Component | Supervisa comunicación, calidad y fallas. | Sensor Health Service, Sensor Repository, Health Monitor. |
 | Occupancy Conflict Component | Compara la ocupación con expectativas de Reservation o Session. | Parking Event Consumer, Conflict Detection Service. |
 | Unauthorized Occupancy Component | Genera alertas para ocupación sin expectativa válida. | Occupancy Conflict Component, Alert Service. |
-| Overtime Detection Component | Evalúa sobretiempo y publica solicitudes de cargo con evidencia. | Parking Event Consumer, Overtime Detection Service, Payments Publisher. |
+| Overtime Detection Component | Evalúa sobretiempo y publica solicitudes de cargo con evidencia. | Parking Event Consumer, Overtime Detection Service, Payments & Billing Adapter. |
 | Occupancy Alert Component | Prioriza, notifica, reconoce y cierra alertas. | Alert Controller, Alert Repository, FCM Adapter. |
 | Capacity Monitoring Component | Calcula el porcentaje de ocupación y la condición mayor al 95 por ciento. | Occupancy Status Component, Alert Service. |
-| Occupancy Report Component | Genera reportes para Staff y Parking Administrator. | Report Controller, Report Service, Report Repository. |
-| Occupancy Database | Persiste sensores, lecturas, conflictos, alertas y reportes. | Implementaciones de repositorio. |
+| Occupancy Report Component | Genera reportes para Staff. | Report Controller, Report Service, Report Repository. |
+| Occupancy & Monitoring Database | Persiste sensores, lecturas, conflictos, alertas y reportes. | Implementaciones de repositorio. |
 | Parking Infrastructure Adapter | Consume eventos y publica OccupancyStatusUpdated o conflictos. | Canal de mensajería asíncrona. |
-| Payments & Billing Adapter | Publica AdditionalChargeRequested y recibe el resultado si corresponde. | Canal de mensajería asíncrona. |
+| Payments & Billing Adapter | Publica AdditionalChargeRequested hacia Payments & Billing cuando existe evidencia suficiente. | Canal de mensajería asíncrona. |
 
 Las relaciones visuales deben indicar que el sensor no envía placa, driverId ni vehicleId, y que el contexto no llama directamente a la base de datos de Parking Infrastructure. El flujo de sobretiempo debe terminar en una solicitud de cargo, no en un cobro automático dentro de Occupancy & Monitoring.
 
@@ -149,7 +151,7 @@ La vista de código debe representar el modelo físico de ocupación y los servi
 
 #### ***2.6.5.6.1. Bounded Context Domain Layer Class Diagrams***
 
-*Figura 37 (Occupancy & Monitoring Domain Layer Class Diagram)*
+*Figura 38 (Occupancy & Monitoring Domain Layer Class Diagram)*
 
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -157,11 +159,11 @@ La vista de código debe representar el modelo físico de ocupación y los servi
 | OccupancySensor | -sensorId, -tenantId, -zoneId, -spotId, -protocol, -status, -lastSeenAt, -configuration | +register(), +receiveReading(), +markHealthy(), +markFailed() | Aggregate Root; pertenece a un spot mediante referencias de infraestructura. |
 | OccupancyReading | -readingId, -sensorId, -spotId, -occupancyStatus, -occurredAt, -receivedAt, -quality, -payloadHash | +validate(), +isFresh(), +isReliable() | Entity perteneciente al historial del sensor; no identifica Vehicle. |
 | SensorHealthSnapshot | -health, -lastSeenAt, -failureReason | +isOperational(), +isExpired() | Value Object de salud del sensor. |
-| OccupancyEvidence | -readingRef, -quality, -sensorHealth, -observedAt | +isReliable() | Value Object usado por conflictos y sobretiempo. |
+| OccupancyEvidence | -readingRefs, -quality, -sensorHealth, -observedAt | +isReliable() | Value Object usado por conflictos y sobretiempo; puede agrupar una o varias lecturas. |
 | OccupancyConflict | -conflictId, -spotId, -reservationRef, -sessionRef, -detectedAt, -type, -severity, -status | +detect(), +classify(), +resolve() | Entity; referencias externas a Parking Infrastructure. |
 | OccupancyAlert | -alertId, -tenantId, -zoneId, -spotId, -type, -severity, -createdAt, -status | +raise(), +acknowledge(), +close() | Entity de monitoreo. |
 | UnauthorizedParkingAlert | -alertId, -spotId, -detectedAt, -evidenceRef, -status | +raise(), +resolve() | Especialización de OccupancyAlert. |
-| HighCapacityPolicy | -thresholdPercentage | +evaluate() | Value Object; valor base mayor al 95 por ciento. |
+| HighCapacityPolicy | -thresholdPercentage = 95 | +evaluate() | Value Object; genera High Capacity cuando la ocupación supera el umbral. |
 | OccupancyReport | -reportId, -tenantId, -interval, -totals, -generatedAt, -status | +generate(), +publish() | Aggregate Root de reportes. |
 | OccupancyStatusService | — | +calculateCurrentStatus(), +updateProjection() | Domain Service de estado físico. |
 | SensorHealthService | — | +evaluateHealth(), +markUnavailableIfFailed() | Domain Service de salud. |
@@ -199,17 +201,17 @@ La vista de código debe representar el modelo físico de ocupación y los servi
 
 Occupancy & Monitoring Database almacena sensores, lecturas, estados de salud, conflictos, alertas y reportes. Las relaciones internas utilizan foreign keys. tenant_id, zone_id, spot_id, reservation_ref y session_ref son referencias de integración; no se crean foreign keys hacia las bases de Parking Infrastructure.
 
-*Figura 38 (Occupancy & Monitoring Database Design Diagram)*
+*Figura 39 (Occupancy & Monitoring Database Design Diagram)*
 
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
-| occupancy_sensors | sensor_id, tenant_id, zone_id, spot_id, protocol, status, last_seen_at, configuration, installed_at | sensor_id PK; tenant_id, zone_id y spot_id son referencias lógicas; protocol MQTT o HTTP; un sensor activo por spot según configuración operativa. |
-| occupancy_readings | reading_id, sensor_id, spot_id, occupancy_status, occurred_at, received_at, quality, payload_hash | reading_id PK; sensor_id FK a occupancy_sensors; occupancy_status AVAILABLE, OCCUPIED o UNAVAILABLE; payload_hash e instante permiten idempotencia; no contiene placa ni vehicle_id. |
+| occupancy_sensors | sensor_id, tenant_id, zone_id, spot_id, protocol, status, last_seen_at, configuration, installed_at | sensor_id PK; tenant_id, zone_id y spot_id son referencias lógicas; protocol MQTT o HTTP; un sensor ACTIVE por Parking Spot. |
+| occupancy_readings | reading_id, sensor_id, spot_id, occupancy_status, occurred_at, received_at, quality, payload_hash | reading_id PK; sensor_id FK a occupancy_sensors; occupancy_status AVAILABLE u OCCUPIED; UNAVAILABLE se deriva de Sensor Health en la proyección operativa; payload_hash e instante permiten idempotencia; no contiene placa ni vehicle_id. |
 | sensor_health_events | health_event_id, sensor_id, health, reason, observed_at, recovered_at | health_event_id PK; sensor_id FK a occupancy_sensors; conserva transiciones de salud para auditoría. |
-| occupancy_conflicts | conflict_id, spot_id, reservation_ref, session_ref, conflict_type, severity, evidence_ref, detected_at, status | conflict_id PK; spot_id es referencia lógica; reservation_ref y session_ref son opcionales y externos; status OPEN, ACKNOWLEDGED o RESOLVED. |
+| occupancy_conflicts | conflict_id, spot_id, reservation_ref, session_ref, conflict_type, severity, evidence_refs, detected_at, status | conflict_id PK; spot_id es referencia lógica; reservation_ref y session_ref son opcionales y externos; evidence_refs conserva una o varias referencias a lecturas; status OPEN, ACKNOWLEDGED o RESOLVED. |
 | occupancy_alerts | alert_id, tenant_id, zone_id, spot_id, alert_type, severity, evidence_ref, created_at, acknowledged_at, closed_at, status | alert_id PK; referencias de tenant, zone y spot son lógicas; status OPEN, ACKNOWLEDGED o CLOSED. |
-| capacity_snapshots | snapshot_id, tenant_id, zone_id, occupied_count, total_count, percentage, observed_at | snapshot_id PK; tenant_id y zone_id son referencias lógicas; percentage se calcula de occupied_count y total_count. |
+| capacity_snapshots | snapshot_id, tenant_id, zone_id, occupied_count, total_count, percentage, observed_at | snapshot_id PK; tenant_id y zone_id son referencias lógicas; zone_id puede ser NULL cuando el snapshot representa al Tenant completo; percentage se calcula de occupied_count y total_count. |
 | occupancy_reports | report_id, tenant_id, interval_start, interval_end, totals, generated_at, status | report_id PK; tenant_id es referencia lógica; interval_end mayor que interval_start. |
 
 | Relación de datos | Cardinalidad | Regla |
