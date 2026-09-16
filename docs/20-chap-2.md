@@ -207,7 +207,7 @@ Se trata de administradores y personal operativo encargados de supervisar el est
 - De fácil control remoto, para que el administrador supervise sin estar presente.
 - Apoyo a la gestión, reduciendo la dependencia de procesos manuales.
 
-**Segundo Segmento Objetivo (Conductores y usuarios finales (clientes))**
+**Segundo Segmento Objetivo (Conductores y usuarios finales)**
 
 Este segmento es fundamental porque son quienes utilizan directamente el estacionamiento y experimentan los problemas al momento de buscar un espacio. Las entrevistas realizadas evidencian dificultades relacionadas con el tiempo de búsqueda, la organización del lugar y la falta de información clara, lo que impacta en su experiencia.
 
@@ -284,11 +284,11 @@ Se trata de conductores que utilizan estacionamientos en centros comerciales, un
 
 ### 2.3.5. Big Picture EventStorming
 
-Se utilizó la guía Step-by-Step Guide de Philippe Bourgau, proporcionada en la rúbrica del Final Problem Statement, para llevar a cabo el proceso de Big Picture EventStorming, siguiendo sus etapas:
+Para modelar la visión general del dominio se siguió la guía *Step-by-Step Guide* de Philippe Bourgau, incluida en la rúbrica del *Final Problem Statement*. El proceso de Big Picture EventStorming se organizó en las siguientes etapas:
 
-- Open
-- Explore
-- Close
+- **Open:** se delimita el espacio del problema y se prepara el tablero para el modelado colaborativo.
+- **Explore:** se identifican y organizan los eventos, comandos, actores y reglas principales del dominio.
+- **Close:** se revisa el flujo obtenido y se consolidan los elementos relevantes para continuar con el diseño de la solución.
 
 **Miro Board Link:** [https://miro.com/app/board/uXjVHoqrvyc=/](https://miro.com/app/board/uXjVHoqrvyc=/)
 

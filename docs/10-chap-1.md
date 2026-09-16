@@ -288,7 +288,7 @@ La solución está dirigida inicialmente a dos segmentos objetivo relacionados d
 
 Para contextualizar estos segmentos en el entorno peruano, se consideran estadísticas oficiales del Ministerio de Transportes y Comunicaciones (MTC, 2026a, 2026b) relacionadas con el parque automotor y las licencias de conducir. Estas características se complementan y contrastan mediante las entrevistas realizadas a representantes de cada segmento.
 
-**Primer Segmento Objetivo: Administradores o personal operativo de estacionamiento**
+**Primer Segmento Objetivo (Administradores o personal operativo de estacionamiento)**
 
 Este segmento está conformado por las personas responsables de supervisar, controlar o administrar las operaciones realizadas dentro de estacionamientos con alta afluencia de vehículos.
 
@@ -304,7 +304,7 @@ Este segmento está conformado por las personas responsables de supervisar, cont
   - **Frecuencia de uso:** Se espera un uso frecuente durante la jornada laboral debido a las responsabilidades de supervisión y administración.
   - **Principales actividades:** Consultar ocupación, supervisar zonas, clasificar usuarios, identificar incidencias y analizar información relacionada con la utilización de los espacios.
 
-**Segundo Segmento Objetivo: Conductores y usuarios finales**
+**Segundo Segmento Objetivo (Conductores y usuarios finales)**
 
 Este segmento está conformado por personas que utilizan estacionamientos en establecimientos de alta afluencia. Los usuarios con cuenta participan como Drivers y el User Profile del Driver determina las zonas que puede utilizar. También se consideran Guests que llegan directamente al estacionamiento y pueden tener una Guest Parking Session registrada por un Parking Administrator, sin crear una cuenta ni una Reservation.
 
