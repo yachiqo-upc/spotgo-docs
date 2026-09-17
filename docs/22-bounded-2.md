@@ -122,7 +122,7 @@ La vista de código debe mostrar el modelo de dominio de identidad, sus interfac
 #### ***2.6.2.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 29 (Identity & Access Management Domain Layer Class Diagram)*
-![Identity & Access Management Class Diagram](../assets/diagrams/class-diagram-bounded-1.png)
+![Identity & Access Management Domain Layer Class Diagram](../assets/diagrams/class-diagram-identity.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
 | --- | --- | --- | --- |
