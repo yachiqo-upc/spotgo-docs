@@ -222,7 +222,7 @@ La vista de código debe concentrarse en los agregados y servicios de dominio qu
 Parking Infrastructure Database contiene la configuración física y los procesos de reserva y sesión. Las foreign keys se aplican a relaciones internas. profile_id, vehicle_id y payment_ref son referencias lógicas a otros bounded contexts y no crean foreign keys entre bases.
 
 *Figura 33 (Parking Infrastructure Database Design Diagram)*
-
+![Parking Infrastructure Database Design Diagram](../assets/diagrams/db-diagram-parking.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |

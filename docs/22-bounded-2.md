@@ -163,7 +163,7 @@ La vista de código debe mostrar el modelo de dominio de identidad, sus interfac
 Identity Database es independiente de las bases de datos de los demás bounded contexts. Las foreign keys se aplican solo dentro de esta base; identityRef, tenantId o correlationId utilizados por otros contextos no se convierten en relaciones físicas entre bases.
 
 *Figura 30 (Identity & Access Management Database Design Diagram)*
-![Identity & Access Management Database Design Diagram](../assets/diagrams/class-diagram-identity.png)
+![Identity & Access Management Database Design Diagram](../assets/diagrams/db-diagram-identity.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
