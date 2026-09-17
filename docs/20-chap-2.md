@@ -1036,7 +1036,7 @@ En conjunto, estos canvases permiten establecer límites claros entre las respon
 
 ### 2.5.2. Context Mapping
 
-En esta sección el equipo analiza las relaciones estructurales entre los Bounded Contexts identificados para la solución. A partir de la información obtenida durante el análisis del dominio, se plantean diferentes alternativas de organización y se evalúa el impacto de modificar, dividir o integrar determinadas capacidades.
+En esta sección analizamos las relaciones estructurales entre los Bounded Contexts identificados para la solución. A partir de la información obtenida durante el análisis del dominio, se plantean diferentes alternativas de organización y se evalúa el impacto de modificar, dividir o integrar determinadas capacidades.
 
 Los Bounded Contexts considerados son:
 
@@ -1049,7 +1049,7 @@ Los Bounded Contexts considerados son:
 El análisis considera las dependencias entre contextos y los patrones de relación propuestos por Domain-Driven Design.
 
 *Figura 20 (Context Mapping Discussion Evidence)*
-![Context Mapping Discussion Evidence](../assets/images/context-mapping-discussion-evidence.png)
+![Context Mapping Discussion Evidence](../assets/images/others/context-mapping-discussion-evidence.png)
 
 **Análisis de alternativas**
 
@@ -1118,7 +1118,7 @@ El Context Map seleccionado establece las siguientes relaciones estructurales en
 Como resultado del análisis, se mantiene la estructura conformada por los cinco Bounded Contexts identificados inicialmente. Las relaciones se establecen mediante patrones DDD que permiten definir explícitamente las dependencias y responsabilidades entre los contextos.
 
 *Figura 21 (Context Map)*
-![Context Map](../assets/images/context-map.png)
+![Context Map](../assets/diagrams/context-map.svg)
 
 La estructura seleccionada mantiene cada Bounded Context enfocado en sus responsabilidades y establece relaciones explícitas para la comunicación entre ellos. `Parking Infrastructure` conserva las capacidades relacionadas con la gestión de estacionamientos y reservas, mientras que `Payments & Billing` mantiene las reglas correspondientes al procesamiento económico y `Occupancy & Monitoring` las relacionadas con el monitoreo de la ocupación.
 
@@ -1129,18 +1129,18 @@ La estructura seleccionada mantiene cada Bounded Context enfocado en sus respons
 El **Diagrama de Contexto** constituye el primer nivel de abstracción del Modelo C4. Su propósito es delimitar el alcance de **SpotGo** y representar su interacción con los principales actores humanos y sistemas externos.
 
 *Figura 22 (Context Level Diagram)*
-![Context Level Diagram](../assets/diagrams/context-level-diagram.png)
+![Context Level Diagram](../assets/diagrams/context-level-diagram.svg)
 
 El diagrama identifica tres actores principales. El **Driver** utiliza la aplicación para consultar la disponibilidad de espacios, registrar sus vehículos, realizar reservas y efectuar pagos. El **Staff** utiliza la solución para administrar la infraestructura del estacionamiento, así como los perfiles, reservas y operaciones asociadas. Finalmente, el **SuperAdmin** administra los **Tenants**, provisiona las cuentas de **Staff** y realiza la configuración inicial de los estacionamientos.
 
-En cuanto a las integraciones externas, SpotGo se comunica con los **Sensores Físicos IoT** para recibir información sobre la ocupación y el estado de los sensores. Asimismo, utiliza **Google Maps** para proporcionar rutas hacia la **Parking Zone** seleccionada y **Firebase Cloud Messaging** para el envío de notificaciones relacionadas con cuentas, reservas, pagos, ocupación y otros eventos operativos.
+En cuanto a las integraciones externas, SpotGo se comunica con **Google Authentication** para validar identidades externas, con los **Sensores Físicos IoT** para recibir información sobre la ocupación y el estado de los sensores, con **Google Maps** para proporcionar rutas hacia la **Parking Zone** seleccionada y con **Firebase Cloud Messaging** para el envío de notificaciones relacionadas con cuentas, reservas, pagos, ocupación y otros eventos operativos.
 
 #### *2.5.3.2. Software Architecture Container Level Diagrams*
 
 El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y permite descomponer SpotGo en sus principales unidades de software. En esta vista se observa una arquitectura organizada alrededor de una aplicación móvil, una aplicación web y un **API Gateway**, junto con cinco contextos de negocio que encapsulan las principales responsabilidades funcionales de la plataforma.
 
 *Figura 23 (Container Level Diagram)*
-![Container Level Diagram](../assets/diagrams/container-level-diagram.png)
+![Container Level Diagram](../assets/diagrams/container-level-diagram.svg)
 
 La solución cuenta con los siguientes contenedores principales:
 
@@ -1150,15 +1150,17 @@ La solución cuenta con los siguientes contenedores principales:
 
 3. **API Gateway:** Punto único de entrada a los servicios internos de SpotGo, encargado de enrutar las solicitudes provenientes de las aplicaciones cliente hacia los diferentes contextos de negocio mediante HTTPS / REST.
 
-4. **Profiles & Vehicles Management:** Contenedor encargado de gestionar la información de los conductores, perfiles, vehículos asociados y referencias de asignación a los *Tenants* administrados por Parking Infrastructure.
+4. **Internal Payment Provider:** Servicio interno de SpotGo que procesa pagos digitales, consultas de estado y reembolsos mediante un contrato con idempotencia. No representa un proveedor externo de terceros.
 
-5. **Identity & Access Management:** Contenedor responsable de la autenticación de usuarios, gestión de credenciales y sesiones, autorización basada en roles, administración de cuentas y registro de acciones administrativas.
+5. **Profiles & Vehicles Management:** Contenedor encargado de gestionar la información de los conductores, perfiles, vehículos asociados y referencias de asignación a los *Tenants* administrados por Parking Infrastructure.
 
-6. **Parking Infrastructure:** Contenedor encargado de administrar las zonas, espacios, disponibilidad, reservas, asignaciones y reasignaciones dentro de los estacionamientos.
+6. **Identity & Access Management:** Contenedor responsable de la autenticación de usuarios, gestión de credenciales y sesiones, autorización basada en roles, administración de cuentas y registro de acciones administrativas.
 
-7. **Payments & Billing:** Contenedor responsable de gestionar los pagos digitales tokenizados, suscripciones, cobros por sobretiempo, reembolsos, comprobantes y saldos pendientes.
+7. **Parking Infrastructure:** Contenedor encargado de administrar las zonas, espacios, disponibilidad, reservas, asignaciones y reasignaciones dentro de los estacionamientos.
 
-8. **Occupancy & Monitoring:** Contenedor encargado de recibir información de los sensores IoT, determinar la ocupación real, supervisar el estado de los sensores, detectar conflictos y generar eventos relacionados con el sobretiempo.
+8. **Payments & Billing:** Contenedor responsable de gestionar los pagos digitales tokenizados, suscripciones, cobros por sobretiempo, reembolsos, comprobantes y saldos pendientes.
+
+9. **Occupancy & Monitoring:** Contenedor encargado de recibir información de los sensores IoT, determinar la ocupación real, supervisar el estado de los sensores, detectar conflictos y generar eventos relacionados con el sobretiempo.
 
 Cada contexto de negocio mantiene además una base de datos PostgreSQL independiente, permitiendo separar la persistencia de información según las responsabilidades de cada dominio. Los servicios se comunican entre sí mediante HTTPS / REST y, para determinados procesos, mediante eventos asíncronos.
 
@@ -1167,13 +1169,13 @@ Cada contexto de negocio mantiene además una base de datos PostgreSQL independi
 El **Diagrama de Despliegue** representa la distribución física de los elementos de software de SpotGo sobre la infraestructura tecnológica utilizada durante el entorno de producción. Esta vista permite relacionar las aplicaciones cliente con los servidores de aplicación, la infraestructura de bases de datos, la red de sensores IoT y los servicios externos empleados por la solución.
 
 *Figura 24 (Deployment Diagram)*
-![Deployment Diagram](../assets/diagrams/deployment-diagram.png)
+![Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
 
-La infraestructura contempla un **Driver Device**, utilizado para ejecutar la aplicación móvil, y un **Staff Device**, desde el cual el Staff accede a sus vistas administrativas móviles. El **SuperAdmin** utiliza un dispositivo con acceso a la aplicación web. Los dispositivos se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de recibir y enrutar las solicitudes hacia los servicios de SpotGo.
+La infraestructura contempla un **Driver Device**, utilizado para ejecutar la aplicación móvil, y un **Staff Device**, desde el cual el Staff accede a sus vistas administrativas móviles y web. El **SuperAdmin** utiliza un **SuperAdmin Device** con acceso a la aplicación web para provisionar Staff y administrar Tenants. Los dispositivos se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de recibir y enrutar las solicitudes hacia los servicios de SpotGo.
 
 Dentro de la infraestructura cloud se encuentra el **Application Server**, donde se ejecutan los cinco servicios correspondientes a los contextos de negocio. La persistencia se concentra en un **PostgreSQL Server**, alojado dentro de la **Database Infrastructure**, donde se mantienen las bases de datos independientes de cada contexto.
 
-Finalmente, la **Parking Infrastructure** incorpora una red de sensores físicos IoT que se comunica con el servicio de **Occupancy & Monitoring** mediante **MQTT / HTTP**. La arquitectura también contempla los servicios externos de **Google Maps** y **Firebase Cloud Messaging**, utilizados respectivamente para las funcionalidades de navegación hacia una **Parking Zone** y el envío de notificaciones.
+Finalmente, la **Parking Infrastructure** incorpora una red de sensores físicos IoT que se comunica con el servicio de **Occupancy & Monitoring** mediante **MQTT / HTTP**. La arquitectura también contempla los servicios externos de **Google Authentication**, **Google Maps** y **Firebase Cloud Messaging**, utilizados respectivamente para validar identidades externas, abrir rutas hacia una **Parking Zone** y enviar notificaciones.
 
 ## 2.6. Tactical-Level Domain-Driven Design
 

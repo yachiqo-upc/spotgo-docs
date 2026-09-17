@@ -77,8 +77,8 @@ Proyecto
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | --- | --- | --- | --- |
-| 0.1.0 | 04/09/26 | @AdrixRyz | docs: agregar todos los puntos previos de SpotGo hasta Requirements specification |
-| 0.1.1 | 10/09/26 | @briicarhuaz | docs: agregar los puntos de EventStorming |
+| 0.1.0 | 04/09/26 | @AdrixRyz | docs: copiar y ajustar todos los puntos previos de SpotGo hasta Requirements specification al nuevo proyecto |
+| 0.1.1 | 10/09/26 | @briicarhuaz | docs: agregar todos los puntos de EventStorming |
 | 0.1.2 | 12/09/26 | @IamAndreek | docs: agregar los puntos de Context Mapping y Software Architecture |
 | 0.1.3 | 14/09/26 | @CesarJrCR | docs: agregar parte de los puntos de Tactical-Level Domain-Driven Design |
 | 0.1.4 | 16/09/26 | @nes-ro | docs: agregar parte de los puntos de Tactical-Level Domain-Driven Design |
@@ -229,5 +229,5 @@ Proyecto
 
 **Cotrina Siclla, Sofia Alessandra (U20231B120)**
 
--
--
+- Durante mi primer año tras la graduación, completaré 1 programa de especialización en Machine Learning centrado en Python, obteniendo el certificado correspondiente, con el propósito de adquirir los fundamentos técnicos y teóricos necesarios para ingresar al campo de la Inteligencia Artificial.
+- Para el cierre de mis primeros 18 meses como profesional, desarrollaré al menos 2 modelos predictivos utilizando Python, documentando el código y los resultados obtenidos en mi portafolio público, con el objetivo de demostrar mi experiencia práctica y orientar definitivamente mi perfil hacia roles en Inteligencia Artificial.

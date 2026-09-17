@@ -17,7 +17,7 @@
       <rect x="28" y="212" width="760" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="28" y1="246" x2="788" y2="246" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="236" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="44" dy="0">Purpose</tspan></text>
-      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Mantener una representación operacional de Occupancy</tspan><tspan x="44" dy="27.0">física mediante Occupancy Sensors, administrar las Parking</tspan><tspan x="44" dy="27.0">Sessions y detectar incidencias que requieran Unauthorized</tspan><tspan x="44" dy="27.0">Parking Alerts, Additional Charges o Reassignments.</tspan></text>
+      <text x="44" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Mantener una representación operacional de Occupancy</tspan><tspan x="44" dy="27.0">física mediante Occupancy Sensors y sus lecturas;</tspan><tspan x="44" dy="27.0">las expectativas de Parking Sessions se reciben desde</tspan><tspan x="44" dy="27.0">Parking Infrastructure para detectar incidencias como</tspan><tspan x="44" dy="27.0">Unauthorized Parking Alerts, Additional Charges o Reassignments.</tspan></text>
     </g>
     <g>
       <rect x="28" y="416" width="760" height="165" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -31,14 +31,14 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Occupancy Sensor, Occupancy Status, Sensor Health, Parking</tspan><tspan x="44" dy="27.0">Session, Unauthorized Parking Alert, Occupancy Report.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Occupancy Sensor, Occupancy Status, Sensor Health,</tspan><tspan x="44" dy="27.0">Occupancy Evidence, Unauthorized Parking Alert, Occupancy</tspan><tspan x="44" dy="27.0">Report.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="28" y="729" width="760" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="28" y1="763" x2="788" y2="763" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="753" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="44" dy="0">Ubiquitous Language</tspan></text>
-      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Occupancy Sensor, Occupancy Status, Sensor Health, Parking</tspan><tspan x="44" dy="27.0">Session, Unauthorized Parking, No-show, Overstayed,</tspan><tspan x="44" dy="27.0">Occupancy Report.</tspan></text>
+      <text x="44" y="789" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Occupancy Sensor, Occupancy Status, Sensor Health, Occupancy</tspan><tspan x="44" dy="27.0">Evidence, Unauthorized Parking, No-show, Overstayed,</tspan><tspan x="44" dy="27.0">Occupancy Report.</tspan></text>
     </g>
     <g>
       <rect x="28" y="883" width="760" height="300" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -53,14 +53,14 @@
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="806" y1="156" x2="1572" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Inbound Communication</tspan></text>
-      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Recibir lecturas de Occupancy Sensors</tspan><tspan x="822" dy="27.0">• Recibir ReservationCreated / ReservationReassigned</tspan><tspan x="822" dy="27.0">• Resolver Unauthorized Parking Alerts</tspan><tspan x="822" dy="27.0">• Recibir cambios de configuración de Parking Zones y</tspan><tspan x="822" dy="27.0">  Parking Spots</tspan></text>
+      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Recibir lecturas de Occupancy Sensors</tspan><tspan x="822" dy="27.0">• Recibir ReservationCreated / ReservationReassigned</tspan><tspan x="822" dy="27.0">• Recibir ParkingSessionStarted / ParkingSessionCompleted</tspan><tspan x="822" dy="27.0">• Resolver Unauthorized Parking Alerts</tspan><tspan x="822" dy="27.0">• Recibir cambios de configuración de Parking Zones y</tspan><tspan x="822" dy="27.0">  Parking Spots</tspan></text>
     </g>
     <g>
       <rect x="806" y="376" width="766" height="230" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="376" width="766" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="806" y1="410" x2="1572" y2="410" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="400" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Outbound Communication</tspan></text>
-      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• OccupancyStatusUpdated</tspan><tspan x="822" dy="27.0">• ParkingSessionStarted / ParkingSessionEnded</tspan><tspan x="822" dy="27.0">• AdditionalChargeRequested hacia Payments &amp; Billing</tspan><tspan x="822" dy="27.0">• OccupancyConflictDetected / SensorFailureDetected hacia</tspan><tspan x="822" dy="27.0">  Parking Infrastructure</tspan><tspan x="822" dy="27.0">• MonitoringEvents hacia Firebase Cloud Messaging</tspan></text>
+      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• OccupancyStatusUpdated</tspan><tspan x="822" dy="27.0">• AdditionalChargeRequested hacia Payments &amp; Billing</tspan><tspan x="822" dy="27.0">• OccupancyConflictDetected / SensorFailureDetected hacia</tspan><tspan x="822" dy="27.0">  Parking Infrastructure</tspan><tspan x="822" dy="27.0">• MonitoringEvents hacia Firebase Cloud Messaging</tspan></text>
     </g>
     <g>
       <rect x="806" y="620" width="766" height="150" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -80,7 +80,7 @@
       <rect x="806" y="978" width="766" height="130" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="978" width="766" height="34" rx="12" fill="#6B7280" opacity="0.12" />
       <line x1="806" y1="1012" x2="1572" y2="1012" stroke="#d1d5db" stroke-width="1.2" />
-      <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Open Questions</tspan></text>
-      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿El umbral de High Capacity será fijo o configurable?</tspan><tspan x="822" dy="27.0">• ¿Cuánto tiempo se conservará el historial de Occupancy y</tspan><tspan x="822" dy="27.0">  Sensor Failures?</tspan></text>
+      <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6B7280" font-weight="bold"><tspan x="822" dy="0">Operational Policies</tspan></text>
+      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• High Capacity se activa cuando la ocupación supera el 95 %.</tspan><tspan x="822" dy="27.0">• Lecturas en bruto: 12 meses; reportes y snapshots: 24 meses.</tspan><tspan x="822" dy="27.0">• Incidentes abiertos se conservan hasta su resolución y auditoría.</tspan></text>
     </g>
 </svg>

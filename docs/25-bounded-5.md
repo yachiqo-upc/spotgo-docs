@@ -126,7 +126,7 @@ El monitor de salud debe comprobar que una lectura no supere el intervalo operat
 El diagrama de componentes deberá mostrar el límite de Occupancy & Monitoring, la entrada de sensores mediante MQTT/HTTP, los componentes internos de estado, salud, conflictos, sobretiempo, alertas y reportes, y la base de datos PostgreSQL propia. También deberá mostrar las dependencias asíncronas con Parking Infrastructure y Payments & Billing, además de la integración con Firebase Cloud Messaging.
 
 *Figura 37 (Occupancy & Monitoring Component Level Diagram)*
-![Occupancy & Monitoring Component Level Diagram](../assets/diagrams/components-diagram-occupancy.png)
+![Occupancy & Monitoring Component Level Diagram](../assets/diagrams/components-diagram-occupancy.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
 | --- | --- | --- |

@@ -45,7 +45,7 @@
       <rect x="28" y="883" width="760" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="28" y1="917" x2="788" y2="917" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="907" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="44" dy="0">Business Decisions</tspan></text>
-      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• No se almacenan datos completos de tarjeta, solo Payment</tspan><tspan x="44" dy="25.650000000000002">  Tokens</tspan><tspan x="44" dy="25.650000000000002">• El Digital Payment de una Reservation de un Driver</tspan><tspan x="44" dy="25.650000000000002">  registrado debe confirmarse antes de crear la Reservation</tspan><tspan x="44" dy="25.650000000000002">• Un Digital Payment fallido genera Outstanding Balance y</tspan><tspan x="44" dy="25.650000000000002">  puede bloquear nuevas Reservations</tspan><tspan x="44" dy="25.650000000000002">• Los descuentos de Subscription también aplican al Overstayed</tspan><tspan x="44" dy="25.650000000000002">• El pago físico de las Guest Parking Sessions se</tspan><tspan x="44" dy="25.650000000000002">  gestiona fuera de este contexto al finalizar la Session</tspan></text>
+      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• El proveedor de pagos es interno; solo se almacenan Payment</tspan><tspan x="44" dy="25.650000000000002">  Tokens y nunca datos completos de tarjeta</tspan><tspan x="44" dy="25.650000000000002">• El Digital Payment de una Reservation de un Driver</tspan><tspan x="44" dy="25.650000000000002">  registrado debe confirmarse antes de crear la Reservation</tspan><tspan x="44" dy="25.650000000000002">• Un Digital Payment fallido genera Outstanding Balance y</tspan><tspan x="44" dy="25.650000000000002">  puede bloquear nuevas Reservations</tspan><tspan x="44" dy="25.650000000000002">• Los descuentos de Subscription también aplican al Overstayed</tspan><tspan x="44" dy="25.650000000000002">• El pago físico de las Guest Parking Sessions se</tspan><tspan x="44" dy="25.650000000000002">  gestiona fuera de este contexto al finalizar la Session</tspan></text>
     </g>
   
     <g>
@@ -80,7 +80,7 @@
       <rect x="806" y="978" width="766" height="130" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="978" width="766" height="34" rx="12" fill="#C97A10" opacity="0.12" />
       <line x1="806" y1="1012" x2="1572" y2="1012" stroke="#d1d5db" stroke-width="1.2" />
-      <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="822" dy="0">Open Questions</tspan></text>
-      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿Qué proveedor administrará los Payment Tokens?</tspan><tspan x="822" dy="27.0">• ¿Cuál será la estrategia exacta de Retries y manejo de</tspan><tspan x="822" dy="27.0">  Fraud?</tspan></text>
+      <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#C97A10" font-weight="bold"><tspan x="822" dy="0">Operational Policies</tspan></text>
+      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Internal Payment Provider mediante un Adapter interno.</tspan><tspan x="822" dy="27.0">• Retry Policy: 4 intentos en 10 minutos para Reservations;</tspan><tspan x="822" dy="27.0">  suscripciones y cargos usan backoff extendido.</tspan></text>
     </g>
 </svg>

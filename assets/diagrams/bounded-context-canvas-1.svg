@@ -31,7 +31,7 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Driver, Vehicle, User Profile, Staff, Parking Administrator.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Driver, Vehicle, User Profile, Staff Assignment.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -45,7 +45,7 @@
       <rect x="28" y="883" width="760" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="28" y1="917" x2="788" y2="917" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="907" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="44" dy="0">Business Decisions</tspan></text>
-      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Un Driver debe tener un Vehicle asociado antes de crear</tspan><tspan x="44" dy="25.650000000000002">  una Reservation</tspan><tspan x="44" dy="25.650000000000002">• El User Profile pertenece al Driver y determina restricciones</tspan><tspan x="44" dy="25.650000000000002">  operativas</tspan><tspan x="44" dy="25.650000000000002">• La asignación o revocación del User Profile Staff solo puede</tspan><tspan x="44" dy="25.650000000000002">  realizarla un actor autorizado</tspan><tspan x="44" dy="25.650000000000002">• Los Vehicles externos no crean registros persistentes de</tspan><tspan x="44" dy="25.650000000000002">  Driver o Vehicle</tspan></text>
+      <text x="44" y="943" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#111827" font-weight="normal"><tspan x="44" dy="0">• Un Driver debe tener un Vehicle asociado antes de crear</tspan><tspan x="44" dy="25.650000000000002">  una Reservation</tspan><tspan x="44" dy="25.650000000000002">• El User Profile se asocia con una identidad y puede ser</tspan><tspan x="44" dy="25.650000000000002">  Driver o Staff</tspan><tspan x="44" dy="25.650000000000002">• El Staff Assignment vincula el perfil Staff con un Tenant y</tspan><tspan x="44" dy="25.650000000000002">  solo puede gestionarlo un actor autorizado</tspan><tspan x="44" dy="25.650000000000002">• Los Vehicles externos no crean registros persistentes de</tspan><tspan x="44" dy="25.650000000000002">  Driver o Vehicle</tspan></text>
     </g>
   
     <g>
@@ -53,14 +53,14 @@
       <rect x="806" y="122" width="766" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="806" y1="156" x2="1572" y2="156" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="146" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Inbound Communication</tspan></text>
-      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Registrar Driver</tspan><tspan x="822" dy="27.0">• Registrar y asociar Vehicle</tspan><tspan x="822" dy="27.0">• Asignar User Profile</tspan><tspan x="822" dy="27.0">• Revocar User Profile Staff</tspan><tspan x="822" dy="27.0">• Consultar Driver, Vehicle y User Profile desde</tspan><tspan x="822" dy="27.0">  Parking Infrastructure</tspan></text>
+      <text x="822" y="182" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• Registrar Driver</tspan><tspan x="822" dy="27.0">• Registrar y asociar Vehicle con su placa</tspan><tspan x="822" dy="27.0">• Crear o actualizar User Profile</tspan><tspan x="822" dy="27.0">• Crear o finalizar Staff Assignment</tspan><tspan x="822" dy="27.0">• Consultar Driver, Vehicle y User Profile desde</tspan><tspan x="822" dy="27.0">  Parking Infrastructure</tspan></text>
     </g>
     <g>
       <rect x="806" y="376" width="766" height="230" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="376" width="766" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="806" y1="410" x2="1572" y2="410" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="400" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Outbound Communication</tspan></text>
-      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• DriverRegistered</tspan><tspan x="822" dy="27.0">• VehicleAssociated</tspan><tspan x="822" dy="27.0">• ProfileAssigned / ProfileRevoked</tspan><tspan x="822" dy="27.0">• DriverProfileValidated hacia Parking</tspan><tspan x="822" dy="27.0">  Infrastructure</tspan><tspan x="822" dy="27.0">• Eligibility Data hacia Identity &amp; Access Management</tspan></text>
+      <text x="822" y="436" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• DriverProfileCreated / DriverProfileValidated</tspan><tspan x="822" dy="27.0">• VehicleRegistered / VehicleDeactivated</tspan><tspan x="822" dy="27.0">• StaffProfileAssigned</tspan><tspan x="822" dy="27.0">• Datos validados hacia Parking</tspan><tspan x="822" dy="27.0">  Infrastructure y Identity &amp; Access Management</tspan></text>
     </g>
     <g>
       <rect x="806" y="620" width="766" height="150" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -80,7 +80,7 @@
       <rect x="806" y="978" width="766" height="130" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
       <rect x="806" y="978" width="766" height="34" rx="12" fill="#2E8B57" opacity="0.12" />
       <line x1="806" y1="1012" x2="1572" y2="1012" stroke="#d1d5db" stroke-width="1.2" />
-      <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Open Questions</tspan></text>
-      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• ¿El User Profile Staff es global o específico por Tenant?</tspan><tspan x="822" dy="27.0">• ¿Qué ocurre con una Reservation confirmada si cambia el User Profile</tspan><tspan x="822" dy="27.0">  del Driver?</tspan></text>
+      <text x="822" y="1002" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2E8B57" font-weight="bold"><tspan x="822" dy="0">Policies &amp; Open Questions</tspan></text>
+      <text x="822" y="1038" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">• El Staff Assignment es específico por Tenant.</tspan><tspan x="822" dy="27.0">• ¿Qué ocurre con una Reservation confirmada si cambia el User Profile</tspan><tspan x="822" dy="27.0">  del Driver?</tspan></text>
     </g>
 </svg>

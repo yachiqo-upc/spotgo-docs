@@ -99,7 +99,7 @@ La expiración operativa se configura con access token de 15 minutos, refresh to
 El diagrama de componentes deberá mostrar la frontera de Identity & Access Management, sus componentes de seguridad, la base de datos y sus relaciones con Profiles & Vehicles Management, Parking Infrastructure y los clientes Flutter, Android nativo en Kotlin y web. Google Authentication debe representarse como dependencia externa. Guest no debe aparecer como un componente de autenticación.
 
 *Figura 28 (Identity & Access Management Component Level Diagram)*
-![Identity & Access Management Component Level Diagram](../assets/diagrams/components-diagram-identity.png)
+![Identity & Access Management Component Level Diagram](../assets/diagrams/components-diagram-identity.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
 | --- | --- | --- |

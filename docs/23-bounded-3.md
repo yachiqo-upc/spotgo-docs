@@ -141,7 +141,7 @@ El Temporary Lock se almacena con lockedAt, expiresAt y status, y debe estar pro
 El diagrama de componentes deberá representar Parking Infrastructure como un contenedor autónomo dentro del backend, con su base de datos PostgreSQL y adaptadores para Profiles & Vehicles Management, Identity & Access Management, Payments & Billing, Occupancy & Monitoring y Google Maps. La aplicación Flutter y la aplicación Android nativa en Kotlin deben situarse fuera del bounded context y acceder a través del API Gateway.
 
 *Figura 31 (Parking Infrastructure Component Level Diagram)*
-![Parking Infrastructure Component Level Diagram](../assets/diagrams/components-diagram-parking.png)
+![Parking Infrastructure Component Level Diagram](../assets/diagrams/components-diagram-parking.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
 | --- | --- | --- |

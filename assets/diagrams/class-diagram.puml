@@ -11,24 +11,49 @@ title SpotGo Domain Class Diagram (Domain-Driven Design)
 ' =====================================================================
 package "Profiles & Vehicles Management Context" #E1F5FE {
     class Driver <<AggregateRoot>> {
-        - UUID id
-        - UUID userId
+        - UUID driverId
+        - IdentityReference identityRef
         - FullName fullName
-        - Email email
-        - UserProfileType profileType
+        - ContactData contactData
+        - ProfileStatus status
         - List<Vehicle> vehicles
-        + registerVehicle(brand: String, model: String, color: String): Vehicle
+        + registerVehicle(licensePlate: String, brand: String, model: String, color: String): Vehicle
         + removeVehicle(vehicleId: UUID): Void
-        + assignProfileType(newType: UserProfileType): Void
+        + activate(): Void
+        + deactivate(): Void
+        + isOperational(): Boolean
     }
 
     class Vehicle <<Entity>> {
-        - UUID id
+        - UUID vehicleId
         - UUID driverId
-        - String brand
-        - String model
-        - String color
+        - VehicleData vehicleData
         - VehicleStatus status
+        + updateData(): Void
+        + activate(): Void
+        + deactivate(): Void
+        + isActive(): Boolean
+    }
+
+    class UserProfile <<Entity>> {
+        - UUID profileId
+        - IdentityReference identityRef
+        - UUID driverId
+        - UserProfileType profileType
+        - ProfileStatus status
+        + activate(): Void
+        + deactivate(): Void
+    }
+
+    class StaffAssignment <<Entity>> {
+        - UUID assignmentId
+        - UUID profileId
+        - UUID tenantId
+        - Timestamp validFrom
+        - Timestamp validTo
+        - AssignmentStatus status
+        + endAssignment(): Void
+        + isValidAt(at: Timestamp): Boolean
     }
 
     class FullName <<ValueObject>> {
@@ -37,11 +62,55 @@ package "Profiles & Vehicles Management Context" #E1F5FE {
         + getFullName(): String
     }
 
+    class IdentityReference <<ValueObject>> {
+        - UUID value
+        + validateFormat(): Boolean
+        + equals(other: IdentityReference): Boolean
+    }
+
+    class VehicleData <<ValueObject>> {
+        - String plate
+        - String make
+        - String model
+        - String color
+        + isComplete(): Boolean
+        + normalize(): Void
+    }
+
+    class ContactData <<ValueObject>> {
+        - String email
+        - String phone
+        + validate(): Boolean
+        + update(): Void
+    }
+
+    class DriverFactory <<Factory>> {
+        + createDriver(): Driver
+    }
+
+    class VehicleFactory <<Factory>> {
+        + createVehicle(): Vehicle
+    }
+
+    class DriverEligibilityService <<DomainService>> {
+        + validateForReservation(driverId: UUID, vehicleId: UUID): Boolean
+        + validateForOperation(driverId: UUID): Boolean
+    }
+
     enum UserProfileType <<Enum>> {
-        VISITOR
+        DRIVER
         STAFF
-        TAXI_DRIVER
-        VIP
+    }
+
+    enum ProfileStatus <<Enum>> {
+        ACTIVE
+        INACTIVE
+        SUSPENDED
+    }
+
+    enum AssignmentStatus <<Enum>> {
+        ACTIVE
+        ENDED
     }
 
     enum VehicleStatus <<Enum>> {
@@ -51,61 +120,239 @@ package "Profiles & Vehicles Management Context" #E1F5FE {
 
     interface DriverRepository <<Repository>> {
         + findById(id: UUID): Driver
-        + findByUserId(userId: UUID): Driver
+        + findByIdentityRef(identityRef: IdentityReference): Driver
         + save(driver: Driver): Void
+        + existsActive(driverId: UUID): Boolean
+    }
+
+    interface VehicleRepository <<Repository>> {
+        + findById(id: UUID): Vehicle
+        + findByDriverId(driverId: UUID): List<Vehicle>
+        + save(vehicle: Vehicle): Void
+        + existsActive(vehicleId: UUID): Boolean
+    }
+
+    interface UserProfileRepository <<Repository>> {
+        + findByIdentityRef(identityRef: IdentityReference): UserProfile
+        + findOperationalProfile(identityRef: IdentityReference): UserProfile
+        + save(profile: UserProfile): Void
     }
 
     Driver "1" *-- "0..*" Vehicle : posee >
     Driver "1" *-- "1" FullName
-    Driver "1" --> "1" UserProfileType : clasificado_como >
+    Driver "1" *-- "1" ContactData
+    Driver "1" *-- "1" IdentityReference
+    Driver "1" --> "1" UserProfile : tiene >
+    UserProfile "1" *-- "0..*" StaffAssignment : asigna (solo STAFF) >
+    UserProfile "1" *-- "1" IdentityReference
+    Vehicle "1" *-- "1" VehicleData
     Vehicle "1" --> "1" VehicleStatus
+    UserProfile "1" --> "1" UserProfileType
+    UserProfile "1" --> "1" ProfileStatus
+    StaffAssignment "1" --> "1" AssignmentStatus
+    DriverFactory ..> Driver : crea >
+    VehicleFactory ..> Vehicle : crea >
+    DriverEligibilityService ..> Driver : valida >
+    DriverEligibilityService ..> Vehicle : valida >
+    DriverEligibilityService ..> UserProfile : valida >
+    DriverRepository ..> Driver : persiste >
+    VehicleRepository ..> Vehicle : persiste >
+    UserProfileRepository ..> UserProfile : persiste >
 }
 
 ' =====================================================================
 ' BOUNDED CONTEXT 2: IDENTITY & ACCESS MANAGEMENT (IAM)
 ' =====================================================================
 package "Identity & Access Management Context" #F3E5F5 {
-    class UserAccount <<AggregateRoot>> {
-        - UUID id
+    class Account <<AggregateRoot>> {
+        - UUID accountId
         - String email
-        - String passwordHash
-        - UserRole role
-        - Boolean isActive
-        + authenticate(password: String): Boolean
-        + changePassword(newHash: String): Void
-    }
-
-    class Tenant <<AggregateRoot>> {
-        - UUID id
-        - String companyName
-        - String ruc
-        - String contactEmail
-        - Boolean isActive
+        - ExternalSubject externalSubject
+        - AccountStatus status
+        - Timestamp createdAt
+        - Timestamp updatedAt
         + activate(): Void
         + suspend(): Void
+        + lock(): Void
+        + canAuthenticate(): Boolean
     }
 
-    enum UserRole <<Enum>> {
-        SUPER_ADMIN
-        PARKING_ADMIN
+    class Credential <<Entity>> {
+        - UUID credentialId
+        - UUID accountId
+        - AuthenticationMethod authenticationMethod
+        - String secretHash
+        - ExternalSubject externalSubject
+        - Timestamp lastUsedAt
+        - CredentialStatus status
+        + verify(secret: String): Boolean
+        + rotate(): Void
+        + revoke(): Void
+    }
+
+    class Session <<Entity>> {
+        - UUID sessionId
+        - UUID accountId
+        - String refreshTokenHash
+        - Timestamp createdAt
+        - Timestamp expiresAt
+        - Timestamp lastActivityAt
+        - IdentitySessionStatus status
+        + isExpired(): Boolean
+        + refresh(): Void
+        + revoke(): Void
+    }
+
+    class RoleAssignment <<Entity>> {
+        - UUID assignmentId
+        - UUID accountId
+        - RoleType role
+        - UUID tenantId
+        - Timestamp validFrom
+        - Timestamp validTo
+        - Boolean isActive
+        + isValidAt(at: Timestamp): Boolean
+        + revoke(): Void
+    }
+
+    class AuditEntry <<Entity>> {
+        - UUID auditId
+        - UUID accountId
+        - String action
+        - String result
+        - String source
+        - Timestamp occurredAt
+        - String correlationId
+        + record(): Void
+    }
+
+    class Permission <<ValueObject>> {
+        - String resource
+        - String action
+        - String scope
+        + allows(resource: String, action: String): Boolean
+    }
+
+    class ExternalSubject <<ValueObject>> {
+        - String value
+        - String provider
+        + validate(): Boolean
+        + equals(other: ExternalSubject): Boolean
+    }
+
+    enum RoleType <<Enum>> {
         DRIVER
+        STAFF
+        SUPER_ADMIN
     }
 
-    interface UserRepository <<Repository>> {
-        + findById(id: UUID): UserAccount
-        + findByEmail(email: String): UserAccount
-        + save(user: UserAccount): Void
+    enum AccountStatus <<Enum>> {
+        PENDING
+        ACTIVE
+        SUSPENDED
+        LOCKED
+        INACTIVE
     }
 
-    UserAccount "1" --> "1" UserRole : asignado_con >
+    enum AuthenticationMethod <<Enum>> {
+        PASSWORD
+        GOOGLE
+    }
+
+    enum CredentialStatus <<Enum>> {
+        ACTIVE
+        REVOKED
+    }
+
+    enum IdentitySessionStatus <<Enum>> {
+        ACTIVE
+        EXPIRED
+        REVOKED
+    }
+
+    class AccountFactory <<Factory>> {
+        + createAccount(): Account
+    }
+
+    class SessionFactory <<Factory>> {
+        + createSession(): Session
+    }
+
+    class AuthenticationService <<DomainService>> {
+        + authenticate(): Account
+        + validateExternalIdentity(): Boolean
+    }
+
+    class AuthorizationService <<DomainService>> {
+        + authorize(): Boolean
+        + hasPermission(): Boolean
+    }
+
+    class SessionPolicy <<DomainService>> {
+        - Integer accessTokenMinutes = 15
+        - Integer refreshTokenDays = 7
+        - Integer webIdleMinutes = 30
+        - Integer webMaxHours = 8
+        + calculateExpiry(): Timestamp
+        + isRefreshAllowed(): Boolean
+        + revokeOnSecurityEvent(): Void
+    }
+
+    interface AccountRepository <<Repository>> {
+        + findById(id: UUID): Account
+        + findByExternalSubject(subject: ExternalSubject): Account
+        + save(account: Account): Void
+    }
+
+    interface SessionRepository <<Repository>> {
+        + findById(id: UUID): Session
+        + findActiveByAccount(accountId: UUID): List<Session>
+        + save(session: Session): Void
+        + revoke(sessionId: UUID): Void
+    }
+
+    interface AuditEntryRepository <<Repository>> {
+        + save(entry: AuditEntry): Void
+        + findByAccount(accountId: UUID): List<AuditEntry>
+        + findByCorrelationId(correlationId: String): List<AuditEntry>
+    }
+
+    Account "1" *-- "1..*" Credential : posee >
+    Account "1" *-- "0..*" Session : inicia >
+    Account "1" *-- "0..*" RoleAssignment : recibe >
+    Account "1" *-- "0..*" AuditEntry : genera >
+    Account "1" --> "1..*" RoleType : roles >
+    Account "1" --> "1" AccountStatus
+    Account "1" --> "0..1" ExternalSubject
+    Credential "1" --> "0..1" ExternalSubject
+    Credential "1" --> "1" AuthenticationMethod
+    Session "1" --> "1" IdentitySessionStatus
+    AuthenticationService ..> Credential : verifica >
+    AuthorizationService ..> RoleAssignment : evalúa >
+    AuthorizationService ..> Permission : comprueba >
+    SessionPolicy ..> Session : regula >
+    AccountRepository ..> Account : persiste >
+    SessionRepository ..> Session : persiste >
+    AuditEntryRepository ..> AuditEntry : persiste >
 }
 
 ' =====================================================================
 ' BOUNDED CONTEXT 3: PARKING INFRASTRUCTURE
 ' =====================================================================
 package "Parking Infrastructure Context" #E8F5E9 {
+    class Tenant <<AggregateRoot>> {
+        - UUID tenantId
+        - String name
+        - String contactData
+        - ParkingRuleSet rules
+        - TenantStatus status
+        + activate(): Void
+        + suspend(): Void
+        + configure(): Void
+    }
+
     class ParkingFacility <<AggregateRoot>> {
-        - UUID id
+        - UUID facilityId
         - UUID tenantId
         - String name
         - Coordinates coordinates
@@ -114,43 +361,157 @@ package "Parking Infrastructure Context" #E8F5E9 {
         + calculateTotalCapacity(): Integer
     }
 
-    class ParkingZone <<Entity>> {
-        - UUID id
+    class ParkingZone <<AggregateRoot>> {
+        - UUID zoneId
+        - UUID facilityId
+        - UUID tenantId
         - String name
-        - UserProfileType allowedProfile
+        - ParkingLocation location
         - String colorCode
+        - ParkingRuleSet rules
+        - ParkingZoneStatus status
         - List<ParkingSpot> spots
         + addSpot(spot: ParkingSpot): Void
+        + updateConfiguration(): Void
+        + deactivate(): Void
     }
 
     class ParkingSpot <<Entity>> {
-        - UUID id
+        - UUID spotId
+        - UUID zoneId
         - String spotCode
-        - Boolean isActive
+        - String spotType
+        - String features
+        - SpotOperationalStatus status
+        + activate(): Void
+        + deactivate(): Void
+        + isAssignable(): Boolean
     }
 
     class Reservation <<AggregateRoot>> {
-        - UUID id
+        - UUID reservationId
+        - UUID tenantId
         - UUID driverId
         - UUID vehicleId
+        - UUID zoneId
         - UUID spotId
-        - Timestamp startTime
-        - Timestamp endTime
+        - TimeRange timeRange
+        - Decimal amount
+        - String paymentRef
         - ReservationStatus status
+        + create(): Void
+        + confirm(): Void
+        + modify(): Void
+        + extend(): Void
         + confirmPayment(): Void
         + markAsNoShow(): Void
+        + markAsOverstayed(): Void
         + cancel(): Void
     }
 
     class GuestParkingSession <<AggregateRoot>> {
-        - UUID id
+        - UUID guestSessionId
+        - UUID tenantId
+        - UUID zoneId
         - UUID spotId
-        - String licensePlate
-        - Timestamp checkInTime
-        - Timestamp checkOutTime
-        - Money calculatedAmount
-        - Boolean isPaid
-        + closeSession(checkOut: Timestamp, amount: Money): Void
+        - PlateNumber manualPlate
+        - Timestamp entryAt
+        - Timestamp exitAt
+        - Decimal calculatedAmount
+        - PhysicalPaymentMethod physicalPaymentMethod
+        - Boolean physicalPaymentConfirmed
+        - GuestSessionStatus status
+        + confirmPhysicalPayment(): Void
+        + close(): Void
+    }
+
+    class TimeRange <<ValueObject>> {
+        - Timestamp startAt
+        - Timestamp endAt
+        + overlaps(other: TimeRange): Boolean
+        + contains(at: Timestamp): Boolean
+        + extend(duration: Integer): TimeRange
+    }
+
+    class ParkingLocation <<ValueObject>> {
+        - String floorPlanRef
+        - String zoneCode
+        - String spotCode
+        - Coordinates coordinates
+        + isValid(): Boolean
+    }
+
+    class PlateNumber <<ValueObject>> {
+        - String value
+        + normalize(): String
+        + validate(): Boolean
+    }
+
+    class ParkingRuleSet <<ValueObject>> {
+        - String tariffRules
+        - Integer overstayToleranceMinutes = 5
+        - Integer lockDurationMinutes = 10
+        - String allocationRules
+        + calculateAmount(): Decimal
+        + validate(): Boolean
+    }
+
+    class AvailabilityProjection <<ValueObject>> {
+        - UUID spotId
+        - ReservationStatus reservationState
+        - String occupancyStateRef
+        - AvailabilityStatus availability
+        - Timestamp observedAt
+        + isBookable(): Boolean
+        + isReliable(): Boolean
+    }
+
+    class ParkingSession <<AggregateRoot>> {
+        - UUID sessionId
+        - UUID reservationId
+        - UUID driverId
+        - UUID vehicleId
+        - UUID spotId
+        - Timestamp entryAt
+        - Timestamp exitAt
+        - SessionStatus status
+        + start(): Void
+        + close(): Void
+        + markPendingClosure(): Void
+    }
+
+    class TemporaryLock <<Entity>> {
+        - UUID lockId
+        - UUID spotId
+        - UUID reservationIntentRef
+        - Timestamp lockedAt
+        - Timestamp expiresAt
+        - Integer durationMinutes = 10
+        - LockStatus status
+        + isActiveAt(at: Timestamp): Boolean
+        + expire(): Void
+        + release(): Void
+        + confirm(): Void
+    }
+
+    class FloorPlan <<Entity>> {
+        - UUID floorPlanId
+        - UUID tenantId
+        - Integer version
+        - FloorPlanStatus status
+        + publishVersion(): Void
+        + archiveVersion(): Void
+    }
+
+    class DigitalParkingMap <<Entity>> {
+        - UUID mapId
+        - UUID floorPlanId
+        - Integer version
+        - String elements
+        - MapStatus status
+        + generate(): Void
+        + publish(): Void
+        + updateAvailability(): Void
     }
 
     class Coordinates <<ValueObject>> {
@@ -159,12 +520,74 @@ package "Parking Infrastructure Context" #E8F5E9 {
     }
 
     enum ReservationStatus <<Enum>> {
+        PENDING_PAYMENT
         RESERVED
         ACTIVE
         COMPLETED
         CANCELLED
         NO_SHOW
         OVERSTAYED
+        PAYMENT_REJECTED
+    }
+
+    enum SessionStatus <<Enum>> {
+        ACTIVE
+        COMPLETED
+        PENDING_CLOSURE
+    }
+
+    enum GuestSessionStatus <<Enum>> {
+        OPEN
+        CLOSED
+        PENDING_REVIEW
+    }
+
+    enum SpotOperationalStatus <<Enum>> {
+        ACTIVE
+        INACTIVE
+        MAINTENANCE
+    }
+
+    enum ParkingZoneStatus <<Enum>> {
+        ACTIVE
+        INACTIVE
+    }
+
+    enum AvailabilityStatus <<Enum>> {
+        AVAILABLE
+        RESERVED
+        TEMPORARILY_LOCKED
+        OCCUPIED
+        UNAVAILABLE
+    }
+
+    enum LockStatus <<Enum>> {
+        ACTIVE
+        EXPIRED
+        RELEASED
+        CONFIRMED
+    }
+
+    enum TenantStatus <<Enum>> {
+        ACTIVE
+        SUSPENDED
+    }
+
+    enum FloorPlanStatus <<Enum>> {
+        DRAFT
+        PUBLISHED
+        ARCHIVED
+    }
+
+    enum MapStatus <<Enum>> {
+        DRAFT
+        PUBLISHED
+        ARCHIVED
+    }
+
+    enum PhysicalPaymentMethod <<Enum>> {
+        CASH
+        POS
     }
 
     interface ParkingFacilityRepository <<Repository>> {
@@ -173,10 +596,90 @@ package "Parking Infrastructure Context" #E8F5E9 {
         + save(facility: ParkingFacility): Void
     }
 
+    class ReservationFactory <<Factory>> {
+        + createReservation(): Reservation
+    }
+
+    class GuestSessionFactory <<Factory>> {
+        + createGuestSession(): GuestParkingSession
+    }
+
+    class SpotAllocationService <<DomainService>> {
+        + findCompatibleSpot(): ParkingSpot
+        + allocate(): Void
+    }
+
+    class AvailabilityService <<DomainService>> {
+        + queryAvailability(): AvailabilityProjection
+        + isAvailable(): Boolean
+    }
+
+    class ReservationReassignmentService <<DomainService>> {
+        + reassign(): Void
+        + findAlternative(): ParkingSpot
+        + requestRefund(): Void
+    }
+
+    class OverstayPolicy <<DomainService>> {
+        - Integer toleranceMinutes = 5
+        + evaluate(): Boolean
+        + isOverstayed(): Boolean
+    }
+
+    class NavigationService <<DomainService>> {
+        + buildRouteRequest(): String
+    }
+
+    interface TenantRepository <<Repository>> {
+        + findById(id: UUID): Tenant
+        + save(tenant: Tenant): Void
+        + updateStatus(tenant: Tenant): Void
+    }
+
+    interface ParkingLayoutRepository <<Repository>> {
+        + findZone(zoneId: UUID): ParkingZone
+        + findSpot(spotId: UUID): ParkingSpot
+        + save(layout: ParkingFacility): Void
+        + publishMap(map: DigitalParkingMap): Void
+    }
+
+    interface ReservationRepository <<Repository>> {
+        + findById(id: UUID): Reservation
+        + findOverlapping(spotId: UUID, timeRange: TimeRange): List<Reservation>
+        + save(reservation: Reservation): Void
+        + releaseExpiredLocks(): Void
+    }
+
+    interface ParkingSessionRepository <<Repository>> {
+        + findActive(): List<ParkingSession>
+        + save(session: ParkingSession): Void
+        + close(sessionId: UUID): Void
+    }
+
+    Tenant "1" *-- "1..*" ParkingFacility : administra >
     ParkingFacility "1" *-- "1..*" ParkingZone : contiene >
     ParkingFacility "1" *-- "1" Coordinates
+    ParkingZone "1" *-- "1" ParkingLocation
+    ParkingZone "1" *-- "1" ParkingRuleSet
     ParkingZone "1" *-- "1..*" ParkingSpot : dividida_en >
+    Reservation "1" *-- "1" TimeRange
+    GuestParkingSession "1" *-- "1" PlateNumber
     Reservation "1" --> "1" ReservationStatus
+    Reservation "1" --> "0..1" TemporaryLock : controla >
+    Reservation "1" --> "0..1" ParkingSession : origina >
+    GuestParkingSession "1" --> "1" PhysicalPaymentMethod
+    GuestParkingSession "1" --> "1" GuestSessionStatus
+    ParkingSession "1" --> "1" SessionStatus
+    TemporaryLock "1" --> "1" LockStatus
+    ParkingSpot "1" --> "1" SpotOperationalStatus
+    ParkingZone "1" --> "1" ParkingZoneStatus
+    AvailabilityProjection "1" --> "1" AvailabilityStatus
+    FloorPlan "1" *-- "0..*" DigitalParkingMap : versiona >
+    AvailabilityService ..> AvailabilityProjection : calcula >
+    SpotAllocationService ..> AvailabilityService : consulta >
+    ReservationReassignmentService ..> ParkingSpot : busca alternativa >
+    OverstayPolicy ..> ParkingSession : evalúa >
+    NavigationService ..> ParkingZone : prepara destino >
 }
 
 ' =====================================================================
@@ -184,48 +687,219 @@ package "Parking Infrastructure Context" #E8F5E9 {
 ' =====================================================================
 package "Payments & Billing Context" #FFF3E0 {
     class DigitalPayment <<AggregateRoot>> {
-        - UUID id
-        - UUID reservationId
-        - UUID driverId
+        - UUID paymentId
+        - UUID paymentTokenId
+        - PaymentOperationType operationType
+        - String ownerRef
         - Money amount
+        - String currency
         - PaymentStatus status
+        - String providerOperationRef
+        - String idempotencyKey
+        - Timestamp createdAt
         - Timestamp processedAt
-        + processPayment(): Boolean
-        + refund(): Void
+        + initiate(): Void
+        + markPending(): Void
+        + approve(): Void
+        + reject(): Void
+        + requiresReconciliation(): Boolean
     }
 
     class Subscription <<AggregateRoot>> {
-        - UUID id
+        - UUID subscriptionId
         - UUID driverId
         - SubscriptionPlan plan
-        - Timestamp startDate
-        - Timestamp endDate
+        - Timestamp startAt
+        - Timestamp endAt
+        - SubscriptionStatus status
         - Boolean autoRenew
         + getDiscountPercentage(): Decimal
+        + activate(): Void
+        + pause(): Void
         + cancel(): Void
     }
 
-    class Receipt <<AggregateRoot>> {
-        - UUID id
+    class PaymentAttempt <<Entity>> {
+        - UUID attemptId
         - UUID paymentId
-        - String receiptNumber
-        - DocumentType documentType
-        - Money totalAmount
+        - Integer number
+        - Timestamp startedAt
+        - Timestamp finishedAt
+        - PaymentAttemptStatus status
+        - String errorCode
+        - Timestamp nextAttemptAt
+        + start(): Void
+        + markSuccess(): Void
+        + markTransientFailure(): Void
+        + markDefinitiveFailure(): Void
+    }
+
+    class PaymentToken <<Entity>> {
+        - UUID tokenId
+        - String ownerRef
+        - String providerTokenRef
+        - String brand
+        - String lastFour
+        - Integer expirationMonth
+        - Integer expirationYear
+        - TokenStatus status
+        + activate(): Void
+        + revoke(): Void
+        + isUsable(): Boolean
+    }
+
+    class AdditionalCharge <<Entity>> {
+        - UUID chargeId
+        - String reservationRef
+        - String sessionRef
+        - Money amount
+        - String reason
+        - String evidenceRef
+        - ChargeStatus status
+        + authorize(): Void
+        + process(): Void
+        + reject(): Void
+    }
+
+    class Receipt <<Entity>> {
+        - UUID receiptId
+        - UUID paymentId
+        - String ownerRef
+        - Money amount
         - Timestamp issuedAt
-        + generatePdf(): String
+        - BillingDocumentStatus status
+        + issue(): Void
+        + invalidate(): Void
+    }
+
+    class ElectronicReceipt <<Entity>> {
+        - UUID receiptId
+        - String dni
+        - String series
+        - String number
+        - BillingTaxData taxData
+        + validate(): Void
+    }
+
+    class ElectronicInvoice <<Entity>> {
+        - UUID receiptId
+        - String ruc
+        - String businessName
+        - String series
+        - String number
+        - BillingTaxData taxData
+        + validate(): Void
+    }
+
+    class BillingTaxData <<ValueObject>> {
+        - BillingDocumentType documentType
+        - String documentNumber
+        - String legalName
+        - String address
+        + validate(): Boolean
+        + determineDocumentType(): BillingDocumentType
     }
 
     class OutstandingBalance <<AggregateRoot>> {
-        - UUID id
-        - UUID driverId
-        - Money pendingAmount
-        - Boolean isCleared
-        + clearBalance(): Void
+        - UUID balanceId
+        - String ownerRef
+        - String sourceRef
+        - Money amount
+        - Timestamp dueAt
+        - BalanceStatus status
+        + create(): Void
+        + addAmount(amount: Money): Void
+        + regularize(): Void
+        + blockNewReservation(): Void
     }
+
+    class Refund <<Entity>> {
+        - UUID refundId
+        - UUID paymentId
+        - Money amount
+        - String reason
+        - RefundStatus status
+        - String providerOperationRef
+        + request(): Void
+        + approve(): Void
+        + complete(): Void
+        + fail(): Void
+    }
+
 
     class Money <<ValueObject>> {
         - Decimal amount
         - String currency
+    }
+
+    interface PaymentProviderGateway <<Port>> {
+        + authorize(): Void
+        + queryStatus(): PaymentStatus
+        + refund(): Void
+        + cancel(): Void
+    }
+
+    class InternalPaymentProviderAdapter <<Adapter>> {
+        + authorize(): Void
+        + queryStatus(): PaymentStatus
+        + refund(): Void
+        + cancel(): Void
+    }
+
+    class PaymentProcessingService <<DomainService>> {
+        + process(): Void
+        + classifyResult(): PaymentStatus
+        + reconcile(): Void
+    }
+
+    class RetryPolicy <<DomainService>> {
+        - Integer reservationLockMinutes = 10
+        - Integer maxAttempts = 4
+        - String backoffSchedule = "1m, 2m, 4m"
+        + shouldRetry(): Boolean
+        + nextAttemptAt(): Timestamp
+        + maxAttempts(): Integer
+    }
+
+    class BillingService <<DomainService>> {
+        + issueReceipt(): Receipt
+        + issueElectronicDocument(): Receipt
+    }
+
+    class OvertimeBillingService <<DomainService>> {
+        + createAdditionalCharge(): AdditionalCharge
+        + processAdditionalCharge(): Void
+    }
+
+    class SubscriptionService <<DomainService>> {
+        + calculateBenefit(): Decimal
+        + activateSubscription(): Void
+        + cancelSubscription(): Void
+    }
+
+    interface DigitalPaymentRepository <<Repository>> {
+        + findById(id: UUID): DigitalPayment
+        + findByIdempotencyKey(key: String): DigitalPayment
+        + save(payment: DigitalPayment): Void
+        + updateStatus(paymentId: UUID, status: PaymentStatus): Void
+    }
+
+    interface PaymentTokenRepository <<Repository>> {
+        + findUsable(ownerRef: String): List<PaymentToken>
+        + save(token: PaymentToken): Void
+        + revoke(tokenId: UUID): Void
+    }
+
+    interface BillingRepository <<Repository>> {
+        + save(receipt: Receipt): Void
+        + findByPaymentId(paymentId: UUID): Receipt
+        + voidDocument(receiptId: UUID): Void
+    }
+
+    interface BalanceRepository <<Repository>> {
+        + findOpenByOwner(ownerRef: String): List<OutstandingBalance>
+        + save(balance: OutstandingBalance): Void
+        + regularize(balanceId: UUID): Void
     }
 
     enum SubscriptionPlan <<Enum>> {
@@ -234,24 +908,103 @@ package "Payments & Billing Context" #FFF3E0 {
         PLUS_ANNUAL
     }
 
-    enum PaymentStatus <<Enum>> {
-        PENDING
-        APPROVED
-        REJECTED
-        REFUNDED
+    enum PaymentOperationType <<Enum>> {
+        RESERVATION
+        SUBSCRIPTION
+        ADDITIONAL_CHARGE
+        REFUND
     }
 
-    enum DocumentType <<Enum>> {
+    enum PaymentAttemptStatus <<Enum>> {
+        STARTED
+        SUCCESS
+        TRANSIENT_FAILURE
+        DEFINITIVE_FAILURE
+        UNKNOWN
+    }
+
+    enum TokenStatus <<Enum>> {
+        ACTIVE
+        REVOKED
+    }
+
+    enum SubscriptionStatus <<Enum>> {
+        ACTIVE
+        PAUSED
+        EXPIRED
+        CANCELLED
+        PAST_DUE
+    }
+
+    enum ChargeStatus <<Enum>> {
+        AUTHORIZED
+        PROCESSED
+        REJECTED
+    }
+
+    enum BalanceStatus <<Enum>> {
+        OPEN
+        PARTIALLY_PAID
+        REGULARIZED
+        WRITTEN_OFF
+    }
+
+    enum RefundStatus <<Enum>> {
+        REQUESTED
+        COMPLETED
+        FAILED
+        RECONCILIATION_REQUIRED
+    }
+
+    enum BillingDocumentStatus <<Enum>> {
+        ISSUED
+        VOIDED
+    }
+
+    enum BillingDocumentType <<Enum>> {
         ELECTRONIC_RECEIPT
         ELECTRONIC_INVOICE
     }
 
+    enum PaymentStatus <<Enum>> {
+        INITIATED
+        PENDING
+        APPROVED
+        REJECTED
+        CANCELLED
+        RECONCILIATION_REQUIRED
+    }
+
+    DigitalPayment "1" *-- "0..1" PaymentToken : utiliza >
+    DigitalPayment "1" *-- "1..*" PaymentAttempt : conserva >
+    DigitalPayment "1" *-- "0..1" Receipt : emite >
+    DigitalPayment "1" *-- "0..*" Refund : origina >
     DigitalPayment "1" *-- "1" Money
+    DigitalPayment "1" --> "1" PaymentOperationType
     DigitalPayment "1" --> "1" PaymentStatus
     Subscription "1" --> "1" SubscriptionPlan
-    Receipt "1" *-- "1" Money
-    Receipt "1" --> "1" DocumentType
+    Subscription "1" --> "1" SubscriptionStatus
+    Subscription "1" --> "0..*" DigitalPayment : genera >
+    AdditionalCharge "1" *-- "1" Money
+    OutstandingBalance "1" --> "1" BalanceStatus
     OutstandingBalance "1" *-- "1" Money
+    OutstandingBalance "1" --> "0..*" DigitalPayment : regulariza_con >
+    Receipt "1" *-- "1" Money
+    Receipt <|-- ElectronicReceipt
+    Receipt <|-- ElectronicInvoice
+    Receipt "1" --> "1" BillingDocumentStatus
+    BillingTaxData "1" --> "1" BillingDocumentType
+    PaymentAttempt "1" --> "1" PaymentAttemptStatus
+    PaymentToken "1" --> "1" TokenStatus
+    PaymentProcessingService ..> PaymentProviderGateway : utiliza >
+    PaymentProcessingService ..> RetryPolicy : aplica >
+    PaymentProviderGateway ..> PaymentToken : autoriza_con >
+    InternalPaymentProviderAdapter ..|> PaymentProviderGateway : implementa >
+    RetryPolicy ..> PaymentAttempt : determina >
+    BillingService ..> BillingTaxData : determina >
+    OvertimeBillingService ..> AdditionalCharge : crea >
+    SubscriptionService ..> Subscription : gestiona >
+    BillingService ..> Receipt : emite >
 }
 
 ' =====================================================================
@@ -259,37 +1012,143 @@ package "Payments & Billing Context" #FFF3E0 {
 ' =====================================================================
 package "Occupancy & Monitoring Context" #FCE4EC {
     class OccupancySensor <<AggregateRoot>> {
-        - UUID id
+        - UUID sensorId
+        - UUID tenantId
+        - UUID zoneId
         - UUID spotId
-        - String macAddress
-        - Integer batteryLevel
-        - SensorHealthStatus healthStatus
-        + ping(): Void
-        + reportStatus(status: OccupancyStatus): OccupancyEvent
+        - SensorProtocol protocol
+        - SensorHealth status
+        - Timestamp lastSeenAt
+        - String configuration
+        + register(): Void
+        + receiveReading(): OccupancyReading
+        + markHealthy(): Void
+        + markFailed(): Void
     }
 
-    class ParkingSession <<AggregateRoot>> {
-        - UUID id
+    class OccupancyReading <<Entity>> {
+        - UUID readingId
+        - UUID sensorId
         - UUID spotId
-        - UUID reservationId
-        - Timestamp entryTime
-        - Timestamp exitTime
-        - SessionState state
-        + completeSession(): Void
+        - OccupancyStatus occupancyStatus
+        - Timestamp occurredAt
+        - Timestamp receivedAt
+        - Decimal quality
+        - String payloadHash
+        + validate(): Boolean
+        + isFresh(): Boolean
+        + isReliable(): Boolean
     }
 
-    class OperationalAlert <<AggregateRoot>> {
-        - UUID id
+    class SensorHealthSnapshot <<ValueObject>> {
+        - SensorHealth health
+        - Timestamp lastSeenAt
+        - String failureReason
+        + isOperational(): Boolean
+        + isExpired(): Boolean
+    }
+
+    class OccupancyEvidence <<ValueObject>> {
+        - List<UUID> readingRefs
+        - Decimal quality
+        - SensorHealth sensorHealth
+        - Timestamp observedAt
+        + isReliable(): Boolean
+    }
+
+    class OccupancyConflict <<Entity>> {
+        - UUID conflictId
         - UUID spotId
-        - AlertType alertType
-        - Timestamp createdAt
-        - Boolean isResolved
+        - String reservationRef
+        - String sessionRef
+        - Timestamp detectedAt
+        - String type
+        - String severity
+        - ConflictStatus status
+        + detect(): Void
+        + classify(): Void
         + resolve(): Void
     }
 
-    class OccupancyEvent <<ValueObject>> {
-        - OccupancyStatus status
-        - Timestamp changedAt
+    class OccupancyAlert <<Entity>> {
+        - UUID alertId
+        - UUID tenantId
+        - UUID zoneId
+        - UUID spotId
+        - AlertType type
+        - String severity
+        - Timestamp createdAt
+        - AlertStatus status
+        + raise(): Void
+        + acknowledge(): Void
+        + close(): Void
+    }
+
+    class UnauthorizedParkingAlert <<Entity>> {
+        - UUID alertId
+        - UUID spotId
+        - Timestamp detectedAt
+        - UUID evidenceRef
+        - AlertStatus status
+        + raise(): Void
+        + resolve(): Void
+    }
+
+    class HighCapacityPolicy <<ValueObject>> {
+        - Integer thresholdPercentage = 95
+        + evaluate(): Boolean
+    }
+
+    class OccupancyReport <<AggregateRoot>> {
+        - UUID reportId
+        - UUID tenantId
+        - String interval
+        - String totals
+        - Timestamp generatedAt
+        - String status
+        + generate(): Void
+        + publish(): Void
+    }
+
+    class OccupancyStatusService <<DomainService>> {
+        + calculateCurrentStatus(): OccupancyStatus
+        + updateProjection(): Void
+    }
+
+    class SensorHealthService <<DomainService>> {
+        + evaluateHealth(): SensorHealth
+        + markUnavailableIfFailed(): Void
+    }
+
+    class ConflictDetectionService <<DomainService>> {
+        + detectReservationConflict(): OccupancyConflict
+        + detectUnauthorizedOccupancy(): OccupancyConflict
+    }
+
+    class OvertimeDetectionService <<DomainService>> {
+        - Integer toleranceMinutes = 5
+        + evaluate(): Boolean
+        + requestAdditionalChargeIfReliable(): Void
+    }
+
+    class AlertService <<DomainService>> {
+        + raise(): Void
+        + prioritize(): Void
+        + acknowledge(): Void
+        + close(): Void
+    }
+
+    class ReportService <<DomainService>> {
+        + buildReport(): OccupancyReport
+        + aggregate(): Void
+    }
+
+    class OccupancySensorFactory <<Factory>> {
+        + createSensor(): OccupancySensor
+    }
+
+    class OccupancyReadingFactory <<Factory>> {
+        + createReading(): OccupancyReading
     }
 
     enum OccupancyStatus <<Enum>> {
@@ -298,10 +1157,28 @@ package "Occupancy & Monitoring Context" #FCE4EC {
         UNAVAILABLE
     }
 
-    enum SensorHealthStatus <<Enum>> {
-        OPERATIONAL
-        LOW_BATTERY
-        DISCONNECTED
+    enum SensorHealth <<Enum>> {
+        HEALTHY
+        DEGRADED
+        FAILED
+        UNKNOWN
+    }
+
+    enum SensorProtocol <<Enum>> {
+        MQTT
+        HTTP
+    }
+
+    enum ConflictStatus <<Enum>> {
+        OPEN
+        ACKNOWLEDGED
+        RESOLVED
+    }
+
+    enum AlertStatus <<Enum>> {
+        OPEN
+        ACKNOWLEDGED
+        CLOSED
     }
 
     enum AlertType <<Enum>> {
@@ -310,23 +1187,69 @@ package "Occupancy & Monitoring Context" #FCE4EC {
         SENSOR_FAILURE
     }
 
-    OccupancySensor "1" *-- "0..*" OccupancyEvent : emite >
-    OccupancySensor "1" --> "1" SensorHealthStatus
-    OccupancyEvent "1" --> "1" OccupancyStatus
-    OperationalAlert "1" --> "1" AlertType
+    interface SensorRepository <<Repository>> {
+        + findById(id: UUID): OccupancySensor
+        + findBySpotId(spotId: UUID): OccupancySensor
+        + save(sensor: OccupancySensor): Void
+        + updateHealth(sensorId: UUID, health: SensorHealth): Void
+    }
+
+    interface OccupancyReadingRepository <<Repository>> {
+        + save(reading: OccupancyReading): Void
+        + findLatestBySpot(spotId: UUID): OccupancyReading
+        + findByInterval(spotId: UUID, interval: String): List<OccupancyReading>
+    }
+
+    interface AlertRepository <<Repository>> {
+        + save(alert: OccupancyAlert): Void
+        + findOpen(tenantId: UUID): List<OccupancyAlert>
+        + acknowledge(alertId: UUID): Void
+        + close(alertId: UUID): Void
+    }
+
+    interface ReportRepository <<Repository>> {
+        + save(report: OccupancyReport): Void
+        + findByTenantAndInterval(tenantId: UUID, interval: String): List<OccupancyReport>
+    }
+
+    OccupancySensor "1" *-- "0..*" OccupancyReading : produce >
+    OccupancySensor "1" *-- "1" SensorHealthSnapshot : mantiene >
+    OccupancyReading "1" --> "1" OccupancyStatus
+    OccupancySensor "1" --> "1" SensorProtocol
+    OccupancyReading "1" --> "0..1" OccupancyEvidence : aporta >
+    OccupancySensor "1" --> "1" SensorHealth
+    OccupancyEvidence "1" --> "1" SensorHealth
+    OccupancyConflict "1" *-- "1..*" OccupancyEvidence : justifica >
+    OccupancyConflict "1" --> "1" ConflictStatus
+    OccupancyAlert "1" --> "1" AlertType
+    OccupancyAlert "1" --> "1" AlertStatus
+    UnauthorizedParkingAlert --|> OccupancyAlert
+    HighCapacityPolicy ..> OccupancyStatus : evalúa >
+    OvertimeDetectionService ..> OccupancyEvidence : requiere >
+    OccupancyStatusService ..> OccupancyReadingRepository : consulta >
+    SensorHealthService ..> SensorHealthSnapshot : actualiza >
+    ConflictDetectionService ..> OccupancyConflict : crea >
+    AlertService ..> OccupancyAlert : gestiona >
+    ReportService ..> OccupancyReport : genera >
 }
 
 ' =====================================================================
 ' RELACIONES INTER-CONTEXTOS (Referencias por ID / Débiles)
 ' =====================================================================
-Driver .up.> UserAccount : "referencia (userId)"
+Driver .up.> Account : "referencia (identityRef)"
+UserProfile .up.> Account : "referencia (identityRef)"
 ParkingFacility .up.> Tenant : "pertenece_a (tenantId)"
+StaffAssignment .up.> Tenant : "referencia (tenantId)"
 Reservation .up.> Driver : "realizada_por (driverId)"
+Reservation .up.> Vehicle : "utiliza (vehicleId)"
 Reservation .up.> ParkingSpot : "asigna (spotId)"
 GuestParkingSession .up.> ParkingSpot : "ocupa (spotId)"
-DigitalPayment .up.> Reservation : "paga (reservationId)"
+DigitalPayment .up.> Reservation : "relaciona operación de pago"
+DigitalPayment .up.> Driver : "identifica ownerRef"
 Receipt .up.> DigitalPayment : "respalda (paymentId)"
 OccupancySensor .up.> ParkingSpot : "monitorea (spotId)"
+OccupancyConflict .up.> Reservation : "referencia (reservationRef)"
+OccupancyConflict .up.> ParkingSession : "referencia (sessionRef)"
 ParkingSession .up.> Reservation : "vincula (reservationId)"
 
 @enduml

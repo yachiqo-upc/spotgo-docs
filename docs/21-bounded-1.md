@@ -95,7 +95,7 @@ El contexto conservará únicamente identificadores de otros bounded contexts, c
 El diagrama de componentes de Profiles & Vehicles Management deberá mostrar el límite del bounded context, sus componentes internos, la base de datos propia y las dependencias con Identity & Access Management y Parking Infrastructure. La aplicación móvil Flutter y el cliente Android nativo en Kotlin deben aparecer como consumidores externos a través del API Gateway, no como componentes del dominio.
 
 *Figura 25 (Profiles & Vehicles Management Component Level Diagram)*
-![Profiles & Vehicles Management Component Level Diagram](../assets/diagrams/components-diagram-profiles.png)
+![Profiles & Vehicles Management Component Level Diagram](../assets/diagrams/components-diagram-profiles.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
 | --- | --- | --- |
