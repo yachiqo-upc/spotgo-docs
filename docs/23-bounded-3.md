@@ -169,7 +169,7 @@ La vista de código debe concentrarse en los agregados y servicios de dominio qu
 #### ***2.6.3.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 32 (Parking Infrastructure Domain Layer Class Diagram)*
-![Parking Infrastructure Class Diagram](../assets/diagrams/class-diagram-bounded-5.png)
+![Parking Infrastructure Domain Layer Class Diagram](../assets/diagrams/class-diagram-parking.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
 | --- | --- | --- | --- |
