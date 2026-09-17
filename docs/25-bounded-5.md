@@ -152,7 +152,7 @@ La vista de código debe representar el modelo físico de ocupación y los servi
 #### ***2.6.5.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 38 (Occupancy & Monitoring Domain Layer Class Diagram)*
-![Occupancy & Monitoring Class Diagram](../assets/diagrams/class-diagram-bounded-3.png)
+![Occupancy & Monitoring Domain Layer Class Diagram](../assets/diagrams/class-diagram-occupancy.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
 | --- | --- | --- | --- |
