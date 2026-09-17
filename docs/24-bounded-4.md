@@ -131,7 +131,7 @@ La retención base de pagos, comprobantes, reembolsos, cargos y saldos es de cin
 El diagrama de componentes deberá mostrar Payments & Billing como un contenedor independiente con sus componentes de procesamiento, tokenización, suscripciones, cargos, saldos, reembolsos y facturación. Debe aparecer el proveedor interno de pagos como una dependencia de infraestructura, sin representar datos completos de tarjeta ni incluir el pago físico de Guests dentro del contenedor.
 
 *Figura 34 (Payments & Billing Component Level Diagram)*
-![Payments & Billing Component Level Diagram](../assets/diagrams/components-diagram-payment.svg)
+![Payments & Billing Component Level Diagram](../assets/diagrams/components-diagram-payments.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
 | --- | --- | --- |
