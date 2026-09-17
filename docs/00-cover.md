@@ -214,8 +214,8 @@ Proyecto
 
 **Rojas Tello, Nestor Alonso (U202317099)**
 
--
--
+- Durante los primeros doce meses posteriores a mi graduación, completaré al menos 2 cursos certificados de especialización en Machine Learning y Data Science, aplicando Python, estadística y análisis de datos en un proyecto documentado en mi portafolio profesional, con el propósito de fortalecer mis competencias para desempeñarme como científico de datos.
+- Durante los primeros dieciocho meses posteriores a mi graduación, desarrollaré y publicaré en mi portafolio al menos 2 proyectos de Machine Learning con conjuntos de datos reales, incluyendo limpieza de datos, análisis exploratorio y evaluación de modelos mediante métricas adecuadas para cada problema, con el propósito de demostrar mi capacidad para transformar datos en soluciones que apoyen la toma de decisiones.
 
 **Contreras Rojas, Cesar Jair (U20241D995)**
 
