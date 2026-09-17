@@ -210,14 +210,13 @@ Payments & Billing Database persiste únicamente operaciones digitales y sus doc
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
 | payment_tokens | token_id, owner_ref, provider_token_ref, brand, last_four, expiration_month, expiration_year, status, created_at, revoked_at | token_id PK; provider_token_ref UNIQUE; no almacena número completo de tarjeta ni código de seguridad. |
-| digital_payments | payment_id, payment_token_id, operation_type, owner_ref, amount, currency, status, provider_operation_ref, idempotency_key, created_at, approved_at | payment_id PK; payment_token_id FK a payment_tokens; idempotency_key UNIQUE; status restringido al ciclo de PaymentStatus; provider_operation_ref UNIQUE cuando tenga valor. |
+| digital_payments | payment_id, payment_token_id, operation_type, owner_ref, amount, currency, status, provider_operation_ref, idempotency_key, request_hash, first_seen_at, last_seen_at, result_reference, created_at, approved_at | payment_id PK; payment_token_id FK a payment_tokens; idempotency_key UNIQUE; request_hash permite detectar una misma clave usada con datos distintos; first_seen_at, last_seen_at y result_reference conservan la trazabilidad de idempotencia; status restringido al ciclo de PaymentStatus; provider_operation_ref UNIQUE cuando tenga valor. |
 | payment_attempts | attempt_id, payment_id, attempt_number, started_at, finished_at, status, error_code, next_attempt_at | attempt_id PK; payment_id FK a digital_payments; combinación payment_id y attempt_number UNIQUE. |
-| subscriptions | subscription_id, driver_id, plan, start_at, end_at, status, discount_rules | subscription_id PK; driver_id es referencia externa; end_at no puede ser menor que start_at. |
+| subscriptions | subscription_id, profile_id, plan, start_at, end_at, status, discount_rules | subscription_id PK; profile_id es referencia externa a un perfil DRIVER; end_at no puede ser menor que start_at. |
 | additional_charges | charge_id, reservation_ref, session_ref, amount, reason, evidence_ref, status, created_at | charge_id PK; reservation_ref y session_ref son referencias externas; al menos una fuente operativa debe estar presente. |
 | outstanding_balances | balance_id, owner_ref, source_ref, amount, due_at, status, created_at, regularized_at | balance_id PK; owner_ref y source_ref son referencias lógicas; amount no negativo. |
 | refunds | refund_id, payment_id, amount, reason, status, provider_operation_ref, requested_at, completed_at | refund_id PK; payment_id FK a digital_payments; amount no supera el importe elegible del pago según regla de negocio. |
 | billing_documents | document_id, payment_id, document_type, document_number, series, legal_name, tax_data, issued_at, status | document_id PK; payment_id FK a digital_payments; document_type ELECTRONIC_RECEIPT o ELECTRONIC_INVOICE; número único por serie. |
-| payment_idempotency_records | idempotency_key, payment_id, request_hash, first_seen_at, last_seen_at, result_reference | idempotency_key PK; request_hash permite detectar una misma clave usada con datos distintos; funciona como registro de deduplicación de la operación. |
 
 | Relación de datos | Cardinalidad | Regla |
 | --- | --- | --- |
@@ -225,7 +224,7 @@ Payments & Billing Database persiste únicamente operaciones digitales y sus doc
 | digital_payments — refunds | 1 a 0..* | Los reembolsos se trazan al pago original. |
 | digital_payments — billing_documents | 1 a 0..1 | Un pago aprobado genera como máximo el documento principal correspondiente. |
 | payment_tokens — digital_payments | 1 a 0..* mediante payment_token_id | Un token puede reutilizarse mientras esté activo y autorizado. |
-| driver_id — Profiles & Vehicles Management | Referencia externa | Identifica al Driver sin crear FK entre bases. |
+| profile_id — Profiles & Vehicles Management | Referencia externa | Identifica al perfil DRIVER sin crear FK entre bases. |
 | reservation_ref — Parking Infrastructure | Referencia externa | Relaciona la operación económica con Reservation. |
 | session_ref — Parking Infrastructure | Referencia externa | Relaciona el cargo con Parking Session cuando corresponda. |
 

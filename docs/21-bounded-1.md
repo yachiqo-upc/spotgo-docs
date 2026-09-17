@@ -150,23 +150,21 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 
 #### ***2.6.1.6.2. Bounded Context Database Design Diagram***
 
-El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no como foreign keys entre bases de datos independientes.
+El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. El modelo físico utiliza una tabla `profiles` para los perfiles de Driver y Staff, mientras que la distinción del dominio se conserva mediante `profile_type`. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no como foreign keys entre bases de datos independientes.
 
 *Figura 27 (Profiles & Vehicles Management Database Design Diagram)*
 
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
-| drivers | driver_id, identity_ref, first_name, last_name, email, phone, status, created_at, updated_at | driver_id PK; identity_ref UNIQUE NOT NULL; status restringido a ACTIVE, INACTIVE o SUSPENDED. |
-| vehicles | vehicle_id, driver_id, plate, make, model, color, status, created_at, updated_at | vehicle_id PK; driver_id FK a drivers; plate UNIQUE cuando tenga valor; status restringido a ACTIVE o INACTIVE. |
-| user_profiles | profile_id, identity_ref, driver_id, profile_type, status, created_at, updated_at | profile_id PK; identity_ref UNIQUE NOT NULL; driver_id FK a drivers y nullable únicamente para STAFF; profile_type solo DRIVER o STAFF; un perfil DRIVER requiere driver_id y un perfil STAFF no lo utiliza; no existe valor VISITOR. |
-| staff_assignments | assignment_id, profile_id, tenant_id, valid_from, valid_to, status | assignment_id PK; profile_id FK a user_profiles; tenant_id es referencia lógica a Parking Infrastructure; valid_to no puede ser menor que valid_from. |
+| profiles | profile_id, identity_ref, profile_type, first_name, last_name, email, phone, status, created_at, updated_at | profile_id PK; identity_ref UNIQUE NOT NULL; profile_type solo DRIVER o STAFF; no existe valor VISITOR; status restringido a ACTIVE, INACTIVE o SUSPENDED. |
+| vehicles | vehicle_id, profile_id, plate, make, model, color, status, created_at, updated_at | vehicle_id PK; profile_id FK a profiles y debe corresponder a un perfil DRIVER; plate UNIQUE cuando tenga valor; status restringido a ACTIVE o INACTIVE. |
+| staff_assignments | assignment_id, profile_id, tenant_id, valid_from, valid_to, status | assignment_id PK; profile_id FK a profiles y debe corresponder a un perfil STAFF; tenant_id es referencia lógica a Parking Infrastructure; valid_to no puede ser menor que valid_from. |
 
 | Relación de datos | Cardinalidad | Regla |
 | --- | --- | --- |
-| drivers — vehicles | 1 a 0..* | Todo Vehicle persistente pertenece a un Driver registrado. |
-| drivers — user_profiles | 1 a 1 para perfiles DRIVER | Todo Driver tiene un único perfil DRIVER vinculado mediante driver_id; los perfiles STAFF no requieren driver_id. |
-| user_profiles — staff_assignments | 1 a 0..* | Las asignaciones conservan su historial y se consulta cuál está vigente. |
+| profiles — vehicles | 1 a 0..* | Todo Vehicle persistente pertenece a un perfil con profile_type DRIVER. |
+| profiles — staff_assignments | 1 a 0..* | Solo los perfiles STAFF pueden tener asignaciones; las asignaciones conservan su historial y se consulta cuál está vigente. |
 | identity_ref — Identity & Access Management | Referencia externa | Se valida por API o evento; no se crea FK entre bases de datos. |
 | tenant_id — Parking Infrastructure | Referencia externa | Se valida contra Tenant; el Tenant no se duplica en esta base. |
 

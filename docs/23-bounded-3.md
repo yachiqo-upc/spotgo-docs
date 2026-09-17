@@ -219,7 +219,7 @@ La vista de código debe concentrarse en los agregados y servicios de dominio qu
 
 #### ***2.6.3.6.2. Bounded Context Database Design Diagram***
 
-Parking Infrastructure Database contiene la configuración física y los procesos de reserva y sesión. Las foreign keys se aplican a relaciones internas. driver_id, vehicle_id y payment_ref son referencias lógicas a otros bounded contexts y no crean foreign keys entre bases.
+Parking Infrastructure Database contiene la configuración física y los procesos de reserva y sesión. Las foreign keys se aplican a relaciones internas. profile_id, vehicle_id y payment_ref son referencias lógicas a otros bounded contexts y no crean foreign keys entre bases.
 
 *Figura 33 (Parking Infrastructure Database Design Diagram)*
 
@@ -233,11 +233,11 @@ Parking Infrastructure Database contiene la configuración física y los proceso
 | floor_plans | floor_plan_id, tenant_id, version, file_reference, status, published_at | floor_plan_id PK; tenant_id FK a tenants; combinación tenant_id y version UNIQUE. |
 | digital_parking_maps | map_id, floor_plan_id, version, elements, status, generated_at | map_id PK; floor_plan_id FK a floor_plans; una versión publicada por plano. |
 | parking_rules | rules_id, tenant_id, tariff_rules, overstay_tolerance_minutes, lock_duration_minutes, allocation_rules | rules_id PK; tenant_id FK a tenants; lock_duration_minutes = 10 como valor inicial propuesto; overstay_tolerance_minutes = 5. |
-| reservations | reservation_id, tenant_id, driver_id, vehicle_id, zone_id, spot_id, start_at, end_at, amount, status, payment_ref, created_at, updated_at | reservation_id PK; tenant_id, zone_id y spot_id FK internas; intervalos no superpuestos para un spot en estados activos; status restringido a PENDING_PAYMENT, RESERVED, ACTIVE, COMPLETED, CANCELLED, NO_SHOW, OVERSTAYED o PAYMENT_REJECTED; driver_id y vehicle_id son referencias externas. |
-| reservation_locks | lock_id, reservation_id, spot_id, locked_at, expires_at, status | lock_id PK; reservation_id FK UNIQUE a reservations; spot_id FK a parking_spots; expires_at mayor que locked_at; solo un lock ACTIVE por spot. |
-| parking_sessions | session_id, reservation_id, driver_id, vehicle_id, spot_id, entry_at, exit_at, status | session_id PK; reservation_id FK a reservations; spot_id FK a parking_spots; status restringido a ACTIVE, COMPLETED o PENDING_CLOSURE; driver_id y vehicle_id son referencias externas; no más de una sesión activa por vehicle_id según regla de negocio. |
+| reservations | reservation_id, tenant_id, profile_id, vehicle_id, zone_id, spot_id, start_at, end_at, amount, status, payment_ref, lock_status, locked_at, lock_expires_at, created_at, updated_at | reservation_id PK; tenant_id, zone_id y spot_id FK internas; profile_id debe corresponder a un perfil DRIVER y vehicle_id es referencia externa; intervalos no superpuestos para un spot en estados activos; lock_status, locked_at y lock_expires_at representan el Temporary Lock; status restringido a PENDING_PAYMENT, RESERVED, ACTIVE, COMPLETED, CANCELLED, NO_SHOW, OVERSTAYED o PAYMENT_REJECTED. |
+| parking_sessions | session_id, reservation_id, profile_id, vehicle_id, spot_id, entry_at, exit_at, status | session_id PK; reservation_id FK a reservations; spot_id FK a parking_spots; status restringido a ACTIVE, COMPLETED o PENDING_CLOSURE; profile_id debe corresponder a un perfil DRIVER y vehicle_id es referencia externa; no más de una sesión activa por vehicle_id según regla de negocio. |
 | guest_parking_sessions | guest_session_id, tenant_id, zone_id, spot_id, manual_plate, entry_at, exit_at, calculated_amount, physical_payment_method, physical_payment_confirmed, status | guest_session_id PK; tenant_id, zone_id y spot_id FK internas; status restringido a OPEN, CLOSED o PENDING_REVIEW; no contiene driver_id, vehicle_id, reservation_id ni payment_id digital. |
-| availability_projections | spot_id, reservation_state, occupancy_state_ref, availability_status, observed_at, source_version | spot_id PK y FK a parking_spots; occupancy_state_ref es la última referencia recibida desde Occupancy & Monitoring. |
+
+La Availability Projection se implementa como una vista o proyección materializada derivada de `parking_spots`, `reservations` y los eventos de Occupancy & Monitoring. No constituye una tabla física ni una relación 1:1 persistente.
 
 | Relación de datos | Cardinalidad | Regla |
 | --- | --- | --- |
@@ -246,12 +246,9 @@ Parking Infrastructure Database contiene la configuración física y los proceso
 | tenants — parking_zones | 1 a 1..* | El Tenant se conserva como alcance operativo de las zonas. |
 | parking_zones — parking_spots | 1 a 1..* | Los spots tienen código único dentro de su zona. |
 | parking_spots — reservations | 1 a 0..* | Las reservas para un spot no pueden solaparse cuando están activas. |
-| reservations — reservation_locks | 1 a 0..1 | El lock se usa durante el pago y se libera o confirma. |
 | reservations — parking_sessions | 1 a 0..1 | Una Reservation puede generar una Parking Session. |
 | parking_spots — guest_parking_sessions | 1 a 0..* | Un spot puede tener sesiones de Guest en distintos momentos. |
-| parking_spots — availability_projections | 1 a 1 | La proyección resume disponibilidad sin reemplazar la fuente de ocupación. |
-| driver_id, vehicle_id — Profiles & Vehicles Management | Referencias externas | La validez se comprueba mediante API o eventos; no hay FK externa. |
+| profile_id, vehicle_id — Profiles & Vehicles Management | Referencias externas | profile_id identifica un perfil DRIVER y vehicle_id identifica el Vehicle; la validez se comprueba mediante API o eventos; no hay FK externa. |
 | payment_ref — Payments & Billing | Referencia externa | El resultado se confirma mediante eventos del proveedor interno. |
-| occupancy_state_ref — Occupancy & Monitoring | Referencia externa | La lectura física no se almacena como propiedad de Reservation. |
 
 La tabla guest_parking_sessions deja explícita la diferencia entre la atención de un Guest y una Reservation digital. El historial de reservas y sesiones se retiene por cinco años como política base propuesta, sin eliminar registros asociados a reclamos, auditorías o incidentes abiertos.
