@@ -13,7 +13,8 @@ La capa de dominio concentra las reglas de asignación y disponibilidad. El esta
 | Elemento | Tipo | Responsabilidad y reglas principales | Atributos u operaciones relevantes |
 | --- | --- | --- | --- |
 | Tenant | Aggregate Root | Representa la organización o unidad operativa que administra uno o más estacionamientos. Es dueño de la configuración administrativa del servicio. | tenantId, nombre, estado, datos de contacto y reglas; activate(), suspend(), configure(). |
-| Parking Zone | Aggregate Root | Agrupa Parking Spots y define una zona operativa del estacionamiento. | zoneId, tenantId, nombre, ubicación, reglas de acceso y estado; addSpot(), updateConfiguration(), deactivate(). |
+| Parking Facility | Aggregate Root | Representa una instalación física administrada por un Tenant y agrupa sus Parking Zones. | facilityId, tenantId, nombre, coordenadas y estado; addZone(), calculateTotalCapacity(). |
+| Parking Zone | Aggregate Root | Agrupa Parking Spots y define una zona operativa dentro de una Parking Facility. | zoneId, facilityId, tenantId, nombre, ubicación, reglas de acceso y estado; addSpot(), updateConfiguration(), deactivate(). |
 | Parking Spot | Entity | Representa un espacio físico identificable dentro de una Parking Zone. | spotId, zoneId, código, tipo, características, estado operativo; activate(), deactivate(), isAssignable(). |
 | Floor Plan | Entity | Representa el plano base del estacionamiento y sus versiones. | floorPlanId, tenantId, versión, archivo o referencia, estado; publishVersion(), archiveVersion(). |
 | Digital Parking Map | Entity | Proyección navegable de zonas, spots y elementos del plano para la aplicación. | mapId, floorPlanId, versión, elementos y estado; generate(), publish(), updateAvailability(). |
@@ -226,7 +227,8 @@ Parking Infrastructure Database contiene la configuración física y los proceso
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
 | tenants | tenant_id, name, status, contact_data, rules, created_at, updated_at | tenant_id PK; status restringido a ACTIVE o SUSPENDED. |
-| parking_zones | zone_id, tenant_id, name, location, status, created_at, updated_at | zone_id PK; tenant_id FK a tenants; una zona pertenece a un Tenant. |
+| parking_facilities | facility_id, tenant_id, name, coordinates, status, created_at, updated_at | facility_id PK; tenant_id FK a tenants; una instalación pertenece a un Tenant. |
+| parking_zones | zone_id, facility_id, tenant_id, name, location, color_code, status, created_at, updated_at | zone_id PK; facility_id FK a parking_facilities; tenant_id FK a tenants; una zona pertenece a una Parking Facility y conserva el Tenant para el alcance operativo. |
 | parking_spots | spot_id, zone_id, code, spot_type, features, operational_status | spot_id PK; zone_id FK a parking_zones; code UNIQUE dentro de zone_id. |
 | floor_plans | floor_plan_id, tenant_id, version, file_reference, status, published_at | floor_plan_id PK; tenant_id FK a tenants; combinación tenant_id y version UNIQUE. |
 | digital_parking_maps | map_id, floor_plan_id, version, elements, status, generated_at | map_id PK; floor_plan_id FK a floor_plans; una versión publicada por plano. |
@@ -239,7 +241,9 @@ Parking Infrastructure Database contiene la configuración física y los proceso
 
 | Relación de datos | Cardinalidad | Regla |
 | --- | --- | --- |
-| tenants — parking_zones | 1 a 1..* | Las zonas se administran dentro de un Tenant. |
+| tenants — parking_facilities | 1 a 1..* | Un Tenant administra una o varias instalaciones físicas. |
+| parking_facilities — parking_zones | 1 a 1..* | Una Parking Facility contiene una o varias Parking Zones. |
+| tenants — parking_zones | 1 a 1..* | El Tenant se conserva como alcance operativo de las zonas. |
 | parking_zones — parking_spots | 1 a 1..* | Los spots tienen código único dentro de su zona. |
 | parking_spots — reservations | 1 a 0..* | Las reservas para un spot no pueden solaparse cuando están activas. |
 | reservations — reservation_locks | 1 a 0..1 | El lock se usa durante el pago y se libera o confirma. |

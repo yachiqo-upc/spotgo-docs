@@ -5,8 +5,8 @@
 | --- | --- |
 | **Big Picture EventStorming** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/big-picture-event-storming.svg](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/big-picture-event-storming.svg) |
 | **Design-Level EventStorming** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/design-level-event-storming.svg](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/design-level-event-storming.svg) |
-| **Software Architecture Diagrams** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/software-arquitecture-diagrams.dsl](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/software-arquitecture-diagrams.dsl) |
-| **Class Diagram** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/class-diagram.puml](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/class-diagram.puml) |
+| **Software Architecture Diagrams (DSL Structurizr)** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/software-arquitecture-diagrams.dsl](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/software-arquitecture-diagrams.dsl) |
+| **Class Diagram (PlantUML)** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/class-diagram.puml](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/class-diagram.puml) |
 | **Database Diagram** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/database-diagram.svg](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/database-diagram.svg) |
 
 **Anexo B. Enlaces importantes**
