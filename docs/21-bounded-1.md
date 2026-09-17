@@ -153,7 +153,7 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. El modelo físico utiliza una tabla `profiles` para los perfiles de Driver y Staff, mientras que la distinción del dominio se conserva mediante `profile_type`. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no como foreign keys entre bases de datos independientes.
 
 *Figura 27 (Profiles & Vehicles Management Database Design Diagram)*
-![Profiles & Vehicles Management Domain Layer Class Diagram](../assets/diagrams/db-diagram-profiles.svg)
+![Profiles & Vehicles Management Database Design Diagram](../assets/diagrams/db-diagram-profiles.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
