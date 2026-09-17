@@ -219,8 +219,8 @@ Proyecto
 
 **Contreras Rojas, Cesar Jair (U20241D995)**
 
--
--
+- Durante mi primer año posterior a mi graduación quisiera crear un aplicativo el cual implemente herramientas de diseño para el diagramado C4, de clases y de base de datos con el fin de facilitar el diseño de dichos diagramas y que facilite la comprensión de estos y la conexión que hay entre estas 3 capas de diseño.
+- Durante el primer año posterior a mi graduación, conseguiré por lo menos 2 certificaciones relacionadas al desarrollo de soluciones con Inteligencia Artifical.
 
 **Carhuaz Centeno, Briguite Eryka (U20241D932)**
 
