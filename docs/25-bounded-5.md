@@ -202,6 +202,7 @@ La vista de código debe representar el modelo físico de ocupación y los servi
 Occupancy & Monitoring Database almacena sensores, lecturas, estados de salud, conflictos, alertas y reportes. Las relaciones internas utilizan foreign keys. tenant_id, zone_id, spot_id, reservation_ref y session_ref son referencias de integración; no se crean foreign keys hacia las bases de Parking Infrastructure.
 
 *Figura 39 (Occupancy & Monitoring Database Design Diagram)*
+![Occupancy & Monitoring Database Design Diagram](../assets/diagrams/db-diagram-occupancy.svg)
 
 
 | Tabla | Columnas principales | Restricciones y relaciones |
