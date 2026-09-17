@@ -205,7 +205,7 @@ La vista de código debe mostrar las clases de dominio que separan pago, factura
 Payments & Billing Database persiste únicamente operaciones digitales y sus documentos. Los identificadores de Driver, Reservation y Parking Session se almacenan como referencias de integración. Una Guest Parking Session queda fuera del flujo digital y no se almacena como Digital Payment. No se incluyen datos completos de tarjeta y no se crean foreign keys hacia bases de otros bounded contexts.
 
 *Figura 36 (Payments & Billing Database Design Diagram)*
-
+![Payments & Billing Database Design Diagram](../assets/diagrams/db-diagram-payments.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
