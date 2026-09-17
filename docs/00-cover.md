@@ -224,8 +224,8 @@ Proyecto
 
 **Carhuaz Centeno, Briguite Eryka (U20241D932)**
 
--
--
+- Durante los primeros doce meses posteriores a mi graduación, participaré en el diseño e implementación de al menos 3 servicios REST utilizando Spring Boot o ASP.NET Core, incorporando pruebas automatizadas y documentación mediante OpenAPI, evidenciando mi trabajo a través de repositorios o proyectos profesionales, con el propósito de fortalecer mis competencias y desarrollarme profesionalmente como Backend Developer.
+- Durante los doce meses posteriores a mi graduación, obtendré al menos 2 certificaciones relacionadas con Inteligencia Artificial aplicada al desarrollo de software y utilizaré los conocimientos adquiridos en al menos 2 proyectos prácticos, documentando los resultados y tecnologías utilizadas en mi portafolio profesional, con el propósito de ampliar mi perfil como desarrolladora y adquirir competencias en el uso de IA dentro de soluciones de software.
 
 **Cotrina Siclla, Sofia Alessandra (U20231B120)**
 
