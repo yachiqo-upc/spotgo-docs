@@ -155,7 +155,7 @@ La vista de código debe mostrar las clases de dominio que separan pago, factura
 #### ***2.6.4.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 35 (Payments & Billing Domain Layer Class Diagram)*
-
+![Payments & Billing Class Diagram](../assets/diagrams/class-diagram-bounded-2.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
 | --- | --- | --- | --- |
