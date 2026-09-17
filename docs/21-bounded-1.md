@@ -117,7 +117,7 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 #### ***2.6.1.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 26 (Profiles & Vehicles Management Domain Layer Class Diagram)*
-
+![Profiles & Vehicles Management Class Diagram](../assets/diagrams/class-diagram-bounded-4.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
 | --- | --- | --- | --- |
