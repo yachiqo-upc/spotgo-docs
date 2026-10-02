@@ -14,7 +14,7 @@ El lenguaje visual evita una apariencia excesivamente decorativa y prioriza comp
 
 El nombre SpotGo representa la idea de encontrar y utilizar un espacio de estacionamiento de manera rápida, por lo que la identidad se asocia con conceptos como; disponibilidad, movimiento, ubicación, rapidez, organización, tecnología.
 
-![spotgo-logo](./assets/images/others/spotgo-logo.png)
+![spotgo-logo](../assets/images/others/spotgo-logo.png)
 
 **Typography**
 
@@ -22,7 +22,7 @@ Se utilizara Plus Jakarta Sans como familia tipográfica principal. La tipograf�
 
 Se propone la siguiente jerarquía:
 
-![spotgo-tipography](./assets/images/others/spotgo-tipography.png)
+![spotgo-tipography](../assets/images/others/spotgo-tipography.png)
 
 **Colors**
 
@@ -35,7 +35,7 @@ La paleta implementa un Dark Design System diseñado para reducir la fatiga visu
 * **#FF5D68 (Error/Unavailable):** Rojo destinado a comunicar errores del sistema o espacios físicos inhabilitados.   
 * **#F7F5FA (Text):** Blanco que garantiza la máxima legibilidad de los datos en la pantalla móvil sobre los fondos oscuros.   
 
-![spotgo-palette](./assets/images/others/spotgo-palette.png)
+![spotgo-palette](../assets/images/others/spotgo-palette.png)
 
 ### 3.1.2. Information Architecture
 
