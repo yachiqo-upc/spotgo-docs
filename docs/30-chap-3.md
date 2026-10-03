@@ -327,3 +327,15 @@ Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten ap
 ![Administrator B2B Billing Mock-up](../assets/images/ui-ux/mockups/administrator/26-b2b-billing.png)
 
 *Figura 34. Mock-up de facturación para clientes empresariales.*
+
+#### 3.1.3.4. Applications User Flow Diagrams
+
+Los user flows ofrecen una vista de alto nivel de los objetivos, decisiones y recorridos posibles de cada perfil. El flujo de Driver abarca el uso de la aplicación móvil para encontrar y reservar estacionamiento y gestionar servicios asociados. El flujo de Parking Admin representa las tareas de supervisión y administración de la operación.
+
+![Driver User Flow](../assets/diagrams/ui-ux/user-flows/userflow-driver.svg)
+
+*Figura 35. User flow de la aplicación para Driver.*
+
+![Parking Admin User Flow](../assets/diagrams/ui-ux/user-flows/userflow-parking-admin.svg)
+
+*Figura 36. User flow de la aplicación para Parking Admin.*
