@@ -342,6 +342,8 @@ Los user flows ofrecen una vista de alto nivel de los objetivos, decisiones y re
 
 #### 3.1.3.5. Applications Prototypes
 
-El prototipo interactivo de SpotGo permite validar la navegación y los principales flujos de Driver y Administrator.
+Los prototipos interactivos de SpotGo permiten validar la navegación y los principales flujos definidos para los perfiles Driver y Parking Administrator.
 
-[SpotGo Interactive Prototype](https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-4&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=73%3A2736)
+- **Driver Prototype:** [View interactive prototype](https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-4&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=73%3A2736)
+
+- **Parking Administrator Prototype:** [View interactive prototype](https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-5&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=65%3A5626)
