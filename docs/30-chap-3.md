@@ -263,3 +263,67 @@ Los wireflows combinan pantallas esquemáticas con conexiones para mostrar el or
 ![Administrator Reports and Billing Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-03-reports-billing.svg)
 
 *Figura 20. Wireflow de reportes y facturación para Administrator.*
+
+#### 3.1.3.3. Applications Mock-ups
+
+Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten apreciar la jerarquía, los componentes y la presentación de la información en cada aplicación. Se presentan las mismas áreas funcionales seleccionadas en los wireframes para facilitar la comparación entre estructura y propuesta visual.
+
+**Driver**
+
+![Driver Login Mock-up](../assets/images/ui-ux/mockups/driver/01-login.png)
+
+*Figura 21. Mock-up de inicio de sesión para Driver.*
+
+![Driver Explore Parking Mock-up](../assets/images/ui-ux/mockups/driver/03-explore-parking.png)
+
+*Figura 22. Mock-up para explorar estacionamientos disponibles.*
+
+![Driver Zone Details Mock-up](../assets/images/ui-ux/mockups/driver/04-zone-details-reserve.png)
+
+*Figura 23. Mock-up con el detalle de una zona y la acción de reserva.*
+
+![Driver Reservations Mock-up](../assets/images/ui-ux/mockups/driver/06-reservations.png)
+
+*Figura 24. Mock-up para consultar las reservas del Driver.*
+
+![Driver Payments Mock-up](../assets/images/ui-ux/mockups/driver/08-payments.png)
+
+*Figura 25. Mock-up de la sección de pagos.*
+
+![Driver Vehicles Mock-up](../assets/images/ui-ux/mockups/driver/11-my-vehicles.png)
+
+*Figura 26. Mock-up para administrar vehículos registrados.*
+
+![Driver Receipts Mock-up](../assets/images/ui-ux/mockups/driver/14-receipts-invoices.png)
+
+*Figura 27. Mock-up para consultar comprobantes y facturas.*
+
+**Administrator**
+
+![Administrator Dashboard Mock-up](../assets/images/ui-ux/mockups/administrator/15-administrator-dashboard.png)
+
+*Figura 28. Mock-up del dashboard administrativo.*
+
+![Administrator Live Occupancy Mock-up](../assets/images/ui-ux/mockups/administrator/16-live-occupancy-map.png)
+
+*Figura 29. Mock-up del mapa de ocupación en tiempo real.*
+
+![Administrator Alerts Mock-up](../assets/images/ui-ux/mockups/administrator/17-operational-alerts.png)
+
+*Figura 30. Mock-up de alertas operativas.*
+
+![Administrator Parking Zones Mock-up](../assets/images/ui-ux/mockups/administrator/19-parking-zones.png)
+
+*Figura 31. Mock-up para administrar zonas de estacionamiento.*
+
+![Administrator Guest Sessions Mock-up](../assets/images/ui-ux/mockups/administrator/21-guest-parking-sessions.png)
+
+*Figura 32. Mock-up de sesiones de estacionamiento para invitados.*
+
+![Administrator Digital Parking Map Mock-up](../assets/images/ui-ux/mockups/administrator/25-digital-parking-map.png)
+
+*Figura 33. Mock-up del mapa digital del estacionamiento.*
+
+![Administrator B2B Billing Mock-up](../assets/images/ui-ux/mockups/administrator/26-b2b-billing.png)
+
+*Figura 34. Mock-up de facturación para clientes empresariales.*
