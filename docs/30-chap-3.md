@@ -339,3 +339,9 @@ Los user flows ofrecen una vista de alto nivel de los objetivos, decisiones y re
 ![Parking Admin User Flow](../assets/diagrams/ui-ux/user-flows/userflow-parking-admin.svg)
 
 *Figura 36. User flow de la aplicación para Parking Admin.*
+
+#### 3.1.3.5. Applications Prototypes
+
+El prototipo interactivo de SpotGo permite validar la navegación y los principales flujos de Driver y Administrator.
+
+[SpotGo Interactive Prototype](https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-4&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=73%3A2736)
