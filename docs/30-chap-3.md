@@ -231,3 +231,35 @@ Los wireframes de baja fidelidad permiten revisar la estructura de cada pantalla
 ![Administrator B2B Billing Wireframe](../assets/images/ui-ux/wireframes/administrator/26-b2b-billing.png)
 
 *Figura 14. Wireframe de facturación para clientes empresariales.*
+
+#### 3.1.3.2. Applications Wireflow Diagrams
+
+Los wireflows combinan pantallas esquemáticas con conexiones para mostrar el orden de navegación y las decisiones disponibles dentro de una tarea. Los seis diagramas siguientes cubren los principales escenarios de acceso, gestión de vehículos, reservas y pagos para Driver, así como infraestructura, operaciones, invitados, reportes y facturación para Administrator.
+
+**Driver**
+
+![Driver Access and Vehicles Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-01-access-vehicles.svg)
+
+*Figura 15. Wireflow de acceso y administración de vehículos para Driver.*
+
+![Driver Reservations and Payments Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-02-reservations-payments.svg)
+
+*Figura 16. Wireflow de reservas y pagos para Driver.*
+
+![Driver Plans and Documents Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-03-plans-documents.svg)
+
+*Figura 17. Wireflow de planes, suscripciones y documentos para Driver.*
+
+**Administrator**
+
+![Administrator Infrastructure and Zones Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-01-infrastructure-zones.svg)
+
+*Figura 18. Wireflow de infraestructura y zonas de estacionamiento para Administrator.*
+
+![Administrator Operations and Guests Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-02-operations-guests.svg)
+
+*Figura 19. Wireflow de operaciones y sesiones de invitados para Administrator.*
+
+![Administrator Reports and Billing Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-03-reports-billing.svg)
+
+*Figura 20. Wireflow de reportes y facturación para Administrator.*
