@@ -163,3 +163,71 @@ En esta sección se definen los sistemas de navegación que se plantearán para 
 - **Contextual Navigation:** Las acciones de administración estarán disponibles directamente desde las vistas correspondientes, permitiendo consultar una zona, revisar sus espacios o analizar información relacionada con la ocupación.
 
 Finalmente, la navegación mantendrá una estructura consistente entre las diferentes interfaces, utilizando etiquetas claras, jerarquía visual y patrones de interacción similares para facilitar el aprendizaje del sistema.
+
+### 3.1.3. Applications UX/UI Design
+
+Esta sección presenta la propuesta de experiencia e interfaz para las aplicaciones móviles de SpotGo dirigidas a Drivers y Parking Admins. Los wireframes describen la organización y jerarquía de los elementos; los mock-ups muestran su apariencia visual; y los diagramas resumen las secuencias de interacción y las rutas principales de cada perfil. El repositorio incluye todas las pantallas principales de ambos perfiles, mientras que aquí se muestran únicamente ejemplos representativos.
+
+#### 3.1.3.1. Applications Wireframes
+
+Los wireframes de baja fidelidad permiten revisar la estructura de cada pantalla y la ubicación de sus controles antes de evaluar el tratamiento visual final. Para Driver, se incluyen ejemplos de acceso, exploración del mapa, consulta y reserva de una zona, gestión de reservas, pagos, vehículos y comprobantes. Para Administrator, se muestran ejemplos del dashboard, monitoreo de ocupación, alertas, zonas, sesiones de invitados, mapa digital y facturación.
+
+**Driver**
+
+![Driver Login Wireframe](../assets/images/ui-ux/wireframes/driver/01-login.png)
+
+*Figura 1. Wireframe de inicio de sesión para Driver.*
+
+![Driver Explore Parking Wireframe](../assets/images/ui-ux/wireframes/driver/03-explore-parking.png)
+
+*Figura 2. Wireframe para explorar estacionamientos disponibles.*
+
+![Driver Zone Details Wireframe](../assets/images/ui-ux/wireframes/driver/04-zone-details-reserve.png)
+
+*Figura 3. Wireframe con el detalle de una zona y la acción de reserva.*
+
+![Driver Reservations Wireframe](../assets/images/ui-ux/wireframes/driver/06-reservations.png)
+
+*Figura 4. Wireframe para consultar las reservas del Driver.*
+
+![Driver Payments Wireframe](../assets/images/ui-ux/wireframes/driver/08-payments.png)
+
+*Figura 5. Wireframe de la sección de pagos.*
+
+![Driver Vehicles Wireframe](../assets/images/ui-ux/wireframes/driver/11-my-vehicles.png)
+
+*Figura 6. Wireframe para administrar vehículos registrados.*
+
+![Driver Receipts Wireframe](../assets/images/ui-ux/wireframes/driver/14-receipts-invoices.png)
+
+*Figura 7. Wireframe para consultar comprobantes y facturas.*
+
+**Administrator**
+
+![Administrator Dashboard Wireframe](../assets/images/ui-ux/wireframes/administrator/15-administrator-dashboard.png)
+
+*Figura 8. Wireframe del dashboard administrativo.*
+
+![Administrator Live Occupancy Wireframe](../assets/images/ui-ux/wireframes/administrator/16-live-occupancy-map.png)
+
+*Figura 9. Wireframe del mapa de ocupación en tiempo real.*
+
+![Administrator Alerts Wireframe](../assets/images/ui-ux/wireframes/administrator/17-operational-alerts.png)
+
+*Figura 10. Wireframe de alertas operativas.*
+
+![Administrator Parking Zones Wireframe](../assets/images/ui-ux/wireframes/administrator/19-parking-zones.png)
+
+*Figura 11. Wireframe para administrar zonas de estacionamiento.*
+
+![Administrator Guest Sessions Wireframe](../assets/images/ui-ux/wireframes/administrator/21-guest-parking-sessions.png)
+
+*Figura 12. Wireframe de sesiones de estacionamiento para invitados.*
+
+![Administrator Digital Parking Map Wireframe](../assets/images/ui-ux/wireframes/administrator/25-digital-parking-map.png)
+
+*Figura 13. Wireframe del mapa digital del estacionamiento.*
+
+![Administrator B2B Billing Wireframe](../assets/images/ui-ux/wireframes/administrator/26-b2b-billing.png)
+
+*Figura 14. Wireframe de facturación para clientes empresariales.*
