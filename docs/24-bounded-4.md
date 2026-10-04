@@ -2,7 +2,7 @@
 
 Payments & Billing es un bounded context de soporte que concentra las operaciones económicas digitales de SpotGo. Administra tokens de pago, pagos de Reservations y suscripciones, cargos adicionales por sobretiempo, saldos pendientes, reembolsos y comprobantes. El proveedor de pagos es interno a la solución y se integra mediante un contrato que permite procesar operaciones de forma idempotente y recibir confirmaciones asíncronas.
 
-El contexto no procesa los pagos físicos de Guests. En una Guest Parking Session, el Staff registra la placa, calcula el monto y confirma que recibió efectivo o POS fuera del flujo de pago digital. Payments & Billing solo procesa operaciones digitales de Drivers registrados, como el pago de una Reservation, una suscripción o un cargo adicional autorizado por las reglas de SpotGo.
+El contexto no procesa los pagos físicos de Guests. En una Guest Parking Session, el Parking Admin registra la placa, calcula el monto y confirma que recibió efectivo o POS fuera del flujo de pago digital. Payments & Billing solo procesa operaciones digitales de Drivers registrados, como el pago de una Reservation, una suscripción o un cargo adicional autorizado por las reglas de SpotGo.
 
 Los comprobantes se generan a partir de los datos de facturación disponibles. Cuando el usuario proporciona DNI se genera un Electronic Receipt y cuando proporciona RUC se genera un Electronic Invoice. El modelo no almacena el número completo de una tarjeta ni otros datos financieros sensibles; utiliza Payment Token y referencias del proveedor interno.
 
@@ -49,7 +49,7 @@ La política se aplica únicamente a errores transitorios. Cada intento utiliza 
 | Suscripción | Intento inicial inmediato; reintentos a 1 hora, 6 horas y 24 horas. | Se alcanza el máximo o el proveedor informa un rechazo definitivo. | Subscription PAST_DUE y notificación al Driver; no se crea un cobro duplicado. |
 | Additional Charge | Intento inicial al recibirse la solicitud; reintentos a 1 hora, 6 horas y 24 horas. | Se alcanza el máximo, existe rechazo definitivo o la evidencia de ocupación deja de ser confiable. | Outstanding Balance OPEN y bloqueo de nuevas Reservations según la regla de negocio. |
 | Refund | Solicitud inicial inmediata; ante resultado UNKNOWN se consulta el estado cada 15 minutos durante un máximo de 24 horas. | Se confirma el resultado, se alcanza el plazo o el proveedor requiere revisión. | Refund COMPLETED o RECONCILIATION_REQUIRED para revisión operativa. |
-| Guest Parking Session | No aplica. | El pago físico se confirma manualmente por Staff. | El resultado se conserva en Parking Infrastructure; no se crea Digital Payment. |
+| Guest Parking Session | No aplica. | El pago físico se confirma manualmente por Parking Admin. | El resultado se conserva en Parking Infrastructure; no se crea Digital Payment. |
 
 Los errores de token inválido, fondos insuficientes, operación cancelada, fraude o rechazo explícito no se reintentan automáticamente. Los errores de red, timeout, indisponibilidad temporal y respuestas 5xx sí pueden reintentarse. Si la respuesta es desconocida, primero se consulta el proveedor interno usando providerOperationRef o idempotencyKey para evitar repetir una operación que pudo haber sido aprobada.
 

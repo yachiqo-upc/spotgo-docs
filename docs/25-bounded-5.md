@@ -58,7 +58,7 @@ La Interface Layer recibe mensajes de los sensores por MQTT o HTTP y expone cons
 | Sensor Event Consumer | MQTT/HTTP | Recibe mensajes de ocupación y los transforma en comandos de aplicación. | OccupancyReadingReceived. |
 | Sensor Administration Controller | REST/HTTPS | Registra sensores, consulta su salud y administra su configuración. | Registrar sensor, asignar spot, consultar estado, desactivar sensor. |
 | Occupancy Monitoring Controller | REST/HTTPS | Expone el estado actual y la disponibilidad física observada. | Consultar estado por tenant, zona o spot. |
-| Alert Controller | REST/HTTPS | Permite a Staff consultar, reconocer y cerrar alertas. | Listar alertas, reconocer, cerrar y consultar severidad. |
+| Alert Controller | REST/HTTPS | Permite a Parking Admin consultar, reconocer y cerrar alertas. | Listar alertas, reconocer, cerrar y consultar severidad. |
 | Occupancy Report Controller | REST/HTTPS | Expone reportes y agregados para el dashboard administrativo. | Generar, consultar y filtrar reportes por intervalo. |
 | Parking Event Consumer | Evento asíncrono | Recibe expectativas operativas sin asumir propiedad de Reservation o Parking Session. | ReservationCreated, ReservationReassigned, ParkingSessionStarted, ParkingSessionCompleted. |
 | Monitoring Event Publisher | Evento asíncrono | Publica estados, fallas, conflictos y solicitudes de cargos adicionales. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected, AdditionalChargeRequested. |
@@ -93,7 +93,7 @@ La Application Layer normaliza los mensajes, valida su idempotencia, actualiza e
 | OccupancyStatusUpdated | Parking Availability Consumer | Parking Infrastructure actualiza su Availability Projection. |
 | SensorFailureDetected | Parking Availability Consumer | Parking Infrastructure considera el spot UNAVAILABLE y revisa posibles Reservations afectadas. |
 | OccupancyConflictDetected | Parking Conflict Consumer | Parking Infrastructure analiza reasignación, indisponibilidad o alerta. |
-| UnauthorizedParkingDetected | Alert Notification Handler | Envía una alerta a Staff mediante el canal configurado. |
+| UnauthorizedParkingDetected | Alert Notification Handler | Envía una alerta a Parking Admin mediante el canal configurado. |
 | HighCapacityReached | Capacity Notification Handler | Publica la condición para el dashboard y las notificaciones operativas. |
 | AdditionalChargeRequested | Payment Charge Consumer | Payments & Billing procesa el cargo si la solicitud contiene evidencia suficiente. |
 | OccupancyReportGenerated | Report Distribution Handler | Pone el reporte a disposición del dashboard administrativo. |
@@ -138,7 +138,7 @@ El diagrama de componentes deberá mostrar el límite de Occupancy & Monitoring,
 | Overtime Detection Component | Evalúa sobretiempo y publica solicitudes de cargo con evidencia. | Parking Event Consumer, Overtime Detection Service, Payments & Billing Adapter. |
 | Occupancy Alert Component | Prioriza, notifica, reconoce y cierra alertas. | Alert Controller, Alert Repository, FCM Adapter. |
 | Capacity Monitoring Component | Calcula el porcentaje de ocupación y la condición mayor al 95 por ciento. | Occupancy Status Component, Alert Service. |
-| Occupancy Report Component | Genera reportes para Staff. | Report Controller, Report Service, Report Repository. |
+| Occupancy Report Component | Genera reportes para Parking Admin. | Report Controller, Report Service, Report Repository. |
 | Occupancy & Monitoring Database | Persiste sensores, lecturas, conflictos, alertas y reportes. | Implementaciones de repositorio. |
 | Parking Infrastructure Adapter | Consume eventos y publica OccupancyStatusUpdated o conflictos. | Canal de mensajería asíncrona. |
 | Payments & Billing Adapter | Publica AdditionalChargeRequested hacia Payments & Billing cuando existe evidencia suficiente. | Canal de mensajería asíncrona. |

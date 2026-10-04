@@ -4,7 +4,7 @@ Parking Infrastructure es el bounded context principal de la operación del esta
 
 Este contexto es dueño del ciclo de vida de Reservation y Parking Session. Occupancy & Monitoring aporta lecturas y estados físicos de sensores, pero no administra estas entidades ni infiere la identidad de un vehículo. Payments & Billing procesa los pagos digitales y emite los comprobantes; Parking Infrastructure solo conserva las referencias necesarias para relacionar una operación económica con una Reservation o una sesión.
 
-Las Reservations corresponden exclusivamente a Drivers registrados y se asocian con un Vehicle persistente y un Parking Spot específico. En cambio, una Guest Parking Session se registra manualmente por Staff, conserva únicamente la placa ingresada durante la atención, no tiene Reservation ni Driver asociado y utiliza un pago físico en efectivo o POS confirmado fuera de SpotGo.
+Las Reservations corresponden exclusivamente a Drivers registrados y se asocian con un Vehicle persistente y un Parking Spot específico. En cambio, una Guest Parking Session se registra manualmente por Parking Admin, conserva únicamente la placa ingresada durante la atención, no tiene Reservation ni Driver asociado y utiliza un pago físico en efectivo o POS confirmado fuera de SpotGo.
 
 #### *2.6.3.1. Domain Layer*
 
@@ -53,7 +53,7 @@ Las reglas esenciales del contexto son las siguientes:
 | Temporary Lock | El lock dura 10 minutos; al vencerse libera el spot. El sistema debe impedir más de un Temporary Lock activo para el mismo Parking Spot durante periodos solapados. Una confirmación tardía no reactiva el lock y debe conciliarse con Payments & Billing. |
 | Modificación y extensión | Solo se permiten si el nuevo intervalo y el spot son compatibles con la disponibilidad. |
 | Conflicto físico | Una lectura confiable de Occupancy & Monitoring puede iniciar una reasignación o marcar el spot como no disponible, pero no identifica el vehículo. |
-| Guest | La atención se modela como Guest Parking Session, con placa manual y pago físico confirmado por Staff; no crea Reservation, Driver ni Vehicle. |
+| Guest | La atención se modela como Guest Parking Session, con placa manual y pago físico confirmado por Parking Admin; no crea Reservation, Driver ni Vehicle. |
 | Sobretiempo | Después de cinco minutos de tolerancia, se solicita a Payments & Billing el cálculo o procesamiento del cargo adicional según la evidencia disponible. |
 
 #### *2.6.3.2. Interface Layer*
@@ -64,17 +64,17 @@ Los controladores REST reciben solicitudes de la aplicación móvil, de la aplic
 | --- | --- | --- | --- |
 | Tenant Administration Controller | REST/HTTPS | Administra la configuración básica de Tenant y sus reglas según el alcance autorizado. | Crear Tenant únicamente mediante SuperAdmin; actualizar configuración, activar o suspender operación y consultar datos. |
 | Parking Layout Controller | REST/HTTPS | Administra Parking Zones, Parking Spots, Floor Plans y Digital Parking Maps. | Crear zona, configurar spot, publicar plano y consultar mapa digital. |
-| Availability Controller | REST/HTTPS | Expone la disponibilidad de spots para Drivers y administradores. | Consultar disponibilidad por zona, intervalo, características y estado. |
+| Availability Controller | REST/HTTPS | Expone la disponibilidad de spots para Drivers y administradores de estacionamiento. | Consultar disponibilidad por zona, intervalo, características y estado. |
 | Reservation Controller | REST/HTTPS | Gestiona Reservations de Drivers registrados. | Crear intención, modificar, extender, cancelar y consultar Reservation. |
 | Parking Session Controller | REST/HTTPS | Gestiona el inicio y cierre de Parking Sessions de Drivers. | Iniciar sesión, registrar salida, consultar operación activa y solicitar cierre administrativo. |
-| Guest Parking Session Controller | REST/HTTPS | Permite a Staff registrar y cerrar atenciones de Guests. | Abrir sesión, ingresar placa manual, calcular importe, confirmar efectivo o POS y cerrar sesión. |
+| Guest Parking Session Controller | REST/HTTPS | Permite a Parking Admin registrar y cerrar atenciones de Guests. | Abrir sesión, ingresar placa manual, calcular importe, confirmar efectivo o POS y cerrar sesión. |
 | Navigation Controller | REST/HTTPS | Construye solicitudes de navegación hacia una Parking Zone seleccionada. | Solicitar ruta y devolver enlace o parámetros para Google Maps. |
 | Driver Eligibility Consumer | REST interno o evento | Recibe la validación de Driver y Vehicle desde Profiles & Vehicles Management. | DriverProfileValidated, VehicleRegistered, VehicleDeactivated. |
 | Payment Outcome Consumer | Evento asíncrono | Recibe los resultados del proveedor interno para una Reservation y los reembolsos relacionados. | ReservationPaymentApproved, ReservationPaymentRejected, RefundCompleted. |
 | Occupancy Event Consumer | Evento asíncrono | Recibe cambios físicos, fallas y conflictos de sensores. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected. |
 | Parking Event Publisher | Evento asíncrono | Publica los cambios que necesitan Payments & Billing y Occupancy & Monitoring. | ReservationPaymentRequested, ReservationCreated, ReservationReassigned, ParkingSessionStarted, ParkingSessionCompleted, AdditionalChargeRequested, RefundRequested, GuestParkingSessionClosed. |
 
-Las operaciones de Guest Parking Session se restringen a Staff mediante Identity & Access Management. El cliente Flutter y la aplicación Android nativa en Kotlin utilizan el mismo contrato REST; Kotlin solo complementa las capacidades específicas de Android.
+Las operaciones de Guest Parking Session se restringen a Parking Admin mediante Identity & Access Management. El cliente Flutter y la aplicación Android nativa en Kotlin utilizan el mismo contrato REST; Kotlin solo complementa las capacidades específicas de Android.
 
 #### *2.6.3.3. Application Layer*
 
@@ -128,7 +128,7 @@ La implementación propuesta utiliza Java y Spring Boot para la API, los command
 | Parking Session Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste Parking Sessions y Guest Parking Sessions. |
 | Temporary Lock Scheduler | Proceso de aplicación y PostgreSQL | Detecta expiresAt, libera locks vencidos y publica su resultado de forma idempotente. |
 | Profiles Context Client | Cliente REST/HTTPS o consumidor de eventos | Valida Driver, Vehicle y estado de elegibilidad antes de una Reservation. |
-| Identity Context Client | Cliente REST/HTTPS o filtro de seguridad | Valida identidad, rol y alcance para operaciones de Driver o Staff. |
+| Identity Context Client | Cliente REST/HTTPS o filtro de seguridad | Valida identidad, rol y alcance para operaciones de Driver o Parking Admin. |
 | Payments Context Client | Cliente REST/HTTPS y adaptador de eventos | Solicita pago, cobro adicional o reembolso y recibe el resultado del proveedor interno. |
 | Occupancy Context Adapter | Consumidor de eventos | Actualiza la Availability Projection con estados físicos y conflictos confiables. |
 | Google Maps Adapter | Cliente HTTPS | Traduce una solicitud de ruta a Google Maps y devuelve el enlace o resultado permitido. |
@@ -160,7 +160,7 @@ El diagrama de componentes deberá representar Parking Infrastructure como un co
 | Navigation Component | Prepara solicitudes hacia Google Maps. | Navigation Controller, Google Maps Adapter. |
 | Parking Infrastructure Database | Persiste el modelo y el historial del contexto. | Implementaciones de repositorio. |
 
-Las relaciones deben mostrar que Guest Parking Session Component no llama a Payments & Billing para procesar una transacción digital: el Staff confirma efectivo o POS fuera del flujo de pagos digitales. También debe mostrarse que Occupancy & Monitoring envía eventos de estado y conflicto, pero no administra Parking Session ni modifica directamente una Reservation.
+Las relaciones deben mostrar que Guest Parking Session Component no llama a Payments & Billing para procesar una transacción digital: el Parking Admin confirma efectivo o POS fuera del flujo de pagos digitales. También debe mostrarse que Occupancy & Monitoring envía eventos de estado y conflicto, pero no administra Parking Session ni modifica directamente una Reservation.
 
 #### *2.6.3.6. Bounded Context Software Architecture Code Level Diagrams*
 
