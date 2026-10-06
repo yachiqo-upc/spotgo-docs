@@ -91,10 +91,9 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
 
 El Sprint Backlog 1 reúne las tareas necesarias para desarrollar las historias de usuario seleccionadas, indicando sus responsables y estado de avance.
 
-**Trello link:** [https://trello.com/b/6aa6e46ebebf57986f7fcd37](https://trello.com/b/6aa6e46ebebf57986f7fcd37)
+**Trello Board Link:** [https://trello.com/b/6aa6e46ebebf57986f7fcd37](https://trello.com/b/6aa6e46ebebf57986f7fcd37)
 
-*Figura 74 (Trello Board Sprint 1)*
-
+*Figura 80 (Trello Board Sprint 1)*
 ![Trello Board Sprint 1](../assets/images/others/trello-board-sprint-1.png)
 
 El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus responsables y su estado de finalización, de acuerdo con la distribución de liderazgo y colaboración de la matriz LACX.
@@ -198,60 +197,49 @@ SpotGo reutiliza una base de código desarrollada en el ciclo académico anterio
 
 Durante este sprint, el equipo puso en funcionamiento la versión inicial de la **Landing Page**,y se presentó las **pantallas core de la aplicación móvil**..
 
-##### Landing Page
+**Landing Page**
 
-*Figura 75 (SpotGo Landing Home)*
-
+*Figura 81 (SpotGo Landing Home)*
 ![SpotGo Landing Home](../assets/images/others/spotgo-landing-home.png)
 
-*Figura 76 (SpotGo Landing Drivers)*
-
+*Figura 82 (SpotGo Landing Drivers)*
 ![SpotGo Landing Drivers](../assets/images/others/spotgo-landing-drivers.png)
 
-*Figura 77 (SpotGo Landing Admins)*
-
+*Figura 83 (SpotGo Landing Admins)*
 ![SpotGo Landing Admins](../assets/images/others/spotgo-landing-admins.png)
 
-*Figura 78 (SpotGo Landing How Work)*
-
+*Figura 84 (SpotGo Landing How Work)*
 ![SpotGo Landing How Work](../assets/images/others/spotgo-landing-how-work.png)
 
-*Figura 79 (SpotGo Landing Pricing)*
-
+*Figura 85 (SpotGo Landing Pricing)*
 ![SpotGo Landing Pricing](../assets/images/others/spotgo-landing-pricing.png)
 
-*Figura 80 (SpotGo Landing FAQ)*
-
+*Figura 86 (SpotGo Landing FAQ)*
 ![SpotGo Landing FAQ](../assets/images/others/spotgo-landing-faq.png)
 
-> ##### Demonstration Video: [Ver video de demostración](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
+**Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
 
-##### Pantallas Core
+**Pantallas Core**
 
-*Figura 81 (Driver-Explore Parking)*
-
+*Figura 87 (Driver-Explore Parking)*
 ![SpotGo Mobile Explore Parking](../assets/images/others/spotgo-mobile-parking%20nearby.jpeg)
 
-*Figura 82 (Driver-Zone Details & Reserve)*
-
+*Figura 88 (Driver-Zone Details)*
 ![SpotGo Mobile Zone Details](../assets/images/others/spotgo-mobile-zone%20details.jpeg)
 
+*Figura 89 (Driver-Reserve)*
 ![SpotGo Mobile Reserve](../assets/images/others/spotgo-mobile-reserve.jpeg)
 
-*Figura 83 (Driver-Payments)*
-
+*Figura 90 (Driver-Payments)*
 ![SpotGo Mobile Payments](../assets/images/others/spotgo-mobile-payments.jpeg)
 
-*Figura 84 (Parking Admin-Dashboard)*
-
+*Figura 91 (Parking Admin-Dashboard)*
 ![SpotGo Mobile Dashboard](../assets/images/others/spotgo-mobile-dashboard.jpeg)
 
-*Figura 85 (Parking Admin-Live Occupancy)*
-
+*Figura 92 (Parking Admin-Live Occupancy)*
 ![SpotGo Mobile Live Occupancy](../assets/images/others/spotgo-mobile-live%20occupancy.jpeg)
 
-> ##### Demonstration Video: enlace pendiente.
-
+**Demonstration Video Link:** []()
 
 ##### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
@@ -277,27 +265,22 @@ La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/S
   <tr><td>Favorites</td><td><code>/api/v1/favorites</code></td><td>GET, POST, DELETE <code>/{favoriteId}</code></td></tr>
 </table>
 
-*Figura 86 (POST /api/v1/authentication/sign-in — Inicio de sesión)*
-
+*Figura 93 (POST /api/v1/authentication/sign-in — Inicio de sesión)*
 ![SpotGo Backend Sign-in](../assets/images/others/spotgo-backend-signin.png)
 
-*Figura 87 (GET /api/v1/users — Listado de usuarios)*
-
+*Figura 94 (GET /api/v1/users — Listado de usuarios)*
 ![SpotGo Backend Users](../assets/images/others/spotgo-backend-users.png)
 
-*Figura 88 (POST /api/v1/reservations — Crear una reserva)*
-
+*Figura 95 (POST /api/v1/reservations — Crear una reserva)*
 ![SpotGo Backend Reservation](../assets/images/others/spotgo-backend-reservation.png)
 
-*Figura 89 (GET /api/v1/parkings — Listado de estacionamientos)*
-
+*Figura 96 (GET /api/v1/parkings — Listado de estacionamientos)*
 ![SpotGo Backend Parkings](../assets/images/others/spotgo-backend-parkings.png)
 
-*Figura 90 (POST /api/v1/employees — Crear un empleado)*
-
+*Figura 97 (POST /api/v1/employees — Crear un empleado)*
 ![SpotGo Backend Employee](../assets/images/others/spotgo-backend-employee.png)
 
-> ##### Demonstration Video: [Ver video de demostración](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI)
+**Demonstration Video Link**: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI)
 
 ##### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
@@ -305,18 +288,16 @@ Durante el Sprint 1, se desplegó la Landing Page de SpotGo en GitHub Pages y el
 
 **Landing Page — GitHub Pages**
 
-**Deployment Link:** [Ver Landing Page](https://yachiqo-upc.github.io/spotgo-landing)
+**Deployment Link:** [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing)
 
-*Figura 91 (Evidencia del despliegue de la Landing Page en GitHub Pages)*
-
+*Figura 98 (Evidencia del despliegue de la Landing Page en GitHub Pages)*
 ![Deployment Evidence Landing](../assets/images/others/deployment-evidence-landing.png)
 
 **Backend — Railway**
 
-**Swagger Documentation Link:** [Ver documentación de la API](https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html)
+**Swagger Documentation Link:** [https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html](https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html)
 
-*Figura 92 (Evidencia del despliegue del backend en Railway)*
-
+*Figura 99 (Evidencia del despliegue del backend en Railway)*
 ![Deployment Evidence Backend](../assets/images/others/deployment-evidence-backend.png)
 
 ##### 4.2.1.9. Team Collaboration Insights during Sprint

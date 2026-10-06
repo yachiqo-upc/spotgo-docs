@@ -31,7 +31,7 @@
       <rect x="28" y="595" width="760" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="28" y1="629" x2="788" y2="629" stroke="#d1d5db" stroke-width="1.2" />
       <text x="44" y="619" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="44" dy="0">Domain Roles</tspan></text>
-      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Reservation, Guest,</tspan><tspan x="44" dy="27.0">Guest Parking Session, Staff, Driver.</tspan></text>
+      <text x="44" y="655" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="44" dy="0">Tenant, Parking Zone, Parking Spot, Reservation, Guest, Guest Parking</tspan><tspan x="44" dy="27.0">Session, Parking Admin, Driver.</tspan></text>
     </g>
     <g>
       <rect x="28" y="729" width="760" height="140" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />
@@ -67,7 +67,7 @@
       <rect x="806" y="620" width="766" height="34" rx="12" fill="#2F6FED" opacity="0.12" />
       <line x1="806" y1="654" x2="1572" y2="654" stroke="#d1d5db" stroke-width="1.2" />
       <text x="822" y="644" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#2F6FED" font-weight="bold"><tspan x="822" dy="0">Assumptions</tspan></text>
-      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Las Guest Parking Sessions no requieren Reservation y se</tspan><tspan x="822" dy="27.0">registran manualmente por Staff al ingreso; el pago físico se</tspan><tspan x="822" dy="27.0">confirma fuera de SpotGo al finalizar la sesión. Google Maps</tspan><tspan x="822" dy="27.0">calcula externamente la ruta hacia la Parking Zone seleccionada.</tspan></text>
+      <text x="822" y="680" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111827" font-weight="normal"><tspan x="822" dy="0">Las Guest Parking Sessions no requieren Reservation y se registran</tspan><tspan x="822" dy="27.0">manualmente por Parking Admin al ingreso; el pago físico se confirma fuera de</tspan><tspan x="822" dy="27.0">SpotGo al finalizar la sesión. Google Maps calcula externamente la ruta hacia la</tspan><tspan x="822" dy="27.0">Parking Zone seleccionada.</tspan></text>
     </g>
     <g>
       <rect x="806" y="784" width="766" height="180" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.6" />

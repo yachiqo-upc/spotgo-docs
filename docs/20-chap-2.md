@@ -135,7 +135,7 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 | Nombre completo: | Reinaldo Torres |
 | Edad: | 42 años |
 | Distrito: | Breña |
-| Resumen: | Nos comenta que la gestión de su estacionamiento combina métodos manuales y digitales, registrando a los clientes sin asignación fija de espacios, ya que ocupan cualquier lugar disponible. El monitoreo se realiza mediante un aplicativo que permite el control remoto, pero en horas de alta demanda surgen problemas de congestión y la necesidad de movilizar vehículos. También destaca que un sistema en tiempo real mejoraría significativamente la gestión, permitiría mayor control y reduciría las pérdidas económicas. Asimismo, resalta la importancia de las alertas, especialmente para los pagos, y considera que la implementación de una solución inteligente sería beneficiosa, aunque requeriría capacitación del personal. |
+| Resumen: | Nos comenta que la gestión de su estacionamiento combina métodos manuales y digitales, registrando a los clientes sin asignación fija de espacios, ya que ocupan cualquier lugar disponible. El monitoreo se realiza mediante una aplicación que permite el control remoto, pero en horas de alta demanda surgen problemas de congestión y la necesidad de movilizar vehículos. También destaca que un sistema en tiempo real mejoraría significativamente la gestión, permitiría mayor control y reduciría las pérdidas económicas. Asimismo, resalta la importancia de las alertas, especialmente para los pagos, y considera que la implementación de una solución inteligente sería beneficiosa, aunque requeriría capacitación del personal. |
 
 **Entrevista 3**
 
@@ -191,7 +191,7 @@ Este segmento es clave porque son responsables de la organización, control y fu
 
 *¿Quiénes son?*
 Se trata de Parking Admin encargados de supervisar el estacionamiento y organizar el flujo de vehículos.
-- Utilizan una combinación de métodos manuales y sistemas básicos (boletas, registros, aplicativos).
+- Utilizan una combinación de métodos manuales y sistemas básicos (boletas, registros, aplicaciones).
 - Se encargan del control de ingresos, ocupación y organización de los vehículos.
 - En muchos casos, deben intervenir directamente para reordenar los autos.
 
@@ -241,13 +241,11 @@ Se trata de Driver que utilizan estacionamientos en centros comerciales, univers
 **Primer Segmento Objetivo (Parking Admin (Administradores))**
 
 *Figura 2 (User Persona 1)*
-
 ![User Persona 1](../assets/images/figures/02-user-persona-1.png)
 
 **Segundo Segmento Objetivo (Driver (Conductores))**
 
 *Figura 3 (User Persona 2)*
-
 ![User Persona 2](../assets/images/figures/03-user-persona-2.png)
 
 ### 2.3.2. User Task Matrix
@@ -255,13 +253,11 @@ Se trata de Driver que utilizan estacionamientos en centros comerciales, univers
 **Primer Segmento Objetivo (Parking Admin (Administradores))**
 
 *Figura 4 (User Task Matrix 1)*
-
 ![User Task Matrix 1](../assets/images/figures/04-u-task-matrix-1.png)
 
 **Segundo Segmento Objetivo (Driver (Conductores))**
 
 *Figura 5 (User Task Matrix 2)*
-
 ![User Task Matrix 2](../assets/images/figures/05-u-task-matrix-2.png)
 
 ### 2.3.3. User Journey Mapping
@@ -269,13 +265,11 @@ Se trata de Driver que utilizan estacionamientos en centros comerciales, univers
 **Primer Segmento Objetivo (Parking Admin (Administradores))**
 
 *Figura 6 (User Journey Map 1)*
-
 ![User Journey Map 1](../assets/images/figures/06-u-journey-map-1.png)
 
 **Segundo Segmento Objetivo (Driver (Conductores))**
 
 *Figura 7 (User Journey Map 2)*
-
 ![User Journey Map 2](../assets/images/figures/07-u-journey-map-2.png)
 
 ### 2.3.4. Empathy Mapping
@@ -283,13 +277,11 @@ Se trata de Driver que utilizan estacionamientos en centros comerciales, univers
 **Primer Segmento Objetivo (Parking Admin (Administradores))**
 
 *Figura 8 (Empathy Map 1)*
-
 ![Empathy Map 1](../assets/images/figures/08-empathy-map-1.png)
 
 **Segundo Segmento Objetivo (Driver (Conductores))**
 
 *Figura 9 (Empathy Map 2)*
-
 ![Empathy Map 2](../assets/images/figures/09-empathy-map-2.png)
 
 ### 2.3.5. Big Picture EventStorming
@@ -303,7 +295,6 @@ Para modelar la visión general del dominio se siguió la guía *Step-by-Step Gu
 **Miro Board Link:** [https://miro.com/app/board/uXjVHoqrvyc=/](https://miro.com/app/board/uXjVHoqrvyc=/)
 
 *Figura 10 (Big Picture EventStorming)*
-
 ![Big Picture EventStorming](../assets/diagrams/big-picture-event-storming.svg)
 
 ### 2.3.6. Ubiquitous Language
@@ -344,7 +335,7 @@ El Ubiquitous Language conserva únicamente conceptos del negocio y sus reglas; 
 - **Parking Admin (Administradores):** Usuario administrativo cuya cuenta y rol son provisionados internamente por un SuperAdmin y que gestiona la configuración, supervisión y organización de las zonas y operaciones de un Tenant. Es distinto del Driver (Conductores) y no se crea mediante el registro público.
 - **Tenant (Cliente B2B):** Estacionamiento o entidad operativa registrada en SpotGo, con su propia configuración de zonas, perfiles, usuarios y facturación del servicio.
 - **SuperAdmin (Administrador de plataforma):** Usuario encargado de registrar *Tenants*, crear las cuentas iniciales de los *Parking Admin*, administrar configuraciones de clientes B2B y consultar la facturación asociada al servicio de SpotGo.
-- **Driver (Conductores):** Usuario con una cuenta propia creada mediante la aplicación móvil, con credenciales propias o una cuenta externa autorizada. Administra su User Profile y sus Vehicles, consulta Availability, crea Reservations y consulta Nearby Parking Zones.
+- **Driver (Conductores):** Usuario con una cuenta propia creada mediante la aplicación móvil, con correo y contraseña de SpotGo o mediante una identidad de Google validada por el backend. Administra su User Profile y sus Vehicles, consulta Availability, crea Reservations y consulta Nearby Parking Zones.
 - **Guest (Invitado):** Persona sin cuenta que llega directamente al estacionamiento. No tiene un Vehicle persistente ni una Reservation en SpotGo y paga físicamente el tiempo utilizado al finalizar su estadía.
 - **Guest Parking Session (Sesión de estacionamiento de invitado):** Sesión creada manualmente por un Parking Admin cuando un Guest ingresa al estacionamiento. Conserva la placa ingresada manualmente, el Parking Spot asignado, la hora de ingreso, la hora de salida y el monto calculado. El pago se realiza físicamente al finalizar la sesión mediante efectivo o POS; SpotGo no procesa el pago ni almacena datos financieros sensibles.
 
@@ -515,7 +506,7 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Epic | E5 - Services and Technical Enablement |
 | Title | Authenticate and Access Mobile Functions by Role |
 | Description | **As a** Driver, Parking Admin or SuperAdmin,<br>**I want** to access SpotGo with my authorized account,<br>**so that** I can use only the capabilities related to my role. |
-| Acceptance Criteria | **Scenario 1: Valid access with SpotGo credentials**<br>**Given** the account is active and the credentials are valid<br>**When** the user requests access to SpotGo<br>**Then** the system authenticates the user, creates a valid Session, and enables the capabilities associated with the user's Role.<br><br>**Scenario 2: Valid access with Google Authentication**<br>**Given** an active Driver selects Google Authentication and authorizes SpotGo with a valid Google account<br>**When** the Driver requests access to SpotGo<br>**Then** the system authenticates the Driver, creates a valid Session, and enables the capabilities associated with the Driver's Role.<br><br>**Scenario 3: Invalid or expired access**<br>**Given** the credentials are invalid or the Session is no longer valid<br>**When** the user requests access to protected information<br>**Then** the system rejects the request and does not provide occupancy, profile, or restricted-zone data. |
+| Acceptance Criteria | **Scenario 1: Valid access with SpotGo credentials**<br>**Given** the account is active and the credentials are valid<br>**When** the user requests access to SpotGo<br>**Then** the system authenticates the user, creates a valid Session, and enables the capabilities associated with the user's Role.<br><br>**Scenario 2: Invalid or expired access**<br>**Given** the credentials are invalid or the Session is no longer valid<br>**When** the user requests access to protected information<br>**Then** the system rejects the request and does not provide occupancy, profile, or restricted-zone data.<br><br>**Scenario 3: Valid access with Google**<br>**Given** Google returns an ID token with a valid signature, issuer, audience, and expiration, and the linked SpotGo Account is active<br>**When** the user submits the token to Identity & Access Management<br>**Then** SpotGo authenticates the linked Account, creates its own Session, and enables only its previously authorized Role capabilities.<br><br>**Scenario 4: Google access rejected or cancelled**<br>**Given** Google access is cancelled or the ID token is invalid or expired<br>**When** the user attempts to complete authentication<br>**Then** SpotGo does not issue a Session and allows the user to retry or use email and password.<br><br>**Scenario 5: Administrative role restriction**<br>**Given** a Google identity has no provisioned Parking Admin or SuperAdmin Account<br>**When** the user signs in through the public access flow<br>**Then** SpotGo does not grant an administrative Role; a new public Account is created only as Driver under US13. |
 
 ***US10 - Support Accessibility and Languages in the Mobile Application***
 
@@ -565,7 +556,7 @@ Los criterios de aceptación se expresan con la estructura Gherkin **Given - Whe
 | Epic | E1 - Driver Mobile Experience |
 | Title | Register Driver Account |
 | Description | **As a** Driver,<br>**I want** to create an account in the SpotGo mobile application,<br>**so that** I can use the parking services. |
-| Acceptance Criteria | **Scenario 1: Successful registration with SpotGo credentials**<br>**Given** the Driver provides the required registration data (name, email address, and password) and an unregistered email address<br>**When** the Driver submits the registration request<br>**Then** the system creates the active account and assigns the User Profile *Driver* by default.<br><br>**Scenario 2: Successful registration with Google Authentication**<br>**Given** the Driver selects Google Authentication and authorizes SpotGo with a valid Google account<br>**When** the Driver submits the registration request<br>**Then** the system creates the active Driver account, associates the verified email address, and assigns the User Profile *Driver* by default.<br><br>**Scenario 3: Existing email or invalid data**<br>**Given** the email address is already registered or required data is missing<br>**When** the Driver submits the registration request<br>**Then** the system rejects the operation, reports the cause, and does not create a duplicate account. |
+| Acceptance Criteria | **Scenario 1: Successful registration with SpotGo credentials**<br>**Given** the Driver provides the required registration data (name, email address, and password) and an unregistered email address<br>**When** the Driver submits the registration request<br>**Then** the system creates the active account and assigns the User Profile *Driver* by default.<br><br>**Scenario 2: Existing email or invalid data**<br>**Given** the email address is already registered or required data is missing<br>**When** the Driver submits the registration request<br>**Then** the system rejects the operation, reports the cause, and does not create a duplicate account.<br><br>**Scenario 3: First access with Google**<br>**Given** the Driver completes Google authentication, the backend validates the ID token, the required profile data is available, and no linked SpotGo Account exists<br>**When** the Driver confirms public registration<br>**Then** SpotGo creates an active Account and Driver User Profile, associates the validated Google subject, and does not request or store the Google password.<br><br>**Scenario 4: Existing account and identity linking**<br>**Given** an existing SpotGo Account has the same email but no validated Google association<br>**When** the user attempts to associate the Google identity<br>**Then** SpotGo requires authorized verification of the existing Account before linking it, preserves its identity and Roles, and does not create a duplicate Account or automatically grant an administrative Role. |
 
 ***US14 - Register B2B Tenant***
 
@@ -860,7 +851,6 @@ Para calcular BG02 y BG03 se propone establecer una línea base antes de iniciar
 | **BG03:** Reducir en 15% las incidencias de estacionamiento indebido en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Carlos Ramirez - Parking Admin | Monitorea el Occupancy Status proveniente de sensores, atiende alertas operativas y revisa patrones de uso. | Dashboard móvil con Occupancy Map, alertas por Unauthorized Parking, alertas de High Capacity y Occupancy Reports. | **US05:** Como Parking Admin, deseo monitorear el Occupancy Status por zona, para supervisar la operación.<br>**US06:** Como Parking Admin, deseo recibir alertas operativas, para revisar usos indebidos y alta capacidad.<br>**US07:** Como Parking Admin, deseo consultar un resumen operativo y live Digital Parking Map, para controlar ocupación y alertas.<br>**US08:** Como Parking Admin, deseo consultar Occupancy Reports, para apoyar decisiones operativas.<br>**SP01:** Como Developer, deseo validar el monitoreo basado en sensores, para actualizar la ocupación en un máximo de 5 segundos. |
 
 *Figura 11 (Impact Map)*
-
 ![Impact Map](../assets/images/figures/11-impact-map.png)
 
 La figura presenta una vista ejecutiva de la relación entre los tres Business Goals, los User Personas, los cambios de comportamiento esperados, los entregables y las historias principales que los habilitan. La tabla desarrolla el detalle completo de las capacidades de pagos, reservas, suscripciones, facturación, consulta de Parking Zones cercanas e integración con Google Maps. El producto principal es la aplicación móvil y la Landing Page se mantiene como producto digital complementario.
@@ -917,7 +907,6 @@ La rúbrica solicita una captura del tablero y una referencia al URL público de
 **Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo)
 
 *Figura 12 (Trello Board Evidence)*
-
 ![Trello Board Evidence](../assets/images/others/trello-board-evidence.png)
 
 La tabla anterior deja listo el contenido que debe reflejarse en la herramienta y permite comprobar la correspondencia entre el orden, los Story Points y los Sprints.
@@ -939,7 +928,6 @@ A partir del análisis de los eventos, comandos y políticas representados en el
 **Miro Board Link:** [https://miro.com/app/board/uXjVHoqrvyc=/](https://miro.com/app/board/uXjVHoqrvyc=/)
 
 *Figura 13 (Design-Level EventStorming)*
-
 ![Design-Level EventStorming](../assets/diagrams/design-level-event-storming.svg)
 
 #### *2.5.1.1. Candidate Context Discovery*
@@ -958,7 +946,7 @@ Los contextos **Parking Infrastructure** y **Occupancy & Monitoring** fueron cla
 
 Por otro lado, **Profiles & Vehicles Management** y **Payments & Billing** cumplen funciones de soporte para completar los principales procesos del sistema, mientras que **Identity & Access Management** se considera un **Generic Domain**, ya que la autenticación y autorización son capacidades comunes en distintos sistemas de software.
 
-También se identificaron capacidades como Reservations, Parking Sessions, Guest Parking Sessions, Subscriptions, navegación y notificaciones. Sin embargo, no fueron consideradas Bounded Contexts independientes: las Reservations, Parking Sessions y Guest Parking Sessions forman parte de Parking Infrastructure, las Subscriptions pertenecen a Payments & Billing y Google Maps junto con Firebase Cloud Messaging se mantienen como servicios externos.
+También se identificaron capacidades como Reservations, Parking Sessions, Guest Parking Sessions, Subscriptions, navegación y notificaciones. Sin embargo, no fueron consideradas Bounded Contexts independientes: las Reservations, Parking Sessions y Guest Parking Sessions forman parte de Parking Infrastructure, las Subscriptions pertenecen a Payments & Billing y Google Identity, Google Maps y Firebase Cloud Messaging se mantienen como servicios externos. Identity & Access Management valida el acceso con Google y conserva la responsabilidad sobre las sesiones y los roles de SpotGo.
 
 #### *2.5.1.2. Domain Message Flows Modeling*
 
@@ -970,7 +958,7 @@ Cuando una Reservation requiere un pago digital, Parking Infrastructure envía l
 
 Occupancy & Monitoring también puede informar sobre conflictos de ocupación, espacios no disponibles o sobretiempo. En este último caso, puede solicitar a Payments & Billing el procesamiento de un cobro adicional.
 
-Además, SpotGo utiliza **Google Maps** para la navegación hacia la Parking Zone seleccionada y **Firebase Cloud Messaging** para comunicar eventos relacionados con reservas, pagos y monitoreo.
+Además, SpotGo utiliza **Google Identity** para verificar la identidad presentada durante el inicio de sesión con Google, **Google Maps** para la navegación hacia la Parking Zone seleccionada y **Firebase Cloud Messaging** para comunicar eventos relacionados con reservas, pagos y monitoreo. La validación del proveedor no sustituye la autorización ni la sesión de SpotGo.
 
 Los principales mensajes entre contextos son:
 
@@ -978,6 +966,7 @@ Los principales mensajes entre contextos son:
 | --- | --- | --- |
 | Profiles & Vehicles Management | Valid Driver and vehicle | Parking Infrastructure |
 | Identity & Access Management | Validated identity and role | Parking Infrastructure |
+| Identity & Access Management | Google ID token verification | Google Identity |
 | Parking Infrastructure | Payment / Refund Request | Payments & Billing |
 | Payments & Billing | Payment approved / rejected | Parking Infrastructure |
 | Parking Infrastructure | Reservation created / reassigned | Occupancy & Monitoring |
@@ -989,7 +978,6 @@ Los principales mensajes entre contextos son:
 Este modelo permite mantener separadas las responsabilidades de cada Bounded Context y hacer explícitas las dependencias necesarias para completar los principales procesos de SpotGo.
 
 *Figura 14 (Domain Message Flows Modeling)*
-
 ![Domain Message Flows Modeling](../assets/diagrams/domain-message-flows-modeling.svg)
 
 #### *2.5.1.3. Bounded Context Canvases*
@@ -1003,17 +991,15 @@ Este contexto administra la información del **Driver**, sus **Vehicles** y los 
 Se clasifica como **Supporting Domain**, ya que brinda soporte a los procesos principales del sistema, especialmente a la creación de Reservations y a la validación de usuarios.
 
 *Figura 15 (Profiles & Vehicles Management Bounded Context Canvas)*
-
 ![Profiles & Vehicles Management Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-profiles.svg)
 
 **Identity & Access Management**
 
-Este contexto se encarga de la autenticación y autorización de los usuarios de SpotGo. Administra credenciales, sesiones y roles para determinar qué operaciones puede realizar cada usuario dentro del sistema.
+Este contexto se encarga de la autenticación y autorización de los usuarios de SpotGo. Permite iniciar sesión con correo y contraseña o mediante Google, y administra credenciales, sesiones y roles para determinar qué operaciones puede realizar cada usuario dentro del sistema.
 
 Se clasifica como **Generic Domain**, debido a que la gestión de identidad y acceso es una capacidad común presente en diferentes sistemas de software.
 
 *Figura 16 (Identity & Access Management Bounded Context Canvas)*
-
 ![Identity & Access Management Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-identity.svg)
 
 **Parking Infrastructure**
@@ -1025,7 +1011,6 @@ Se considera un **Core Domain**, ya que concentra capacidades centrales de SpotG
 Además, se comunica con Payments & Billing para procesar pagos, con Occupancy & Monitoring para conocer el estado operativo de los espacios y con Google Maps para la navegación hacia la Parking Zone seleccionada.
 
 *Figura 17 (Parking Infrastructure Bounded Context Canvas)*
-
 ![Parking Infrastructure Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-parking.svg)
 
 **Payments & Billing**
@@ -1035,7 +1020,6 @@ Este contexto administra las operaciones financieras de SpotGo, incluyendo **Pay
 Se clasifica como **Supporting Domain**, ya que permite completar los procesos comerciales asociados a las Reservations. Una de sus reglas principales es que SpotGo no almacena los datos completos de las tarjetas, sino identificadores seguros de pago.
 
 *Figura 18 (Payments & Billing Bounded Context Canvas)*
-
 ![Payments & Billing Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-payments.svg)
 
 **Occupancy & Monitoring**
@@ -1047,7 +1031,6 @@ Se considera un **Core Domain**, debido a que el monitoreo de la disponibilidad 
 En este contexto se mantiene una separación entre el estado de una Reservation y el estado físico del Parking Spot. Los sensores detectan únicamente si el espacio se encuentra ocupado o disponible, sin identificar automáticamente qué Vehicle lo está utilizando.
 
 *Figura 19 (Occupancy & Monitoring Bounded Context Canvas)*
-
 ![Occupancy & Monitoring Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-occupancy.svg)
 
 En conjunto, estos canvases permiten establecer límites claros entre las responsabilidades de cada Bounded Context y sirven como base para el posterior diseño de la arquitectura de software de SpotGo.
@@ -1067,7 +1050,6 @@ Los Bounded Contexts considerados son:
 El análisis considera las dependencias entre contextos y los patrones de relación propuestos por Domain-Driven Design.
 
 *Figura 20 (Context Mapping Discussion Evidence)*
-
 ![Context Mapping Discussion Evidence](../assets/images/others/context-mapping-discussion-evidence.png)
 
 **Análisis de alternativas**
@@ -1137,7 +1119,6 @@ El Context Map seleccionado establece las siguientes relaciones estructurales en
 Como resultado del análisis, se mantiene la estructura conformada por los cinco Bounded Contexts identificados inicialmente. Las relaciones se establecen mediante patrones DDD que permiten definir explícitamente las dependencias y responsabilidades entre los contextos.
 
 *Figura 21 (Context Map)*
-
 ![Context Map](../assets/diagrams/context-map.svg)
 
 La estructura seleccionada mantiene cada Bounded Context enfocado en sus responsabilidades y establece relaciones explícitas para la comunicación entre ellos. `Parking Infrastructure` conserva las capacidades relacionadas con la gestión de estacionamientos y reservas, mientras que `Payments & Billing` mantiene las reglas correspondientes al procesamiento económico y `Occupancy & Monitoring` las relacionadas con el monitoreo de la ocupación.
@@ -1149,40 +1130,31 @@ La estructura seleccionada mantiene cada Bounded Context enfocado en sus respons
 El **Diagrama de Contexto** constituye el primer nivel de abstracción del Modelo C4. Su propósito es delimitar el alcance de **SpotGo** y representar su interacción con los principales actores humanos y sistemas externos.
 
 *Figura 22 (Context Level Diagram)*
-
 ![Context Level Diagram](../assets/diagrams/context-level-diagram.svg)
 
 El diagrama identifica tres actores principales. El **Driver** utiliza la aplicación para consultar la disponibilidad de espacios, registrar sus vehículos, realizar reservas y efectuar pagos. El **Parking Admin** utiliza la solución para administrar la infraestructura del estacionamiento, así como los perfiles, reservas y operaciones asociadas. Finalmente, el **SuperAdmin** administra los **Tenants**, provisiona las cuentas de **Parking Admin** y realiza la configuración inicial de los estacionamientos.
 
-En cuanto a las integraciones externas, SpotGo se comunica con **Google Authentication** para validar identidades externas, con los **Sensores Físicos IoT** para recibir información sobre la ocupación y el estado de los sensores, con **Google Maps** para proporcionar rutas hacia la **Parking Zone** seleccionada y con **Firebase Cloud Messaging** para el envío de notificaciones relacionadas con cuentas, reservas, pagos, ocupación y otros eventos operativos.
+En cuanto a las integraciones externas, SpotGo se comunica con los **Sensores Físicos IoT** para recibir información sobre la ocupación y el estado de los sensores, con **Google Maps** para proporcionar rutas hacia la **Parking Zone** seleccionada y con **Firebase Cloud Messaging** para enviar notificaciones de cuentas, reservas, pagos, ocupación e incidencias. La autenticación permite correo y contraseña de SpotGo o inicio de sesión mediante Google. Identity & Access Management valida ambos métodos y emite la sesión de SpotGo; el procesamiento de pagos pertenece al sistema interno de SpotGo.
 
 #### *2.5.3.2. Software Architecture Container Level Diagrams*
 
-El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y permite descomponer SpotGo en sus principales unidades de software. En esta vista se observa una arquitectura organizada alrededor de una aplicación móvil, una aplicación web y un **API Gateway**, junto con cinco contextos de negocio que encapsulan las principales responsabilidades funcionales de la plataforma.
+El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y descompone SpotGo en sus principales unidades de software. La propuesta distingue una sola aplicación móvil construida con una parte nativa Android en Kotlin y otra con Flutter, la Landing Page estática, la aplicación web administrativa y el **API Gateway**, junto con cinco contextos de negocio y el sistema de pagos internos.
 
 *Figura 23 (Container Level Diagram)*
-
 ![Container Level Diagram](../assets/diagrams/container-level-diagram.svg)
 
 La solución cuenta con los siguientes contenedores principales:
 
-1. **SpotGo Mobile App:** Aplicación móvil multiplataforma desarrollada con Flutter, complementada con integraciones nativas para Android mediante Kotlin, y utilizada por el Driver y el Parking Admin para acceder a las funcionalidades de la plataforma.
-
-2. **SpotGo Web App:** Aplicación web desarrollada con Angular que comprende la Landing Page y las funcionalidades administrativas utilizadas por el Parking Admin y el SuperAdmin.
-
-3. **API Gateway:** Punto único de entrada a los servicios internos de SpotGo, encargado de enrutar las solicitudes provenientes de las aplicaciones cliente hacia los diferentes contextos de negocio mediante HTTPS / REST.
-
-4. **Internal Payment Provider:** Servicio interno de SpotGo que procesa pagos digitales, consultas de estado y reembolsos mediante un contrato con idempotencia. No representa un proveedor externo de terceros.
-
-5. **Profiles & Vehicles Management:** Contenedor encargado de gestionar la información de los Driver, perfiles, vehículos asociados y referencias de asignación a los *Tenants* administrados por Parking Infrastructure.
-
-6. **Identity & Access Management:** Contenedor responsable de la autenticación de usuarios, gestión de credenciales y sesiones, autorización basada en roles, administración de cuentas y registro de acciones administrativas.
-
-7. **Parking Infrastructure:** Contenedor encargado de administrar las zonas, espacios, disponibilidad, reservas, asignaciones y reasignaciones dentro de los estacionamientos.
-
-8. **Payments & Billing:** Contenedor responsable de gestionar los pagos digitales tokenizados, suscripciones, cobros por sobretiempo, reembolsos, comprobantes y saldos pendientes.
-
-9. **Occupancy & Monitoring:** Contenedor encargado de recibir información de los sensores IoT, determinar la ocupación real, supervisar el estado de los sensores, detectar conflictos y generar eventos relacionados con el sobretiempo.
+1. **SpotGo Mobile App:** Una sola aplicación móvil para Driver y Parking Admin, construida con una parte nativa Android en Kotlin y otra con Flutter y Dart. Ambas partes comparten las reglas del dominio, los contratos backend y una experiencia de usuario coherente.
+2. **SpotGo Landing Page:** Sitio estático desarrollado con HTML, CSS y Vanilla JS, desplegado en GitHub Pages. Presenta la propuesta de valor y dirige al visitante al destino de la aplicación móvil.
+3. **SpotGo Administration Web App:** Aplicación web administrativa propuesta con Angular para Parking Admin y SuperAdmin, separada de la Landing Page estática.
+4. **API Gateway:** Punto único de entrada a los servicios internos de SpotGo, encargado de enrutar las solicitudes de las aplicaciones cliente hacia los contextos de negocio mediante HTTPS / REST.
+5. **Internal Payment System:** Sistema de pagos internos de SpotGo que procesa pagos digitales, consultas de estado y reembolsos mediante un contrato con idempotencia. Se representa dentro del límite de SpotGo y se ejecuta en su infraestructura de aplicaciones.
+6. **Profiles & Vehicles Management:** Gestiona Driver, User Profiles, Vehicles y referencias de asignación a los Tenants administrados por Parking Infrastructure. Los visitantes de la Landing Page no tienen un User Profile.
+7. **Identity & Access Management:** Gestiona autenticación con correo y contraseña o Google, sesiones, autorización y auditoría. Reconoce únicamente los roles DRIVER, PARKING_ADMIN y SUPER_ADMIN.
+8. **Parking Infrastructure:** Gestiona Tenants, zonas, espacios, disponibilidad, reservas, sesiones de estacionamiento, asignaciones y reasignaciones.
+9. **Payments & Billing:** Gestiona pagos digitales tokenizados, suscripciones, sobretiempo, reembolsos, comprobantes y saldos pendientes.
+10. **Occupancy & Monitoring:** Recibe información de sensores IoT, determina la ocupación física, supervisa la salud de los sensores y genera eventos de conflictos y sobretiempo.
 
 Cada contexto de negocio mantiene además una base de datos PostgreSQL independiente, permitiendo separar la persistencia de información según las responsabilidades de cada dominio. Los servicios se comunican entre sí mediante HTTPS / REST y, para determinados procesos, mediante eventos asíncronos.
 
@@ -1191,22 +1163,21 @@ Cada contexto de negocio mantiene además una base de datos PostgreSQL independi
 El **Diagrama de Despliegue** representa la distribución física de los elementos de software de SpotGo sobre la infraestructura tecnológica utilizada durante el entorno de producción. Esta vista permite relacionar las aplicaciones cliente con los servidores de aplicación, la infraestructura de bases de datos, la red de sensores IoT y los servicios externos empleados por la solución.
 
 *Figura 24 (Deployment Diagram)*
-
 ![Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
 
 La infraestructura contempla un **Driver Device**, utilizado para ejecutar la aplicación móvil, y un **Parking Admin Device**, desde el cual el Parking Admin accede a sus vistas administrativas móviles y web. El **SuperAdmin** utiliza un **SuperAdmin Device** con acceso a la aplicación web para provisionar Parking Admin y administrar Tenants. Los dispositivos se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de recibir y enrutar las solicitudes hacia los servicios de SpotGo.
 
-Dentro de la infraestructura cloud se encuentra el **Application Server**, donde se ejecutan los cinco servicios correspondientes a los contextos de negocio. La persistencia se concentra en un **PostgreSQL Server**, alojado dentro de la **Database Infrastructure**, donde se mantienen las bases de datos independientes de cada contexto.
+Dentro de la infraestructura cloud se encuentra el **Application Server**, donde se ejecutan los cinco servicios de los contextos de negocio y el **Internal Payment System**. La persistencia se concentra en una sola instancia física de **PostgreSQL Server**, alojada dentro de la **Database Infrastructure**, con cinco bases de datos lógicas independientes, una por contexto. La Landing Page estática se aloja de forma independiente en **GitHub Pages**.
 
-Finalmente, la **Parking Infrastructure** incorpora una red de sensores físicos IoT que se comunica con el servicio de **Occupancy & Monitoring** mediante **MQTT / HTTP**. La arquitectura también contempla los servicios externos de **Google Authentication**, **Google Maps** y **Firebase Cloud Messaging**, utilizados respectivamente para validar identidades externas, abrir rutas hacia una **Parking Zone** y enviar notificaciones.
+Finalmente, la **Parking Infrastructure** incorpora una red de sensores físicos IoT que se comunica con **Occupancy & Monitoring** mediante **MQTT / HTTP**. Los servicios externos **Google Maps** y **Firebase Cloud Messaging** permiten abrir rutas hacia una **Parking Zone** y enviar notificaciones, respectivamente.
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
 El diseño táctico traduce los límites identificados durante el diseño estratégico en modelos de dominio concretos para SpotGo. Cada bounded context mantiene un lenguaje ubicuo, reglas de negocio, agregados, servicios y contratos propios, de modo que sus responsabilidades puedan evolucionar sin convertir la base de datos o el modelo de un contexto en una dependencia directa de los demás. En esta sección se desarrollan los cinco bounded contexts definidos para la solución: Profiles & Vehicles Management, Identity & Access Management, Parking Infrastructure, Payments & Billing y Occupancy & Monitoring.
 
-La propuesta se organiza en cuatro capas. La Domain Layer contiene las entidades, objetos de valor, agregados, fábricas, servicios de dominio e interfaces de repositorio. La Interface Layer expone controladores REST y consumidores de eventos. La Application Layer coordina comandos, casos de uso y manejadores de eventos, mientras que la Infrastructure Layer implementa la persistencia, los adaptadores de integración y la mensajería. Las tablas de cada contexto describen el contenido textual que acompaña a los diagramas de componentes y sirve como base para los diagramas de clases y base de datos que el equipo incorporará en las entregas correspondientes.
+La propuesta se organiza en cuatro capas. La Domain Layer contiene las entidades, objetos de valor, agregados, fábricas, servicios de dominio e interfaces de repositorio. La Interface Layer expone controladores REST y consumidores de eventos. La Application Layer coordina comandos, casos de uso y manejadores de eventos, mientras que la Infrastructure Layer implementa la persistencia, los adaptadores de integración y la mensajería. Las tablas de cada contexto explican los componentes, las clases y los objetos de base de datos presentados en los diagramas de las secciones siguientes.
 
-Como línea base tecnológica, el backend se implementará con Java y Spring Boot, con una base de datos PostgreSQL independiente por bounded context. La aplicación móvil multiplataforma se desarrollará con Flutter y contará con integraciones nativas en Kotlin para Android cuando sean necesarias. La comunicación de la solución utilizará APIs REST sobre HTTPS y mensajería asíncrona cuando el flujo lo requiera. Google Maps y Firebase Cloud Messaging se mantienen como servicios externos, mientras que el proveedor de pagos se considera un servicio interno de SpotGo.
+Como línea base tecnológica, el backend se implementará con Java y Spring Boot, con cinco bases de datos lógicas independientes en una sola instancia física de PostgreSQL Server. Se construirá una sola aplicación móvil, con una parte nativa Android en Kotlin y otra con Flutter. Ambas partes comparten los contratos backend y las reglas del dominio. La comunicación utiliza APIs REST sobre HTTPS y mensajería asíncrona cuando el flujo lo requiere. Google Maps, Google Identity para el inicio de sesión y Firebase Cloud Messaging son servicios externos; el sistema de pagos internos pertenece a SpotGo.
 
 Los contextos se integran mediante contratos REST, identificadores y eventos de dominio. Un bounded context no accederá directamente a las tablas de otro ni establecerá claves foráneas entre bases de datos independientes. Cuando un modelo necesite identificar información administrada por otro contexto, conservará únicamente la referencia necesaria y validará su vigencia mediante una API o un evento. Esta regla mantiene la autonomía de cada contexto y evita duplicar la responsabilidad de las reglas de negocio.
 

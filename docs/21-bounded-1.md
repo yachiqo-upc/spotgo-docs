@@ -10,7 +10,7 @@ La capa de dominio representa las reglas que determinan cuándo un Driver tiene 
 
 | Elemento | Tipo | Responsabilidad y reglas principales | Atributos u operaciones relevantes |
 | --- | --- | --- | --- |
-| Driver | Aggregate Root | Representa al Driver registrado y sus datos de perfil. Solo un Driver registrado puede tener información persistente en este contexto. | driverId, identityRef, datos personales y de contacto, estado; register(), updateData(), activate(), deactivate(). |
+| Driver | Aggregate Root | Representa al Driver registrado y sus datos de perfil. Solo un Driver registrado puede tener un agregado Driver y Vehicles persistentes; los perfiles de Parking Admin se mantienen de forma independiente mediante User Profile y Parking Admin Assignment. | driverId, identityRef, datos personales y de contacto, estado; register(), updateData(), activate(), deactivate(). |
 | Vehicle | Entity | Representa un vehículo asociado a un Driver. Un Driver puede registrar varios vehículos, pero cada Vehicle pertenece a un único Driver. | vehicleId, driverId, placa registrada, marca, modelo, color y estado; updateData(), activate(), deactivate(). |
 | User Profile | Entity | Representa el perfil operativo asociado a una identidad. Su tipo puede ser Driver o Parking Admin. No admite el tipo Visitor y no almacena credenciales. | profileId, identityRef, profileType, estado, fechas de creación y actualización; changeStatus(), isOperational(). |
 | Parking Admin Assignment | Entity | Registra la asignación de un perfil Parking Admin a un Tenant mediante una referencia externa. El Tenant es administrado por Parking Infrastructure. | assignmentId, profileId, tenantId, vigencia y estado; assign(), endAssignment(), isValidAt(). |
@@ -43,7 +43,7 @@ La Interface Layer recibe solicitudes del API Gateway y eventos provenientes de 
 | Identity Event Consumer | Evento asíncrono | Recibe la validación, asignación de rol o suspensión de una identidad para sincronizar la referencia mínima del perfil. | IdentityValidated, RoleAssigned, AccountSuspended. |
 | Profile Event Publisher | Evento asíncrono | Publica cambios que otros contextos necesitan conocer sin compartir la base de datos. | DriverProfileCreated, DriverProfileValidated, VehicleRegistered, VehicleDeactivated, ParkingAdminProfileAssigned. |
 
-Las respuestas no exponen credenciales, tokens ni información de pago. Cuando la solicitud se origina en la aplicación móvil, Flutter consume la API REST; las capacidades específicas de Android pueden invocarse mediante una integración nativa en Kotlin sin modificar el modelo de dominio.
+Las respuestas no exponen credenciales, tokens ni información de pago. La aplicación móvil está construida con una parte nativa en Kotlin y otra en Flutter. Ambas partes consumen los mismos contratos REST y comparten las reglas de identidad, perfil y Vehicle, sin modificar el modelo de dominio según la tecnología de la pantalla.
 
 #### *2.6.1.3. Application Layer*
 
@@ -92,13 +92,12 @@ El contexto conservará únicamente identificadores de otros bounded contexts, c
 
 #### *2.6.1.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes de Profiles & Vehicles Management deberá mostrar el límite del bounded context, sus componentes internos, la base de datos propia y las dependencias con Identity & Access Management y Parking Infrastructure. La aplicación móvil Flutter y el cliente Android nativo en Kotlin deben aparecer como consumidores externos a través del API Gateway, no como componentes del dominio.
+El diagrama de componentes de Profiles & Vehicles Management representa la frontera del bounded context, sus componentes internos, la base de datos propia y las dependencias con Identity & Access Management y Parking Infrastructure. La única aplicación móvil, construida con partes Kotlin y Flutter, consume los servicios a través del API Gateway y se mantiene fuera de este bounded context.
 
 *Figura 25 (Profiles & Vehicles Management Component Level Diagram)*
-
 ![Profiles & Vehicles Management Component Level Diagram](../assets/diagrams/components-diagram-profiles.svg)
 
-| Componente que debe representarse | Responsabilidad | Dependencias principales |
+| Componente | Responsabilidad | Dependencias principales |
 | --- | --- | --- |
 | Driver Profile Component | Ejecuta casos de uso de Driver y expone el perfil operativo. | Driver Profile Controller, Driver Repository. |
 | Vehicle Component | Ejecuta casos de uso de Vehicle y su asociación con Driver. | Vehicle Controller, Vehicle Repository. |
@@ -109,16 +108,15 @@ El diagrama de componentes de Profiles & Vehicles Management deberá mostrar el 
 | Identity & Access Management Adapter | Obtiene el estado mínimo de la identidad y el rol. | REST/HTTPS y eventos de identidad. |
 | Profile Event Publisher | Publica cambios de perfiles y vehículos. | Broker o canal de eventos asíncronos. |
 
-Las relaciones visuales deben indicar que los controladores llaman a la Application Layer, los manejadores utilizan la Domain Layer, los repositorios acceden únicamente a Profiles & Vehicles Database y los adaptadores se comunican con otros contextos mediante contratos. No debe aparecer un componente Visitor ni una base de datos compartida.
+Las relaciones visuales describen que los controladores llaman a la Application Layer, los manejadores utilizan la Domain Layer, los repositorios acceden únicamente a Profiles & Vehicles Database y los adaptadores se comunican con otros contextos mediante contratos. El visitante de la Landing Page no tiene un User Profile y la persistencia de este contexto es independiente.
 
 #### *2.6.1.6. Bounded Context Software Architecture Code Level Diagrams*
 
-La vista de código debe concentrarse en la Domain Layer y mostrar las clases, interfaces y enumeraciones que sostienen las reglas del contexto. Para que el diagrama sea verificable, se recomienda utilizar la notación de visibilidad + para operaciones públicas, - para atributos privados y # para elementos protegidos. Los tipos y nombres siguientes constituyen la especificación textual que acompañará al diagrama.
+La vista de código se concentra en la Domain Layer y presenta las clases, interfaces y enumeraciones que sostienen las reglas del contexto. La notación de visibilidad utiliza + para operaciones públicas, - para atributos privados y # para elementos protegidos. Las tablas siguientes explican los tipos, nombres y relaciones del modelo.
 
 #### ***2.6.1.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 26 (Profiles & Vehicles Management Domain Layer Class Diagram)*
-
 ![Profiles & Vehicles Management Domain Layer Class Diagram](../assets/diagrams/class-diagram-profiles.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -155,7 +153,6 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. El modelo físico utiliza una tabla `profiles` para los perfiles de Driver y Parking Admin, mientras que la distinción del dominio se conserva mediante `profile_type`. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no como foreign keys entre bases de datos independientes.
 
 *Figura 27 (Profiles & Vehicles Management Database Design Diagram)*
-
 ![Profiles & Vehicles Management Database Design Diagram](../assets/diagrams/db-diagram-profiles.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |

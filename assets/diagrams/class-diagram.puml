@@ -38,14 +38,14 @@ package "Profiles & Vehicles Management Context" #E1F5FE {
     class UserProfile <<Entity>> {
         - UUID profileId
         - IdentityReference identityRef
-        - UUID driverId
-        - UserProfileType profileType
+        - UUID driverId [0..1; DRIVER only]
+        - ProfileType profileType
         - ProfileStatus status
         + activate(): Void
         + deactivate(): Void
     }
 
-    class StaffAssignment <<Entity>> {
+    class ParkingAdminAssignment <<Entity>> {
         - UUID assignmentId
         - UUID profileId
         - UUID tenantId
@@ -97,9 +97,9 @@ package "Profiles & Vehicles Management Context" #E1F5FE {
         + validateForOperation(driverId: UUID): Boolean
     }
 
-    enum UserProfileType <<Enum>> {
+    enum ProfileType <<Enum>> {
         DRIVER
-        STAFF
+        PARKING_ADMIN
     }
 
     enum ProfileStatus <<Enum>> {
@@ -142,14 +142,14 @@ package "Profiles & Vehicles Management Context" #E1F5FE {
     Driver "1" *-- "1" FullName
     Driver "1" *-- "1" ContactData
     Driver "1" *-- "1" IdentityReference
-    Driver "1" --> "1" UserProfile : tiene >
-    UserProfile "1" *-- "0..*" StaffAssignment : asigna (solo STAFF) >
+    Driver "0..1" --> "1" UserProfile : tiene (solo DRIVER) >
+    UserProfile "1" *-- "0..*" ParkingAdminAssignment : asigna (solo PARKING_ADMIN) >
     UserProfile "1" *-- "1" IdentityReference
     Vehicle "1" *-- "1" VehicleData
     Vehicle "1" --> "1" VehicleStatus
-    UserProfile "1" --> "1" UserProfileType
+    UserProfile "1" --> "1" ProfileType
     UserProfile "1" --> "1" ProfileStatus
-    StaffAssignment "1" --> "1" AssignmentStatus
+    ParkingAdminAssignment "1" --> "1" AssignmentStatus
     DriverFactory ..> Driver : crea >
     VehicleFactory ..> Vehicle : crea >
     DriverEligibilityService ..> Driver : valida >
@@ -167,7 +167,6 @@ package "Identity & Access Management Context" #F3E5F5 {
     class Account <<AggregateRoot>> {
         - UUID accountId
         - String email
-        - ExternalSubject externalSubject
         - AccountStatus status
         - Timestamp createdAt
         - Timestamp updatedAt
@@ -182,7 +181,6 @@ package "Identity & Access Management Context" #F3E5F5 {
         - UUID accountId
         - AuthenticationMethod authenticationMethod
         - String secretHash
-        - ExternalSubject externalSubject
         - Timestamp lastUsedAt
         - CredentialStatus status
         + verify(secret: String): Boolean
@@ -233,16 +231,9 @@ package "Identity & Access Management Context" #F3E5F5 {
         + allows(resource: String, action: String): Boolean
     }
 
-    class ExternalSubject <<ValueObject>> {
-        - String value
-        - String provider
-        + validate(): Boolean
-        + equals(other: ExternalSubject): Boolean
-    }
-
     enum RoleType <<Enum>> {
         DRIVER
-        STAFF
+        PARKING_ADMIN
         SUPER_ADMIN
     }
 
@@ -256,7 +247,6 @@ package "Identity & Access Management Context" #F3E5F5 {
 
     enum AuthenticationMethod <<Enum>> {
         PASSWORD
-        GOOGLE
     }
 
     enum CredentialStatus <<Enum>> {
@@ -280,7 +270,6 @@ package "Identity & Access Management Context" #F3E5F5 {
 
     class AuthenticationService <<DomainService>> {
         + authenticate(): Account
-        + validateExternalIdentity(): Boolean
     }
 
     class AuthorizationService <<DomainService>> {
@@ -300,7 +289,7 @@ package "Identity & Access Management Context" #F3E5F5 {
 
     interface AccountRepository <<Repository>> {
         + findById(id: UUID): Account
-        + findByExternalSubject(subject: ExternalSubject): Account
+        + findByEmail(email: String): Account
         + save(account: Account): Void
     }
 
@@ -323,8 +312,6 @@ package "Identity & Access Management Context" #F3E5F5 {
     Account "1" *-- "0..*" AuditEntry : genera >
     Account "1" --> "1..*" RoleType : roles >
     Account "1" --> "1" AccountStatus
-    Account "1" --> "0..1" ExternalSubject
-    Credential "1" --> "0..1" ExternalSubject
     Credential "1" --> "1" AuthenticationMethod
     Session "1" --> "1" IdentitySessionStatus
     AuthenticationService ..> Credential : verifica >
@@ -1239,7 +1226,7 @@ package "Occupancy & Monitoring Context" #FCE4EC {
 Driver .up.> Account : "referencia (identityRef)"
 UserProfile .up.> Account : "referencia (identityRef)"
 ParkingFacility .up.> Tenant : "pertenece_a (tenantId)"
-StaffAssignment .up.> Tenant : "referencia (tenantId)"
+ParkingAdminAssignment .up.> Tenant : "referencia (tenantId)"
 Reservation .up.> Driver : "realizada_por (driverId)"
 Reservation .up.> Vehicle : "utiliza (vehicleId)"
 Reservation .up.> ParkingSpot : "asigna (spotId)"

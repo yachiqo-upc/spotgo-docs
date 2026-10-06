@@ -8,20 +8,20 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
         driver = person "Driver" "Conductor que consulta disponibilidad, registra vehículos, reserva y realiza pagos."
 
-        staff = person "Staff" "Administra la operación del estacionamiento mediante sus vistas administrativas."
+        parkingAdmin = person "Parking Admin" "Administra la operación del estacionamiento mediante sus vistas administrativas."
 
-        superAdmin = person "SuperAdmin" "Crea y administra Tenants y provisiona las cuentas de Staff."
+        superAdmin = person "SuperAdmin" "Crea y administra Tenants y provisiona las cuentas de Parking Admin."
 
 
         // =========================================================
         // SISTEMAS EXTERNOS
         // =========================================================
 
-        googleMaps = softwareSystem "Google Maps" "Servicio externo utilizado para abrir rutas hacia la Parking Zone seleccionada." {
+        googleIdentity = softwareSystem "Google Identity / Google Sign-In" "Proveedor externo de identidad que autentica al usuario y emite un ID token; SpotGo valida ese token y administra su propia sesión y roles." {
             tags "External System"
         }
 
-        googleAuthentication = softwareSystem "Google Authentication" "Servicio externo utilizado para validar la identidad de un Driver durante el registro o el inicio de sesión." {
+        googleMaps = softwareSystem "Google Maps" "Servicio externo utilizado para abrir rutas hacia la Parking Zone seleccionada." {
             tags "External System"
         }
 
@@ -44,13 +44,16 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // FRONTENDS
             // =====================================================
 
-            mobileApp = container "SpotGo Mobile App" "Aplicación móvil multiplataforma para Drivers y Staff." "Flutter / Kotlin (Android nativo)"
+            mobileApp = container "SpotGo Mobile App" "Una sola aplicación móvil para Driver y Parking Admin, construida con una parte nativa Android en Kotlin y otra con Flutter." "Kotlin / Jetpack Compose + Flutter / Dart"
 
-            webApp = container "SpotGo Web App" "Landing Page y aplicación web administrativa para Staff y SuperAdmin." "Angular"
+
+            landingPage = container "SpotGo Landing Page" "Sitio estático que presenta la propuesta de valor y dirige al visitante a la aplicación móvil; alojado en GitHub Pages." "HTML / CSS / Vanilla JS"
+
+            webApp = container "SpotGo Administration Web App" "Aplicación web administrativa propuesta para Parking Admin y SuperAdmin." "Angular"
 
             apiGateway = container "API Gateway" "Punto único de entrada que enruta las solicitudes hacia los microservicios." "Spring Boot / API Gateway"
 
-            internalPaymentProvider = container "Internal Payment Provider" "Servicio interno de SpotGo que procesa pagos digitales, consultas de estado, reembolsos e idempotencia." "Java / Spring Boot / REST"
+            internalPaymentSystem = container "Internal Payment System" "Sistema de pagos internos de SpotGo que procesa pagos digitales, consultas de estado y reembolsos con idempotencia." "Java / Spring Boot / REST"
 
 
             // =====================================================
@@ -58,8 +61,8 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // =====================================================
 
             identityService = container "Identity & Access Management" "Autentica usuarios, gestiona credenciales y sesiones y autoriza el acceso según roles." "Java / Spring Boot / REST" {
-                identityAuthentication = component "Authentication Component" "Valida las credenciales de los usuarios." "Spring Security"
-                identityGoogleAdapter = component "Google Authentication Adapter" "Integra Google Authentication sin almacenar la credencial externa completa." "Spring Boot / HTTPS"
+                identityAuthentication = component "Authentication Component" "Autentica con correo y contraseña o con una identidad Google validada, conservando las cuentas y roles de SpotGo." "Spring Security"
+                identityGoogleAdapter = component "Google Identity Adapter" "Verifica la firma, el emisor, la audiencia y la expiración del ID token de Google y devuelve la identidad validada a Authentication Component." "Java / Google ID Token Verification"
                 identitySession = component "Session Management Component" "Gestiona sesiones y tokens de acceso." "Spring Security / JWT"
                 identityToken = component "Token Service Component" "Firma, valida, rota y revoca access tokens y refresh tokens." "Spring Security / JWT"
                 identityAuthorization = component "Authorization Component" "Controla permisos y acceso según roles." "Spring Security"
@@ -80,10 +83,10 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             profileService = container "Profiles & Vehicles Management" "Gestiona los datos de los Drivers, User Profiles y Vehicles asociados." "Java / Spring Boot / REST" {
                 profileDriver = component "Driver Profile Component" "Gestiona la información del conductor." "Spring Boot"
                 profileVehicle = component "Vehicle Component" "Registra y administra Vehicles asociados al Driver, incluida la placa registrada." "Spring Boot"
-                profileRole = component "User Profile Component" "Gestiona User Profiles de tipo Driver y Staff; no gestiona Guests ni credenciales." "Spring Boot"
-                profileStaffAssignment = component "Staff Assignment Component" "Gestiona la asignación de Staff a un Tenant mediante referencias externas." "Spring Boot"
+                profileRole = component "User Profile Component" "Gestiona User Profiles de tipo Driver y Parking Admin; no gestiona Guests ni credenciales." "Spring Boot"
+                profileParkingAdminAssignment = component "Parking Admin Assignment Component" "Gestiona la asignación de Parking Admin a un Tenant mediante referencias externas." "Spring Boot"
                 profileIdentityAdapter = component "Identity & Access Management Adapter" "Consulta y valida identidad, rol y estado de cuenta mediante el contrato de IAM." "Spring Boot / REST"
-                profileEventPublisher = component "Profile Event Publisher" "Publica cambios validados de Driver, Vehicle y Staff Assignment." "Spring Boot / Messaging"
+                profileEventPublisher = component "Profile Event Publisher" "Publica cambios validados de Driver, Vehicle y Parking Admin Assignment." "Spring Boot / Messaging"
             }
 
             profileDb = container "Profiles & Vehicles Management Database" "Base de datos exclusiva del contexto de Profiles & Vehicles Management." "PostgreSQL" {
@@ -128,7 +131,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
                 paymentInvoice = component "Invoice and Receipt Component" "Genera y consulta Electronic Receipt o Electronic Invoice según la información de facturación." "Spring Boot"
                 paymentBalance = component "Pending Balance Component" "Gestiona saldos pendientes derivados de pagos fallidos." "Spring Boot"
                 paymentRetry = component "Payment Retry Component" "Programa hasta 4 intentos en 10 minutos para Reservations y conciliaciones según la Retry Policy." "Spring Boot / Scheduler"
-                paymentProviderAdapter = component "Internal Payment Provider Adapter" "Traduce el contrato de Payments & Billing al proveedor interno de pagos." "Spring Boot / REST"
+                paymentProviderAdapter = component "Internal Payment System Adapter" "Traduce el contrato de Payments & Billing al sistema de pagos internos." "Spring Boot / REST"
                 paymentEventPublisher = component "Payment Event Publisher" "Publica resultados de pagos, reembolsos, cargos, saldos y documentos." "Spring Boot / Messaging"
             }
 
@@ -150,7 +153,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
                 occupancyOvertime = component "Overtime Detection Component" "Detecta sobretiempo y solicita un cargo adicional solo con evidencia confiable." "Spring Boot"
                 occupancyAlert = component "Occupancy Alert Component" "Genera eventos y alertas operativas." "Spring Boot"
                 occupancyCapacity = component "Capacity Monitoring Component" "Calcula High Capacity cuando la ocupación supera el 95 por ciento." "Spring Boot"
-                occupancyReport = component "Occupancy Report Component" "Genera reportes operativos para Staff." "Spring Boot"
+                occupancyReport = component "Occupancy Report Component" "Genera reportes operativos para Parking Admin." "Spring Boot"
                 occupancyParkingAdapter = component "Parking Infrastructure Adapter" "Consume expectativas y publica estados, conflictos y fallas hacia Parking Infrastructure." "Spring Boot / Messaging"
                 occupancyPaymentAdapter = component "Payments & Billing Adapter" "Publica AdditionalChargeRequested cuando existe evidencia suficiente." "Spring Boot / Messaging"
                 occupancyFcmAdapter = component "FCM Notification Adapter" "Envía alertas y reportes operativos mediante Firebase Cloud Messaging." "Spring Boot / FCM"
@@ -166,9 +169,11 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // =====================================================
 
             driver -> mobileApp "Utiliza la aplicación móvil"
-            staff -> mobileApp "Utiliza las vistas operativas"
-            staff -> webApp "Utiliza las vistas administrativas"
-            superAdmin -> webApp "Provisiona Staff y administra Tenants"
+            driver -> landingPage "Consulta la propuesta de valor" "HTTPS"
+            parkingAdmin -> mobileApp "Utiliza las vistas operativas"
+            parkingAdmin -> landingPage "Consulta la propuesta de valor" "HTTPS"
+            parkingAdmin -> webApp "Utiliza las vistas administrativas"
+            superAdmin -> webApp "Provisiona Parking Admin y administra Tenants"
 
             // =====================================================
             // FRONTENDS - API GATEWAY
@@ -196,7 +201,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             parkingService -> parkingDb "Lee y escribe zonas, espacios y reservas" "JDBC / SQL"
             paymentService -> paymentDb "Lee y escribe pagos y facturación" "JDBC / SQL"
             occupancyService -> occupancyDb "Lee y escribe estados y eventos de ocupación" "JDBC / SQL"
-            paymentService -> internalPaymentProvider "Procesa pagos, consultas y reembolsos mediante el contrato interno" "HTTPS / REST"
+            paymentService -> internalPaymentSystem "Procesa pagos, consultas y reembolsos mediante el contrato interno" "HTTPS / REST"
 
             // =====================================================
             // COMUNICACIONES ENTRE BOUNDED CONTEXTS
@@ -204,7 +209,6 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
             profileService -> identityService "Valida la referencia de identidad y el rol" "HTTPS / REST / Events"
             identityService -> profileService "Publica cambios de identidad, roles y provisión" "HTTPS / REST / Events"
-            identityService -> googleAuthentication "Valida identidad externa" "HTTPS / REST"
             parkingService -> identityService "Valida identidad y autorización" "HTTPS / REST"
             parkingService -> profileService "Consulta perfiles y vehículos autorizados" "HTTPS / REST"
             profileService -> parkingService "Publica Driver y Vehicle validados" "HTTPS / REST / Events"
@@ -234,6 +238,14 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // =====================================================
 
             mobileApp -> googleMaps "Abre ruta hacia la Parking Zone seleccionada" "Google Maps SDK / Deep Link"
+            landingPage -> mobileApp "Dirige al destino de la aplicación móvil" "HTTPS / App Link"
+
+            // =====================================================
+            // GOOGLE SIGN-IN
+            // =====================================================
+
+            mobileApp -> googleIdentity "Inicia sesión con Google y obtiene un ID token" "HTTPS / OpenID Connect"
+            identityService -> googleIdentity "Obtiene claves públicas para verificar los ID tokens de Google" "HTTPS / JWKS"
 
             // =====================================================
             // RELACIONES DE COMPONENTES - BC01
@@ -241,9 +253,9 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
             apiGateway -> identityAuthentication "Expone registro e inicio de sesión"
             apiGateway -> identityAuthorization "Autoriza operaciones protegidas"
-            identityAuthentication -> identityGoogleAdapter "Valida identidad externa"
-            identityGoogleAdapter -> googleAuthentication "Solicita validación de identidad" "HTTPS"
             identityAuthentication -> identitySession "Crea y valida sesiones"
+            identityAuthentication -> identityGoogleAdapter "Solicita la validación del ID token de Google"
+            identityGoogleAdapter -> googleIdentity "Obtiene claves públicas para verificar la firma de los ID tokens" "HTTPS / JWKS"
             identitySession -> identityToken "Emite, rota y revoca tokens"
             identitySession -> identityAuthorization "Aplica permisos"
             identityAuthentication -> identityAccount "Consulta cuenta"
@@ -265,19 +277,19 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             apiGateway -> profileDriver "Expone gestión de Driver"
             apiGateway -> profileVehicle "Expone gestión de Vehicle"
             apiGateway -> profileRole "Expone gestión de User Profile"
-            apiGateway -> profileStaffAssignment "Expone asignación de Staff"
+            apiGateway -> profileParkingAdminAssignment "Expone asignación de Parking Admin"
             profileDriver -> profileVehicle "Gestiona vehículos del Driver"
             profileDriver -> profileRole "Consulta User Profile"
-            profileRole -> profileStaffAssignment "Gestiona asignación de Staff a Tenant"
+            profileRole -> profileParkingAdminAssignment "Gestiona asignación de Parking Admin a Tenant"
             profileIdentityAdapter -> identityService "Consulta identidad y rol"
             profileDriver -> profileEventPublisher "Publica cambios del Driver"
             profileVehicle -> profileEventPublisher "Publica registro o baja del Vehicle"
-            profileStaffAssignment -> profileEventPublisher "Publica cambios de asignación"
+            profileParkingAdminAssignment -> profileEventPublisher "Publica cambios de asignación"
             profileEventPublisher -> parkingService "Publica datos validados de Driver y Vehicle"
             profileDriver -> profileDb "Persistencia"
             profileVehicle -> profileDb "Persistencia"
             profileRole -> profileDb "Persistencia"
-            profileStaffAssignment -> profileDb "Persistencia"
+            profileParkingAdminAssignment -> profileDb "Persistencia"
 
             // =====================================================
             // RELACIONES DE COMPONENTES - BC03
@@ -324,7 +336,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             paymentProcessing -> paymentEventPublisher "Publica resultado económico"
             paymentRetry -> paymentProcessing "Coordina intentos y conciliaciones"
             paymentRetry -> paymentProviderAdapter "Reintenta errores transitorios"
-            paymentProviderAdapter -> internalPaymentProvider "Procesa operación mediante contrato interno" "HTTPS / REST"
+            paymentProviderAdapter -> internalPaymentSystem "Procesa operación mediante contrato interno" "HTTPS / REST"
             paymentAdditionalCharge -> paymentProcessing "Solicita procesamiento del cargo"
             paymentOvertime -> paymentSubscription "Aplica descuento de suscripción"
             paymentOvertime -> paymentAdditionalCharge "Calcula cargo adicional"
@@ -359,7 +371,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             occupancyStatus -> occupancyOvertime "Evalúa sobretiempo"
             occupancyStatus -> occupancyCapacity "Calcula High Capacity"
             occupancyStatus -> occupancyReport "Proporciona datos para reportes"
-            occupancyUnauthorized -> occupancyAlert "Genera alerta para Staff"
+            occupancyUnauthorized -> occupancyAlert "Genera alerta para Parking Admin"
             occupancyOvertime -> occupancyAlert "Genera señal operativa"
             occupancyOvertime -> occupancyPaymentAdapter "Solicita cargo con evidencia"
             occupancyParkingAdapter -> parkingService "Publica estados, conflictos y fallas"
@@ -397,16 +409,16 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // -----------------------------------------------------
             // DISPOSITIVOS CLIENTE
             // -----------------------------------------------------
-            deploymentNode "Driver Device" "Dispositivo móvil del Driver" "Android / iOS" {
+            deploymentNode "Driver Device" "Dispositivo móvil del Driver; una aplicación con módulos Kotlin y Flutter" "Android / iOS" {
                 containerInstance mobileApp
             }
 
-            deploymentNode "Staff Device" "Dispositivo utilizado por Staff para las vistas móviles y administrativas" "Android / iOS / Web Browser" {
+            deploymentNode "Parking Admin Device" "Dispositivo del Parking Admin para las vistas móviles y administrativas" "Android / iOS / Web Browser" {
                 containerInstance mobileApp
                 containerInstance webApp
             }
 
-            deploymentNode "SuperAdmin Device" "Dispositivo utilizado por SuperAdmin para provisionar Staff y administrar Tenants" "Web Browser" {
+            deploymentNode "SuperAdmin Device" "Dispositivo utilizado por SuperAdmin para provisionar Parking Admin y administrar Tenants" "Web Browser" {
                 containerInstance webApp
             }
 
@@ -424,7 +436,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
                     containerInstance profileService
                     containerInstance parkingService
                     containerInstance paymentService
-                    containerInstance internalPaymentProvider
+                    containerInstance internalPaymentSystem
                     containerInstance occupancyService
                 }
 
@@ -433,7 +445,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
                 // -------------------------------------------------
                 deploymentNode "Database Infrastructure" "Servidor de base de datos principal" "Ubuntu Linux" {
                     
-                    deploymentNode "PostgreSQL Server" "Motor de base de datos relacional" "PostgreSQL 15+" {
+                    deploymentNode "PostgreSQL Server" "Una sola instancia física con cinco bases de datos lógicas independientes, una por bounded context" "PostgreSQL 15+" {
                         containerInstance identityDb
                         containerInstance profileDb
                         containerInstance parkingDb
@@ -441,6 +453,10 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
                         containerInstance occupancyDb
                     }
                 }
+            }
+
+            deploymentNode "GitHub Pages" "Hosting independiente de la Landing Page estática" "Static Web Hosting / HTTPS" {
+                containerInstance landingPage
             }
 
             // -----------------------------------------------------
@@ -456,8 +472,8 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // SERVICIOS EXTERNOS
             // -----------------------------------------------------
             deploymentNode "External Services" "Servicios externos utilizados por SpotGo" "Internet" {
+                softwareSystemInstance googleIdentity
                 softwareSystemInstance googleMaps
-                softwareSystemInstance googleAuthentication
                 softwareSystemInstance notificationProvider
             }
         }

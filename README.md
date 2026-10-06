@@ -21,11 +21,11 @@ SpotGo busca reducir el tiempo que los Driver (Conductores) dedican a encontrar 
 
 La documentación plantea una arquitectura distribuida orientada al dominio, organizada en cinco bounded contexts. Entre las tecnologías e integraciones consideradas se encuentran:
 
-- Aplicación móvil multiplataforma con Flutter e integraciones nativas para Android mediante Kotlin.
+- Una sola aplicación móvil construida con una parte Android nativa en Kotlin y otra con Flutter.
 - Servicios backend en Java con Spring Boot.
-- Bases de datos PostgreSQL independientes por bounded context.
+- Cinco bases de datos PostgreSQL independientes por bounded context, alojadas en una sola instancia física de PostgreSQL Server.
 - Comunicación mediante APIs REST sobre HTTPS y eventos asíncronos.
-- Integración con Google Maps API, Google Authentication y Firebase Cloud Messaging.
+- Integración con Google Maps API y Firebase Cloud Messaging.
 - Comunicación con sensores físicos IoT mediante MQTT/HTTP para reportar la ocupación.
 
 ## Equipo

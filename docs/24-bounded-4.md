@@ -69,7 +69,7 @@ La Interface Layer expone las operaciones económicas de Driver y recibe solicit
 | Payment Provider Notification Consumer | Evento o callback interno | Recibe confirmaciones, rechazos o cambios del proveedor interno. | ProviderPaymentApproved, ProviderPaymentRejected, ProviderRefundUpdated. |
 | Payment Event Publisher | Evento asíncrono | Publica resultados económicos para los contextos consumidores y el Driver. | ReservationPaymentApproved, ReservationPaymentRejected, AdditionalChargeProcessed, OutstandingBalanceGenerated, BalanceRegularized, RefundCompleted, RefundReconciliationRequired, ElectronicDocumentIssued. |
 
-Los endpoints no aceptan datos completos de tarjeta ni permiten que una Guest inicie una transacción digital. La aplicación móvil Flutter y sus integraciones nativas en Kotlin reciben únicamente el resultado necesario para mostrar el estado de la operación y el comprobante permitido.
+Los endpoints no aceptan datos completos de tarjeta ni permiten que un Guest inicie una transacción digital. La única aplicación móvil, construida con partes Kotlin y Flutter, recibe únicamente el resultado necesario para mostrar el estado de la operación y el comprobante permitido.
 
 #### *2.6.4.3. Application Layer*
 
@@ -112,7 +112,7 @@ La infraestructura se implementará con Java y Spring Boot, PostgreSQL y adaptad
 
 | Componente de infraestructura | Implementación propuesta | Responsabilidad |
 | --- | --- | --- |
-| Internal Payment Provider Adapter | Cliente REST/HTTPS o mensajería interna | Traduce Payment Provider Gateway al contrato del proveedor de pagos de SpotGo. |
+| Internal Payment System Adapter | Cliente REST/HTTPS o mensajería interna | Traduce Payment Provider Gateway al contrato del sistema de pagos internos de SpotGo. |
 | Provider Notification Adapter | Consumidor de eventos o callback interno | Verifica y transforma confirmaciones o cambios de estado del proveedor. |
 | Payment Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste Digital Payment y sus transiciones. |
 | Payment Attempt Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste cada intento, error clasificado y próxima fecha de reintento. |
@@ -128,35 +128,33 @@ La retención base de pagos, comprobantes, reembolsos, cargos y saldos es de cin
 
 #### *2.6.4.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes deberá mostrar Payments & Billing como un contenedor independiente con sus componentes de procesamiento, tokenización, suscripciones, cargos, saldos, reembolsos y facturación. Debe aparecer el proveedor interno de pagos como una dependencia de infraestructura, sin representar datos completos de tarjeta ni incluir el pago físico de Guests dentro del contenedor.
+El diagrama de componentes delimita Payments & Billing como un contenedor independiente con sus componentes de procesamiento, tokenización, suscripciones, cargos, saldos, reembolsos y facturación. El sistema de pagos internos de SpotGo es una dependencia de infraestructura, sin representar datos completos de tarjeta ni incluir el pago físico de Guests dentro del contenedor.
 
 *Figura 34 (Payments & Billing Component Level Diagram)*
-
 ![Payments & Billing Component Level Diagram](../assets/diagrams/components-diagram-payments.svg)
 
-| Componente que debe representarse | Responsabilidad | Dependencias principales |
+| Componente | Responsabilidad | Dependencias principales |
 | --- | --- | --- |
-| Payment Processing Component | Coordina Digital Payment, intentos, idempotencia y estados. | Digital Payment Controller, Payment Processing Service, Internal Payment Provider Adapter. |
+| Payment Processing Component | Coordina Digital Payment, intentos, idempotencia y estados. | Digital Payment Controller, Payment Processing Service, Internal Payment System Adapter. |
 | Payment Token Component | Administra tokens y su ciclo de vida. | Payment Token Controller, Payment Token Repository. |
 | Subscription Component | Administra suscripciones y beneficios. | Subscription Controller, Subscription Service, Payment Processing Component. |
 | Additional Charge Component | Recibe y procesa cargos adicionales validados. | Additional Charge Consumer, Overtime Billing Service. |
 | Pending Balance Component | Crea, consulta y regulariza Outstanding Balance. | Balance Repository, Regularize Balance Handler. |
 | Invoice and Receipt Component | Genera Receipt, Electronic Receipt o Electronic Invoice. | Billing Controller, Billing Service, Billing Repository. |
-| Refund Component | Coordina solicitudes, consultas y resultados de Refund. | Refund Controller, Internal Payment Provider Adapter. |
-| Payment Retry Component | Programa reintentos transitorios y conciliaciones. | Retry Policy, Payment Attempt Repository, Internal Payment Provider Adapter. |
+| Refund Component | Coordina solicitudes, consultas y resultados de Refund. | Refund Controller, Internal Payment System Adapter. |
+| Payment Retry Component | Programa reintentos transitorios y conciliaciones. | Retry Policy, Payment Attempt Repository, Internal Payment System Adapter. |
 | Payments & Billing Database | Persiste operaciones económicas y auditoría del contexto. | Implementaciones de repositorio. |
-| Internal Payment Provider | Procesa pagos digitales y responde al contrato interno. | Internal Payment Provider Adapter. |
+| Internal Payment System | Procesa pagos digitales y responde al contrato interno. | Internal Payment System Adapter. |
 
-Las relaciones deben mostrar que Parking Infrastructure solicita pagos y recibe eventos de resultado, que Occupancy & Monitoring solo puede iniciar un Additional Charge mediante un evento validado y que las Guest Parking Sessions no llaman a Payment Processing Component. También debe representarse la publicación de ReservationPaymentApproved, ReservationPaymentRejected, RefundCompleted y OutstandingBalanceGenerated.
+Las relaciones describen que Parking Infrastructure solicita pagos y recibe eventos de resultado, que Occupancy & Monitoring solo puede iniciar un Additional Charge mediante un evento validado y que las Guest Parking Sessions no llaman a Payment Processing Component. Los eventos publicados son ReservationPaymentApproved, ReservationPaymentRejected, RefundCompleted y OutstandingBalanceGenerated.
 
 #### *2.6.4.6. Bounded Context Software Architecture Code Level Diagrams*
 
-La vista de código debe mostrar las clases de dominio que separan pago, facturación, reembolso y saldo pendiente. También debe mostrar Payment Provider Gateway y Retry Policy como puertos o servicios del dominio, de manera que el proveedor interno pueda cambiar su implementación sin modificar las reglas centrales.
+La vista de código describe las clases de dominio que separan pago, facturación, reembolso y saldo pendiente. También describe Payment Provider Gateway y Retry Policy como puertos o servicios del dominio, de manera que el sistema de pagos internos pueda cambiar su implementación sin modificar las reglas centrales.
 
 #### ***2.6.4.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 35 (Payments & Billing Domain Layer Class Diagram)*
-
 ![Payments & Billing Domain Layer Class Diagram](../assets/diagrams/class-diagram-payments.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -178,7 +176,7 @@ La vista de código debe mostrar las clases de dominio que separan pago, factura
 | SubscriptionStatus | ACTIVE, PAUSED, EXPIRED, CANCELLED, PAST_DUE | — | Enumeration de Subscription. |
 | BalanceStatus | OPEN, PARTIALLY_PAID, REGULARIZED, WRITTEN_OFF | — | Enumeration de OutstandingBalance. |
 | BillingDocumentType | ELECTRONIC_RECEIPT, ELECTRONIC_INVOICE | — | Enumeration de Receipt. |
-| PaymentProviderGateway | — | +authorize(), +queryStatus(), +refund(), +cancel() | Domain Port implementado por Internal Payment Provider Adapter. |
+| PaymentProviderGateway | — | +authorize(), +queryStatus(), +refund(), +cancel() | Domain Port implementado por Internal Payment System Adapter. |
 | PaymentProcessingService | — | +process(), +classifyResult(), +reconcile() | Domain Service de pagos. |
 | RetryPolicy | -reservationLockMinutes, -maxAttempts, -backoffSchedule | +shouldRetry(), +nextAttemptAt(), +maxAttempts() | Domain Service de reintentos. |
 | BillingService | — | +issueReceipt(), +issueElectronicDocument() | Domain Service de comprobantes. |
@@ -207,7 +205,6 @@ La vista de código debe mostrar las clases de dominio que separan pago, factura
 Payments & Billing Database persiste únicamente operaciones digitales y sus documentos. Los identificadores de Driver, Reservation y Parking Session se almacenan como referencias de integración. Una Guest Parking Session queda fuera del flujo digital y no se almacena como Digital Payment. No se incluyen datos completos de tarjeta y no se crean foreign keys hacia bases de otros bounded contexts.
 
 *Figura 36 (Payments & Billing Database Design Diagram)*
-
 ![Payments & Billing Database Design Diagram](../assets/diagrams/db-diagram-payments.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |

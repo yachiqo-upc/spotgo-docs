@@ -26,14 +26,11 @@ Ofrecemos un ecosistema de desarrollo móvil flexible y a medida para cualquier 
 
 **Características principales**
 
-- Desarrollo de una aplicación móvil multiplataforma con Flutter y de integraciones nativas para Android con Kotlin.
+- Desarrollo de aplicaciones móviles que combinan partes nativas en Kotlin con partes desarrolladas en Flutter dentro de una sola aplicación.
 - Modelado del negocio con Domain-Driven Design para adaptar la solución a las reglas de cualquier industria.
 - Almacenamiento de datos local en el dispositivo para garantizar su uso continuo en entornos sin conexión a internet.
 - Integración con servicios web RESTful propios para la sincronización y consumo de información en tiempo real.
 - Diseño inclusivo con soporte de internacionalización (i18n) y accesibilidad (a11y) para todo tipo de público.
-- Conexión con SDKs y servicios de terceros como la Google Maps API (Google, s. f.) y Firebase Cloud Messaging (Firebase, s. f.), manteniendo el procesamiento de pagos en un servicio interno.
-- Integración de Firebase Cloud Messaging como feature de aprendizaje autónomo: el equipo investiga y evalúa el registro de dispositivos, los permisos, la entrega y el manejo de notificaciones push, y aplica la alternativa seleccionada para comunicar eventos de Reservations, Digital Payments y Occupancy Monitoring, documentando las decisiones y limitaciones.
-- Política de idioma: todos los productos digitales, mensajes, interfaces y documentación de SpotGo utilizan English (en_US) por defecto y ofrecen Latin American Spanish (es_419) como alternativa.
 
 La selección de criterios para la experiencia de usuario móvil y el uso de prototipos se fundamenta en investigaciones recientes sobre atributos, métodos de evaluación y procesos de diseño de aplicaciones móviles (Alshammare et al., 2025; İlhan, 2025).
 
@@ -111,9 +108,9 @@ Durante los periodos de alta demanda, esta situación puede generar recorridos i
 
 7. ¿Cuánto cuesta o cuál es la magnitud? (How Much?)
 
-La magnitud del problema varía según factores como la capacidad del estacionamiento, el nivel de ocupación y los periodos de mayor demanda. La evidencia revisada muestra que la búsqueda de estacionamiento puede incrementar el tiempo de circulación y contribuir a la congestión vehicular.
+La magnitud del problema se observa en el tiempo dedicado a buscar estacionamiento y en el esfuerzo de supervisión manual. Assemi et al. (2020) reportaron que el 35 % de los participantes de su estudio empleó más de cinco minutos buscando estacionamiento; este resultado corresponde al entorno estudiado por los autores y no se extrapola al Perú.
 
-Para el contexto peruano, la magnitud específica del problema se contrasta mediante las entrevistas realizadas a los segmentos objetivo.
+En las entrevistas de Needfinding del capítulo II, Angel Pariona, Driver de 23 años residente en Lince, indicó que encontrar un espacio puede tomar entre 10 y 15 minutos. Emiliano Lozano y Jorge Luis describieron esperas, recorridos adicionales o demoras, pero sus resúmenes no proporcionan una duración cuantificada. Los tres Parking Admin entrevistados describieron intervenciones manuales para controlar o reorganizar los vehículos. Estas observaciones aportan evidencia exploratoria local de pérdida de tiempo y carga operativa; no permiten calcular un promedio representativo, un costo monetario ni la prevalencia del problema en todos los estacionamientos del país.
 
 **Objetivos de la solución**
 
@@ -126,7 +123,7 @@ SpotGo busca alcanzar los siguientes objetivos:
 - Facilitar la supervisión del flujo y distribución de vehículos.
 - Mejorar la experiencia de los Driver durante el proceso de estacionamiento.
 - Proporcionar información que facilite la toma de decisiones operativas por parte de los Parking Admin.
-- Permitir que los Driver creen su cuenta con credenciales de SpotGo o mediante Google Authentication.
+- Permitir que los Driver creen su cuenta con credenciales propias de SpotGo o accedan mediante Google, manteniendo una identidad y un perfil de Driver dentro de la plataforma.
 - Permitir que los Driver registrados administren sus perfiles y registren los vehículos que utilizarán en futuras Reservations.
 - Permitir que el Parking Admin registre Guest Parking Sessions para Guests que llegan directamente al estacionamiento sin una cuenta registrada.
 - Procesar las Reservations de Driver registrados, Digital Payments, Subscriptions, Virtual Receipts y Electronic Billing desde la aplicación móvil.
@@ -162,7 +159,7 @@ Las soluciones y procesos utilizados actualmente no siempre permiten integrar ef
 
 Nuestra solución abordará esta brecha mediante una plataforma de gestión de estacionamientos que permita monitorear la ocupación, organizar zonas según el tipo de usuario y proporcionar información que facilite la identificación y administración de espacios disponibles.
 
-Nuestro enfoque estará dirigido a Parking Admin de alta demanda, así como a Driver y Guests que utilizan estos espacios.
+Nuestro enfoque estará dirigido a los Parking Admin de estacionamientos de alta demanda, así como a Driver y Guests que utilizan estos espacios.
 
 Sabremos que la solución es exitosa cuando observemos una reducción en el tiempo requerido por los Driver para identificar espacios disponibles, una disminución de incidencias relacionadas con el uso indebido de zonas y una mejora en el control de ocupación por parte del personal administrativo.
 
@@ -226,25 +223,15 @@ Sabremos que la solución es exitosa cuando observemos una reducción en el tiem
 **Feature Assumptions**
 
 - **FA01 - Monitoreo de ocupación por zonas:** Creemos que el monitoreo de ocupación por zonas permitirá al Parking Admin conocer con mayor precisión la disponibilidad existente en el estacionamiento.
-
 - **FA02 - Registro de Driver, perfiles y vehículos:** Creemos que permitir a los Driver registrar sus Vehicles y administrar su User Profile permitirá gestionar adecuadamente las zonas correspondientes.
-
 - **FA03 - Asignación de zonas según tipo de usuario:** Creemos que la asignación de zonas según el tipo de usuario permitirá reducir el uso indebido de espacios y mejorar la distribución de vehículos.
-
 - **FA04 - Sistema de alertas por uso indebido:** Creemos que un sistema de alertas permitirá al Parking Admin identificar oportunamente posibles usos indebidos de las zonas del estacionamiento.
-
 - **FA05 - Panel de control para Parking Admin:** Creemos que un panel de control permitirá a los Parking Admin supervisar de manera centralizada la ocupación y distribución de las diferentes zonas.
-
 - **FA06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que proporcionar información actualizada sobre la disponibilidad y mostrar las Parking Zones registradas por SpotGo en un mapa integrado mediante Google Maps permitirá a los Driver identificar con mayor rapidez dónde estacionar y cómo llegar.
-
 - **FA07 - Reportes de ocupación:** Creemos que los reportes de ocupación permitirán a los Parking Admin analizar patrones de utilización del estacionamiento y utilizar esta información para apoyar sus decisiones operativas.
-
 - **FA08 - Reservations y pagos:** Creemos que permitir a los Driver registrados crear Reservations y Digital Payments desde la aplicación, y al Parking Admin registrar Guest Parking Sessions con pago físico mediante efectivo o POS al finalizar la estadía, permitirá completar cada operación según su flujo.
-
 - **FA09 - Subscriptions y Electronic Billing:** Creemos que ofrecer Subscription Plans y Electronic Billing permitirá a los Driver administrar sus beneficios y consultar los comprobantes de sus operaciones.
-
 - **FA10 - Configuración de infraestructura y clientes B2B:** Creemos que permitir la configuración de Parking Spots, Parking Zones y Tenants facilitará la incorporación y operación de nuevos estacionamientos en SpotGo.
-
 - **FA11 - Presencia digital y calidad móvil:** Creemos que una Landing Page estática, accesible y disponible en español e inglés ayudará a comunicar el valor de SpotGo y facilitará el acceso a la aplicación móvil.
 
 #### *1.2.2.3. Lean UX Hypothesis Statements*
@@ -252,35 +239,24 @@ Sabremos que la solución es exitosa cuando observemos una reducción en el tiem
 A partir de los Feature Assumptions identificados, se plantean los siguientes Hypothesis Statements. Cada hipótesis relaciona un resultado esperado del negocio con los usuarios, beneficios y funcionalidades identificadas.
 
 - **HS01 - Monitoreo de ocupación por zonas:** Creemos que lograremos mejorar el control sobre la ocupación del estacionamiento si los Parking Admin pueden conocer oportunamente la disponibilidad de las diferentes zonas mediante una funcionalidad de monitoreo de ocupación por zonas.
-
 - **HS02 - Registro de Driver, perfiles y vehículos:** Creemos que lograremos mejorar la organización de los usuarios dentro del estacionamiento si los Driver pueden registrar sus Vehicles y el Parking Admin puede gestionar los User Profiles según las reglas de acceso de cada zona.
-
 - **HS03 - Asignación de zonas según tipo de usuario:** Creemos que lograremos reducir las incidencias relacionadas con el uso indebido de espacios si los Driver pueden identificar las zonas que les corresponden y el Parking Admin puede gestionar su distribución mediante una funcionalidad de asignación de zonas según el tipo de usuario.
-
 - **HS04 - Sistema de alertas por uso indebido:** Creemos que lograremos mejorar la capacidad de respuesta del Parking Admin ante el uso incorrecto de determinadas zonas si los Parking Admin reciben información sobre posibles incidencias mediante un sistema de alertas por uso indebido.
-
 - **HS05 - Panel de control para Parking Admin:** Creemos que lograremos mejorar la eficiencia en la supervisión del estacionamiento si los Parking Admin pueden consultar de manera centralizada la ocupación, distribución e incidencias mediante un panel de control administrativo.
-
 - **HS06 - Visualización de disponibilidad y Parking Zones cercanas:** Creemos que lograremos reducir el tiempo y esfuerzo requerido para encontrar estacionamiento si los Driver pueden consultar la disponibilidad, identificar las Parking Zones registradas por SpotGo en un mapa integrado y abrir una ruta externa en Google Maps.
-
 - **HS07 - Reportes de ocupación:** Creemos que lograremos mejorar la toma de decisiones relacionadas con la utilización de los espacios si los Parking Admin pueden analizar información histórica y patrones de ocupación mediante una funcionalidad de generación de reportes.
-
 - **HS08 - Reservations y pagos:** Creemos que lograremos mejorar la experiencia de operación si los Driver registrados pueden seleccionar un Vehicle, reservar un Parking Spot y completar el Digital Payment desde la aplicación, mientras el Parking Admin puede registrar Guest Parking Sessions y liquidarlas mediante pago físico en efectivo o POS al finalizar la estadía.
-
 - **HS09 - Subscriptions y Electronic Billing:** Creemos que lograremos mejorar el seguimiento de las operaciones si los Driver pueden administrar sus Subscriptions y consultar los comprobantes asociados a sus pagos.
-
 - **HS10 - Configuración de infraestructura y clientes B2B:** Creemos que lograremos facilitar la adopción de SpotGo si el Parking Admin y los SuperAdmins pueden configurar la infraestructura, los perfiles, los Tenants y las condiciones operativas del servicio.
-
 - **HS11 - Presencia digital y calidad móvil:** Creemos que lograremos mejorar la comprensión y adopción inicial de SpotGo si los visitantes pueden conocer la propuesta de valor, navegar hacia la aplicación y consultar la Landing Page en su idioma mediante una experiencia accesible.
 
 #### 1.2.2.4. Lean UX Canvas
 
 El Lean UX Canvas sintetiza los principales elementos identificados durante el proceso Lean UX, incluyendo el problema de negocio, los segmentos objetivo, los resultados esperados, los beneficios para los usuarios, las soluciones del producto y las hipótesis que deberán ser validadas durante el desarrollo del proyecto.
 
-**Canva Link:** [https://canva.link/i0pin0nnlvbg3rd](https://canva.link/i0pin0nnlvbg3rd)
+**Lean UX Canvas Link:** [https://canva.link/i0pin0nnlvbg3rd](https://canva.link/i0pin0nnlvbg3rd)
 
 *Figura 1 (Lean UX Canvas)*
-
 ![Lean UX Canvas](../assets/images/figures/01-lean-ux-canvas.png)
 
 ## 1.3. Segmentos objetivo
@@ -289,23 +265,26 @@ La solución está dirigida inicialmente a dos segmentos objetivo relacionados d
 
 Para contextualizar estos segmentos en el entorno peruano, se consideran estadísticas oficiales del Ministerio de Transportes y Comunicaciones (MTC, 2026a, 2026b) relacionadas con el parque automotor y las licencias de conducir. Estas características se complementan y contrastan mediante las entrevistas realizadas a representantes de cada segmento.
 
-**Primer Segmento Objetivo: Parking Admin (Administradores)**
+**Primer Segmento Objetivo (Parking Admin (Administradores de estacionamientos))**
 
 Este segmento está conformado por las personas responsables de supervisar, controlar o administrar las operaciones realizadas dentro de estacionamientos con alta afluencia de vehículos.
 
 - Datos demográficos:
-  - **Edad:** Personas adultas en edad laboral. No se establece inicialmente un rango etario específico debido a que la pertenencia al segmento se determina principalmente por su función dentro de la operación del estacionamiento y no por su edad.
+  - **Edad:** Personas adultas en edad laboral. En la muestra exploratoria de tres Parking Admin del capítulo II, las edades fueron 30, 31 y 42 años, con un promedio de 34,3 años. El intervalo observado de 30 a 42 años describe únicamente a los entrevistados y no constituye un requisito de pertenencia al segmento.
   - **Ocupación:** Personas que ejercen funciones de Parking Admin, responsables de la gestión y supervisión de estacionamientos.
   - **País de residencia:** Perú.
 - Datos conductuales:
   - **Dominio:** Poseen conocimientos relacionados con la operación de estacionamientos, supervisión de espacios y control del flujo de vehículos, cuyo nivel específico se contrasta mediante las entrevistas.
   - **Necesidades:** Supervisar la ocupación, controlar el flujo de vehículos, identificar incidencias y mantener una adecuada organización de las zonas.
   - **Beneficios buscados:** Mejorar la organización del estacionamiento, reducir el esfuerzo requerido para supervisar la ocupación y disponer de información actualizada para tomar decisiones operativas.
+
+El sustento exploratorio de este segmento proviene de Cecilia Lopez (31 años, Cercado de Lima), Reinaldo Torres (42 años, Breña) y Juan Vega (30 años, La Victoria), cuyas entrevistas se registran en la sección 2.2.2. Los tres describen tareas de control o reorganización manual de vehículos (3 de 3; 100 % de la muestra), incluso cuando se apoyan en herramientas digitales. Estas cifras caracterizan la muestra de Needfinding y respaldan la necesidad de supervisión operativa; las estadísticas del parque automotor y licencias del MTC contextualizan la demanda de estacionamiento, pero no estiman el número ni las características de los Parking Admin del Perú.
+
 - Interacción esperada con la solución:
   - **Frecuencia de uso:** Se espera un uso frecuente durante la jornada laboral debido a las responsabilidades de supervisión y administración.
   - **Principales actividades:** Consultar ocupación, supervisar zonas, clasificar usuarios, identificar incidencias y analizar información relacionada con la utilización de los espacios.
 
-**Segundo Segmento Objetivo: Driver (Conductores)**
+**Segundo Segmento Objetivo (Driver (Conductores))**
 
 Este segmento está conformado por personas que utilizan estacionamientos en establecimientos de alta afluencia. Los usuarios con cuenta participan como Driver y el User Profile del Driver determina las zonas que puede utilizar. También se consideran Guests que llegan directamente al estacionamiento y pueden tener una Guest Parking Session registrada por un Parking Admin, sin crear una cuenta ni una Reservation.
 

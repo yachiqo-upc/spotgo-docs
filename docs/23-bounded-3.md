@@ -139,13 +139,12 @@ El Temporary Lock se almacena con lockedAt, expiresAt y status, y debe estar pro
 
 #### *2.6.3.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes deberá representar Parking Infrastructure como un contenedor autónomo dentro del backend, con su base de datos PostgreSQL y adaptadores para Profiles & Vehicles Management, Identity & Access Management, Payments & Billing, Occupancy & Monitoring y Google Maps. La aplicación Flutter y la aplicación Android nativa en Kotlin deben situarse fuera del bounded context y acceder a través del API Gateway.
+El diagrama de componentes representa Parking Infrastructure como un contenedor autónomo dentro del backend, con su base de datos PostgreSQL y adaptadores para Profiles & Vehicles Management, Identity & Access Management, Payments & Billing, Occupancy & Monitoring y Google Maps. La única aplicación móvil con partes Kotlin y Flutter se sitúa fuera del bounded context y accede a través del API Gateway.
 
 *Figura 31 (Parking Infrastructure Component Level Diagram)*
-
 ![Parking Infrastructure Component Level Diagram](../assets/diagrams/components-diagram-parking.svg)
 
-| Componente que debe representarse | Responsabilidad | Dependencias principales |
+| Componente | Responsabilidad | Dependencias principales |
 | --- | --- | --- |
 | Tenant Component | Administra Tenant y las reglas de operación. | Tenant Administration Controller, Tenant Repository. |
 | Parking Zone Component | Administra zonas, características y agrupación de spots. | Parking Layout Controller, Layout Repository. |
@@ -161,16 +160,15 @@ El diagrama de componentes deberá representar Parking Infrastructure como un co
 | Navigation Component | Prepara solicitudes hacia Google Maps. | Navigation Controller, Google Maps Adapter. |
 | Parking Infrastructure Database | Persiste el modelo y el historial del contexto. | Implementaciones de repositorio. |
 
-Las relaciones deben mostrar que Guest Parking Session Component no llama a Payments & Billing para procesar una transacción digital: el Parking Admin confirma efectivo o POS fuera del flujo de pagos digitales. También debe mostrarse que Occupancy & Monitoring envía eventos de estado y conflicto, pero no administra Parking Session ni modifica directamente una Reservation.
+Las relaciones describen que Guest Parking Session Component no llama a Payments & Billing para procesar una transacción digital: el Parking Admin confirma efectivo o POS fuera del flujo de pagos digitales. También se describe que Occupancy & Monitoring envía eventos de estado y conflicto, pero no administra Parking Session ni modifica directamente una Reservation.
 
 #### *2.6.3.6. Bounded Context Software Architecture Code Level Diagrams*
 
-La vista de código debe concentrarse en los agregados y servicios de dominio que gobiernan la asignación de espacios, las reservas y las sesiones. Deben diferenciarse Reservation, Parking Session y Guest Parking Session, porque representan procesos con actores, datos y reglas diferentes. La notación recomendada utiliza + para operaciones públicas, - para atributos privados y # para elementos protegidos.
+La vista de código se concentra en los agregados y servicios de dominio que gobiernan la asignación de espacios, las reservas y las sesiones. El modelo distingue Reservation, Parking Session y Guest Parking Session, porque representan procesos con actores, datos y reglas diferentes. La notación recomendada utiliza + para operaciones públicas, - para atributos privados y # para elementos protegidos.
 
 #### ***2.6.3.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 32 (Parking Infrastructure Domain Layer Class Diagram)*
-
 ![Parking Infrastructure Domain Layer Class Diagram](../assets/diagrams/class-diagram-parking.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -224,7 +222,6 @@ La vista de código debe concentrarse en los agregados y servicios de dominio qu
 Parking Infrastructure Database contiene la configuración física y los procesos de reserva y sesión. Las foreign keys se aplican a relaciones internas. profile_id, vehicle_id y payment_ref son referencias lógicas a otros bounded contexts y no crean foreign keys entre bases.
 
 *Figura 33 (Parking Infrastructure Database Design Diagram)*
-
 ![Parking Infrastructure Database Design Diagram](../assets/diagrams/db-diagram-parking.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |

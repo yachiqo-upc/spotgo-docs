@@ -64,7 +64,7 @@ La Interface Layer recibe mensajes de los sensores por MQTT o HTTP y expone cons
 | Monitoring Event Publisher | Evento asíncrono | Publica estados, fallas, conflictos y solicitudes de cargos adicionales. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected, AdditionalChargeRequested. |
 | Notification Adapter | Evento o API interna | Envía alertas operativas mediante Firebase Cloud Messaging cuando corresponda. | HighCapacityReached, UnauthorizedParkingDetected, SensorFailureDetected. |
 
-La aplicación móvil Flutter y la aplicación web administrativa consultan el estado a través del API Gateway. La integración nativa en Kotlin puede recibir capacidades específicas de Android, pero no cambia el formato de Occupancy Status ni incorpora identificación automática del vehículo.
+La aplicación móvil, construida con una parte nativa en Kotlin y otra en Flutter, y la aplicación web administrativa consultan el estado a través del API Gateway. Ambas partes de la aplicación móvil utilizan el mismo contrato de Occupancy Status y las mismas reglas de monitoreo; ninguna incorpora identificación automática del vehículo.
 
 #### *2.6.5.3. Application Layer*
 
@@ -123,13 +123,12 @@ El monitor de salud debe comprobar que una lectura no supere el intervalo operat
 
 #### *2.6.5.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes deberá mostrar el límite de Occupancy & Monitoring, la entrada de sensores mediante MQTT/HTTP, los componentes internos de estado, salud, conflictos, sobretiempo, alertas y reportes, y la base de datos PostgreSQL propia. También deberá mostrar las dependencias asíncronas con Parking Infrastructure y Payments & Billing, además de la integración con Firebase Cloud Messaging.
+El diagrama de componentes delimita el límite de Occupancy & Monitoring, la entrada de sensores mediante MQTT/HTTP, los componentes internos de estado, salud, conflictos, sobretiempo, alertas y reportes, y la base de datos PostgreSQL propia. También delimita las dependencias asíncronas con Parking Infrastructure y Payments & Billing, además de la integración con Firebase Cloud Messaging.
 
 *Figura 37 (Occupancy & Monitoring Component Level Diagram)*
-
 ![Occupancy & Monitoring Component Level Diagram](../assets/diagrams/components-diagram-occupancy.svg)
 
-| Componente que debe representarse | Responsabilidad | Dependencias principales |
+| Componente | Responsabilidad | Dependencias principales |
 | --- | --- | --- |
 | Sensor Integration Component | Recibe MQTT/HTTP, normaliza lecturas y aplica idempotencia. | MQTT Adapter, HTTP Adapter, Process Occupancy Reading Handler. |
 | Occupancy Status Component | Mantiene el último estado físico confiable por spot. | Occupancy Status Service, Reading Repository. |
@@ -144,16 +143,15 @@ El diagrama de componentes deberá mostrar el límite de Occupancy & Monitoring,
 | Parking Infrastructure Adapter | Consume eventos y publica OccupancyStatusUpdated o conflictos. | Canal de mensajería asíncrona. |
 | Payments & Billing Adapter | Publica AdditionalChargeRequested hacia Payments & Billing cuando existe evidencia suficiente. | Canal de mensajería asíncrona. |
 
-Las relaciones visuales deben indicar que el sensor no envía placa, driverId ni vehicleId, y que el contexto no llama directamente a la base de datos de Parking Infrastructure. El flujo de sobretiempo debe terminar en una solicitud de cargo, no en un cobro automático dentro de Occupancy & Monitoring.
+Las relaciones visuales describen que el sensor no envía placa, driverId ni vehicleId, y que el contexto no llama directamente a la base de datos de Parking Infrastructure. El flujo de sobretiempo debe terminar en una solicitud de cargo, no en un cobro automático dentro de Occupancy & Monitoring.
 
 #### *2.6.5.6. Bounded Context Software Architecture Code Level Diagrams*
 
-La vista de código debe representar el modelo físico de ocupación y los servicios que convierten lecturas en estados, conflictos, alertas y reportes. Debe quedar explícito que ParkingSession no es una entidad propietaria de este bounded context. La notación recomendada utiliza + para operaciones públicas, - para atributos privados y # para elementos protegidos.
+La vista de código representa el modelo físico de ocupación y los servicios que convierten lecturas en estados, conflictos, alertas y reportes. En este modelo, ParkingSession no es una entidad propietaria de este bounded context. La notación recomendada utiliza + para operaciones públicas, - para atributos privados y # para elementos protegidos.
 
 #### ***2.6.5.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 38 (Occupancy & Monitoring Domain Layer Class Diagram)*
-
 ![Occupancy & Monitoring Domain Layer Class Diagram](../assets/diagrams/class-diagram-occupancy.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -204,7 +202,6 @@ La vista de código debe representar el modelo físico de ocupación y los servi
 Occupancy & Monitoring Database almacena sensores, lecturas, estados de salud, conflictos, alertas y reportes. Las relaciones internas utilizan foreign keys. tenant_id, zone_id, spot_id, reservation_ref y session_ref son referencias de integración; no se crean foreign keys hacia las bases de Parking Infrastructure.
 
 *Figura 39 (Occupancy & Monitoring Database Design Diagram)*
-
 ![Occupancy & Monitoring Database Design Diagram](../assets/diagrams/db-diagram-occupancy.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
