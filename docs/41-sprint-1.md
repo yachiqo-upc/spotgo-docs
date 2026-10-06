@@ -26,6 +26,67 @@ Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landi
 
 ##### 4.2.1.2. Aspect Leaders and Collaborators
 
+La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colaboradores de cada aspecto del Sprint 1 para facilitar la coordinación y comunicación del equipo. Se consideran la Landing Page, la autenticación y el registro, la disponibilidad, las reservas y pagos, y la configuración del estacionamiento.
+
+**L (Leader)** identifica a quien coordina el aspecto y revisa sus entregables; **C (Collaborator)** identifica a quienes contribuyen a su desarrollo y validación. La siguiente distribución es una propuesta de trabajo para el equipo.
+
+<table>
+  <tr>
+    <th align="left">Team Member<br>(Last Name, First Name)</th>
+    <th align="left">GitHub Username</th>
+    <th align="center">Landing Page</th>
+    <th align="center">Autenticación y registro</th>
+    <th align="center">Disponibilidad y permisos</th>
+    <th align="center">Reservas y pagos</th>
+    <th align="center">Zonas, planos, mapa y dashboard</th>
+  </tr>
+  <tr>
+    <td align="left">Ruiz Mideyros, Adrian</td>
+    <td align="left"><a href="https://github.com/AdrixRyz">@AdrixRyz</a></td>
+    <td align="center"><strong>L</strong></td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+  </tr>
+  <tr>
+    <td align="left">Rojas Tello, Nestor Alonso</td>
+    <td align="left"><a href="https://github.com/nes-ro">@nes-ro</a></td>
+    <td align="center">C</td>
+    <td align="center"><strong>L</strong></td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+  </tr>
+  <tr>
+    <td align="left">Contreras Rojas, Cesar Jair</td>
+    <td align="left"><a href="https://github.com/CesarJrCR">@CesarJrCR</a></td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center"><strong>L</strong></td>
+    <td align="center">C</td>
+  </tr>
+  <tr>
+    <td align="left">Carhuaz Centeno, Briguite Eryka</td>
+    <td align="left"><a href="https://github.com/briicarhuaz">@briicarhuaz</a></td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center"><strong>L</strong></td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+  </tr>
+  <tr>
+    <td align="left">Cotrina Siclla, Sofia Alessandra</td>
+    <td align="left"><a href="https://github.com/IamAndreek">@IamAndreek</a></td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center"><strong>L</strong></td>
+  </tr>
+</table>
+
 ##### 4.2.1.3. Sprint Backlog 1
 
 ##### 4.2.1.4. Development Evidence for Sprint Review
