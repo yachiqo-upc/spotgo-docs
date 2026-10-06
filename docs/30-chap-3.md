@@ -176,57 +176,57 @@ Los wireframes de baja fidelidad permiten revisar la estructura de cada pantalla
 
 ![Parking Driver Login Wireframe](../assets/images/ui-ux/wireframes/driver/01-login.png)
 
-*Figura 40. Wireframe de inicio de sesión para Parking Driver.*
+*Figura 40 (Wireframe de inicio de sesión para Parking Driver)*
 
 ![Parking Driver Explore Parking Wireframe](../assets/images/ui-ux/wireframes/driver/03-explore-parking.png)
 
-*Figura 41. Wireframe para explorar estacionamientos disponibles.*
+*Figura 41 (Wireframe para explorar estacionamientos disponibles)*
 
 ![Parking Driver Zone Details Wireframe](../assets/images/ui-ux/wireframes/driver/04-zone-details-reserve.png)
 
-*Figura 42. Wireframe con el detalle de una zona y la acción de reserva.*
+*Figura 42 (Wireframe con el detalle de una zona y la acción de reserva)*
 
 ![Parking Driver Reservations Wireframe](../assets/images/ui-ux/wireframes/driver/06-reservations.png)
 
-*Figura 43. Wireframe para consultar las reservas del Parking Driver.*
+*Figura 43 (Wireframe para consultar las reservas del Parking Driver)*
 
 ![Parking Driver Payments Wireframe](../assets/images/ui-ux/wireframes/driver/08-payments.png)
 
-*Figura 44. Wireframe de la sección de pagos.*
+*Figura 44 (Wireframe de la sección de pagos)*
 
 ![Parking Driver Vehicles Wireframe](../assets/images/ui-ux/wireframes/driver/11-my-vehicles.png)
 
-*Figura 45. Wireframe para administrar vehículos registrados.*
+*Figura 45 (Wireframe para administrar vehículos registrados)*
 
 ![Parking Driver Receipts Wireframe](../assets/images/ui-ux/wireframes/driver/14-receipts-invoices.png)
 
-*Figura 46. Wireframe para consultar comprobantes y facturas.*
+*Figura 46 (Wireframe para consultar comprobantes y facturas)*
 
 **Parking Admin (Administradores)**
 
 ![Parking Admin Dashboard Wireframe](../assets/images/ui-ux/wireframes/administrator/15-administrator-dashboard.png)
 
-*Figura 47. Wireframe del dashboard administrativo.*
+*Figura 47 (Wireframe del dashboard administrativo)*
 
 ![Parking Admin Alerts Wireframe](../assets/images/ui-ux/wireframes/administrator/17-operational-alerts.png)
 
-*Figura 48. Wireframe de alertas operativas.*
+*Figura 48 (Wireframe de alertas operativas)*
 
 ![Parking Admin Parking Zones Wireframe](../assets/images/ui-ux/wireframes/administrator/19-parking-zones.png)
 
-*Figura 49. Wireframe para administrar zonas de estacionamiento.*
+*Figura 49 (Wireframe para administrar zonas de estacionamiento)*
 
 ![Parking Admin Guest Sessions Wireframe](../assets/images/ui-ux/wireframes/administrator/21-guest-parking-sessions.png)
 
-*Figura 50. Wireframe de sesiones de estacionamiento para invitados.*
+*Figura 50 (Wireframe de sesiones de estacionamiento para invitados)*
 
 ![Parking Admin Digital Parking Map Wireframe](../assets/images/ui-ux/wireframes/administrator/25-digital-parking-map.png)
 
-*Figura 51. Wireframe del mapa digital del estacionamiento.*
+*Figura 51 (Wireframe del mapa digital del estacionamiento)*
 
 ![Parking Admin B2B Billing Wireframe](../assets/images/ui-ux/wireframes/administrator/26-b2b-billing.png)
 
-*Figura 52. Wireframe de facturación para clientes empresariales.*
+*Figura 52 (Wireframe de facturación para clientes empresariales)*
 
 #### 3.1.3.2. Applications Wireflow Diagrams
 
@@ -236,29 +236,29 @@ Los wireflows combinan pantallas esquemáticas con conexiones para mostrar el or
 
 ![Parking Driver Access and Vehicles Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-01-access-vehicles.svg)
 
-*Figura 53. Wireflow de acceso y administración de vehículos para Parking Driver.*
+*Figura 53 (Wireflow de acceso y administración de vehículos para Parking Driver)*
 
 ![Parking Driver Reservations and Payments Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-02-reservations-payments.svg)
 
-*Figura 54. Wireflow de reservas y pagos para Parking Driver.*
+*Figura 54 (Wireflow de reservas y pagos para Parking Driver)*
 
 ![Parking Driver Plans and Documents Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-03-plans-documents.svg)
 
-*Figura 55. Wireflow de planes, suscripciones y documentos para Parking Driver.*
+*Figura 55 (Wireflow de planes, suscripciones y documentos para Parking Driver)*
 
 **Parking Admin (Administradores)**
 
 ![Parking Admin Infrastructure and Zones Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-01-infrastructure-zones.svg)
 
-*Figura 56. Wireflow de infraestructura y zonas de estacionamiento para Parking Admin.*
+*Figura 56 (Wireflow de infraestructura y zonas de estacionamiento para Parking Admin)*
 
 ![Parking Admin Operations and Guests Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-02-operations-guests.svg)
 
-*Figura 57. Wireflow de operaciones y sesiones de invitados para Parking Admin.*
+*Figura 57 (Wireflow de operaciones y sesiones de invitados para Parking Admin)*
 
 ![Parking Admin Reports and Billing Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-03-reports-billing.svg)
 
-*Figura 58. Wireflow de reportes y facturación para Parking Admin.*
+*Figura 58 (Wireflow de reportes y facturación para Parking Admin)*
 
 #### 3.1.3.3. Applications Mock-ups
 
@@ -268,57 +268,57 @@ Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten ap
 
 ![Parking Driver Login Mock-up](../assets/images/ui-ux/mockups/driver/01-login.png)
 
-*Figura 59. Mock-up de inicio de sesión para Parking Driver.*
+*Figura 59 (Mock-up de inicio de sesión para Parking Driver)*
 
 ![Parking Driver Explore Parking Mock-up](../assets/images/ui-ux/mockups/driver/03-explore-parking.png)
 
-*Figura 60. Mock-up para explorar estacionamientos disponibles.*
+*Figura 60 (Mock-up para explorar estacionamientos disponibles)*
 
 ![Parking Driver Zone Details Mock-up](../assets/images/ui-ux/mockups/driver/04-zone-details-reserve.png)
 
-*Figura 61. Mock-up con el detalle de una zona y la acción de reserva.*
+*Figura 61 (Mock-up con el detalle de una zona y la acción de reserva)*
 
 ![Parking Driver Reservations Mock-up](../assets/images/ui-ux/mockups/driver/06-reservations.png)
 
-*Figura 62. Mock-up para consultar las reservas del Parking Driver.*
+*Figura 62 (Mock-up para consultar las reservas del Parking Driver)*
 
 ![Parking Driver Payments Mock-up](../assets/images/ui-ux/mockups/driver/08-payments.png)
 
-*Figura 63. Mock-up de la sección de pagos.*
+*Figura 63 (Mock-up de la sección de pagos)*
 
 ![Parking Driver Vehicles Mock-up](../assets/images/ui-ux/mockups/driver/11-my-vehicles.png)
 
-*Figura 64. Mock-up para administrar vehículos registrados.*
+*Figura 64 (Mock-up para administrar vehículos registrados)*
 
 ![Parking Driver Receipts Mock-up](../assets/images/ui-ux/mockups/driver/14-receipts-invoices.png)
 
-*Figura 65. Mock-up para consultar comprobantes y facturas.*
+*Figura 65 (Mock-up para consultar comprobantes y facturas)*
 
 **Parking Admin (Administradores)**
 
 ![Parking Admin Dashboard Mock-up](../assets/images/ui-ux/mockups/administrator/15-administrator-dashboard.png)
 
-*Figura 66. Mock-up del dashboard administrativo.*
+*Figura 66 (Mock-up del dashboard administrativo)*
 
 ![Parking Admin Alerts Mock-up](../assets/images/ui-ux/mockups/administrator/17-operational-alerts.png)
 
-*Figura 67. Mock-up de alertas operativas.*
+*Figura 67 (Mock-up de alertas operativas)*
 
 ![Parking Admin Parking Zones Mock-up](../assets/images/ui-ux/mockups/administrator/19-parking-zones.png)
 
-*Figura 68. Mock-up para administrar zonas de estacionamiento.*
+*Figura 68 (Mock-up para administrar zonas de estacionamiento)*
 
 ![Parking Admin Guest Sessions Mock-up](../assets/images/ui-ux/mockups/administrator/21-guest-parking-sessions.png)
 
-*Figura 69. Mock-up de sesiones de estacionamiento para invitados.*
+*Figura 69 (Mock-up de sesiones de estacionamiento para invitados)*
 
 ![Parking Admin Digital Parking Map Mock-up](../assets/images/ui-ux/mockups/administrator/25-digital-parking-map.png)
 
-*Figura 70. Mock-up del mapa digital del estacionamiento.*
+*Figura 70 (Mock-up del mapa digital del estacionamiento)*
 
 ![Parking Admin B2B Billing Mock-up](../assets/images/ui-ux/mockups/administrator/26-b2b-billing.png)
 
-*Figura 71. Mock-up de facturación para clientes empresariales.*
+*Figura 71 (Mock-up de facturación para clientes empresariales)*
 
 #### 3.1.3.4. Applications User Flow Diagrams
 
@@ -326,11 +326,11 @@ Los user flows ofrecen una vista de alto nivel de los objetivos, decisiones y re
 
 ![Parking Driver User Flow](../assets/diagrams/ui-ux/user-flows/userflow-driver.svg)
 
-*Figura 72. User flow de la aplicación para Parking Driver.*
+*Figura 72 (User flow de la aplicación para Parking Driver)*
 
 ![Parking Admin User Flow](../assets/diagrams/ui-ux/user-flows/userflow-parking-admin.svg)
 
-*Figura 73. User flow de la aplicación para Parking Admin.*
+*Figura 73 (User flow de la aplicación para Parking Admin)*
 
 #### 3.1.3.5. Applications Prototypes
 

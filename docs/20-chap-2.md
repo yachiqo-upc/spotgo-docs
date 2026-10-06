@@ -240,49 +240,57 @@ Se trata de Parking Driver que utilizan estacionamientos en centros comerciales,
 
 **Primer Segmento Objetivo (Parking Admin (Administradores))**
 
-*Figura 2 (User Persona 1)*
 ![User Persona 1](../assets/images/figures/02-user-persona-1.png)
+
+*Figura 2 (User Persona 1)*
 
 **Segundo Segmento Objetivo (Parking Driver (Conductores))**
 
-*Figura 3 (User Persona 2)*
 ![User Persona 2](../assets/images/figures/03-user-persona-2.png)
+
+*Figura 3 (User Persona 2)*
 
 ### 2.3.2. User Task Matrix
 
 **Primer Segmento Objetivo (Parking Admin (Administradores))**
 
-*Figura 4 (User Task Matrix 1)*
 ![User Task Matrix 1](../assets/images/figures/04-u-task-matrix-1.png)
+
+*Figura 4 (User Task Matrix 1)*
 
 **Segundo Segmento Objetivo (Parking Driver (Conductores))**
 
-*Figura 5 (User Task Matrix 2)*
 ![User Task Matrix 2](../assets/images/figures/05-u-task-matrix-2.png)
+
+*Figura 5 (User Task Matrix 2)*
 
 ### 2.3.3. User Journey Mapping
 
 **Primer Segmento Objetivo (Parking Admin (Administradores))**
 
-*Figura 6 (User Journey Map 1)*
 ![User Journey Map 1](../assets/images/figures/06-u-journey-map-1.png)
+
+*Figura 6 (User Journey Map 1)*
 
 **Segundo Segmento Objetivo (Parking Driver (Conductores))**
 
-*Figura 7 (User Journey Map 2)*
 ![User Journey Map 2](../assets/images/figures/07-u-journey-map-2.png)
+
+*Figura 7 (User Journey Map 2)*
 
 ### 2.3.4. Empathy Mapping
 
 **Primer Segmento Objetivo (Parking Admin (Administradores))**
 
-*Figura 8 (Empathy Map 1)*
 ![Empathy Map 1](../assets/images/figures/08-empathy-map-1.png)
+
+*Figura 8 (Empathy Map 1)*
 
 **Segundo Segmento Objetivo (Parking Driver (Conductores))**
 
-*Figura 9 (Empathy Map 2)*
 ![Empathy Map 2](../assets/images/figures/09-empathy-map-2.png)
+
+*Figura 9 (Empathy Map 2)*
 
 ### 2.3.5. Big Picture EventStorming
 
@@ -294,8 +302,9 @@ Para modelar la visión general del dominio se siguió la guía *Step-by-Step Gu
 
 **Miro Board Link:** [https://miro.com/app/board/uXjVHoqrvyc=/](https://miro.com/app/board/uXjVHoqrvyc=/)
 
-*Figura 10 (Big Picture EventStorming)*
 ![Big Picture EventStorming](../assets/diagrams/big-picture-event-storming.svg)
+
+*Figura 10 (Big Picture EventStorming)*
 
 ### 2.3.6. Ubiquitous Language
 
@@ -850,8 +859,9 @@ Para calcular BG02 y BG03 se propone establecer una línea base antes de iniciar
 | **BG02:** Reducir en 20% el tiempo promedio de búsqueda reportado por los Parking Driver en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Andres Salazar - Parking Driver | Consulta información actualizada, identifica una zona permitida, revisa Parking Zones cercanas y abre una ruta externa en Google Maps, reduciendo recorridos innecesarios. | Vista móvil de Availability, sincronización, consulta de Parking Zones cercanas e integración con Google Maps. | **US01:** Como Parking Driver, deseo consultar la Availability por zona, para identificar una zona con posibilidad de espacio.<br>**US04:** Como Parking Driver, deseo consultar mis zonas permitidas, para enfocar mi búsqueda en áreas que puedo utilizar.<br>**US18:** Como Parking Driver, deseo recibir la asignación de mi Reservation, para conocer mi destino.<br>**US25:** Como Parking Driver, deseo consultar Parking Zones cercanas, para identificar alternativas alrededor de mi ubicación.<br>**US26:** Como Parking Driver, deseo abrir una ruta en Google Maps, para llegar al estacionamiento seleccionado.<br>**TS01:** Como Developer, deseo sincronizar Availability mediante servicios RESTful, para entregar datos consistentes a la aplicación móvil.<br>**TS02:** Como Developer, deseo conservar datos sincronizados localmente, para responder ante interrupciones temporales. |
 | **BG03:** Reducir en 15% las incidencias de estacionamiento indebido en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Carlos Ramirez - Parking Admin | Monitorea el Occupancy Status proveniente de sensores, atiende alertas operativas y revisa patrones de uso. | Dashboard móvil con Occupancy Map, alertas por Unauthorized Parking, alertas de High Capacity y Occupancy Reports. | **US05:** Como Parking Admin, deseo monitorear el Occupancy Status por zona, para supervisar la operación.<br>**US06:** Como Parking Admin, deseo recibir alertas operativas, para revisar usos indebidos y alta capacidad.<br>**US07:** Como Parking Admin, deseo consultar un resumen operativo y live Digital Parking Map, para controlar ocupación y alertas.<br>**US08:** Como Parking Admin, deseo consultar Occupancy Reports, para apoyar decisiones operativas.<br>**SP01:** Como Developer, deseo validar el monitoreo basado en sensores, para actualizar la ocupación en un máximo de 5 segundos. |
 
-*Figura 11 (Impact Map)*
 ![Impact Map](../assets/images/figures/11-impact-map.png)
+
+*Figura 11 (Impact Map)*
 
 La figura presenta una vista ejecutiva de la relación entre los tres Business Goals, los User Personas, los cambios de comportamiento esperados, los entregables y las historias principales que los habilitan. La tabla desarrolla el detalle completo de las capacidades de pagos, reservas, suscripciones, facturación, consulta de Parking Zones cercanas e integración con Google Maps. El producto principal es la aplicación móvil y la Landing Page se mantiene como producto digital complementario.
 
@@ -906,8 +916,9 @@ La rúbrica solicita una captura del tablero y una referencia al URL público de
 
 **Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo)
 
-*Figura 12 (Trello Board Evidence)*
 ![Trello Board Evidence](../assets/images/others/trello-board-evidence.png)
+
+*Figura 12 (Trello Board Evidence)*
 
 La tabla anterior deja listo el contenido que debe reflejarse en la herramienta y permite comprobar la correspondencia entre el orden, los Story Points y los Sprints.
 
@@ -927,8 +938,9 @@ A partir del análisis de los eventos, comandos y políticas representados en el
 
 **Miro Board Link:** [https://miro.com/app/board/uXjVHoqrvyc=/](https://miro.com/app/board/uXjVHoqrvyc=/)
 
-*Figura 13 (Design-Level EventStorming)*
 ![Design-Level EventStorming](../assets/diagrams/design-level-event-storming.svg)
+
+*Figura 13 (Design-Level EventStorming)*
 
 #### *2.5.1.1. Candidate Context Discovery*
 
@@ -976,8 +988,9 @@ Los principales mensajes entre contextos son:
 
 Este modelo permite mantener separadas las responsabilidades de cada Bounded Context y hacer explícitas las dependencias necesarias para completar los principales procesos de SpotGo.
 
-*Figura 14 (Domain Message Flows Modeling)*
 ![Domain Message Flows Modeling](../assets/diagrams/domain-message-flows-modeling.svg)
+
+*Figura 14 (Domain Message Flows Modeling)*
 
 #### *2.5.1.3. Bounded Context Canvases*
 
@@ -989,8 +1002,9 @@ Este contexto administra la información del **Parking Driver**, sus **Vehicles*
 
 Se clasifica como **Supporting Domain**, ya que brinda soporte a los procesos principales del sistema, especialmente a la creación de Reservations y a la validación de usuarios.
 
-*Figura 15 (Profiles & Vehicles Management Bounded Context Canvas)*
 ![Profiles & Vehicles Management Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-profiles.svg)
+
+*Figura 15 (Profiles & Vehicles Management Bounded Context Canvas)*
 
 **Identity & Access Management**
 
@@ -998,8 +1012,9 @@ Este contexto se encarga de la autenticación y autorización de los usuarios de
 
 Se clasifica como **Generic Domain**, debido a que la gestión de identidad y acceso es una capacidad común presente en diferentes sistemas de software.
 
-*Figura 16 (Identity & Access Management Bounded Context Canvas)*
 ![Identity & Access Management Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-identity.svg)
+
+*Figura 16 (Identity & Access Management Bounded Context Canvas)*
 
 **Parking Infrastructure**
 
@@ -1009,8 +1024,9 @@ Se considera un **Core Domain**, ya que concentra capacidades centrales de SpotG
 
 Además, se comunica con Payments & Billing para procesar pagos, con Occupancy & Monitoring para conocer el estado operativo de los espacios y con Google Maps para la navegación hacia la Parking Zone seleccionada.
 
-*Figura 17 (Parking Infrastructure Bounded Context Canvas)*
 ![Parking Infrastructure Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-parking.svg)
+
+*Figura 17 (Parking Infrastructure Bounded Context Canvas)*
 
 **Payments & Billing**
 
@@ -1018,8 +1034,9 @@ Este contexto administra las operaciones financieras de SpotGo, incluyendo **Pay
 
 Se clasifica como **Supporting Domain**, ya que permite completar los procesos comerciales asociados a las Reservations. Una de sus reglas principales es que SpotGo no almacena los datos completos de las tarjetas, sino identificadores seguros de pago.
 
-*Figura 18 (Payments & Billing Bounded Context Canvas)*
 ![Payments & Billing Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-payments.svg)
+
+*Figura 18 (Payments & Billing Bounded Context Canvas)*
 
 **Occupancy & Monitoring**
 
@@ -1029,8 +1046,9 @@ Se considera un **Core Domain**, debido a que el monitoreo de la disponibilidad 
 
 En este contexto se mantiene una separación entre el estado de una Reservation y el estado físico del Parking Spot. Los sensores detectan únicamente si el espacio se encuentra ocupado o disponible, sin identificar automáticamente qué Vehicle lo está utilizando.
 
-*Figura 19 (Occupancy & Monitoring Bounded Context Canvas)*
 ![Occupancy & Monitoring Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-occupancy.svg)
+
+*Figura 19 (Occupancy & Monitoring Bounded Context Canvas)*
 
 En conjunto, estos canvases permiten establecer límites claros entre las responsabilidades de cada Bounded Context y sirven como base para el posterior diseño de la arquitectura de software de SpotGo.
 
@@ -1048,8 +1066,9 @@ Los Bounded Contexts considerados son:
 
 El análisis considera las dependencias entre contextos y los patrones de relación propuestos por Domain-Driven Design.
 
-*Figura 20 (Context Mapping Discussion Evidence)*
 ![Context Mapping Discussion Evidence](../assets/images/others/context-mapping-discussion-evidence.png)
+
+*Figura 20 (Context Mapping Discussion Evidence)*
 
 **Análisis de alternativas**
 
@@ -1117,8 +1136,9 @@ El Context Map seleccionado establece las siguientes relaciones estructurales en
 
 Como resultado del análisis, se mantiene la estructura conformada por los cinco Bounded Contexts identificados inicialmente. Las relaciones se establecen mediante patrones DDD que permiten definir explícitamente las dependencias y responsabilidades entre los contextos.
 
-*Figura 21 (Context Map)*
 ![Context Map](../assets/diagrams/context-map.svg)
+
+*Figura 21 (Context Map)*
 
 La estructura seleccionada mantiene cada Bounded Context enfocado en sus responsabilidades y establece relaciones explícitas para la comunicación entre ellos. `Parking Infrastructure` conserva las capacidades relacionadas con la gestión de estacionamientos y reservas, mientras que `Payments & Billing` mantiene las reglas correspondientes al procesamiento económico y `Occupancy & Monitoring` las relacionadas con el monitoreo de la ocupación.
 
@@ -1128,8 +1148,9 @@ La estructura seleccionada mantiene cada Bounded Context enfocado en sus respons
 
 El **Diagrama de Contexto** constituye el primer nivel de abstracción del Modelo C4. Su propósito es delimitar el alcance de **SpotGo** y representar su interacción con los principales actores humanos y sistemas externos.
 
-*Figura 22 (Context Level Diagram)*
 ![Context Level Diagram](../assets/diagrams/context-level-diagram.svg)
+
+*Figura 22 (Context Level Diagram)*
 
 El diagrama identifica tres actores principales. El **Parking Driver** utiliza la aplicación para consultar la disponibilidad de espacios, registrar sus vehículos, realizar reservas y efectuar pagos. El **Parking Admin** utiliza la solución para administrar la infraestructura del estacionamiento, así como los perfiles, reservas y operaciones asociadas. Finalmente, el **SuperAdmin** administra los **Tenants**, provisiona las cuentas de **Parking Admin** y realiza la configuración inicial de los estacionamientos.
 
@@ -1139,8 +1160,9 @@ En cuanto a las integraciones externas, SpotGo se comunica con **Google Authenti
 
 El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y permite descomponer SpotGo en sus principales unidades de software. En esta vista se observa una arquitectura organizada alrededor de una aplicación móvil, una aplicación web y un **API Gateway**, junto con cinco contextos de negocio que encapsulan las principales responsabilidades funcionales de la plataforma.
 
-*Figura 23 (Container Level Diagram)*
 ![Container Level Diagram](../assets/diagrams/container-level-diagram.svg)
+
+*Figura 23 (Container Level Diagram)*
 
 La solución cuenta con los siguientes contenedores principales:
 
@@ -1168,8 +1190,9 @@ Cada contexto de negocio mantiene además una base de datos PostgreSQL independi
 
 El **Diagrama de Despliegue** representa la distribución física de los elementos de software de SpotGo sobre la infraestructura tecnológica utilizada durante el entorno de producción. Esta vista permite relacionar las aplicaciones cliente con los servidores de aplicación, la infraestructura de bases de datos, la red de sensores IoT y los servicios externos empleados por la solución.
 
-*Figura 24 (Deployment Diagram)*
 ![Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
+
+*Figura 24 (Deployment Diagram)*
 
 La infraestructura contempla un **Parking Driver Device**, utilizado para ejecutar la aplicación móvil, y un **Parking Admin Device**, desde el cual el Parking Admin accede a sus vistas administrativas móviles y web. El **SuperAdmin** utiliza un **SuperAdmin Device** con acceso a la aplicación web para provisionar Parking Admin y administrar Tenants. Los dispositivos se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de recibir y enrutar las solicitudes hacia los servicios de SpotGo.
 
