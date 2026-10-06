@@ -196,9 +196,9 @@ SpotGo reutiliza una base de código desarrollada en el ciclo académico anterio
 
 ##### 4.2.1.6. Execution Evidence for Sprint Review
 
-Durante este sprint, el equipo puso en funcionamiento la versión inicial de la **Landing Page**, presentó las pantallas core de la aplicación móvil y alcanzó un avance en el despliegue del **Backend (al 70%)**.
+Durante este sprint, el equipo puso en funcionamiento la versión inicial de la **Landing Page**,y se presentó las **pantallas core de la aplicación móvil**..
 
-**Landing Page**
+##### Landing Page
 
 *Figura 75 (SpotGo Landing Home)*
 
@@ -225,10 +225,66 @@ Durante este sprint, el equipo puso en funcionamiento la versión inicial de la 
 ![SpotGo Landing FAQ](../assets/images/others/spotgo-landing-faq.png)
 
 
-
 **Demonstration Video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
 
+##### Pantallas Core
+
+*Figura 81 (Driver-Explore Parking)*
+
+*Figura 82 (Driver-Zone Details & Reserve)*
+
+*Figura 83 (Driver-Payments)*
+
+*Figura 84 (Parking Admin-Dashboard)*
+
+*Figura 85 (Parking Admin-Live Occupancy)*
+
+
+**Demonstration Video:** 
+
 ##### 4.2.1.7. Services Documentation Evidence for Sprint Review
+
+<table>
+  <tr><th align="left">Recurso</th><th align="left">Endpoint Base</th><th align="left">Acciones Implementadas</th></tr>
+  <tr><td>Authentication</td><td><code>/api/v1/authentication</code></td><td>POST <code>/sign-up</code>, POST <code>/sign-in</code>, POST <code>/password-reset/request</code>, POST <code>/password-reset/confirm</code></td></tr>
+  <tr><td>DetectedSpots</td><td><code>/api/v1/detectedSpots</code></td><td>GET, POST, PATCH <code>/{spotId}/status</code>, GET <code>/blueprint/{blueprintId}</code></td></tr>
+  <tr><td>Receipts</td><td><code>/api/v1/receipts</code></td><td>GET, POST, GET <code>/{receiptId}</code>, DELETE <code>/{receiptId}</code></td></tr>
+  <tr><td>Reservations</td><td><code>/api/v1/reservations</code></td><td>GET, POST, PATCH <code>/{reservationId}</code></td></tr>
+  <tr><td>Users</td><td><code>/api/v1/users</code></td><td>GET, GET <code>/{userId}</code>, PATCH <code>/{userId}</code>, PATCH <code>/{userId}/password</code></td></tr>
+  <tr><td>Employees</td><td><code>/api/v1/employees</code></td><td>GET, POST, PUT <code>/{employeeId}</code>, PATCH <code>/{employeeId}</code>, DELETE <code>/{employeeId}</code></td></tr>
+  <tr><td>Blueprints</td><td><code>/api/v1/blueprints</code></td><td>GET, POST, PUT <code>/{blueprintId}</code>, PATCH <code>/{blueprintId}</code>, DELETE <code>/{blueprintId}</code>, GET <code>/parking/{parkingId}</code></td></tr>
+  <tr><td>ClientReports</td><td><code>/api/v1/clientReports</code></td><td>GET, POST, PATCH <code>/{reportId}</code></td></tr>
+  <tr><td>OccupancyByHour</td><td><code>/api/v1/occupancyByHour</code></td><td>GET</td></tr>
+  <tr><td>WeeklyTrends</td><td><code>/api/v1/weeklyTrends</code></td><td>GET</td></tr>
+  <tr><td>Parkings</td><td><code>/api/v1/parkings</code></td><td>GET, POST, GET <code>/{parkingId}</code>, PATCH <code>/{parkingId}</code></td></tr>
+  <tr><td>Vehicles</td><td><code>/api/v1/vehicles</code></td><td>GET, POST, DELETE <code>/{vehicleId}</code>, PATCH <code>/{vehicleId}</code></td></tr>
+  <tr><td>Analytics</td><td><code>/api/v1/analytics</code></td><td>GET</td></tr>
+  <tr><td>Client Plans</td><td><code>/api/v1/clientPlans</code></td><td>GET, GET <code>/{clientPlanId}</code></td></tr>
+  <tr><td>Subscriptions</td><td><code>/api/v1/subscriptions</code></td><td>GET, POST, GET <code>/{subscriptionId}</code>, PUT <code>/{subscriptionId}</code>, PATCH <code>/{subscriptionId}</code></td></tr>
+  <tr><td>Favorites</td><td><code>/api/v1/favorites</code></td><td>GET, POST, DELETE <code>/{favoriteId}</code></td></tr>
+</table>
+
+*Figura 87 (POST /api/v1/authentication/sign-in — Inicio de sesión)*
+
+![SpotGo Backend Sign-in](../assets/images/others/spotgo-backend-signin.png)
+
+*Figura 88 (GET /api/v1/users — Listado de usuarios)*
+
+![SpotGo Backend Users](../assets/images/others/spotgo-backend-users.png)
+
+*Figura 89 (POST /api/v1/reservations — Crear una reserva)*
+
+![SpotGo Backend Reservation](../assets/images/others/spotgo-backend-reservation.png)
+
+*Figura 90 (GET /api/v1/parkings — Listado de estacionamientos)*
+
+![SpotGo Backend Parkings](../assets/images/others/spotgo-backend-parkings.png)
+
+*Figura 91 (POST /api/v1/employees — Crear un empleado)*
+
+![SpotGo Backend Employee](../assets/images/others/spotgo-backend-employee.png)
+
+**Demonstration Video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI)
 
 ##### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
