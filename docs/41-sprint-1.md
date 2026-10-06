@@ -42,7 +42,7 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
   </tr>
   <tr>
     <td align="left">Ruiz Mideyros, Adrian</td>
-    <td align="left"><a href="https://github.com/AdrixRyz">@AdrixRyz</a></td>
+    <td align="left">@AdrixRyz</td>
     <td align="center"><strong>L</strong></td>
     <td align="center">C</td>
     <td align="center">C</td>
@@ -51,7 +51,7 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
   </tr>
   <tr>
     <td align="left">Rojas Tello, Nestor Alonso</td>
-    <td align="left"><a href="https://github.com/nes-ro">@nes-ro</a></td>
+    <td align="left">@nes-ro</td>
     <td align="center">C</td>
     <td align="center"><strong>L</strong></td>
     <td align="center">C</td>
@@ -60,7 +60,7 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
   </tr>
   <tr>
     <td align="left">Contreras Rojas, Cesar Jair</td>
-    <td align="left"><a href="https://github.com/CesarJrCR">@CesarJrCR</a></td>
+    <td align="left">@CesarJrCR</td>
     <td align="center">C</td>
     <td align="center">C</td>
     <td align="center">C</td>
@@ -69,7 +69,7 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
   </tr>
   <tr>
     <td align="left">Carhuaz Centeno, Briguite Eryka</td>
-    <td align="left"><a href="https://github.com/briicarhuaz">@briicarhuaz</a></td>
+    <td align="left">@briicarhuaz</td>
     <td align="center">C</td>
     <td align="center">C</td>
     <td align="center"><strong>L</strong></td>
@@ -78,7 +78,7 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
   </tr>
   <tr>
     <td align="left">Cotrina Siclla, Sofia Alessandra</td>
-    <td align="left"><a href="https://github.com/IamAndreek">@IamAndreek</a></td>
+    <td align="left">@IamAndreek</td>
     <td align="center">C</td>
     <td align="center">C</td>
     <td align="center">C</td>
@@ -88,6 +88,103 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
 </table>
 
 ##### 4.2.1.3. Sprint Backlog 1
+
+El Sprint Backlog 1 reúne las tareas necesarias para desarrollar las historias de usuario seleccionadas, indicando sus responsables y estado de avance.
+
+**Trello link:** [https://trello.com/b/6aa6e46ebebf57986f7fcd37](https://trello.com/b/6aa6e46ebebf57986f7fcd37)
+
+*Figura 74 (Trello Board Sprint 1)*
+
+![Trello Board Sprint 1](../assets/images/others/trello-board-sprint-1.png)
+
+El siguiente desglose presenta las tareas del alcance realizado en el Sprint 1, con estado Completed. Los responsables se distribuyen según la matriz LACX. Las horas son estimaciones por tarea de entre 0,5 y 2 horas, según su dificultad, y no representan tiempos reales registrados ni una conversión directa de Story Points. Los Story Points se contabilizan una sola vez por HU; completar estas tareas de avance no equivale a completar las integraciones previstas para los siguientes sprints.
+
+<table>
+  <thead>
+    <tr><th colspan="3">User Story</th><th colspan="6">Work-Item / Task</th></tr>
+    <tr><th>Id</th><th>Title</th><th>Story Points</th><th>Id</th><th>Title</th><th>Description</th><th>Estimation (Hours)</th><th>Assigned To</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">US01</td><td rowspan="2">Consult Availability by Zone</td><td rowspan="2" align="center">5</td>
+      <td>T01</td><td>Pantalla de disponibilidad</td><td>Mostrar espacios disponibles por zona y la fecha de actualizaci&#243;n.</td><td>1</td><td>@briicarhuaz</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T02</td><td>Consulta de disponibilidad</td><td>Desarrollar la consulta backend de disponibilidad prevista para este sprint.</td><td>2</td><td>@briicarhuaz</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US04</td><td rowspan="2">View Permitted Zones</td><td rowspan="2" align="center">2</td>
+      <td>T03</td><td>Pantalla de zonas permitidas</td><td>Mostrar las zonas habilitadas para el perfil del Driver.</td><td>0.5</td><td>@briicarhuaz</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T04</td><td>Consulta de permisos</td><td>Implementar la consulta de zonas seg&#250;n el perfil del Driver.</td><td>1</td><td>@briicarhuaz</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US13</td><td rowspan="2">Register Driver Account</td><td rowspan="2" align="center">2</td>
+      <td>T05</td><td>Pantalla de registro</td><td>Desarrollar el formulario de registro y sus mensajes de validaci&#243;n.</td><td>1</td><td>@nes-ro</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T06</td><td>Registro de cuenta</td><td>Implementar la creaci&#243;n de cuenta y perfil Driver reutilizando los mecanismos de IAM.</td><td>1.5</td><td>@nes-ro</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US18</td><td rowspan="2">Manage Reservations and Virtual Receipts</td><td rowspan="2" align="center">5</td>
+      <td>T07</td><td>Pantallas de reservas</td><td>Presentar las vistas de creaci&#243;n y consulta de reservas.</td><td>1.5</td><td>@CesarJrCR</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T08</td><td>Comprobante virtual y servicios</td><td>Presentar el comprobante virtual y desarrollar el avance de servicios de reservas previsto para el sprint.</td><td>2</td><td>@CesarJrCR</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US19</td><td rowspan="2">Process Reservation and Additional Payments</td><td rowspan="2" align="center">5</td>
+      <td>T09</td><td>Pantalla de pagos</td><td>Presentar el flujo de pago de reservas y cargos adicionales.</td><td>1.5</td><td>@CesarJrCR</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T10</td><td>Servicios de pago</td><td>Desarrollar el avance backend del procesamiento de pagos previsto para este sprint.</td><td>2</td><td>@CesarJrCR</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US02</td><td rowspan="2">Configure Parking Zones</td><td rowspan="2" align="center">5</td>
+      <td>T11</td><td>Pantalla de zonas</td><td>Desarrollar la interfaz de configuraci&#243;n de zonas y sus reglas.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T12</td><td>Configuraci&#243;n de zonas</td><td>Implementar el avance de servicios para registrar zonas y asociar espacios y perfiles.</td><td>2</td><td>@IamAndreek</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US16</td><td rowspan="2">Upload Parking Floor Plan</td><td rowspan="2" align="center">3</td>
+      <td>T13</td><td>Pantalla de carga de plano</td><td>Desarrollar la selecci&#243;n y carga del plano del estacionamiento.</td><td>1</td><td>@IamAndreek</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T14</td><td>Validaci&#243;n del plano</td><td>Implementar la validaci&#243;n de formato y almacenamiento del plano.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US17</td><td rowspan="2">Generate Digital Parking Map</td><td rowspan="2" align="center">5</td>
+      <td>T15</td><td>Pantalla de mapa digital</td><td>Presentar la configuraci&#243;n del mapa digital a partir del plano cargado.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T16</td><td>Generaci&#243;n del mapa</td><td>Desarrollar el avance de generaci&#243;n de zonas y espacios a partir del plano previsto para el sprint.</td><td>2</td><td>@IamAndreek</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US09</td><td rowspan="2">Authenticate and Access Mobile Functions by Role</td><td rowspan="2" align="center">3</td>
+      <td>T17</td><td>Pantalla de acceso</td><td>Desarrollar la interfaz de inicio de sesi&#243;n y sus mensajes de error.</td><td>1</td><td>@nes-ro</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T18</td><td>Autenticaci&#243;n y autorizaci&#243;n</td><td>Implementar el avance de autenticaci&#243;n y acceso por rol previsto para el sprint.</td><td>2</td><td>@nes-ro</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US11</td><td rowspan="2">Communicate the Value Proposition on the Landing Page</td><td rowspan="2" align="center">3</td>
+      <td>T19</td><td>Contenido y dise&#241;o adaptable</td><td>Implementar las secciones de SpotGo y revisar su presentaci&#243;n y accesibilidad.</td><td>2</td><td>@AdrixRyz</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T20</td><td>Despliegue de Landing Page</td><td>Publicar la Landing Page y comprobar su acceso p&#250;blico.</td><td>1</td><td>@AdrixRyz</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td rowspan="2">US12</td><td rowspan="2">Navigate from the Landing Page to the Mobile Product</td><td rowspan="2" align="center">1</td>
+      <td>T21</td><td>Navegaci&#243;n entre secciones</td><td>Implementar los enlaces de navegaci&#243;n de la Landing Page.</td><td>0.5</td><td>@AdrixRyz</td><td>Completed</td>
+    </tr>
+    <tr>
+      <td>T22</td><td>Acceso al producto m&#243;vil</td><td>Configurar el enlace al destino oficial del producto m&#243;vil.</td><td>0.5</td><td>@AdrixRyz</td><td>Completed</td>
+    </tr>
+    <tr><td colspan="2"><strong>Total de HU seleccionadas</strong></td><td align="center"><strong>39</strong></td><td colspan="6">11 HU y 22 tareas; 30.5 horas estimadas en total.</td></tr>
+  </tbody>
+</table>
 
 ##### 4.2.1.4. Development Evidence for Sprint Review
 
