@@ -300,15 +300,15 @@ Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten ap
 
 ![Parking Admin Dashboard Mock-up](../assets/images/ui-ux/mockups/administrator/15-administrator-dashboard.png)
 
-*Figura 67 (Mock-up de alertas operativas)*
+*Figura 67 (Mock-up de alertas operativas de la zona asignada)*
 
 ![Parking Admin Alerts Mock-up](../assets/images/ui-ux/mockups/administrator/17-operational-alerts.png)
 
-*Figura 68 (Mock-up para administrar zonas de estacionamiento)*
+*Figura 68. Mock-up de la zona de estacionamiento asignada.*
 
-![Parking Admin Parking Zones Mock-up](../assets/images/ui-ux/mockups/administrator/19-parking-zones.png)
+![Parking Admin My Parking Zone Mock-up](../assets/images/ui-ux/mockups/administrator/19-parking-zones.png)
 
-*Figura 69 (Mock-up de sesiones de estacionamiento para invitados)*
+*Figura 69 (Mock-up de sesiones de estacionamiento para invitados de la zona asignada)*
 
 ![Parking Admin Guest Sessions Mock-up](../assets/images/ui-ux/mockups/administrator/21-guest-parking-sessions.png)
 
