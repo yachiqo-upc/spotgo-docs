@@ -2,7 +2,7 @@
 
 Payments & Billing es un bounded context de soporte que concentra las operaciones económicas digitales de SpotGo. Administra tokens de pago, pagos de Reservations y suscripciones, cargos adicionales por sobretiempo, saldos pendientes, reembolsos y comprobantes. El proveedor de pagos es interno a la solución y se integra mediante un contrato que permite procesar operaciones de forma idempotente y recibir confirmaciones asíncronas.
 
-El contexto no procesa los pagos físicos de Guests. En una Guest Parking Session, el Parking Admin registra la placa, calcula el monto y confirma que recibió efectivo o POS fuera del flujo de pago digital. Payments & Billing solo procesa operaciones digitales de Drivers registrados, como el pago de una Reservation, una suscripción o un cargo adicional autorizado por las reglas de SpotGo.
+El contexto no procesa los pagos físicos de Guests. En una Guest Parking Session, el Parking Admin (Administradores) registra la placa, calcula el monto y confirma que recibió efectivo o POS fuera del flujo de pago digital. Payments & Billing solo procesa operaciones digitales de Parking Driver (Conductores) registrados, como el pago de una Reservation, una suscripción o un cargo adicional autorizado por las reglas de SpotGo.
 
 Los comprobantes se generan a partir de los datos de facturación disponibles. Cuando el usuario proporciona DNI se genera un Electronic Receipt y cuando proporciona RUC se genera un Electronic Invoice. El modelo no almacena el número completo de una tarjeta ni otros datos financieros sensibles; utiliza Payment Token y referencias del proveedor interno.
 
@@ -14,8 +14,8 @@ La capa de dominio separa la intención de pago, el resultado del proveedor, la 
 | --- | --- | --- | --- |
 | Digital Payment | Aggregate Root | Representa una operación de pago digital solicitada por SpotGo. Controla su estado, importe, token autorizado, referencia y resultado idempotente. | paymentId, paymentTokenId, operationType, ownerRef, amount, currency, status, providerOperationRef, idempotencyKey; initiate(), approve(), reject(), markPending(). |
 | Payment Token | Entity | Representa un medio tokenizado que puede utilizarse sin conservar datos completos de tarjeta. | tokenId, ownerRef, providerTokenRef, brand, lastFour, expirationMonth, expirationYear, status; activate(), revoke(), isUsable(). |
-| Subscription | Aggregate Root | Representa la suscripción de un Driver y sus beneficios aplicables. | subscriptionId, driverId, plan, startAt, endAt, status, discountRules; activate(), pause(), cancel(), appliesAt(). |
-| Additional Charge | Entity | Representa un cargo adicional solicitado por una Reservation o Parking Session de un Driver registrado, por ejemplo por sobretiempo. | chargeId, reservationRef, sessionRef, amount, reason, evidenceRef, status; authorize(), process(), reject(). |
+| Subscription | Aggregate Root | Representa la suscripción de un Parking Driver y sus beneficios aplicables. | subscriptionId, driverId, plan, startAt, endAt, status, discountRules; activate(), pause(), cancel(), appliesAt(). |
+| Additional Charge | Entity | Representa un cargo adicional solicitado por una Reservation o Parking Session de un Parking Driver registrado, por ejemplo por sobretiempo. | chargeId, reservationRef, sessionRef, amount, reason, evidenceRef, status; authorize(), process(), reject(). |
 | Outstanding Balance | Aggregate Root | Representa una obligación pendiente después de un pago fallido o un cargo no regularizado. | balanceId, ownerRef, sourceRef, amount, dueAt, status; create(), addAmount(), regularize(), blockNewReservation(). |
 | Refund | Entity | Representa un reembolso solicitado por cancelación, falta de spot compatible o aprobación tardía. | refundId, paymentId, amount, reason, status, providerOperationRef; request(), approve(), complete(), fail(). |
 | Receipt | Entity | Representa el comprobante virtual de una operación aprobada. | receiptId, paymentId, ownerRef, amount, issuedAt, status; issue(), void(). |
@@ -46,7 +46,7 @@ La política se aplica únicamente a errores transitorios. Cada intento utiliza 
 | Tipo de operación | Intento inicial y reintentos | Condición para detener | Resultado terminal |
 | --- | --- | --- | --- |
 | Pago de Reservation | Intento inicial inmediato; reintentos a los 30 segundos, 2 minutos y 5 minutos. Máximo de cuatro intentos dentro del Temporary Lock de 10 minutos. | Se alcanza el máximo, vence el lock o aparece un rechazo definitivo. | ReservationPaymentRejected, liberación del spot y, si existiera aprobación tardía, conciliación y posible Refund. |
-| Suscripción | Intento inicial inmediato; reintentos a 1 hora, 6 horas y 24 horas. | Se alcanza el máximo o el proveedor informa un rechazo definitivo. | Subscription PAST_DUE y notificación al Driver; no se crea un cobro duplicado. |
+| Suscripción | Intento inicial inmediato; reintentos a 1 hora, 6 horas y 24 horas. | Se alcanza el máximo o el proveedor informa un rechazo definitivo. | Subscription PAST_DUE y notificación al Parking Driver; no se crea un cobro duplicado. |
 | Additional Charge | Intento inicial al recibirse la solicitud; reintentos a 1 hora, 6 horas y 24 horas. | Se alcanza el máximo, existe rechazo definitivo o la evidencia de ocupación deja de ser confiable. | Outstanding Balance OPEN y bloqueo de nuevas Reservations según la regla de negocio. |
 | Refund | Solicitud inicial inmediata; ante resultado UNKNOWN se consulta el estado cada 15 minutos durante un máximo de 24 horas. | Se confirma el resultado, se alcanza el plazo o el proveedor requiere revisión. | Refund COMPLETED o RECONCILIATION_REQUIRED para revisión operativa. |
 | Guest Parking Session | No aplica. | El pago físico se confirma manualmente por Parking Admin. | El resultado se conserva en Parking Infrastructure; no se crea Digital Payment. |
@@ -55,11 +55,11 @@ Los errores de token inválido, fondos insuficientes, operación cancelada, frau
 
 #### *2.6.4.2. Interface Layer*
 
-La Interface Layer expone las operaciones económicas de Drivers y recibe solicitudes de los demás contextos. Las solicitudes de pago, cargo adicional y reembolso pueden procesarse de forma asíncrona, por lo que el controlador devuelve una referencia de operación y el resultado definitivo se comunica mediante eventos.
+La Interface Layer expone las operaciones económicas de Parking Driver y recibe solicitudes de los demás contextos. Las solicitudes de pago, cargo adicional y reembolso pueden procesarse de forma asíncrona, por lo que el controlador devuelve una referencia de operación y el resultado definitivo se comunica mediante eventos.
 
 | Componente de interfaz | Canal | Responsabilidad | Operaciones o mensajes |
 | --- | --- | --- | --- |
-| Digital Payment Controller | REST/HTTPS | Inicia y consulta pagos digitales de Drivers. | Registrar token, iniciar pago de Reservation, consultar estado y listar operaciones propias. |
+| Digital Payment Controller | REST/HTTPS | Inicia y consulta pagos digitales de Parking Driver. | Registrar token, iniciar pago de Reservation, consultar estado y listar operaciones propias. |
 | Payment Token Controller | REST/HTTPS | Administra referencias tokenizadas de pago. | Registrar, consultar, activar o revocar Payment Token. |
 | Subscription Controller | REST/HTTPS | Gestiona suscripciones y sus estados. | Crear, consultar, pausar, reactivar o cancelar Subscription. |
 | Billing Controller | REST/HTTPS | Recibe datos de facturación y expone comprobantes. | Registrar DNI o RUC, emitir Receipt, consultar o invalidar documento. |
@@ -67,7 +67,7 @@ La Interface Layer expone las operaciones económicas de Drivers y recibe solici
 | Reservation and Refund Consumer | Evento asíncrono | Recibe solicitudes de pago y reembolso originadas en Parking Infrastructure. | ReservationPaymentRequested, RefundRequested. |
 | Additional Charge Consumer | Evento asíncrono | Recibe cargos adicionales validados por reglas de ocupación y parking. | AdditionalChargeRequested. |
 | Payment Provider Notification Consumer | Evento o callback interno | Recibe confirmaciones, rechazos o cambios del proveedor interno. | ProviderPaymentApproved, ProviderPaymentRejected, ProviderRefundUpdated. |
-| Payment Event Publisher | Evento asíncrono | Publica resultados económicos para los contextos consumidores y el Driver. | ReservationPaymentApproved, ReservationPaymentRejected, AdditionalChargeProcessed, OutstandingBalanceGenerated, BalanceRegularized, RefundCompleted, RefundReconciliationRequired, ElectronicDocumentIssued. |
+| Payment Event Publisher | Evento asíncrono | Publica resultados económicos para los contextos consumidores y el Parking Driver. | ReservationPaymentApproved, ReservationPaymentRejected, AdditionalChargeProcessed, OutstandingBalanceGenerated, BalanceRegularized, RefundCompleted, RefundReconciliationRequired, ElectronicDocumentIssued. |
 
 Los endpoints no aceptan datos completos de tarjeta ni permiten que una Guest inicie una transacción digital. La aplicación móvil Flutter y sus integraciones nativas en Kotlin reciben únicamente el resultado necesario para mostrar el estado de la operación y el comprobante permitido.
 
@@ -98,11 +98,11 @@ La Application Layer coordina las transiciones de pago y facturación. Los comma
 | AdditionalChargeRequested | Additional Charge Handler | Verifica evidencia y crea el Digital Payment o Outstanding Balance correspondiente. |
 | AdditionalChargeProcessed | Additional Charge Notification Handler | Informa a Parking Infrastructure y conserva el resultado del cargo adicional. |
 | OutstandingBalanceGenerated | Balance Notification Handler | Informa al contexto de identidad o al canal de usuario que existe una obligación pendiente. |
-| BalanceRegularized | Reservation Eligibility Consumer | Permite que el contexto correspondiente vuelva a considerar al Driver para nuevas Reservations. |
+| BalanceRegularized | Reservation Eligibility Consumer | Permite que el contexto correspondiente vuelva a considerar al Parking Driver para nuevas Reservations. |
 | RefundRequested | Refund Handler | Solicita el reembolso y publica RefundCompleted o RefundReconciliationRequired. |
 | RefundCompleted | Refund Notification Handler | Informa el resultado final del reembolso y conserva su relación con el pago original. |
 | RefundReconciliationRequired | Refund Reconciliation Handler | Envía la operación a revisión cuando el proveedor no permite confirmar el resultado automáticamente. |
-| ElectronicDocumentIssued | Billing Notification Handler | Pone el comprobante a disposición del Driver y conserva su trazabilidad. |
+| ElectronicDocumentIssued | Billing Notification Handler | Pone el comprobante a disposición del Parking Driver y conserva su trazabilidad. |
 
 Una respuesta aprobada después del vencimiento del Temporary Lock no confirma una Reservation automáticamente. Reconcile Payment consulta el estado, relaciona el resultado con la operación original y, si el espacio ya fue liberado, inicia Refund o Reconciliation Required según corresponda.
 
@@ -202,7 +202,7 @@ La vista de código debe mostrar las clases de dominio que separan pago, factura
 
 #### ***2.6.4.6.2. Bounded Context Database Design Diagram***
 
-Payments & Billing Database persiste únicamente operaciones digitales y sus documentos. Los identificadores de Driver, Reservation y Parking Session se almacenan como referencias de integración. Una Guest Parking Session queda fuera del flujo digital y no se almacena como Digital Payment. No se incluyen datos completos de tarjeta y no se crean foreign keys hacia bases de otros bounded contexts.
+Payments & Billing Database persiste únicamente operaciones digitales y sus documentos. Los identificadores de Parking Driver, Reservation y Parking Session se almacenan como referencias de integración. Una Guest Parking Session queda fuera del flujo digital y no se almacena como Digital Payment. No se incluyen datos completos de tarjeta y no se crean foreign keys hacia bases de otros bounded contexts.
 
 *Figura 36 (Payments & Billing Database Design Diagram)*
 ![Payments & Billing Database Design Diagram](../assets/diagrams/db-diagram-payments.svg)
@@ -212,7 +212,7 @@ Payments & Billing Database persiste únicamente operaciones digitales y sus doc
 | payment_tokens | token_id, owner_ref, provider_token_ref, brand, last_four, expiration_month, expiration_year, status, created_at, revoked_at | token_id PK; provider_token_ref UNIQUE; no almacena número completo de tarjeta ni código de seguridad. |
 | digital_payments | payment_id, payment_token_id, operation_type, owner_ref, amount, currency, status, provider_operation_ref, idempotency_key, request_hash, first_seen_at, last_seen_at, result_reference, created_at, approved_at | payment_id PK; payment_token_id FK a payment_tokens; idempotency_key UNIQUE; request_hash permite detectar una misma clave usada con datos distintos; first_seen_at, last_seen_at y result_reference conservan la trazabilidad de idempotencia; status restringido al ciclo de PaymentStatus; provider_operation_ref UNIQUE cuando tenga valor. |
 | payment_attempts | attempt_id, payment_id, attempt_number, started_at, finished_at, status, error_code, next_attempt_at | attempt_id PK; payment_id FK a digital_payments; combinación payment_id y attempt_number UNIQUE. |
-| subscriptions | subscription_id, profile_id, plan, start_at, end_at, status, discount_rules | subscription_id PK; profile_id es referencia externa a un perfil DRIVER; end_at no puede ser menor que start_at. |
+| subscriptions | subscription_id, profile_id, plan, start_at, end_at, status, discount_rules | subscription_id PK; profile_id es referencia externa a un perfil Parking Driver; end_at no puede ser menor que start_at. |
 | additional_charges | charge_id, reservation_ref, session_ref, amount, reason, evidence_ref, status, created_at | charge_id PK; reservation_ref y session_ref son referencias externas; al menos una fuente operativa debe estar presente. |
 | outstanding_balances | balance_id, owner_ref, source_ref, amount, due_at, status, created_at, regularized_at | balance_id PK; owner_ref y source_ref son referencias lógicas; amount no negativo. |
 | refunds | refund_id, payment_id, amount, reason, status, provider_operation_ref, requested_at, completed_at | refund_id PK; payment_id FK a digital_payments; amount no supera el importe elegible del pago según regla de negocio. |
@@ -224,7 +224,7 @@ Payments & Billing Database persiste únicamente operaciones digitales y sus doc
 | digital_payments — refunds | 1 a 0..* | Los reembolsos se trazan al pago original. |
 | digital_payments — billing_documents | 1 a 0..1 | Un pago aprobado genera como máximo el documento principal correspondiente. |
 | payment_tokens — digital_payments | 1 a 0..* mediante payment_token_id | Un token puede reutilizarse mientras esté activo y autorizado. |
-| profile_id — Profiles & Vehicles Management | Referencia externa | Identifica al perfil DRIVER sin crear FK entre bases. |
+| profile_id — Profiles & Vehicles Management | Referencia externa | Identifica al perfil Parking Driver sin crear FK entre bases. |
 | reservation_ref — Parking Infrastructure | Referencia externa | Relaciona la operación económica con Reservation. |
 | session_ref — Parking Infrastructure | Referencia externa | Relaciona el cargo con Parking Session cuando corresponda. |
 

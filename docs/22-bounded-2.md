@@ -1,8 +1,8 @@
 ### 2.6.2. Bounded Context: Identity & Access Management
 
-Identity & Access Management es un bounded context genérico que administra la identidad digital, la autenticación, las sesiones y la autorización de los usuarios de SpotGo. Su responsabilidad termina en comprobar quién es la persona y qué rol puede ejercer; no administra los datos de Driver, los Vehicles, la infraestructura del estacionamiento, las reservas ni las operaciones de pago.
+Identity & Access Management es un bounded context genérico que administra la identidad digital, la autenticación, las sesiones y la autorización de los usuarios de SpotGo. Su responsabilidad termina en comprobar quién es la persona y qué rol puede ejercer; no administra los datos de Parking Driver (Conductores), los Vehicles, la infraestructura del estacionamiento, las reservas ni las operaciones de pago.
 
-El modelo considera los roles Driver, Parking Admin y SuperAdmin. Un Guest no requiere una cuenta para utilizar el estacionamiento y, por tanto, no se crea una identidad persistente para una Guest Parking Session. Los perfiles de negocio se mantienen en Profiles & Vehicles Management y se relacionan con este contexto mediante identityRef. El registro público crea únicamente cuentas de Driver; las cuentas de Parking Admin y SuperAdmin se provisionan internamente.
+El modelo considera los roles Parking Driver, Parking Admin (Administradores) y SuperAdmin. Un Guest no requiere una cuenta para utilizar el estacionamiento y, por tanto, no se crea una identidad persistente para una Guest Parking Session. Los perfiles de negocio se mantienen en Profiles & Vehicles Management y se relacionan con este contexto mediante identityRef. El registro público crea únicamente cuentas de Parking Driver; las cuentas de Parking Admin y SuperAdmin se provisionan internamente.
 
 #### *2.6.2.1. Domain Layer*
 
@@ -15,7 +15,7 @@ La capa de dominio define las invariantes de la cuenta y el ciclo de vida de las
 | Session | Entity | Representa una sesión de acceso emitida para una Account. Controla expiración, renovación, revocación y actividad. | sessionId, accountId, refreshTokenHash, createdAt, expiresAt, lastActivityAt, status; isExpired(), refresh(), revoke(). |
 | Role Assignment | Entity | Vincula una Account con un rol autorizado y su vigencia. | assignmentId, accountId, roleType, tenantId opcional, validFrom, validTo, status; isValidAt(). |
 | Audit Entry | Entity | Registra acciones relevantes de autenticación, autorización y administración. No contiene secretos ni tokens completos. | auditId, accountId, action, result, occurredAt, source, correlationId; record(). |
-| Role Type | Enumeration | Define los roles reconocidos por el sistema. | DRIVER, PARKING ADMIN, SUPER_ADMIN. |
+| Role Type | Enumeration | Define los roles reconocidos por el sistema. | Parking Driver, Parking Admin, SUPER_ADMIN. |
 | Account Status | Enumeration | Define el estado de la cuenta para autenticar o autorizar operaciones. | PENDING, ACTIVE, SUSPENDED, LOCKED, INACTIVE. |
 | Authentication Method | Enumeration | Identifica el mecanismo utilizado para acreditar la identidad. | PASSWORD, GOOGLE. |
 | Session Status | Enumeration | Define el estado del acceso emitido. | ACTIVE, EXPIRED, REVOKED. |
@@ -30,7 +30,7 @@ La capa de dominio define las invariantes de la cuenta y el ciclo de vida de las
 | Session Repository | Repository Interface | Define la persistencia de sesiones revocables y sus metadatos. | findById(), findActiveByAccount(), save(), revoke(). |
 | Audit Entry Repository | Repository Interface | Define la persistencia de eventos de auditoría. | save(), findByAccount(), findByCorrelationId(). |
 
-Las identidades y roles se validan antes de permitir operaciones administrativas o de Driver. El registro público de Driver coordina la creación de la Account con su Driver Profile en Profiles & Vehicles Management. En cambio, una Account activa no convierte a una persona en Parking Admin: el rol PARKING ADMIN, su Parking Admin Profile y su asignación a un Tenant deben provisionarse mediante una acción interna autorizada. El contexto tampoco administra la autorización de una Guest Parking Session como si el Guest fuera un usuario autenticado.
+Las identidades y roles se validan antes de permitir operaciones administrativas o de Parking Driver. El registro público de Parking Driver coordina la creación de la Account con su Parking Driver Profile en Profiles & Vehicles Management. En cambio, una Account activa no convierte a una persona en Parking Admin: el rol Parking Admin, su Parking Admin Profile y su asignación a un Tenant deben provisionarse mediante una acción interna autorizada. El contexto tampoco administra la autorización de una Guest Parking Session como si el Guest fuera un usuario autenticado.
 
 #### *2.6.2.2. Interface Layer*
 
@@ -54,7 +54,7 @@ La Application Layer coordina los casos de uso de identidad. Los handlers valida
 
 | Command | Command Handler | Resultado |
 | --- | --- | --- |
-| Register Driver Account | Register Driver Account Handler | Crea una Account activa con Role Assignment DRIVER y coordina la creación del Driver Profile; este flujo público no permite crear roles PARKING ADMIN o SUPER_ADMIN. |
+| Register Parking Driver Account | Register Parking Driver Account Handler | Crea una Account activa con Role Assignment Parking Driver y coordina la creación del Parking Driver Profile; este flujo público no permite crear roles Parking Admin o SUPER_ADMIN. |
 | Authenticate Account | Authenticate Account Handler | Verifica el método de autenticación, crea una Session y emite los tokens correspondientes. |
 | Authenticate with Google | External Identity Authentication Handler | Valida la aserción de Google y vincula o recupera una Account sin guardar la credencial externa completa. |
 | Refresh Session | Refresh Session Handler | Rota el refresh token, actualiza la actividad y genera un nuevo token de acceso si la sesión sigue vigente. |
@@ -133,7 +133,7 @@ La vista de código debe mostrar el modelo de dominio de identidad, sus interfac
 | AuditEntry | -auditId, -accountId, -action, -result, -source, -occurredAt, -correlationId | +record() | Entity; registra hechos de seguridad. |
 | Permission | -resource, -action, -scope | +allows() | Value Object derivado del rol y del recurso. |
 | ExternalSubject | -value, -provider | +validate(), +equals() | Value Object utilizado por Credential o Account. |
-| RoleType | DRIVER, PARKING ADMIN, SUPER_ADMIN | — | Enumeration utilizada por RoleAssignment. |
+| RoleType | Parking Driver, Parking Admin, SUPER_ADMIN | — | Enumeration utilizada por RoleAssignment. |
 | AccountStatus | PENDING, ACTIVE, SUSPENDED, LOCKED, INACTIVE | — | Enumeration utilizada por Account. |
 | AuthenticationMethod | PASSWORD, GOOGLE | — | Enumeration utilizada por Credential. |
 | SessionStatus | ACTIVE, EXPIRED, REVOKED | — | Enumeration utilizada por Session. |
@@ -169,7 +169,7 @@ Identity Database es independiente de las bases de datos de los demás bounded c
 | --- | --- | --- |
 | accounts | account_id, external_subject, status, created_at, updated_at | account_id PK; external_subject UNIQUE cuando tenga valor; status restringido a PENDING, ACTIVE, SUSPENDED, LOCKED o INACTIVE. |
 | credentials | credential_id, account_id, authentication_method, secret_hash, external_subject, last_used_at, status | credential_id PK; account_id FK a accounts; al menos secret_hash o external_subject según el método; nunca se almacena una contraseña en texto plano. |
-| role_assignments | assignment_id, account_id, role_type, tenant_id, valid_from, valid_to, status | assignment_id PK; account_id FK a accounts; role_type restringido a DRIVER, PARKING ADMIN o SUPER_ADMIN; tenant_id es referencia lógica. |
+| role_assignments | assignment_id, account_id, role_type, tenant_id, valid_from, valid_to, status | assignment_id PK; account_id FK a accounts; role_type restringido a Parking Driver, Parking Admin o SUPER_ADMIN; tenant_id es referencia lógica. |
 | sessions | session_id, account_id, refresh_token_hash, created_at, expires_at, last_activity_at, status, revoked_at | session_id PK; account_id FK a accounts; refresh_token_hash UNIQUE; expires_at mayor que created_at; status ACTIVE, EXPIRED o REVOKED. |
 | audit_entries | audit_id, account_id, action, result, source, occurred_at, correlation_id | audit_id PK; account_id FK nullable para intentos sin identidad válida; no se guardan tokens completos ni secretos. |
 

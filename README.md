@@ -8,12 +8,12 @@
 
 ## ¿Qué es SpotGo?
 
-SpotGo busca reducir el tiempo que los conductores dedican a encontrar estacionamiento y facilitar la gestión operativa de los espacios disponibles. La propuesta contempla:
+SpotGo busca reducir el tiempo que los Parking Driver (Conductores) dedican a encontrar estacionamiento y facilitar la gestión operativa de los espacios disponibles. La propuesta contempla:
 
 - Consulta de disponibilidad y de `Parking Zones` mediante un mapa integrado con Google Maps.
-- Registro de `Vehicles` y creación de `Reservations` para `Drivers` registrados.
+- Registro de `Vehicles` y creación de `Reservations` para `Parking Driver` registrados.
 - Procesamiento de pagos digitales, suscripciones, comprobantes virtuales y facturación electrónica.
-- Registro de `Guest Parking Sessions` por parte del `Staff` para `Guests` sin cuenta. El pago se confirma físicamente mediante efectivo o POS, fuera de SpotGo.
+- Registro de `Guest Parking Sessions` por parte del `Parking Admin` para `Guests` sin cuenta. El pago se confirma físicamente mediante efectivo o POS, fuera de SpotGo.
 - Monitoreo de la ocupación física mediante sensores, sin identificar vehículos ni leer placas automáticamente.
 - Notificaciones operativas y de negocio mediante Firebase Cloud Messaging.
 

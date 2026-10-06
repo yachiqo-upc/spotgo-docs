@@ -2,7 +2,7 @@
 
 Occupancy & Monitoring es un bounded context principal que recibe y procesa la información de los sensores instalados en los Parking Spots. Su responsabilidad es mantener el estado físico de ocupación, supervisar la salud de los sensores, identificar conflictos, detectar condiciones de sobretiempo y generar alertas y reportes para la operación.
 
-El sensor confirma si un espacio está disponible u ocupado, pero no identifica la placa ni el Vehicle que se encuentra en él. Por ello, este contexto no crea ni administra Drivers, Vehicles, Reservations o Parking Sessions. Parking Infrastructure conserva la propiedad de esas entidades y consume los eventos de ocupación para actualizar la disponibilidad, resolver conflictos o solicitar un cargo adicional cuando exista evidencia confiable.
+El sensor confirma si un espacio está disponible u ocupado, pero no identifica la placa ni el Vehicle que se encuentra en él. Por ello, este contexto no crea ni administra Parking Driver (Conductores), Vehicles, Reservations o Parking Sessions. Parking Infrastructure conserva la propiedad de esas entidades y consume los eventos de ocupación para actualizar la disponibilidad, resolver conflictos o solicitar un cargo adicional cuando exista evidencia confiable.
 
 Los estados de ocupación se mantienen independientes de los estados de Reservation. Un Parking Spot puede estar físicamente ocupado mientras una Reservation aparece como RESERVED, ACTIVE, COMPLETED o en otro estado; la diferencia se analiza como una condición operativa y no se corrige modificando automáticamente una entidad del otro contexto.
 
@@ -80,7 +80,7 @@ La Application Layer normaliza los mensajes, valida su idempotencia, actualiza e
 | Detect Unauthorized Occupancy | Detect Unauthorized Occupancy Handler | Genera una alerta cuando existe ocupación sin una expectativa operativa válida, sin identificar al vehículo. |
 | Evaluate Overstay | Evaluate Overstay Handler | Aplica cinco minutos de tolerancia y solicita cargo adicional únicamente con evidencia confiable. |
 | Evaluate High Capacity | Evaluate High Capacity Handler | Calcula el porcentaje de ocupación y genera alerta si supera 95 por ciento. |
-| Resolve Occupancy Alert | Resolve Occupancy Alert Handler | Registra reconocimiento y cierre por personal autorizado. |
+| Resolve Occupancy Alert | Resolve Occupancy Alert Handler | Registra reconocimiento y cierre por Parking Admin. |
 | Generate Occupancy Report | Generate Occupancy Report Handler | Construye un reporte del intervalo solicitado sin modificar lecturas históricas. |
 
 | Domain Event | Event Handler o consumidor relacionado | Acción |

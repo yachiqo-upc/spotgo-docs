@@ -1,10 +1,10 @@
 ### 2.6.3. Bounded Context: Parking Infrastructure
 
-Parking Infrastructure es el bounded context principal de la operación del estacionamiento. Administra los Tenants, el plano y mapa digital, las Parking Zones, los Parking Spots, la disponibilidad, las Reservations, las Parking Sessions de Drivers registrados y las Guest Parking Sessions. También coordina la asignación, modificación, extensión, cancelación y reasignación de espacios.
+Parking Infrastructure es el bounded context principal de la operación del estacionamiento. Administra los Tenants, el plano y mapa digital, las Parking Zones, los Parking Spots, la disponibilidad, las Reservations, las Parking Sessions de Parking Driver (Conductores) registrados y las Guest Parking Sessions. También coordina la asignación, modificación, extensión, cancelación y reasignación de espacios.
 
 Este contexto es dueño del ciclo de vida de Reservation y Parking Session. Occupancy & Monitoring aporta lecturas y estados físicos de sensores, pero no administra estas entidades ni infiere la identidad de un vehículo. Payments & Billing procesa los pagos digitales y emite los comprobantes; Parking Infrastructure solo conserva las referencias necesarias para relacionar una operación económica con una Reservation o una sesión.
 
-Las Reservations corresponden exclusivamente a Drivers registrados y se asocian con un Vehicle persistente y un Parking Spot específico. En cambio, una Guest Parking Session se registra manualmente por Parking Admin, conserva únicamente la placa ingresada durante la atención, no tiene Reservation ni Driver asociado y utiliza un pago físico en efectivo o POS confirmado fuera de SpotGo.
+Las Reservations corresponden exclusivamente a Parking Driver registrados y se asocian con un Vehicle persistente y un Parking Spot específico. En cambio, una Guest Parking Session se registra manualmente por Parking Admin (Administradores), conserva únicamente la placa ingresada durante la atención, no tiene Reservation ni Parking Driver asociado y utiliza un pago físico en efectivo o POS confirmado fuera de SpotGo.
 
 #### *2.6.3.1. Domain Layer*
 
@@ -18,9 +18,9 @@ La capa de dominio concentra las reglas de asignación y disponibilidad. El esta
 | Parking Spot | Entity | Representa un espacio físico identificable dentro de una Parking Zone. | spotId, zoneId, código, tipo, características, estado operativo; activate(), deactivate(), isAssignable(). |
 | Floor Plan | Entity | Representa el plano base del estacionamiento y sus versiones. | floorPlanId, tenantId, versión, archivo o referencia, estado; publishVersion(), archiveVersion(). |
 | Digital Parking Map | Entity | Proyección navegable de zonas, spots y elementos del plano para la aplicación. | mapId, floorPlanId, versión, elementos y estado; generate(), publish(), updateAvailability(). |
-| Reservation | Aggregate Root | Representa una reserva de un Driver para un Parking Spot en un intervalo definido. Requiere elegibilidad de Driver y Vehicle y aprobación del pago digital. | reservationId, tenantId, driverId, vehicleId, zoneId, spotId, timeRange, amount, status, paymentRef; create(), confirm(), modify(), extend(), cancel(), markNoShow(), markOverstayed(). |
-| Parking Session | Aggregate Root | Representa la sesión operativa de un Driver registrado vinculada con una Reservation y su Vehicle. | sessionId, reservationId, driverId, vehicleId, spotId, entryAt, exitAt, status; start(), close(), markPendingClosure(). |
-| Guest Parking Session | Aggregate Root | Representa la atención manual de un Guest. No contiene Driver, Vehicle persistente ni Reservation. | guestSessionId, tenantId, zoneId, spotId, manualPlate, entryAt, exitAt, calculatedAmount, physicalPaymentMethod, physicalPaymentConfirmed, status; open(), calculateAmount(), confirmPhysicalPayment(), close(). |
+| Reservation | Aggregate Root | Representa una reserva de un Parking Driver para un Parking Spot en un intervalo definido. Requiere elegibilidad de Parking Driver y Vehicle y aprobación del pago digital. | reservationId, tenantId, driverId, vehicleId, zoneId, spotId, timeRange, amount, status, paymentRef; create(), confirm(), modify(), extend(), cancel(), markNoShow(), markOverstayed(). |
+| Parking Session | Aggregate Root | Representa la sesión operativa de un Parking Driver registrado vinculada con una Reservation y su Vehicle. | sessionId, reservationId, driverId, vehicleId, spotId, entryAt, exitAt, status; start(), close(), markPendingClosure(). |
+| Guest Parking Session | Aggregate Root | Representa la atención manual de un Guest. No contiene Parking Driver, Vehicle persistente ni Reservation. | guestSessionId, tenantId, zoneId, spotId, manualPlate, entryAt, exitAt, calculatedAmount, physicalPaymentMethod, physicalPaymentConfirmed, status; open(), calculateAmount(), confirmPhysicalPayment(), close(). |
 | Time Range | Value Object | Define el intervalo solicitado para una Reservation y permite verificar solapamientos. | startAt, endAt, duration; overlaps(), contains(), extend(). |
 | Parking Location | Value Object | Identifica la ubicación de una zona o spot dentro de un plano. | floorPlanRef, zoneCode, spotCode, coordinates; isValid(). |
 | Temporary Lock | Entity | Representa el bloqueo persistente de un spot durante el pago digital. Su duración base es de 10 minutos y mantiene su propio ciclo de vida para evitar asignaciones simultáneas. | lockId, spotId, reservationIntentRef, lockedAt, expiresAt, status; isActiveAt(), expire(), release(), confirm(). |
@@ -28,11 +28,11 @@ La capa de dominio concentra las reglas de asignación y disponibilidad. El esta
 | Parking Rule Set | Value Object | Agrupa reglas de disponibilidad, tolerancia de sobretiempo, tarifa y criterios de asignación. | tariffRules, fiveMinuteOverstayTolerance, lockDuration, allocationRules; calculateAmount(), validate(). |
 | Availability Projection | Value Object | Resume la disponibilidad consultable combinando reservas, locks y el último estado físico recibido. | spotId, reservationState, occupancyStateRef, availability, observedAt; isBookable(), isReliable(). |
 | Reservation Status | Enumeration | Define el ciclo de vida de una Reservation. PENDING_PAYMENT es una transición interna mientras existe el lock. | PENDING_PAYMENT, RESERVED, ACTIVE, COMPLETED, CANCELLED, NO_SHOW, OVERSTAYED, PAYMENT_REJECTED. |
-| Session Status | Enumeration | Define el ciclo de vida de una Parking Session de Driver. | ACTIVE, COMPLETED, PENDING_CLOSURE. |
+| Session Status | Enumeration | Define el ciclo de vida de una Parking Session de Parking Driver. | ACTIVE, COMPLETED, PENDING_CLOSURE. |
 | Guest Session Status | Enumeration | Define el ciclo de vida de una Guest Parking Session. | OPEN, CLOSED, PENDING_REVIEW. |
 | Spot Operational Status | Enumeration | Define si un spot puede administrarse o asignarse. | ACTIVE, INACTIVE, MAINTENANCE. |
 | Availability Status | Enumeration | Define el resultado consultable de disponibilidad, sin reemplazar Occupancy Status. | AVAILABLE, RESERVED, TEMPORARILY_LOCKED, OCCUPIED, UNAVAILABLE. |
-| Reservation Factory | Factory | Crea una Reservation después de validar Tenant, Zone, Spot, Driver, Vehicle y Time Range. | createReservation(). |
+| Reservation Factory | Factory | Crea una Reservation después de validar Tenant, Zone, Spot, Parking Driver, Vehicle y Time Range. | createReservation(). |
 | Guest Session Factory | Factory | Crea una Guest Parking Session con placa manual y datos de atención administrativa. | createGuestSession(). |
 | Spot Allocation Service | Domain Service | Selecciona un Parking Spot compatible, respetando disponibilidad y la regla de un solo spot activo por Vehicle. | findCompatibleSpot(), allocate(). |
 | Availability Service | Domain Service | Calcula la disponibilidad a partir de datos propios y de la proyección confiable de Occupancy & Monitoring. | queryAvailability(), isAvailable(). |
@@ -48,12 +48,12 @@ Las reglas esenciales del contexto son las siguientes:
 
 | Regla | Aplicación |
 | --- | --- |
-| Reserva para Driver | Solo un Driver validado y con Vehicle activo puede iniciar una Reservation. |
+| Reserva para Parking Driver | Solo un Parking Driver validado y con Vehicle activo puede iniciar una Reservation. |
 | Pago previo | La Reservation queda en PENDING_PAYMENT mientras existe el Temporary Lock y pasa a RESERVED únicamente después de recibir ReservationPaymentApproved. |
 | Temporary Lock | El lock dura 10 minutos; al vencerse libera el spot. El sistema debe impedir más de un Temporary Lock activo para el mismo Parking Spot durante periodos solapados. Una confirmación tardía no reactiva el lock y debe conciliarse con Payments & Billing. |
 | Modificación y extensión | Solo se permiten si el nuevo intervalo y el spot son compatibles con la disponibilidad. |
 | Conflicto físico | Una lectura confiable de Occupancy & Monitoring puede iniciar una reasignación o marcar el spot como no disponible, pero no identifica el vehículo. |
-| Guest | La atención se modela como Guest Parking Session, con placa manual y pago físico confirmado por Parking Admin; no crea Reservation, Driver ni Vehicle. |
+| Guest | La atención se modela como Guest Parking Session, con placa manual y pago físico confirmado por Parking Admin; no crea Reservation, Parking Driver ni Vehicle. |
 | Sobretiempo | Después de cinco minutos de tolerancia, se solicita a Payments & Billing el cálculo o procesamiento del cargo adicional según la evidencia disponible. |
 
 #### *2.6.3.2. Interface Layer*
@@ -64,12 +64,12 @@ Los controladores REST reciben solicitudes de la aplicación móvil, de la aplic
 | --- | --- | --- | --- |
 | Tenant Administration Controller | REST/HTTPS | Administra la configuración básica de Tenant y sus reglas según el alcance autorizado. | Crear Tenant únicamente mediante SuperAdmin; actualizar configuración, activar o suspender operación y consultar datos. |
 | Parking Layout Controller | REST/HTTPS | Administra Parking Zones, Parking Spots, Floor Plans y Digital Parking Maps. | Crear zona, configurar spot, publicar plano y consultar mapa digital. |
-| Availability Controller | REST/HTTPS | Expone la disponibilidad de spots para Drivers y administradores de estacionamiento. | Consultar disponibilidad por zona, intervalo, características y estado. |
-| Reservation Controller | REST/HTTPS | Gestiona Reservations de Drivers registrados. | Crear intención, modificar, extender, cancelar y consultar Reservation. |
-| Parking Session Controller | REST/HTTPS | Gestiona el inicio y cierre de Parking Sessions de Drivers. | Iniciar sesión, registrar salida, consultar operación activa y solicitar cierre administrativo. |
+| Availability Controller | REST/HTTPS | Expone la disponibilidad de spots para Parking Driver y Parking Admin. | Consultar disponibilidad por zona, intervalo, características y estado. |
+| Reservation Controller | REST/HTTPS | Gestiona Reservations de Parking Driver registrados. | Crear intención, modificar, extender, cancelar y consultar Reservation. |
+| Parking Session Controller | REST/HTTPS | Gestiona el inicio y cierre de Parking Sessions de Parking Driver. | Iniciar sesión, registrar salida, consultar operación activa y solicitar cierre administrativo. |
 | Guest Parking Session Controller | REST/HTTPS | Permite a Parking Admin registrar y cerrar atenciones de Guests. | Abrir sesión, ingresar placa manual, calcular importe, confirmar efectivo o POS y cerrar sesión. |
 | Navigation Controller | REST/HTTPS | Construye solicitudes de navegación hacia una Parking Zone seleccionada. | Solicitar ruta y devolver enlace o parámetros para Google Maps. |
-| Driver Eligibility Consumer | REST interno o evento | Recibe la validación de Driver y Vehicle desde Profiles & Vehicles Management. | DriverProfileValidated, VehicleRegistered, VehicleDeactivated. |
+| Parking Driver Eligibility Consumer | REST interno o evento | Recibe la validación de Parking Driver y Vehicle desde Profiles & Vehicles Management. | DriverProfileValidated, VehicleRegistered, VehicleDeactivated. |
 | Payment Outcome Consumer | Evento asíncrono | Recibe los resultados del proveedor interno para una Reservation y los reembolsos relacionados. | ReservationPaymentApproved, ReservationPaymentRejected, RefundCompleted. |
 | Occupancy Event Consumer | Evento asíncrono | Recibe cambios físicos, fallas y conflictos de sensores. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected. |
 | Parking Event Publisher | Evento asíncrono | Publica los cambios que necesitan Payments & Billing y Occupancy & Monitoring. | ReservationPaymentRequested, ReservationCreated, ReservationReassigned, ParkingSessionStarted, ParkingSessionCompleted, AdditionalChargeRequested, RefundRequested, GuestParkingSessionClosed. |
@@ -86,13 +86,13 @@ La Application Layer coordina los casos de uso centrales. Los handlers controlan
 | Configure Parking Zone | Configure Parking Zone Handler | Crea o modifica una Parking Zone y sus Parking Spots. |
 | Publish Digital Parking Map | Publish Digital Map Handler | Genera una versión consultable del mapa digital a partir del Floor Plan. |
 | Query Availability | Query Availability Handler | Devuelve la disponibilidad por zona, intervalo y características solicitadas. |
-| Create Reservation Intent | Create Reservation Intent Handler | Valida Driver y Vehicle, selecciona un spot y crea un Temporary Lock de 10 minutos. |
+| Create Reservation Intent | Create Reservation Intent Handler | Valida Parking Driver y Vehicle, selecciona un spot y crea un Temporary Lock de 10 minutos. |
 | Confirm Reservation Payment | Confirm Reservation Payment Handler | Convierte la intención en Reservation RESERVED cuando el pago aprobado corresponde al lock vigente. |
 | Modify Reservation | Modify Reservation Handler | Cambia intervalo o características cuando no se rompe la disponibilidad. |
 | Extend Reservation | Extend Reservation Handler | Extiende el intervalo después de validar la disponibilidad adicional. |
 | Cancel Reservation | Cancel Reservation Handler | Cancela la Reservation y solicita reembolso cuando la regla de negocio lo indique. |
 | Reassign Reservation | Reassign Reservation Handler | Busca un spot alternativo compatible o solicita cancelación y reembolso si no existe alternativa. |
-| Start Parking Session | Start Parking Session Handler | Inicia la Parking Session de un Driver vinculada con su Reservation y spot. |
+| Start Parking Session | Start Parking Session Handler | Inicia la Parking Session de un Parking Driver vinculada con su Reservation y spot. |
 | Close Parking Session | Close Parking Session Handler | Registra salida y completa la Parking Session. |
 | Register Guest Parking Session | Register Guest Session Handler | Abre una sesión manual con placa, spot y hora de entrada, sin Reservation. |
 | Close Guest Parking Session | Close Guest Session Handler | Registra salida, calcula el monto y confirma el pago físico antes del cierre. |
@@ -127,8 +127,8 @@ La implementación propuesta utiliza Java y Spring Boot para la API, los command
 | Reservation Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste Reservations, intervalos, estados y referencias de pago. |
 | Parking Session Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste Parking Sessions y Guest Parking Sessions. |
 | Temporary Lock Scheduler | Proceso de aplicación y PostgreSQL | Detecta expiresAt, libera locks vencidos y publica su resultado de forma idempotente. |
-| Profiles Context Client | Cliente REST/HTTPS o consumidor de eventos | Valida Driver, Vehicle y estado de elegibilidad antes de una Reservation. |
-| Identity Context Client | Cliente REST/HTTPS o filtro de seguridad | Valida identidad, rol y alcance para operaciones de Driver o Parking Admin. |
+| Profiles Context Client | Cliente REST/HTTPS o consumidor de eventos | Valida Parking Driver, Vehicle y estado de elegibilidad antes de una Reservation. |
+| Identity Context Client | Cliente REST/HTTPS o filtro de seguridad | Valida identidad, rol y alcance para operaciones de Parking Driver o Parking Admin. |
 | Payments Context Client | Cliente REST/HTTPS y adaptador de eventos | Solicita pago, cobro adicional o reembolso y recibe el resultado del proveedor interno. |
 | Occupancy Context Adapter | Consumidor de eventos | Actualiza la Availability Projection con estados físicos y conflictos confiables. |
 | Google Maps Adapter | Cliente HTTPS | Traduce una solicitud de ruta a Google Maps y devuelve el enlace o resultado permitido. |
@@ -152,9 +152,9 @@ El diagrama de componentes deberá representar Parking Infrastructure como un co
 | Floor Plan Component | Gestiona versiones del plano base. | Layout Repository, Digital Parking Map Component. |
 | Digital Parking Map Component | Genera la representación consultable del estacionamiento. | Floor Plan Component, Occupancy Adapter. |
 | Availability Component | Calcula y expone disponibilidad combinada. | Availability Service, Reservation Repository, Occupancy Context Adapter. |
-| Reservation Component | Ejecuta el ciclo de vida de Reservations de Drivers. | Reservation Controller, Spot Allocation Component, Payments Adapter. |
+| Reservation Component | Ejecuta el ciclo de vida de Reservations de Parking Driver. | Reservation Controller, Spot Allocation Component, Payments Adapter. |
 | Guest Parking Session Component | Registra y cierra sesiones manuales de Guests. | Guest Parking Session Controller, Parking Session Repository. |
-| Parking Session Component | Gestiona sesiones de Drivers vinculadas a Reservations. | Parking Session Controller, Reservation Component. |
+| Parking Session Component | Gestiona sesiones de Parking Driver vinculadas a Reservations. | Parking Session Controller, Reservation Component. |
 | Spot Allocation Component | Busca spots compatibles y aplica la regla de un solo spot activo por Vehicle. | Profiles Client, Availability Component, Reservation Component. |
 | Conflict and Reassignment Component | Resuelve conflictos de disponibilidad y reasignaciones. | Occupancy Adapter, Reservation Reassignment Service, Payments Adapter. |
 | Navigation Component | Prepara solicitudes hacia Google Maps. | Navigation Controller, Google Maps Adapter. |
@@ -180,7 +180,7 @@ La vista de código debe concentrarse en los agregados y servicios de dominio qu
 | DigitalParkingMap | -mapId, -floorPlanId, -version, -elements, -status | +generate(), +publish(), +updateAvailability() | Entity o proyección navegable del plano. |
 | Reservation | -reservationId, -tenantId, -driverId, -vehicleId, -zoneId, -spotId, -timeRange, -amount, -status, -paymentRef | +create(), +confirm(), +modify(), +extend(), +cancel(), +markNoShow(), +markOverstayed() | Aggregate Root; se relaciona con TemporaryLock y ParkingSession. |
 | ParkingSession | -sessionId, -reservationId, -driverId, -vehicleId, -spotId, -entryAt, -exitAt, -status | +start(), +close(), +markPendingClosure() | Aggregate Root; deriva de una Reservation confirmada. |
-| GuestParkingSession | -guestSessionId, -tenantId, -zoneId, -spotId, -manualPlate, -entryAt, -exitAt, -calculatedAmount, -physicalPaymentMethod, -physicalPaymentConfirmed, -status | +open(), +calculateAmount(), +confirmPhysicalPayment(), +close() | Aggregate Root; no se relaciona con Driver, Vehicle ni Reservation. |
+| GuestParkingSession | -guestSessionId, -tenantId, -zoneId, -spotId, -manualPlate, -entryAt, -exitAt, -calculatedAmount, -physicalPaymentMethod, -physicalPaymentConfirmed, -status | +open(), +calculateAmount(), +confirmPhysicalPayment(), +close() | Aggregate Root; no se relaciona con Parking Driver, Vehicle ni Reservation. |
 | TimeRange | -startAt, -endAt | +overlaps(), +contains(), +extend() | Value Object de Reservation. |
 | ParkingLocation | -floorPlanRef, -zoneCode, -spotCode, -coordinates | +isValid() | Value Object de Zone y Spot. |
 | TemporaryLock | -lockId, -spotId, -reservationIntentRef, -lockedAt, -expiresAt, -status | +isActiveAt(), +expire(), +release(), +confirm() | Entity asociada a la intención de Reservation y persistida para controlar exclusión temporal. |
@@ -211,7 +211,7 @@ La vista de código debe concentrarse en los agregados y servicios de dominio qu
 | Reservation — TemporaryLock | Reservation 1 a TemporaryLock 0..1 | Una intención de reserva puede tener un lock temporal. |
 | Reservation — ParkingSession | Reservation 1 a ParkingSession 0..1 | Una Reservation confirmada puede originar una sesión. |
 | Reservation — GuestParkingSession | Sin relación | Una sesión de Guest no es una Reservation. |
-| Driver — Reservation | Referencia externa dirigida | driverId identifica un Driver validado por Profiles & Vehicles Management. |
+| Parking Driver — Reservation | Referencia externa dirigida | driverId identifica un Parking Driver validado por Profiles & Vehicles Management. |
 | Vehicle — Reservation | Referencia externa dirigida | vehicleId identifica el Vehicle elegido; la propiedad se valida antes de reservar. |
 | ParkingSpot — Reservation | ParkingSpot 1 a Reservation 0..* en distintos intervalos | Un spot puede reservarse en intervalos no superpuestos. |
 | OccupancyStatus — AvailabilityProjection | Referencia de evento dirigida | Occupancy aporta estado físico; Parking calcula disponibilidad. |
@@ -233,8 +233,8 @@ Parking Infrastructure Database contiene la configuración física y los proceso
 | floor_plans | floor_plan_id, tenant_id, version, file_reference, status, published_at | floor_plan_id PK; tenant_id FK a tenants; combinación tenant_id y version UNIQUE. |
 | digital_parking_maps | map_id, floor_plan_id, version, elements, status, generated_at | map_id PK; floor_plan_id FK a floor_plans; una versión publicada por plano. |
 | parking_rules | rules_id, tenant_id, tariff_rules, overstay_tolerance_minutes, lock_duration_minutes, allocation_rules | rules_id PK; tenant_id FK a tenants; lock_duration_minutes = 10 como valor inicial propuesto; overstay_tolerance_minutes = 5. |
-| reservations | reservation_id, tenant_id, profile_id, vehicle_id, zone_id, spot_id, start_at, end_at, amount, status, payment_ref, lock_status, locked_at, lock_expires_at, created_at, updated_at | reservation_id PK; tenant_id, zone_id y spot_id FK internas; profile_id debe corresponder a un perfil DRIVER y vehicle_id es referencia externa; intervalos no superpuestos para un spot en estados activos; lock_status, locked_at y lock_expires_at representan el Temporary Lock; status restringido a PENDING_PAYMENT, RESERVED, ACTIVE, COMPLETED, CANCELLED, NO_SHOW, OVERSTAYED o PAYMENT_REJECTED. |
-| parking_sessions | session_id, reservation_id, profile_id, vehicle_id, spot_id, entry_at, exit_at, status | session_id PK; reservation_id FK a reservations; spot_id FK a parking_spots; status restringido a ACTIVE, COMPLETED o PENDING_CLOSURE; profile_id debe corresponder a un perfil DRIVER y vehicle_id es referencia externa; no más de una sesión activa por vehicle_id según regla de negocio. |
+| reservations | reservation_id, tenant_id, profile_id, vehicle_id, zone_id, spot_id, start_at, end_at, amount, status, payment_ref, lock_status, locked_at, lock_expires_at, created_at, updated_at | reservation_id PK; tenant_id, zone_id y spot_id FK internas; profile_id debe corresponder a un perfil Parking Driver y vehicle_id es referencia externa; intervalos no superpuestos para un spot en estados activos; lock_status, locked_at y lock_expires_at representan el Temporary Lock; status restringido a PENDING_PAYMENT, RESERVED, ACTIVE, COMPLETED, CANCELLED, NO_SHOW, OVERSTAYED o PAYMENT_REJECTED. |
+| parking_sessions | session_id, reservation_id, profile_id, vehicle_id, spot_id, entry_at, exit_at, status | session_id PK; reservation_id FK a reservations; spot_id FK a parking_spots; status restringido a ACTIVE, COMPLETED o PENDING_CLOSURE; profile_id debe corresponder a un perfil Parking Driver y vehicle_id es referencia externa; no más de una sesión activa por vehicle_id según regla de negocio. |
 | guest_parking_sessions | guest_session_id, tenant_id, zone_id, spot_id, manual_plate, entry_at, exit_at, calculated_amount, physical_payment_method, physical_payment_confirmed, status | guest_session_id PK; tenant_id, zone_id y spot_id FK internas; status restringido a OPEN, CLOSED o PENDING_REVIEW; no contiene driver_id, vehicle_id, reservation_id ni payment_id digital. |
 
 La Availability Projection se implementa como una vista o proyección materializada derivada de `parking_spots`, `reservations` y los eventos de Occupancy & Monitoring. No constituye una tabla física ni una relación 1:1 persistente.
@@ -248,7 +248,7 @@ La Availability Projection se implementa como una vista o proyección materializ
 | parking_spots — reservations | 1 a 0..* | Las reservas para un spot no pueden solaparse cuando están activas. |
 | reservations — parking_sessions | 1 a 0..1 | Una Reservation puede generar una Parking Session. |
 | parking_spots — guest_parking_sessions | 1 a 0..* | Un spot puede tener sesiones de Guest en distintos momentos. |
-| profile_id, vehicle_id — Profiles & Vehicles Management | Referencias externas | profile_id identifica un perfil DRIVER y vehicle_id identifica el Vehicle; la validez se comprueba mediante API o eventos; no hay FK externa. |
+| profile_id, vehicle_id — Profiles & Vehicles Management | Referencias externas | profile_id identifica un perfil Parking Driver y vehicle_id identifica el Vehicle; la validez se comprueba mediante API o eventos; no hay FK externa. |
 | payment_ref — Payments & Billing | Referencia externa | El resultado se confirma mediante eventos del proveedor interno. |
 
 La tabla guest_parking_sessions deja explícita la diferencia entre la atención de un Guest y una Reservation digital. El historial de reservas y sesiones se retiene por cinco años como política base propuesta, sin eliminar registros asociados a reclamos, auditorías o incidentes abiertos.
