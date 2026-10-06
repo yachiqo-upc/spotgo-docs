@@ -67,3 +67,5 @@ El despliegue de las distintas soluciones del ecosistema SpotGo se realiza media
 - **Backend (RESTful Web Services - Spring Boot):** Se despliega en la plataforma PaaS **Render**, vinculando directamente el repositorio `spotgo-backend`. Cada integración confirmada en `main` desencadena la construcción y ejecución automatizada de la aplicación.
 - **Base de Datos Relacional:** Se utiliza una instancia de **PostgreSQL** alojada en la plataforma Serverless Cloud **Neon**, conectada mediante variables de entorno seguras hacia el servicio desplegado en Render.
 - **Mobile Application:** Se compila y distribuye mediante artefactos ejecutables (`.apk` / `.aab`) directamente desde el repositorio `spotgo-mobile-app` para su instalación y prueba en dispositivos Android y emuladores.
+
+La planificación y las evidencias de implementación se organizan en [4.2. Landing Page & Mobile Application Implementation — Sprint 1](41-sprint-1.md).

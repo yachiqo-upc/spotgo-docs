@@ -857,48 +857,48 @@ La figura presenta una vista ejecutiva de la relación entre los tres Business G
 
 ### 2.4.3. Product Backlog
 
-El Product Backlog ordena los requisitos por valor para el negocio y por contribución a los Business Goals. El orden no representa necesariamente la secuencia técnica de implementación. Por ese motivo, las historias de autenticación y soporte aparecen después de las capacidades que validan directamente la propuesta de valor. Las historias de la Landing Page se incluyen desde el Sprint 1, tal como solicita la rúbrica.
+El Product Backlog presenta las historias agrupadas por Sprint 1, Sprint 2 y Sprint 3. Dentro de cada sprint se conserva el orden previo por valor para el negocio y contribución a los Business Goals. La columna de orden indica su posición en la tabla y no establece la secuencia técnica de implementación. Las historias US11 y US12 de la Landing Page se incluyen en el Sprint 1; US23, correspondiente al video promocional, y US24, correspondiente al cambio de idioma, se programan para el Sprint 3.
 
-Los Story Points utilizan la escala de Fibonacci permitida por la rúbrica: 1, 2, 3, 5 y 8. Los Sprints representan una distribución inicial de trabajo basada en el valor de negocio y las dependencias funcionales.
+Los Story Points utilizan los valores 1, 2, 3 y 5, con un máximo de 5 puntos por historia. Las estimaciones consideran el esfuerzo, las validaciones, las integraciones y la incertidumbre del alcance completo, incluidos sus criterios de aceptación. US12 se estima en 1 punto por su navegación mediante enlaces; US04, en 2 puntos por consultar zonas según permisos existentes; y US16, en 3 puntos por cargar, validar y conservar versiones de una imagen, sin incluir la generación del mapa digital de US17. US13 se estima en 2 puntos suponiendo que reutiliza la autenticación con credenciales y Google implementada en US09; conserva la creación de cuenta y perfil y la validación de duplicados. US27 se estima en 2 puntos por registrar y validar datos de un vehículo asociado a una cuenta. US22 se estima en 2 puntos porque consulta facturas existentes y actualiza datos tributarios, sin generar documentos fiscales. US24 se estima en 2 puntos por alternar traducciones existentes de una página estática. TS02 se estima en 3 puntos por almacenar datos de consulta, identificar información desactualizada y actualizarla al recuperar la conexión; no incluye operaciones de escritura sin conexión. US11 mantiene 3 puntos por su contenido, diseño adaptable y verificación de accesibilidad. Las historias de reservas, pagos, generación del mapa y geolocalización mantienen 5 puntos por sus reglas e integraciones. Estos ajustes no reducen los criterios de aceptación ni modifican el alcance de las historias. Los Sprints representan una distribución inicial de trabajo basada en el valor de negocio y las dependencias funcionales.
 
 | # Orden | User Story Id | Título | Story Points | Sprint |
 | --- | --- | --- | ---: | --- |
 | 1 | US01 | Consult Availability by Zone | 5 | Sprint 1 |
-| 2 | US04 | View Permitted Zones | 3 | Sprint 1 |
-| 3 | US13 | Register Parking Driver Account | 3 | Sprint 1 |
-| 4 | US27 | Register Vehicle | 3 | Sprint 1 |
-| 5 | US18 | Manage Reservations and Virtual Receipts | 5 | Sprint 1 |
-| 6 | US25 | View Nearby Parking Zones | 5 | Sprint 2 |
-| 7 | US26 | Open Route in Google Maps | 5 | Sprint 2 |
-| 8 | US19 | Process Reservation and Additional Payments | 5 | Sprint 1 |
-| 9 | TS05 | Confirm Payments Asynchronously | 3 | Sprint 1 |
-| 10 | TS04 | Generate Electronic Billing | 5 | Sprint 2 |
-| 11 | US20 | Manage Subscription Plans | 5 | Sprint 3 |
-| 12 | US21 | View Receipts and Invoices | 2 | Sprint 3 |
-| 13 | US02 | Configure Parking Zones | 5 | Sprint 1 |
-| 14 | US03 | Register Guest Parking Session | 3 | Sprint 1 |
-| 15 | US14 | Register B2B Tenant | 3 | Sprint 1 |
-| 16 | US16 | Upload Parking Floor Plan | 5 | Sprint 1 |
-| 17 | US17 | Generate Digital Parking Map | 5 | Sprint 1 |
-| 18 | US15 | Provision Parking Admin Account | 2 | Sprint 2 |
-| 19 | SP01 | Validate Sensor-Based Occupancy Monitoring | 3 | Sprint 1 |
-| 20 | US05 | Monitor Occupancy by Zone | 5 | Sprint 2 |
-| 21 | US06 | Generate Operational Alerts | 3 | Sprint 2 |
-| 22 | US07 | Use the Operational Mobile Dashboard | 5 | Sprint 2 |
-| 23 | US08 | Generate Occupancy Reports | 3 | Sprint 3 |
-| 24 | TS01 | Synchronize Mobile Data through RESTful Services | 5 | Sprint 1 |
-| 25 | TS02 | Persist and Synchronize Data on the Mobile Device | 5 | Sprint 2 |
-| 26 | US22 | Manage B2B Billing | 3 | Sprint 3 |
-| 27 | US09 | Authenticate and Access Mobile Functions by Role | 3 | Sprint 1 |
-| 28 | US11 | Communicate the Value Proposition on the Landing Page | 3 | Sprint 1 |
-| 29 | US12 | Navigate from the Landing Page to the Mobile Product | 2 | Sprint 1 |
-| 30 | US23 | Watch Product Promotional Video | 2 | Sprint 1 |
-| 31 | US24 | Switch Landing Page Language | 3 | Sprint 1 |
-| 32 | US10 | Support Accessibility and Languages in the Mobile Application | 3 | Sprint 3 |
-| 33 | TS03 | Document the RESTful Service Contract | 2 | Sprint 3 |
-| 34 | SP02 | Investigate the Mobile Synchronization Strategy | 3 | Sprint 1 |
+| 2 | US04 | View Permitted Zones | 2 | Sprint 1 |
+| 3 | US13 | Register Parking Driver Account | 2 | Sprint 1 |
+| 4 | US18 | Manage Reservations and Virtual Receipts | 5 | Sprint 1 |
+| 5 | US19 | Process Reservation and Additional Payments | 5 | Sprint 1 |
+| 6 | US02 | Configure Parking Zones | 5 | Sprint 1 |
+| 7 | US16 | Upload Parking Floor Plan | 3 | Sprint 1 |
+| 8 | US17 | Generate Digital Parking Map | 5 | Sprint 1 |
+| 9 | US09 | Authenticate and Access Mobile Functions by Role | 3 | Sprint 1 |
+| 10 | US11 | Communicate the Value Proposition on the Landing Page | 3 | Sprint 1 |
+| 11 | US12 | Navigate from the Landing Page to the Mobile Product | 1 | Sprint 1 |
+| 12 | US27 | Register Vehicle | 2 | Sprint 2 |
+| 13 | TS05 | Confirm Payments Asynchronously | 3 | Sprint 2 |
+| 14 | US03 | Register Guest Parking Session | 3 | Sprint 2 |
+| 15 | US14 | Register B2B Tenant | 3 | Sprint 2 |
+| 16 | US15 | Provision Parking Admin Account | 2 | Sprint 2 |
+| 17 | SP01 | Validate Sensor-Based Occupancy Monitoring | 3 | Sprint 2 |
+| 18 | US05 | Monitor Occupancy by Zone | 5 | Sprint 2 |
+| 19 | US06 | Generate Operational Alerts | 3 | Sprint 2 |
+| 20 | TS01 | Synchronize Mobile Data through RESTful Services | 5 | Sprint 2 |
+| 21 | TS03 | Document the RESTful Service Contract | 2 | Sprint 2 |
+| 22 | SP02 | Investigate the Mobile Synchronization Strategy | 3 | Sprint 2 |
+| 23 | US25 | View Nearby Parking Zones | 5 | Sprint 3 |
+| 24 | US26 | Open Route in Google Maps | 5 | Sprint 3 |
+| 25 | TS04 | Generate Electronic Billing | 5 | Sprint 3 |
+| 26 | US20 | Manage Subscription Plans | 5 | Sprint 3 |
+| 27 | US21 | View Receipts and Invoices | 2 | Sprint 3 |
+| 28 | US07 | Use the Operational Mobile Dashboard | 5 | Sprint 3 |
+| 29 | US08 | Generate Occupancy Reports | 3 | Sprint 3 |
+| 30 | TS02 | Persist and Synchronize Data on the Mobile Device | 3 | Sprint 3 |
+| 31 | US22 | Manage B2B Billing | 2 | Sprint 3 |
+| 32 | US23 | Watch Product Promotional Video | 2 | Sprint 3 |
+| 33 | US24 | Switch Landing Page Language | 2 | Sprint 3 |
+| 34 | US10 | Support Accessibility and Languages in the Mobile Application | 3 | Sprint 3 |
 
-La priorización pone al inicio las capacidades que permiten validar el valor principal de SpotGo: consultar disponibilidad, registrar el vehículo, reservar, pagar, llegar al espacio y comprobar la operación. Las historias de configuración e infraestructura se mantienen en los primeros sprints porque habilitan los flujos de Parking Driver; las historias de autenticación y soporte conservan una posición posterior en el orden por valor, pero US09 se ejecuta en el Sprint 1 como dependencia habilitadora. US19 y TS05 también se ejecutan en el Sprint 1 para que la confirmación asíncrona del pago esté disponible antes de completar el flujo de Reservation de US18. Las historias de la Landing Page se mantienen en el Sprint 1 como solicita la rúbrica. Las Spike Stories permanecen en el Sprint 1 porque reducen incertidumbre antes de fijar la solución de Occupancy Monitoring y la estrategia de sincronización móvil.
+La distribución se alinea con el Sprint Planning 1: el Sprint 1 contempla las 11 HU seleccionadas para la Landing Page, las pantallas core y el avance parcial del backend, con un total de 39 Story Points. Esta planificación no implica que todos los flujos integrados estén completos al finalizar el primer sprint. En el Sprint 2 se incorporan el registro de vehículos, el alta de Tenants y cuentas administrativas, las sesiones de invitados, la confirmación asíncrona de pagos y el soporte de integración y documentación. También se realizan las investigaciones SP01 y SP02 antes de implementar las capacidades de monitoreo y sincronización correspondientes. Estas dependencias permiten completar y validar los flujos iniciados en el Sprint 1. El Sprint 3 reúne navegación con Google Maps, dashboard y reportes, suscripciones, facturación, sincronización local, video promocional, accesibilidad e idiomas.
 
 **Evidencia del Product Backlog en Trello**
 
