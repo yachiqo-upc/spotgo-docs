@@ -97,7 +97,7 @@ El Sprint Backlog 1 reúne las tareas necesarias para desarrollar las historias 
 
 ![Trello Board Sprint 1](../assets/images/others/trello-board-sprint-1.png)
 
-El siguiente desglose presenta las tareas del alcance realizado en el Sprint 1, con estado Completed. Los responsables se distribuyen según la matriz LACX. Las horas son estimaciones por tarea de entre 0,5 y 2 horas, según su dificultad, y no representan tiempos reales registrados ni una conversión directa de Story Points. Los Story Points se contabilizan una sola vez por HU; completar estas tareas de avance no equivale a completar las integraciones previstas para los siguientes sprints.
+El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus responsables y su estado de finalización, de acuerdo con la distribución de liderazgo y colaboración de la matriz LACX.
 
 <table>
   <thead>
@@ -224,25 +224,34 @@ Durante este sprint, el equipo puso en funcionamiento la versión inicial de la 
 
 ![SpotGo Landing FAQ](../assets/images/others/spotgo-landing-faq.png)
 
-
 **Demonstration Video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
 
 ##### Pantallas Core
 
 *Figura 81 (Driver-Explore Parking)*
 
+![SpotGo Mobile Explore Parking](../assets/images/others/spotgo-mobile-parking%20nearby.jpeg)
+
 *Figura 82 (Driver-Zone Details & Reserve)*
 
+![SpotGo Mobile Zone Details](../assets/images/others/spotgo-mobile-zone%20details.jpeg)
+
+![SpotGo Mobile Reserve](../assets/images/others/spotgo-mobile-reserve.jpeg)
+
 *Figura 83 (Driver-Payments)*
+
+![SpotGo Mobile Payments](../assets/images/others/spotgo-mobile-payments.jpeg)
 
 *Figura 84 (Parking Admin-Dashboard)*
 
 *Figura 85 (Parking Admin-Live Occupancy)*
 
-
 **Demonstration Video:** 
 
+
 ##### 4.2.1.7. Services Documentation Evidence for Sprint Review
+
+La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/Swagger. Para la revisión del Sprint 1, se incluyen las rutas base y las operaciones disponibles en el backend, resumidas por recurso en la siguiente tabla.
 
 <table>
   <tr><th align="left">Recurso</th><th align="left">Endpoint Base</th><th align="left">Acciones Implementadas</th></tr>
@@ -264,23 +273,23 @@ Durante este sprint, el equipo puso en funcionamiento la versión inicial de la 
   <tr><td>Favorites</td><td><code>/api/v1/favorites</code></td><td>GET, POST, DELETE <code>/{favoriteId}</code></td></tr>
 </table>
 
-*Figura 87 (POST /api/v1/authentication/sign-in — Inicio de sesión)*
+*Figura 86 (POST /api/v1/authentication/sign-in — Inicio de sesión)*
 
 ![SpotGo Backend Sign-in](../assets/images/others/spotgo-backend-signin.png)
 
-*Figura 88 (GET /api/v1/users — Listado de usuarios)*
+*Figura 87 (GET /api/v1/users — Listado de usuarios)*
 
 ![SpotGo Backend Users](../assets/images/others/spotgo-backend-users.png)
 
-*Figura 89 (POST /api/v1/reservations — Crear una reserva)*
+*Figura 88 (POST /api/v1/reservations — Crear una reserva)*
 
 ![SpotGo Backend Reservation](../assets/images/others/spotgo-backend-reservation.png)
 
-*Figura 90 (GET /api/v1/parkings — Listado de estacionamientos)*
+*Figura 89 (GET /api/v1/parkings — Listado de estacionamientos)*
 
 ![SpotGo Backend Parkings](../assets/images/others/spotgo-backend-parkings.png)
 
-*Figura 91 (POST /api/v1/employees — Crear un empleado)*
+*Figura 90 (POST /api/v1/employees — Crear un empleado)*
 
 ![SpotGo Backend Employee](../assets/images/others/spotgo-backend-employee.png)
 
@@ -288,4 +297,24 @@ Durante este sprint, el equipo puso en funcionamiento la versión inicial de la 
 
 ##### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
+Durante el Sprint 1, se desplegó la Landing Page de SpotGo en GitHub Pages y el Backend en Railway. Esto permitió acceder a la página publicada y utilizar los servicios disponibles del backend para la demostración del sprint.
+
+**Landing Page — GitHub Pages**
+
+**Deployment Link:** [Ver Landing Page](https://yachiqo-upc.github.io/spotgo-landing)
+
+*Figura 91 (Evidencia del despliegue de la Landing Page en GitHub Pages)*
+
+![Deployment Evidence Landing](../assets/images/others/deployment-evidence-landing.png)
+
+**Backend — Railway**
+
+**Swagger Documentation Link:** [Ver documentación de la API](https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html)
+
+*Figura 92 (Evidencia del despliegue del backend en Railway)*
+
+![Deployment Evidence Backend](../assets/images/others/deployment-evidence-backend.png)
+
 ##### 4.2.1.9. Team Collaboration Insights during Sprint
+
+A continuación se presenta la evidencia de las interacciones y control de colaboración registrados durante el transcurso de este Sprint:
