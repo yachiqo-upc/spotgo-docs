@@ -2,7 +2,7 @@
 
 Occupancy & Monitoring es un bounded context principal que recibe y procesa la información de los sensores instalados en los Parking Spots. Su responsabilidad es mantener el estado físico de ocupación, supervisar la salud de los sensores, identificar conflictos, detectar condiciones de sobretiempo y generar alertas y reportes para la operación.
 
-El sensor confirma si un espacio está disponible u ocupado, pero no identifica la placa ni el Vehicle que se encuentra en él. Por ello, este contexto no crea ni administra Parking Driver (Conductores), Vehicles, Reservations o Parking Sessions. Parking Infrastructure conserva la propiedad de esas entidades y consume los eventos de ocupación para actualizar la disponibilidad, resolver conflictos o solicitar un cargo adicional cuando exista evidencia confiable.
+El sensor confirma si un espacio está disponible u ocupado, pero no identifica la placa ni el Vehicle que se encuentra en él. Por ello, este contexto no crea ni administra Driver (Conductores), Vehicles, Reservations o Parking Sessions. Parking Infrastructure conserva la propiedad de esas entidades y consume los eventos de ocupación para actualizar la disponibilidad, resolver conflictos o solicitar un cargo adicional cuando exista evidencia confiable.
 
 Los estados de ocupación se mantienen independientes de los estados de Reservation. Un Parking Spot puede estar físicamente ocupado mientras una Reservation aparece como RESERVED, ACTIVE, COMPLETED o en otro estado; la diferencia se analiza como una condición operativa y no se corrige modificando automáticamente una entidad del otro contexto.
 
@@ -125,9 +125,8 @@ El monitor de salud debe comprobar que una lectura no supere el intervalo operat
 
 El diagrama de componentes deberá mostrar el límite de Occupancy & Monitoring, la entrada de sensores mediante MQTT/HTTP, los componentes internos de estado, salud, conflictos, sobretiempo, alertas y reportes, y la base de datos PostgreSQL propia. También deberá mostrar las dependencias asíncronas con Parking Infrastructure y Payments & Billing, además de la integración con Firebase Cloud Messaging.
 
-![Occupancy & Monitoring Component Level Diagram](../assets/diagrams/components-diagram-occupancy.svg)
-
 *Figura 37 (Occupancy & Monitoring Component Level Diagram)*
+![Occupancy & Monitoring Component Level Diagram](../assets/diagrams/components-diagram-occupancy.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
 | --- | --- | --- |
@@ -152,9 +151,8 @@ La vista de código debe representar el modelo físico de ocupación y los servi
 
 #### ***2.6.5.6.1. Bounded Context Domain Layer Class Diagrams***
 
-![Occupancy & Monitoring Domain Layer Class Diagram](../assets/diagrams/class-diagram-occupancy.png)
-
 *Figura 38 (Occupancy & Monitoring Domain Layer Class Diagram)*
+![Occupancy & Monitoring Domain Layer Class Diagram](../assets/diagrams/class-diagram-occupancy.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
 | --- | --- | --- | --- |
@@ -203,9 +201,8 @@ La vista de código debe representar el modelo físico de ocupación y los servi
 
 Occupancy & Monitoring Database almacena sensores, lecturas, estados de salud, conflictos, alertas y reportes. Las relaciones internas utilizan foreign keys. tenant_id, zone_id, spot_id, reservation_ref y session_ref son referencias de integración; no se crean foreign keys hacia las bases de Parking Infrastructure.
 
-![Occupancy & Monitoring Database Design Diagram](../assets/diagrams/db-diagram-occupancy.svg)
-
 *Figura 39 (Occupancy & Monitoring Database Design Diagram)*
+![Occupancy & Monitoring Database Design Diagram](../assets/diagrams/db-diagram-occupancy.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
