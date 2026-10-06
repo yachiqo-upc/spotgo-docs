@@ -175,44 +175,57 @@ Los wireframes de baja fidelidad permiten revisar la estructura de cada pantalla
 **Driver (Conductores)**
 
 *Figura 40 (Wireframe de inicio de sesión para Driver)*
+
 ![Driver Login Wireframe](../assets/images/ui-ux/wireframes/driver/01-login.png)
 
 *Figura 41 (Wireframe para explorar estacionamientos disponibles)*
+
 ![Driver Explore Parking Wireframe](../assets/images/ui-ux/wireframes/driver/03-explore-parking.png)
 
 *Figura 42 (Wireframe con el detalle de una zona y la acción de reserva)*
+
 ![Driver Zone Details Wireframe](../assets/images/ui-ux/wireframes/driver/04-zone-details-reserve.png)
 
 *Figura 43 (Wireframe para consultar las reservas del Driver)*
+
 ![Driver Reservations Wireframe](../assets/images/ui-ux/wireframes/driver/06-reservations.png)
 
 *Figura 44 (Wireframe de la sección de pagos)*
+
 ![Driver Payments Wireframe](../assets/images/ui-ux/wireframes/driver/08-payments.png)
 
 *Figura 45 (Wireframe para administrar vehículos registrados)*
+
 ![Driver Vehicles Wireframe](../assets/images/ui-ux/wireframes/driver/11-my-vehicles.png)
 
 *Figura 46 (Wireframe para consultar comprobantes y facturas)*
+
 ![Driver Receipts Wireframe](../assets/images/ui-ux/wireframes/driver/14-receipts-invoices.png)
 
 **Parking Admin (Administradores)**
 
 *Figura 47 (Wireframe del dashboard administrativo)*
+
 ![Parking Admin Dashboard Wireframe](../assets/images/ui-ux/wireframes/administrator/15-administrator-dashboard.png)
 
 *Figura 48 (Wireframe de alertas operativas)*
+
 ![Parking Admin Alerts Wireframe](../assets/images/ui-ux/wireframes/administrator/17-operational-alerts.png)
 
 *Figura 49 (Wireframe para administrar zonas de estacionamiento)*
+
 ![Parking Admin Parking Zones Wireframe](../assets/images/ui-ux/wireframes/administrator/19-parking-zones.png)
 
 *Figura 50 (Wireframe de sesiones de estacionamiento para invitados)*
+
 ![Parking Admin Guest Sessions Wireframe](../assets/images/ui-ux/wireframes/administrator/21-guest-parking-sessions.png)
 
 *Figura 51 (Wireframe del mapa digital del estacionamiento)*
+
 ![Parking Admin Digital Parking Map Wireframe](../assets/images/ui-ux/wireframes/administrator/25-digital-parking-map.png)
 
 *Figura 52 (Wireframe de facturación para clientes empresariales)*
+
 ![Parking Admin B2B Billing Wireframe](../assets/images/ui-ux/wireframes/administrator/26-b2b-billing.png)
 
 #### 3.1.3.2. Applications Wireflow Diagrams
@@ -222,23 +235,29 @@ Los wireflows combinan pantallas esquemáticas con conexiones para mostrar el or
 **Driver (Conductores)**
 
 *Figura 53 (Wireflow de acceso y administración de vehículos para Driver)*
+
 ![Driver Access and Vehicles Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-01-access-vehicles.svg)
 
 *Figura 54 (Wireflow de reservas y pagos para Driver)*
+
 ![Driver Reservations and Payments Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-02-reservations-payments.svg)
 
 *Figura 55 (Wireflow de planes, suscripciones y documentos para Driver)*
+
 ![Driver Plans and Documents Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-driver-03-plans-documents.svg)
 
 **Parking Admin (Administradores)**
 
 *Figura 56 (Wireflow de infraestructura y zonas de estacionamiento para Parking Admin)*
+
 ![Parking Admin Infrastructure and Zones Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-01-infrastructure-zones.svg)
 
 *Figura 57 (Wireflow de operaciones y sesiones de invitados para Parking Admin)*
+
 ![Parking Admin Operations and Guests Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-02-operations-guests.svg)
 
 *Figura 58 (Wireflow de reportes y facturación para Parking Admin)*
+
 ![Parking Admin Reports and Billing Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-03-reports-billing.svg)
 
 #### 3.1.3.3. Applications Mock-ups
@@ -248,44 +267,57 @@ Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten ap
 **Driver (Conductores)**
 
 *Figura 59 (Mock-up de inicio de sesión para Driver)*
+
 ![Driver Login Mock-up](../assets/images/ui-ux/mockups/driver/01-login.png)
 
 *Figura 60 (Mock-up para explorar estacionamientos disponibles)*
+
 ![Driver Explore Parking Mock-up](../assets/images/ui-ux/mockups/driver/03-explore-parking.png)
 
 *Figura 61 (Mock-up con el detalle de una zona y la acción de reserva)*
+
 ![Driver Zone Details Mock-up](../assets/images/ui-ux/mockups/driver/04-zone-details-reserve.png)
 
 *Figura 62 (Mock-up para consultar las reservas del Driver)*
+
 ![Driver Reservations Mock-up](../assets/images/ui-ux/mockups/driver/06-reservations.png)
 
 *Figura 63 (Mock-up de la sección de pagos)*
+
 ![Driver Payments Mock-up](../assets/images/ui-ux/mockups/driver/08-payments.png)
 
 *Figura 64 (Mock-up para administrar vehículos registrados)*
+
 ![Driver Vehicles Mock-up](../assets/images/ui-ux/mockups/driver/11-my-vehicles.png)
 
 *Figura 65 (Mock-up para consultar comprobantes y facturas)*
+
 ![Driver Receipts Mock-up](../assets/images/ui-ux/mockups/driver/14-receipts-invoices.png)
 
 **Parking Admin (Administradores)**
 
 *Figura 66 (Mock-up del dashboard administrativo)*
+
 ![Parking Admin Dashboard Mock-up](../assets/images/ui-ux/mockups/administrator/15-administrator-dashboard.png)
 
 *Figura 67 (Mock-up de alertas operativas)*
+
 ![Parking Admin Alerts Mock-up](../assets/images/ui-ux/mockups/administrator/17-operational-alerts.png)
 
 *Figura 68 (Mock-up para administrar zonas de estacionamiento)*
+
 ![Parking Admin Parking Zones Mock-up](../assets/images/ui-ux/mockups/administrator/19-parking-zones.png)
 
 *Figura 69 (Mock-up de sesiones de estacionamiento para invitados)*
+
 ![Parking Admin Guest Sessions Mock-up](../assets/images/ui-ux/mockups/administrator/21-guest-parking-sessions.png)
 
 *Figura 70 (Mock-up del mapa digital del estacionamiento)*
+
 ![Parking Admin Digital Parking Map Mock-up](../assets/images/ui-ux/mockups/administrator/25-digital-parking-map.png)
 
 *Figura 71 (Mock-up de facturación para clientes empresariales)*
+
 ![Parking Admin B2B Billing Mock-up](../assets/images/ui-ux/mockups/administrator/26-b2b-billing.png)
 
 #### 3.1.3.4. Applications User Flow Diagrams
@@ -293,9 +325,11 @@ Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten ap
 Los user flows ofrecen una vista de alto nivel de los objetivos, decisiones y recorridos posibles de cada perfil. El flujo de Driver abarca el uso de la aplicación móvil para encontrar y reservar estacionamiento y gestionar servicios asociados. El flujo de Parking Admin representa las tareas de supervisión y administración de la operación.
 
 *Figura 72 (User flow de la aplicación para Driver)*
+
 ![Driver User Flow](../assets/diagrams/ui-ux/user-flows/userflow-driver.svg)
 
 *Figura 73 (User flow de la aplicación para Parking Admin)*
+
 ![Parking Admin User Flow](../assets/diagrams/ui-ux/user-flows/userflow-parking-admin.svg)
 
 #### 3.1.3.5. Applications Prototypes

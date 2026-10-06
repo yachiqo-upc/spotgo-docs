@@ -99,6 +99,7 @@ La expiración operativa se configura con access token de 15 minutos, refresh to
 El diagrama de componentes deberá mostrar la frontera de Identity & Access Management, sus componentes de seguridad, la base de datos y sus relaciones con Profiles & Vehicles Management, Parking Infrastructure y los clientes Flutter, Android nativo en Kotlin y web. Google Authentication debe representarse como dependencia externa. Guest no debe aparecer como un componente de autenticación.
 
 *Figura 28 (Identity & Access Management Component Level Diagram)*
+
 ![Identity & Access Management Component Level Diagram](../assets/diagrams/components-diagram-identity.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
@@ -122,6 +123,7 @@ La vista de código debe mostrar el modelo de dominio de identidad, sus interfac
 #### ***2.6.2.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 29 (Identity & Access Management Domain Layer Class Diagram)*
+
 ![Identity & Access Management Domain Layer Class Diagram](../assets/diagrams/class-diagram-identity.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -163,6 +165,7 @@ La vista de código debe mostrar el modelo de dominio de identidad, sus interfac
 Identity Database es independiente de las bases de datos de los demás bounded contexts. Las foreign keys se aplican solo dentro de esta base; identityRef, tenantId o correlationId utilizados por otros contextos no se convierten en relaciones físicas entre bases.
 
 *Figura 30 (Identity & Access Management Database Design Diagram)*
+
 ![Identity & Access Management Database Design Diagram](../assets/diagrams/db-diagram-identity.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |

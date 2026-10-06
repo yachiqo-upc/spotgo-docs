@@ -95,6 +95,7 @@ El contexto conservará únicamente identificadores de otros bounded contexts, c
 El diagrama de componentes de Profiles & Vehicles Management deberá mostrar el límite del bounded context, sus componentes internos, la base de datos propia y las dependencias con Identity & Access Management y Parking Infrastructure. La aplicación móvil Flutter y el cliente Android nativo en Kotlin deben aparecer como consumidores externos a través del API Gateway, no como componentes del dominio.
 
 *Figura 25 (Profiles & Vehicles Management Component Level Diagram)*
+
 ![Profiles & Vehicles Management Component Level Diagram](../assets/diagrams/components-diagram-profiles.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
@@ -117,6 +118,7 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 #### ***2.6.1.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 26 (Profiles & Vehicles Management Domain Layer Class Diagram)*
+
 ![Profiles & Vehicles Management Domain Layer Class Diagram](../assets/diagrams/class-diagram-profiles.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -153,6 +155,7 @@ La vista de código debe concentrarse en la Domain Layer y mostrar las clases, i
 El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. El modelo físico utiliza una tabla `profiles` para los perfiles de Driver y Parking Admin, mientras que la distinción del dominio se conserva mediante `profile_type`. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no como foreign keys entre bases de datos independientes.
 
 *Figura 27 (Profiles & Vehicles Management Database Design Diagram)*
+
 ![Profiles & Vehicles Management Database Design Diagram](../assets/diagrams/db-diagram-profiles.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |

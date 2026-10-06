@@ -280,6 +280,7 @@ El Lean UX Canvas sintetiza los principales elementos identificados durante el p
 **Canva Link:** [https://canva.link/i0pin0nnlvbg3rd](https://canva.link/i0pin0nnlvbg3rd)
 
 *Figura 1 (Lean UX Canvas)*
+
 ![Lean UX Canvas](../assets/images/figures/01-lean-ux-canvas.png)
 
 ## 1.3. Segmentos objetivo

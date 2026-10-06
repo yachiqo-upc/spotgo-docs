@@ -131,6 +131,7 @@ La retención base de pagos, comprobantes, reembolsos, cargos y saldos es de cin
 El diagrama de componentes deberá mostrar Payments & Billing como un contenedor independiente con sus componentes de procesamiento, tokenización, suscripciones, cargos, saldos, reembolsos y facturación. Debe aparecer el proveedor interno de pagos como una dependencia de infraestructura, sin representar datos completos de tarjeta ni incluir el pago físico de Guests dentro del contenedor.
 
 *Figura 34 (Payments & Billing Component Level Diagram)*
+
 ![Payments & Billing Component Level Diagram](../assets/diagrams/components-diagram-payments.svg)
 
 | Componente que debe representarse | Responsabilidad | Dependencias principales |
@@ -155,6 +156,7 @@ La vista de código debe mostrar las clases de dominio que separan pago, factura
 #### ***2.6.4.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 35 (Payments & Billing Domain Layer Class Diagram)*
+
 ![Payments & Billing Domain Layer Class Diagram](../assets/diagrams/class-diagram-payments.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -205,6 +207,7 @@ La vista de código debe mostrar las clases de dominio que separan pago, factura
 Payments & Billing Database persiste únicamente operaciones digitales y sus documentos. Los identificadores de Driver, Reservation y Parking Session se almacenan como referencias de integración. Una Guest Parking Session queda fuera del flujo digital y no se almacena como Digital Payment. No se incluyen datos completos de tarjeta y no se crean foreign keys hacia bases de otros bounded contexts.
 
 *Figura 36 (Payments & Billing Database Design Diagram)*
+
 ![Payments & Billing Database Design Diagram](../assets/diagrams/db-diagram-payments.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
