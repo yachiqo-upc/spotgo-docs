@@ -188,9 +188,45 @@ El siguiente desglose presenta las tareas del alcance realizado en el Sprint 1, 
 
 ##### 4.2.1.4. Development Evidence for Sprint Review
 
+SpotGo reutiliza una base de código desarrollada en ciclos académicos anteriores. Los repositorios actuales `spotgo-landing` y `spotgo-backend` no conservan el historial de commits de ese desarrollo previo, por lo que no es posible presentar una relación de commits que permita trazar cada funcionalidad reutilizada hasta su implementación original.
+
 ##### 4.2.1.5. Testing Suite Evidence for Sprint Review
 
+SpotGo reutiliza una base de código desarrollada en el ciclo académico anterior. Los repositorios actuales `spotgo-landing` y `spotgo-backend` no conservan el historial de ejecución ni los reportes de las pruebas realizadas durante ese desarrollo previo, por lo que no es posible presentar evidencias de testing correspondientes a la implementación original.
+
 ##### 4.2.1.6. Execution Evidence for Sprint Review
+
+Durante este sprint, el equipo puso en funcionamiento la versión inicial de la **Landing Page**, presentó las pantallas core de la aplicación móvil y alcanzó un avance en el despliegue del **Backend (al 70%)**.
+
+**Landing Page**
+
+*Figura 75 (SpotGo Landing Home)*
+
+![SpotGo Landing Home](../assets/images/others/spotgo-landing-home.png)
+
+*Figura 76 (SpotGo Landing Drivers)*
+
+![SpotGo Landing Drivers](../assets/images/others/spotgo-landing-drivers.png)
+
+*Figura 77 (SpotGo Landing Admins)*
+
+![SpotGo Landing Admins](../assets/images/others/spotgo-landing-admins.png)
+
+*Figura 78 (SpotGo Landing How Work)*
+
+![SpotGo Landing How Work](../assets/images/others/spotgo-landing-how-work.png)
+
+*Figura 79 (SpotGo Landing Pricing)*
+
+![SpotGo Landing Pricing](../assets/images/others/spotgo-landing-pricing.png)
+
+*Figura 80 (SpotGo Landing FAQ)*
+
+![SpotGo Landing FAQ](../assets/images/others/spotgo-landing-faq.png)
+
+
+
+**Demonstration Video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
 
 ##### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
