@@ -122,3 +122,7 @@ La vista de despliegue presenta la distribución propuesta de clientes, servicio
 ![SpotGo C4 Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
 
 La planificación y las evidencias de implementación se organizan en [4.2. Landing Page & Mobile Application Implementation — Sprint 1](41-sprint-1.md).
+
+### 4.2. Landing Page & Mobile Application Implementation
+
+Esta sección presenta, para cada sprint, la planificación y las evidencias de desarrollo, pruebas, ejecución, documentación de servicios, despliegue y colaboración del equipo correspondientes a los productos digitales de SpotGo: la Landing Page, los servicios backend y la aplicación móvil. Cada sprint reúne los artefactos y resultados que permiten documentar el avance de la solución según su alcance.

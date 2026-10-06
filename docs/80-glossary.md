@@ -46,15 +46,23 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 **Technical terms and abbreviations**
 
 - **Accessibility (a11y):** Prácticas y criterios técnicos que permiten utilizar los productos digitales mediante distintas capacidades, dispositivos y tecnologías de asistencia.
+- **API Gateway:** Punto de entrada que recibe solicitudes de los clientes y las dirige a los servicios correspondientes.
+- **Bounded Context:** Límite dentro del cual un modelo de dominio y su lenguaje mantienen un significado consistente.
+- **C4:** Modelo de representación de arquitectura mediante vistas de contexto, contenedores, componentes y código.
+- **DDD (Domain-Driven Design):** Enfoque de diseño de software que organiza el modelo y sus responsabilidades alrededor del dominio del negocio.
 - **Dashboard:** Interfaz de consulta y operación que reúne información de ocupación, zonas, incidencias y reportes para el Parking Admin.
 - **en_US:** Locale de English utilizado como idioma predeterminado en los productos, mensajes, interfaces y documentación de SpotGo.
 - **es_419:** Locale de Latin American Spanish ofrecido como alternativa de idioma.
 - **External Navigation Link:** Enlace que abre la aplicación de Google Maps con una Parking Zone como destino para que dicha aplicación calcule la ruta.
 - **Firebase Cloud Messaging:** Servicio externo de notificaciones push. El backend decide el evento que se comunica y Firebase Cloud Messaging entrega el mensaje al dispositivo registrado.
 - **Figma:** Herramienta utilizada para elaborar wireframes, mockups y prototipos de las interfaces.
+- **Google Sign-In:** Servicio externo de autenticación de Google. SpotGo verifica la identidad proporcionada y administra sus propios roles, permisos y sesiones.
+- **ID token:** Token de identidad emitido por un proveedor como Google. Su atributo `sub` identifica al usuario dentro del proveedor; IAM verifica el token antes de vincularlo con una cuenta de SpotGo.
 - **Google Maps API:** API utilizada para mostrar el mapa integrado dentro de SpotGo. SpotGo proporciona las ubicaciones y detalles de sus Parking Zones; la aplicación de Google Maps calcula la ruta externa hacia la zona seleccionada.
 - **Google Maps application:** Aplicación externa que abre la ruta desde la ubicación del Driver hasta la Parking Zone seleccionada.
 - **Internationalization (i18n):** Capacidad de preparar un producto para soportar varios idiomas y locales, incluidos en_US y es_419.
+- **JWT (JSON Web Token):** Formato de token que contiene claims. SpotGo utiliza tokens firmados para transmitir información de autenticación y verificar su integridad.
+- **MQTT:** Protocolo de mensajería mediante publicación y suscripción, utilizado en la comunicación de sensores con un broker.
 - **OpenAPI/Swagger:** Especificación y herramientas utilizadas para documentar, consultar y verificar el contrato de los Web Services RESTful.
 - **RESTful API:** Servicio web que expone recursos y operaciones mediante convenciones REST para que la aplicación móvil sincronice información con el backend.
 - **UXPressia:** Herramienta utilizada para elaborar User Personas, Empathy Maps, User Journey Maps e Impact Maps.

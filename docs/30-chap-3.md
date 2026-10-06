@@ -214,6 +214,8 @@ Finalmente, la navegación mantendrá una estructura consistente entre las difer
 
 ### 3.1.3. Landing Page UI Design
 
+Esta sección presenta el diseño de la interfaz de la Landing Page de SpotGo, orientada a comunicar su propuesta de valor a Driver y Parking Admin. El wireframe define la estructura y jerarquía del contenido, mientras que el mock-up muestra su apariencia visual. Ambos artefactos aplican los lineamientos generales de diseño y organizan las funcionalidades, los planes y los medios de contacto para facilitar la navegación y la comprensión del producto.
+
 #### 3.1.3.1. Landing Page Wireframe
 
 *Figura 43 (Wireframe de la landing page)*
@@ -226,7 +228,7 @@ Finalmente, la navegación mantendrá una estructura consistente entre las difer
 
 ### 3.1.4. Applications UX/UI Design
 
-Esta sección presenta la propuesta de experiencia e interfaz para las aplicaciones móviles de SpotGo dirigidas a Driver y Parking Admin. Los wireframes describen la organización y jerarquía de los elementos; los mock-ups muestran su apariencia visual; y los diagramas resumen las secuencias de interacción y las rutas principales de cada perfil. El repositorio incluye todas las pantallas principales de ambos perfiles, mientras que aquí se muestran únicamente ejemplos representativos.
+Esta sección presenta la propuesta de experiencia e interfaz para la aplicación móvil de SpotGo dirigida a Driver y Parking Admin. Los wireframes describen la organización y jerarquía de los elementos; los mock-ups muestran su apariencia visual; y los diagramas resumen las secuencias de interacción y las rutas principales de cada perfil. El repositorio incluye todas las pantallas principales de ambos perfiles, mientras que aquí se muestran únicamente ejemplos representativos.
 
 #### 3.1.4.1. Applications Wireframes
 

@@ -17,3 +17,6 @@
 | Repositorio de documentación | [https://github.com/yachiqo-upc/spotgo-docs](https://github.com/yachiqo-upc/spotgo-docs) |
 | Repositorio de la Landing Page | [https://github.com/yachiqo-upc/spotgo-landing](https://github.com/yachiqo-upc/spotgo-landing) |
 | Repositorio del Backend | [https://github.com/yachiqo-upc/spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) |
+| Repositorio de la aplicación móvil | [https://github.com/yachiqo-upc/spotgo-mobile-app](https://github.com/yachiqo-upc/spotgo-mobile-app) |
+| Landing Page Desplegada | [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing) |
+| Backend Desplegado | [https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html](https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html) |

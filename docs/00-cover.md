@@ -82,15 +82,15 @@ Proyecto
 | 0.1.2 | 12/09/26 | @IamAndreek | docs: agregar los puntos de Context Mapping y Software Architecture |
 | 0.1.3 | 14/09/26 | @CesarJrCR | docs: agregar parte de los puntos de Tactical-Level Domain-Driven Design |
 | 0.1.4 | 15/09/26 | @nes-ro | docs: agregar parte de los puntos de Tactical-Level Domain-Driven Design |
-| 0.1.4 | 16/09/26 | @AdrixRyz | docs: revisar todos los puntos agregados del AV1 |
+| 0.1.5 | 16/09/26 | @AdrixRyz | docs: revisar todos los puntos agregados del AV1 |
 | 0.2.0 | 29/09/26 | @nes-ro | docs: corregir los errores del AV1 |
 | 0.2.1 | 30/09/26 | @IamAndreek | docs: agregar todos los puntos de Style Guidelines |
 | 0.2.2 | 30/09/26 | @IamAndreek | docs: agregar todos los puntos de Information Arquitecture |
 | 0.2.3 | 01/10/26 | @briicarhuaz | docs: agregar todos los puntos de Landing Page UI Design |
 | 0.2.4 | 02/10/26 | @briicarhuaz | docs: agregar todos los puntos de Mobile Applications UX/UI Design |
 | 0.2.5 | 03/10/26 | @CesarJrCR | docs: agregar todos los puntos de Software Configuration Management |
-| 0.2.5 | 05/10/26 | @nes-ro | docs: agregar todos de Sprint 1 |
-| 0.2.6 | 06/10/26 | @AdrixRyz | docs: revisar todos los puntos agregados del TB1 |
+| 0.2.6 | 05/10/26 | @nes-ro | docs: agregar todos los puntos de Sprint 1 |
+| 0.2.7 | 06/10/26 | @AdrixRyz | docs: realizar correciones finales para el TB1 |
 
 # Project Report Collaboration Insights
 
@@ -103,7 +103,7 @@ Proyecto
 
 **TB1**
 
-*Report Insights AV1*
+*Report Insights TB1*
 ![Report Insights TB1](../assets/images/others/report-insights-tb1.png)
 
 # Contenido
@@ -251,6 +251,14 @@ Proyecto
 [**Anexos**](99-annexes.md)
 
 # Student Outcome
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+**ABET - EAC - Student Outcome 7**
+
+**Criterio:** La capacidad de adquirir y aplicar nuevos conocimientos según sea necesario, utilizando estrategias de aprendizaje apropiadas.
+
+En el siguiente cuadro se describen las acciones realizadas y las conclusiones de los integrantes del equipo que sustentan el logro del ABET - EAC - Student Outcome 7.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 | --- | --- | --- |

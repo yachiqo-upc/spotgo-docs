@@ -1,10 +1,6 @@
-### 4.2. Landing Page & Mobile Application Implementation
-
-Esta sección organiza la implementación de la Landing Page y la aplicación móvil por sprint. La letra *n* se reemplazará por el número del sprint correspondiente al registrar su planificación y sus evidencias.
-
 #### 4.2.1. Sprint 1
 
-Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landing Page, distribuyendo sus secciones entre los integrantes del equipo. En ella presentamos SpotGo, sus funcionalidades, planes, medios de contacto y la organización. Además, alcanzamos un avance del 70 % en el despliegue del backend y mostramos las pantallas principales de la aplicación móvil.
+Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landing Page, distribuyendo sus secciones entre los integrantes del equipo. En ella presentamos SpotGo, sus funcionalidades, planes, medios de contacto y la organización. El equipo confirma un avance del 70 % en el despliegue del backend. Además, mostramos las pantallas principales de una única aplicación móvil construida con Kotlin y Flutter.
 
 ##### 4.2.1.1. Sprint Planning 1
 
@@ -28,7 +24,7 @@ Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landi
 
 La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colaboradores de cada aspecto del Sprint 1 para facilitar la coordinación y comunicación del equipo. Se consideran la Landing Page, la autenticación y el registro, la disponibilidad, las reservas y pagos, y la configuración del estacionamiento.
 
-**L (Leader)** identifica a quien coordina el aspecto y revisa sus entregables; **C (Collaborator)** identifica a quienes contribuyen a su desarrollo y validación. La siguiente distribución es una propuesta de trabajo para el equipo.
+**L (Leader)** identifica a quien coordina el aspecto y revisa sus entregables; **C (Collaborator)** identifica a quienes contribuyen a su desarrollo y revisión. La siguiente distribución corresponde a la organización del equipo durante el Sprint 1.
 
 <table>
   <tr>
@@ -189,13 +185,35 @@ El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus re
 
 SpotGo reutiliza una base de código desarrollada en ciclos académicos anteriores. Los repositorios actuales `spotgo-landing` y `spotgo-backend` no conservan el historial de commits de ese desarrollo previo, por lo que no es posible presentar una relación de commits que permita trazar cada funcionalidad reutilizada hasta su implementación original.
 
+El repositorio [spotgo-mobile-app](https://github.com/yachiqo-upc/spotgo-mobile-app) conserva los siguientes commits de implementación del Sprint 1. Se consulta la rama `develop`, que integra estos cambios; los commits de merge se omiten.
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+| --- | --- | --- | --- | --- |
+| spotgo-mobile-app | develop | 81df993 | feat: implement login screen and role layouts | 2026-10-06 |
+| spotgo-mobile-app | develop | 11e8933 | feat: add explore screen | 2026-10-06 |
+| spotgo-mobile-app | develop | d5898f0 | feat: add zone details screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 7bcfac2 | feat: add confirmation screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 407af83 | feat: add reservations screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 0b563b6 | feat: add payments screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 49f628f | feat: add profile screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 85f8f4b | fix: update driver screens | 2026-10-06 |
+| spotgo-mobile-app | develop | 846c44d | feat: add dashboard screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 3958b18 | feat: add occupancy screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 777a1b1 | feat: add alerts screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 971c07c | feat: add more screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 81a3607 | feat: add infrastructure screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 24cdb9e | feat: add upload screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 6234b7d | feat: add map screen | 2026-10-06 |
+| spotgo-mobile-app | develop | 864a98c | fix: update admin screens | 2026-10-06 |
+| spotgo-mobile-app | develop | cb9dbe8 | update register screen and validate full mobile integration | 2026-10-06 |
+
 ##### 4.2.1.5. Testing Suite Evidence for Sprint Review
 
-SpotGo reutiliza una base de código desarrollada en el ciclo académico anterior. Los repositorios actuales `spotgo-landing` y `spotgo-backend` no conservan el historial de ejecución ni los reportes de las pruebas realizadas durante ese desarrollo previo, por lo que no es posible presentar evidencias de testing correspondientes a la implementación original.
+En este sprint no se validarán aspectos de testing. Por ello, no se presentan resultados de pruebas unitarias, de integración ni de aceptación como evidencia del Sprint 1. Las capturas de ejecución y la documentación de servicios se incluyen en sus respectivas secciones y no constituyen una validación de testing.
 
 ##### 4.2.1.6. Execution Evidence for Sprint Review
 
-Durante este sprint, el equipo puso en funcionamiento la versión inicial de la **Landing Page**,y se presentó las **pantallas core de la aplicación móvil**..
+Durante este sprint, el equipo puso en funcionamiento la versión inicial de la **Landing Page** y presentó las **pantallas core de la aplicación móvil**.
 
 **Landing Page**
 
@@ -239,11 +257,13 @@ Durante este sprint, el equipo puso en funcionamiento la versión inicial de la 
 *Figura 92 (Parking Admin-Live Occupancy)*
 ![SpotGo Mobile Live Occupancy](../assets/images/others/spotgo-mobile-live%20occupancy.jpeg)
 
-**Demonstration Video Link:** []()
+**Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg)
 
 ##### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
 La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/Swagger. Para la revisión del Sprint 1, se incluyen las rutas base y las operaciones disponibles en el backend, resumidas por recurso en la siguiente tabla.
+
+**Referencias:** [Swagger UI del backend desplegado](https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html), [contrato OpenAPI en JSON](https://spotgo-backend-yachiqo.up.railway.app/v3/api-docs) y [código fuente del backend](https://github.com/yachiqo-upc/spotgo-backend).
 
 <table>
   <tr><th align="left">Recurso</th><th align="left">Endpoint Base</th><th align="left">Acciones Implementadas</th></tr>
@@ -264,6 +284,47 @@ La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/S
   <tr><td>Subscriptions</td><td><code>/api/v1/subscriptions</code></td><td>GET, POST, GET <code>/{subscriptionId}</code>, PUT <code>/{subscriptionId}</code>, PATCH <code>/{subscriptionId}</code></td></tr>
   <tr><td>Favorites</td><td><code>/api/v1/favorites</code></td><td>GET, POST, DELETE <code>/{favoriteId}</code></td></tr>
 </table>
+
+**Entradas y respuestas de operaciones representativas**
+
+Las solicitudes con cuerpo utilizan JSON (`Content-Type: application/json`). Las operaciones protegidas requieren `Authorization: Bearer <token de SpotGo>`; el token se obtiene al iniciar sesión. Los identificadores de ruta se sustituyen por los del recurso correspondiente. El contrato OpenAPI enlazado detalla los esquemas y respuestas de cada operación.
+
+| Operación | Parámetros o cuerpo | Respuesta documentada |
+| --- | --- | --- |
+| `POST /api/v1/authentication/sign-in` | `email` y `password`, obligatorios. | `200`: autenticación exitosa; `400`: entrada inválida; `401`: credenciales inválidas. |
+| `GET /api/v1/parkings` | Sin cuerpo ni parámetros. | `200`: listado de estacionamientos, con ubicación, capacidad, disponibilidad y tarifa. |
+| `POST /api/v1/reservations` | `parkingId`, `spot`, `startDate` y `endDate`, obligatorios; fechas en formato date-time. | `201`: `ReservationResource`, con identificador, código, espacio, fechas, estado e importes; `400`: entrada inválida. |
+| `POST /api/v1/blueprints` | `adminId`, `parkingId`, `name` y `dataUrl`, obligatorios. `dataUrl` es una URL o data URI de la imagen del plano. | `201`: `BlueprintResource`; `400`: entrada inválida. |
+
+Ejemplo ilustrativo de cuerpo para crear una reserva; los identificadores deben corresponder a registros existentes:
+
+```json
+{
+  "parkingId": "1",
+  "spot": "B5",
+  "startDate": "2026-10-06T14:00:00-05:00",
+  "endDate": "2026-10-06T15:00:00-05:00"
+}
+```
+
+Ejemplo ilustrativo de los campos principales de una respuesta `201`, conforme a `ReservationResource`:
+
+```json
+{
+  "id": "1",
+  "clientId": "3",
+  "parkingId": "1",
+  "code": "SPG-A1B2C3",
+  "spot": "B5",
+  "startDate": "2026-10-06T14:00:00-05:00",
+  "endDate": "2026-10-06T15:00:00-05:00",
+  "status": "active",
+  "amount": 3.0,
+  "baseAmount": 3.0
+}
+```
+
+Estos ejemplos describen el contrato de los servicios; no representan resultados de testing del sprint.
 
 *Figura 93 (POST /api/v1/authentication/sign-in — Inicio de sesión)*
 ![SpotGo Backend Sign-in](../assets/images/others/spotgo-backend-signin.png)
@@ -286,6 +347,12 @@ La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/S
 
 Durante el Sprint 1, se desplegó la Landing Page de SpotGo en GitHub Pages y el Backend en Railway. Esto permitió acceder a la página publicada y utilizar los servicios disponibles del backend para la demostración del sprint.
 
+**Procedimiento de publicación y reproducción**
+
+1. **Landing Page:** publicar la raíz de `spotgo-landing`, rama `main`, mediante **Settings → Pages → Deploy from a branch → /(root)**. Al utilizar HTML, CSS y Vanilla JS, no requiere un proceso de compilación. La figura 98 muestra la publicación en GitHub Pages.
+2. **Backend:** conectar `spotgo-backend` con Railway, configurar Java 26 y las variables de conexión PostgreSQL de Neon, puerto y autenticación del perfil `production`. Construir con `./mvnw -B -DskipTests package` e iniciar con `java -jar target/spotgo-1.0.0.jar`. La figura 99 muestra el servicio publicado. La configuración detallada y el tratamiento del esquema se describen en [4.1.4. Software Deployment Configuration](40-chap-4.md#414-software-deployment-configuration).
+3. **Aplicación móvil:** para reproducir la ejecución del host Android, abrir `spotgo-mobile-app` en Android Studio, sincronizar Gradle y ejecutar en un emulador o dispositivo Android 10/API 29 o superior. El APK de depuración se genera mediante `./gradlew.bat :app:assembleDebug` en `app/build/outputs/apk/debug/app-debug.apk` y se instala con `./gradlew.bat :app:installDebug`. Las figuras 87 a 92 presentan ejemplos de las pantallas ejecutadas.
+
 **Landing Page — GitHub Pages**
 
 **Deployment Link:** [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing)
@@ -302,4 +369,9 @@ Durante el Sprint 1, se desplegó la Landing Page de SpotGo en GitHub Pages y el
 
 ##### 4.2.1.9. Team Collaboration Insights during Sprint
 
-A continuación se presenta la evidencia de las interacciones y control de colaboración registrados durante el transcurso de este Sprint:
+La siguiente captura corresponde a las contribuciones del repositorio `spotgo-mobile-app` durante el Sprint 1.
+
+*Figura 100 (Sprint 1 — Insights de spotgo-mobile-app)*
+![Sprint 1 Insights de la aplicación móvil](../assets/images/others/s1-insights-mobile-app.png)
+
+La captura registra 17 commits de AdrixRyz, con 5,913 líneas añadidas y 237 eliminadas, y concentra las contribuciones visibles en octubre de 2026. Esta evidencia muestra la actividad registrada en GitHub para la aplicación móvil; la distribución de responsabilidades del equipo se presenta en la matriz LACX y el Sprint Backlog.

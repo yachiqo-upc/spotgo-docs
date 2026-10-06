@@ -181,6 +181,7 @@ package "Identity & Access Management Context" #F3E5F5 {
         - UUID accountId
         - AuthenticationMethod authenticationMethod
         - String secretHash
+        - String externalSubject
         - Timestamp lastUsedAt
         - CredentialStatus status
         + verify(secret: String): Boolean
@@ -247,6 +248,7 @@ package "Identity & Access Management Context" #F3E5F5 {
 
     enum AuthenticationMethod <<Enum>> {
         PASSWORD
+        GOOGLE
     }
 
     enum CredentialStatus <<Enum>> {
@@ -290,6 +292,7 @@ package "Identity & Access Management Context" #F3E5F5 {
     interface AccountRepository <<Repository>> {
         + findById(id: UUID): Account
         + findByEmail(email: String): Account
+        + findByExternalSubject(authenticationMethod: AuthenticationMethod, externalSubject: String): Account
         + save(account: Account): Void
     }
 
@@ -321,6 +324,13 @@ package "Identity & Access Management Context" #F3E5F5 {
     AccountRepository ..> Account : persiste >
     SessionRepository ..> Session : persiste >
     AuditEntryRepository ..> AuditEntry : persiste >
+
+    note right of Credential
+        PASSWORD: secretHash requerido; externalSubject nulo.
+        GOOGLE: externalSubject contiene el sub del ID token;
+        secretHash nulo. IAM valida el token de Google
+        y emite la sesión y los tokens de SpotGo.
+    end note
 }
 
 ' =====================================================================
