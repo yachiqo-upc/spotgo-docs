@@ -1,8 +1,8 @@
-#### 4.2.1. Sprint 1
+### 4.2.1. Sprint 1
 
-Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landing Page, distribuyendo sus secciones entre los integrantes del equipo. En ella presentamos SpotGo, sus funcionalidades, planes, medios de contacto y la organización. El equipo confirma un avance del 70 % en el despliegue del backend. Además, mostramos las pantallas principales de una única aplicación móvil construida con Kotlin y Flutter.
+Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landing Page, distribuyendo sus secciones entre los integrantes del equipo. En ella presentamos SpotGo, sus funcionalidades, planes, medios de contacto y la organización. Confirmamos un avance del 70% en el despliegue del backend. Además, mostramos las pantallas principales de una única aplicación móvil construida con Kotlin y Flutter.
 
-##### 4.2.1.1. Sprint Planning 1
+#### *4.2.1.1. Sprint Planning 1*
 
 <table>
   <tr><td><strong>Sprint #</strong></td><td>Sprint 1</td></tr>
@@ -11,16 +11,16 @@ Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landi
   <tr><td><strong>Time</strong></td><td>5:00 PM</td></tr>
   <tr><td><strong>Location</strong></td><td>Reuni&#243;n virtual</td></tr>
   <tr><td><strong>Prepared By</strong></td><td>Nestor Rojas Tello</td></tr>
-  <tr><td><strong>Attendees (to planning meeting)</strong></td><td>Ruiz Mideyros, Adrian / Rojas Tello, Nestor Alonso / Contreras Rojas, Cesar Jair / Carhuaz Centeno, Briguite Eryka / Cotrina Siclla, Sofia Alessandra.</td></tr>
+  <tr><td><strong>Attendees (to planning meeting)</strong></td><td>Carhuaz Centeno, Briguite Eryka / Contreras Rojas, Cesar Jair / Cotrina Siclla, Sofia Alessandra / Rojas Tello, Nestor Alonso / Ruiz Mideyros, Adrian.</td></tr>
   <tr><td><strong>Sprint 0 Review Summary</strong></td><td>No aplica, por ser el primer sprint.</td></tr>
   <tr><td><strong>Sprint 0 Retrospective Summary</strong></td><td>No aplica, por ser el primer sprint.</td></tr>
   <tr><th colspan="2" align="left">Sprint Goal &amp; User Stories</th></tr>
-  <tr><td><strong>Sprint 1 Goal</strong></td><td>Desplegar la Landing Page (US11 y US12), alcanzar un avance del 70 % en el despliegue del backend y presentar las pantallas core de la aplicaci&#243;n m&#243;vil: autenticaci&#243;n y acceso por rol (US09), registro de cuenta (US13), consulta de disponibilidad y zonas permitidas (US01 y US04), gesti&#243;n de reservas y comprobantes virtuales (US18), pagos (US19), carga de plano, generaci&#243;n del mapa digital y configuraci&#243;n de zonas (US16, US17 y US02). Estas HU orientan tanto las pantallas core como los servicios backend que las respaldan. El cumplimiento se verificar&#225; mediante la Landing Page publicada, el porcentaje de funcionalidades backend desplegadas respecto al total previsto y la demostraci&#243;n de las pantallas core.</td></tr>
+  <tr><td><strong>Sprint 1 Goal</strong></td><td>Desplegar la Landing Page (US11 y US12), alcanzar un avance del 70% en el despliegue del backend y presentar las pantallas core de la aplicaci&#243;n m&#243;vil: autenticaci&#243;n y acceso por rol (US09), registro de cuenta (US13), consulta de disponibilidad y zonas permitidas (US01 y US04), gesti&#243;n de reservas y comprobantes virtuales (US18), pagos (US19), carga de plano, generaci&#243;n del mapa digital y configuraci&#243;n de zonas (US16, US17 y US02). Estas HU orientan tanto las pantallas core como los servicios backend que las respaldan. El cumplimiento se verificar&#225; mediante la Landing Page publicada, el porcentaje de funcionalidades backend desplegadas respecto al total previsto y la demostraci&#243;n de las pantallas core.</td></tr>
   <tr><td><strong>Sprint 1 Velocity</strong></td><td>39 Story Points como capacidad planificada para el Sprint 1, correspondientes a las 11 historias de usuario seleccionadas.</td></tr>
   <tr><td><strong>Sum of Story Points</strong></td><td>39 Story Points: 35 de las nueve HU seleccionadas y 4 de las HU de la Landing Page (US11 y US12), seg&#250;n las estimaciones del Product Backlog.</td></tr>
 </table>
 
-##### 4.2.1.2. Aspect Leaders and Collaborators
+#### *4.2.1.2. Aspect Leaders and Collaborators*
 
 La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colaboradores de cada aspecto del Sprint 1 para facilitar la coordinación y comunicación del equipo. Se consideran la Landing Page, la autenticación y el registro, la disponibilidad, las reservas y pagos, y la configuración del estacionamiento.
 
@@ -37,20 +37,11 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
     <th align="center">Zonas, planos, mapa y dashboard</th>
   </tr>
   <tr>
-    <td align="left">Ruiz Mideyros, Adrian</td>
-    <td align="left">@AdrixRyz</td>
-    <td align="center"><strong>L</strong></td>
+    <td align="left">Carhuaz Centeno, Briguite Eryka</td>
+    <td align="left">@briicarhuaz</td>
     <td align="center">C</td>
-    <td align="center">C</td>
-    <td align="center">C</td>
-    <td align="center">C</td>
-  </tr>
-  <tr>
-    <td align="left">Rojas Tello, Nestor Alonso</td>
-    <td align="left">@nes-ro</td>
     <td align="center">C</td>
     <td align="center"><strong>L</strong></td>
-    <td align="center">C</td>
     <td align="center">C</td>
     <td align="center">C</td>
   </tr>
@@ -64,15 +55,6 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
     <td align="center">C</td>
   </tr>
   <tr>
-    <td align="left">Carhuaz Centeno, Briguite Eryka</td>
-    <td align="left">@briicarhuaz</td>
-    <td align="center">C</td>
-    <td align="center">C</td>
-    <td align="center"><strong>L</strong></td>
-    <td align="center">C</td>
-    <td align="center">C</td>
-  </tr>
-  <tr>
     <td align="left">Cotrina Siclla, Sofia Alessandra</td>
     <td align="left">@IamAndreek</td>
     <td align="center">C</td>
@@ -81,9 +63,27 @@ La Leadership-and-Collaboration Matrix (LACX) identifica al líder y los colabor
     <td align="center">C</td>
     <td align="center"><strong>L</strong></td>
   </tr>
+  <tr>
+    <td align="left">Rojas Tello, Nestor Alonso</td>
+    <td align="left">@nes-ro</td>
+    <td align="center">C</td>
+    <td align="center"><strong>L</strong></td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+  </tr>
+  <tr>
+    <td align="left">Ruiz Mideyros, Adrian</td>
+    <td align="left">@AdrixRyz</td>
+    <td align="center"><strong>L</strong></td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+    <td align="center">C</td>
+  </tr>
 </table>
 
-##### 4.2.1.3. Sprint Backlog 1
+#### *4.2.1.3. Sprint Backlog 1*
 
 El Sprint Backlog 1 reúne las tareas necesarias para desarrollar las historias de usuario seleccionadas, indicando sus responsables y estado de avance.
 
@@ -181,7 +181,7 @@ El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus re
   </tbody>
 </table>
 
-##### 4.2.1.4. Development Evidence for Sprint Review
+#### *4.2.1.4. Development Evidence for Sprint Review*
 
 SpotGo reutiliza una base de código desarrollada en ciclos académicos anteriores. Los repositorios actuales `spotgo-landing` y `spotgo-backend` no conservan el historial de commits de ese desarrollo previo, por lo que no es posible presentar una relación de commits que permita trazar cada funcionalidad reutilizada hasta su implementación original.
 
@@ -207,11 +207,11 @@ El repositorio [spotgo-mobile-app](https://github.com/yachiqo-upc/spotgo-mobile-
 | spotgo-mobile-app | develop | 864a98c | fix: update admin screens | 2026-10-06 |
 | spotgo-mobile-app | develop | cb9dbe8 | update register screen and validate full mobile integration | 2026-10-06 |
 
-##### 4.2.1.5. Testing Suite Evidence for Sprint Review
+#### *4.2.1.5. Testing Suite Evidence for Sprint Review*
 
-En este sprint no se validarán aspectos de testing. Por ello, no se presentan resultados de pruebas unitarias, de integración ni de aceptación como evidencia del Sprint 1. Las capturas de ejecución y la documentación de servicios se incluyen en sus respectivas secciones y no constituyen una validación de testing.
+En este sprint no se validan aspectos mediante pruebas. Por ello, no se presentan resultados de pruebas unitarias, de integración ni de aceptación como evidencia del Sprint 1. Las capturas de ejecución y la documentación de servicios se incluyen en sus respectivas secciones y no constituyen una validación mediante pruebas.
 
-##### 4.2.1.6. Execution Evidence for Sprint Review
+#### *4.2.1.6. Execution Evidence for Sprint Review*
 
 Durante este sprint, el equipo puso en funcionamiento la versión inicial de la **Landing Page** y presentó las **pantallas core de la aplicación móvil**.
 
@@ -259,7 +259,7 @@ Durante este sprint, el equipo puso en funcionamiento la versión inicial de la 
 
 **Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg)
 
-##### 4.2.1.7. Services Documentation Evidence for Sprint Review
+#### *4.2.1.7. Services Documentation Evidence for Sprint Review*
 
 La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/Swagger. Para la revisión del Sprint 1, se incluyen las rutas base y las operaciones disponibles en el backend, resumidas por recurso en la siguiente tabla.
 
@@ -324,26 +324,26 @@ Ejemplo ilustrativo de los campos principales de una respuesta `201`, conforme a
 }
 ```
 
-Estos ejemplos describen el contrato de los servicios; no representan resultados de testing del sprint.
+Estos ejemplos describen el contrato de los servicios; no representan resultados de pruebas del sprint.
 
-*Figura 93 (POST /api/v1/authentication/sign-in — Inicio de sesión)*
+*Figura 93 (POST /api/v1/authentication/sign-in: Inicio de sesión)*
 ![SpotGo Backend Sign-in](../assets/images/others/spotgo-backend-signin.png)
 
-*Figura 94 (GET /api/v1/users — Listado de usuarios)*
+*Figura 94 (GET /api/v1/users: Listado de usuarios)*
 ![SpotGo Backend Users](../assets/images/others/spotgo-backend-users.png)
 
-*Figura 95 (POST /api/v1/reservations — Crear una reserva)*
+*Figura 95 (POST /api/v1/reservations: Crear una reserva)*
 ![SpotGo Backend Reservation](../assets/images/others/spotgo-backend-reservation.png)
 
-*Figura 96 (GET /api/v1/parkings — Listado de estacionamientos)*
+*Figura 96 (GET /api/v1/parkings: Listado de estacionamientos)*
 ![SpotGo Backend Parkings](../assets/images/others/spotgo-backend-parkings.png)
 
-*Figura 97 (POST /api/v1/employees — Crear un empleado)*
+*Figura 97 (POST /api/v1/employees: Crear un empleado)*
 ![SpotGo Backend Employee](../assets/images/others/spotgo-backend-employee.png)
 
 **Demonstration Video Link**: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI)
 
-##### 4.2.1.8. Software Deployment Evidence for Sprint Review
+#### *4.2.1.8. Software Deployment Evidence for Sprint Review*
 
 Durante el Sprint 1, se desplegó la Landing Page de SpotGo en GitHub Pages y el Backend en Railway. Esto permitió acceder a la página publicada y utilizar los servicios disponibles del backend para la demostración del sprint.
 
@@ -367,11 +367,11 @@ Durante el Sprint 1, se desplegó la Landing Page de SpotGo en GitHub Pages y el
 *Figura 99 (Evidencia del despliegue del backend en Railway)*
 ![Deployment Evidence Backend](../assets/images/others/deployment-evidence-backend.png)
 
-##### 4.2.1.9. Team Collaboration Insights during Sprint
+#### *4.2.1.9. Team Collaboration Insights during Sprint*
 
 La siguiente captura corresponde a las contribuciones del repositorio `spotgo-mobile-app` durante el Sprint 1.
 
-*Figura 100 (Sprint 1 — Insights de spotgo-mobile-app)*
+*Figura 100 (Sprint 1: Insights de spotgo-mobile-app)*
 ![Sprint 1 Insights de la aplicación móvil](../assets/images/others/s1-insights-mobile-app.png)
 
 La captura registra 17 commits de AdrixRyz, con 5,913 líneas añadidas y 237 eliminadas, y concentra las contribuciones visibles en octubre de 2026. Esta evidencia muestra la actividad registrada en GitHub para la aplicación móvil; la distribución de responsabilidades del equipo se presenta en la matriz LACX y el Sprint Backlog.

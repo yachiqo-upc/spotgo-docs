@@ -2,9 +2,9 @@
 
 Occupancy & Monitoring es un bounded context principal que recibe y procesa la información de los sensores instalados en los Parking Spots. Su responsabilidad es mantener el estado físico de ocupación, supervisar la salud de los sensores, identificar conflictos, detectar condiciones de sobretiempo y generar alertas y reportes para la operación.
 
-El sensor confirma si un espacio está disponible u ocupado, pero no identifica la placa ni el Vehicle que se encuentra en él. Por ello, este contexto no crea ni administra Driver (Conductores), Vehicles, Reservations o Parking Sessions. Parking Infrastructure conserva la propiedad de esas entidades y consume los eventos de ocupación para actualizar la disponibilidad, resolver conflictos o solicitar un cargo adicional cuando exista evidencia confiable.
+El sensor confirma si un espacio está disponible u ocupado, pero no identifica la placa ni el vehículo que se encuentra en él. Por ello, este contexto no crea ni administra Driver, Vehicles, reservas o Parking Sessions. Parking Infrastructure conserva la propiedad de esas entidades y consume los eventos de ocupación para actualizar la disponibilidad, resolver conflictos o solicitar un cargo adicional cuando exista evidencia confiable.
 
-Los estados de ocupación se mantienen independientes de los estados de Reservation. Un Parking Spot puede estar físicamente ocupado mientras una Reservation aparece como RESERVED, ACTIVE, COMPLETED o en otro estado; la diferencia se analiza como una condición operativa y no se corrige modificando automáticamente una entidad del otro contexto.
+Los estados de ocupación se mantienen independientes de los estados de la reserva. Un Parking Spot puede estar físicamente ocupado mientras una reserva aparece como RESERVED, ACTIVE, COMPLETED o en otro estado; la diferencia se analiza como una condición operativa y no se corrige modificando automáticamente una entidad del otro contexto.
 
 #### *2.6.5.1. Domain Layer*
 
@@ -17,7 +17,7 @@ La capa de dominio representa sensores, lecturas, estados físicos y reglas de m
 | Occupancy Status | Enumeration | Define el estado físico observable del Parking Spot. | AVAILABLE, OCCUPIED, UNAVAILABLE. |
 | Sensor Health | Enumeration | Define la salud operativa del sensor. | HEALTHY, DEGRADED, FAILED, UNKNOWN. |
 | Sensor Protocol | Enumeration | Identifica el canal de recepción de datos. | MQTT, HTTP. |
-| Occupancy Conflict | Entity | Representa una diferencia entre el estado físico observado y la expectativa registrada para una Reservation o Parking Session. | conflictId, spotId, reservationRef, sessionRef, detectedAt, type, severity, status; detect(), classify(), resolve(). |
+| Occupancy Conflict | Entity | Representa una diferencia entre el estado físico observado y la expectativa registrada para una reserva o Parking Session. | conflictId, spotId, reservationRef, sessionRef, detectedAt, type, severity, status; detect(), classify(), resolve(). |
 | Occupancy Alert | Entity | Representa una alerta operativa que requiere visualización o atención. | alertId, tenantId, zoneId, spotId, type, severity, createdAt, status; raise(), acknowledge(), close(). |
 | Unauthorized Parking Alert | Entity | Especialización de Occupancy Alert para ocupación sin una expectativa válida de operación. | alertId, spotId, detectedAt, evidenceRef, status; raise(), resolve(). |
 | High Capacity Policy | Value Object | Define la condición de alta capacidad del estacionamiento. En este avance, la alerta se activa cuando la ocupación supera el 95 por ciento. | thresholdPercentage = 95, evaluate(); el evento se genera cuando percentage > thresholdPercentage. |
@@ -43,8 +43,8 @@ Las reglas principales del modelo son:
 | --- | --- |
 | Frecuencia de sensor | El estado físico actualizado debe estar disponible para las consultas en un máximo de cinco segundos desde la recepción de una lectura válida. |
 | Falla de sensor | Si no existe una lectura confiable o la salud del sensor es FAILED, el spot se reporta como UNAVAILABLE para fines de disponibilidad. |
-| Sin identificación de vehículo | Las lecturas no contienen placa, driverId ni vehicleId. La asociación con una Reservation se realiza mediante referencias y reglas de conflicto, nunca por reconocimiento automático. |
-| Estados independientes | Occupancy Status y Reservation Status se conservan separados y se relacionan mediante eventos. |
+| Sin identificación de vehículo | Las lecturas no contienen placa, driverId ni vehicleId. La asociación con una reserva se realiza mediante referencias y reglas de conflicto, nunca por reconocimiento automático. |
+| Estados independientes | Los estados de ocupación y de reserva se conservan separados y se relacionan mediante eventos. |
 | Alta capacidad | En este avance se genera una condición de High Capacity cuando la ocupación supera el 95 por ciento de los Parking Spots operativos disponibles. |
 | Cobro adicional | Solo se publica AdditionalChargeRequested cuando la evidencia es confiable y Parking Infrastructure confirma la relación operativa. |
 | Retención | Las lecturas en bruto se conservan doce meses y los reportes agregados veinticuatro meses como política base propuesta, con suspensión ante incidentes o auditorías. |
@@ -60,7 +60,7 @@ La Interface Layer recibe mensajes de los sensores por MQTT o HTTP y expone cons
 | Occupancy Monitoring Controller | REST/HTTPS | Expone el estado actual y la disponibilidad física observada. | Consultar estado por tenant, zona o spot. |
 | Alert Controller | REST/HTTPS | Permite a Parking Admin consultar, reconocer y cerrar alertas. | Listar alertas, reconocer, cerrar y consultar severidad. |
 | Occupancy Report Controller | REST/HTTPS | Expone reportes y agregados para el dashboard administrativo. | Generar, consultar y filtrar reportes por intervalo. |
-| Parking Event Consumer | Evento asíncrono | Recibe expectativas operativas sin asumir propiedad de Reservation o Parking Session. | ReservationCreated, ReservationReassigned, ParkingSessionStarted, ParkingSessionCompleted. |
+| Parking Event Consumer | Evento asíncrono | Recibe expectativas operativas sin asumir la propiedad de reservas o Parking Sessions. | ReservationCreated, ReservationReassigned, ParkingSessionStarted, ParkingSessionCompleted. |
 | Monitoring Event Publisher | Evento asíncrono | Publica estados, fallas, conflictos y solicitudes de cargos adicionales. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected, AdditionalChargeRequested. |
 | Notification Adapter | Evento o API interna | Envía alertas operativas mediante Firebase Cloud Messaging cuando corresponda. | HighCapacityReached, UnauthorizedParkingDetected, SensorFailureDetected. |
 
@@ -68,7 +68,7 @@ La aplicación móvil, construida con una parte nativa en Kotlin y otra en Flutt
 
 #### *2.6.5.3. Application Layer*
 
-La Application Layer normaliza los mensajes, valida su idempotencia, actualiza el estado físico y publica eventos. Cuando una lectura supera el umbral de frescura o la salud del sensor empeora, los handlers marcan el spot como no disponible para las consultas de ocupación. Las decisiones de reasignación, cierre de Reservation o cobro final se ejecutan en los contextos propietarios.
+La Application Layer normaliza los mensajes, valida su idempotencia, actualiza el estado físico y publica eventos. Cuando una lectura supera el umbral de frescura o la salud del sensor empeora, los handlers marcan el spot como no disponible para las consultas de ocupación. Las decisiones de reasignación, cierre de una reserva o cobro final se ejecutan en los contextos propietarios.
 
 | Command | Command Handler | Resultado |
 | --- | --- | --- |
@@ -91,7 +91,7 @@ La Application Layer normaliza los mensajes, valida su idempotencia, actualiza e
 | ParkingSessionStarted | Session Expectation Handler | Relaciona la expectativa operativa con el spot sin transferir la propiedad de Parking Session. |
 | ParkingSessionCompleted | Session Expectation Handler | Retira o cierra la expectativa operativa asociada con el spot cuando termina la sesión. |
 | OccupancyStatusUpdated | Parking Availability Consumer | Parking Infrastructure actualiza su Availability Projection. |
-| SensorFailureDetected | Parking Availability Consumer | Parking Infrastructure considera el spot UNAVAILABLE y revisa posibles Reservations afectadas. |
+| SensorFailureDetected | Parking Availability Consumer | Parking Infrastructure considera el spot UNAVAILABLE y revisa posibles reservas afectadas. |
 | OccupancyConflictDetected | Parking Conflict Consumer | Parking Infrastructure analiza reasignación, indisponibilidad o alerta. |
 | UnauthorizedParkingDetected | Alert Notification Handler | Envía una alerta a Parking Admin mediante el canal configurado. |
 | HighCapacityReached | Capacity Notification Handler | Publica la condición para el dashboard y las notificaciones operativas. |
@@ -112,7 +112,7 @@ La infraestructura utiliza Java y Spring Boot para la API y los procesos de apli
 | Sensor Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste configuración, estado y última comunicación de sensores. |
 | Occupancy Reading Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste lecturas y consultas por spot o intervalo. |
 | Sensor Health Monitor | Proceso programado | Detecta ausencia de lecturas y cambia el estado a FAILED o UNKNOWN según la política. |
-| Conflict Detection Adapter | Consumidor de eventos | Mantiene expectativas de Reservations y Parking Sessions recibidas desde Parking Infrastructure. |
+| Conflict Detection Adapter | Consumidor de eventos | Mantiene expectativas de reservas y Parking Sessions recibidas desde Parking Infrastructure. |
 | Alert Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste alertas, severidad, reconocimiento y cierre. |
 | Report Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste reportes y agregados de ocupación. |
 | Monitoring Event Publisher | Adaptador de mensajería | Distribuye cambios de estado, fallas, conflictos y cargos solicitados. |
@@ -133,7 +133,7 @@ El diagrama de componentes delimita el límite de Occupancy & Monitoring, la ent
 | Sensor Integration Component | Recibe MQTT/HTTP, normaliza lecturas y aplica idempotencia. | MQTT Adapter, HTTP Adapter, Process Occupancy Reading Handler. |
 | Occupancy Status Component | Mantiene el último estado físico confiable por spot. | Occupancy Status Service, Reading Repository. |
 | Sensor Health Component | Supervisa comunicación, calidad y fallas. | Sensor Health Service, Sensor Repository, Health Monitor. |
-| Occupancy Conflict Component | Compara la ocupación con expectativas de Reservation o Session. | Parking Event Consumer, Conflict Detection Service. |
+| Occupancy Conflict Component | Compara la ocupación con expectativas de reserva o Session. | Parking Event Consumer, Conflict Detection Service. |
 | Unauthorized Occupancy Component | Genera alertas para ocupación sin expectativa válida. | Occupancy Conflict Component, Alert Service. |
 | Overtime Detection Component | Evalúa sobretiempo y publica solicitudes de cargo con evidencia. | Parking Event Consumer, Overtime Detection Service, Payments & Billing Adapter. |
 | Occupancy Alert Component | Prioriza, notifica, reconoce y cierra alertas. | Alert Controller, Alert Repository, FCM Adapter. |
@@ -193,7 +193,7 @@ La vista de código representa el modelo físico de ocupación y los servicios q
 | HighCapacityPolicy ..> OccupancyStatus | Dependencia dirigida | La política calcula el porcentaje según estados físicos. |
 | OvertimeDetectionService ..> OccupancyEvidence | Dependencia dirigida | Solo solicita cargos con evidencia confiable. |
 | OccupancyStatusService ..> OccupancyReadingRepository | Dependencia dirigida | Consulta la última lectura válida. |
-| OccupancyConflict ..> Reservation | Referencia externa dirigida | reservationRef identifica una Reservation sin crear FK entre bases. |
+| OccupancyConflict ..> Reservation | Referencia externa dirigida | reservationRef identifica una reserva sin crear FK entre bases. |
 | OccupancyConflict ..> ParkingSession | Referencia externa dirigida | sessionRef identifica una sesión sin transferir su propiedad. |
 | OccupancyStatusUpdated ..> Parking Infrastructure | Evento dirigido | Comunica el estado físico para Availability Projection. |
 

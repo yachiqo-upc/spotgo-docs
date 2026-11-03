@@ -28,7 +28,7 @@ Se listan a continuación las herramientas utilizadas a lo largo de todo el cicl
   - **Maven Wrapper:** Ejecuta las tareas de compilación y empaquetado del backend mediante `mvnw` o `mvnw.cmd`, sin exigir una instalación global de Maven. [Referencia: Maven Wrapper](https://maven.apache.org/wrapper/)
   - **PostgreSQL (en Neon):** Motor de base de datos relacional Serverless alojado en la nube en la plataforma Neon. [Referencia: neon.tech](https://neon.tech/)
 - **Herramientas de Pruebas, Documentación y Despliegue:**
-  - **Postman:** Plataforma para el testeo, verificación y ejecución de pruebas de integración sobre los endpoints de la API RESTful. [Descarga: postman.com](https://www.postman.com/downloads/)
+  - **Postman:** Plataforma para verificar y ejecutar pruebas de integración sobre los endpoints de la API RESTful. [Descarga: postman.com](https://www.postman.com/downloads/)
   - **Swagger / OpenAPI:** Documentación interactiva de la API generada desde Spring Boot mediante Springdoc. [Referencia: Springdoc](https://springdoc.org/)
   - **Railway:** Plataforma para el alojamiento y despliegue del Backend. [Referencia: Railway](https://docs.railway.com/)
   - **GitHub Pages:** Hosting de la Landing Page estática. [Referencia: GitHub Pages](https://docs.github.com/en/pages)
@@ -36,7 +36,7 @@ Se listan a continuación las herramientas utilizadas a lo largo de todo el cicl
 
 #### 4.1.2. Source Code Management
 
-El código fuente del proyecto SpotGo se gestiona mediante **Git** como sistema de control de versiones distribuido y **GitHub** como plataforma de alojamientos y colaboración. La organización oficial del equipo es **Yachiqo** (`yachiqo-upc`), y los repositorios correspondientes al proyecto son:
+El código fuente del proyecto SpotGo se gestiona mediante **Git** como sistema de control de versiones distribuido y **GitHub** como plataforma de alojamiento y colaboración. La organización oficial del equipo es **Yachiqo** (`yachiqo-upc`), y los repositorios correspondientes al proyecto son:
 
 - **Landing Page:** [https://github.com/yachiqo-upc/spotgo-landing.git](https://github.com/yachiqo-upc/spotgo-landing.git)
 - **Mobile Application:** [https://github.com/yachiqo-upc/spotgo-mobile-app.git](https://github.com/yachiqo-upc/spotgo-mobile-app.git)

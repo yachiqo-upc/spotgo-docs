@@ -7,9 +7,9 @@ La selección mínima requerida por la rúbrica está compuesta por cuatro paper
 | Paper | Aplicación en SpotGo | Año | Evidencia de cuartil |
 | --- | --- | ---: | --- |
 | [Saki y Hagen (2024)](https://doi.org/10.1016/j.trb.2024.103058) | Business domain: comportamiento de búsqueda de estacionamiento. | 2024 | [Transportation Research Part B: Methodological, Q1](https://www.scimagojr.com/journalsearch.php?q=20892&tip=sid) |
-| [Fulman, Memduhoğlu y Zipf (2025)](https://doi.org/10.1016/j.tra.2025.104542) | Business domain: simulación de decisiones durante la búsqueda de estacionamiento. | 2025 | [Transportation Research Part A: Policy and Practice, Q1 — Scopus Journal Metrics 2024](https://library.wur.nl/WebQuery/utbrowser/2060) |
+| [Fulman, Memduhoğlu y Zipf (2025)](https://doi.org/10.1016/j.tra.2025.104542) | Business domain: simulación de decisiones durante la búsqueda de estacionamiento. | 2025 | [Transportation Research Part A: Policy and Practice, Q1 (Scopus Journal Metrics 2024)](https://library.wur.nl/WebQuery/utbrowser/2060) |
 | [Alshammare, Alshayeb y Baslyman (2025)](https://doi.org/10.1016/j.csi.2025.103999) | Mobile-development techniques: evaluación de UX en aplicaciones móviles. | 2025 | [Computer Standards & Interfaces, Q1](https://www.iit.comillas.edu/publicacion/info_revista/en/165/Computer_Standards_%26_Interfaces) |
-| [İlhan (2025)](https://doi.org/10.1016/j.ijhcs.2025.103569) | Mobile-development techniques: proceso de prototipado y decisiones de diseño para una aplicación móvil. | 2025 | [International Journal of Human-Computer Studies, Q1 — Scopus Journal Metrics 2024](https://library.wur.nl/WebQuery/utbrowser?issn=1095-9300) |
+| [İlhan (2025)](https://doi.org/10.1016/j.ijhcs.2025.103569) | Mobile-development techniques: proceso de prototipado y decisiones de diseño para una aplicación móvil. | 2025 | [International Journal of Human-Computer Studies, Q1 (Scopus Journal Metrics 2024)](https://library.wur.nl/WebQuery/utbrowser?issn=1095-9300) |
 
 **Business domain**
 
@@ -24,6 +24,8 @@ iPark. (s. f.). *iPark: Solución de parking digital*. https://ipark.pe/
 Ministerio de Transportes y Comunicaciones. (2026a). *Anuario estadístico 2025*. https://www.gob.pe/institucion/mtc/informes-publicaciones/8195835-anuario-estadistico-2025
 
 Ministerio de Transportes y Comunicaciones. (2026b). *Estadística: Servicios de transporte terrestre por carretera - Servicios complementarios: Licencias de conducir 2016–2025*. https://www.gob.pe/institucion/mtc/informes-publicaciones/344891-estadistica-servicios-de-transporte-terrestre-por-carretera-servicios-complementarios
+
+Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público. (2025). *Revisión tarifaria: Tarifa máxima de la playa de estacionamiento vehicular del nuevo terminal del Aeropuerto Internacional Jorge Chávez*. https://www.ositran.gob.pe/anterior/wp-content/uploads/2025/03/informe-tarifario-playa-de-estacionamiento.pdf
 
 Parkopedia. (s. f.). *Parking data*. https://business.parkopedia.com/parking-data
 

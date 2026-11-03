@@ -12,11 +12,11 @@ El objetivo es contar con un lenguaje visual centralizado que permita que todos 
 
 **Branding**
 
-La identidad visual de SpotGo busca transmitir una imagen de tecnología, orden, confianza y eficiencia. Debido a que el producto está relacionado con la gestión y búsqueda de estacionamientos, la interfaz debe permitir identificar rápidamente información como disponibilidad, ocupación, ubicación y estado de las Reservations.
+La identidad visual de SpotGo busca transmitir una imagen de tecnología, orden, confianza y eficiencia. Debido a que el producto está relacionado con la gestión y búsqueda de estacionamientos, la interfaz debe permitir identificar rápidamente información como disponibilidad, ocupación, ubicación y estado de las reservas.
 
 El lenguaje visual evita una apariencia excesivamente decorativa y prioriza componentes funcionales, información resumida y jerarquía visual.
 
-El nombre SpotGo representa la idea de encontrar y utilizar un espacio de estacionamiento de manera rápida, por lo que la identidad se asocia con conceptos como; disponibilidad, movimiento, ubicación, rapidez, organización, tecnología.
+El nombre SpotGo representa la idea de encontrar y utilizar un espacio de estacionamiento de manera rápida, por lo que la identidad se asocia con conceptos como disponibilidad, movimiento, ubicación, rapidez, organización, tecnología.
 
 *Figura 40 (SpotGo Logo)*
 ![SpotGo Logo](../assets/images/others/spotgo-logo.png)
@@ -27,12 +27,12 @@ Se utilizará Plus Jakarta Sans como familia tipográfica principal. La tipograf
 
 Se propone la siguiente jerarquía:
 
-*Figura 41 (SpotGo Tipography)*
-![SpotGo Tipography](../assets/images/others/spotgo-tipography.png)
+*Figura 41 (SpotGo Typography)*
+![SpotGo Typography](../assets/images/others/spotgo-tipography.png)
 
 **Colors**
 
-La paleta implementa un Dark Design System diseñado para reducir la fatiga visual del Driver (Conductores) en entornos de baja luminosidad, priorizando el contraste para identificar rápidamente el estado del estacionamiento:
+La paleta implementa un Dark Design System diseñado para reducir la fatiga visual del usuario en entornos de baja luminosidad, priorizando el contraste para identificar rápidamente el estado del estacionamiento:
 
 * **#0F0D17 (Base):** Fondo oscuro profundo que evita deslumbramientos y permite que los colores semánticos resalten.   
 * **#FFD84D (Action):** Color ámbar utilizado para los botones de acción principales.   
@@ -71,15 +71,15 @@ La ocupación, el estado de reserva y la salud del sensor se muestran por separa
 
 ### 3.1.2. Information Architecture
 
-Esta sección define la organización del contenido del Landing Page y la aplicación de SpotGo mediante sistemas de organización, etiquetado, búsqueda y navegación que reducen la carga cognitiva. La arquitectura prioriza las necesidades de dos perfiles principales: Driver, enfocados en buscar, consultar disponibilidad y reservar espacios; y Parking Admin, centrados en administrar y monitorear los estacionamientos.
+Esta sección define la organización del contenido de la Landing Page y la aplicación de SpotGo mediante sistemas de organización, etiquetado, búsqueda y navegación que reducen la carga cognitiva. La arquitectura prioriza las necesidades de los usuarios con los roles Driver y Parking Admin. Driver se enfoca en buscar, consultar disponibilidad y reservar espacios; Parking Admin, en administrar y monitorear los estacionamientos.
 
 #### 3.1.2.1. Organization Systems
 
-En esta sección se definen los sistemas de organización que se plantearán para SpotGo, considerando tanto el Landing Page como las aplicaciones destinadas a Driver y Parking Admin. El objetivo será estructurar la información de manera clara y facilitar el acceso a las funcionalidades principales.
+En esta sección se definen los sistemas de organización que se plantearán para SpotGo, considerando tanto la Landing Page como las aplicaciones destinadas a los roles Driver y Parking Admin. El objetivo será estructurar la información de manera clara y facilitar el acceso a las funcionalidades principales.
 
 **Organización visual del contenido:**
 
-- **De forma jerárquica (Visual Hierarchy):** Se utilizará principalmente en las interfaces de la aplicación, priorizando la información más relevante para cada usuario. En el caso del Driver, se dará mayor importancia a la disponibilidad, ubicación y precio de los estacionamientos. Para los Parking Admin, se priorizarán indicadores como ocupación, disponibilidad, reservas y estado de las zonas.
+- **De forma jerárquica (Visual Hierarchy):** Se utilizará principalmente en las interfaces de la aplicación, priorizando la información más relevante para cada usuario. En el caso del Driver, se dará mayor importancia a la disponibilidad, ubicación y precio de los estacionamientos. Para el rol Parking Admin, se priorizarán indicadores como ocupación, disponibilidad, reservas y estado de las zonas.
 
 - **Organización secuencial (Step-by-step):** Se aplicará en procesos que requieran completar diferentes etapas, principalmente en el flujo de reserva de un estacionamiento. El usuario podrá seleccionar una zona, revisar la disponibilidad, seleccionar un espacio, confirmar la reserva y realizar el pago.
 
@@ -87,13 +87,13 @@ En esta sección se definen los sistemas de organización que se plantearán par
 
 **Esquemas de categorización:**
 
-- **Según audiencia (Audience-based):** Se aplicará principalmente en el Landing Page, diferenciando el contenido dirigido a **Driver** y **Parking Admin**.
+- **Según audiencia (Audience-based):** Se aplicará principalmente en la Landing Page, diferenciando el contenido dirigido a **Driver** y **Parking Admin**.
 
-- **Por tópicos:** Se utilizará para agrupar funcionalidades como Reservations, Payments, Vehicles, Parking Zones, Monitoring, Reports y Settings.
+- **Por tópicos:** Se utilizará para agrupar funcionalidades como reservas, Payments, Vehicles, Parking Zones, Monitoring, Reports y Settings.
 
-- **Cronológico:** Se utilizará para organizar información relacionada con Reservations, Payments, Parking History y Reports, permitiendo consultar los registros de acuerdo con fechas o periodos.
+- **Cronológico:** Se utilizará para organizar información relacionada con reservas, Payments, Parking History y Reports, permitiendo consultar los registros de acuerdo con fechas o periodos.
 
-- **Por estado:** Los Parking Spots se clasifican según su Occupancy Status: **Available, Occupied o Unavailable**. Las Reservations se organizan por su Reservation Status, como **Pending Payment, Reserved, Active, Completed, Cancelled, No-show, Overstayed o Payment Rejected**. Ambas dimensiones se muestran por separado: un espacio físicamente Available puede seguir protegido por una Reservation vigente y no estar disponible para una nueva reserva.
+- **Por estado:** Los Parking Spots se clasifican según su Occupancy Status: **Available, Occupied o Unavailable**. Las reservas se organizan según el estado de la reserva, como **Pending Payment, Reserved, Active, Completed, Cancelled, No-show, Overstayed o Payment Rejected**. Ambas dimensiones se muestran por separado: un espacio físicamente Available puede seguir protegido por una reserva vigente y no estar disponible para una nueva reserva.
 
 #### 3.1.2.2. Labelling Systems
 
@@ -125,18 +125,18 @@ Asimismo, se utilizarán etiquetas consistentes para representar el Occupancy St
 - **Occupied**
 - **Unavailable**
 
-La etiqueta **Reserved** se utiliza exclusivamente para el Reservation Status. La vista presenta por separado la ocupación física, el estado de la reserva y el Sensor Health; una lectura de ocupación no identifica al Driver ni al Vehicle.
+La etiqueta **Reserved** se utiliza exclusivamente para el estado de la reserva. La vista presenta por separado la ocupación física, el estado de la reserva y el Sensor Health; una lectura de ocupación no identifica al Driver ni al Vehicle.
 
 Las etiquetas de las acciones utilizarán términos directos como **Reserve**, **View Details**, **Get Directions**, **Confirm** y **Cancel**, evitando textos extensos que puedan dificultar la comprensión de las acciones.
 
 #### 3.1.2.3. SEO Tags and Meta Tags
 
-En esta sección se definen los SEO Tags y Meta Tags que se plantearán para el Landing Page de SpotGo. Estos elementos estarán orientados a comunicar claramente la propuesta de valor del producto y facilitar su posicionamiento en motores de búsqueda.
+En esta sección se definen los SEO Tags y Meta Tags que se plantearán para la Landing Page de SpotGo. Estos elementos estarán orientados a comunicar claramente la propuesta de valor del producto y facilitar su posicionamiento en motores de búsqueda.
 
 **Landing Page**
 
 - **Title:** `SpotGo | Smart Parking`
-- **Description:** `Find and reserve available parking with SpotGo, while Parking Admin manage spaces, monitor occupancy and optimize parking operations.`
+- **Description:** `Find and reserve available parking with SpotGo, while parking administrators manage spaces, monitor occupancy and optimize parking operations.`
 - **Keywords:** `smart parking, parking reservation, parking availability, parking management, Parking Admin, parking spaces`
 - **Author:** `SpotGo Team`
 
@@ -185,16 +185,16 @@ La búsqueda podrá complementarse con filtros que permitan reducir los resultad
 
 Los resultados de búsqueda se plantearán mediante tarjetas y elementos visuales dentro del mapa, mostrando información relevante como nombre del estacionamiento, distancia, precio, disponibilidad y ubicación.
 
-Para los **Parking Admin**, las consultas se realizan dentro de cada sección administrativa. En **Occupancy** se proponen filtros por Parking Zone, Occupancy Status, Reservation Status y Sensor Health. En **Alerts**, los filtros corresponden al tipo de incidencia, severidad y estado de resolución; en los registros y reportes, al periodo y la zona. Los resultados muestran el identificador del espacio o registro, sus estados y la última actualización. **Dashboard, Occupancy, Alerts y More** son destinos de navegación y no filtros de búsqueda.
+Para el rol **Parking Admin**, las consultas se realizan dentro de cada sección administrativa. En **Occupancy** se proponen filtros por Parking Zone, Occupancy Status, estado de la reserva y Sensor Health. En **Alerts**, los filtros corresponden al tipo de incidencia, severidad y estado de resolución; en los registros y reportes, al periodo y la zona. Los resultados muestran el identificador del espacio o registro, sus estados y la última actualización. **Dashboard, Occupancy, Alerts y More** son destinos de navegación y no filtros de búsqueda.
 
 #### 3.1.2.5. Navigation Systems
 
-En esta sección se definen los sistemas de navegación que se plantearán para guiar a los usuarios a través del Landing Page y las aplicaciones de SpotGo, permitiéndoles acceder a las funcionalidades necesarias de acuerdo con sus objetivos.
+En esta sección se definen los sistemas de navegación que se plantearán para guiar a los usuarios a través de la Landing Page y las aplicaciones de SpotGo, permitiéndoles acceder a las funcionalidades necesarias de acuerdo con sus objetivos.
 
-**Navegación del Landing Page:**
+**Navegación de la Landing Page:**
 
 - **Global Navigation:** Se planteará una barra de navegación superior con accesos a las principales secciones: **For Driver, For Parking Admin, How it works, Pricing y FAQ**.
-- **Section Navigation:** Los elementos de navegación permitirán desplazarse hacia las diferentes secciones del Landing Page sin necesidad de abandonar la página.
+- **Section Navigation:** Los elementos de navegación permitirán desplazarse hacia las diferentes secciones de la Landing Page sin necesidad de abandonar la página.
 - **Call To Action:** Se utilizarán botones como **Open App** para dirigir al usuario hacia la experiencia principal del producto.
 - **Mobile Navigation:** En dispositivos móviles se planteará un menú desplegable que permitirá acceder a las diferentes secciones manteniendo una interfaz limpia y aprovechando el espacio reducido de la pantalla.
 
@@ -268,7 +268,7 @@ Los wireframes de baja fidelidad permiten revisar la estructura de cada pantalla
 *Figura 54 (Wireframe para administrar zonas de estacionamiento)*
 ![Parking Admin Parking Zones Wireframe](../assets/images/ui-ux/wireframes/parking-admin/19-parking-zones.png)
 
-*Figura 55 (Wireframe de sesiones de estacionamiento para invitados)*
+*Figura 55 (Wireframe de sesiones de visitantes)*
 ![Parking Admin Guest Sessions Wireframe](../assets/images/ui-ux/wireframes/parking-admin/21-guest-parking-sessions.png)
 
 *Figura 56 (Wireframe del mapa digital del estacionamiento)*
@@ -341,7 +341,7 @@ Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten ap
 *Figura 73. Mock-up de la zona de estacionamiento asignada.*
 ![Parking Admin My Parking Zone Mock-up](../assets/images/ui-ux/mockups/parking-admin/19-parking-zones.png)
 
-*Figura 74 (Mock-up de sesiones de estacionamiento para invitados de la zona asignada)*
+*Figura 74 (Mock-up de sesiones de visitantes)*
 ![Parking Admin Guest Sessions Mock-up](../assets/images/ui-ux/mockups/parking-admin/21-guest-parking-sessions.png)
 
 *Figura 75 (Mock-up del mapa digital del estacionamiento)*

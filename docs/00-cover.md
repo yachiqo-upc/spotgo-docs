@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" style="width: 100%; margin: 0 auto; text-align: center;">
 
 <img src="../assets/images/others/upc-logo.png" alt="UPC Logo" width="150px">
 
@@ -30,9 +30,7 @@ Proyecto
 
 **Integrantes**
 
-<div style="text-align: center;">
-<div style="display: inline-block;">
-<table style="width: auto; border-collapse: collapse; text-align: center;">
+<table style="width: auto; margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center;">
   <thead>
     <tr>
       <th style="padding: 8px; border: 1px solid #666; text-align: center;">Código</th>
@@ -41,29 +39,27 @@ Proyecto
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241E177</td>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Ruiz Mideyros, Adrian</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U202317099</td>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Rojas Tello, Nestor Alonso</td>
+      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241D932</td>
+      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Carhuaz Centeno, Briguite Eryka</td>
     </tr>
     <tr>
       <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241D995</td>
       <td style="padding: 8px; border: 1px solid #666; text-align: center;">Contreras Rojas, Cesar Jair</td>
     </tr>
     <tr>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241D932</td>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Carhuaz Centeno, Briguite Eryka</td>
-    </tr>
-    <tr>
       <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20231B120</td>
       <td style="padding: 8px; border: 1px solid #666; text-align: center;">Cotrina Siclla, Sofia Alessandra</td>
     </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U202317099</td>
+      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Rojas Tello, Nestor Alonso</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241E177</td>
+      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Ruiz Mideyros, Adrian</td>
+    </tr>
   </tbody>
 </table>
-</div>
-</div>
 
 **Período 202620**
 
@@ -85,12 +81,13 @@ Proyecto
 | 0.1.5 | 16/09/26 | @AdrixRyz | docs: revisar todos los puntos agregados del AV1 |
 | 0.2.0 | 29/09/26 | @nes-ro | docs: corregir los errores del AV1 |
 | 0.2.1 | 30/09/26 | @IamAndreek | docs: agregar todos los puntos de Style Guidelines |
-| 0.2.2 | 30/09/26 | @IamAndreek | docs: agregar todos los puntos de Information Arquitecture |
+| 0.2.2 | 30/09/26 | @IamAndreek | docs: agregar todos los puntos de Information Architecture |
 | 0.2.3 | 01/10/26 | @briicarhuaz | docs: agregar todos los puntos de Landing Page UI Design |
 | 0.2.4 | 02/10/26 | @briicarhuaz | docs: agregar todos los puntos de Mobile Applications UX/UI Design |
 | 0.2.5 | 03/10/26 | @CesarJrCR | docs: agregar todos los puntos de Software Configuration Management |
 | 0.2.6 | 05/10/26 | @nes-ro | docs: agregar todos los puntos de Sprint 1 |
-| 0.2.7 | 06/10/26 | @AdrixRyz | docs: realizar correciones finales para el TB1 |
+| 0.2.7 | 06/10/26 | @AdrixRyz | docs: realizar correcciones finales para el TB1 |
+| 0.3.0 | 02/11/26 | @AdrixRyz | docs: corregir los errores del TB1 |
 
 # Project Report Collaboration Insights
 
@@ -105,6 +102,11 @@ Proyecto
 
 *Report Insights TB1*
 ![Report Insights TB1](../assets/images/others/report-insights-tb1.png)
+
+**AV2**
+
+*Report Insights AV2*
+![Report Insights AV2](../assets/images/others/report-insights-av2.png)
 
 # Contenido
 
@@ -244,6 +246,16 @@ Proyecto
 4.2.1.7. Services Documentation Evidence for Sprint Review  
 4.2.1.8. Software Deployment Evidence for Sprint Review  
 4.2.1.9. Team Collaboration Insights during Sprint  
+[**4.2.2. Sprint 2**](42-sprint-2.md)<br>
+4.2.2.1. Sprint Planning 2<br>
+4.2.2.2. Aspect Leaders and Collaborators<br>
+4.2.2.3. Sprint Backlog 2<br>
+4.2.2.4. Development Evidence for Sprint Review<br>
+4.2.2.5. Testing Suite Evidence for Sprint Review<br>
+4.2.2.6. Execution Evidence for Sprint Review<br>
+4.2.2.7. Services Documentation Evidence for Sprint Review<br>
+4.2.2.8. Software Deployment Evidence for Sprint Review<br>
+4.2.2.9. Team Collaboration Insights during Sprint<br>
 
 [**Conclusiones**](70-conclusions.md)  
 [**Glosario**](80-glossary.md)  
@@ -262,32 +274,32 @@ En el siguiente cuadro se describen las acciones realizadas y las conclusiones d
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 | --- | --- | --- |
-| Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software | **Ruiz Mideyros, Adrian (U20241E177)**<br>**AV1:** Durante esta entrega he asumido la organización y consolidación de los contenidos iniciales de SpotGo hasta Requirements Specification. También he ido arreglando la documentación, haciéndola más consistente y adecuada.<br>**TB1:** He revisado todos los puntos agregados para esta entrega, verificando la coherencia general de la documentación y la integración de los nuevos contenidos.<br><br>**Rojas Tello, Nestor Alonso (U202317099)**<br>**AV1:** Mi participación se ha concentrado en aplicar conceptos de Domain-Driven Design a la perspectiva táctica. He incorporado la parte asignada y he revisado cómo expresarla dentro de la documentación del proyecto.<br>**TB1:** He corregido los errores identificados en AV1 y he documentado el Sprint 1: Sprint Planning, Aspect Leaders and Collaborators, Sprint Backlog, Development Evidence, Testing Suite Evidence, Execution Evidence, Services Documentation Evidence, Software Deployment Evidence y Team Collaboration Insights during Sprint.<br><br>**Contreras Rojas, Cesar Jair (U20241D995)**<br>**AV1:** He completado mi participación incorporando la parte asignada de Tactical-Level Domain-Driven Design, ampliando el diseño táctico y documentando sus elementos principales.<br>**TB1:** He desarrollado Software Configuration Management, incluyendo Software Development Environment Configuration, Source Code Management, Source Code Style Guide & Conventions y Software Deployment Configuration.<br><br>**Carhuaz Centeno, Briguite Eryka (U20241D932)**<br>**AV1:** He trabajado en los contenidos y evidencias de EventStorming, organizando eventos, relaciones y procesos relevantes para la solución.<br>**TB1:** He desarrollado Landing Page UI Design y Mobile Applications UX/UI Design, incluyendo wireframes, wireflows, mock-ups, user flows y prototyping.<br><br>**Cotrina Siclla, Sofia Alessandra (U20231B120)**<br>**AV1:** Mi aporte se ha enfocado en explicar la estructura y las relaciones de la solución mediante Context Mapping y Software Architecture.<br>**TB1:** He desarrollado Style Guidelines e Information Architecture, incluyendo General Style Guidelines, Organization Systems, Labelling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems. | **AV1:** Durante esta entrega, el equipo ha aplicado conocimientos de Lean UX, investigación de usuarios, especificación de requisitos, EventStorming, Context Mapping, arquitectura de software y Tactical-Level Domain-Driven Design. Estos aportes han permitido definir mejor el problema, los requisitos, el dominio y la estructura de la solución.<br>**TB1:** Durante esta entrega, el equipo ha incorporado conocimientos de diseño UI/UX, arquitectura de información, configuración de software, control de código fuente, despliegue, pruebas, documentación de servicios y planificación de sprints. Estos aprendizajes han permitido avanzar desde el diseño de la solución hacia su implementación y validación inicial. |
-| Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. | **Ruiz Mideyros, Adrian (U20241E177)**<br>**AV1:** Al integrar las primeras secciones he comprendido que no basta con describir SpotGo, sino que debo aplicar técnicas para justificar la propuesta y convertirla en requisitos. Esto me ha permitido reconocer la importancia de seguir fortaleciendo mis conocimientos de análisis y comunicación de soluciones de software.<br>**TB1:** La revisión de los nuevos contenidos me permitió identificar la importancia de mantener una visión general del proyecto y de seguir aprendiendo para detectar inconsistencias entre sus diferentes capítulos y entregables.<br><br>**Rojas Tello, Nestor Alonso (U202317099)**<br>**AV1:** La elaboración de la parte táctica me ha mostrado que DDD requiere estudiarse con profundidad para representar correctamente las responsabilidades y reglas de cada contexto. También he identificado la necesidad de relacionar el diseño táctico con las decisiones estratégicas.<br>**TB1:** Al corregir AV1 y documentar Sprint 1, he reforzado mis conocimientos sobre planificación, seguimiento del trabajo, evidencias de desarrollo, pruebas, servicios y despliegue. Este proceso también me mostró la importancia de conservar trazabilidad entre las historias y los resultados del sprint.<br><br>**Contreras Rojas, Cesar Jair (U20241D995)**<br>**AV1:** Completar una parte de Tactical-Level Domain-Driven Design ha representado una oportunidad para seguir aprendiendo a detallar reglas, clases y componentes. Al desarrollar esta parte, he aplicado los conceptos revisados y he documentado lo aprendido.<br>**TB1:** El desarrollo de Software Configuration Management me permitió profundizar en las prácticas necesarias para organizar el entorno, el código, las convenciones de desarrollo y el despliegue. Reconocí que estos conocimientos deben actualizarse continuamente para trabajar de forma ordenada.<br><br>**Carhuaz Centeno, Briguite Eryka (U20241D932)**<br>**AV1:** Al trabajar con EventStorming he reconocido que comprender el dominio requiere analizarlo desde diferentes perspectivas. También he aplicado una técnica para ordenar eventos y procesos, identificando la necesidad de seguir aprendiendo métodos de análisis.<br>**TB1:** Al desarrollar los artefactos de UI/UX, amplié mis conocimientos sobre la forma de convertir las necesidades de los usuarios en flujos, pantallas y prototipos. Esta experiencia me permitió reconocer la importancia de seguir aprendiendo sobre diseño centrado en el usuario.<br><br>**Cotrina Siclla, Sofia Alessandra (U20231B120)**<br>**AV1:** Al elaborar Context Mapping y Software Architecture he comprendido que las decisiones de diseño deben explicar cómo se organizan las responsabilidades y relaciones de la solución. Esta experiencia me ha permitido reconocer la necesidad de continuar desarrollando mis conocimientos de arquitectura.<br>**TB1:** El trabajo con Style Guidelines e Information Architecture me permitió aprender a justificar decisiones visuales, etiquetas, navegación, búsqueda y metadatos. También reconocí la necesidad de seguir actualizando mis conocimientos para diseñar productos más consistentes y accesibles. | **AV1:** El trabajo ha permitido reconocer que una solución de software requiere aprendizaje continuo y colaboración entre áreas. Cada integrante ha profundizado en una perspectiva específica y ha aplicado ese aprendizaje a un entregable concreto, identificando conocimientos que seguimos desarrollando en las siguientes etapas.<br>**TB1:** El equipo reconoció que el aprendizaje permanente también comprende mejorar la forma de planificar, diseñar, implementar, probar, documentar y desplegar una solución. La experiencia de TB1 permitió aplicar nuevos conocimientos en entregables concretos y detectar aspectos que deberán seguir fortaleciéndose durante los próximos sprints. |
+| Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software | **Carhuaz Centeno, Briguite Eryka (U20241D932)**<br>**AV1:** He trabajado en los contenidos y evidencias de EventStorming, organizando eventos, relaciones y procesos relevantes para la solución.<br>**TB1:** He desarrollado Landing Page UI Design y Mobile Applications UX/UI Design, incluyendo wireframes, wireflows, mock-ups, user flows y prototyping.<br><br>**Contreras Rojas, Cesar Jair (U20241D995)**<br>**AV1:** He completado mi participación incorporando la parte asignada de Tactical-Level Domain-Driven Design, ampliando el diseño táctico y documentando sus elementos principales.<br>**TB1:** He desarrollado Software Configuration Management, incluyendo Software Development Environment Configuration, Source Code Management, Source Code Style Guide & Conventions y Software Deployment Configuration.<br><br>**Cotrina Siclla, Sofia Alessandra (U20231B120)**<br>**AV1:** Mi aporte se ha enfocado en explicar la estructura y las relaciones de la solución mediante Context Mapping y Software Architecture.<br>**TB1:** He desarrollado Style Guidelines e Information Architecture, incluyendo General Style Guidelines, Organization Systems, Labelling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems. <br><br>**Rojas Tello, Nestor Alonso (U202317099)**<br>**AV1:** Mi participación se ha concentrado en aplicar conceptos de Domain-Driven Design a la perspectiva táctica. He incorporado la parte asignada y he revisado cómo expresarla dentro de la documentación del proyecto.<br>**TB1:** He corregido los errores identificados en AV1 y he documentado el Sprint 1: Sprint Planning, Aspect Leaders and Collaborators, Sprint Backlog, Development Evidence, Testing Suite Evidence, Execution Evidence, Services Documentation Evidence, Software Deployment Evidence y Team Collaboration Insights during Sprint.<br><br>**Ruiz Mideyros, Adrian (U20241E177)**<br>**AV1:** Durante esta entrega he asumido la organización y consolidación de los contenidos iniciales de SpotGo hasta Requirements Specification. También he ido arreglando la documentación, haciéndola más consistente y adecuada.<br>**TB1:** He revisado todos los puntos agregados para esta entrega, verificando la coherencia general de la documentación y la integración de los nuevos contenidos.| **AV1:** Durante esta entrega, el equipo ha aplicado conocimientos de Lean UX, investigación de usuarios, especificación de requisitos, EventStorming, Context Mapping, arquitectura de software y Tactical-Level Domain-Driven Design. Estos aportes han permitido definir mejor el problema, los requisitos, el dominio y la estructura de la solución.<br>**TB1:** Durante esta entrega, el equipo ha incorporado conocimientos de diseño UI/UX, arquitectura de información, configuración de software, control de código fuente, despliegue, pruebas, documentación de servicios y planificación de sprints. Estos aprendizajes han permitido avanzar desde el diseño de la solución hacia su implementación y validación inicial.|
+| Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. | **Carhuaz Centeno, Briguite Eryka (U20241D932)**<br>**AV1:** Al trabajar con EventStorming he reconocido que comprender el dominio requiere analizarlo desde diferentes perspectivas. También he aplicado una técnica para ordenar eventos y procesos, identificando la necesidad de seguir aprendiendo métodos de análisis.<br>**TB1:** Al desarrollar los artefactos de UI/UX, amplié mis conocimientos sobre la forma de convertir las necesidades de los usuarios en flujos, pantallas y prototipos. Esta experiencia me permitió reconocer la importancia de seguir aprendiendo sobre diseño centrado en el usuario.<br><br>**Contreras Rojas, Cesar Jair (U20241D995)**<br>**AV1:** Completar una parte de Tactical-Level Domain-Driven Design ha representado una oportunidad para seguir aprendiendo a detallar reglas, clases y componentes. Al desarrollar esta parte, he aplicado los conceptos revisados y he documentado lo aprendido.<br>**TB1:** El desarrollo de Software Configuration Management me permitió profundizar en las prácticas necesarias para organizar el entorno, el código, las convenciones de desarrollo y el despliegue. Reconocí que estos conocimientos deben actualizarse continuamente para trabajar de forma ordenada.<br><br>**Cotrina Siclla, Sofia Alessandra (U20231B120)**<br>**AV1:** Al elaborar Context Mapping y Software Architecture he comprendido que las decisiones de diseño deben explicar cómo se organizan las responsabilidades y relaciones de la solución. Esta experiencia me ha permitido reconocer la necesidad de continuar desarrollando mis conocimientos de arquitectura.<br>**TB1:** El trabajo con Style Guidelines e Information Architecture me permitió aprender a justificar decisiones visuales, etiquetas, navegación, búsqueda y metadatos. También reconocí la necesidad de seguir actualizando mis conocimientos para diseñar productos más consistentes y accesibles. <br><br>**Rojas Tello, Nestor Alonso (U202317099)**<br>**AV1:** La elaboración de la parte táctica me ha mostrado que DDD requiere estudiarse con profundidad para representar correctamente las responsabilidades y reglas de cada contexto. También he identificado la necesidad de relacionar el diseño táctico con las decisiones estratégicas.<br>**TB1:** Al corregir AV1 y documentar Sprint 1, he reforzado mis conocimientos sobre planificación, seguimiento del trabajo, evidencias de desarrollo, pruebas, servicios y despliegue. Este proceso también me mostró la importancia de conservar trazabilidad entre las historias y los resultados del sprint.<br><br>**Ruiz Mideyros, Adrian (U20241E177)**<br>**AV1:** Al integrar las primeras secciones he comprendido que no basta con describir SpotGo, sino que debo aplicar técnicas para justificar la propuesta y convertirla en requisitos. Esto me ha permitido reconocer la importancia de seguir fortaleciendo mis conocimientos de análisis y comunicación de soluciones de software.<br>**TB1:** La revisión de los nuevos contenidos me permitió identificar la importancia de mantener una visión general del proyecto y de seguir aprendiendo para detectar inconsistencias entre sus diferentes capítulos y entregables.| **AV1:** El trabajo ha permitido reconocer que una solución de software requiere aprendizaje continuo y colaboración entre áreas. Cada integrante ha profundizado en una perspectiva específica y ha aplicado ese aprendizaje a un entregable concreto, identificando conocimientos que seguimos desarrollando en las siguientes etapas.<br>**TB1:** El equipo reconoció que el aprendizaje permanente también comprende mejorar la forma de planificar, diseñar, implementar, probar, documentar y desplegar una solución. La experiencia de TB1 permitió aplicar nuevos conocimientos en entregables concretos y detectar aspectos que deberán seguir fortaleciéndose durante los próximos sprints.|
 
 # Objetivos SMART
-
-**Ruiz Mideyros, Adrian (U20241E177)**
-
-- Durante mi primer año como profesional, participaré en la implementación de al menos 3 servicios REST utilizando Spring Boot o ASP.NET Core, incluyendo pruebas automatizadas y documentación OpenAPI, con el propósito de prepararme para trabajar como desarrollador backend.
-- Durante los doce meses posteriores a mi graduación, conseguiré al menos 2 certificaciones relacionadas con el desarrollo de soluciones con IA y aplicaré lo aprendido en al menos 2 proyectos, documentando los resultados en mi portafolio profesional.
-
-**Rojas Tello, Nestor Alonso (U202317099)**
-
-- Durante los primeros doce meses posteriores a mi graduación, completaré al menos 2 cursos certificados de especialización en Machine Learning y Data Science, aplicando Python, estadística y análisis de datos en un proyecto documentado en mi portafolio profesional, con el propósito de fortalecer mis competencias para desempeñarme como científico de datos.
-- Durante los primeros dieciocho meses posteriores a mi graduación, desarrollaré y publicaré en mi portafolio al menos 2 proyectos de Machine Learning con conjuntos de datos reales, incluyendo limpieza de datos, análisis exploratorio y evaluación de modelos mediante métricas adecuadas para cada problema, con el propósito de demostrar mi capacidad para transformar datos en soluciones que apoyen la toma de decisiones.
-
-**Contreras Rojas, Cesar Jair (U20241D995)**
-
-- Durante mi primer año posterior a mi graduación quisiera crear un aplicativo el cual implemente herramientas de diseño para el diagramado C4, de clases y de base de datos con el fin de facilitar el diseño de dichos diagramas y que facilite la comprensión de estos y la conexión que hay entre estas 3 capas de diseño.
-- Durante el primer año posterior a mi graduación, conseguiré por lo menos 2 certificaciones relacionadas al desarrollo de soluciones con Inteligencia Artifical.
 
 **Carhuaz Centeno, Briguite Eryka (U20241D932)**
 
 - Durante los primeros doce meses posteriores a mi graduación, participaré en el diseño e implementación de al menos 3 servicios REST utilizando Spring Boot o ASP.NET Core, incorporando pruebas automatizadas y documentación mediante OpenAPI, evidenciando mi trabajo a través de repositorios o proyectos profesionales, con el propósito de fortalecer mis competencias y desarrollarme profesionalmente como Backend Developer.
 - Durante los doce meses posteriores a mi graduación, obtendré al menos 2 certificaciones relacionadas con Inteligencia Artificial aplicada al desarrollo de software y utilizaré los conocimientos adquiridos en al menos 2 proyectos prácticos, documentando los resultados y tecnologías utilizadas en mi portafolio profesional, con el propósito de ampliar mi perfil como desarrolladora y adquirir competencias en el uso de IA dentro de soluciones de software.
 
+**Contreras Rojas, Cesar Jair (U20241D995)**
+
+- Durante mi primer año posterior a mi graduación quisiera crear un aplicativo el cual implemente herramientas de diseño para el diagramado C4, de clases y de base de datos con el fin de facilitar el diseño de dichos diagramas y que facilite la comprensión de estos y la conexión que hay entre estas 3 capas de diseño.
+- Durante el primer año posterior a mi graduación, conseguiré por lo menos 2 certificaciones relacionadas al desarrollo de soluciones con Inteligencia Artificial.
+
 **Cotrina Siclla, Sofia Alessandra (U20231B120)**
 
 - Durante mi primer año tras la graduación, completaré 1 programa de especialización en Machine Learning centrado en Python, obteniendo el certificado correspondiente, con el propósito de adquirir los fundamentos técnicos y teóricos necesarios para ingresar al campo de la Inteligencia Artificial.
 - Para el cierre de mis primeros 18 meses como profesional, desarrollaré al menos 2 modelos predictivos utilizando Python, documentando el código y los resultados obtenidos en mi portafolio público, con el objetivo de demostrar mi experiencia práctica y orientar definitivamente mi perfil hacia roles en Inteligencia Artificial.
+
+**Rojas Tello, Nestor Alonso (U202317099)**
+
+- Durante los primeros doce meses posteriores a mi graduación, completaré al menos 2 cursos certificados de especialización en Machine Learning y Data Science, aplicando Python, estadística y análisis de datos en un proyecto documentado en mi portafolio profesional, con el propósito de fortalecer mis competencias para desempeñarme como científico de datos.
+- Durante los primeros dieciocho meses posteriores a mi graduación, desarrollaré y publicaré en mi portafolio al menos 2 proyectos de Machine Learning con conjuntos de datos reales, incluyendo limpieza de datos, análisis exploratorio y evaluación de modelos mediante métricas adecuadas para cada problema, con el propósito de demostrar mi capacidad para transformar datos en soluciones que apoyen la toma de decisiones.
+
+**Ruiz Mideyros, Adrian (U20241E177)**
+
+- Durante mi primer año como profesional, participaré en la implementación de al menos 3 servicios REST utilizando Spring Boot o ASP.NET Core, incluyendo pruebas automatizadas y documentación OpenAPI, con el propósito de prepararme para trabajar como desarrollador backend.
+- Durante los doce meses posteriores a mi graduación, conseguiré al menos 2 certificaciones relacionadas con el desarrollo de soluciones con IA y aplicaré lo aprendido en al menos 2 proyectos, documentando los resultados en mi portafolio profesional.

@@ -1,8 +1,8 @@
 ### 2.6.2. Bounded Context: Identity & Access Management
 
-Identity & Access Management es un bounded context genérico que administra la identidad digital, la autenticación, las sesiones y la autorización de los usuarios de SpotGo. Su responsabilidad termina en comprobar quién es la persona y qué rol puede ejercer; no administra los datos de Driver (Conductores), los Vehicles, la infraestructura del estacionamiento, las reservas ni las operaciones de pago.
+Identity & Access Management es un bounded context genérico que administra la identidad digital, la autenticación, las sesiones y la autorización de los usuarios de SpotGo. Su responsabilidad termina en comprobar quién es la persona y qué rol puede ejercer; no administra los datos de los conductores, los vehículos, la infraestructura del estacionamiento, las reservas ni las operaciones de pago.
 
-El modelo considera los roles Driver, Parking Admin (Administradores) y SuperAdmin. Un Guest no requiere una cuenta para utilizar el estacionamiento y, por tanto, no se crea una identidad persistente para una Guest Parking Session. Los perfiles de negocio se mantienen en Profiles & Vehicles Management y se relacionan con este contexto mediante identityRef. El registro público crea únicamente cuentas de Driver; las cuentas de Parking Admin y SuperAdmin se provisionan internamente.
+El modelo considera los roles Driver, Parking Admin y SuperAdmin. Un Guest no requiere una cuenta para utilizar el estacionamiento y, por tanto, no se crea una identidad persistente para una Guest Parking Session. Los perfiles de negocio se mantienen en Profiles & Vehicles Management y se relacionan con este contexto mediante identityRef. El registro público crea únicamente cuentas de Driver; las cuentas de Parking Admin y SuperAdmin se provisionan internamente.
 
 #### *2.6.2.1. Domain Layer*
 

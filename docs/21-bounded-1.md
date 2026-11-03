@@ -1,8 +1,8 @@
 ### 2.6.1. Bounded Context: Profiles & Vehicles Management
 
-Profiles & Vehicles Management es un bounded context de soporte que concentra la información de negocio de los Driver (Conductores), sus vehículos y los perfiles operativos asociados a una identidad autenticada. Su objetivo es ofrecer a los demás contextos una referencia confiable sobre la elegibilidad del Driver y la relación entre una persona y sus vehículos. El contexto no administra credenciales, sesiones de acceso, reservas, pagos ni datos persistentes de Guests.
+Profiles & Vehicles Management es un bounded context de soporte que concentra la información de negocio de los conductores, sus vehículos y los perfiles operativos asociados a una identidad autenticada. Su objetivo es ofrecer a los demás contextos una referencia confiable sobre la elegibilidad del conductor y la relación entre una persona y sus vehículos. El contexto no administra credenciales, sesiones de acceso, reservas, pagos ni datos persistentes de Guests.
 
-Un Guest puede utilizar el estacionamiento mediante una Guest Parking Session creada y cerrada manualmente por Parking Admin (Administradores). Por ese motivo, el Guest no crea un Driver, User Profile, Vehicle ni Reservation dentro de este contexto. Del mismo modo, el contexto no contiene un perfil Visitor: los perfiles persistentes considerados por SpotGo son los de Driver y Parking Admin.
+Un Guest puede utilizar el estacionamiento mediante una Guest Parking Session creada y cerrada manualmente por Parking Admin. Por ese motivo, el Guest no crea un Driver, User Profile, Vehicle ni reserva dentro de este contexto. Del mismo modo, el contexto no contiene un perfil Visitor: los perfiles persistentes considerados por SpotGo son los de Driver y Parking Admin.
 
 #### *2.6.1.1. Domain Layer*
 
@@ -23,11 +23,11 @@ La capa de dominio representa las reglas que determinan cuándo un Driver tiene 
 | Driver Factory | Factory | Crea un Driver con las invariantes mínimas de identidad y datos obligatorios. | createDriver(). |
 | Vehicle Factory | Factory | Crea un Vehicle asociado a un Driver activo. | createVehicle(). |
 | Driver Eligibility Service | Domain Service | Verifica que el Driver esté activo, que su User Profile sea operativo y que el Vehicle solicitado le pertenezca y esté activo. | validateForReservation(driverId, vehicleId), validateForOperation(). |
-| Driver Repository | Repository Interface | Define la persistencia de los Driver sin acoplar el dominio a PostgreSQL. | findById(), findByIdentityRef(), save(), existsActive(). |
+| Driver Repository | Repository Interface | Define cómo se persisten los conductores, sin acoplar el dominio a PostgreSQL. | findById(), findByIdentityRef(), save(), existsActive(). |
 | Vehicle Repository | Repository Interface | Define la persistencia y consulta de vehículos por Driver. | findById(), findByDriverId(), save(), existsActive(). |
 | User Profile Repository | Repository Interface | Define la persistencia de perfiles Driver y Parking Admin. | findByIdentityRef(), findOperationalProfile(), save(). |
 
-Las reglas de asociación con Parking Infrastructure se exponen mediante contratos y eventos. Profiles & Vehicles Management no decide si un espacio está disponible ni si un vehículo ya ocupa un espacio; únicamente valida la propiedad y el estado del Vehicle. La regla de un solo espacio activo por Vehicle se aplica en Parking Infrastructure al crear o activar una Reservation o Parking Session.
+Las reglas de asociación con Parking Infrastructure se exponen mediante contratos y eventos. Profiles & Vehicles Management no decide si un espacio está disponible ni si un vehículo ya ocupa un espacio; únicamente valida la propiedad y el estado del Vehicle. La regla de un solo espacio activo por Vehicle se aplica en Parking Infrastructure al crear o activar una reserva o una Parking Session.
 
 #### *2.6.1.2. Interface Layer*
 
@@ -39,7 +39,7 @@ La Interface Layer recibe solicitudes del API Gateway y eventos provenientes de 
 | Vehicle Controller | REST/HTTPS | Gestiona los vehículos pertenecientes a un Driver. | Registrar Vehicle, listar vehículos, actualizar datos, activar o desactivar Vehicle. |
 | User Profile Controller | REST/HTTPS | Consulta y administra el User Profile de una identidad autorizada. | Consultar perfil operativo y actualizar su estado. |
 | Parking Admin Assignment Controller | REST/HTTPS | Registra o finaliza asignaciones de perfiles Parking Admin a un Tenant. | Asignar Parking Admin, consultar asignaciones y finalizar asignación. |
-| Eligibility Controller | REST/HTTPS interno | Expone una consulta para que Parking Infrastructure valide Driver y Vehicle antes de crear una Reservation. | Validar elegibilidad y devolver resultado con referencias de Driver y Vehicle. |
+| Eligibility Controller | REST/HTTPS interno | Expone una consulta para que Parking Infrastructure valide Driver y Vehicle antes de crear una reserva. | Validar elegibilidad y devolver resultado con referencias de Driver y Vehicle. |
 | Identity Event Consumer | Evento asíncrono | Recibe la validación, asignación de rol o suspensión de una identidad para sincronizar la referencia mínima del perfil. | IdentityValidated, RoleAssigned, AccountSuspended. |
 | Profile Event Publisher | Evento asíncrono | Publica cambios que otros contextos necesitan conocer sin compartir la base de datos. | DriverProfileCreated, DriverProfileValidated, VehicleRegistered, VehicleDeactivated, ParkingAdminProfileAssigned. |
 
@@ -67,11 +67,11 @@ La Application Layer coordina los casos de uso del contexto. Cada command handle
 | AccountSuspended | Account Suspended Handler | Marca como no operativo el perfil asociado, sin borrar su historial. |
 | DriverProfileCreated | Profile Notification Handler | Registra la disponibilidad del nuevo Driver para consultas internas. |
 | DriverProfileValidated | Parking Eligibility Publisher | Informa a Parking Infrastructure que la referencia del Driver y sus datos mínimos son válidos. |
-| VehicleRegistered | Parking Reference Publisher | Publica la referencia del Vehicle para que pueda ser seleccionada en una Reservation. |
+| VehicleRegistered | Parking Reference Publisher | Publica la referencia del Vehicle para que pueda ser seleccionada en una reserva. |
 | VehicleDeactivated | Parking Reference Publisher | Informa que el Vehicle no debe utilizarse en nuevas operaciones. Las operaciones existentes se revisan según sus propias reglas. |
 | ParkingAdminProfileAssigned | Tenant Administration Publisher | Comunica una asignación vigente al flujo administrativo correspondiente. |
 
-Un evento de VehicleDeactivated no cancela por sí solo una Reservation confirmada, porque la decisión de cancelación o reasignación pertenece a Parking Infrastructure y debe considerar el estado de la operación. Esta separación evita que un contexto de soporte modifique directamente el ciclo de vida de una Reservation.
+Un evento de VehicleDeactivated no cancela por sí solo una reserva confirmada, porque la decisión de cancelación o reasignación pertenece a Parking Infrastructure y debe considerar el estado de la operación. Esta separación evita que un contexto de soporte modifique directamente el ciclo de vida de una reserva.
 
 #### *2.6.1.4. Infrastructure Layer*
 

@@ -8,7 +8,7 @@
 
 *¿Por qué llevar a cabo este análisis?*
 
-Permite identificar cómo funcionan las soluciones actuales de estacionamiento, detectar sus fortalezas y limitaciones, y determinar oportunidades de diferenciación para SpotGo, especialmente en la organización por zonas, clasificación de usuarios y monitoreo de ocupación.
+Permite identificar cómo funcionan las soluciones actuales de estacionamiento, detectar sus fortalezas y limitaciones, y determinar oportunidades de diferenciación para SpotGo, especialmente en la organización por zonas, la clasificación de usuarios y el monitoreo de la ocupación.
 
 *Logos*
 
@@ -20,31 +20,31 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 
 |     | SpotGo | Apparka | iPark | Parkopedia |
 | --- | --- | --- | --- | --- |
-| Overview | Aplicación móvil y servicios backend para organizar estacionamientos por zonas y perfiles, consultar disponibilidad, reservar y pagar espacios, administrar suscripciones y comprobantes electrónicos, y permitir que el Driver abra la ruta hacia su destino en Google Maps. | Empresa peruana de gestión de estacionamientos con app para ubicación, disponibilidad, pagos, reservas y servicios empresariales. | Solución peruana en la nube para gestión digital de estacionamientos, pagos, registro vehicular y control operativo. | Plataforma global de datos de estacionamiento con información estática, disponibilidad dinámica, reservas, pagos e integraciones. |
-| Ventaja competitiva | Integra clasificación por perfiles, sensores por Parking Spot, monitoreo actualizado, reservas, pagos, integración con Google Maps y apoyo operativo desde una experiencia móvil. | Amplia presencia en Perú, operación directa de estacionamientos y servicios digitales integrados. | Integra gestión administrativa, pagos digitales, control vehicular y aforo en tiempo real. | Cobertura global, gran volumen de datos y fuerte integración con vehículos y servicios de movilidad. |
+| Overview | Aplicación móvil y servicios de backend para organizar estacionamientos por zonas y perfiles, consultar disponibilidad, reservar y pagar espacios, administrar suscripciones y comprobantes electrónicos, y permitir que los conductores abran una ruta hacia su destino en Google Maps. | Empresa peruana de gestión de estacionamientos con una aplicación para consultar ubicaciones y disponibilidad, realizar pagos y reservas, y acceder a servicios empresariales. | Solución peruana en la nube para la gestión digital de estacionamientos, pagos, registro de vehículos y control operativo. | Plataforma global de datos de estacionamiento con información estática, disponibilidad dinámica, reservas, pagos e integraciones. |
+| Ventaja competitiva | Integra la clasificación por perfiles, sensores en cada espacio de estacionamiento, monitoreo actualizado, reservas, pagos, integración con Google Maps y apoyo operativo desde una experiencia móvil. | Amplia presencia en Perú, operación directa de estacionamientos y servicios digitales integrados. | Integra la gestión administrativa, los pagos digitales, el control vehicular y el aforo en tiempo real. | Cobertura global, gran volumen de datos y fuerte integración con vehículos y servicios de movilidad. |
 
 *Perfil de marketing*
 
 |     | SpotGo | Apparka | iPark | Parkopedia |
 | --- | --- | --- | --- | --- |
-| Mercado Objetivo | Parking Admin de estacionamientos de alta demanda y Driver que utilizan estos espacios. | Driver urbanos que buscan optimizar tiempo en estacionar. | Parking Admin y empresas que administran estacionamientos. | Driver, fabricantes de vehículos, Parking Admin y servicios de movilidad. |
-| Estrategias de Marketing | Pruebas piloto con Parking Admin de estacionamientos y alianzas con centros comerciales, universidades y empresas. | Presencia física nacional, app móvil, servicios empresariales y alianzas con distintos tipos de establecimientos. | Venta B2B orientada a digitalización y mejora operativa. | Alianzas con fabricantes, integración mediante APIs y presencia internacional. |
+| Mercado Objetivo | Administradores de estacionamientos de alta demanda y conductores que utilizan estos espacios. | Conductores urbanos que buscan reducir el tiempo que les toma estacionar. | Administradores de estacionamientos y empresas que los gestionan. | Conductores, fabricantes de vehículos, administradores de estacionamientos y empresas de movilidad. |
+| Estrategias de Marketing | Pruebas piloto con administradores de estacionamientos y alianzas con centros comerciales, universidades y empresas. | Presencia física nacional, aplicación móvil, servicios empresariales y alianzas con distintos tipos de establecimientos. | Venta a empresas orientada a la digitalización y la mejora operativa. | Alianzas con fabricantes, integración mediante API y presencia internacional. |
 
 *Perfil de producto*
 
 |     | SpotGo | Apparka | iPark | Parkopedia |
 | --- | --- | --- | --- | --- |
-| Productos y Servicios | Aplicación móvil para disponibilidad por zonas, perfiles de usuario, reservas, pagos digitales, suscripciones, facturación electrónica e integración con Google Maps; incluye monitoreo por sensores, alertas, reportes y funciones operativas. | Ubicación, disponibilidad, pagos, reservas, abonados y administración de estacionamientos. | Registro vehicular, pagos, facturación, aforo y portal administrativo. | Datos de parking, disponibilidad, reservas, pagos y APIs. |
-| Precios y costos | Modelo preliminar basado en suscripción para Parking Admin de estacionamientos; los costos de implementación dependerán de los mecanismos de monitoreo requeridos. | Tarifas variables según estacionamiento, servicio o modalidad de abonado. | Modelo de suscripción con planes según capacidad y requerimientos. | Gratuito para usuarios finales; servicios B2B y licenciamiento de datos. |
-| Canales de distribución | App móvil, Landing Page y servicios backend integrados con la infraestructura del estacionamiento. | App móvil, web y red física de estacionamientos. | Plataforma web, app e integraciones con dispositivos. | Web, app, APIs y sistemas integrados en vehículos. |
+| Productos y Servicios | Aplicación móvil para consultar disponibilidad por zonas, perfiles de usuario, reservas, pagos digitales y suscripciones, y acceder a comprobantes electrónicos e integración con Google Maps; incluye monitoreo por sensores, alertas, reportes y funciones operativas. | Consulta de ubicación y disponibilidad, pagos, reservas, administración de suscripciones y gestión de estacionamientos. | Registro de vehículos, pagos, facturación, aforo y portal administrativo. | Datos de estacionamiento, disponibilidad, reservas, pagos e interfaces de programación (API). |
+| Precios y costos | Modelo preliminar basado en suscripciones para administradores de estacionamientos; los costos de implementación dependerán de los mecanismos de monitoreo requeridos. | Tarifas variables según el estacionamiento, el servicio o la modalidad de suscripción. | Modelo de suscripción con planes según capacidad y requerimientos. | Servicios gratuitos para usuarios finales y servicios empresariales con licenciamiento de datos. |
+| Canales de distribución | Aplicación móvil, página de presentación y servicios de backend integrados con la infraestructura del estacionamiento. | Aplicación móvil, sitio web y red física de estacionamientos. | Plataforma web, aplicación e integraciones con dispositivos. | Sitio web, aplicación, interfaces de programación (API) y sistemas integrados en vehículos. |
 
 *Análisis SWOT*
 
 |     | SpotGo | Apparka | iPark | Parkopedia |
 | --- | --- | --- | --- | --- |
-| Fortalezas | Organización por tipo de usuario, monitoreo por zonas y alertas integradas. | Presencia nacional, operación de estacionamientos y servicios digitales. | Gestión cloud, pagos digitales y aforo en tiempo real. | Cobertura global, datos dinámicos e integración vehicular. |
+| Fortalezas | Organización por tipo de usuario, monitoreo por zonas y alertas integradas. | Presencia nacional, operación de estacionamientos y servicios digitales. | Gestión en la nube, pagos digitales y aforo en tiempo real. | Cobertura global, datos dinámicos e integración vehicular. |
 | Debilidades | Producto nuevo y aún en proceso de validación. | Menor enfoque en clasificación interna de usuarios por zonas. | Puede requerir mayor configuración e integración operativa. | Menor enfoque en gestión interna de zonas por usuario. |
-| Oportunidades | Digitalización de estacionamientos de alta demanda. | Expansión de servicios digitales y empresariales. | Escalamiento hacia más Parking Admin y verticales. | Mayor integración con movilidad conectada y vehículos. |
+| Oportunidades | Digitalización de estacionamientos de alta demanda. | Expansión de servicios digitales y empresariales. | Incorporación de más administradores de estacionamientos y expansión a otros sectores. | Mayor integración con movilidad conectada y vehículos. |
 | Amenazas | Competidores consolidados con mayor infraestructura y alcance. | Nuevas soluciones digitales y plataformas globales. | Soluciones más simples o especializadas. | Competidores locales con enfoque operativo específico. |
 
 La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir de sus páginas institucionales citadas en la bibliografía (Apparka, s. f.; iPark, s. f.; Parkopedia, s. f.). Las características comerciales y los precios publicados se presentan como referencias del análisis y pueden variar según el servicio o la fecha de consulta.
@@ -52,16 +52,16 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 1. Organización por zonas según tipo de usuario.
-   - SpotGo busca diferenciarse mediante la clasificación de Driver y la asignación de zonas específicas, facilitando una distribución más ordenada y con el objetivo de reducir posibles usos indebidos.
+   - SpotGo busca diferenciarse mediante la clasificación de conductores y la asignación de zonas específicas, lo que facilita una distribución más ordenada y ayuda a reducir posibles usos indebidos.
 
 2. Monitoreo actualizado de ocupación.
-   - La solución ofrecerá información actualizada sobre la disponibilidad por zonas, permitiendo a Driver y Parking Admin tomar decisiones con mayor rapidez.
+   - La solución ofrecerá información actualizada sobre la disponibilidad por zonas para que los conductores y los administradores de estacionamientos tomen decisiones con mayor rapidez.
 
-3. Gestión centralizada para Parking Admin.
+3. Gestión centralizada para administradores de estacionamientos.
    - La aplicación móvil administrativa permitirá consultar ocupación, distribución de zonas e incidencias desde un único entorno, facilitando la supervisión operativa.
 
 4. Experiencia de búsqueda enfocada en disponibilidad.
-   - Los Driver podrán consultar qué zonas presentan disponibilidad y cuáles pueden utilizar según su clasificación, con el objetivo de reducir recorridos innecesarios.
+   - Los conductores podrán consultar qué zonas presentan disponibilidad y cuáles pueden utilizar según su perfil, con el objetivo de reducir recorridos innecesarios.
 
 5. Modelo modular y adaptable.
    - La solución podrá implementarse progresivamente según las necesidades y características de cada estacionamiento, buscando reducir las barreras de adopción.
@@ -73,17 +73,17 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 
 ### 2.2.1. Diseño de entrevistas
 
-**Primer Segmento Objetivo (Parking Admin (Administradores))**
+**Primer Segmento Objetivo (Administradores de estacionamientos)**
 
 1. ¿Cuáles son los principales retos que enfrenta en la gestión del estacionamiento?
-2. ¿Cómo organizan actualmente la distribución de espacios dentro del estacionamiento?
-3. ¿De qué manera registran y diferencian a los usuarios como clientes o colaboradores?
+2. ¿Cómo organiza actualmente la distribución de espacios dentro del estacionamiento?
+3. ¿De qué manera registra y diferencia a los usuarios entre clientes y colaboradores?
 4. ¿Qué situaciones ocurren cuando un vehículo ocupa un espacio que no le corresponde?
-5. ¿Cómo monitorean la ocupación de las diferentes zonas del estacionamiento?
+5. ¿Cómo monitorea la ocupación de las diferentes zonas del estacionamiento?
 6. ¿Qué problemas se presentan con mayor frecuencia en horas de alta demanda?
-7. ¿Qué dificultades enfrentan los vigilantes para mantener el orden?
-8. ¿Qué herramientas o sistemas utilizan actualmente para la gestión del estacionamiento?
-9. ¿Qué limitaciones o inconvenientes encuentran en el sistema actual?
+7. ¿Qué dificultades enfrenta el personal de vigilancia para mantener el orden?
+8. ¿Qué herramientas o sistemas utiliza actualmente para la gestión del estacionamiento?
+9. ¿Qué limitaciones o inconvenientes encuentra en el sistema actual?
 10. ¿Cómo cree que la visualización en tiempo real de la ocupación podría ayudar en la gestión?
 11. ¿Qué tipo de alertas o notificaciones considera necesarias para mejorar el control?
 12. ¿Cómo influye el registro de usuarios en la organización del estacionamiento?
@@ -91,7 +91,7 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 14. ¿De qué manera considera que se podría reducir el tiempo de búsqueda de espacios?
 15. ¿Cómo evaluaría la implementación de una solución como SpotGo en su entorno?
 
-**Segundo Segmento Objetivo (Driver (Conductores))**
+**Segundo Segmento Objetivo (Conductores)**
 
 1. ¿Cómo suele ser su experiencia al buscar estacionamiento en lugares concurridos?
 2. ¿En qué tipos de lugares encuentra más dificultades para estacionar y por qué?
@@ -113,7 +113,7 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 
 **Needfinding Interviews Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQBqZCnYsXk5TbTE0vg1_trYAcXeX9iY3VyxVWvInncaOEI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bKCoNf](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQBqZCnYsXk5TbTE0vg1_trYAcXeX9iY3VyxVWvInncaOEI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bKCoNf)
 
-**Primer Segmento Objetivo (Parking Admin (Administradores))**
+**Primer Segmento Objetivo (Administradores de estacionamientos)**
 
 **Entrevista 1**
 
@@ -124,7 +124,7 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 | Nombre completo: | Cecilia Lopez |
 | Edad: | 31 años |
 | Distrito: | Cercado de Lima |
-| Resumen: | Cecilia nos indica que la gestión del estacionamiento se basa en organización manual y registro mediante boletas y tablas, sin asignación de zonas específicas, ya que los vehículos ocupan cualquier espacio disponible. El monitoreo se realiza con cámaras y control físico, y en horas de alta demanda surgen dificultades para movilizar vehículos debido al espacio reducido. Aunque el sistema actual funciona, depende en gran medida de la intervención manual, incluso solicitando llaves para reorganizar los autos. Considera que un sistema inteligente podría mejorar la organización, visibilidad y control, además de aportar beneficios para atraer más clientes. |
+| Resumen: | Cecilia señala que la gestión del estacionamiento se basa en la organización manual y en el registro mediante boletas y tablas, sin asignación de zonas específicas, por lo que los vehículos ocupan cualquier espacio disponible. El monitoreo se realiza con cámaras y control físico. En horas de alta demanda surgen dificultades para movilizar los vehículos debido al espacio reducido. Aunque el sistema actual funciona, depende en gran medida de la intervención manual, incluso se solicitan las llaves para reorganizar los autos. Considera que un sistema inteligente podría mejorar la organización, la visibilidad y el control, además de atraer a más clientes. |
 
 **Entrevista 2**
 
@@ -135,7 +135,7 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 | Nombre completo: | Reinaldo Torres |
 | Edad: | 42 años |
 | Distrito: | Breña |
-| Resumen: | Nos comenta que la gestión de su estacionamiento combina métodos manuales y digitales, registrando a los clientes sin asignación fija de espacios, ya que ocupan cualquier lugar disponible. El monitoreo se realiza mediante una aplicación que permite el control remoto, pero en horas de alta demanda surgen problemas de congestión y la necesidad de movilizar vehículos. También destaca que un sistema en tiempo real mejoraría significativamente la gestión, permitiría mayor control y reduciría las pérdidas económicas. Asimismo, resalta la importancia de las alertas, especialmente para los pagos, y considera que la implementación de una solución inteligente sería beneficiosa, aunque requeriría capacitación del personal. |
+| Resumen: | Reinaldo comenta que la gestión de su estacionamiento combina métodos manuales y digitales. Registra a los clientes sin asignarles espacios fijos, pues estos ocupan cualquier lugar disponible. El monitoreo se realiza mediante una aplicación que permite el control remoto, pero en horas de alta demanda surgen problemas de congestión y la necesidad de movilizar vehículos. También señala que un sistema con información en tiempo real mejoraría la gestión, permitiría un mayor control y reduciría las pérdidas económicas. Destaca la importancia de las alertas, especialmente las relacionadas con los pagos, y considera que implementar una solución inteligente sería beneficioso, aunque requeriría capacitar al personal. |
 
 **Entrevista 3**
 
@@ -146,9 +146,9 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 | Nombre completo: | Juan Vega |
 | Edad: | 30 años |
 | Distrito: | La Victoria |
-| Resumen: | La entrevista a Juan Vega, un Parking Admin de 30 años, expone las dificultades de una gestión basada en procesos manuales, registros en papel y vigilancia visual, lo que genera desorden en horas pico y un control ineficiente de los espacios reservados. Debido a la falta de un sistema en tiempo real, el personal debe realizar rondas a pie y vocear placas para gestionar la ocupación, una carga operativa que el Parking Admin busca eliminar. En este contexto, la aplicación "SpotGo" es recibida con gran optimismo, ya que el uso de sensores para detectar ocupación y un Digital Parking Map en vivo permitiría automatizar la supervisión de lugares, mejorar el control de pagos y proyectar una imagen mucho más profesional y organizada de la empresa. |
+| Resumen: | La entrevista a Juan Vega, administrador de estacionamiento de 30 años, expone las dificultades de una gestión basada en procesos manuales, registros en papel y vigilancia visual. Estas prácticas generan desorden durante las horas punta y dificultan el control de los espacios reservados. Ante la falta de información en tiempo real, el personal debe recorrer el estacionamiento a pie y anunciar las placas en voz alta para gestionar la ocupación, una carga operativa que Juan busca eliminar. Recibió con optimismo la propuesta de SpotGo y considera que los sensores de ocupación y un mapa digital del estacionamiento permitirían automatizar la supervisión de los espacios, mejorar el control de los pagos y proyectar una imagen más profesional y organizada del negocio. |
 
-**Segundo Segmento Objetivo (Driver (Conductores))**
+**Segundo Segmento Objetivo (Conductores)**
 
 **Entrevista 1**
 
@@ -158,8 +158,8 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 | Duración: | 3:51 |
 | Nombre completo: | Emiliano Lozano |
 | Edad: | 51 años |
-| Distrito: | San Martin de Porres |
-| Resumen: | Emiliano nos señala que, como taxista, cuenta con un espacio asignado dentro del estacionamiento, lo que facilita su experiencia y evita dificultades para encontrar lugar. La organización se apoya en señalización básica como carteles, y en algunos casos utilizan conos para asegurar sus espacios. En momentos de alta demanda, otros usuarios ocupan sus espacios, obligándolos a esperar o buscar alternativas. Además, señala que los clientes tienen más dificultades para estacionar. Considera que una solución tecnológica con señales o alertas podría mejorar la organización. |
+| Distrito: | San Martín de Porres |
+| Resumen: | Emiliano señala que, como taxista, cuenta con un espacio asignado dentro del estacionamiento, lo que facilita su experiencia y evita que tenga dificultades para encontrar dónde estacionar. La organización se apoya en señalización básica, como carteles; en algunos casos, también se utilizan conos para reservar espacios. En momentos de alta demanda, otros usuarios ocupan el espacio asignado, lo que lo obliga a esperar o a buscar alternativas. Además, señala que los clientes tienen más dificultades para estacionar. Considera que una solución tecnológica con señales o alertas podría mejorar la organización. |
 
 **Entrevista 2**
 
@@ -170,7 +170,7 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 | Nombre completo: | Angel Pariona |
 | Edad: | 23 años |
 | Distrito: | Lince |
-| Resumen: | Angel menciona que encuentra difícil hallar estacionamiento debido a zonas no autorizadas o cocheras ocupadas, especialmente cerca de cines y parques de agua. Encontrar un espacio puede demorar entre 10 y 15 minutos. Califica la organización actual como muy poco ordenada porque los vehículos no respetan los espacios y generan bloqueos ante la falta de fiscalización municipal. Ante la falta de espacio, da vueltas por las cuadras o se aleja un poco más, calificando la situación de frustrante por la pérdida de tiempo. Considera que una aplicación sería muy útil si le señala zonas libres, muestra la seguridad del lugar y permite reservar espacios. Sugiere medir mejor los tiempos y buscar estacionamiento en horas punta, valorando que un sistema así reduciría significativamente el tiempo de búsqueda en Lima. |
+| Resumen: | Angel menciona que le resulta difícil encontrar estacionamiento debido a zonas no autorizadas o cocheras ocupadas, especialmente cerca de cines y parques acuáticos. Encontrar un espacio puede tomar entre 10 y 15 minutos. Describe la organización actual como muy desordenada, pues algunos vehículos ocupan más de un espacio y generan bloqueos ante la falta de fiscalización municipal. Cuando no encuentra espacio, da vueltas por las cuadras o se aleja, lo que le resulta frustrante por la pérdida de tiempo. Considera que una aplicación sería útil si le indica dónde hay espacios libres, informa sobre la seguridad del lugar y permite reservar. También propone medir mejor los tiempos de búsqueda y tener en cuenta las horas punta; valora que una solución así podría reducir el tiempo que toma encontrar estacionamiento en Lima. |
 
 **Entrevista 3**
 
@@ -181,16 +181,16 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
 | Nombre completo: | Jorge Luis |
 | Edad: | 26 años |
 | Distrito: | El Tambo |
-| Resumen: | Jorge Luis mencionó que buscar estacionamiento en lugares concurridos suele ser complicado, ya que puede tomar varios minutos encontrar un espacio libre y esto genera estrés. También señaló que la falta de señalización y organización dificulta orientarse dentro de algunos estacionamientos. Considera que una aplicación que muestre la disponibilidad de espacios por zonas y guíe al Driver ayudaría a reducir el tiempo de búsqueda y mejorar la experiencia al estacionar. |
+| Resumen: | Jorge Luis mencionó que buscar estacionamiento en lugares concurridos suele ser complicado, ya que encontrar un espacio libre puede tomar varios minutos y generar estrés. También señaló que la falta de señalización y organización dificulta orientarse dentro de algunos estacionamientos. Considera que una aplicación que muestre la disponibilidad por zonas y guíe al conductor ayudaría a reducir el tiempo de búsqueda y a mejorar la experiencia al estacionar. |
 
 ### 2.2.3. Análisis de entrevistas
 
-**Primer Segmento Objetivo (Parking Admin (Administradores))**
+**Primer Segmento Objetivo (Administradores de estacionamientos)**
 
-Este segmento es clave porque son responsables de la organización, control y funcionamiento del estacionamiento. Las entrevistas realizadas evidencian cómo se gestionan actualmente estos espacios y las principales limitaciones que enfrentan, así como la oportunidad de mejora mediante soluciones tecnológicas.
+Este segmento es clave porque sus integrantes son responsables de la organización, el control y el funcionamiento del estacionamiento. Las entrevistas muestran cómo se gestionan actualmente estos espacios y cuáles son las principales limitaciones, así como las oportunidades de mejora mediante soluciones tecnológicas.
 
 *¿Quiénes son?*
-Se trata de Parking Admin encargados de supervisar el estacionamiento y organizar el flujo de vehículos.
+Se trata de administradores de estacionamientos encargados de supervisar el establecimiento y organizar el flujo de vehículos.
 - Utilizan una combinación de métodos manuales y sistemas básicos (boletas, registros, aplicaciones).
 - Se encargan del control de ingresos, ocupación y organización de los vehículos.
 - En muchos casos, deben intervenir directamente para reordenar los autos.
@@ -206,15 +206,15 @@ Se trata de Parking Admin encargados de supervisar el estacionamiento y organiza
 - Eficiente, permitiendo una mejor organización del estacionamiento.
 - Clara y visual, mostrando la ocupación por zonas en tiempo real.
 - Con alertas, para detectar uso indebido de espacios o eventos importantes.
-- De fácil control remoto, para que el Parking Admin supervise sin estar presente.
+- De fácil control remoto, para que el administrador supervise el estacionamiento sin estar presente.
 - Apoyo a la gestión, reduciendo la dependencia de procesos manuales.
 
-**Segundo Segmento Objetivo (Driver (Conductores))**
+**Segundo Segmento Objetivo (Conductores)**
 
-Este segmento es fundamental porque son quienes utilizan directamente el estacionamiento y experimentan los problemas al momento de buscar un espacio. Las entrevistas realizadas evidencian dificultades relacionadas con el tiempo de búsqueda, la organización del lugar y la falta de información clara, lo que impacta en su experiencia.
+Este segmento es fundamental porque sus integrantes utilizan directamente el estacionamiento y experimentan dificultades al buscar un espacio. Las entrevistas muestran problemas relacionados con el tiempo de búsqueda, la organización del lugar y la falta de información clara, lo que afecta su experiencia.
 
 *¿Quiénes son?*
-Se trata de Driver que utilizan estacionamientos en centros comerciales, universidades u otros espacios concurridos.
+Se trata de conductores que utilizan estacionamientos en centros comerciales, universidades u otros espacios concurridos.
 - Buscan estacionar de forma rápida, segura y sencilla.
 - Su experiencia varía según el nivel de congestión y organización del lugar.
 - Dependen de la señalización, su conocimiento del lugar o apoyo del personal.
@@ -228,58 +228,58 @@ Se trata de Driver que utilizan estacionamientos en centros comerciales, univers
 - Estrés y frustración: Sensaciones negativas cuando no encuentran espacio rápidamente. 
 
 *Requisitos del producto*
-- Rápida y eficiente, reduciendo el tiempo de búsqueda de espacios.
-- Visual y clara, mostrando disponibilidad por zonas o pisos.
-- Informativa, incluyendo datos como espacios libres, tarifas y horarios.
-- Fácil de usar, con una interfaz intuitiva que ayude a la orientación.
+- Rápida y eficiente, para reducir el tiempo de búsqueda de espacios.
+- Visual y clara, para mostrar la disponibilidad por zonas o pisos.
+- Informativa, con datos sobre espacios libres, tarifas y horarios.
+- Fácil de usar, con una interfaz intuitiva que facilite la orientación.
 - Con información de disponibilidad en tiempo real y una ruta externa hacia el estacionamiento seleccionado, sin guiar al usuario dentro de la instalación.
 
 ## 2.3. Needfinding
 
 ### 2.3.1. User Personas
 
-**Primer Segmento Objetivo (Parking Admin (Administradores))**
+**Primer Segmento Objetivo (Administradores de estacionamientos)**
 
 *Figura 2 (User Persona 1)*
 ![User Persona 1](../assets/images/figures/02-user-persona-1.png)
 
-**Segundo Segmento Objetivo (Driver (Conductores))**
+**Segundo Segmento Objetivo (Conductores)**
 
 *Figura 3 (User Persona 2)*
 ![User Persona 2](../assets/images/figures/03-user-persona-2.png)
 
 ### 2.3.2. User Task Matrix
 
-**Primer Segmento Objetivo (Parking Admin (Administradores))**
+**Primer Segmento Objetivo (Administradores de estacionamientos)**
 
 *Figura 4 (User Task Matrix 1)*
 ![User Task Matrix 1](../assets/images/figures/04-u-task-matrix-1.png)
 
-**Segundo Segmento Objetivo (Driver (Conductores))**
+**Segundo Segmento Objetivo (Conductores)**
 
 *Figura 5 (User Task Matrix 2)*
 ![User Task Matrix 2](../assets/images/figures/05-u-task-matrix-2.png)
 
 ### 2.3.3. User Journey Mapping
 
-**Primer Segmento Objetivo (Parking Admin (Administradores))**
+**Primer Segmento Objetivo (Administradores de estacionamientos)**
 
 *Figura 6 (User Journey Map 1)*
 ![User Journey Map 1](../assets/images/figures/06-u-journey-map-1.png)
 
-**Segundo Segmento Objetivo (Driver (Conductores))**
+**Segundo Segmento Objetivo (Conductores)**
 
 *Figura 7 (User Journey Map 2)*
 ![User Journey Map 2](../assets/images/figures/07-u-journey-map-2.png)
 
 ### 2.3.4. Empathy Mapping
 
-**Primer Segmento Objetivo (Parking Admin (Administradores))**
+**Primer Segmento Objetivo (Administradores de estacionamientos)**
 
 *Figura 8 (Empathy Map 1)*
 ![Empathy Map 1](../assets/images/figures/08-empathy-map-1.png)
 
-**Segundo Segmento Objetivo (Driver (Conductores))**
+**Segundo Segmento Objetivo (Conductores)**
 
 *Figura 9 (Empathy Map 2)*
 ![Empathy Map 2](../assets/images/figures/09-empathy-map-2.png)
@@ -302,15 +302,15 @@ Para modelar la visión general del dominio se siguió la guía *Step-by-Step Gu
 El Ubiquitous Language conserva únicamente conceptos del negocio y sus reglas; los nombres de servicios, APIs e interfaces se documentan en el glosario técnico separado (Evans, 2003).
 
 - **Parking Spot (Espacio de estacionamiento):** Espacio físico individual dentro de un estacionamiento destinado a la ubicación de un solo vehículo.
-- **Vehicle (Vehículo):** Medio de transporte asociado a un Driver, identificado mediante la placa registrada y otros datos descriptivos de la cuenta, y utilizado para ocupar un Parking Spot. Un Driver puede registrar varios Vehicles y seleccionarlos en sus Reservations.
+- **Vehicle (Vehículo):** Medio de transporte asociado a un Driver, identificado mediante la placa registrada y otros datos descriptivos de la cuenta, y utilizado para ocupar un Parking Spot. Un conductor puede registrar varios vehículos y seleccionarlos en sus reservas.
 - **Parking Zone (Zona de estacionamiento):** Área del estacionamiento que agrupa múltiples *Parking Spots* y puede estar asociada a uno o más tipos de usuario definidos por la administración.
 - **User Profile (Perfil de usuario):** Perfil operativo asociado con una identidad. En un Driver determina las zonas del estacionamiento que puede utilizar; en un Parking Admin representa sus capacidades administrativas y su asignación a un Tenant. No pertenece al Vehicle ni se transfiere entre un Driver y un Parking Admin. Un Guest no tiene User Profile.
-- **Occupancy Status (Estado de ocupación):** Estado físico actual de un *Parking Spot*, utilizado para determinar su disponibilidad operativa. Puede ser *Available*, *Occupied* o *Unavailable*. El estado *Reserved* pertenece a la Reservation y no reemplaza el estado físico del espacio.
-- **High Capacity:** Estado operativo que se activa cuando la ocupación total supera el 95 % de los Parking Spots operativos disponibles y requiere una alerta para el Parking Admin.
-- **Reservation Status (Estado de reserva):** Estado comercial y operativo de una *Reservation*. Puede ser *Pending Payment*, *Reserved*, *Active*, *Completed*, *Cancelled*, *No-show*, *Overstayed* o *Payment Rejected*; *Pending Payment* y *Payment Rejected* representan estados de la intención y del resultado del pago.
+- **Occupancy Status (Estado de ocupación):** Estado físico actual de un *Parking Spot*, utilizado para determinar su disponibilidad operativa. Puede ser *Available*, *Occupied* o *Unavailable*. El estado *Reserved* pertenece a la reserva y no reemplaza el estado físico del espacio.
+- **High Capacity:** Estado operativo que se activa cuando la ocupación total supera el 95% de los espacios de estacionamiento operativos disponibles y requiere una alerta para el Parking Admin.
+- **Reservation Status (Estado de reserva):** Estado comercial y operativo de una *reserva*. Puede ser *Pending Payment*, *Reserved*, *Active*, *Completed*, *Cancelled*, *No-show*, *Overstayed* o *Payment Rejected*; *Pending Payment* y *Payment Rejected* representan estados de la intención y del resultado del pago.
 - **Zone Assignment (Asignación de zona):** Proceso mediante el cual se determina qué *Parking Zone* corresponde a un Driver según su *User Profile*.
-- **Unvalidated Occupancy (Ocupación no validada):** Situación que ocurre cuando un *Parking Spot* aparece ocupado sin una *Reservation* activa o una *Guest Parking Session* activa asociada al espacio. Esta situación requiere revisión administrativa y no permite identificar automáticamente el vehículo.
-- **Unauthorized Parking (Estacionamiento indebido):** Ocupación no validada que el Parking Admin confirma como uso no autorizado después de revisar la Reservation, la Guest Parking Session, la Zone Assignment y las condiciones del estacionamiento.
+- **Unvalidated Occupancy (Ocupación no validada):** Situación que ocurre cuando un *Parking Spot* aparece ocupado sin una *reserva* activa o una *Guest Parking Session* activa asociada al espacio. Esta situación requiere revisión administrativa y no permite identificar automáticamente el vehículo.
+- **Unauthorized Parking (Estacionamiento indebido):** Ocupación no validada que el Parking Admin confirma como uso no autorizado después de revisar la reserva, la Guest Parking Session, la Zone Assignment y las condiciones del estacionamiento.
 - **Occupancy Monitoring (Monitoreo de ocupación):** Proceso mediante el cual el sistema obtiene y mantiene actualizada, en un máximo de 5 segundos, la información sobre la ocupación de los espacios y zonas del estacionamiento a partir de sensores instalados en cada *Parking Spot*.
 
 - **Occupancy Sensor (Sensor de ocupación):** Dispositivo instalado en un *Parking Spot* para detectar si el espacio está disponible u ocupado y comunicar el cambio de estado al sistema.
@@ -318,505 +318,625 @@ El Ubiquitous Language conserva únicamente conceptos del negocio y sus reglas; 
 - **Floor Plan:** Representación o archivo que describe la distribución física del estacionamiento y constituye la fuente autorizada para configurar el Digital Parking Map.
 - **Digital Parking Map:** Representación de la infraestructura del estacionamiento que identifica sus Parking Spots, Parking Zones, accesos y destinos de navegación.
 - **Availability (Disponibilidad):** Información que indica la existencia de espacios libres dentro de una *Parking Zone*.
-- **Reservation (Reserva):** Registro mediante el cual un Driver registrado obtiene el uso de un *Parking Spot* dentro de una *Parking Zone* en una fecha, hora de inicio y duración determinadas. Las Reservations se asocian con el Driver y un Vehicle de su cuenta y requieren la aprobación del Digital Payment correspondiente.
-- **Parking Session (Sesión de estacionamiento):** Registro de la ocupación real de un *Parking Spot*. Para una Reservation de un Driver registrado, se vincula con la Reservation mediante el espacio asignado y el periodo reservado; el sensor confirma la ocupación física, pero no identifica al Vehicle. Para un Guest, la **Guest Parking Session** se crea manualmente al ingresar y se cierra al salir.
-- **Virtual Receipt (Comprobante virtual):** Confirmación digital, no necesariamente fiscal, de una Reservation o Digital Payment que contiene la información necesaria para identificar la operación y el espacio asignado.
-- **Check-in / Check-out (Ingreso / Salida):** Eventos que marcan el inicio y el final de la estadía de un vehículo en el estacionamiento. En una Reservation, la asociación se establece mediante el espacio asignado, el periodo reservado y la Reservation; en una Guest Parking Session, el Parking Admin registra manualmente la placa y el inicio de la sesión. Los sensores solo confirman la ocupación física del Parking Spot.
+- **Reservation (Reserva):** Registro mediante el cual un Driver registrado obtiene el uso de un *Parking Spot* dentro de una *Parking Zone* en una fecha, hora de inicio y duración determinadas. Las reservas se asocian con el Driver y un Vehicle de su cuenta y requieren la aprobación del Digital Payment correspondiente.
+- **Parking Session (Sesión de estacionamiento):** Registro de la ocupación real de un *Parking Spot*. Para una reserva de un Driver registrado, se vincula con la reserva mediante el espacio asignado y el periodo reservado; el sensor confirma la ocupación física, pero no identifica al Vehicle. Para un Guest, la **Guest Parking Session** se crea manualmente al ingresar y se cierra al salir.
+- **Virtual Receipt (Comprobante virtual):** Confirmación digital, no necesariamente fiscal, de una reserva o Digital Payment que contiene la información necesaria para identificar la operación y el espacio asignado.
+- **Check-in / Check-out (Ingreso / Salida):** Eventos que marcan el inicio y el final de la estadía de un vehículo en el estacionamiento. En una reserva, la asociación se establece mediante el espacio asignado, el periodo reservado y la reserva; en una Guest Parking Session, el Parking Admin registra manualmente la placa y el inicio de la sesión. Los sensores solo confirman la ocupación física del Parking Spot.
 - **Digital Payment (Pago digital):** Transacción económica realizada desde la aplicación móvil por un Driver registrado para pagar una estadía, una reserva o un servicio contratado.
 - **Payment Token (Token de pago):** Referencia segura administrada por el servicio interno de pagos que permite reutilizar un método de pago autorizado sin almacenar los datos completos de la tarjeta.
-- **Outstanding Balance (Saldo pendiente):** Importe que no pudo cobrarse mediante el Payment Token y que debe regularizarse antes de crear nuevas Reservations.
-- **Subscription (Suscripción):** Plan de acceso periódico de SpotGo. Puede corresponder a *Free*, *Plus Monthly* por 30 días o *Plus Annual* por 12 meses, con descuentos fijos por operación, prioridad de reserva, acceso a zonas especiales y condiciones de renovación definidas para cada plan. *Free* aplica 0 %, *Plus Monthly* aplica 10 % y *Plus Annual* aplica 15 %.
-- **Electronic Receipt (Comprobante de pago electrónico):** Documento fiscal digital generado para una operación elegible de un Driver cuando proporciona un DNI. Conserva su relación con el Digital Payment y con la Reservation o Parking Session correspondiente.
-- **Electronic Invoice (Factura electrónica):** Documento fiscal digital generado para una operación que requiere información tributaria empresarial, como un RUC. Conserva su relación con el Digital Payment y con la Reservation o Parking Session correspondiente.
+- **Outstanding Balance (Saldo pendiente):** Importe que no pudo cobrarse mediante el Payment Token y que debe regularizarse antes de crear nuevas reservas.
+- **Subscription (Suscripción):** Plan de acceso periódico de SpotGo. Puede corresponder a *Free*, *Plus Monthly* por 30 días o *Plus Annual* por 12 meses, con descuentos fijos por operación, prioridad de reserva, acceso a zonas especiales y condiciones de renovación definidas para cada plan. *Free* aplica 0%, *Plus Monthly* aplica 10% y *Plus Annual* aplica 15%.
+- **Electronic Receipt (Comprobante de pago electrónico):** Documento fiscal digital generado para una operación elegible de un Driver cuando proporciona un DNI. Conserva su relación con el Digital Payment y con la reserva o Parking Session correspondiente.
+- **Electronic Invoice (Factura electrónica):** Documento fiscal digital generado para una operación que requiere información tributaria empresarial, como un RUC. Conserva su relación con el Digital Payment y con la reserva o Parking Session correspondiente.
 - **Electronic Billing (Facturación electrónica):** Capacidad del negocio que determina y genera el Electronic Receipt o Electronic Invoice aplicable a una operación elegible de un Driver.
-- **Nearby Parking Zones (Parking Zones cercanas):** Parking Zones registradas en SpotGo que la aplicación muestra alrededor de la ubicación del Driver. SpotGo proporciona las coordenadas, disponibilidad, horarios, precios y demás detalles operativos de cada zona.
+- **Nearby Parking Zones (Parking Zones cercanas):** Zonas de estacionamiento registradas en SpotGo que la aplicación muestra alrededor de la ubicación del Driver. SpotGo proporciona las coordenadas, disponibilidad, horarios, precios y demás detalles operativos de cada zona.
 - **Unauthorized Parking Alert (Alerta por estacionamiento indebido):** Alerta operativa generada cuando un Parking Spot presenta Unvalidated Occupancy. La alerta identifica el Parking Spot, la Parking Zone y el momento del evento, pero no afirma por sí sola que exista estacionamiento indebido ni identifica automáticamente el Vehicle; el Parking Admin debe revisar y clasificar el incidente.
 - **Occupancy Report (Reporte de ocupación):** Información histórica o resumida sobre la utilización de los espacios y zonas del estacionamiento, utilizada para apoyar decisiones operativas.
-- **Parking Admin (Administradores):** Usuario administrativo cuya cuenta y rol son provisionados internamente por un SuperAdmin y que gestiona la configuración, supervisión y organización de las zonas y operaciones de un Tenant. Es distinto del Driver (Conductores) y no se crea mediante el registro público.
+- **Parking Admin (Administrador de estacionamiento):** Usuario administrativo cuya cuenta y rol son provisionados internamente por un SuperAdmin y que gestiona la configuración, supervisión y organización de las zonas y operaciones de un Tenant. Es distinto del Driver y no se crea mediante el registro público.
 - **Tenant (Cliente B2B):** Estacionamiento o entidad operativa registrada en SpotGo, con su propia configuración de zonas, perfiles, usuarios y facturación del servicio.
-- **SuperAdmin (Administrador de plataforma):** Usuario encargado de registrar *Tenants*, crear las cuentas iniciales de los *Parking Admin*, administrar configuraciones de clientes B2B y consultar la facturación asociada al servicio de SpotGo.
-- **Driver (Conductores):** Usuario con una cuenta propia creada mediante la aplicación móvil, con correo y contraseña de SpotGo o mediante una identidad de Google validada por el backend. Administra su User Profile y sus Vehicles, consulta Availability, crea Reservations y consulta Nearby Parking Zones.
-- **Guest (Invitado):** Persona sin cuenta que llega directamente al estacionamiento. No tiene un Vehicle persistente ni una Reservation en SpotGo y paga físicamente el tiempo utilizado al finalizar su estadía.
+- **SuperAdmin (Administrador de plataforma):** Usuario encargado de registrar *Tenants*, crear las cuentas iniciales de los administradores de estacionamiento, administrar configuraciones de clientes B2B y consultar la facturación asociada al servicio de SpotGo.
+- **Driver (Conductor):** Usuario con una cuenta propia creada mediante la aplicación móvil, con correo y contraseña de SpotGo o mediante una identidad de Google validada por el backend. Administra su User Profile y sus vehículos, consulta Availability, crea reservas y consulta Nearby Parking Zones.
+- **Guest (Invitado):** Persona sin cuenta que llega directamente al estacionamiento. No tiene un Vehicle persistente ni una reserva en SpotGo y paga físicamente el tiempo utilizado al finalizar su estadía.
 - **Guest Parking Session (Sesión de estacionamiento de invitado):** Sesión creada manualmente por un Parking Admin cuando un Guest ingresa al estacionamiento. Conserva la placa ingresada manualmente, el Parking Spot asignado, la hora de ingreso, la hora de salida y el monto calculado. El pago se realiza físicamente al finalizar la sesión mediante efectivo o POS; SpotGo no procesa el pago ni almacena datos financieros sensibles.
 
 ## 2.4. Requirements specification
 
-La especificación de requisitos de SpotGo se construye a partir de la problemática, las entrevistas, los User Personas, el Ubiquitous Language y las hipótesis definidas en los capítulos anteriores. Su propósito es traducir las necesidades de los Driver y del personal de estacionamiento en comportamientos verificables del producto.
+La especificación de requisitos de SpotGo se construye a partir de la problemática, las entrevistas, los User Personas, el Ubiquitous Language y las hipótesis definidas en los capítulos anteriores. Su propósito es traducir las necesidades de los conductores y del personal de estacionamiento en comportamientos verificables del producto.
 
 El producto principal es una aplicación móvil con experiencias diferenciadas para los siguientes actores:
 
-- **Driver (Conductores):** consulta la disponibilidad por Parking Zone e identifica las zonas que puede utilizar según su User Profile.
-- **Parking Admin (Administradores):** configura Parking Zones y perfiles, supervisa el Occupancy Status, atiende incidencias y consulta Occupancy Reports desde la aplicación móvil.
-- **SuperAdmin:** registra Tenants B2B y habilita la configuración inicial de nuevos estacionamientos.
-- **Public Visitor:** Persona que consulta la propuesta de valor en la Landing Page y accede al destino oficial de la aplicación móvil sin autenticarse. No es un actor operativo del estacionamiento ni un tipo de Driver o Guest.
-- **Developer:** implementa los servicios RESTful, integra los sensores de ocupación y desarrolla las capacidades técnicas que permiten sincronizar la aplicación móvil, conservar información local y documentar los contratos de integración.
+- **Driver (Conductor):** consulta la disponibilidad por Parking Zone e identifica las zonas que puede utilizar según su User Profile.
+- **Parking Admin (Administrador de estacionamiento):** configura Parking Zones y perfiles, supervisa el Occupancy Status, atiende incidencias y consulta Occupancy Reports desde la aplicación móvil.
+- **SuperAdmin:** rol reservado a los creadores de SpotGo; registra clientes B2B y habilita la configuración inicial de nuevos estacionamientos.
+
+En las historias técnicas y de investigación (TS y SP), **Developer** identifica al responsable técnico; no es un actor de la aplicación.
 
 La solución también contempla una Landing Page estática como producto digital de apoyo para comunicar la propuesta de valor de SpotGo. La Landing Page no reemplaza la aplicación móvil ni se considera parte del flujo operativo del estacionamiento.
 
 La política de internacionalización se aplica a la aplicación móvil, la Landing Page, los Web Services y la documentación: todos utilizan English (en_US) como idioma predeterminado y ofrecen Latin American Spanish (es_419) como alternativa. Los Web Services aceptan y devuelven mensajes localizables mediante esos códigos de idioma, sin cambiar los nombres canónicos de los conceptos del negocio.
 
-El alcance funcional se concentra en la organización por zonas, la clasificación de Driver mediante User Profiles, el registro de Vehicles, la visualización actualizada de disponibilidad, el monitoreo de ocupación, las alertas por uso indebido y los reportes operativos. También incluye Guest Parking Sessions para Guests, cuyo pago se realiza físicamente al Parking Admin mediante efectivo o POS al finalizar la estadía; Reservations para Driver, Digital Payments, Subscriptions, Virtual Receipts y Electronic Billing, además de la consulta de Parking Zones registradas por SpotGo mediante un mapa integrado con la Google Maps API, con apertura de la ruta en la aplicación de Google Maps.
+El alcance funcional se concentra en la organización por zonas, la clasificación de conductores mediante User Profiles, el registro de vehículos, la visualización actualizada de disponibilidad, el monitoreo de ocupación, las alertas por uso indebido y los reportes operativos. También incluye Guest Parking Sessions para invitados, cuyo pago se realiza físicamente al administrador del estacionamiento mediante efectivo o POS al finalizar la estadía; reservas para conductores, Digital Payments, Subscriptions, Virtual Receipts y Electronic Billing, además de la consulta de zonas de estacionamiento registradas por SpotGo mediante un mapa integrado con la Google Maps API, con apertura de la ruta en la aplicación de Google Maps.
 
 El Occupancy Monitoring se realizará mediante un *Occupancy Sensor* instalado en cada *Parking Spot*. La solución debe operar en estacionamientos interiores y exteriores y comunicar los cambios de *Occupancy Status*, dejándolos disponibles para la aplicación móvil en un máximo de 5 segundos. Cada *Parking Spot* tendrá capacidad para un solo vehículo y cada *Vehicle* podrá mantener como máximo un *Parking Spot* activo. Los sensores únicamente detectan si el espacio está ocupado; no identifican el vehículo que lo ocupa. No se utilizarán OCR, inteligencia artificial ni lectura automática de placas. Para una Guest Parking Session, el Parking Admin ingresa manualmente la placa y el dato se conserva únicamente en el registro de esa sesión.
 
-Las Reservations se crean únicamente para Driver registrados, para un *Parking Spot* específico dentro de una *Parking Zone*, con fecha, hora de inicio y duración. El Digital Payment debe aprobarse antes de asignar el Reservation Status *Reserved*. El Driver puede llegar en cualquier momento dentro del periodo reservado; si el sensor mantiene un Sensor Health operativo y nunca registra ocupación durante todo ese periodo, la Reservation se marca como *No-show* y se devuelve el importe pagado cuando corresponda. Una llegada tardía no modifica la hora final ni el importe de la Reservation.
+Las reservas se crean únicamente para conductores registrados y corresponden a un *Parking Spot* específico dentro de una *Parking Zone*, con fecha, hora de inicio y duración. El Digital Payment debe aprobarse antes de asignar el estado de la reserva *Reserved*. El Driver puede llegar en cualquier momento dentro del periodo reservado; si el sensor mantiene un Sensor Health operativo y nunca registra ocupación durante todo ese periodo, la reserva se marca como *No-show* y se devuelve el importe pagado cuando corresponda. Una llegada tardía no modifica la hora final ni el importe de la reserva.
 
-Los Guests no reservan ni pagan desde la aplicación. Cuando un Guest llega al estacionamiento, el Parking Admin selecciona un Parking Spot disponible, ingresa manualmente la placa y crea una Guest Parking Session con la hora de ingreso. El tiempo de uso se calcula desde ese momento. Al salir, el Parking Admin registra la hora de salida, el monto correspondiente y la confirmación del pago físico mediante efectivo o POS. SpotGo conserva la sesión y la confirmación operativa, pero no procesa el pago ni almacena datos financieros sensibles.
+Los invitados no reservan ni pagan desde la aplicación. Cuando un invitado llega al estacionamiento, el Parking Admin selecciona un Parking Spot disponible, ingresa manualmente la placa y crea una Guest Parking Session con la hora de ingreso. El tiempo de uso se calcula desde ese momento. Al salir, el Parking Admin registra la hora de salida, el monto correspondiente y la confirmación del pago físico mediante efectivo o POS. SpotGo conserva la sesión y la confirmación operativa, pero no procesa el pago ni almacena datos financieros sensibles.
 
-La duración mínima de una Reservation corresponde a una fracción de cobro configurada por el estacionamiento. No existe una duración máxima global, pero la hora final debe permanecer dentro del horario operativo del estacionamiento. Una Reservation puede crearse como máximo 3 días calendario antes de su hora de inicio y no puede solaparse con otra Reservation o Parking Spot activo del mismo Vehicle. Durante el proceso de pago, el espacio seleccionado mantiene un bloqueo temporal para evitar asignaciones simultáneas. Una Guest Parking Session no utiliza Reservation Status ni bloqueo anticipado: ocupa un Parking Spot disponible desde el ingreso hasta el cierre de la sesión.
+La duración mínima de una reserva corresponde a una fracción de cobro configurada por el estacionamiento. No existe una duración máxima global, pero la hora final debe permanecer dentro del horario operativo del estacionamiento. Una reserva puede crearse como máximo 3 días calendario antes de su hora de inicio y no puede solaparse con otra reserva del mismo vehículo ni con una sesión de estacionamiento activa de ese vehículo. Durante el proceso de pago, el espacio seleccionado mantiene un bloqueo temporal para evitar asignaciones simultáneas. Una Guest Parking Session no utiliza estado de la reserva ni bloqueo anticipado: ocupa un Parking Spot disponible desde el ingreso hasta el cierre de la sesión.
 
-La ocupación física y la reserva se controlan como estados independientes. El Occupancy Status puede ser *Available*, *Occupied* o *Unavailable*, mientras que el Reservation Status puede ser *Pending Payment*, *Reserved*, *Active*, *Completed*, *Cancelled*, *No-show*, *Overstayed* o *Payment Rejected*. Si el Driver se retira antes de la hora final, el Parking Spot puede quedar físicamente *Available*, pero la Reservation continúa protegida hasta su finalización y no genera devolución.
+La ocupación física y la reserva se controlan como estados independientes. El Occupancy Status puede ser *Available*, *Occupied* o *Unavailable*, mientras que el estado de la reserva puede ser *Pending Payment*, *Reserved*, *Active*, *Completed*, *Cancelled*, *No-show*, *Overstayed* o *Payment Rejected*. Si el Driver se retira antes de la hora final, el Parking Spot puede quedar físicamente *Available*, pero la reserva continúa protegida hasta su finalización y no genera devolución.
 
-Al superar la hora final de la Reservation se aplica una tolerancia de 5 minutos. Si el Parking Spot continúa ocupado después de la tolerancia, el sistema calcula el sobretiempo según la fracción configurada por el estacionamiento y, cuando la Reservation pertenece a un Driver registrado con un Payment Token autorizado, realiza el cobro adicional mediante el servicio interno de pagos. Los descuentos fijos definidos para cada Subscription también se aplican a estos cobros. Si el cobro falla, se registra un Outstanding Balance, se notifica al Driver, se permiten nuevos intentos con el mismo u otro método y se bloquean nuevas Reservations hasta regularizarlo.
+Al superar la hora final de la reserva se aplica una tolerancia de 5 minutos. Si el Parking Spot continúa ocupado después de la tolerancia, el sistema calcula el sobretiempo según la fracción configurada por el estacionamiento y, cuando la reserva pertenece a un Driver registrado con un Payment Token autorizado, realiza el cobro adicional mediante el servicio interno de pagos. Los descuentos fijos definidos para cada Subscription también se aplican a estos cobros. Si el cobro falla, se registra un Outstanding Balance, se notifica al Driver, se permiten nuevos intentos con el mismo u otro método y se bloquean nuevas reservas hasta regularizarlo.
 
-Cuando se confirma el Check-out de una Reservation, la Parking Session se cierra; una lectura del sensor por sí sola solo actualiza el Occupancy Status y no identifica al Driver ni al Vehicle. En una Guest Parking Session, el Parking Admin puede cerrar la sesión con la hora de salida cuando confirma el retiro del vehículo. Al concluir una Reservation, el sistema marca su Reservation Status como *Completed* si no existe sobretiempo pendiente; si existió sobretiempo, conserva el registro del cobro adicional y completa la operación cuando el saldo correspondiente queda regularizado.
+Cuando se confirma el Check-out de una reserva, la Parking Session se cierra; una lectura del sensor por sí sola solo actualiza el Occupancy Status y no identifica al Driver ni al Vehicle. En una Guest Parking Session, el Parking Admin puede cerrar la sesión con la hora de salida cuando confirma el retiro del vehículo. Al concluir una reserva, el sistema marca su estado de la reserva como *Completed* si no existe sobretiempo pendiente; si existió sobretiempo, conserva el registro del cobro adicional y completa la operación cuando el saldo correspondiente queda regularizado.
 
-Las Reservations pueden cancelarse, modificarse o extenderse según la disponibilidad. Una cancelación antes del inicio devuelve el importe pagado cuando corresponda; una cancelación después del inicio o una salida anticipada no genera devolución. Una modificación actualiza el horario o espacio únicamente cuando la nueva asignación es válida y cualquier diferencia de precio queda confirmada. Una extensión no puede afectar una Reservation posterior. Si un espacio reservado está ocupado antes del inicio o por una estadía excedida, el sistema busca un Parking Spot disponible y compatible, notifica al Driver y actualiza la Reservation, el Virtual Receipt y la Parking Zone de destino para abrirla en Google Maps. Si no existe una alternativa, se ofrecen otros estacionamientos o la cancelación con devolución completa cuando exista un importe pagado.
+Las reservas pueden cancelarse, modificarse o extenderse según la disponibilidad. Una cancelación antes del inicio devuelve el importe pagado cuando corresponda; una cancelación después del inicio o una salida anticipada no genera devolución. Una modificación actualiza el horario o espacio únicamente cuando la nueva asignación es válida y cualquier diferencia de precio queda confirmada. Una extensión no puede afectar una reserva posterior. Si un espacio reservado está ocupado antes del inicio o por una estadía excedida, el sistema busca un Parking Spot disponible y compatible, notifica al Driver y actualiza la reserva, el Virtual Receipt y la Parking Zone de destino para abrirla en Google Maps. Si no existe una alternativa, se ofrecen otros estacionamientos o la cancelación con devolución completa cuando exista un importe pagado.
 
-Los Guests no generan cuentas ni Vehicles persistentes por sí mismos. El Parking Admin debe registrar su llegada, ingresar manualmente la placa y asignarles un Parking Spot disponible para crear una Guest Parking Session. El pago físico mediante efectivo o POS se realiza al finalizar la sesión. SpotGo no procesa ni almacena datos financieros sensibles; conserva únicamente la sesión, el monto calculado y la confirmación operativa del pago. Las incidencias de sensores marcan el espacio como *Unavailable*, bloquean nuevas Reservations y Guest Parking Sessions y requieren resolución administrativa; las Reservations afectadas se reasignan o reciben devolución completa cuando exista un importe pagado, mientras que las Guest Parking Sessions abiertas se revisan y cierran manualmente.
+Los invitados no generan cuentas ni registran vehículos persistentes por sí mismos. El Parking Admin debe registrar su llegada, ingresar manualmente la placa y asignarles un Parking Spot disponible para crear una Guest Parking Session. El pago físico mediante efectivo o POS se realiza al finalizar la sesión. SpotGo no procesa ni almacena datos financieros sensibles; conserva únicamente la sesión, el monto calculado y la confirmación operativa del pago. Las incidencias de sensores marcan el espacio como *Unavailable*, bloquean nuevas reservas y sesiones de estacionamiento de invitados y requieren resolución administrativa; las reservas afectadas se reasignan o reciben devolución completa cuando exista un importe pagado, mientras que las sesiones de estacionamiento de invitados abiertas se revisan y cierran manualmente.
 
-Los planes se organizan como *Free*, *Plus Monthly* y *Plus Annual*. Free permite reservar sin descuento (0 %) y sin zonas especiales. Plus Monthly ofrece prioridad para nuevas Reservations, acceso a zonas especiales y un descuento fijo del 10 % por reserva y por fracción u hora. La prioridad se aplica entre solicitudes que todavía no fueron confirmadas y no desplaza Reservations ya pagadas. Plus Annual conserva esos beneficios y aplica un descuento fijo del 15 % por reserva y por fracción u hora. Estos porcentajes representan descuentos por operación y se aplican también al sobretiempo; no se acumulan con otro descuento de la misma operación.
+Los planes se organizan como *Free*, *Plus Monthly* y *Plus Annual*. Free permite reservar sin descuento (0%) y sin zonas especiales. Plus Monthly ofrece prioridad para nuevas reservas, acceso a zonas especiales y un descuento fijo del 10% por reserva y por fracción u hora. La prioridad se aplica entre solicitudes que todavía no fueron confirmadas y no desplaza reservas ya pagadas. Plus Annual conserva esos beneficios y aplica un descuento fijo del 15% por reserva y por fracción u hora. Estos porcentajes representan descuentos por operación y se aplican también al sobretiempo; no se acumulan con otro descuento de la misma operación.
 
-El backend genera notificaciones por inicio próximo, inicio y finalización de Reservation, sobretiempo, reasignaciones, pagos exitosos o fallidos, devoluciones y saldos pendientes. Firebase Cloud Messaging entrega estas notificaciones push a los dispositivos registrados, mientras que las acciones realizadas por un Parking Admin se conservan en una bitácora de auditoría con el usuario, la acción, la fecha, la hora y los datos modificados.
+El backend genera notificaciones por la proximidad del inicio, el inicio y la finalización de las reservas, sobretiempo, reasignaciones, pagos exitosos o fallidos, devoluciones y saldos pendientes. Firebase Cloud Messaging entrega estas notificaciones push a los dispositivos registrados, mientras que las acciones realizadas por un administrador de estacionamiento se conservan en una bitácora de auditoría con el usuario, la acción, la fecha, la hora y los datos modificados.
 
-Las User Stories de SpotGo se organizan por capacidades funcionales, técnicas y de investigación para mantener claridad, trazabilidad y verificabilidad. La Landing Page se mantiene como producto digital complementario y el resto de capacidades operativas, comerciales y administrativas se especifica para la aplicación móvil y sus servicios backend. La tabla de trazabilidad incluida posteriormente en esta sección relaciona las capacidades del producto con los requisitos definidos.
+Las historias de usuario de SpotGo se organizan por capacidades funcionales, técnicas y de investigación para mantener claridad, trazabilidad y verificabilidad. La página de presentación se mantiene como producto digital complementario; el resto de las capacidades operativas, comerciales y administrativas se especifica para la aplicación móvil y sus servicios backend. La tabla de trazabilidad incluida más adelante relaciona las capacidades del producto con los requisitos definidos.
 
 ### 2.4.1. User Stories
 
-Las siguientes User Stories especifican los requisitos funcionales, técnicos y de investigación del alcance mobile-first. Cada historia se relaciona con una Epic, tiene una prioridad de negocio y contiene criterios de aceptación comprobables. La prioridad **High** identifica capacidades directamente vinculadas con los Business Goals; **Medium** corresponde a capacidades de soporte; y **Low** corresponde a documentación o capacidades complementarias.
+Las siguientes historias especifican los requisitos funcionales, técnicos y de investigación del alcance centrado en la aplicación móvil. Cada historia se relaciona con una épica, tiene una prioridad de negocio y define criterios de aceptación comprobables. Priority **High** identifica capacidades directamente vinculadas con los objetivos de negocio; **Medium** corresponde a capacidades de soporte; y **Low**, a documentación o capacidades complementarias.
 
-Los criterios de aceptación se expresan con la estructura Gherkin **Given - When - Then**, se redactan en tiempo presente y tercera persona, y describen resultados observables sin fijar detalles innecesarios de interfaz. Las Technical Stories utilizan el rol Developer cuando la capacidad no tiene interacción directa con un usuario final. Las Spike Stories expresan una investigación que debe cerrarse con resultados documentados y evidencia suficiente para reducir la incertidumbre.
+Los criterios de aceptación siguen la estructura Gherkin **Dado que - Cuando - Entonces**, se redactan en presente y tercera persona, y describen resultados observables sin fijar detalles innecesarios de interfaz. Las historias técnicas utilizan el rol Developer cuando la capacidad no implica interacción directa con un usuario final. Las historias de investigación deben cerrarse con resultados documentados y evidencia suficiente para reducir la incertidumbre.
 
 **Epics**
 
 | Epic ID | Title | Description |
 | --- | --- | --- |
-| E1 | Driver Mobile Experience | Mobile capabilities that allow the Driver to register, check Availability, view nearby Parking Zones, make Reservations and pay for a service, and open an external route in Google Maps. |
-| E2 | Parking Organization and Profiles | Configuration of Parking Spots, Parking Zones, User Profiles, registered Vehicles, and Guest Parking Sessions by Parking Admin. |
-| E3 | Occupancy Monitoring and Operations | Monitoring of Occupancy Status through sensors per Parking Spot, an operational dashboard, Unauthorized Parking alerts, and Occupancy Reports. |
-| E4 | Digital Presence and Mobile Quality | Static Landing Page, accessibility, and internationalization of SpotGo's digital products. |
-| E5 | Services and Technical Enablement | RESTful services, sensor integration, authentication, local persistence, synchronization, documentation, and technical validations required for the mobile application. |
-| E6 | Monetization and Billing | Reservations for registered Driver, Digital Payments, Additional Charges, Refunds, Subscriptions, asynchronous confirmations, Virtual Receipts, Electronic Billing, and B2C and B2B billing consultation. |
+| E1 | Experiencia móvil para Driver | Funciones que permiten a los conductores registrarse, consultar disponibilidad, ver zonas cercanas, hacer reservas y pagar el servicio, además de abrir una ruta externa en Google Maps. |
+| E2 | Organización del estacionamiento y perfiles | Configuración de espacios, zonas, perfiles de usuario, vehículos registrados y sesiones de estacionamiento de invitados por Parking Admin. |
+| E3 | Monitoreo de ocupación y operaciones | Monitoreo del estado de ocupación mediante sensores por espacio, un panel operativo, alertas por estacionamiento no autorizado y reportes de ocupación. |
+| E4 | Presencia digital y calidad móvil | Página de presentación estática, accesibilidad e internacionalización de los productos digitales de SpotGo. |
+| E5 | Servicios y habilitación técnica | Servicios REST, integración con sensores, autenticación, persistencia local, sincronización, documentación y validaciones técnicas para la aplicación móvil. |
+| E6 | Monetización y facturación | Reservas de conductores registrados, pagos digitales, cargos adicionales, reembolsos, suscripciones, confirmaciones asíncronas, comprobantes virtuales, facturación electrónica y consulta de facturación B2C y B2B. |
 
 **User Stories**
 
-***US01 - Consult Availability by Zone***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US01 |
-| User | Driver |
-| Priority | High |
-| Epic | E1 - Driver Mobile Experience |
-| Title | Consult Availability by Zone |
-| Description | **As a** Driver,<br>**I want** to consult current Availability by Parking Zone,<br>**so that** I can identify where a Parking Spot may be available. |
-| Acceptance Criteria | **Scenario 1: Zone with availability**<br>**Given** a Parking Zone contains at least one Parking Spot with Occupancy Status *Available*, operational Sensor Health, no active Reservation, no active Guest Parking Session, and no active Temporary Lock<br>**When** the Driver requests current Availability<br>**Then** the application reports the number of available Parking Spots and the time of the latest update.<br><br>**Scenario 2: Zone without availability**<br>**Given** all Parking Spots in a Parking Zone are *Occupied*, have a Reservation with Reservation Status *Reserved* or *Active*, have an active Guest Parking Session, have an active Temporary Lock, or are *Unavailable*<br>**When** the Driver requests current Availability<br>**Then** the application informs the Driver that the zone has no available Parking Spots and does not offer *Unavailable* or temporarily locked spots for reservation.<br><br>**Scenario 3: Manual refresh**<br>**Given** the Driver is viewing previously synchronized Availability<br>**When** the Driver requests an information update<br>**Then** the application retrieves the latest available status and displays the time of the new update. |
-
-***US02 - Configure Parking Zones***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US02 |
-| User | Parking Admin |
-| Priority | High |
-| Epic | E2 - Parking Organization and Profiles |
-| Title | Configure Parking Zones |
-| Description | **As a** Parking Admin,<br>**I want** to create Parking Zones, associate them with User Profiles and configure their operating rules,<br>**so that** the parking facility can organize its Parking Spots and apply consistent Reservation and Billing conditions. |
-| Acceptance Criteria | **Scenario 1: Valid zone configuration**<br>**Given** Parking Spots are registered and the zone data is valid<br>**When** Parking Admin creates a Parking Zone and associates the selected Parking Spots<br>**Then** the system saves the relationship between the zone, its spots, and the authorized User Profiles.<br><br>**Scenario 2: Conflicting spot assignment**<br>**Given** a Parking Spot already belongs to another Parking Zone<br>**When** Parking Admin attempts to save it in a new zone<br>**Then** the system identifies the conflict and does not save the new relationship until the assignment is resolved.<br><br>**Scenario 3: Operating rules configuration**<br>**Given** Parking Admin provides a valid operating schedule and a positive billing fraction unit<br>**When** Parking Admin saves the rules for the Parking Zone or parking facility<br>**Then** the system only allows Reservations within operating hours and calculates additional time using the configured fraction. |
-
-***US03 - Register Guest Parking Session***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US03 |
-| User | Parking Admin |
-| Priority | High |
-| Epic | E2 - Parking Organization and Profiles |
-| Title | Register Guest Parking Session |
-| Description | **As a** Parking Admin,<br>**I want** to register a Guest Parking Session when a Guest arrives,<br>**so that** SpotGo can calculate the Guest's parking time while the physical payment is settled at the exit. |
-| Acceptance Criteria | **Scenario 1: Start Guest Parking Session**<br>**Given** a Guest arrives, Parking Admin is authorized to operate, and an available Parking Spot exists<br>**When** Parking Admin selects the Parking Spot, manually enters the license plate, and starts the session<br>**Then** the system creates an active Guest Parking Session with the Parking Spot, license plate, and entry time, does not create a Driver account or persistent Vehicle, does not create a Reservation, and does not process a payment.<br><br>**Scenario 2: Reserved, occupied, or unavailable spot conflict**<br>**Given** the requested Parking Spot has an active Reservation, is occupied, or is *Unavailable*<br>**When** Parking Admin attempts to start the Guest Parking Session<br>**Then** the system rejects the operation and requests that an available Parking Spot be selected.<br><br>**Scenario 3: Close session and settle physical payment**<br>**Given** an active Guest Parking Session exists<br>**When** Parking Admin records the Guest's exit and confirms the physical payment through cash or POS<br>**Then** the system records the exit time, calculates the duration and amount, marks the session as *Closed*, retains the payment confirmation, and does not process or store sensitive financial data.<br><br>**Scenario 4: Required data at each operation**<br>**Given** Parking Admin attempts to start a session without a Parking Spot, license plate, or entry time, or attempts to close it without an exit time or payment confirmation<br>**When** Parking Admin starts or closes the session<br>**Then** the system rejects the operation and leaves the existing records unchanged. |
-
-***US04 - View Permitted Zones***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US04 |
-| User | Driver |
-| Priority | High |
-| Epic | E1 - Driver Mobile Experience |
-| Title | View Permitted Zones |
-| Description | **As a** Driver,<br>**I want** to know which Parking Zones are permitted for my User Profile,<br>**so that** I can use only the areas assigned to my category. |
-| Acceptance Criteria | **Scenario 1: Profile with permitted zones**<br>**Given** the Driver has an active User Profile and associated Parking Zones exist<br>**When** the application retrieves the profile information<br>**Then** the system returns the permitted zones together with their current Availability.<br><br>**Scenario 2: No permitted zone available**<br>**Given** the Driver has no permitted Parking Zone with Availability<br>**When** the application retrieves the corresponding zones<br>**Then** the system informs the Driver that there is no availability in the authorized zones and excludes unauthorized zones. |
-
-***US05 - Monitor Occupancy by Zone***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US05 |
-| User | Parking Admin |
-| Priority | High |
-| Epic | E3 - Occupancy Monitoring and Operations |
-| Title | Monitor Occupancy by Zone |
-| Description | **As a** Parking Admin,<br>**I want** to monitor the Occupancy Status of Parking Spots grouped by Parking Zone,<br>**so that** I can supervise the current operation of the parking facility. |
-| Acceptance Criteria | **Scenario 1: Current monitoring data**<br>**Given** the *Occupancy Sensors* transmit the current status of the *Parking Spots* in an indoor or outdoor parking facility<br>**When** Parking Admin requests current monitoring data<br>**Then** the system groups the information by *Parking Zone* and displays the Occupancy Status (*Available*, *Occupied*, or *Unavailable*) and the Reservation Status of each spot separately when applicable.<br><br>**Scenario 2: Occupancy change within the maximum time**<br>**Given** an *Occupancy Sensor* installed in a *Parking Spot* detects an occupancy change<br>**When** the system receives the sensor event<br>**Then** it updates the Occupancy Status, recalculates the Availability of the related Parking Zone, and makes the information available to the mobile application within a maximum of 5 seconds.<br><br>**Scenario 3: Sensor unavailable**<br>**Given** an *Occupancy Sensor* stops transmitting reliable data<br>**When** the system detects the incident<br>**Then** it marks the Parking Spot as *Unavailable*, blocks new Reservations and Guest Parking Sessions, prevents automatic charges based on unreliable readings, notifies Parking Admin, and starts reviewing affected Reservations. |
-
-***US06 - Generate Operational Alerts***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US06 |
-| User | Parking Admin |
-| Priority | High |
-| Epic | E3 - Occupancy Monitoring and Operations |
-| Title | Generate Operational Alerts |
-| Description | **As a** Parking Admin,<br>**I want** to receive alerts about Unauthorized Parking and High Capacity conditions,<br>**so that** I can review incidents and react before the operation is affected. |
-| Acceptance Criteria | **Scenario 1: Unauthorized or unvalidated occupancy detected**<br>**Given** a Parking Spot has Occupancy Status *Occupied* and no active Reservation or Guest Parking Session authorizes its use<br>**When** the system compares the occupancy with the registered authorizations<br>**Then** it creates an Unauthorized Parking Alert with the Parking Zone, Parking Spot, and event time, classifies it as unvalidated occupancy, and does not attempt to identify the vehicle through images or license plate data.<br><br>**Scenario 2: Reservation conflict detected**<br>**Given** a future Reservation is assigned to a Parking Spot that remains occupied by a previous Parking Session<br>**When** the system detects the conflict<br>**Then** it starts searching for an available and compatible Parking Spot, retains the incident record, and notifies Parking Admin and Driver when the reassignment or alternative is confirmed.<br><br>**Scenario 3: High capacity detected**<br>**Given** total parking facility occupancy exceeds 95 percent of the operational Parking Spots available for use<br>**When** the system evaluates the occupancy level<br>**Then** it creates a critical High Capacity alert and makes it available to Parking Admin.<br><br>**Scenario 4: Alert resolution**<br>**Given** a pending operational alert exists<br>**When** Parking Admin records the incident classification and the action taken<br>**Then** the system marks the alert as resolved only when the required action is completed and retains its history. |
-
-***US07 - Use the Operational Mobile Dashboard***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US07 |
-| User | Parking Admin |
-| Priority | High |
-| Epic | E3 - Occupancy Monitoring and Operations |
-| Title | Use the Operational Mobile Dashboard |
-| Description | **As a** Parking Admin,<br>**I want** to consult a centralized operational summary and live occupancy map in the mobile application,<br>**so that** I can review occupancy, Availability and pending incidents in one place. |
-| Acceptance Criteria | **Scenario 1: Current operational summary**<br>**Given** Parking Admin has authorized access and operational data exists<br>**When** Parking Admin requests the current summary<br>**Then** the system returns the total number of Parking Spots, Availability by Parking Zone, active Reservations, open Guest Parking Sessions, outstanding balances from registered Driver operations associated with the Tenant, and pending operational alerts.<br><br>**Scenario 2: Zone detail**<br>**Given** Parking Admin requests information for a specific Parking Zone<br>**When** the system processes the request<br>**Then** it returns the Occupancy Status of each Parking Spot, the Reservation Status when applicable, active Guest Parking Sessions, and Sensor Health, and allows the data to be filtered by User Profile or Parking Zone.<br><br>**Scenario 3: Administrative audit**<br>**Given** Parking Admin modifies a configuration, assignment, Reservation, Guest Parking Session, or incident<br>**When** the system confirms the operation<br>**Then** it records the user, action, date, time, and previous and new data in the audit log. |
-
-***US08 - Generate Occupancy Reports***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US08 |
-| User | Parking Admin |
-| Priority | Medium |
-| Epic | E3 - Occupancy Monitoring and Operations |
-| Title | Generate Occupancy Reports |
-| Description | **As a** Parking Admin,<br>**I want** to consult Occupancy Reports grouped by period and Parking Zone,<br>**so that** I can identify usage patterns and support operational decisions. |
-| Acceptance Criteria | **Scenario 1: Period with historical data**<br>**Given** records of Occupancy Status, Reservations, Guest Parking Sessions, and Parking Sessions exist for the requested period<br>**When** Parking Admin generates the Occupancy Report<br>**Then** the system groups the data by Parking Zone and period and reports usage patterns, completed Guest Parking Sessions, Reservations marked as *No-show*, overstays, and recorded incidents.<br><br>**Scenario 2: Period without data**<br>**Given** no records exist for the requested period<br>**When** Parking Admin generates the Occupancy Report<br>**Then** the system informs Parking Admin that no data is available and does not infer nonexistent values. |
-
-***US09 - Authenticate and Access Mobile Functions by Role***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US09 |
-| User | Driver, Parking Admin or SuperAdmin |
-| Priority | Medium |
-| Epic | E5 - Services and Technical Enablement |
-| Title | Authenticate and Access Mobile Functions by Role |
-| Description | **As a** Driver, Parking Admin or SuperAdmin,<br>**I want** to access SpotGo with my authorized account,<br>**so that** I can use only the capabilities related to my role. |
-| Acceptance Criteria | **Scenario 1: Valid access with SpotGo credentials**<br>**Given** the account is active and the credentials are valid<br>**When** the user requests access to SpotGo<br>**Then** the system authenticates the user, creates a valid Session, and enables the capabilities associated with the user's Role.<br><br>**Scenario 2: Invalid or expired access**<br>**Given** the credentials are invalid or the Session is no longer valid<br>**When** the user requests access to protected information<br>**Then** the system rejects the request and does not provide occupancy, profile, or restricted-zone data.<br><br>**Scenario 3: Valid access with Google**<br>**Given** Google returns an ID token with a valid signature, issuer, audience, and expiration, and the linked SpotGo Account is active<br>**When** the user submits the token to Identity & Access Management<br>**Then** SpotGo authenticates the linked Account, creates its own Session, and enables only its previously authorized Role capabilities.<br><br>**Scenario 4: Google access rejected or cancelled**<br>**Given** Google access is cancelled or the ID token is invalid or expired<br>**When** the user attempts to complete authentication<br>**Then** SpotGo does not issue a Session and allows the user to retry or use email and password.<br><br>**Scenario 5: Administrative role restriction**<br>**Given** a Google identity has no provisioned Parking Admin or SuperAdmin Account<br>**When** the user signs in through the public access flow<br>**Then** SpotGo does not grant an administrative Role; a new public Account is created only as Driver under US13. |
-
-***US10 - Support Accessibility and Languages in the Mobile Application***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US10 |
-| User | Driver or Parking Admin |
-| Priority | Medium |
-| Epic | E4 - Digital Presence and Mobile Quality |
-| Title | Support Accessibility and Languages in the Mobile Application |
-| Accessibility baseline | The mobile application exposes platform accessibility semantics and is verified with a supported screen reader and text scaling on the supported devices. |
-| Description | **As a** Driver or Parking Admin,<br>**I want** the mobile application to support accessibility and English (en_US) / Latin American Spanish (es_419),<br>**so that** I can use SpotGo according to my needs and language preference. |
-| Acceptance Criteria | **Scenario 1: Language selection**<br>**Given** the user selects English (en_US) or Latin American Spanish (es_419) as the application language<br>**When** the application loads the product information<br>**Then** it displays the domain texts and statuses in the selected language and uses English (en_US) as the default when no preference has been selected.<br><br>**Scenario 2: Accessible controls and inputs**<br>**Given** the user accesses a mobile screen containing actions, forms, or status information<br>**When** the user navigates with a supported screen reader<br>**Then** every interactive element exposes a meaningful accessible name, role, and current state, and each validation error is associated with the corresponding input and communicated to the user.<br><br>**Scenario 3: Accessible status messages**<br>**Given** the mobile application displays or updates Availability, Occupancy Status, Reservation Status, a payment result, or an operational alert<br>**When** the status is presented or changes<br>**Then** the information is communicated through text or an equivalent semantic state, does not rely on color alone, and remains available to assistive technology.<br><br>**Scenario 4: Reading order and text scaling**<br>**Given** the user uses a screen reader or increases the device text size<br>**When** the user navigates the main mobile flows<br>**Then** the reading order is logical, content and actions are not clipped or overlapped, and all required actions remain operable.<br><br>**Scenario 5: Accessibility verification**<br>**Given** a release candidate contains the main mobile flows<br>**When** the team verifies those flows with TalkBack or VoiceOver and configured text scaling<br>**Then** the shared report records the test device and operating system, tested flows, results, defects, and evidence, and no critical accessibility issue remains unresolved. |
-
-***US11 - Communicate the Value Proposition on the Landing Page***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US11 |
-| User | Public Visitor |
-| Priority | Medium |
-| Epic | E4 - Digital Presence and Mobile Quality |
-| Title | Communicate the Value Proposition on the Landing Page |
-| Description | **As a** Public Visitor,<br>**I want** to understand the problem, value proposition and main capabilities of SpotGo through a static Landing Page,<br>**so that** I can evaluate the product and access the mobile application. |
-| Accessibility baseline | The Landing Page targets WCAG 2.2 Level AA for applicable success criteria (World Wide Web Consortium, 2024). |
-| Acceptance Criteria | **Scenario 1: Public content**<br>**Given** the Public Visitor accesses the public Landing Page<br>**When** the content loads<br>**Then** the page communicates the problem, value proposition, and main capabilities of SpotGo without requiring authentication.<br><br>**Scenario 2: Mobile viewport**<br>**Given** the Public Visitor accesses the Landing Page from a mobile device<br>**When** the visitor views the Landing Page<br>**Then** the content remains legible, adapts to the available size, and maintains clear access to information about the mobile application.<br><br>**Scenario 3: Semantic and keyboard navigation**<br>**Given** the Public Visitor navigates the Landing Page with a keyboard or screen reader<br>**When** the visitor moves through the sections and actions<br>**Then** the page provides a descriptive title, hierarchical headings, landmarks, a mechanism to bypass repeated navigation, keyboard-operable links and buttons, a logical tab order, and visible focus, and uses ARIA roles, states, and properties when native HTML semantics do not provide the required information.<br><br>**Scenario 4: Text alternatives and visual distinction**<br>**Given** the Landing Page contains images, icons, video, or information communicated visually<br>**When** the content loads<br>**Then** informative non-text content has an equivalent text alternative, decorative content can be ignored by assistive technology, no status depends on color alone, normal text has a contrast ratio of at least 4.5:1, large text has at least 3:1, interface components and focus indicators have at least 3:1, and the content remains usable at 200% text enlargement and on a narrow mobile viewport.<br><br>**Scenario 5: Accessibility verification**<br>**Given** a Landing Page release candidate is available<br>**When** the team verifies it with keyboard navigation, a screen reader, an automated accessibility checker, and responsive viewports<br>**Then** the shared report records the page, viewport, browser, tools, results, defects, and evidence, and no critical accessibility issue remains unresolved. |
-
-***US12 - Navigate from the Landing Page to the Mobile Product***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US12 |
-| User | Public Visitor |
-| Priority | Medium |
-| Epic | E4 - Digital Presence and Mobile Quality |
-| Title | Navigate from the Landing Page to the Mobile Product |
-| Description | **As a** Public Visitor,<br>**I want** to navigate between the sections of the Landing Page and reach the mobile product destination,<br>**so that** I can continue from product information to the application. |
-| Acceptance Criteria | **Scenario 1: Section navigation**<br>**Given** the Public Visitor requests an available Landing Page section<br>**When** the navigation is processed<br>**Then** the system directs the visitor to the corresponding content without losing the page context.<br><br>**Scenario 2: Mobile product destination**<br>**Given** the Public Visitor requests access to the mobile product<br>**When** the access link is processed<br>**Then** the Landing Page directs the visitor to the official mobile application destination configured for the current release. |
-
-***US13 - Register Driver Account***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US13 |
-| User | Driver |
-| Priority | High |
-| Epic | E1 - Driver Mobile Experience |
-| Title | Register Driver Account |
-| Description | **As a** Driver,<br>**I want** to create an account in the SpotGo mobile application,<br>**so that** I can use the parking services. |
-| Acceptance Criteria | **Scenario 1: Successful registration with SpotGo credentials**<br>**Given** the Driver provides the required registration data (name, email address, and password) and an unregistered email address<br>**When** the Driver submits the registration request<br>**Then** the system creates the active account and assigns the User Profile *Driver* by default.<br><br>**Scenario 2: Existing email or invalid data**<br>**Given** the email address is already registered or required data is missing<br>**When** the Driver submits the registration request<br>**Then** the system rejects the operation, reports the cause, and does not create a duplicate account.<br><br>**Scenario 3: First access with Google**<br>**Given** the Driver completes Google authentication, the backend validates the ID token, the required profile data is available, and no linked SpotGo Account exists<br>**When** the Driver confirms public registration<br>**Then** SpotGo creates an active Account and Driver User Profile, associates the validated Google subject, and does not request or store the Google password.<br><br>**Scenario 4: Existing account and identity linking**<br>**Given** an existing SpotGo Account has the same email but no validated Google association<br>**When** the user attempts to associate the Google identity<br>**Then** SpotGo requires authorized verification of the existing Account before linking it, preserves its identity and Roles, and does not create a duplicate Account or automatically grant an administrative Role. |
-
-***US14 - Register B2B Tenant***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US14 |
-| User | SuperAdmin |
-| Priority | High |
-| Epic | E2 - Parking Organization and Profiles |
-| Title | Register B2B Tenant |
-| Description | **As a** SuperAdmin,<br>**I want** to register a parking facility as a Tenant and provision its initial Parking Admin account,<br>**so that** Parking Admin can configure and operate SpotGo for that facility. |
-| Acceptance Criteria | **Scenario 1: Successful Tenant and Parking Admin provisioning**<br>**Given** the SuperAdmin provides the required information for an unregistered parking facility and the initial Parking Admin account<br>**When** the SuperAdmin confirms the Tenant registration<br>**Then** the system creates the Tenant, provisions the initial Parking Admin account with the Parking Admin role, associates it with the Tenant, and sends the access invitation.<br><br>**Scenario 2: Missing required information**<br>**Given** the parking facility name, Parking Admin data, or another required field is missing<br>**When** the SuperAdmin attempts to confirm the registration<br>**Then** the system rejects the operation and does not create the incomplete Tenant or Parking Admin account.<br><br>**Scenario 3: Parking Admin self-registration restricted**<br>**Given** a person without a SuperAdmin invitation attempts to create a Parking Admin account through the mobile application<br>**When** the person submits the registration request<br>**Then** the system rejects the request because Parking Admin accounts are provisioned internally by a SuperAdmin. |
-
-***US15 - Provision Parking Admin Account***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US15 |
-| User | SuperAdmin |
-| Priority | Medium |
-| Epic | E2 - Parking Organization and Profiles |
-| Title | Provision Parking Admin Account |
-| Description | **As a** SuperAdmin,<br>**I want** to provision a Parking Admin account and associate it with a Tenant,<br>**so that** Parking Admin can use the administrative views and operational functions of the assigned parking facility. |
-| Acceptance Criteria | **Scenario 1: Successful Parking Admin provisioning**<br>**Given** the SuperAdmin is authenticated, the Tenant is active, and the Parking Admin data is valid and not already registered<br>**When** the SuperAdmin provisions the Parking Admin account<br>**Then** the system creates an Account with the Parking Admin role, creates the independent Parking Admin User Profile, associates it with the Tenant, and sends an access invitation.<br><br>**Scenario 2: Invalid or duplicate provisioning**<br>**Given** the Parking Admin data is incomplete, the Tenant is inactive, or an Account with the same identity already exists<br>**When** the SuperAdmin submits the provisioning request<br>**Then** the system rejects the operation, reports the cause, and does not create a duplicate Parking Admin assignment.<br><br>**Scenario 3: Public registration restriction**<br>**Given** a person attempts to select or create the Parking Admin role through the public Driver registration flow<br>**When** the person submits the registration request<br>**Then** the system rejects the role request because public registration creates Driver accounts only. |
-
-***US16 - Upload Parking Floor Plan***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US16 |
-| User | Parking Admin |
-| Priority | Medium |
-| Epic | E2 - Parking Organization and Profiles |
-| Title | Upload Parking Floor Plan |
-| Description | **As a** Parking Admin,<br>**I want** to upload the Floor Plan of the parking facility,<br>**so that** it becomes the authoritative source for the Digital Parking Map. |
-| Acceptance Criteria | **Scenario 1: Valid Floor Plan**<br>**Given** Parking Admin selects a valid PNG or JPG image file that represents the facility layout<br>**When** Parking Admin submits it for configuration<br>**Then** the system accepts the file, marks it as the authoritative Floor Plan, and makes it available for the map generation process.<br><br>**Scenario 2: Invalid format**<br>**Given** the selected file is a PDF, text document, or unsupported format<br>**When** Parking Admin attempts to submit it<br>**Then** the system rejects the file and informs Parking Admin that the format is invalid.<br><br>**Scenario 3: Floor Plan replacement**<br>**Given** an authoritative Floor Plan already exists<br>**When** Parking Admin uploads a new valid Floor Plan<br>**Then** the system preserves the previous version for audit purposes and uses the new Floor Plan as the source for subsequent map configuration. |
-
-***US17 - Generate Digital Parking Map***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US17 |
-| User | Parking Admin |
-| Priority | Medium |
-| Epic | E2 - Parking Organization and Profiles |
-| Title | Generate Digital Parking Map |
-| Description | **As a** Parking Admin,<br>**I want** the system to process the authoritative Floor Plan,<br>**so that** it can initialize the Digital Parking Map, Parking Spots and Parking Zones according to the facility layout. |
-| Acceptance Criteria | **Scenario 1: Map generation from the Floor Plan**<br>**Given** an authoritative Floor Plan exists and Parking Admin has defined the infrastructure elements represented in it<br>**When** Parking Admin starts the generation<br>**Then** the system creates the Digital Parking Map from the Floor Plan, registers the defined Parking Spots and Parking Zones, and initializes each spot as *Unavailable* until reliable operational data is received.<br><br>**Scenario 2: Unclear Floor Plan**<br>**Given** the Floor Plan information is insufficient to configure the parking facility elements<br>**When** Parking Admin starts the generation<br>**Then** the system does not publish an incomplete map, reports the limitation, and allows Parking Admin to continue with manual configuration based on the same Floor Plan. |
-
-***US18 - Manage Reservations and Virtual Receipts***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US18 |
-| User | Driver |
-| Priority | High |
-| Epic | E1 - Driver Mobile Experience |
-| Title | Manage Reservations and Virtual Receipts |
-| Description | **As a** Driver,<br>**I want** to reserve a Parking Spot within a permitted Parking Zone and manage the Reservation during its lifecycle,<br>**so that** I can use the assigned space for my registered Vehicle and receive updated operation records. |
-| Acceptance Criteria | **Scenario 1: Successful reservation**<br>**Given** the Driver has a registered Vehicle and a valid payment method, a permitted Parking Zone exists, and that zone contains an *Available* Parking Spot with operational Sensor Health<br>**When** the Driver selects the Vehicle, chooses the Parking Zone, selects the Parking Spot, specifies a valid date, start time, and duration, and submits the Digital Payment request<br>**Then** the system creates a temporary lock and a pending transaction; after the internal payment service sends an approved notification, it confirms the transaction, creates the Reservation with Reservation Status *Reserved*, blocks the space for other Driver, and generates a Virtual Receipt with the zone, space, selected Vehicle, and validity period.<br><br>**Scenario 2: Vehicle required**<br>**Given** the Driver has no Vehicle registered in the account<br>**When** the Driver attempts to start a Reservation<br>**Then** the system does not allow the Driver to continue and requests that a Vehicle be registered before selecting a space.<br><br>**Scenario 3: Space no longer available**<br>**Given** the selected Parking Spot is no longer *Available* or was reserved by another Driver before the Reservation is confirmed<br>**When** the Driver attempts to finalize the operation<br>**Then** the system releases any temporary lock, does not create a Reservation for that space, and informs the Driver that another alternative must be selected.<br><br>**Scenario 4: Payment rejected**<br>**Given** the internal payment service sends a rejected notification for the Reservation's Digital Payment<br>**When** the system processes the notification<br>**Then** it releases the temporary lock, does not confirm the Reservation, and does not generate the Virtual Receipt.<br><br>**Scenario 5: No-show and refund**<br>**Given** a paid Reservation has operational Sensor Health and the sensor never records Occupancy Status *Occupied* during the entire reserved period<br>**When** the reserved period ends<br>**Then** the system marks the Reservation as *No-show*, releases the Parking Spot, and refunds the amount paid.<br><br>**Scenario 6: Late arrival within the reserved period**<br>**Given** a Reservation has Reservation Status *Reserved* and the Driver arrives after the start time but before the end time<br>**When** the Driver confirms check-in or Parking Admin confirms that the occupancy corresponds to the Reservation<br>**Then** the system changes the Reservation to *Active*, records the Parking Session linked through the Reservation and assigned Parking Spot, and preserves the original end time and amount; the sensor reading alone does not identify the Vehicle or start the session.<br><br>**Scenario 7: Cancellation before start**<br>**Given** a paid Reservation has not started yet<br>**When** the Driver requests its cancellation<br>**Then** the system changes the Reservation Status to *Cancelled*, releases the space, and refunds the amount paid.<br><br>**Scenario 8: Reservation modification or extension**<br>**Given** the Driver requests a change to the schedule, space, or duration of a Reservation<br>**When** the new assignment is valid, compatible with the User Profile, and does not affect later Reservations<br>**Then** the system updates the Reservation, recalculates any price difference, and generates an updated Virtual Receipt before confirming the change.<br><br>**Scenario 9: Reservation reassigned**<br>**Given** a Reservation is assigned to a Parking Spot occupied before its start or by an overstayed Parking Session<br>**When** the system confirms an available and compatible alternative<br>**Then** it updates the Reservation, Virtual Receipt, and destination Parking Zone that the Driver can open in Google Maps, and notifies the Driver.<br><br>**Scenario 10: No compatible alternative**<br>**Given** a Reservation must be reassigned and no compatible Parking Spot is available<br>**When** the system processes the conflict<br>**Then** it offers alternative parking facilities or cancels the Reservation with a full refund.<br><br>**Scenario 11: Early departure**<br>**Given** an active Parking Session is linked to a Reservation before the end time<br>**When** the Occupancy Sensor records the assigned Parking Spot as *Available*<br>**Then** the system keeps the Reservation protected until its end time, does not issue a refund, and does not allow another Driver to reserve that space during the active period.<br><br>**Scenario 12: One active Parking Spot per Vehicle**<br>**Given** the Vehicle already has an active Parking Spot or Reservation<br>**When** the Driver attempts to obtain a second assignment<br>**Then** the system rejects the new assignment and maintains at most one active Parking Spot for that Vehicle. |
-
-***US19 - Process Reservation and Additional Payments***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US19 |
-| User | Driver |
-| Priority | High |
-| Epic | E6 - Monetization and Billing |
-| Title | Process Reservation and Additional Payments |
-| Description | **As a** Driver,<br>**I want** to pay for my Reservation and any additional parking time through a saved payment method,<br>**so that** SpotGo can confirm my space and settle the actual duration of my Parking Session. |
-| Acceptance Criteria | **Scenario 1: Saved payment method**<br>**Given** the Driver adds and authorizes a payment method through the internal payment service<br>**When** the internal service confirms the authorization<br>**Then** the system stores the Payment Token associated with the Driver's profile, does not store the complete payment method data, and makes it available for future operations.<br><br>**Scenario 2: Successful Reservation payment**<br>**Given** the Driver has a valid request for a selected Parking Spot and an authorized Payment Token<br>**When** the internal payment service sends an approved notification for the Digital Payment request<br>**Then** the system records the transaction as approved, confirms the Reservation, notifies the Driver of the result, and allows the Virtual Receipt to be generated.<br><br>**Scenario 3: Rejected Reservation payment**<br>**Given** the internal payment service sends a rejected notification for the Reservation's Digital Payment<br>**When** the system processes the notification<br>**Then** it records the payment as failed, informs the Driver, releases the temporary lock, and does not confirm the Reservation or the selected Parking Spot.<br><br>**Scenario 4: Additional time after tolerance**<br>**Given** a Parking Session remains *Occupied* after the Reservation's end time and the 5-minute tolerance period<br>**When** the system calculates the additional time<br>**Then** it marks the Reservation as *Overstayed*, generates an Additional Charge according to the fraction configured by the parking facility, and applies the fixed discount corresponding to the Driver's active Subscription.<br><br>**Scenario 5: Successful Additional Charge**<br>**Given** an Additional Charge has been calculated and the Payment Token is authorized<br>**When** the internal service confirms the transaction<br>**Then** it records the charge as approved, updates the payment history, notifies the Driver of the result, and generates the applicable Receipt according to the available tax information: a Virtual Receipt, Electronic Receipt, or Electronic Invoice.<br><br>**Scenario 6: Failed Additional Charge**<br>**Given** the internal payment service cannot complete the Additional Charge through the Payment Token<br>**When** the system receives the failed result<br>**Then** it records an Outstanding Balance, notifies the Driver, allows a retry with the same or another payment method, and blocks new Reservations until the balance is regularized. |
-
-***US20 - Manage Subscription Plans***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US20 |
-| User | Driver |
-| Priority | Medium |
-| Epic | E6 - Monetization and Billing |
-| Title | Manage Subscription Plans |
-| Description | **As a** Driver,<br>**I want** to consult, select and manage the Free, Plus Monthly and Plus Annual Subscription plans,<br>**so that** I can obtain the benefits that match my parking usage. |
-| Acceptance Criteria | **Scenario 1: Free Plan**<br>**Given** the Driver selects the *Free* plan<br>**When** the system activates the plan<br>**Then** it allows the Driver to consult Availability, search for parking, and reserve spaces at the regular rate, applies a 0% discount per operation, and does not enable special Parking Zones.<br><br>**Scenario 2: Plus Monthly Plan**<br>**Given** the Driver selects the *Plus Monthly* plan and the Digital Payment is approved<br>**When** the system confirms the purchase<br>**Then** it activates the Subscription for 30 days, prioritizes the Driver's Reservations, enables access to special Parking Zones, and applies a fixed 10% discount to Reservations and per-fraction or hourly charges.<br><br>**Scenario 3: Plus Annual Plan**<br>**Given** the Driver selects the *Plus Annual* plan and the Digital Payment is approved<br>**When** the system confirms the purchase<br>**Then** it activates the Subscription for 12 months, retains the Plus Monthly benefits, enables access to special Parking Zones, and applies a fixed 15% discount to Reservations and per-fraction or hourly charges.<br><br>**Scenario 4: Subscription discount on overstay**<br>**Given** the Driver has an active Subscription and incurs an overstay charge<br>**When** the system calculates the additional amount<br>**Then** it applies 0%, 10%, or 15% according to the active plan before processing the charge, without applying another discount to the same operation.<br><br>**Scenario 5: Change or cancel plan**<br>**Given** the Driver has an active plan<br>**When** the Driver requests to change, upgrade, or cancel the plan renewal<br>**Then** the system applies the requested change or upgrade according to the validated payment and availability conditions; if the Driver cancels the renewal, it preserves the benefits through the applicable date and does not create a new charge for the canceled renewal. |
-
-***US21 - View Receipts and Invoices***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US21 |
-| User | Driver |
-| Priority | Medium |
-| Epic | E6 - Monetization and Billing |
-| Title | View Receipts and Invoices |
-| Description | **As a** Driver,<br>**I want** to consult my payment history and obtain my Virtual Receipts, Electronic Receipts and Electronic Invoices,<br>**so that** I can track my parking operations and expenses. |
-| Acceptance Criteria | **Scenario 1: Download receipt or invoice**<br>**Given** the Driver has a Reservation, a Parking Session linked to a Reservation of a registered Driver, a Subscription, or an Additional Charge recorded in the history<br>**When** the Driver requests the document<br>**Then** the system allows the Driver to view the operation data and download the available Virtual Receipt, Electronic Receipt or Electronic Invoice as a PDF copy.<br><br>**Scenario 2: Send receipt or invoice by email**<br>**Given** the Driver views a transaction with an available Virtual Receipt, Electronic Receipt or Electronic Invoice<br>**When** the Driver requests that it be sent to the registered email address<br>**Then** the system sends the associated document and retains the operation in the history.<br><br>**Scenario 3: Refund or Outstanding Balance**<br>**Given** an operation has an associated Refund or Outstanding Balance<br>**When** the Driver views the history<br>**Then** the system displays the adjustment status, corresponding amount, and relationship with the original operation. |
-
-***US22 - Manage B2B Billing***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US22 |
-| User | Parking Admin |
-| Priority | Medium |
-| Epic | E6 - Monetization and Billing |
-| Title | Manage B2B Billing |
-| Description | **As a** Parking Admin,<br>**I want** to consult the invoices for the SpotGo service and update the Tenant's tax information,<br>**so that** I can control the B2B billing of my parking facility. |
-| Acceptance Criteria | **Scenario 1: Consult SaaS invoices**<br>**Given** Parking Admin has an active Tenant and SpotGo service invoices exist<br>**When** Parking Admin requests the B2B billing history<br>**Then** the system displays the available invoices with their status, date, and amount.<br><br>**Scenario 2: Update tax information**<br>**Given** Parking Admin is authorized to modify the Tenant's tax information<br>**When** Parking Admin updates the RUC or address with valid information<br>**Then** the system saves the new data and uses it for future B2B invoices. |
-
-***US23 - Watch Product Promotional Video***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US23 |
-| User | Public Visitor |
-| Priority | Low |
-| Epic | E4 - Digital Presence and Mobile Quality |
-| Title | Watch Product Promotional Video |
-| Description | **As a** Public Visitor,<br>**I want** to watch a promotional video on the Landing Page,<br>**so that** I can understand SpotGo through an example of its operation. |
-| Acceptance Criteria | **Scenario 1: Video available**<br>**Given** the Public Visitor accesses the audiovisual section of the Landing Page and the resource is available<br>**When** the visitor requests playback<br>**Then** the video is presented within the page.<br><br>**Scenario 2: Video unavailable**<br>**Given** the audiovisual resource cannot be loaded<br>**When** the section is displayed<br>**Then** the Landing Page presents a static visual alternative and maintains access to the rest of the content.<br><br>**Scenario 3: Accessible audiovisual content**<br>**Given** the promotional video is available<br>**When** the Public Visitor plays or pauses the video<br>**Then** the playback controls expose accessible names and are keyboard-operable, and the video provides synchronized captions and an equivalent text alternative. |
-
-***US24 - Switch Landing Page Language***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US24 |
-| User | Public Visitor |
-| Priority | Medium |
-| Epic | E4 - Digital Presence and Mobile Quality |
-| Title | Switch Landing Page Language |
-| Description | **As a** Public Visitor,<br>**I want** to switch the Landing Page between English (en_US) and Latin American Spanish (es_419),<br>**so that** I can understand the product information in my preferred language. |
-| Acceptance Criteria | **Scenario 1: Switch to Latin American Spanish**<br>**Given** the Landing Page is displayed in English (en_US) and an es_419 translation exists<br>**When** the Public Visitor selects Latin American Spanish (es_419)<br>**Then** the available content switches to es_419 without losing the section being viewed.<br><br>**Scenario 2: Switch back to English**<br>**Given** the Landing Page is displayed in Latin American Spanish (es_419)<br>**When** the Public Visitor selects English (en_US)<br>**Then** the available content returns to English (en_US) without reloading the entire navigation. |
-
-***US25 - View Nearby Parking Zones***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US25 |
-| User | Driver |
-| Priority | High |
-| Epic | E1 - Driver Mobile Experience |
-| Title | View Nearby Parking Zones |
-| Description | **As a** Driver,<br>**I want** to view the Parking Zones registered by SpotGo on an integrated map powered by the Google Maps API,<br>**so that** I can review their operational details and identify nearby parking alternatives. |
-| Acceptance Criteria | **Scenario 1: Nearby zones with location permission**<br>**Given** the Driver grants location permission and Parking Zones are registered in the queried area<br>**When** the Driver requests nearby Parking Zones while using the feature<br>**Then** the Google Maps API renders the integrated map, SpotGo displays the registered Parking Zones as markers, and the application shows SpotGo data such as Availability, price, operating hours, and zone details.<br><br>**Scenario 2: Location permission denied**<br>**Given** the Driver does not grant location permission<br>**When** the Driver opens the nearby Parking Zones feature<br>**Then** the Google Maps API renders the integrated map centered on the configured default area, such as Cercado de Lima, the application informs the Driver that location improves the results, and it does not request background location access.<br><br>**Scenario 3: Permission granted while using the feature**<br>**Given** the Driver initially denied location permission and later enables it while using the feature<br>**When** the Driver requests nearby Parking Zones again<br>**Then** SpotGo uses the current location for the active consultation without requiring continuous background access.<br><br>**Scenario 4: No registered zone or map service error**<br>**Given** no SpotGo Parking Zones exist in the queried area or the Google Maps API does not respond<br>**When** the Driver requests the information<br>**Then** the application informs the Driver of the situation and does not display nonexistent locations. |
-
-***US26 - Open Route in Google Maps***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US26 |
-| User | Driver |
-| Priority | High |
-| Epic | E1 - Driver Mobile Experience |
-| Title | Open Route in Google Maps |
-| Description | **As a** Driver,<br>**I want** to select the External Navigation Link for a selected Parking Zone,<br>**so that** the Google Maps application can calculate the route from my location to the parking facility. |
-| Acceptance Criteria | **Scenario 1: Open external route**<br>**Given** the Driver has a selected SpotGo Parking Zone with a valid configured location<br>**When** the Driver selects the External Navigation Link button<br>**Then** SpotGo opens the Google Maps application with the Parking Zone as the destination and does not calculate an internal route within the parking facility.<br><br>**Scenario 2: Google Maps unavailable**<br>**Given** the Google Maps application is not installed or cannot be opened<br>**When** the Driver selects the External Navigation Link button<br>**Then** SpotGo offers a compatible web link or informs the Driver that external navigation cannot be opened.<br><br>**Scenario 3: Invalid destination data**<br>**Given** the selected Parking Zone has been removed or its configured location is invalid<br>**When** the Driver selects the External Navigation Link button<br>**Then** the application informs the Driver that the destination is unavailable and does not generate a route using invalid coordinates. |
-
-***US27 - Register Vehicle***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | US27 |
-| User | Driver |
-| Priority | High |
-| Epic | E1 - Driver Mobile Experience |
-| Title | Register Vehicle |
-| Description | **As a** Driver,<br>**I want** to register a Vehicle from my account,<br>**so that** I can select it when I make a Reservation. |
-| Acceptance Criteria | **Scenario 1: Successful vehicle registration**<br>**Given** the Driver has an active account and provides the required Vehicle information, including the license plate<br>**When** the Driver saves the registration from the vehicle view<br>**Then** the system creates the Vehicle, associates it with the Driver, stores the registered license plate and descriptive data, and makes it available for selection in a Reservation.<br><br>**Scenario 2: Invalid or duplicated vehicle**<br>**Given** required information is missing or the Vehicle is already associated with the Driver's account<br>**When** the Driver attempts to save the registration<br>**Then** the system rejects the operation, reports the cause, and preserves the existing records. |
-
-***TS01 - Synchronize Mobile Data through RESTful Services***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | TS01 |
-| User | Developer |
-| Priority | High |
-| Epic | E5 - Services and Technical Enablement |
-| Title | Synchronize Mobile Data through RESTful Services |
-| Description | **As a** Developer,<br>**I want** RESTful services to expose Parking Zones, User Profiles, Vehicles, Occupancy Status, Reservations, Parking Sessions, Digital Payments and Electronic Billing data,<br>**so that** the mobile application can synchronize the information required by each actor. |
-| Acceptance Criteria | **Scenario 1: Authorized operational request**<br>**Given** the mobile application sends a valid and authorized request for zones, Availability, Vehicles, Reservations, Parking Sessions, or operational statuses<br>**When** the service processes the request<br>**Then** it responds with the current information, including Occupancy Status, Reservation Status, and Sensor Health when applicable, using a consistent schema for mobile consumption and the requested locale when the message is user-facing.<br><br>**Scenario 2: Transaction and billing request**<br>**Given** the mobile application sends a valid and authorized request concerning a Digital Payment, Payment Token, Subscription, Outstanding Balance, or Electronic Invoice<br>**When** the service processes the request<br>**Then** it responds with the current operation status and its relationship with the corresponding Driver or Tenant, using English (en_US) or Latin American Spanish (es_419) for user-facing messages according to the requested locale.<br><br>**Scenario 3: Invalid or unauthorized request**<br>**Given** the request contains invalid data or is not authorized<br>**When** the service processes it<br>**Then** it responds with an identifiable error and does not expose protected information. |
-
-***TS02 - Persist and Synchronize Data on the Mobile Device***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | TS02 |
-| User | Developer |
-| Priority | Medium |
-| Epic | E5 - Services and Technical Enablement |
-| Title | Persist and Synchronize Data on the Mobile Device |
-| Description | **As a** Developer,<br>**I want** the mobile application to retain the last synchronized information locally,<br>**so that** users can consult the most recent known data during temporary connectivity interruptions. |
-| Acceptance Criteria | **Scenario 1: Temporary loss of connectivity**<br>**Given** the application has previously synchronized data and there is temporarily no connection<br>**When** the user consults Availability or permitted zones<br>**Then** the application offers the last known information together with its update time and identifies it as potentially outdated.<br><br>**Scenario 2: Connectivity restored**<br>**Given** the connection to the services is restored<br>**When** the application runs synchronization<br>**Then** it updates the local information with the most recent data without duplicating records or retaining obsolete states when a newer version exists. |
-
-***TS03 - Document the RESTful Service Contract***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | TS03 |
-| User | Developer |
-| Priority | Low |
-| Epic | E5 - Services and Technical Enablement |
-| Title | Document the RESTful Service Contract |
-| Contract scope | Versioned RESTful contract for the active resources used by the mobile application: Parking Zones, Availability, User Profiles, Vehicles, Reservations, Parking Sessions, Digital Payments, Subscriptions, Outstanding Balances and Electronic Billing. |
-| Evidence | Versioned OpenAPI/Swagger artifact with an accessible base URL or repository path, plus executable request examples for the active service. |
-| Description | **As a** Developer,<br>**I want** the active RESTful services to have a versioned and traceable contract,<br>**so that** the mobile application team can integrate them consistently. |
-| Acceptance Criteria | **Scenario 1: Complete endpoint documentation**<br>**Given** a versioned OpenAPI contract for the active product service exists and its base URL or repository path is available<br>**When** the Developer consults the OpenAPI/Swagger documentation<br>**Then** the Developer finds the endpoint paths and HTTP verbs, API version, required parameters and request bodies, success and error responses, authorization requirements, and examples corresponding to each active resource.<br><br>**Scenario 2: Contract example**<br>**Given** the Developer executes a valid request with the example data from the versioned documentation<br>**When** the service processes the request<br>**Then** the response conforms to the documented schema, status code, and error rules and shows a verifiable result. |
-
-***TS04 - Generate Electronic Billing***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | TS04 |
-| User | Developer |
-| Priority | High |
-| Epic | E6 - Monetization and Billing |
-| Title | Generate Electronic Billing |
-| Description | **As a** Developer,<br>**I want** the billing service to generate and update the applicable Electronic Receipt or Electronic Invoice for approved Digital Payments, Additional Charges and Refunds,<br>**so that** SpotGo can provide a consistent fiscal record for each registered Driver operation. |
-| Acceptance Criteria | **Scenario 1: Generate Electronic Receipt**<br>**Given** an approved Digital Payment exists for a registered Driver and the Driver provides a valid DNI<br>**When** the billing service processes the operation<br>**Then** it generates and associates an *Electronic Receipt* with the payment and the corresponding Reservation or linked Parking Session of the registered Driver.<br><br>**Scenario 2: Generate Electronic Invoice**<br>**Given** the requester requires an *Electronic Invoice* and provides a valid RUC<br>**When** the billing service processes the approved Digital Payment<br>**Then** it generates an *Electronic Invoice* and associates it with the provided tax information.<br><br>**Scenario 3: Additional Charge or Refund**<br>**Given** a Reservation or linked Parking Session of a registered Driver generates an approved Additional Charge or an authorized Refund<br>**When** the billing service processes the adjustment<br>**Then** it generates or updates the applicable fiscal document when valid tax information is available; otherwise, it preserves the associated Virtual Receipt, retains the relationship with the original operation, and reflects the adjusted amount. |
-
-***TS05 - Confirm Payments Asynchronously***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | TS05 |
-| User | Developer |
-| Priority | High |
-| Epic | E6 - Monetization and Billing |
-| Title | Confirm Payments Asynchronously |
-| Description | **As a** Developer,<br>**I want** to process asynchronous payment notifications for registered Driver Reservations, Subscriptions, Additional Charges and Refunds,<br>**so that** SpotGo can keep Digital Payments, Reservation Status, Parking Sessions and billing records consistent without processing Guest Parking Session payments. |
-| Acceptance Criteria | **Scenario 1: Reservation payment succeeded event**<br>**Given** the internal payment service sends an approved payment notification with a valid identifier for a Reservation belonging to a registered Driver<br>**When** the backend processes the event<br>**Then** it updates the transaction to approved, confirms the Reservation, allows the Virtual Receipt to be generated and, when valid DNI or RUC information is available, allows the corresponding Electronic Receipt or Electronic Invoice to be generated, and notifies the Driver.<br><br>**Scenario 2: Additional Charge succeeded event**<br>**Given** the internal payment service sends an approved Additional Charge notification with a valid identifier<br>**When** the backend processes the event<br>**Then** it records the charge, updates the Parking Session history, and allows the applicable Receipt to be generated according to the available tax information.<br><br>**Scenario 3: Payment failed event**<br>**Given** the internal payment service sends a rejected payment notification with a valid identifier<br>**When** the backend processes the event<br>**Then** it updates the transaction to failed, records an Outstanding Balance when applicable, does not confirm the pending operation if it is a Reservation, and notifies the Driver.<br><br>**Scenario 4: Refund event**<br>**Given** the internal payment service confirms an authorized Refund for a Reservation belonging to a registered Driver<br>**When** the backend processes the event<br>**Then** it updates the transaction, retains the relationship with the original operation, and makes the Refund status available to the Driver. |
-
-***SP01 - Validate Sensor-Based Occupancy Monitoring***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | SP01 |
-| User | Developer |
-| Priority | High |
-| Epic | E5 - Services and Technical Enablement |
-| Title | Validate Sensor-Based Occupancy Monitoring |
-| Research objective | Compare candidate Occupancy Sensor alternatives and validate, through an indoor and outdoor proof of concept, their accuracy, maximum 5-second latency, connectivity, power, maintenance and integration requirements, while confirming that they detect physical occupancy only and do not identify vehicles. |
-| Evidence expected | Comparison matrix, test report with observed results, prototype or integration evidence, adopted technical decision, limitations and follow-up implementation constraints. |
-| Description | **As a** Developer,<br>**I want** to validate Occupancy Sensors installed in every Parking Spot,<br>**so that** SpotGo can receive reliable Occupancy Status updates within a maximum of 5 seconds in indoor and outdoor parking facilities without claiming to identify the vehicle. |
-| Acceptance Criteria | **Scenario 1: Sensor validation**<br>**Given** at least two candidate *Occupancy Sensor* alternatives are available for evaluation and test *Parking Spots* are defined<br>**When** the team performs tests in indoor and outdoor conditions<br>**Then** it records the comparison criteria and observed results in the test report, including accuracy, latency, connectivity, power, maintenance and integration requirements, and explicitly states that the selected sensors detect physical occupancy only.<br><br>**Scenario 2: Occupancy event integration**<br>**Given** an *Occupancy Sensor* detects that a vehicle occupies or releases a *Parking Spot*<br>**When** the backend processes the received event<br>**Then** it updates the *Occupancy Status*, recalculates the Availability of the related *Parking Zone*, and makes the information available to the mobile application within a maximum of 5 seconds without identifying images, license plates, or the specific vehicle.<br><br>**Scenario 3: Sensor unavailable**<br>**Given** an *Occupancy Sensor* stops communicating reliable data<br>**When** the backend confirms the failure or disconnection<br>**Then** it marks the Parking Spot as *Unavailable*, blocks new Reservations and Guest Parking Sessions, and retains the incident for resolution by Parking Admin.<br><br>**Scenario 4: Spike closure**<br>**Given** the technical investigation has completed its indoor and outdoor tests<br>**When** the team closes SP01<br>**Then** the shared report links the comparison matrix, test or prototype evidence, feasibility conclusion, adopted decision, limitations and follow-up implementation stories or constraints, and marks SP01 as Done only when those artifacts are complete. |
-
-***SP02 - Investigate the Mobile Synchronization Strategy***
-
-| Field | Specification |
-| --- | --- |
-| Story ID | SP02 |
-| User | Developer |
-| Priority | Medium |
-| Epic | E5 - Services and Technical Enablement |
-| Title | Investigate the Mobile Synchronization Strategy |
-| Research objective | Compare local persistence and synchronization alternatives for variable-connectivity contexts, including offline behavior, stale data, retries, conflict resolution, recovery and the source of truth, and select the strategy that best supports the mobile flows. |
-| Evidence expected | Comparison matrix, offline/online prototype or test evidence, documented decision, technical conclusion, limitations and follow-up implementation constraints. |
-| Description | **As a** Developer,<br>**I want** to evaluate the local persistence and synchronization strategy for the mobile application,<br>**so that** SpotGo can respond predictably to temporary connectivity interruptions. |
-| Acceptance Criteria | **Scenario 1: Strategy evaluation**<br>**Given** the application must query information in variable-connectivity contexts and at least two persistence or synchronization alternatives are available for comparison<br>**When** the team tests the alternatives<br>**Then** it records the behavior observed during connection loss, stale-data consultation, recovery, retries, updates and conflicts in the comparison matrix and test report.<br><br>**Scenario 2: Evidence and decision**<br>**Given** the technical test and prototype are complete<br>**When** the team closes the spike<br>**Then** the shared report links the test or prototype evidence, identifies the adopted strategy and its technical conclusion, records the limitations and follow-up implementation constraints, and marks SP02 as Done only when these artifacts are recorded. |
-
-**Traceability with Lean UX and technical enablement**
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US01</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar disponibilidad por zona</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar la disponibilidad actual por zona,<br><strong>para</strong> identificar dónde podría haber un espacio de estacionamiento disponible.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Zona con disponibilidad</strong><br><strong>Dado que</strong> una zona de estacionamiento tiene al menos un espacio con estado de ocupación disponible, el sensor funciona correctamente y no existe una reserva, sesión de estacionamiento de invitado ni bloqueo temporal activo<br><strong>Cuando</strong> el Driver consulta la disponibilidad actual<br><strong>Entonces</strong> la aplicación informa cuántos espacios están disponibles y la hora de la última actualización<br><br><strong>Escenario 2: Zona sin disponibilidad</strong><br><strong>Dado que</strong> todos los espacios de una zona están ocupados, reservados, tienen una sesión de invitado o un bloqueo temporal activo, o figuran como no disponibles<br><strong>Cuando</strong> el Driver consulta la disponibilidad<br><strong>Entonces</strong> la aplicación informa que no hay espacios disponibles y no ofrece para reserva espacios no disponibles o bloqueados temporalmente<br><br><strong>Escenario 3: Actualización manual</strong><br><strong>Dado que</strong> el Driver consulta información sincronizada previamente<br><strong>Cuando</strong> el Driver solicita actualizarla<br><strong>Entonces</strong> la aplicación obtiene el estado más reciente disponible y muestra la hora de la actualización</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US02</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Configurar zonas de estacionamiento</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> crear zonas de estacionamiento, asociarlas con perfiles de usuario y configurar sus reglas de operación,<br><strong>para</strong> organizar los espacios del estacionamiento y aplicar condiciones uniformes para reservas y facturación.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Configuración válida</strong><br><strong>Dado que</strong> los espacios están registrados y los datos de la zona son válidos<br><strong>Cuando</strong> el Parking Admin crea una zona y asocia los espacios seleccionados<br><strong>Entonces</strong> el sistema guarda la relación entre la zona, sus espacios y los perfiles de usuario autorizados<br><br><strong>Escenario 2: Conflicto en la asignación de un espacio</strong><br><strong>Dado que</strong> un espacio ya pertenece a otra zona<br><strong>Cuando</strong> el Parking Admin intenta guardarlo en una zona nueva<br><strong>Entonces</strong> el sistema identifica el conflicto y no guarda la nueva relación hasta que se resuelva la asignación<br><br><strong>Escenario 3: Configuración de reglas de operación</strong><br><strong>Dado que</strong> el Parking Admin proporciona un horario válido y una unidad positiva para calcular fracciones de facturación<br><strong>Cuando</strong> el Parking Admin guarda las reglas de la zona o del estacionamiento<br><strong>Entonces</strong> el sistema permite reservas solo dentro del horario de operación y calcula el tiempo adicional con la fracción configurada</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US03</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Registrar una sesión de estacionamiento de invitado</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> registrar una sesión de estacionamiento cuando llega un invitado,<br><strong>para</strong> que SpotGo calcule su tiempo de estacionamiento mientras el pago presencial se realiza al salir.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Iniciar una sesión de invitado</strong><br><strong>Dado que</strong> llega un invitado, Parking Admin está autorizado para operar y hay un espacio disponible<br><strong>Cuando</strong> el Parking Admin selecciona el espacio, ingresa manualmente la placa e inicia la sesión<br><strong>Entonces</strong> el sistema crea una sesión activa con el espacio, la placa y la hora de ingreso; no crea una cuenta Driver ni un vehículo permanente, no crea una reserva ni procesa un pago<br><br><strong>Escenario 2: Conflicto por espacio reservado, ocupado o no disponible</strong><br><strong>Dado que</strong> el espacio solicitado tiene una reserva activa, está ocupado o figura como no disponible<br><strong>Cuando</strong> el Parking Admin intenta iniciar la sesión de invitado<br><strong>Entonces</strong> el sistema rechaza la operación y solicita seleccionar un espacio disponible<br><br><strong>Escenario 3: Cerrar la sesión y confirmar el pago presencial</strong><br><strong>Dado que</strong> existe una sesión de estacionamiento de invitado activa<br><strong>Cuando</strong> el Parking Admin registra la salida y confirma el pago presencial en efectivo o con POS<br><strong>Entonces</strong> el sistema registra la hora de salida, calcula la duración y el importe, cierra la sesión y conserva la confirmación del pago sin procesar ni almacenar datos financieros sensibles<br><br><strong>Escenario 4: Datos obligatorios en cada operación</strong><br><strong>Dado que</strong> el Parking Admin intenta iniciar la sesión sin espacio, placa u hora de ingreso, o cerrarla sin hora de salida o confirmación de pago<br><strong>Cuando</strong> el Parking Admin inicia o cierra la sesión<br><strong>Entonces</strong> el sistema rechaza la operación y mantiene sin cambios los registros existentes</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US04</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar las zonas permitidas</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> saber qué zonas de estacionamiento están permitidas para mi perfil de usuario,<br><strong>para</strong> utilizar solo las áreas asignadas a mi categoría.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Perfil con zonas permitidas</strong><br><strong>Dado que</strong> el Driver tiene un perfil activo y existen zonas asociadas<br><strong>Cuando</strong> la aplicación consulta la información del perfil<br><strong>Entonces</strong> el sistema devuelve las zonas permitidas junto con su disponibilidad actual<br><br><strong>Escenario 2: Sin zonas permitidas disponibles</strong><br><strong>Dado que</strong> el Driver no tiene ninguna zona permitida con espacios disponibles<br><strong>Cuando</strong> la aplicación consulta las zonas correspondientes<br><strong>Entonces</strong> el sistema informa que no hay disponibilidad en las zonas autorizadas y excluye las zonas no autorizadas</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US05</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E3 - Monitoreo de ocupación y operaciones</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Supervisar la ocupación por zona</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> supervisar el estado de ocupación de los espacios agrupados por zona,<br><strong>para</strong> controlar la operación actual del estacionamiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Datos de monitoreo actuales</strong><br><strong>Dado que</strong> los sensores transmiten el estado actual de los espacios de un estacionamiento interior o exterior<br><strong>Cuando</strong> el Parking Admin solicita los datos de monitoreo<br><strong>Entonces</strong> el sistema agrupa la información por zona y muestra el estado de ocupación (disponible, ocupado o no disponible) y, cuando corresponda, el estado de la reserva por separado<br><br><strong>Escenario 2: Cambio de ocupación dentro del tiempo máximo</strong><br><strong>Dado que</strong> un sensor instalado en un espacio detecta un cambio de ocupación<br><strong>Cuando</strong> el sistema recibe el evento del sensor<br><strong>Entonces</strong> actualiza el estado de ocupación, recalcula la disponibilidad de la zona y pone la información a disposición de la aplicación móvil en un máximo de 5 segundos<br><br><strong>Escenario 3: Sensor no disponible</strong><br><strong>Dado que</strong> un sensor deja de transmitir datos confiables<br><strong>Cuando</strong> el sistema detecta el incidente<br><strong>Entonces</strong> marca el espacio como no disponible, bloquea nuevas reservas y sesiones de invitados, evita cargos automáticos basados en lecturas no confiables, notifica a Parking Admin e inicia la revisión de las reservas afectadas</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US06</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E3 - Monitoreo de ocupación y operaciones</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Generar alertas operativas</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> recibir alertas sobre estacionamiento no autorizado y alta ocupación,<br><strong>para</strong> revisar incidentes y actuar antes de que afecten la operación.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Ocupación no autorizada o no validada</strong><br><strong>Dado que</strong> un espacio está ocupado y no existe una reserva o sesión de invitado activa que autorice su uso<br><strong>Cuando</strong> el sistema compara la ocupación con las autorizaciones registradas<br><strong>Entonces</strong> crea una alerta de estacionamiento no autorizado con la zona, el espacio y la hora del evento, clasifica la ocupación como no validada y no intenta identificar el vehículo mediante imágenes o la placa<br><br><strong>Escenario 2: Conflicto con una reserva</strong><br><strong>Dado que</strong> una reserva futura está asignada a un espacio que sigue ocupado por una sesión anterior<br><strong>Cuando</strong> el sistema detecta el conflicto<br><strong>Entonces</strong> busca un espacio disponible y compatible, conserva el registro del incidente y notifica a Parking Admin y a Driver cuando confirma la reasignación o una alternativa<br><br><strong>Escenario 3: Alta ocupación</strong><br><strong>Dado que</strong> la ocupación total supera el 95% de los espacios operativos disponibles<br><strong>Cuando</strong> el sistema evalúa el nivel de ocupación<br><strong>Entonces</strong> crea una alerta crítica de alta ocupación y la pone a disposición de Parking Admin<br><br><strong>Escenario 4: Resolución de una alerta</strong><br><strong>Dado que</strong> existe una alerta operativa pendiente<br><strong>Cuando</strong> el Parking Admin registra la clasificación del incidente y la acción realizada<br><strong>Entonces</strong> el sistema marca la alerta como resuelta solo cuando se completa la acción requerida y conserva su historial</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US07</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E3 - Monitoreo de ocupación y operaciones</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar el panel operativo móvil</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar un resumen operativo centralizado y el mapa de ocupación en tiempo real desde la aplicación móvil,<br><strong>para</strong> revisar la ocupación, la disponibilidad y los incidentes pendientes en un solo lugar.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Resumen operativo actual</strong><br><strong>Dado que</strong> el Parking Admin tiene acceso autorizado y existen datos operativos<br><strong>Cuando</strong> el Parking Admin solicita el resumen actual<br><strong>Entonces</strong> el sistema devuelve el total de espacios, la disponibilidad por zona, las reservas activas, las sesiones de invitados abiertas, los saldos pendientes de operaciones de los conductores asociadas con el Tenant y las alertas operativas pendientes<br><br><strong>Escenario 2: Detalle de una zona</strong><br><strong>Dado que</strong> el Parking Admin solicita información de una zona específica<br><strong>Cuando</strong> el sistema procesa la solicitud<br><strong>Entonces</strong> devuelve el estado de ocupación de cada espacio, el estado de la reserva cuando corresponda, las sesiones de invitados activas y el estado de los sensores; permite filtrar por perfil de usuario o zona<br><br><strong>Escenario 3: Auditoría administrativa</strong><br><strong>Dado que</strong> el Parking Admin modifica una configuración, asignación, reserva, sesión de invitado o incidente<br><strong>Cuando</strong> el sistema confirma la operación<br><strong>Entonces</strong> registra en el historial de auditoría al usuario, la acción, la fecha, la hora y los datos anteriores y nuevos</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US08</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E3 - Monitoreo de ocupación y operaciones</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Generar reportes de ocupación</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar reportes de ocupación agrupados por periodo y zona,<br><strong>para</strong> identificar patrones de uso y respaldar decisiones operativas.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Periodo con datos históricos</strong><br><strong>Dado que</strong> existen registros del estado de ocupación, reservas, sesiones de invitados y sesiones de estacionamiento para el periodo solicitado<br><strong>Cuando</strong> el Parking Admin genera el reporte de ocupación<br><strong>Entonces</strong> el sistema agrupa los datos por zona y periodo e informa patrones de uso, sesiones de invitados completadas, reservas marcadas como inasistencia, tiempos excedidos e incidentes registrados<br><br><strong>Escenario 2: Periodo sin datos</strong><br><strong>Dado que</strong> no existen registros para el periodo solicitado<br><strong>Cuando</strong> el Parking Admin genera el reporte de ocupación<br><strong>Entonces</strong> el sistema informa que no hay datos disponibles y no infiere valores inexistentes</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US09</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver, Parking Admin y SuperAdmin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Autenticarse y acceder a las funciones móviles según el rol</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver, Parking Admin o SuperAdmin,<br><strong>quiero</strong> acceder a SpotGo con mi cuenta autorizada,<br><strong>para</strong> utilizar solo las funciones correspondientes a mi rol.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Acceso válido con credenciales de SpotGo</strong><br><strong>Dado que</strong> la cuenta está activa y las credenciales son válidas<br><strong>Cuando</strong> el usuario solicita acceso a SpotGo<br><strong>Entonces</strong> el sistema autentica al usuario, crea una sesión válida y habilita las funciones asociadas con su rol<br><br><strong>Escenario 2: Acceso inválido o vencido</strong><br><strong>Dado que</strong> las credenciales son inválidas o la sesión ya no es válida<br><strong>Cuando</strong> el usuario solicita acceder a información protegida<br><strong>Entonces</strong> el sistema rechaza la solicitud y no entrega datos de ocupación, perfil o zonas restringidas<br><br><strong>Escenario 3: Acceso válido con Google</strong><br><strong>Dado que</strong> Google devuelve un token de identidad con firma, emisor, audiencia y vencimiento válidos, y la cuenta SpotGo vinculada está activa<br><strong>Cuando</strong> el usuario envía el token al servicio de gestión de identidad y acceso<br><strong>Entonces</strong> SpotGo autentica la cuenta vinculada, crea su propia sesión y habilita solo las funciones de los roles previamente autorizados<br><br><strong>Escenario 4: Acceso de Google rechazado o cancelado</strong><br><strong>Dado que</strong> se cancela el acceso de Google o el token de identidad es inválido o venció<br><strong>Cuando</strong> el usuario intenta completar la autenticación<br><strong>Entonces</strong> SpotGo no emite una sesión y permite reintentar o usar correo electrónico y contraseña<br><br><strong>Escenario 5: Restricción de roles administrativos</strong><br><strong>Dado que</strong> una identidad de Google no tiene una cuenta Parking Admin o SuperAdmin habilitada<br><strong>Cuando</strong> el usuario inicia sesión mediante el acceso público<br><strong>Entonces</strong> SpotGo no asigna un rol administrativo; solo crea una cuenta pública como Driver mediante US13</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US10</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver o Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Incorporar accesibilidad y opciones de idioma en la aplicación móvil</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Accessibility Baseline</th></tr>
+    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">La aplicación móvil expone las funciones de accesibilidad de la plataforma y se verifica con un lector de pantalla compatible y ajustes de tamaño de texto en los dispositivos admitidos.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver o Parking Admin,<br><strong>quiero</strong> que la aplicación móvil ofrezca funciones de accesibilidad y los idiomas inglés (en_US) y español latinoamericano (es_419),<br><strong>para</strong> usar SpotGo según mis necesidades y preferencia de idioma.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Selección de idioma</strong><br><strong>Dado que</strong> el usuario selecciona inglés (en_US) o español latinoamericano (es_419) como idioma de la aplicación<br><strong>Cuando</strong> la aplicación carga la información del producto<br><strong>Entonces</strong> muestra los textos y estados del dominio en el idioma seleccionado y usa inglés (en_US) como idioma predeterminado si no hay una preferencia<br><br><strong>Escenario 2: Controles y campos accesibles</strong><br><strong>Dado que</strong> el usuario abre una pantalla móvil con acciones, formularios o estados<br><strong>Cuando</strong> el usuario navega con un lector de pantalla compatible<br><strong>Entonces</strong> cada elemento interactivo comunica un nombre, rol y estado actual comprensibles, y cada error de validación se asocia con el campo correspondiente y se comunica al usuario<br><br><strong>Escenario 3: Mensajes de estado accesibles</strong><br><strong>Dado que</strong> la aplicación muestra o actualiza la disponibilidad, el estado de ocupación o de una reserva, un resultado de pago o una alerta operativa<br><strong>Cuando</strong> se presenta o cambia un estado<br><strong>Entonces</strong> la información se comunica mediante texto o un estado semántico equivalente, no depende únicamente del color y está disponible para la tecnología de asistencia<br><br><strong>Escenario 4: Orden de lectura y tamaño de texto</strong><br><strong>Dado que</strong> el usuario utiliza un lector de pantalla o aumenta el tamaño del texto del dispositivo<br><strong>Cuando</strong> navega por los flujos principales de la aplicación<br><strong>Entonces</strong> el orden de lectura es lógico, el contenido y las acciones no se recortan ni se superponen, y todas las acciones requeridas siguen disponibles<br><br><strong>Escenario 5: Verificación de accesibilidad</strong><br><strong>Dado que</strong> una versión candidata incluye los flujos principales de la aplicación<br><strong>Cuando</strong> el equipo verifica los flujos con TalkBack o VoiceOver y los ajustes de tamaño de texto configurados<br><strong>Entonces</strong> el informe compartido registra el dispositivo y sistema operativo, los flujos probados, resultados, defectos y evidencias, y no queda ningún problema crítico de accesibilidad sin resolver</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US11</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Comunicar la propuesta de valor en la página de presentación</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Accessibility Baseline</th></tr>
+    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">La página de presentación busca cumplir los criterios de éxito aplicables del nivel AA de las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.2 (World Wide Web Consortium, 2024).</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> conocer el problema, la propuesta de valor y las principales funciones de SpotGo mediante una página de presentación estática,<br><strong>para</strong> evaluar el producto y acceder a la aplicación móvil.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Contenido público</strong><br><strong>Dado que</strong> el Driver accede a la página de presentación<br><strong>Cuando</strong> se carga el contenido<br><strong>Entonces</strong> la página comunica el problema, la propuesta de valor y las principales funciones de SpotGo sin exigir autenticación<br><br><strong>Escenario 2: Vista en dispositivos móviles</strong><br><strong>Dado que</strong> el Driver accede a la página desde un dispositivo móvil<br><strong>Cuando</strong> consulta la página<br><strong>Entonces</strong> el contenido sigue siendo legible, se adapta al tamaño disponible y mantiene un acceso claro a la información de la aplicación móvil<br><br><strong>Escenario 3: Navegación semántica y con teclado</strong><br><strong>Dado que</strong> el Driver navega por la página con teclado o lector de pantalla<br><strong>Cuando</strong> recorre las secciones y acciones<br><strong>Entonces</strong> la página ofrece un título descriptivo, encabezados jerárquicos, regiones identificables, una opción para saltar la navegación repetida, enlaces y botones operables con teclado, un orden lógico de tabulación y foco visible; usa roles, estados y propiedades ARIA cuando el HTML nativo no brinda la información requerida<br><br><strong>Escenario 4: Alternativas de texto y distinción visual</strong><br><strong>Dado que</strong> la página contiene imágenes, íconos, video u otra información visual<br><strong>Cuando</strong> se carga el contenido<br><strong>Entonces</strong> el contenido informativo no textual tiene una alternativa equivalente en texto, el contenido decorativo puede ignorarse con tecnología de asistencia, ningún estado depende solo del color, el texto normal alcanza una relación de contraste de al menos 4,5:1, el texto grande al menos 3:1, los componentes de interfaz y los indicadores de foco al menos 3:1, y el contenido sigue siendo utilizable con texto ampliado al 200% y en una vista móvil estrecha<br><br><strong>Escenario 5: Verificación de accesibilidad</strong><br><strong>Dado que</strong> hay una versión candidata de la página de presentación<br><strong>Cuando</strong> el equipo la verifica con navegación por teclado, lector de pantalla, herramienta automatizada de accesibilidad y vistas adaptables<br><strong>Entonces</strong> el informe compartido registra la página, vista, navegador, herramientas, resultados, defectos y evidencias, y no queda ningún problema crítico de accesibilidad sin resolver</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US12</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Navegar desde la página de presentación hasta el producto móvil</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> recorrer las secciones de la página de presentación y llegar al destino del producto móvil,<br><strong>para</strong> pasar de la información del producto a la aplicación.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Navegación entre secciones</strong><br><strong>Dado que</strong> el Driver solicita una sección disponible de la página de presentación<br><strong>Cuando</strong> se procesa la navegación<br><strong>Entonces</strong> el sistema dirige al contenido correspondiente sin perder el contexto de la página<br><br><strong>Escenario 2: Destino del producto móvil</strong><br><strong>Dado que</strong> el Driver solicita acceder al producto móvil<br><strong>Cuando</strong> se procesa el enlace de acceso<br><strong>Entonces</strong> la página dirige al destino oficial de la aplicación móvil configurado para la versión vigente</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US13</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Registrar una cuenta Driver</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> crear una cuenta en la aplicación móvil de SpotGo,<br><strong>para</strong> utilizar los servicios de estacionamiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto con credenciales de SpotGo</strong><br><strong>Dado que</strong> el Driver proporciona los datos requeridos (nombre, correo electrónico y contraseña) y un correo que no está registrado<br><strong>Cuando</strong> el Driver envía la solicitud de registro<br><strong>Entonces</strong> el sistema crea una cuenta activa y asigna por defecto el perfil de usuario Driver<br><br><strong>Escenario 2: Correo existente o datos inválidos</strong><br><strong>Dado que</strong> el correo ya está registrado o falta un dato obligatorio<br><strong>Cuando</strong> el Driver envía la solicitud de registro<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y no crea una cuenta duplicada<br><br><strong>Escenario 3: Primer acceso con Google</strong><br><strong>Dado que</strong> el Driver completa la autenticación de Google, el backend valida el token de identidad, están disponibles los datos de perfil requeridos y no existe una cuenta SpotGo vinculada<br><strong>Cuando</strong> el Driver confirma el registro público<br><strong>Entonces</strong> SpotGo crea una cuenta activa y un perfil Driver, asocia el identificador de Google validado y no solicita ni almacena la contraseña de Google<br><br><strong>Escenario 4: Vincular una identidad con una cuenta existente</strong><br><strong>Dado que</strong> existe una cuenta SpotGo con el mismo correo, pero sin una asociación de Google validada<br><strong>Cuando</strong> el usuario intenta asociar su identidad de Google<br><strong>Entonces</strong> SpotGo exige verificar de forma autorizada la cuenta existente antes de vincularla, conserva su identidad y roles, no crea una cuenta duplicada ni asigna automáticamente un rol administrativo</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US14</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">SuperAdmin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Registrar un cliente B2B y su cuenta Parking Admin</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> SuperAdmin,<br><strong>quiero</strong> registrar un estacionamiento como cliente B2B y habilitar su cuenta Parking Admin inicial,<br><strong>para</strong> que Parking Admin configure y opere SpotGo en ese establecimiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto del cliente y habilitación de Parking Admin</strong><br><strong>Dado que</strong> el SuperAdmin proporciona los datos requeridos de un estacionamiento aún no registrado y de la cuenta Parking Admin inicial<br><strong>Cuando</strong> el SuperAdmin confirma el registro del cliente<br><strong>Entonces</strong> el sistema crea el cliente, habilita la cuenta inicial con el rol Parking Admin, la asocia con el cliente y envía una invitación de acceso<br><br><strong>Escenario 2: Falta información obligatoria</strong><br><strong>Dado que</strong> falta el nombre del estacionamiento, los datos de Parking Admin u otro campo obligatorio<br><strong>Cuando</strong> el SuperAdmin intenta confirmar el registro<br><strong>Entonces</strong> el sistema rechaza la operación y no crea el cliente ni la cuenta Parking Admin incompletos<br><br><strong>Escenario 3: Restricción del autorregistro de Parking Admin</strong><br><strong>Dado que</strong> una persona intenta crear una cuenta Parking Admin desde la aplicación móvil sin invitación de SuperAdmin<br><strong>Cuando</strong> envía la solicitud de registro<br><strong>Entonces</strong> el sistema la rechaza porque las cuentas Parking Admin son habilitadas internamente por SuperAdmin</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US15</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">SuperAdmin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Habilitar una cuenta Parking Admin</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> SuperAdmin,<br><strong>quiero</strong> habilitar una cuenta Parking Admin y asociarla con un cliente,<br><strong>para</strong> que Parking Admin utilice las vistas administrativas y funciones operativas del estacionamiento asignado.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Habilitación correcta de Parking Admin</strong><br><strong>Dado que</strong> el SuperAdmin está autenticado, el cliente está activo y los datos de Parking Admin son válidos y no están registrados<br><strong>Cuando</strong> el SuperAdmin habilita la cuenta<br><strong>Entonces</strong> el sistema crea una cuenta con el rol Parking Admin, crea un perfil de usuario independiente para Parking Admin, lo asocia con el cliente y envía una invitación de acceso<br><br><strong>Escenario 2: Habilitación inválida o duplicada</strong><br><strong>Dado que</strong> los datos de Parking Admin están incompletos, el cliente está inactivo o ya existe una cuenta con la misma identidad<br><strong>Cuando</strong> el SuperAdmin envía la solicitud<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y no crea una asignación duplicada de Parking Admin<br><br><strong>Escenario 3: Restricción del registro público</strong><br><strong>Dado que</strong> una persona intenta seleccionar o crear el rol Parking Admin mediante el flujo público de registro Driver<br><strong>Cuando</strong> envía la solicitud de registro<br><strong>Entonces</strong> el sistema rechaza la solicitud de rol porque el registro público solo crea cuentas Driver</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US16</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Cargar el plano del estacionamiento</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> cargar el plano del estacionamiento,<br><strong>para</strong> que sea la fuente oficial para generar el mapa digital del estacionamiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Plano válido</strong><br><strong>Dado que</strong> el Parking Admin selecciona un archivo de imagen PNG o JPG válido que representa la distribución del establecimiento<br><strong>Cuando</strong> el Parking Admin lo envía para configurar el estacionamiento<br><strong>Entonces</strong> el sistema acepta el archivo, lo establece como plano oficial y lo pone a disposición del proceso de generación del mapa<br><br><strong>Escenario 2: Formato inválido</strong><br><strong>Dado que</strong> el archivo seleccionado es un PDF, un documento de texto u otro formato no admitido<br><strong>Cuando</strong> el Parking Admin intenta enviarlo<br><strong>Entonces</strong> el sistema rechaza el archivo e informa que el formato no es válido<br><br><strong>Escenario 3: Reemplazo del plano</strong><br><strong>Dado que</strong> ya existe un plano oficial<br><strong>Cuando</strong> el Parking Admin carga un plano nuevo y válido<br><strong>Entonces</strong> el sistema conserva la versión anterior para auditoría y utiliza el nuevo plano como fuente de las siguientes configuraciones del mapa</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US17</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Generar el mapa digital del estacionamiento</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> que el sistema procese el plano oficial,<br><strong>para</strong> iniciar el mapa digital, los espacios y las zonas de acuerdo con la distribución del establecimiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Generar el mapa a partir del plano</strong><br><strong>Dado que</strong> existe un plano oficial y Parking Admin definió los elementos de infraestructura que representa<br><strong>Cuando</strong> el Parking Admin inicia la generación<br><strong>Entonces</strong> el sistema crea el mapa digital a partir del plano, registra los espacios y las zonas definidos e inicializa cada espacio como no disponible hasta recibir datos operativos confiables<br><br><strong>Escenario 2: Plano poco claro o insuficiente</strong><br><strong>Dado que</strong> la información del plano no basta para configurar los elementos del estacionamiento<br><strong>Cuando</strong> el Parking Admin inicia la generación<br><strong>Entonces</strong> el sistema no publica un mapa incompleto, informa la limitación y permite continuar con una configuración manual basada en el mismo plano</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US18</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Gestionar reservas y comprobantes virtuales</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> reservar un espacio en una zona permitida y gestionar la reserva durante su ciclo de vida,<br><strong>para</strong> usar el espacio asignado con mi vehículo registrado y recibir información actualizada de la operación.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Reserva correcta</strong><br><strong>Dado que</strong> el Driver tiene un vehículo registrado y un medio de pago válido, existe una zona permitida y contiene un espacio disponible con sensor operativo<br><strong>Cuando</strong> el Driver selecciona el vehículo, la zona y el espacio, indica una fecha, hora de inicio y duración válidas, y envía la solicitud de pago digital<br><strong>Entonces</strong> el sistema crea un bloqueo temporal y una transacción pendiente; cuando el servicio interno de pagos confirma la aprobación, confirma la transacción, crea la reserva con estado Reservada, bloquea el espacio para otros Driver y genera un comprobante virtual con la zona, el espacio, el vehículo y el periodo de vigencia<br><br><strong>Escenario 2: Vehículo obligatorio</strong><br><strong>Dado que</strong> el Driver no tiene un vehículo registrado en su cuenta<br><strong>Cuando</strong> el Driver intenta iniciar una reserva<br><strong>Entonces</strong> el sistema no le permite continuar y solicita registrar un vehículo antes de seleccionar un espacio<br><br><strong>Escenario 3: El espacio ya no está disponible</strong><br><strong>Dado que</strong> el espacio seleccionado dejó de estar disponible o fue reservado por otro Driver antes de que se confirmara la reserva<br><strong>Cuando</strong> el Driver intenta completar la operación<br><strong>Entonces</strong> el sistema libera cualquier bloqueo temporal, no crea una reserva para ese espacio e informa que debe seleccionar otra alternativa<br><br><strong>Escenario 4: Pago rechazado</strong><br><strong>Dado que</strong> el servicio interno de pagos envía una notificación de rechazo del pago digital de la reserva<br><strong>Cuando</strong> el sistema procesa la notificación<br><strong>Entonces</strong> libera el bloqueo temporal, no confirma la reserva ni genera el comprobante virtual<br><br><strong>Escenario 5: Inasistencia y reembolso</strong><br><strong>Dado que</strong> una reserva pagada tiene un sensor operativo y el sensor no registra ocupación durante todo el periodo reservado<br><strong>Cuando</strong> finaliza el periodo reservado<br><strong>Entonces</strong> el sistema marca la reserva como inasistencia, libera el espacio y reembolsa el importe pagado<br><br><strong>Escenario 6: Llegada tardía dentro del periodo reservado</strong><br><strong>Dado que</strong> una reserva tiene estado Reservada y Driver llega después de la hora de inicio, pero antes de la hora de fin<br><strong>Cuando</strong> el Driver confirma su llegada o Parking Admin confirma que la ocupación corresponde a la reserva<br><strong>Entonces</strong> el sistema cambia la reserva a Activa, registra la sesión de estacionamiento vinculada con la reserva y el espacio asignado, y conserva la hora de fin y el importe originales; la lectura del sensor por sí sola no identifica el vehículo ni inicia la sesión<br><br><strong>Escenario 7: Cancelación antes del inicio</strong><br><strong>Dado que</strong> una reserva pagada aún no ha comenzado<br><strong>Cuando</strong> el Driver solicita cancelarla<br><strong>Entonces</strong> el sistema cambia el estado de la reserva a Cancelada, libera el espacio y reembolsa el importe pagado<br><br><strong>Escenario 8: Modificar o ampliar una reserva</strong><br><strong>Dado que</strong> el Driver solicita cambiar el horario, el espacio o la duración de una reserva<br><strong>Cuando</strong> la nueva asignación es válida, compatible con el perfil de usuario y no afecta reservas posteriores<br><strong>Entonces</strong> el sistema actualiza la reserva, recalcula cualquier diferencia de precio y genera un comprobante virtual actualizado antes de confirmar el cambio<br><br><strong>Escenario 9: Reasignar una reserva</strong><br><strong>Dado que</strong> una reserva está asignada a un espacio ocupado antes de su inicio o por una sesión de estacionamiento que excedió el tiempo reservado<br><strong>Cuando</strong> el sistema confirma una alternativa disponible y compatible<br><strong>Entonces</strong> actualiza la reserva, el comprobante virtual y la zona de destino que Driver puede abrir en Google Maps, y notifica a Driver<br><br><strong>Escenario 10: No hay una alternativa compatible</strong><br><strong>Dado que</strong> se debe reasignar una reserva y no hay otro espacio compatible disponible<br><strong>Cuando</strong> el sistema procesa el conflicto<br><strong>Entonces</strong> ofrece estacionamientos alternativos o cancela la reserva con un reembolso completo<br><br><strong>Escenario 11: Salida anticipada</strong><br><strong>Dado que</strong> una sesión de estacionamiento activa está vinculada con una reserva y termina antes de la hora de fin<br><strong>Cuando</strong> el sensor registra el espacio asignado como disponible<br><strong>Entonces</strong> el sistema mantiene protegido el espacio hasta la hora de fin, no emite un reembolso y no permite que otro Driver lo reserve durante el periodo activo<br><br><strong>Escenario 12: Un espacio activo por vehículo</strong><br><strong>Dado que</strong> el vehículo ya tiene asignado un espacio activo o una reserva<br><strong>Cuando</strong> el Driver intenta obtener una segunda asignación<br><strong>Entonces</strong> el sistema rechaza la nueva asignación y mantiene como máximo un espacio activo para ese vehículo</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US19</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Procesar pagos de reservas y cargos adicionales</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> pagar mi reserva y el tiempo adicional de estacionamiento con un medio de pago guardado,<br><strong>para</strong> confirmar mi espacio y pagar la duración real de mi sesión de estacionamiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Medio de pago guardado</strong><br><strong>Dado que</strong> el Driver agrega y autoriza un medio de pago mediante el servicio interno de pagos<br><strong>Cuando</strong> el servicio interno confirma la autorización<br><strong>Entonces</strong> el sistema guarda el token de pago asociado con el perfil de Driver, no almacena todos los datos del medio de pago y lo deja disponible para futuras operaciones<br><br><strong>Escenario 2: Pago correcto de una reserva</strong><br><strong>Dado que</strong> el Driver tiene una solicitud válida para un espacio seleccionado y un token de pago autorizado<br><strong>Cuando</strong> el servicio interno envía una notificación de aprobación del pago digital<br><strong>Entonces</strong> el sistema registra la transacción como aprobada, confirma la reserva, notifica el resultado a Driver y permite generar el comprobante virtual<br><br><strong>Escenario 3: Pago de reserva rechazado</strong><br><strong>Dado que</strong> el servicio interno envía una notificación de rechazo del pago digital de la reserva<br><strong>Cuando</strong> el sistema procesa la notificación<br><strong>Entonces</strong> registra el pago como fallido, informa a Driver, libera el bloqueo temporal y no confirma la reserva ni el espacio seleccionado<br><br><strong>Escenario 4: Tiempo adicional después de la tolerancia</strong><br><strong>Dado que</strong> una sesión de estacionamiento sigue ocupando el espacio después de la hora de fin de la reserva y del periodo de tolerancia de 5 minutos<br><strong>Cuando</strong> el sistema calcula el tiempo adicional<br><strong>Entonces</strong> marca la reserva como tiempo excedido, genera un cargo adicional según la fracción configurada por el estacionamiento y aplica el descuento fijo de la suscripción activa de Driver<br><br><strong>Escenario 5: Cargo adicional aprobado</strong><br><strong>Dado que</strong> se calculó un cargo adicional y el token de pago está autorizado<br><strong>Cuando</strong> el servicio interno confirma la transacción<br><strong>Entonces</strong> registra el cargo como aprobado, actualiza el historial de pagos, notifica el resultado a Driver y genera el comprobante aplicable según los datos tributarios disponibles: comprobante virtual, boleta electrónica o factura electrónica<br><br><strong>Escenario 6: Cargo adicional fallido</strong><br><strong>Dado que</strong> el servicio interno no puede completar el cargo adicional con el token de pago<br><strong>Cuando</strong> el sistema recibe el resultado fallido<br><strong>Entonces</strong> registra un saldo pendiente, notifica a Driver, permite reintentar con el mismo medio u otro y bloquea nuevas reservas hasta regularizar el saldo</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US20</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Gestionar planes de suscripción</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar, seleccionar y gestionar los planes de suscripción Free, Plus Monthly y Plus Annual,<br><strong>para</strong> obtener los beneficios que se ajustan a mi uso de estacionamientos.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Plan Free</strong><br><strong>Dado que</strong> el Driver selecciona el plan Free<br><strong>Cuando</strong> el sistema activa el plan<br><strong>Entonces</strong> permite consultar disponibilidad, buscar estacionamientos y reservar espacios a la tarifa regular, aplica un descuento de 0% por operación y no habilita zonas especiales<br><br><strong>Escenario 2: Plan Plus Monthly</strong><br><strong>Dado que</strong> el Driver selecciona Plus Monthly y se aprueba el pago digital<br><strong>Cuando</strong> el sistema confirma la compra<br><strong>Entonces</strong> activa la suscripción por 30 días, da prioridad a las reservas de Driver, habilita el acceso a zonas especiales y aplica un descuento fijo del 10% a las reservas y a los cargos por fracción u hora<br><br><strong>Escenario 3: Plan Plus Annual</strong><br><strong>Dado que</strong> el Driver selecciona Plus Annual y se aprueba el pago digital<br><strong>Cuando</strong> el sistema confirma la compra<br><strong>Entonces</strong> activa la suscripción por 12 meses, conserva los beneficios de Plus Monthly, habilita el acceso a zonas especiales y aplica un descuento fijo del 15% a las reservas y a los cargos por fracción u hora<br><br><strong>Escenario 4: Descuento de suscripción por tiempo excedido</strong><br><strong>Dado que</strong> el Driver tiene una suscripción activa y genera un cargo por exceder el tiempo<br><strong>Cuando</strong> el sistema calcula el importe adicional<br><strong>Entonces</strong> aplica 0%, 10% o 15% según el plan activo antes de procesar el cargo, sin aplicar otro descuento a la misma operación<br><br><strong>Escenario 5: Cambiar o cancelar un plan</strong><br><strong>Dado que</strong> el Driver tiene un plan activo<br><strong>Cuando</strong> el Driver solicita cambiarlo, mejorarlo o cancelar su renovación<br><strong>Entonces</strong> el sistema aplica el cambio o la mejora según las condiciones validadas de pago y disponibilidad; si Driver cancela la renovación, conserva los beneficios hasta la fecha correspondiente y no genera un nuevo cargo por la renovación cancelada</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US21</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar comprobantes y facturas</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar mi historial de pagos y obtener mis comprobantes virtuales, boletas electrónicas y facturas electrónicas,<br><strong>para</strong> hacer seguimiento a mis operaciones de estacionamiento y gastos.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Descargar un comprobante o una factura</strong><br><strong>Dado que</strong> el historial de Driver contiene una reserva, una sesión de estacionamiento vinculada con una reserva, una suscripción o un cargo adicional<br><strong>Cuando</strong> el Driver solicita el documento<br><strong>Entonces</strong> el sistema permite consultar los datos de la operación y descargar una copia PDF del comprobante virtual, la boleta electrónica o la factura electrónica disponible<br><br><strong>Escenario 2: Enviar un comprobante o una factura por correo</strong><br><strong>Dado que</strong> el Driver consulta una transacción con un comprobante virtual, boleta electrónica o factura electrónica disponible<br><strong>Cuando</strong> el Driver solicita que se envíe al correo registrado<br><strong>Entonces</strong> el sistema envía el documento asociado y conserva la operación en el historial<br><br><strong>Escenario 3: Reembolso o saldo pendiente</strong><br><strong>Dado que</strong> una operación tiene asociado un reembolso o saldo pendiente<br><strong>Cuando</strong> el Driver consulta el historial<br><strong>Entonces</strong> el sistema muestra el estado del ajuste, el importe correspondiente y su relación con la operación original</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US22</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Gestionar la facturación B2B</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar las facturas del servicio SpotGo y actualizar los datos tributarios del cliente,<br><strong>para</strong> controlar la facturación B2B de mi estacionamiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Consultar facturas del servicio</strong><br><strong>Dado que</strong> el Parking Admin tiene un cliente activo y existen facturas del servicio SpotGo<br><strong>Cuando</strong> el Parking Admin solicita el historial de facturación B2B<br><strong>Entonces</strong> el sistema muestra las facturas disponibles con su estado, fecha e importe<br><br><strong>Escenario 2: Actualizar datos tributarios</strong><br><strong>Dado que</strong> el Parking Admin tiene autorización para modificar los datos tributarios del cliente<br><strong>Cuando</strong> el Parking Admin actualiza el RUC o la dirección con información válida<br><strong>Entonces</strong> el sistema guarda los datos nuevos y los utiliza en futuras facturas B2B</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US23</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Low</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Reproducir el video promocional del producto</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> reproducir un video promocional en la página de presentación,<br><strong>para</strong> conocer SpotGo mediante un ejemplo de su funcionamiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Video disponible</strong><br><strong>Dado que</strong> el Driver accede a la sección audiovisual de la página de presentación y el recurso está disponible<br><strong>Cuando</strong> el Driver inicia la reproducción<br><strong>Entonces</strong> el video se muestra dentro de la página<br><br><strong>Escenario 2: Video no disponible</strong><br><strong>Dado que</strong> no se puede cargar el recurso audiovisual<br><strong>Cuando</strong> se muestra la sección<br><strong>Entonces</strong> la página de presentación muestra una alternativa visual estática y mantiene el acceso al resto del contenido<br><br><strong>Escenario 3: Contenido audiovisual accesible</strong><br><strong>Dado que</strong> el video promocional está disponible<br><strong>Cuando</strong> el Driver reproduce o pausa el video<br><strong>Entonces</strong> los controles de reproducción tienen nombres accesibles y se pueden usar con teclado; el video incluye subtítulos sincronizados y una alternativa equivalente en texto</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US24</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Cambiar el idioma de la página de presentación</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> cambiar el idioma de la página de presentación entre inglés (en_US) y español latinoamericano (es_419),<br><strong>para</strong> comprender la información del producto en mi idioma preferido.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Cambiar a español latinoamericano</strong><br><strong>Dado que</strong> la página está en inglés (en_US) y existe una traducción es_419<br><strong>Cuando</strong> el Driver selecciona español latinoamericano (es_419)<br><strong>Entonces</strong> el contenido disponible cambia a es_419 sin perder la sección que se está consultando<br><br><strong>Escenario 2: Volver al inglés</strong><br><strong>Dado que</strong> la página está en español latinoamericano (es_419)<br><strong>Cuando</strong> el Driver selecciona inglés (en_US)<br><strong>Entonces</strong> el contenido disponible vuelve a inglés (en_US) sin recargar toda la navegación</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US25</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar zonas de estacionamiento cercanas</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> ver en un mapa integrado las zonas de estacionamiento registradas en SpotGo,<br><strong>para</strong> consultar sus datos operativos e identificar alternativas cercanas.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Zonas cercanas con permiso de ubicación</strong><br><strong>Dado que</strong> el Driver permite el acceso a su ubicación y hay zonas de estacionamiento registradas en el área consultada<br><strong>Cuando</strong> el Driver solicita ver zonas cercanas mientras usa la función<br><strong>Entonces</strong> la API de Google Maps muestra el mapa integrado, SpotGo presenta las zonas registradas como marcadores y la aplicación muestra datos de SpotGo, como disponibilidad, precio, horario de operación y detalles de cada zona<br><br><strong>Escenario 2: Permiso de ubicación denegado</strong><br><strong>Dado que</strong> el Driver no permite el acceso a su ubicación<br><strong>Cuando</strong> el Driver abre la función de zonas cercanas<br><strong>Entonces</strong> la API de Google Maps muestra el mapa centrado en el área predeterminada, como Cercado de Lima; la aplicación informa que la ubicación mejora los resultados y no solicita acceso a la ubicación en segundo plano<br><br><strong>Escenario 3: Permiso habilitado mientras se usa la función</strong><br><strong>Dado que</strong> el Driver denegó inicialmente el permiso de ubicación y luego lo habilita mientras usa la función<br><strong>Cuando</strong> el Driver vuelve a solicitar zonas cercanas<br><strong>Entonces</strong> SpotGo usa la ubicación actual para esa consulta, sin requerir acceso continuo en segundo plano<br><br><strong>Escenario 4: No hay zonas registradas o falla el servicio de mapas</strong><br><strong>Dado que</strong> no hay zonas SpotGo en el área consultada o la API de Google Maps no responde<br><strong>Cuando</strong> el Driver solicita la información<br><strong>Entonces</strong> la aplicación informa la situación y no muestra ubicaciones inexistentes</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US26</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Abrir una ruta en Google Maps</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> seleccionar el enlace de navegación externa de una zona elegida,<br><strong>para</strong> que la aplicación Google Maps calcule la ruta desde mi ubicación hasta el estacionamiento.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Abrir una ruta externa</strong><br><strong>Dado que</strong> el Driver eligió una zona SpotGo con una ubicación configurada válida<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> SpotGo abre Google Maps con la zona como destino y no calcula una ruta interna dentro del estacionamiento<br><br><strong>Escenario 2: Google Maps no está disponible</strong><br><strong>Dado que</strong> Google Maps no está instalado o no se puede abrir<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> SpotGo ofrece un enlace web compatible o informa que no se puede abrir la navegación externa<br><br><strong>Escenario 3: Datos de destino inválidos</strong><br><strong>Dado que</strong> la zona seleccionada fue eliminada o tiene una ubicación configurada inválida<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> la aplicación informa que el destino no está disponible y no genera una ruta con coordenadas inválidas</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US27</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Registrar un vehículo</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> registrar un vehículo desde mi cuenta,<br><strong>para</strong> seleccionarlo cuando haga una reserva.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto de un vehículo</strong><br><strong>Dado que</strong> el Driver tiene una cuenta activa y proporciona los datos requeridos del vehículo, incluida la placa<br><strong>Cuando</strong> el Driver guarda el registro desde la vista de vehículos<br><strong>Entonces</strong> el sistema crea el vehículo, lo asocia con Driver, guarda la placa y los datos descriptivos registrados, y lo deja disponible para seleccionarlo en una reserva<br><br><strong>Escenario 2: Vehículo inválido o duplicado</strong><br><strong>Dado que</strong> falta información obligatoria o el vehículo ya está asociado con la cuenta de Driver<br><strong>Cuando</strong> el Driver intenta guardar el registro<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y conserva los registros existentes</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS01</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Sincronizar datos móviles mediante servicios REST</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que los servicios REST expongan zonas, disponibilidad, perfiles de usuario, vehículos, estados de ocupación, reservas, sesiones de estacionamiento, pagos digitales y datos de facturación electrónica,<br><strong>para</strong> que la aplicación móvil sincronice la información que requiere cada usuario.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Solicitud operativa autorizada</strong><br><strong>Dado que</strong> la aplicación móvil envía una solicitud válida y autorizada de zonas, disponibilidad, vehículos, reservas, sesiones de estacionamiento o estados operativos<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> responde con la información actual, incluidos los estados de ocupación y de reserva y el estado del sensor cuando corresponda, mediante un esquema consistente para la aplicación móvil y el idioma solicitado para mensajes dirigidos al usuario<br><br><strong>Escenario 2: Solicitud de transacción y facturación</strong><br><strong>Dado que</strong> la aplicación móvil envía una solicitud válida y autorizada sobre un pago digital, token de pago, suscripción, saldo pendiente o factura electrónica<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> responde con el estado actual de la operación y su relación con el Driver o cliente correspondiente, y presenta los mensajes dirigidos al usuario en inglés (en_US) o español latinoamericano (es_419), según el idioma solicitado<br><br><strong>Escenario 3: Solicitud inválida o no autorizada</strong><br><strong>Dado que</strong> la solicitud contiene datos inválidos o no está autorizada<br><strong>Cuando</strong> el servicio la procesa<br><strong>Entonces</strong> responde con un error identificable y no expone información protegida</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS02</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Guardar y sincronizar datos en el dispositivo móvil</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que la aplicación móvil conserve localmente la última información sincronizada,<br><strong>para</strong> que los usuarios consulten los datos conocidos más recientes durante interrupciones temporales de conectividad.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Pérdida temporal de conectividad</strong><br><strong>Dado que</strong> la aplicación sincronizó datos previamente y no hay conexión de forma temporal<br><strong>Cuando</strong> el usuario consulta la disponibilidad o las zonas permitidas<br><strong>Entonces</strong> la aplicación muestra la última información conocida, su hora de actualización y que podría estar desactualizada<br><br><strong>Escenario 2: Conectividad restablecida</strong><br><strong>Dado que</strong> se restableció la conexión con los servicios<br><strong>Cuando</strong> la aplicación ejecuta la sincronización<br><strong>Entonces</strong> actualiza la información local con los datos más recientes, sin duplicar registros ni conservar estados obsoletos cuando existe una versión más nueva</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS03</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Low</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Documentar el contrato de los servicios REST</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Contract Scope</th></tr>
+    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Contrato REST versionado para los recursos activos que utiliza la aplicación móvil: zonas de estacionamiento, disponibilidad, perfiles de usuario, vehículos, reservas, sesiones de estacionamiento, pagos digitales, suscripciones, saldos pendientes y facturación electrónica.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Evidencia</th></tr>
+    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Artefacto OpenAPI/Swagger versionado con una URL base accesible o una ruta en el repositorio, además de ejemplos de solicitudes ejecutables para el servicio activo.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que los servicios REST activos tengan un contrato versionado y trazable,<br><strong>para</strong> que el equipo de la aplicación móvil pueda integrarlos de forma consistente.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Documentación completa de los endpoints</strong><br><strong>Dado que</strong> existe un contrato OpenAPI versionado para el servicio activo y está disponible su URL base o ruta en el repositorio<br><strong>Cuando</strong> el Developer consulta la documentación OpenAPI/Swagger<br><strong>Entonces</strong> encuentra las rutas y verbos HTTP, versión de la API, parámetros y cuerpos requeridos, respuestas correctas y de error, requisitos de autorización y ejemplos para cada recurso activo<br><br><strong>Escenario 2: Ejemplo del contrato</strong><br><strong>Dado que</strong> el Developer ejecuta una solicitud válida con los datos de ejemplo de la documentación versionada<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> la respuesta cumple el esquema, código de estado y reglas de error documentados, y muestra un resultado verificable</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS04</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Generar comprobantes electrónicos</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que el servicio de facturación genere o actualice la boleta electrónica o factura electrónica correspondiente a pagos digitales aprobados, cargos adicionales y reembolsos,<br><strong>para</strong> que SpotGo proporcione un registro tributario consistente por cada operación de un conductor registrado.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Generar una boleta electrónica</strong><br><strong>Dado que</strong> existe un pago digital aprobado de un Driver registrado y Driver proporciona un DNI válido<br><strong>Cuando</strong> el servicio de facturación procesa la operación<br><strong>Entonces</strong> genera y asocia una boleta electrónica con el pago y con la reserva o sesión de estacionamiento vinculada del Driver registrado<br><br><strong>Escenario 2: Generar una factura electrónica</strong><br><strong>Dado que</strong> quien solicita el comprobante requiere una factura electrónica y proporciona un RUC válido<br><strong>Cuando</strong> el servicio de facturación procesa el pago digital aprobado<br><strong>Entonces</strong> genera una factura electrónica y la asocia con los datos tributarios proporcionados<br><br><strong>Escenario 3: Cargo adicional o reembolso</strong><br><strong>Dado que</strong> una reserva o sesión de estacionamiento vinculada de un Driver registrado genera un cargo adicional aprobado o un reembolso autorizado<br><strong>Cuando</strong> el servicio de facturación procesa el ajuste<br><strong>Entonces</strong> genera o actualiza el documento tributario aplicable cuando dispone de datos válidos; de lo contrario, conserva el comprobante virtual asociado, mantiene el vínculo con la operación original y refleja el importe ajustado</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS05</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Confirmar pagos de forma asíncrona</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> procesar notificaciones asíncronas de pagos de reservas, suscripciones, cargos adicionales y reembolsos de conductores registrados,<br><strong>para</strong> mantener consistentes los pagos digitales, estados de reserva, sesiones y registros de facturación sin procesar pagos de sesiones de estacionamiento de invitados.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Pago de reserva aprobado</strong><br><strong>Dado que</strong> el servicio interno de pagos envía una notificación aprobada con un identificador válido para una reserva de Driver registrado<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción como aprobada, confirma la reserva, permite generar el comprobante virtual y, si hay datos válidos de DNI o RUC, la boleta o factura electrónica correspondiente; además, notifica a Driver<br><br><strong>Escenario 2: Cargo adicional aprobado</strong><br><strong>Dado que</strong> el servicio interno envía una notificación aprobada de un cargo adicional con identificador válido<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> registra el cargo, actualiza el historial de la sesión de estacionamiento y permite generar el comprobante aplicable según los datos tributarios disponibles<br><br><strong>Escenario 3: Pago fallido</strong><br><strong>Dado que</strong> el servicio interno envía una notificación de pago rechazado con identificador válido<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción como fallida, registra un saldo pendiente cuando corresponda, no confirma la operación pendiente si se trata de una reserva y notifica a Driver<br><br><strong>Escenario 4: Reembolso</strong><br><strong>Dado que</strong> el servicio interno confirma un reembolso autorizado para una reserva de Driver registrado<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción, conserva su relación con la operación original y pone el estado del reembolso a disposición de Driver</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">SP01</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Validar el monitoreo de ocupación con sensores</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Research Objective</th></tr>
+    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Comparar alternativas de sensores de ocupación y validarlas mediante una prueba de concepto en interiores y exteriores, evaluando precisión, latencia máxima de 5 segundos, conectividad, consumo, mantenimiento e integración; confirmar que detectan únicamente la ocupación física y no identifican vehículos.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Evidencia esperada</th></tr>
+    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Matriz comparativa, informe de pruebas con resultados observados, evidencia del prototipo o integración, decisión técnica adoptada, limitaciones y restricciones para la implementación posterior.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> validar sensores de ocupación instalados en cada espacio,<br><strong>para</strong> que SpotGo reciba actualizaciones confiables del estado de ocupación en un máximo de 5 segundos en estacionamientos interiores y exteriores, sin afirmar que identifica el vehículo.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Validación de sensores</strong><br><strong>Dado que</strong> hay al menos dos alternativas de sensores de ocupación para evaluar y se definieron espacios de prueba<br><strong>Cuando</strong> el equipo realiza pruebas en interiores y exteriores<br><strong>Entonces</strong> registra en el informe los criterios de comparación y los resultados observados en cuanto a precisión, latencia, conectividad, consumo, mantenimiento e integración; además, declara explícitamente que los sensores seleccionados solo detectan la ocupación física<br><br><strong>Escenario 2: Integración del evento de ocupación</strong><br><strong>Dado que</strong> un sensor detecta que un vehículo ocupa o deja libre un espacio<br><strong>Cuando</strong> el backend procesa el evento recibido<br><strong>Entonces</strong> actualiza el estado de ocupación, recalcula la disponibilidad de la zona relacionada y pone la información a disposición de la aplicación móvil en un máximo de 5 segundos, sin identificar imágenes, placas ni el vehículo específico<br><br><strong>Escenario 3: Sensor no disponible</strong><br><strong>Dado que</strong> un sensor deja de comunicar datos confiables<br><strong>Cuando</strong> el backend confirma la falla o desconexión<br><strong>Entonces</strong> marca el espacio como no disponible, bloquea nuevas reservas y sesiones de invitados, y conserva el incidente para que Parking Admin lo resuelva<br><br><strong>Escenario 4: Cierre de la investigación</strong><br><strong>Dado que</strong> la investigación técnica completó las pruebas en interiores y exteriores<br><strong>Cuando</strong> el equipo cierra SP01<br><strong>Entonces</strong> el informe compartido enlaza la matriz de comparación, las evidencias de pruebas o prototipo, la conclusión de viabilidad, la decisión adoptada, las limitaciones y las historias o restricciones posteriores; marca SP01 como completada solo cuando esos artefactos están listos</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
+<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+  <tbody>
+    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">SP02</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
+    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Investigar la estrategia de sincronización móvil</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Research Objective</th></tr>
+    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Comparar alternativas de persistencia local y sincronización para contextos con conectividad variable, considerando funcionamiento sin conexión, datos desactualizados, reintentos, resolución de conflictos, recuperación y fuente de verdad, y seleccionar la estrategia que mejor respalde los flujos móviles.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Evidencia esperada</th></tr>
+    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Matriz comparativa, evidencia de pruebas o prototipo en línea y sin conexión, decisión documentada, conclusión técnica, limitaciones y restricciones para la implementación posterior.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> evaluar la estrategia de persistencia local y sincronización de la aplicación móvil,<br><strong>para</strong> que SpotGo responda de forma predecible ante interrupciones temporales de conectividad.</td></tr>
+    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
+    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Evaluación de la estrategia</strong><br><strong>Dado que</strong> la aplicación debe consultar información en contextos con conectividad variable y existen al menos dos alternativas de persistencia o sincronización para comparar<br><strong>Cuando</strong> el equipo prueba las alternativas<br><strong>Entonces</strong> registra en la matriz de comparación y el informe el comportamiento observado ante pérdida de conexión, consulta de datos desactualizados, recuperación, reintentos, actualizaciones y conflictos<br><br><strong>Escenario 2: Evidencia y decisión</strong><br><strong>Dado que</strong> se completaron la prueba técnica y el prototipo<br><strong>Cuando</strong> el equipo cierra la investigación<br><strong>Entonces</strong> el informe compartido enlaza la evidencia de prueba o prototipo, identifica la estrategia adoptada y su conclusión técnica, registra limitaciones y restricciones posteriores, y marca SP02 como completada solo cuando esos artefactos están documentados</td></tr>
+  </tbody>
+</table>
+</div>
+**Trazabilidad con Lean UX y habilitación técnica**
 
 | Lean UX item or technical concern | Related requirements |
 | --- | --- |
@@ -841,13 +961,13 @@ El Impact Mapping de SpotGo representa el alcance mobile-first y conecta los res
 
 Los actores se toman de los User Personas definidos previamente: **Carlos Ramirez**, de tipo *Guardian*, representa al Parking Admin; y **Andres Salazar**, de tipo *Rational*, representa al Driver. Las relaciones del mapa siguen la secuencia Business Goal, Actor/Persona, Impact, Deliverable y User Story.
 
-Para calcular BG02 y BG03 se propone establecer una línea base antes de iniciar los pilotos, que incluya el tiempo de búsqueda de los Driver y la cantidad de incidencias de estacionamiento indebido durante un periodo comparable. Así, los porcentajes planteados podrán verificarse con datos observables y no solo con percepciones. Las capacidades de Reservation, Digital Payment, Subscription y Electronic Billing se relacionan con BG01 porque su validación requiere comprobar el recorrido móvil completo del Driver en los estacionamientos piloto.
+Para calcular BG02 y BG03 se propone establecer una línea base antes de iniciar los pilotos, que incluya el tiempo de búsqueda de los conductores y la cantidad de incidencias de estacionamiento indebido durante un periodo comparable. Así, los porcentajes planteados podrán verificarse con datos observables y no solo con percepciones. Las capacidades de reserva, Digital Payment, Subscription y Electronic Billing se relacionan con BG01 porque su validación requiere comprobar el recorrido móvil completo del Driver en los estacionamientos piloto.
 
-| Business Goal | Actor / Persona | Impact | Deliverable | User Stories relacionadas |
+| Business Goal | Actor / Persona | Impact | Deliverable | User Stories |
 | --- | --- | --- | --- | --- |
 | **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Carlos Ramirez - Parking Admin | Configura y opera el Tenant, la infraestructura, los perfiles, las Guest Parking Sessions y la información de facturación de acuerdo con las reglas de cada estacionamiento. | Capacidades móviles para configurar infraestructura, Parking Zones, User Profiles, Guest Parking Sessions y facturación B2B. | **US02:** Como Parking Admin, deseo configurar las Parking Zones y asociarlas con perfiles, para organizar la operación del estacionamiento.<br>**US03:** Como Parking Admin, deseo registrar Guest Parking Sessions, para atender a Guests que llegan sin una cuenta registrada.<br>**US15:** Como SuperAdmin, deseo provisionar cuentas Parking Admin asociadas a un Tenant, para habilitar el acceso administrativo.<br>**US16:** Como Parking Admin, deseo cargar el Floor Plan, para configurar la infraestructura.<br>**US17:** Como Parking Admin, deseo generar el Digital Parking Map, para representar los espacios operativos.<br>**US22:** Como Parking Admin, deseo consultar la facturación B2B, para controlar el servicio contratado. |
-| **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Andres Salazar - Driver | Se registra como Driver, registra su Vehicle y completa desde la app el recorrido de Reservation, Digital Payment o Subscription, Virtual Receipt y Electronic Billing. | Experiencia móvil de registro de vehículo, reservas, pagos, suscripciones, comprobantes y confirmación de operaciones. | **US13:** Como Driver, deseo crear una cuenta, para utilizar los servicios de estacionamiento.<br>**US27:** Como Driver, deseo registrar un Vehicle, para seleccionarlo al reservar.<br>**US18:** Como Driver, deseo reservar un espacio y recibir un Virtual Receipt, para conocer mi asignación.<br>**US19:** Como Driver, deseo pagar digitalmente, para completar la operación sin una caja física.<br>**US20:** Como Driver, deseo administrar una Subscription, para usar el servicio durante su vigencia.<br>**US21:** Como Driver, deseo consultar mis comprobantes, para controlar mis operaciones y gastos.<br>**TS04:** Como Developer, deseo generar Electronic Billing, para respaldar los pagos aprobados.<br>**TS05:** Como Developer, deseo confirmar pagos de forma asíncrona, para mantener consistentes las operaciones. |
-| **BG02:** Reducir en 20% el tiempo promedio de búsqueda reportado por los Driver en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Andres Salazar - Driver | Consulta información actualizada, identifica una zona permitida, revisa Parking Zones cercanas y abre una ruta externa en Google Maps, reduciendo recorridos innecesarios. | Vista móvil de Availability, sincronización, consulta de Parking Zones cercanas e integración con Google Maps. | **US01:** Como Driver, deseo consultar la Availability por zona, para identificar una zona con posibilidad de espacio.<br>**US04:** Como Driver, deseo consultar mis zonas permitidas, para enfocar mi búsqueda en áreas que puedo utilizar.<br>**US18:** Como Driver, deseo recibir la asignación de mi Reservation, para conocer mi destino.<br>**US25:** Como Driver, deseo consultar Parking Zones cercanas, para identificar alternativas alrededor de mi ubicación.<br>**US26:** Como Driver, deseo abrir una ruta en Google Maps, para llegar al estacionamiento seleccionado.<br>**TS01:** Como Developer, deseo sincronizar Availability mediante servicios RESTful, para entregar datos consistentes a la aplicación móvil.<br>**TS02:** Como Developer, deseo conservar datos sincronizados localmente, para responder ante interrupciones temporales. |
+| **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Andres Salazar - Driver | Se registra como Driver, registra su Vehicle y completa desde la app el recorrido de reserva, Digital Payment o Subscription, Virtual Receipt y Electronic Billing. | Experiencia móvil de registro de vehículo, reservas, pagos, suscripciones, comprobantes y confirmación de operaciones. | **US13:** Como Driver, deseo crear una cuenta, para utilizar los servicios de estacionamiento.<br>**US27:** Como Driver, deseo registrar un Vehicle, para seleccionarlo al reservar.<br>**US18:** Como Driver, deseo reservar un espacio y recibir un Virtual Receipt, para conocer mi asignación.<br>**US19:** Como Driver, deseo pagar digitalmente, para completar la operación sin una caja física.<br>**US20:** Como Driver, deseo administrar una Subscription, para usar el servicio durante su vigencia.<br>**US21:** Como Driver, deseo consultar mis comprobantes, para controlar mis operaciones y gastos.<br>**TS04:** Como Developer, deseo generar Electronic Billing, para respaldar los pagos aprobados.<br>**TS05:** Como Developer, deseo confirmar pagos de forma asíncrona, para mantener consistentes las operaciones. |
+| **BG02:** Reducir en 20% el tiempo promedio de búsqueda reportado por los conductores en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Andres Salazar - Driver | Consulta información actualizada, identifica una zona permitida, revisa Parking Zones cercanas y abre una ruta externa en Google Maps, reduciendo recorridos innecesarios. | Vista móvil de Availability, sincronización, consulta de Parking Zones cercanas e integración con Google Maps. | **US01:** Como Driver, deseo consultar la Availability por zona, para identificar una zona con posibilidad de espacio.<br>**US04:** Como Driver, deseo consultar mis zonas permitidas, para enfocar mi búsqueda en áreas que puedo utilizar.<br>**US18:** Como Driver, deseo recibir la asignación de mi reserva, para conocer mi destino.<br>**US25:** Como Driver, deseo consultar Parking Zones cercanas, para identificar alternativas alrededor de mi ubicación.<br>**US26:** Como Driver, deseo abrir una ruta en Google Maps, para llegar al estacionamiento seleccionado.<br>**TS01:** Como Developer, deseo sincronizar Availability mediante servicios RESTful, para entregar datos consistentes a la aplicación móvil.<br>**TS02:** Como Developer, deseo conservar datos sincronizados localmente, para responder ante interrupciones temporales. |
 | **BG03:** Reducir en 15% las incidencias de estacionamiento indebido en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Carlos Ramirez - Parking Admin | Monitorea el Occupancy Status proveniente de sensores, atiende alertas operativas y revisa patrones de uso. | Dashboard móvil con Occupancy Map, alertas por Unauthorized Parking, alertas de High Capacity y Occupancy Reports. | **US05:** Como Parking Admin, deseo monitorear el Occupancy Status por zona, para supervisar la operación.<br>**US06:** Como Parking Admin, deseo recibir alertas operativas, para revisar usos indebidos y alta capacidad.<br>**US07:** Como Parking Admin, deseo consultar un resumen operativo y live Digital Parking Map, para controlar ocupación y alertas.<br>**US08:** Como Parking Admin, deseo consultar Occupancy Reports, para apoyar decisiones operativas.<br>**SP01:** Como Developer, deseo validar el monitoreo basado en sensores, para actualizar la ocupación en un máximo de 5 segundos. |
 
 *Figura 11 (Impact Map)*
@@ -857,48 +977,56 @@ La figura presenta una vista ejecutiva de la relación entre los tres Business G
 
 ### 2.4.3. Product Backlog
 
-El Product Backlog presenta las historias agrupadas por Sprint 1, Sprint 2 y Sprint 3. Dentro de cada sprint se conserva el orden previo por valor para el negocio y contribución a los Business Goals. La columna de orden indica su posición en la tabla y no establece la secuencia técnica de implementación. Las historias US11 y US12 de la Landing Page se incluyen en el Sprint 1; US23, correspondiente al video promocional, y US24, correspondiente al cambio de idioma, se programan para el Sprint 3.
+El Product Backlog organiza las historias en los tres sprints previstos hasta la entrega del Trabajo Final. Dentro de cada sprint se conserva el orden por valor de negocio y contribución a los objetivos del proyecto. El número de orden indica la posición de cada historia en la tabla y no establece la secuencia técnica de implementación.
 
-Los Story Points utilizan los valores 1, 2, 3 y 5, con un máximo de 5 puntos por historia. Las estimaciones consideran el esfuerzo, las validaciones, las integraciones y la incertidumbre del alcance completo, incluidos sus criterios de aceptación. US12 se estima en 1 punto por su navegación mediante enlaces; US04, en 2 puntos por consultar zonas según permisos existentes; y US16, en 3 puntos por cargar, validar y conservar versiones de una imagen, sin incluir la generación del mapa digital de US17. US13 se estima en 2 puntos suponiendo que reutiliza la autenticación con credenciales y Google implementada en US09; conserva la creación de cuenta y perfil y la validación de duplicados. US27 se estima en 2 puntos por registrar y validar datos de un vehículo asociado a una cuenta. US22 se estima en 2 puntos porque consulta facturas existentes y actualiza datos tributarios, sin generar documentos fiscales. US24 se estima en 2 puntos por alternar traducciones existentes de una página estática. TS02 se estima en 3 puntos por almacenar datos de consulta, identificar información desactualizada y actualizarla al recuperar la conexión; no incluye operaciones de escritura sin conexión. US11 mantiene 3 puntos por su contenido, diseño adaptable y verificación de accesibilidad. Las historias de reservas, pagos, generación del mapa y geolocalización mantienen 5 puntos por sus reglas e integraciones. Estos ajustes no reducen los criterios de aceptación ni modifican el alcance de las historias. Los Sprints representan una distribución inicial de trabajo basada en el valor de negocio y las dependencias funcionales.
+Las estimaciones en puntos de historia usan los valores 1, 2, 3 y 5, con un máximo de 5 puntos por historia. Consideran el esfuerzo, las validaciones, las integraciones y la incertidumbre del alcance completo, incluidos los criterios de aceptación. US12 tiene 1 punto por su navegación mediante enlaces; US04, 2 por consultar zonas según permisos existentes; y US16, 3 por cargar, validar y conservar versiones de una imagen, sin incluir la generación del mapa digital de US17. US13 tiene 2 puntos, suponiendo que reutiliza la autenticación con credenciales y Google de US09; mantiene la creación de la cuenta y el perfil y la validación de duplicados. US27 tiene 2 puntos por registrar y validar los datos de un vehículo asociado con una cuenta. US22 tiene 2 puntos porque consulta facturas existentes y actualiza datos tributarios, sin generar documentos fiscales. US24 tiene 2 puntos por alternar las traducciones existentes de una página estática. TS02 tiene 3 puntos por guardar datos de consulta, identificar información desactualizada y actualizarla al recuperar la conexión; no incluye operaciones de escritura sin conexión. US11 mantiene 3 puntos por su contenido, diseño adaptable y verificación de accesibilidad. Las historias de reservas, pagos, generación del mapa y geolocalización tienen 5 puntos por sus reglas e integraciones. Estos ajustes no reducen los criterios de aceptación ni modifican el alcance. Los sprints representan una distribución inicial de trabajo basada en el valor de negocio y las dependencias funcionales.
 
-| # Orden | User Story Id | Título | Story Points | Sprint |
-| --- | --- | --- | ---: | --- |
-| 1 | US01 | Consult Availability by Zone | 5 | Sprint 1 |
-| 2 | US04 | View Permitted Zones | 2 | Sprint 1 |
-| 3 | US13 | Register Driver Account | 2 | Sprint 1 |
-| 4 | US18 | Manage Reservations and Virtual Receipts | 5 | Sprint 1 |
-| 5 | US19 | Process Reservation and Additional Payments | 5 | Sprint 1 |
-| 6 | US02 | Configure Parking Zones | 5 | Sprint 1 |
-| 7 | US16 | Upload Parking Floor Plan | 3 | Sprint 1 |
-| 8 | US17 | Generate Digital Parking Map | 5 | Sprint 1 |
-| 9 | US09 | Authenticate and Access Mobile Functions by Role | 3 | Sprint 1 |
-| 10 | US11 | Communicate the Value Proposition on the Landing Page | 3 | Sprint 1 |
-| 11 | US12 | Navigate from the Landing Page to the Mobile Product | 1 | Sprint 1 |
-| 12 | US27 | Register Vehicle | 2 | Sprint 2 |
-| 13 | TS05 | Confirm Payments Asynchronously | 3 | Sprint 2 |
-| 14 | US03 | Register Guest Parking Session | 3 | Sprint 2 |
-| 15 | US14 | Register B2B Tenant | 3 | Sprint 2 |
-| 16 | US15 | Provision Parking Admin Account | 2 | Sprint 2 |
-| 17 | SP01 | Validate Sensor-Based Occupancy Monitoring | 3 | Sprint 2 |
-| 18 | US05 | Monitor Occupancy by Zone | 5 | Sprint 2 |
-| 19 | US06 | Generate Operational Alerts | 3 | Sprint 2 |
-| 20 | TS01 | Synchronize Mobile Data through RESTful Services | 5 | Sprint 2 |
-| 21 | TS03 | Document the RESTful Service Contract | 2 | Sprint 2 |
-| 22 | SP02 | Investigate the Mobile Synchronization Strategy | 3 | Sprint 2 |
-| 23 | US25 | View Nearby Parking Zones | 5 | Sprint 3 |
-| 24 | US26 | Open Route in Google Maps | 5 | Sprint 3 |
-| 25 | TS04 | Generate Electronic Billing | 5 | Sprint 3 |
-| 26 | US20 | Manage Subscription Plans | 5 | Sprint 3 |
-| 27 | US21 | View Receipts and Invoices | 2 | Sprint 3 |
-| 28 | US07 | Use the Operational Mobile Dashboard | 5 | Sprint 3 |
-| 29 | US08 | Generate Occupancy Reports | 3 | Sprint 3 |
-| 30 | TS02 | Persist and Synchronize Data on the Mobile Device | 3 | Sprint 3 |
-| 31 | US22 | Manage B2B Billing | 2 | Sprint 3 |
-| 32 | US23 | Watch Product Promotional Video | 2 | Sprint 3 |
-| 33 | US24 | Switch Landing Page Language | 2 | Sprint 3 |
-| 34 | US10 | Support Accessibility and Languages in the Mobile Application | 3 | Sprint 3 |
+La siguiente tabla resume el objetivo, el alcance y los puntos previstos para cada sprint. Las fechas específicas se consignarán en la planificación de cada sprint.
 
-La distribución se alinea con el Sprint Planning 1: el Sprint 1 contempla las 11 HU seleccionadas para la Landing Page, las pantallas core y el avance parcial del backend, con un total de 39 Story Points. Esta planificación no implica que todos los flujos integrados estén completos al finalizar el primer sprint. En el Sprint 2 se incorporan el registro de vehículos, el alta de Tenants y cuentas administrativas, las sesiones de invitados, la confirmación asíncrona de pagos y el soporte de integración y documentación. También se realizan las investigaciones SP01 y SP02 antes de implementar las capacidades de monitoreo y sincronización correspondientes. Estas dependencias permiten completar y validar los flujos iniciados en el Sprint 1. El Sprint 3 reúne navegación con Google Maps, dashboard y reportes, suscripciones, facturación, sincronización local, video promocional, accesibilidad e idiomas.
+| Sprint | Objective | Planned Stories | Story Points |
+| --- | --- | --- | ---: |
+| Sprint 1 | Publicar la página de presentación y demostrar los flujos principales: autenticación y registro, disponibilidad, reservas, pagos y configuración del estacionamiento. | US01, US02, US04, US09, US11, US12, US13, US16, US17, US18, US19 | 39 |
+| Sprint 2 | Completar el registro de vehículos, las sesiones de invitados y la administración de estacionamientos; validar sensores, ocupación, alertas y sincronización; e integrar y documentar servicios. | US03, US05, US06, US14, US15, US27, TS01, TS03, TS05, SP01, SP02 | 34 |
+| Sprint 3 | Completar la consulta de zonas y rutas, el panel y los reportes, las suscripciones y la facturación, la sincronización local, la accesibilidad, los idiomas y el video promocional. | US07, US08, US10, US20, US21, US22, US23, US24, US25, US26, TS02, TS04 | 42 |
+
+| Order # | Story ID | Title | Story Points | Sprint |
+| --- | --- | --- | --- | --- |
+| 1 | US01 | Consultar disponibilidad por zona | 5 | Sprint 1 |
+| 2 | US04 | Consultar las zonas permitidas | 2 | Sprint 1 |
+| 3 | US13 | Registrar una cuenta Driver | 2 | Sprint 1 |
+| 4 | US18 | Gestionar reservas y comprobantes virtuales | 5 | Sprint 1 |
+| 5 | US19 | Procesar pagos de reservas y cargos adicionales | 5 | Sprint 1 |
+| 6 | US02 | Configurar zonas de estacionamiento | 5 | Sprint 1 |
+| 7 | US16 | Cargar el plano del estacionamiento | 3 | Sprint 1 |
+| 8 | US17 | Generar el mapa digital del estacionamiento | 5 | Sprint 1 |
+| 9 | US09 | Autenticarse y acceder a las funciones móviles según el rol | 3 | Sprint 1 |
+| 10 | US11 | Comunicar la propuesta de valor en la página de presentación | 3 | Sprint 1 |
+| 11 | US12 | Navegar desde la página de presentación hasta el producto móvil | 1 | Sprint 1 |
+| 12 | US27 | Registrar un vehículo | 2 | Sprint 2 |
+| 13 | TS05 | Confirmar pagos de forma asíncrona | 3 | Sprint 2 |
+| 14 | US03 | Registrar una sesión de estacionamiento de invitado | 3 | Sprint 2 |
+| 15 | US14 | Registrar un cliente B2B y su cuenta Parking Admin | 3 | Sprint 2 |
+| 16 | US15 | Habilitar una cuenta Parking Admin | 2 | Sprint 2 |
+| 17 | SP01 | Validar el monitoreo de ocupación con sensores | 3 | Sprint 2 |
+| 18 | US05 | Supervisar la ocupación por zona | 5 | Sprint 2 |
+| 19 | US06 | Generar alertas operativas | 3 | Sprint 2 |
+| 20 | TS01 | Sincronizar datos móviles mediante servicios REST | 5 | Sprint 2 |
+| 21 | TS03 | Documentar el contrato de los servicios REST | 2 | Sprint 2 |
+| 22 | SP02 | Investigar la estrategia de sincronización móvil | 3 | Sprint 2 |
+| 23 | US25 | Consultar zonas de estacionamiento cercanas | 5 | Sprint 3 |
+| 24 | US26 | Abrir una ruta en Google Maps | 5 | Sprint 3 |
+| 25 | TS04 | Generar comprobantes electrónicos | 5 | Sprint 3 |
+| 26 | US20 | Gestionar planes de suscripción | 5 | Sprint 3 |
+| 27 | US21 | Consultar comprobantes y facturas | 2 | Sprint 3 |
+| 28 | US07 | Consultar el panel operativo móvil | 5 | Sprint 3 |
+| 29 | US08 | Generar reportes de ocupación | 3 | Sprint 3 |
+| 30 | TS02 | Guardar y sincronizar datos en el dispositivo móvil | 3 | Sprint 3 |
+| 31 | US22 | Gestionar la facturación B2B | 2 | Sprint 3 |
+| 32 | US23 | Reproducir el video promocional del producto | 2 | Sprint 3 |
+| 33 | US24 | Cambiar el idioma de la página de presentación | 2 | Sprint 3 |
+| 34 | US10 | Incorporar accesibilidad y opciones de idioma en la aplicación móvil | 3 | Sprint 3 |
+
+La distribución se alinea con la planificación del Sprint 1: incluye las 11 historias seleccionadas para la página de presentación, las pantallas principales y el avance parcial del backend, con 39 puntos de historia. Esto no implica que todos los flujos integrados estén completos al finalizar el primer sprint. El Sprint 2 incorpora el registro de vehículos, clientes y cuentas administrativas, las sesiones de invitados, la confirmación asíncrona de pagos y la integración y documentación de servicios. También comprende las investigaciones SP01 y SP02 antes de implementar las capacidades de monitoreo y sincronización correspondientes. Estas dependencias permiten completar y validar los flujos iniciados en el Sprint 1. El Sprint 3 reúne la navegación con Google Maps, el panel y los reportes, las suscripciones, la facturación, la sincronización local, el video promocional, la accesibilidad y los idiomas.
 
 **Evidencia del Product Backlog en Trello**
 
@@ -919,7 +1047,7 @@ En esta sección se aplica **Domain-Driven Design a nivel estratégico** para an
 
 Para comprender el comportamiento del dominio de SpotGo y representar de manera visual los principales procesos del sistema, se aplicó la técnica de **EventStorming**. Esta permitió identificar los eventos de dominio, comandos, políticas, actores, modelos de lectura y servicios externos involucrados en las diferentes situaciones que ocurren durante el uso y administración de un estacionamiento.
 
-El modelado se desarrolló de manera incremental hasta obtener un **Design-Level EventStorming**, en el cual se representan los principales flujos de SpotGo. Entre ellos se encuentran el registro del Driver y su Vehicle, la autenticación y validación de acceso, la búsqueda de disponibilidad, la creación y gestión de Reservations, el procesamiento de Digital Payments, la administración de Subscriptions y la configuración de la infraestructura del estacionamiento.
+El modelado se desarrolló de manera incremental hasta obtener un **Design-Level EventStorming**, en el cual se representan los principales flujos de SpotGo. Entre ellos se encuentran el registro del Driver y su Vehicle, la autenticación y validación de acceso, la búsqueda de disponibilidad, la creación y gestión de reservas, el procesamiento de Digital Payments, la administración de Subscriptions y la configuración de la infraestructura del estacionamiento.
 
 Asimismo, se modeló el comportamiento operativo relacionado con la ocupación de los Parking Spots mediante sensores. Esto permite representar situaciones como el inicio y finalización de una Parking Session, detección de No-show, sobretiempo, fallas de sensores, conflictos de ocupación, reasignaciones de espacios y generación de alertas. Además, se incluyeron las integraciones con **Google Maps** para la navegación hacia la Parking Zone seleccionada y con **Firebase Cloud Messaging** para comunicar eventos relevantes al usuario.
 
@@ -938,7 +1066,7 @@ A partir del **Design-Level EventStorming** se agruparon los eventos, comandos, 
 | --- | --- | --- |
 | **Profiles & Vehicles Management** | Gestionar los datos del Driver, sus Vehicles y los perfiles asociados. | Supporting Domain |
 | **Identity & Access Management** | Gestionar credenciales, sesiones y autorización según el rol del usuario. | Generic Domain |
-| **Parking Infrastructure** | Gestionar Parking Zones, Parking Spots, disponibilidad y el ciclo de las Reservations. | Core Domain |
+| **Parking Infrastructure** | Gestionar Parking Zones, Parking Spots, disponibilidad y el ciclo de las reservas. | Core Domain |
 | **Payments & Billing** | Gestionar pagos digitales, Payment Tokens, devoluciones, saldos y Subscriptions. | Supporting Domain |
 | **Occupancy & Monitoring** | Monitorear la ocupación de los espacios mediante sensores y gestionar incidencias operativas. | Core Domain |
 
@@ -946,15 +1074,15 @@ Los contextos **Parking Infrastructure** y **Occupancy & Monitoring** fueron cla
 
 Por otro lado, **Profiles & Vehicles Management** y **Payments & Billing** cumplen funciones de soporte para completar los principales procesos del sistema, mientras que **Identity & Access Management** se considera un **Generic Domain**, ya que la autenticación y autorización son capacidades comunes en distintos sistemas de software.
 
-También se identificaron capacidades como Reservations, Parking Sessions, Guest Parking Sessions, Subscriptions, navegación y notificaciones. Sin embargo, no fueron consideradas Bounded Contexts independientes: las Reservations, Parking Sessions y Guest Parking Sessions forman parte de Parking Infrastructure, las Subscriptions pertenecen a Payments & Billing y Google Identity, Google Maps y Firebase Cloud Messaging se mantienen como servicios externos. Identity & Access Management valida el acceso con Google y conserva la responsabilidad sobre las sesiones y los roles de SpotGo.
+También se identificaron capacidades como reservas, Parking Sessions, Guest Parking Sessions, Subscriptions, navegación y notificaciones. Sin embargo, no fueron consideradas Bounded Contexts independientes: las reservas, Parking Sessions y Guest Parking Sessions forman parte de Parking Infrastructure, las Subscriptions pertenecen a Payments & Billing y Google Identity, Google Maps y Firebase Cloud Messaging se mantienen como servicios externos. Identity & Access Management valida el acceso con Google y conserva la responsabilidad sobre las sesiones y los roles de SpotGo.
 
 #### *2.5.1.2. Domain Message Flows Modeling*
 
 A partir de los Bounded Contexts identificados se modelaron los principales mensajes que intercambian entre sí. El objetivo de este diagrama es mostrar cómo colaboran los contextos de SpotGo sin repetir todo el flujo temporal del EventStorming.
 
-**Parking Infrastructure** actúa como uno de los principales puntos de coordinación. Para crear y gestionar una Reservation recibe información de **Profiles & Vehicles Management** y **Identity & Access Management**, permitiendo validar al Driver, su Vehicle y sus permisos.
+**Parking Infrastructure** actúa como uno de los principales puntos de coordinación. Para crear y gestionar una reserva recibe información de **Profiles & Vehicles Management** y **Identity & Access Management**, permitiendo validar al Driver, su Vehicle y sus permisos.
 
-Cuando una Reservation requiere un pago digital, Parking Infrastructure envía la solicitud a **Payments & Billing**, que responde indicando si el pago fue aprobado o rechazado. Una vez creada o reasignada la Reservation, la información se comunica a **Occupancy & Monitoring**, encargado de supervisar la ocupación física del Parking Spot mediante sensores.
+Cuando una reserva requiere un pago digital, Parking Infrastructure envía la solicitud a **Payments & Billing**, que responde indicando si el pago fue aprobado o rechazado. Una vez creada o reasignada la reserva, la información se comunica a **Occupancy & Monitoring**, encargado de supervisar la ocupación física del Parking Spot mediante sensores.
 
 Occupancy & Monitoring también puede informar sobre conflictos de ocupación, espacios no disponibles o sobretiempo. En este último caso, puede solicitar a Payments & Billing el procesamiento de un cobro adicional.
 
@@ -988,7 +1116,7 @@ A partir de los cinco Bounded Contexts identificados se elaboraron sus respectiv
 
 Este contexto administra la información del **Driver**, sus **Vehicles** y los perfiles asociados. Su responsabilidad es mantener estos datos disponibles para que otros contextos puedan validar si un Driver y su vehículo se encuentran habilitados para realizar determinadas operaciones.
 
-Se clasifica como **Supporting Domain**, ya que brinda soporte a los procesos principales del sistema, especialmente a la creación de Reservations y a la validación de usuarios.
+Se clasifica como **Supporting Domain**, ya que brinda soporte a los procesos principales del sistema, especialmente a la creación de reservas y a la validación de usuarios.
 
 *Figura 15 (Profiles & Vehicles Management Bounded Context Canvas)*
 ![Profiles & Vehicles Management Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-profiles.svg)
@@ -1004,9 +1132,9 @@ Se clasifica como **Generic Domain**, debido a que la gestión de identidad y ac
 
 **Parking Infrastructure**
 
-Este contexto administra la estructura del estacionamiento, incluyendo **Parking Zones**, **Parking Spots**, Availability, el **Floor Plan** como fuente definitiva del **Digital Parking Map** y el ciclo de las **Reservations** y **Guest Parking Sessions**.
+Este contexto administra la estructura del estacionamiento, incluyendo **Parking Zones**, **Parking Spots**, Availability, el **Floor Plan** como fuente definitiva del **Digital Parking Map** y el ciclo de las **reservas** y **Guest Parking Sessions**.
 
-Se considera un **Core Domain**, ya que concentra capacidades centrales de SpotGo como la búsqueda de espacios, asignación de Parking Spots, creación y modificación de Reservations y reasignaciones cuando existe algún conflicto de disponibilidad.
+Se considera un **Core Domain**, ya que concentra capacidades centrales de SpotGo como la búsqueda de espacios, asignación de Parking Spots, creación y modificación de reservas y reasignaciones cuando existe algún conflicto de disponibilidad.
 
 Además, se comunica con Payments & Billing para procesar pagos, con Occupancy & Monitoring para conocer el estado operativo de los espacios y con Google Maps para la navegación hacia la Parking Zone seleccionada.
 
@@ -1017,7 +1145,7 @@ Además, se comunica con Payments & Billing para procesar pagos, con Occupancy &
 
 Este contexto administra las operaciones financieras de SpotGo, incluyendo **Payment Tokens**, **Digital Payments**, devoluciones, cobros adicionales, saldos pendientes, comprobantes y **Subscriptions**.
 
-Se clasifica como **Supporting Domain**, ya que permite completar los procesos comerciales asociados a las Reservations. Una de sus reglas principales es que SpotGo no almacena los datos completos de las tarjetas, sino identificadores seguros de pago.
+Se clasifica como **Supporting Domain**, ya que permite completar los procesos comerciales asociados a las reservas. Una de sus reglas principales es que SpotGo no almacena los datos completos de las tarjetas, sino identificadores seguros de pago.
 
 *Figura 18 (Payments & Billing Bounded Context Canvas)*
 ![Payments & Billing Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-payments.svg)
@@ -1028,7 +1156,7 @@ Este contexto supervisa la ocupación física de los **Parking Spots** mediante 
 
 Se considera un **Core Domain**, debido a que el monitoreo de la disponibilidad y ocupación constituye una de las capacidades principales de SpotGo.
 
-En este contexto se mantiene una separación entre el estado de una Reservation y el estado físico del Parking Spot. Los sensores detectan únicamente si el espacio se encuentra ocupado o disponible, sin identificar automáticamente qué Vehicle lo está utilizando.
+En este contexto se mantiene una separación entre el estado de una reserva y el estado físico del Parking Spot. Los sensores detectan únicamente si el espacio se encuentra ocupado o disponible, sin identificar automáticamente qué Vehicle lo está utilizando.
 
 *Figura 19 (Occupancy & Monitoring Bounded Context Canvas)*
 ![Occupancy & Monitoring Bounded Context Canvas](../assets/diagrams/bounded-context-canvas-occupancy.svg)
