@@ -1,6 +1,6 @@
 ### 4.2.1. Sprint 1
 
-Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landing Page, distribuyendo sus secciones entre los integrantes del equipo. En ella presentamos SpotGo, sus funcionalidades, planes, medios de contacto y la organización. Confirmamos un avance del 70% en el despliegue del backend. Además, mostramos las pantallas principales de una única aplicación móvil construida con Kotlin y Flutter.
+Durante el primer sprint nos centramos en el desarrollo y despliegue de la versión inicial de la Landing Page, distribuyendo sus secciones entre los integrantes del equipo. En ella presentamos SpotGo, sus funcionalidades, planes, medios de contacto y la organización. Confirmamos un avance del 70% en el despliegue del backend. Además, presentamos las pantallas principales de Driver y Parking Admin desarrolladas inicialmente con Jetpack Compose. La aplicación final de Driver será nativa Android; la aplicación final de Parking Admin se desarrollará por separado con Flutter.
 
 #### *4.2.1.1. Sprint Planning 1*
 
@@ -15,7 +15,7 @@ Durante el primer sprint nos centramos en el desarrollo y despliegue de la Landi
   <tr><td><strong>Sprint 0 Review Summary</strong></td><td>No aplica, por ser el primer sprint.</td></tr>
   <tr><td><strong>Sprint 0 Retrospective Summary</strong></td><td>No aplica, por ser el primer sprint.</td></tr>
   <tr><th colspan="2" align="left">Sprint Goal &amp; User Stories</th></tr>
-  <tr><td><strong>Sprint 1 Goal</strong></td><td>Desplegar la Landing Page (US11 y US12), alcanzar un avance del 70% en el despliegue del backend y presentar las pantallas core de la aplicaci&#243;n m&#243;vil: autenticaci&#243;n y acceso por rol (US09), registro de cuenta (US13), consulta de disponibilidad y zonas permitidas (US01 y US04), gesti&#243;n de reservas y comprobantes virtuales (US18), pagos (US19), carga de plano, generaci&#243;n del mapa digital y configuraci&#243;n de zonas (US16, US17 y US02). Estas HU orientan tanto las pantallas core como los servicios backend que las respaldan. El cumplimiento se verificar&#225; mediante la Landing Page publicada, el porcentaje de funcionalidades backend desplegadas respecto al total previsto y la demostraci&#243;n de las pantallas core.</td></tr>
+  <tr><td><strong>Sprint 1 Goal</strong></td><td>Desplegar la versi&#243;n inicial de la Landing Page (US11 y US12), alcanzar un avance del 70% en el despliegue del backend y presentar las pantallas core de la aplicaci&#243;n m&#243;vil: autenticaci&#243;n y acceso por rol (US09), registro de cuenta (US13), consulta de disponibilidad y zonas permitidas (US01 y US04), gesti&#243;n de reservas y comprobantes virtuales (US18), pagos (US19), carga de plano, generaci&#243;n del mapa digital y configuraci&#243;n de zonas (US16, US17 y US02). Estas HU orientan tanto las pantallas core como los servicios backend que las respaldan. El cumplimiento se verificar&#225; mediante la publicaci&#243;n de la versi&#243;n inicial de la Landing Page, el porcentaje de funcionalidades backend desplegadas respecto al total previsto y la demostraci&#243;n de las pantallas core.</td></tr>
   <tr><td><strong>Sprint 1 Velocity</strong></td><td>39 Story Points como capacidad planificada para el Sprint 1, correspondientes a las 11 historias de usuario seleccionadas.</td></tr>
   <tr><td><strong>Sum of Story Points</strong></td><td>39 Story Points: 35 de las nueve HU seleccionadas y 4 de las HU de la Landing Page (US11 y US12), seg&#250;n las estimaciones del Product Backlog.</td></tr>
 </table>
@@ -101,77 +101,77 @@ El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus re
   </thead>
   <tbody>
     <tr>
-      <td rowspan="2">US01</td><td rowspan="2">Consult Availability by Zone</td><td rowspan="2" align="center">5</td>
+      <td rowspan="2">US01</td><td rowspan="2">Consultar disponibilidad por zona</td><td rowspan="2" align="center">5</td>
       <td>T01</td><td>Pantalla de disponibilidad</td><td>Mostrar espacios disponibles por zona y la fecha de actualizaci&#243;n.</td><td>1</td><td>@briicarhuaz</td><td>Completed</td>
     </tr>
     <tr>
       <td>T02</td><td>Consulta de disponibilidad</td><td>Desarrollar la consulta backend de disponibilidad prevista para este sprint.</td><td>2</td><td>@briicarhuaz</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US04</td><td rowspan="2">View Permitted Zones</td><td rowspan="2" align="center">2</td>
+      <td rowspan="2">US04</td><td rowspan="2">Consultar las zonas permitidas</td><td rowspan="2" align="center">2</td>
       <td>T03</td><td>Pantalla de zonas permitidas</td><td>Mostrar las zonas habilitadas para el perfil del Driver.</td><td>0.5</td><td>@briicarhuaz</td><td>Completed</td>
     </tr>
     <tr>
       <td>T04</td><td>Consulta de permisos</td><td>Implementar la consulta de zonas seg&#250;n el perfil del Driver.</td><td>1</td><td>@briicarhuaz</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US13</td><td rowspan="2">Register Driver Account</td><td rowspan="2" align="center">2</td>
+      <td rowspan="2">US13</td><td rowspan="2">Registrar una cuenta Driver</td><td rowspan="2" align="center">2</td>
       <td>T05</td><td>Pantalla de registro</td><td>Desarrollar el formulario de registro y sus mensajes de validaci&#243;n.</td><td>1</td><td>@nes-ro</td><td>Completed</td>
     </tr>
     <tr>
       <td>T06</td><td>Registro de cuenta</td><td>Implementar la creaci&#243;n de cuenta y perfil Driver reutilizando los mecanismos de IAM.</td><td>1.5</td><td>@nes-ro</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US18</td><td rowspan="2">Manage Reservations and Virtual Receipts</td><td rowspan="2" align="center">5</td>
+      <td rowspan="2">US18</td><td rowspan="2">Gestionar reservas y comprobantes virtuales</td><td rowspan="2" align="center">5</td>
       <td>T07</td><td>Pantallas de reservas</td><td>Presentar las vistas de creaci&#243;n y consulta de reservas.</td><td>1.5</td><td>@CesarJrCR</td><td>Completed</td>
     </tr>
     <tr>
       <td>T08</td><td>Comprobante virtual y servicios</td><td>Presentar el comprobante virtual y desarrollar el avance de servicios de reservas previsto para el sprint.</td><td>2</td><td>@CesarJrCR</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US19</td><td rowspan="2">Process Reservation and Additional Payments</td><td rowspan="2" align="center">5</td>
+      <td rowspan="2">US19</td><td rowspan="2">Procesar pagos de reservas y cargos adicionales</td><td rowspan="2" align="center">5</td>
       <td>T09</td><td>Pantalla de pagos</td><td>Presentar el flujo de pago de reservas y cargos adicionales.</td><td>1.5</td><td>@CesarJrCR</td><td>Completed</td>
     </tr>
     <tr>
       <td>T10</td><td>Servicios de pago</td><td>Desarrollar el avance backend del procesamiento de pagos previsto para este sprint.</td><td>2</td><td>@CesarJrCR</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US02</td><td rowspan="2">Configure Parking Zones</td><td rowspan="2" align="center">5</td>
+      <td rowspan="2">US02</td><td rowspan="2">Configurar zonas de estacionamiento</td><td rowspan="2" align="center">5</td>
       <td>T11</td><td>Pantalla de zonas</td><td>Desarrollar la interfaz de configuraci&#243;n de zonas y sus reglas.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
     </tr>
     <tr>
       <td>T12</td><td>Configuraci&#243;n de zonas</td><td>Implementar el avance de servicios para registrar zonas y asociar espacios y perfiles.</td><td>2</td><td>@IamAndreek</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US16</td><td rowspan="2">Upload Parking Floor Plan</td><td rowspan="2" align="center">3</td>
+      <td rowspan="2">US16</td><td rowspan="2">Cargar el plano del estacionamiento</td><td rowspan="2" align="center">3</td>
       <td>T13</td><td>Pantalla de carga de plano</td><td>Desarrollar la selecci&#243;n y carga del plano del estacionamiento.</td><td>1</td><td>@IamAndreek</td><td>Completed</td>
     </tr>
     <tr>
       <td>T14</td><td>Validaci&#243;n del plano</td><td>Implementar la validaci&#243;n de formato y almacenamiento del plano.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US17</td><td rowspan="2">Generate Digital Parking Map</td><td rowspan="2" align="center">5</td>
+      <td rowspan="2">US17</td><td rowspan="2">Generar el mapa digital del estacionamiento</td><td rowspan="2" align="center">5</td>
       <td>T15</td><td>Pantalla de mapa digital</td><td>Presentar la configuraci&#243;n del mapa digital a partir del plano cargado.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
     </tr>
     <tr>
       <td>T16</td><td>Generaci&#243;n del mapa</td><td>Desarrollar el avance de generaci&#243;n de zonas y espacios a partir del plano previsto para el sprint.</td><td>2</td><td>@IamAndreek</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US09</td><td rowspan="2">Authenticate and Access Mobile Functions by Role</td><td rowspan="2" align="center">3</td>
+      <td rowspan="2">US09</td><td rowspan="2">Autenticarse y acceder a las funciones de SpotGo según el rol</td><td rowspan="2" align="center">3</td>
       <td>T17</td><td>Pantalla de acceso</td><td>Desarrollar la interfaz de inicio de sesi&#243;n y sus mensajes de error.</td><td>1</td><td>@nes-ro</td><td>Completed</td>
     </tr>
     <tr>
       <td>T18</td><td>Autenticaci&#243;n y autorizaci&#243;n</td><td>Implementar el avance de autenticaci&#243;n y acceso por rol previsto para el sprint.</td><td>2</td><td>@nes-ro</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US11</td><td rowspan="2">Communicate the Value Proposition on the Landing Page</td><td rowspan="2" align="center">3</td>
+      <td rowspan="2">US11</td><td rowspan="2">Comunicar la propuesta de valor en la página de presentación</td><td rowspan="2" align="center">3</td>
       <td>T19</td><td>Contenido y dise&#241;o adaptable</td><td>Implementar las secciones de SpotGo y revisar su presentaci&#243;n y accesibilidad.</td><td>2</td><td>@AdrixRyz</td><td>Completed</td>
     </tr>
     <tr>
       <td>T20</td><td>Despliegue de Landing Page</td><td>Publicar la Landing Page y comprobar su acceso p&#250;blico.</td><td>1</td><td>@AdrixRyz</td><td>Completed</td>
     </tr>
     <tr>
-      <td rowspan="2">US12</td><td rowspan="2">Navigate from the Landing Page to the Mobile Product</td><td rowspan="2" align="center">1</td>
+      <td rowspan="2">US12</td><td rowspan="2">Navegar desde la página de presentación hasta el producto móvil</td><td rowspan="2" align="center">1</td>
       <td>T21</td><td>Navegaci&#243;n entre secciones</td><td>Implementar los enlaces de navegaci&#243;n de la Landing Page.</td><td>0.5</td><td>@AdrixRyz</td><td>Completed</td>
     </tr>
     <tr>
@@ -185,59 +185,59 @@ El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus re
 
 SpotGo reutiliza una base de código desarrollada en ciclos académicos anteriores. Los repositorios actuales `spotgo-landing` y `spotgo-backend` no conservan el historial de commits de ese desarrollo previo, por lo que no es posible presentar una relación de commits que permita trazar cada funcionalidad reutilizada hasta su implementación original.
 
-El repositorio [spotgo-mobile-app](https://github.com/yachiqo-upc/spotgo-mobile-app) conserva los siguientes commits de implementación del Sprint 1. Se consulta la rama `develop`, que integra estos cambios; los commits de merge se omiten.
+El repositorio [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) conserva los siguientes commits de implementación del Sprint 1.
 
 | Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
 | --- | --- | --- | --- | --- |
-| spotgo-mobile-app | develop | 81df993 | feat: implement login screen and role layouts | 2026-10-06 |
-| spotgo-mobile-app | develop | 11e8933 | feat: add explore screen | 2026-10-06 |
-| spotgo-mobile-app | develop | d5898f0 | feat: add zone details screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 7bcfac2 | feat: add confirmation screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 407af83 | feat: add reservations screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 0b563b6 | feat: add payments screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 49f628f | feat: add profile screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 85f8f4b | fix: update driver screens | 2026-10-06 |
-| spotgo-mobile-app | develop | 846c44d | feat: add dashboard screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 3958b18 | feat: add occupancy screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 777a1b1 | feat: add alerts screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 971c07c | feat: add more screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 81a3607 | feat: add infrastructure screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 24cdb9e | feat: add upload screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 6234b7d | feat: add map screen | 2026-10-06 |
-| spotgo-mobile-app | develop | 864a98c | fix: update admin screens | 2026-10-06 |
-| spotgo-mobile-app | develop | cb9dbe8 | update register screen and validate full mobile integration | 2026-10-06 |
+| spotgo-android-app | feature/driver-initial-screens | 81df993 | feat: implement login screen and role layouts | 2026-10-06 |
+| spotgo-android-app | feature/driver-initial-screens | 11e8933 | feat: add explore screen | 2026-10-06 |
+| spotgo-android-app | feature/driver-initial-screens | d5898f0 | feat: add zone details screen | 2026-10-06 |
+| spotgo-android-app | feature/driver-initial-screens | 7bcfac2 | feat: add confirmation screen | 2026-10-06 |
+| spotgo-android-app | feature/driver-initial-screens | 407af83 | feat: add reservations screen | 2026-10-06 |
+| spotgo-android-app | feature/driver-initial-screens | 0b563b6 | feat: add payments screen | 2026-10-06 |
+| spotgo-android-app | feature/driver-initial-screens | 49f628f | feat: add profile screen | 2026-10-06 |
+| spotgo-android-app | feature/driver-initial-screens | 85f8f4b | fix: update driver screens | 2026-10-06 |
+| spotgo-android-app | feature/parking-admin-initial-screens | 846c44d | feat: add dashboard screen | 2026-10-06 |
+| spotgo-android-app | feature/parking-admin-initial-screens | 3958b18 | feat: add occupancy screen | 2026-10-06 |
+| spotgo-android-app | feature/parking-admin-initial-screens | 777a1b1 | feat: add alerts screen | 2026-10-06 |
+| spotgo-android-app | feature/parking-admin-initial-screens | 971c07c | feat: add more screen | 2026-10-06 |
+| spotgo-android-app | feature/parking-admin-initial-screens | 81a3607 | feat: add infrastructure screen | 2026-10-06 |
+| spotgo-android-app | feature/parking-admin-initial-screens | 24cdb9e | feat: add upload screen | 2026-10-06 |
+| spotgo-android-app | feature/parking-admin-initial-screens | 6234b7d | feat: add map screen | 2026-10-06 |
+| spotgo-android-app | feature/parking-admin-initial-screens | 864a98c | fix: update admin screens | 2026-10-06 |
+| spotgo-android-app | develop | cb9dbe8 | fix: update register screen and validate full mobile integration | 2026-10-06 |
 
 #### *4.2.1.5. Testing Suite Evidence for Sprint Review*
 
-En este sprint no se validan aspectos mediante pruebas. Por ello, no se presentan resultados de pruebas unitarias, de integración ni de aceptación como evidencia del Sprint 1. Las capturas de ejecución y la documentación de servicios se incluyen en sus respectivas secciones y no constituyen una validación mediante pruebas.
+Durante este sprint no se ejecutaron pruebas unitarias, de integración ni de aceptación. Por ello, no se presentan resultados de pruebas como evidencia del Sprint 1. Las capturas de ejecución y la documentación de servicios se incluyen en sus respectivas secciones, pero no constituyen resultados de pruebas.
 
 #### *4.2.1.6. Execution Evidence for Sprint Review*
 
-Durante este sprint, el equipo puso en funcionamiento la versión inicial de la **Landing Page** y presentó las **pantallas core de la aplicación móvil**.
+Durante este sprint, el equipo desplegó la versión inicial de la **Landing Page** y presentó las **pantallas principales de las experiencias móviles de Driver y Parking Admin**, desarrolladas inicialmente con Jetpack Compose.
 
 **Landing Page**
 
-*Figura 81 (SpotGo Landing Home)*
-![SpotGo Landing Home](../assets/images/others/spotgo-landing-home.png)
+*Figura 81 (SpotGo Landing Page Home)*
+![SpotGo Landing Page Home](../assets/images/others/spotgo-landing-home.png)
 
-*Figura 82 (SpotGo Landing Drivers)*
-![SpotGo Landing Drivers](../assets/images/others/spotgo-landing-drivers.png)
+*Figura 82 (SpotGo Landing Page Drivers)*
+![SpotGo Landing Page Drivers](../assets/images/others/spotgo-landing-drivers.png)
 
-*Figura 83 (SpotGo Landing Admins)*
-![SpotGo Landing Admins](../assets/images/others/spotgo-landing-admins.png)
+*Figura 83 (SpotGo Landing Page Admins)*
+![SpotGo Landing Page Admins](../assets/images/others/spotgo-landing-admins.png)
 
-*Figura 84 (SpotGo Landing How Work)*
-![SpotGo Landing How Work](../assets/images/others/spotgo-landing-how-work.png)
+*Figura 84 (SpotGo Landing Page How Work)*
+![SpotGo Landing Page How Work](../assets/images/others/spotgo-landing-how-work.png)
 
-*Figura 85 (SpotGo Landing Pricing)*
-![SpotGo Landing Pricing](../assets/images/others/spotgo-landing-pricing.png)
+*Figura 85 (SpotGo Landing Page Pricing)*
+![SpotGo Landing Page Pricing](../assets/images/others/spotgo-landing-pricing.png)
 
-*Figura 86 (SpotGo Landing FAQ)*
-![SpotGo Landing FAQ](../assets/images/others/spotgo-landing-faq.png)
+*Figura 86 (SpotGo Landing Page FAQ)*
+![SpotGo Landing Page FAQ](../assets/images/others/spotgo-landing-faq.png)
 
 **Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
 
-**Pantallas Core**
+**Pantallas iniciales de Driver: Jetpack Compose**
 
 *Figura 87 (Driver-Explore Parking)*
 ![SpotGo Mobile Explore Parking](../assets/images/others/spotgo-mobile-parking%20nearby.jpeg)
@@ -251,6 +251,8 @@ Durante este sprint, el equipo puso en funcionamiento la versión inicial de la 
 *Figura 90 (Driver-Payments)*
 ![SpotGo Mobile Payments](../assets/images/others/spotgo-mobile-payments.jpeg)
 
+**Pantallas iniciales de Parking Admin: Jetpack Compose**
+
 *Figura 91 (Parking Admin-Dashboard)*
 ![SpotGo Mobile Dashboard](../assets/images/others/spotgo-mobile-dashboard.jpeg)
 
@@ -263,7 +265,7 @@ Durante este sprint, el equipo puso en funcionamiento la versión inicial de la 
 
 La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/Swagger. Para la revisión del Sprint 1, se incluyen las rutas base y las operaciones disponibles en el backend, resumidas por recurso en la siguiente tabla.
 
-**Referencias:** [Swagger UI del backend desplegado](https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html), [contrato OpenAPI en JSON](https://spotgo-backend-yachiqo.up.railway.app/v3/api-docs) y [código fuente del backend](https://github.com/yachiqo-upc/spotgo-backend).
+**Referencias:** [Código fuente del backend](https://github.com/yachiqo-upc/spotgo-backend).
 
 <table>
   <tr><th align="left">Recurso</th><th align="left">Endpoint Base</th><th align="left">Acciones Implementadas</th></tr>
@@ -345,33 +347,26 @@ Estos ejemplos describen el contrato de los servicios; no representan resultados
 
 #### *4.2.1.8. Software Deployment Evidence for Sprint Review*
 
-Durante el Sprint 1, se desplegó la Landing Page de SpotGo en GitHub Pages y el Backend en Railway. Esto permitió acceder a la página publicada y utilizar los servicios disponibles del backend para la demostración del sprint.
+Durante el Sprint 1, se desplegó la versión inicial de la Landing Page de SpotGo en GitHub Pages y el Backend como Web Service en Render. La configuración de Java 25 LTS y el despliegue de la página web administrativa como Static Site en Render se detallan en [4.1.4. Software Deployment Configuration](40-chap-4.md#414-software-deployment-configuration).
 
 **Procedimiento de publicación y reproducción**
 
 1. **Landing Page:** publicar la raíz de `spotgo-landing`, rama `main`, mediante **Settings → Pages → Deploy from a branch → /(root)**. Al utilizar HTML, CSS y Vanilla JS, no requiere un proceso de compilación. La figura 98 muestra la publicación en GitHub Pages.
-2. **Backend:** conectar `spotgo-backend` con Railway, configurar Java 26 y las variables de conexión PostgreSQL de Neon, puerto y autenticación del perfil `production`. Construir con `./mvnw -B -DskipTests package` e iniciar con `java -jar target/spotgo-1.0.0.jar`. La figura 99 muestra el servicio publicado. La configuración detallada y el tratamiento del esquema se describen en [4.1.4. Software Deployment Configuration](40-chap-4.md#414-software-deployment-configuration).
-3. **Aplicación móvil:** para reproducir la ejecución del host Android, abrir `spotgo-mobile-app` en Android Studio, sincronizar Gradle y ejecutar en un emulador o dispositivo Android 10/API 29 o superior. El APK de depuración se genera mediante `./gradlew.bat :app:assembleDebug` en `app/build/outputs/apk/debug/app-debug.apk` y se instala con `./gradlew.bat :app:installDebug`. Las figuras 87 a 92 presentan ejemplos de las pantallas ejecutadas.
+2. **Backend:** configurar Java 25 LTS y las variables de conexión PostgreSQL de Neon, puerto y autenticación del perfil `production`. Desplegar el Backend como Web Service en Render; el procedimiento actual se describe en [4.1.4. Software Deployment Configuration](40-chap-4.md#414-software-deployment-configuration).
+3. **Pantallas móviles en Jetpack Compose:** para reproducir la ejecución del proyecto Android del Sprint 1, abrir `spotgo-android-app` en Android Studio, sincronizar Gradle y ejecutar en un emulador o dispositivo Android 10/API 29 o superior. El APK de depuración se genera mediante `./gradlew.bat :app:assembleDebug` en `app/build/outputs/apk/debug/app-debug.apk` y se instala con `./gradlew.bat :app:installDebug`. Las figuras 87 a 92 presentan ejemplos de las pantallas iniciales de Driver y Parking Admin. La implementación final de Parking Admin se desarrolla por separado con Flutter.
 
-**Landing Page — GitHub Pages**
+**Landing Page: GitHub Pages**
 
 **Deployment Link:** [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing)
 
 *Figura 98 (Evidencia del despliegue de la Landing Page en GitHub Pages)*
 ![Deployment Evidence Landing](../assets/images/others/deployment-evidence-landing.png)
 
-**Backend — Railway**
-
-**Swagger Documentation Link:** [https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html](https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html)
-
-*Figura 99 (Evidencia del despliegue del backend en Railway)*
-![Deployment Evidence Backend](../assets/images/others/deployment-evidence-backend.png)
-
 #### *4.2.1.9. Team Collaboration Insights during Sprint*
 
-La siguiente captura corresponde a las contribuciones del repositorio `spotgo-mobile-app` durante el Sprint 1.
+La siguiente captura corresponde a las contribuciones del repositorio `spotgo-android-app` durante el Sprint 1.
 
-*Figura 100 (Sprint 1: Insights de spotgo-mobile-app)*
+*Figura 99 (Sprint 1: Insights de spotgo-android-app)*
 ![Sprint 1 Insights de la aplicación móvil](../assets/images/others/s1-insights-mobile-app.png)
 
 La captura registra 17 commits de AdrixRyz, con 5,913 líneas añadidas y 237 eliminadas, y concentra las contribuciones visibles en octubre de 2026. Esta evidencia muestra la actividad registrada en GitHub para la aplicación móvil; la distribución de responsabilidades del equipo se presenta en la matriz LACX y el Sprint Backlog.

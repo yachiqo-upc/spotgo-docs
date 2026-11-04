@@ -44,7 +44,7 @@ La Interface Layer expone operaciones de autenticación y administración de acc
 | Security Event Consumer | Evento asíncrono | Recibe eventos de seguridad que requieren revocar sesiones o bloquear una cuenta. | CredentialChanged, AccountCompromised, AccountSuspended. |
 | Identity Event Publisher | Evento asíncrono | Publica cambios de identidad y de autorización para los contextos consumidores. | IdentityValidated, RoleAssigned, AccountSuspended, AccessRevoked. |
 
-La aplicación móvil está construida con una parte nativa en Kotlin y otra en Flutter. Ambas partes utilizan Authentication Controller y Session Controller mediante HTTPS y comparten la misma Session de SpotGo. La acción Continue with Google obtiene la identidad del proveedor y la presenta al backend para su validación; la autorización y la asignación de roles permanecen en Identity & Access Management. La aplicación web administrativa utiliza los mismos contratos y se somete a la expiración por inactividad definida para sesiones administrativas.
+Los clientes de SpotGo están separados por rol: Driver utiliza la aplicación Android nativa con Kotlin y Jetpack Compose; Parking Admin utiliza la aplicación multiplataforma con Flutter y Dart; y SuperAdmin utiliza la página web administrativa de SpotGo, desarrollada con Angular, TypeScript y Angular Material. Los tres clientes utilizan Authentication Controller y Session Controller mediante HTTPS. El registro público está disponible únicamente en la aplicación de Driver; las aplicaciones de Parking Admin y SuperAdmin permiten iniciar sesión con cuentas provisionadas. Continue with Google obtiene la identidad del proveedor y la presenta al backend para su validación; la autorización y la asignación de roles permanecen en Identity & Access Management.
 
 #### *2.6.2.3. Application Layer*
 
@@ -90,13 +90,13 @@ La infraestructura se implementará con Java y Spring Boot, utilizando capacidad
 | Identity Event Publisher | Adaptador de mensajería | Publica cambios de identidad sin enviar secretos ni tokens completos. |
 | Identity Database | PostgreSQL | Mantiene la persistencia autónoma de IAM y sus índices de consulta. |
 
-La expiración operativa se configura con access token de 15 minutos, refresh token de siete días y rotación obligatoria, tanto para acceso con contraseña como con Google. Para la aplicación web administrativa, la sesión se invalida después de 30 minutos de inactividad y no puede superar ocho horas. Estos valores se pueden parametrizar sin cambiar las clases de dominio. Las auditorías se conservan según la política transversal de cinco años, mientras que la expiración de una sesión no elimina automáticamente los registros de auditoría.
+La expiración operativa se configura con access token de 15 minutos, refresh token de siete días y rotación obligatoria, tanto para acceso con contraseña como con Google. En la página web administrativa de SpotGo, utilizada por SuperAdmin, la sesión se invalida después de 30 minutos de inactividad y no puede superar ocho horas. Estos valores se pueden parametrizar sin cambiar las clases de dominio. Las auditorías se conservan según la política transversal de cinco años, mientras que la expiración de una sesión no elimina automáticamente los registros de auditoría.
 
 El adaptador sigue los criterios de [verificación de ID tokens de Google](https://developers.google.com/identity/sign-in/android/backend-auth): el backend verifica la firma y los valores de emisor, audiencia y expiración antes de aceptar la identidad. El identificador externo validado permite recuperar la cuenta vinculada; el ID token no sustituye el token de sesión emitido por SpotGo.
 
 #### *2.6.2.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes delimita la frontera de Identity & Access Management, sus componentes de seguridad, la base de datos y sus relaciones con Profiles & Vehicles Management, Parking Infrastructure y la aplicación móvil con partes Kotlin y Flutter y la aplicación web administrativa. Guest y los visitantes de la Landing Page no tienen cuentas ni perfiles de autenticación.
+El diagrama de componentes delimita la frontera de Identity & Access Management, sus componentes de seguridad, la base de datos y sus relaciones con Profiles & Vehicles Management, Parking Infrastructure y los tres clientes de SpotGo: la aplicación Android nativa de Driver, la aplicación Flutter de Parking Admin y la página web administrativa de SpotGo para SuperAdmin. Guest y los visitantes de la Landing Page no tienen cuentas ni perfiles de autenticación.
 
 *Figura 28 (Identity & Access Management Component Level Diagram)*
 ![Identity & Access Management Component Level Diagram](../assets/diagrams/components-diagram-identity.svg)

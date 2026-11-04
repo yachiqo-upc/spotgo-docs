@@ -44,12 +44,14 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // FRONTENDS
             // =====================================================
 
-            mobileApp = container "SpotGo Mobile App" "Una sola aplicación móvil para Driver y Parking Admin, construida con una parte nativa Android en Kotlin y otra con Flutter." "Kotlin / Jetpack Compose + Flutter / Dart"
+            driverApp = container "SpotGo Driver Android App" "Aplicación Android nativa exclusiva para Driver, desarrollada con Kotlin y Jetpack Compose. Permite iniciar sesión y crear una cuenta." "Kotlin / Jetpack Compose"
+
+            parkingAdminApp = container "SpotGo Parking Admin Flutter App" "Aplicación móvil multiplataforma exclusiva para Parking Admin, desarrollada con Flutter y Dart. Permite iniciar sesión con una cuenta provisionada y no ofrece registro público." "Flutter / Dart"
 
 
-            landingPage = container "SpotGo Landing Page" "Sitio estático que presenta la propuesta de valor y dirige al visitante a la aplicación móvil; alojado en GitHub Pages." "HTML / CSS / Vanilla JS"
+            landingPage = container "SpotGo Landing Page" "Sitio estático que presenta la propuesta de valor y dirige a cada perfil al canal de SpotGo que le corresponde; alojado en GitHub Pages." "HTML / CSS / Vanilla JS"
 
-            webApp = container "SpotGo Administration Web App" "Aplicación web administrativa propuesta para Parking Admin y SuperAdmin." "Angular"
+            webApp = container "SpotGo Administration Web App" "Aplicación web exclusiva para SuperAdmin, desarrollada con Angular, TypeScript y Angular Material." "Angular / TypeScript / Angular Material"
 
             apiGateway = container "API Gateway" "Punto único de entrada que enruta las solicitudes hacia los microservicios." "Spring Boot / API Gateway"
 
@@ -168,18 +170,18 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // RELACIONES - ACTORES - FRONTENDS
             // =====================================================
 
-            driver -> mobileApp "Utiliza la aplicación móvil"
+            driver -> driverApp "Utiliza la aplicación Android nativa"
             driver -> landingPage "Consulta la propuesta de valor" "HTTPS"
-            parkingAdmin -> mobileApp "Utiliza las vistas operativas"
+            parkingAdmin -> parkingAdminApp "Utiliza la aplicación Flutter multiplataforma"
             parkingAdmin -> landingPage "Consulta la propuesta de valor" "HTTPS"
-            parkingAdmin -> webApp "Utiliza las vistas administrativas"
             superAdmin -> webApp "Provisiona Parking Admin y administra Tenants"
 
             // =====================================================
             // FRONTENDS - API GATEWAY
             // =====================================================
 
-            mobileApp -> apiGateway "Consume APIs" "HTTPS / REST"
+            driverApp -> apiGateway "Consume APIs" "HTTPS / REST"
+            parkingAdminApp -> apiGateway "Consume APIs" "HTTPS / REST"
             webApp -> apiGateway "Consume APIs" "HTTPS / REST"
 
             // =====================================================
@@ -237,14 +239,17 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // GOOGLE MAPS
             // =====================================================
 
-            mobileApp -> googleMaps "Abre ruta hacia la Parking Zone seleccionada" "Google Maps SDK / Deep Link"
-            landingPage -> mobileApp "Dirige al destino de la aplicación móvil" "HTTPS / App Link"
+            driverApp -> googleMaps "Abre ruta hacia la Parking Zone seleccionada" "Google Maps SDK / Deep Link"
+            landingPage -> driverApp "Dirige a Driver al acceso móvil" "HTTPS / App Link"
+            landingPage -> parkingAdminApp "Dirige a Parking Admin al acceso móvil" "HTTPS / App Link"
 
             // =====================================================
             // GOOGLE SIGN-IN
             // =====================================================
 
-            mobileApp -> googleIdentity "Inicia sesión con Google y obtiene un ID token" "HTTPS / OpenID Connect"
+            driverApp -> googleIdentity "Inicia sesión con Google y obtiene un ID token" "HTTPS / OpenID Connect"
+            parkingAdminApp -> googleIdentity "Inicia sesión con Google y obtiene un ID token" "HTTPS / OpenID Connect"
+            webApp -> googleIdentity "Inicia sesión con Google y obtiene un ID token" "HTTPS / OpenID Connect"
             identityService -> googleIdentity "Obtiene claves públicas para verificar los ID tokens de Google" "HTTPS / JWKS"
 
             // =====================================================
@@ -409,49 +414,52 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // -----------------------------------------------------
             // DISPOSITIVOS CLIENTE
             // -----------------------------------------------------
-            deploymentNode "Driver Device" "Dispositivo móvil del Driver; una aplicación con módulos Kotlin y Flutter" "Android / iOS" {
-                containerInstance mobileApp
+            deploymentNode "Driver Device" "Dispositivo Android que ejecuta la aplicación nativa de Driver" "Android" {
+                containerInstance driverApp
             }
 
-            deploymentNode "Parking Admin Device" "Dispositivo del Parking Admin para las vistas móviles y administrativas" "Android / iOS / Web Browser" {
-                containerInstance mobileApp
-                containerInstance webApp
+            deploymentNode "Parking Admin Device" "Dispositivo móvil que ejecuta la aplicación multiplataforma de Parking Admin" "Android / iOS" {
+                containerInstance parkingAdminApp
             }
 
-            deploymentNode "SuperAdmin Device" "Dispositivo utilizado por SuperAdmin para provisionar Parking Admin y administrar Tenants" "Web Browser" {
-                containerInstance webApp
+            deploymentNode "SuperAdmin Device" "Navegador utilizado por SuperAdmin para provisionar Parking Admin y administrar Tenants" "Web Browser" {
             }
 
             // -----------------------------------------------------
-            // INFRAESTRUCTURA CLOUD
+            // SERVICIOS DE RENDER
             // -----------------------------------------------------
-            deploymentNode "Cloud Infrastructure" "Infraestructura de ejecución de SpotGo" "Cloud Platform" {
+            deploymentNode "Render Cloud Platform" "Plataforma de alojamiento del Backend Web Service y de la aplicación web administrativa estática" "Render" {
 
-                deploymentNode "API Gateway Server" "Servidor del punto de entrada de las APIs" "Linux / Spring Boot" {
-                    containerInstance apiGateway
-                }
-
-                deploymentNode "Application Server" "Servidor de microservicios SpotGo" "Linux / JVM" {
-                    containerInstance identityService
-                    containerInstance profileService
-                    containerInstance parkingService
-                    containerInstance paymentService
-                    containerInstance internalPaymentSystem
-                    containerInstance occupancyService
-                }
-
-                // -------------------------------------------------
-                // INFRAESTRUCTURA DE BASE DE DATOS (Servidor Único)
-                // -------------------------------------------------
-                deploymentNode "Database Infrastructure" "Servidor de base de datos principal" "Ubuntu Linux" {
-                    
-                    deploymentNode "PostgreSQL Server" "Una sola instancia física con cinco bases de datos lógicas independientes, una por bounded context" "PostgreSQL 15+" {
-                        containerInstance identityDb
-                        containerInstance profileDb
-                        containerInstance parkingDb
-                        containerInstance paymentDb
-                        containerInstance occupancyDb
+                deploymentNode "Backend Web Service" "Servicio del Backend de SpotGo" "Docker / Java 25 LTS / Spring Boot" {
+                    deploymentNode "API Gateway Server" "Servidor del punto de entrada de las APIs" "Linux / Spring Boot" {
+                        containerInstance apiGateway
                     }
+
+                    deploymentNode "Application Server" "Servidor de los servicios de SpotGo" "Linux / JVM" {
+                        containerInstance identityService
+                        containerInstance profileService
+                        containerInstance parkingService
+                        containerInstance paymentService
+                        containerInstance internalPaymentSystem
+                        containerInstance occupancyService
+                    }
+                }
+
+                deploymentNode "SpotGo Administration Web App Static Site" "Aplicación administrativa exclusiva de SuperAdmin" "Angular / TypeScript / Angular Material" {
+                    containerInstance webApp
+                }
+            }
+
+            // -----------------------------------------------------
+            // BASE DE DATOS EN NEON
+            // -----------------------------------------------------
+            deploymentNode "Neon Database Infrastructure" "Infraestructura PostgreSQL administrada en Neon" "Neon" {
+                deploymentNode "PostgreSQL Server" "Una sola instancia física con cinco bases de datos lógicas independientes, una por bounded context" "PostgreSQL 15+" {
+                    containerInstance identityDb
+                    containerInstance profileDb
+                    containerInstance parkingDb
+                    containerInstance paymentDb
+                    containerInstance occupancyDb
                 }
             }
 

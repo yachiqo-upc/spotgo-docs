@@ -58,7 +58,7 @@ Las reglas esenciales del contexto son las siguientes:
 
 #### *2.6.3.2. Interface Layer*
 
-Los controladores REST reciben solicitudes de la aplicación móvil, de la aplicación web administrativa y de procesos internos. Los consumidores asíncronos reciben resultados de Payments & Billing, validaciones de identidad y eventos de Occupancy & Monitoring. La capa valida autorización, formato y versionado del contrato, y luego delega los casos de uso.
+Los controladores REST reciben solicitudes de la aplicación Android nativa de Driver, de la aplicación Flutter de Parking Admin, de la página web administrativa de SpotGo para SuperAdmin y de procesos internos. Los consumidores asíncronos reciben resultados de Payments & Billing, validaciones de identidad y eventos de Occupancy & Monitoring. La capa valida autorización, formato y versionado del contrato, y luego delega los casos de uso.
 
 | Componente de interfaz | Canal | Responsabilidad | Operaciones o mensajes |
 | --- | --- | --- | --- |
@@ -74,7 +74,7 @@ Los controladores REST reciben solicitudes de la aplicación móvil, de la aplic
 | Occupancy Event Consumer | Evento asíncrono | Recibe cambios físicos, fallas y conflictos de sensores. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected. |
 | Parking Event Publisher | Evento asíncrono | Publica los cambios que necesitan Payments & Billing y Occupancy & Monitoring. | ReservationPaymentRequested, ReservationCreated, ReservationReassigned, ParkingSessionStarted, ParkingSessionCompleted, AdditionalChargeRequested, RefundRequested, GuestParkingSessionClosed. |
 
-Las operaciones de Guest Parking Session se restringen a Parking Admin mediante Identity & Access Management. El cliente Flutter y la aplicación Android nativa en Kotlin utilizan el mismo contrato REST; Kotlin solo complementa las capacidades específicas de Android.
+Las operaciones de Guest Parking Session se restringen a Parking Admin mediante Identity & Access Management. La aplicación Flutter de Parking Admin y la aplicación Android nativa de Driver utilizan los contratos REST que corresponden a las operaciones permitidas para cada rol.
 
 #### *2.6.3.3. Application Layer*
 
@@ -139,7 +139,7 @@ El Temporary Lock se almacena con lockedAt, expiresAt y status, y debe estar pro
 
 #### *2.6.3.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes representa Parking Infrastructure como un contenedor autónomo dentro del backend, con su base de datos PostgreSQL y adaptadores para Profiles & Vehicles Management, Identity & Access Management, Payments & Billing, Occupancy & Monitoring y Google Maps. La única aplicación móvil con partes Kotlin y Flutter se sitúa fuera del bounded context y accede a través del API Gateway.
+El diagrama de componentes representa Parking Infrastructure como un contenedor autónomo dentro del backend, con su base de datos PostgreSQL y adaptadores para Profiles & Vehicles Management, Identity & Access Management, Payments & Billing, Occupancy & Monitoring y Google Maps. Las aplicaciones Android de Driver y Flutter de Parking Admin se sitúan fuera del bounded context y acceden a través del API Gateway.
 
 *Figura 31 (Parking Infrastructure Component Level Diagram)*
 ![Parking Infrastructure Component Level Diagram](../assets/diagrams/components-diagram-parking.svg)

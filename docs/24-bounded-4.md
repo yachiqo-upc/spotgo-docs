@@ -2,7 +2,7 @@
 
 Payments & Billing es un bounded context de soporte que concentra las operaciones económicas digitales de SpotGo. Administra tokens de pago, pagos de reservas y suscripciones, cargos adicionales por sobretiempo, saldos pendientes, reembolsos y comprobantes. El proveedor de pagos es interno a la solución y se integra mediante un contrato que permite procesar operaciones de forma idempotente y recibir confirmaciones asíncronas.
 
-El contexto no procesa los pagos físicos de Guests. En una Guest Parking Session, el Parking Admin registra la placa, calcula el monto y confirma que recibió efectivo o POS fuera del flujo de pago digital. Payments & Billing solo procesa operaciones digitales de conductores registrados, como el pago de una reserva, una suscripción o un cargo adicional autorizado por las reglas de SpotGo.
+El contexto no procesa los pagos físicos de invitados. En una Guest Parking Session, el Parking Admin registra la placa, calcula el monto y confirma que recibió efectivo o POS fuera del flujo de pago digital. Payments & Billing solo procesa operaciones digitales de conductores registrados, como el pago de una reserva, una suscripción o un cargo adicional autorizado por las reglas de SpotGo.
 
 Los comprobantes se generan a partir de los datos de facturación disponibles. Cuando el usuario proporciona DNI se genera un Electronic Receipt y cuando proporciona RUC se genera un Electronic Invoice. El modelo no almacena el número completo de una tarjeta ni otros datos financieros sensibles; utiliza Payment Token y referencias del proveedor interno.
 
@@ -69,7 +69,7 @@ La Interface Layer expone las operaciones económicas de Driver y recibe solicit
 | Payment Provider Notification Consumer | Evento o callback interno | Recibe confirmaciones, rechazos o cambios del proveedor interno. | ProviderPaymentApproved, ProviderPaymentRejected, ProviderRefundUpdated. |
 | Payment Event Publisher | Evento asíncrono | Publica resultados económicos para los contextos consumidores y el Driver. | ReservationPaymentApproved, ReservationPaymentRejected, AdditionalChargeProcessed, OutstandingBalanceGenerated, BalanceRegularized, RefundCompleted, RefundReconciliationRequired, ElectronicDocumentIssued. |
 
-Los endpoints no aceptan datos completos de tarjeta ni permiten que un Guest inicie una transacción digital. La única aplicación móvil, construida con partes Kotlin y Flutter, recibe únicamente el resultado necesario para mostrar el estado de la operación y el comprobante permitido.
+Los endpoints no aceptan datos completos de tarjeta ni permiten que un Guest inicie una transacción digital. La aplicación Android nativa de Driver recibe únicamente el resultado necesario para mostrar el estado de su operación y el comprobante permitido. Las aplicaciones de Parking Admin y SuperAdmin acceden solo a la información económica autorizada para sus respectivos roles.
 
 #### *2.6.4.3. Application Layer*
 

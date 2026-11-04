@@ -14,9 +14,11 @@
 | Título | Enlace |
 | --- | --- |
 | Organización de GitHub | [https://github.com/orgs/yachiqo-upc/repositories](https://github.com/orgs/yachiqo-upc/repositories) |
-| Repositorio de documentación | [https://github.com/yachiqo-upc/spotgo-docs](https://github.com/yachiqo-upc/spotgo-docs) |
+| Repositorio de la Documentación | [https://github.com/yachiqo-upc/spotgo-docs](https://github.com/yachiqo-upc/spotgo-docs) |
 | Repositorio de la Landing Page | [https://github.com/yachiqo-upc/spotgo-landing](https://github.com/yachiqo-upc/spotgo-landing) |
 | Repositorio del Backend | [https://github.com/yachiqo-upc/spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) |
-| Repositorio de la aplicación móvil | [https://github.com/yachiqo-upc/spotgo-mobile-app](https://github.com/yachiqo-upc/spotgo-mobile-app) |
+| Repositorio de la App Mobile en Android de Driver | [https://github.com/yachiqo-upc/spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) |
+| Repositorio de la App Mobile en Flutter de Parking Admin | [https://github.com/yachiqo-upc/spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) |
+| Repositorio de la página web administrativa de SpotGo | [https://github.com/yachiqo-upc/spotgo-admin-web-app](https://github.com/yachiqo-upc/spotgo-admin-web-app) |
 | Landing Page Desplegada | [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing) |
-| Backend Desplegado | [https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html](https://spotgo-backend-yachiqo.up.railway.app/swagger-ui/index.html) |
+| Backend Desplegado |  |

@@ -2,7 +2,7 @@
 
 <img src="assets/images/others/spotgo-logo.png" alt="SpotGo" width="250">
 
-> Documentación académica de SpotGo, una solución móvil propuesta para organizar y gestionar estacionamientos de alta afluencia.
+> Documentación académica de SpotGo, una solución digital propuesta para organizar y gestionar estacionamientos de alta afluencia.
 
 > Este repositorio contiene el informe, los modelos de dominio y los diagramas de la solución. No incluye una aplicación ejecutable ni requiere instalación de dependencias para consultar la documentación.
 
@@ -21,7 +21,9 @@ SpotGo busca reducir el tiempo que los conductores dedican a encontrar estaciona
 
 La documentación plantea una arquitectura distribuida orientada al dominio, organizada en cinco bounded contexts. Entre las tecnologías e integraciones consideradas se encuentran:
 
-- Una sola aplicación móvil construida con una parte Android nativa en Kotlin y otra con Flutter.
+- Una aplicación Android nativa con Kotlin y Jetpack Compose para Driver.
+- Una aplicación multiplataforma con Flutter y Dart para Parking Admin.
+- Una aplicación web con Angular, TypeScript y Angular Material para SuperAdmin.
 - Servicios backend en Java con Spring Boot.
 - Cinco bases de datos PostgreSQL independientes por bounded context, alojadas en una sola instancia física de PostgreSQL Server.
 - Comunicación mediante APIs REST sobre HTTPS y eventos asíncronos.

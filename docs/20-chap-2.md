@@ -20,8 +20,8 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 
 |     | SpotGo | Apparka | iPark | Parkopedia |
 | --- | --- | --- | --- | --- |
-| Overview | Aplicación móvil y servicios de backend para organizar estacionamientos por zonas y perfiles, consultar disponibilidad, reservar y pagar espacios, administrar suscripciones y comprobantes electrónicos, y permitir que los conductores abran una ruta hacia su destino en Google Maps. | Empresa peruana de gestión de estacionamientos con una aplicación para consultar ubicaciones y disponibilidad, realizar pagos y reservas, y acceder a servicios empresariales. | Solución peruana en la nube para la gestión digital de estacionamientos, pagos, registro de vehículos y control operativo. | Plataforma global de datos de estacionamiento con información estática, disponibilidad dinámica, reservas, pagos e integraciones. |
-| Ventaja competitiva | Integra la clasificación por perfiles, sensores en cada espacio de estacionamiento, monitoreo actualizado, reservas, pagos, integración con Google Maps y apoyo operativo desde una experiencia móvil. | Amplia presencia en Perú, operación directa de estacionamientos y servicios digitales integrados. | Integra la gestión administrativa, los pagos digitales, el control vehicular y el aforo en tiempo real. | Cobertura global, gran volumen de datos y fuerte integración con vehículos y servicios de movilidad. |
+| Overview | Solución de estacionamiento con aplicaciones móviles y web para consultar disponibilidad, administrar zonas, reservar y pagar. | Empresa peruana de gestión de estacionamientos con una aplicación para consultar ubicaciones y disponibilidad, realizar pagos y reservas, y acceder a servicios empresariales. | Solución peruana en la nube para la gestión digital de estacionamientos, pagos, registro de vehículos y control operativo. | Plataforma global de datos de estacionamiento con información estática, disponibilidad dinámica, reservas, pagos e integraciones. |
+| Ventaja competitiva | Organización por perfiles y zonas, monitoreo de ocupación, reservas y alertas operativas. | Amplia presencia en Perú, operación directa de estacionamientos y servicios digitales integrados. | Integra la gestión administrativa, los pagos digitales, el control vehicular y el aforo en tiempo real. | Cobertura global, gran volumen de datos y fuerte integración con vehículos y servicios de movilidad. |
 
 *Perfil de marketing*
 
@@ -34,9 +34,9 @@ Permite identificar cómo funcionan las soluciones actuales de estacionamiento, 
 
 |     | SpotGo | Apparka | iPark | Parkopedia |
 | --- | --- | --- | --- | --- |
-| Productos y Servicios | Aplicación móvil para consultar disponibilidad por zonas, perfiles de usuario, reservas, pagos digitales y suscripciones, y acceder a comprobantes electrónicos e integración con Google Maps; incluye monitoreo por sensores, alertas, reportes y funciones operativas. | Consulta de ubicación y disponibilidad, pagos, reservas, administración de suscripciones y gestión de estacionamientos. | Registro de vehículos, pagos, facturación, aforo y portal administrativo. | Datos de estacionamiento, disponibilidad, reservas, pagos e interfaces de programación (API). |
+| Productos y Servicios | Aplicaciones móviles y web para consultar disponibilidad, gestionar zonas, reservas y pagos; incluye monitoreo y reportes. | Consulta de ubicación y disponibilidad, pagos, reservas, administración de suscripciones y gestión de estacionamientos. | Registro de vehículos, pagos, facturación, aforo y portal administrativo. | Datos de estacionamiento, disponibilidad, reservas, pagos e interfaces de programación (API). |
 | Precios y costos | Modelo preliminar basado en suscripciones para administradores de estacionamientos; los costos de implementación dependerán de los mecanismos de monitoreo requeridos. | Tarifas variables según el estacionamiento, el servicio o la modalidad de suscripción. | Modelo de suscripción con planes según capacidad y requerimientos. | Servicios gratuitos para usuarios finales y servicios empresariales con licenciamiento de datos. |
-| Canales de distribución | Aplicación móvil, página de presentación y servicios de backend integrados con la infraestructura del estacionamiento. | Aplicación móvil, sitio web y red física de estacionamientos. | Plataforma web, aplicación e integraciones con dispositivos. | Sitio web, aplicación, interfaces de programación (API) y sistemas integrados en vehículos. |
+| Canales de distribución | Aplicaciones móviles y web, página de presentación y servicios en la nube. | Aplicación móvil, sitio web y red física de estacionamientos. | Plataforma web, aplicación e integraciones con dispositivos. | Sitio web, aplicación, interfaces de programación (API) y sistemas integrados en vehículos. |
 
 *Análisis SWOT*
 
@@ -58,7 +58,7 @@ La información comparativa de Apparka, iPark y Parkopedia se elaboró a partir 
    - La solución ofrecerá información actualizada sobre la disponibilidad por zonas para que los conductores y los administradores de estacionamientos tomen decisiones con mayor rapidez.
 
 3. Gestión centralizada para administradores de estacionamientos.
-   - La aplicación móvil administrativa permitirá consultar ocupación, distribución de zonas e incidencias desde un único entorno, facilitando la supervisión operativa.
+   - La aplicación administrativa multiplataforma permitirá consultar ocupación, distribución de zonas e incidencias desde un único entorno, facilitando la supervisión operativa.
 
 4. Experiencia de búsqueda enfocada en disponibilidad.
    - Los conductores podrán consultar qué zonas presentan disponibilidad y cuáles pueden utilizar según su perfil, con el objetivo de reducir recorridos innecesarios.
@@ -343,15 +343,15 @@ El Ubiquitous Language conserva únicamente conceptos del negocio y sus reglas; 
 
 La especificación de requisitos de SpotGo se construye a partir de la problemática, las entrevistas, los User Personas, el Ubiquitous Language y las hipótesis definidas en los capítulos anteriores. Su propósito es traducir las necesidades de los conductores y del personal de estacionamiento en comportamientos verificables del producto.
 
-El producto principal es una aplicación móvil con experiencias diferenciadas para los siguientes actores:
+SpotGo ofrece clientes separados por rol para los siguientes actores:
 
-- **Driver (Conductor):** consulta la disponibilidad por Parking Zone e identifica las zonas que puede utilizar según su User Profile.
-- **Parking Admin (Administrador de estacionamiento):** configura Parking Zones y perfiles, supervisa el Occupancy Status, atiende incidencias y consulta Occupancy Reports desde la aplicación móvil.
-- **SuperAdmin:** rol reservado a los creadores de SpotGo; registra clientes B2B y habilita la configuración inicial de nuevos estacionamientos.
+- **Driver (Conductor):** utiliza la aplicación Android nativa para consultar la disponibilidad por Parking Zone e identificar las zonas que puede utilizar según su User Profile.
+- **Parking Admin (Administrador de estacionamiento):** utiliza la aplicación multiplataforma Flutter para configurar Parking Zones y perfiles, supervisar el Occupancy Status, atender incidencias y consultar Occupancy Reports.
+- **SuperAdmin:** utiliza la página web administrativa de SpotGo; es un rol reservado a los creadores de la plataforma, quienes registran clientes B2B y habilitan la configuración inicial de nuevos estacionamientos.
 
 En las historias técnicas y de investigación (TS y SP), **Developer** identifica al responsable técnico; no es un actor de la aplicación.
 
-La solución también contempla una Landing Page estática como producto digital de apoyo para comunicar la propuesta de valor de SpotGo. La Landing Page no reemplaza la aplicación móvil ni se considera parte del flujo operativo del estacionamiento.
+La solución también contempla una Landing Page estática como producto digital de apoyo para comunicar la propuesta de valor de SpotGo. La Landing Page no reemplaza los clientes operativos ni se considera parte del flujo del estacionamiento.
 
 La política de internacionalización se aplica a la aplicación móvil, la Landing Page, los Web Services y la documentación: todos utilizan English (en_US) como idioma predeterminado y ofrecen Latin American Spanish (es_419) como alternativa. Los Web Services aceptan y devuelven mensajes localizables mediante esos códigos de idioma, sin cambiar los nombres canónicos de los conceptos del negocio.
 
@@ -379,11 +379,11 @@ Los planes se organizan como *Free*, *Plus Monthly* y *Plus Annual*. Free permit
 
 El backend genera notificaciones por la proximidad del inicio, el inicio y la finalización de las reservas, sobretiempo, reasignaciones, pagos exitosos o fallidos, devoluciones y saldos pendientes. Firebase Cloud Messaging entrega estas notificaciones push a los dispositivos registrados, mientras que las acciones realizadas por un administrador de estacionamiento se conservan en una bitácora de auditoría con el usuario, la acción, la fecha, la hora y los datos modificados.
 
-Las historias de usuario de SpotGo se organizan por capacidades funcionales, técnicas y de investigación para mantener claridad, trazabilidad y verificabilidad. La página de presentación se mantiene como producto digital complementario; el resto de las capacidades operativas, comerciales y administrativas se especifica para la aplicación móvil y sus servicios backend. La tabla de trazabilidad incluida más adelante relaciona las capacidades del producto con los requisitos definidos.
+Las historias de usuario de SpotGo se organizan por capacidades funcionales, técnicas y de investigación para mantener claridad, trazabilidad y verificabilidad. La página de presentación se mantiene como producto digital complementario; las capacidades operativas, comerciales y administrativas se especifican para las aplicaciones móviles, la aplicación web de SuperAdmin y sus servicios backend. La tabla de trazabilidad incluida más adelante relaciona las capacidades del producto con los requisitos definidos.
 
 ### 2.4.1. User Stories
 
-Las siguientes historias especifican los requisitos funcionales, técnicos y de investigación del alcance centrado en la aplicación móvil. Cada historia se relaciona con una épica, tiene una prioridad de negocio y define criterios de aceptación comprobables. Priority **High** identifica capacidades directamente vinculadas con los objetivos de negocio; **Medium** corresponde a capacidades de soporte; y **Low**, a documentación o capacidades complementarias.
+Las siguientes historias especifican los requisitos funcionales, técnicos y de investigación para los clientes de SpotGo y sus servicios backend. Cada historia se relaciona con una épica, tiene una prioridad de negocio y define criterios de aceptación comprobables. Priority **High** identifica capacidades directamente vinculadas con los objetivos de negocio; **Medium** corresponde a capacidades de soporte; y **Low**, a documentación o capacidades complementarias.
 
 Los criterios de aceptación siguen la estructura Gherkin **Dado que - Cuando - Entonces**, se redactan en presente y tercera persona, y describen resultados observables sin fijar detalles innecesarios de interfaz. Las historias técnicas utilizan el rol Developer cuando la capacidad no implica interacción directa con un usuario final. Las historias de investigación deben cerrarse con resultados documentados y evidencia suficiente para reducir la incertidumbre.
 
@@ -395,550 +395,1524 @@ Los criterios de aceptación siguen la estructura Gherkin **Dado que - Cuando - 
 | E2 | Organización del estacionamiento y perfiles | Configuración de espacios, zonas, perfiles de usuario, vehículos registrados y sesiones de estacionamiento de invitados por Parking Admin. |
 | E3 | Monitoreo de ocupación y operaciones | Monitoreo del estado de ocupación mediante sensores por espacio, un panel operativo, alertas por estacionamiento no autorizado y reportes de ocupación. |
 | E4 | Presencia digital y calidad móvil | Página de presentación estática, accesibilidad e internacionalización de los productos digitales de SpotGo. |
-| E5 | Servicios y habilitación técnica | Servicios REST, integración con sensores, autenticación, persistencia local, sincronización, documentación y validaciones técnicas para la aplicación móvil. |
+| E5 | Servicios y habilitación técnica | Servicios REST, integración con sensores, autenticación, persistencia local, sincronización, documentación y validaciones técnicas para los clientes de SpotGo. |
 | E6 | Monetización y facturación | Reservas de conductores registrados, pagos digitales, cargos adicionales, reembolsos, suscripciones, confirmaciones asíncronas, comprobantes virtuales, facturación electrónica y consulta de facturación B2C y B2B. |
 
 **User Stories**
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US01</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar disponibilidad por zona</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar la disponibilidad actual por zona,<br><strong>para</strong> identificar dónde podría haber un espacio de estacionamiento disponible.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Zona con disponibilidad</strong><br><strong>Dado que</strong> una zona de estacionamiento tiene al menos un espacio con estado de ocupación disponible, el sensor funciona correctamente y no existe una reserva, sesión de estacionamiento de invitado ni bloqueo temporal activo<br><strong>Cuando</strong> el Driver consulta la disponibilidad actual<br><strong>Entonces</strong> la aplicación informa cuántos espacios están disponibles y la hora de la última actualización<br><br><strong>Escenario 2: Zona sin disponibilidad</strong><br><strong>Dado que</strong> todos los espacios de una zona están ocupados, reservados, tienen una sesión de invitado o un bloqueo temporal activo, o figuran como no disponibles<br><strong>Cuando</strong> el Driver consulta la disponibilidad<br><strong>Entonces</strong> la aplicación informa que no hay espacios disponibles y no ofrece para reserva espacios no disponibles o bloqueados temporalmente<br><br><strong>Escenario 3: Actualización manual</strong><br><strong>Dado que</strong> el Driver consulta información sincronizada previamente<br><strong>Cuando</strong> el Driver solicita actualizarla<br><strong>Entonces</strong> la aplicación obtiene el estado más reciente disponible y muestra la hora de la actualización</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US01</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E1</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Consultar disponibilidad por zona</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar la disponibilidad actual por zona, <br><strong>para</strong> identificar dónde podría haber un espacio de estacionamiento disponible.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Zona con disponibilidad</strong><br><strong>Dado que</strong> una zona de estacionamiento tiene al menos un espacio con estado de ocupación disponible, el sensor funciona correctamente y no existe una reserva, sesión de estacionamiento de invitado ni bloqueo temporal activo<br><strong>Cuando</strong> el Driver consulta la disponibilidad actual<br><strong>Entonces</strong> la aplicación informa cuántos espacios están disponibles y la hora de la última actualización<br><br><strong>Escenario 2: Zona sin disponibilidad</strong><br><strong>Dado que</strong> todos los espacios de una zona están ocupados, reservados, tienen una sesión de invitado o un bloqueo temporal activo, o figuran como no disponibles<br><strong>Cuando</strong> el Driver consulta la disponibilidad<br><strong>Entonces</strong> la aplicación informa que no hay espacios disponibles y no ofrece para reserva espacios no disponibles o bloqueados temporalmente<br><br><strong>Escenario 3: Actualización manual</strong><br><strong>Dado que</strong> el Driver consulta información sincronizada previamente<br><strong>Cuando</strong> el Driver solicita actualizarla<br><strong>Entonces</strong> la aplicación obtiene el estado más reciente disponible y muestra la hora de la actualización</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US02</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Configurar zonas de estacionamiento</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> crear zonas de estacionamiento, asociarlas con perfiles de usuario y configurar sus reglas de operación,<br><strong>para</strong> organizar los espacios del estacionamiento y aplicar condiciones uniformes para reservas y facturación.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Configuración válida</strong><br><strong>Dado que</strong> los espacios están registrados y los datos de la zona son válidos<br><strong>Cuando</strong> el Parking Admin crea una zona y asocia los espacios seleccionados<br><strong>Entonces</strong> el sistema guarda la relación entre la zona, sus espacios y los perfiles de usuario autorizados<br><br><strong>Escenario 2: Conflicto en la asignación de un espacio</strong><br><strong>Dado que</strong> un espacio ya pertenece a otra zona<br><strong>Cuando</strong> el Parking Admin intenta guardarlo en una zona nueva<br><strong>Entonces</strong> el sistema identifica el conflicto y no guarda la nueva relación hasta que se resuelva la asignación<br><br><strong>Escenario 3: Configuración de reglas de operación</strong><br><strong>Dado que</strong> el Parking Admin proporciona un horario válido y una unidad positiva para calcular fracciones de facturación<br><strong>Cuando</strong> el Parking Admin guarda las reglas de la zona o del estacionamiento<br><strong>Entonces</strong> el sistema permite reservas solo dentro del horario de operación y calcula el tiempo adicional con la fracción configurada</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US02</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E2</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Configurar zonas de estacionamiento</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> crear zonas de estacionamiento, asociarlas con perfiles de usuario y configurar sus reglas de operación,<br><strong>para</strong> organizar los espacios del estacionamiento y aplicar condiciones uniformes para reservas y facturación.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Configuración válida</strong><br><strong>Dado que</strong> los espacios están registrados y los datos de la zona son válidos<br><strong>Cuando</strong> el Parking Admin crea una zona y asocia los espacios seleccionados<br><strong>Entonces</strong> el sistema guarda la relación entre la zona, sus espacios y los perfiles de usuario autorizados<br><br><strong>Escenario 2: Conflicto en la asignación de un espacio</strong><br><strong>Dado que</strong> un espacio ya pertenece a otra zona<br><strong>Cuando</strong> el Parking Admin intenta guardarlo en una zona nueva<br><strong>Entonces</strong> el sistema identifica el conflicto y no guarda la nueva relación hasta que se resuelva la asignación<br><br><strong>Escenario 3: Configuración de reglas de operación</strong><br><strong>Dado que</strong> el Parking Admin proporciona un horario válido y una unidad positiva para calcular fracciones de facturación<br><strong>Cuando</strong> el Parking Admin guarda las reglas de la zona o del estacionamiento<br><strong>Entonces</strong> el sistema permite reservas solo dentro del horario de operación y calcula el tiempo adicional con la fracción configurada</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US03</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Registrar una sesión de estacionamiento de invitado</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> registrar una sesión de estacionamiento cuando llega un invitado,<br><strong>para</strong> que SpotGo calcule su tiempo de estacionamiento mientras el pago presencial se realiza al salir.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Iniciar una sesión de invitado</strong><br><strong>Dado que</strong> llega un invitado, Parking Admin está autorizado para operar y hay un espacio disponible<br><strong>Cuando</strong> el Parking Admin selecciona el espacio, ingresa manualmente la placa e inicia la sesión<br><strong>Entonces</strong> el sistema crea una sesión activa con el espacio, la placa y la hora de ingreso; no crea una cuenta Driver ni un vehículo permanente, no crea una reserva ni procesa un pago<br><br><strong>Escenario 2: Conflicto por espacio reservado, ocupado o no disponible</strong><br><strong>Dado que</strong> el espacio solicitado tiene una reserva activa, está ocupado o figura como no disponible<br><strong>Cuando</strong> el Parking Admin intenta iniciar la sesión de invitado<br><strong>Entonces</strong> el sistema rechaza la operación y solicita seleccionar un espacio disponible<br><br><strong>Escenario 3: Cerrar la sesión y confirmar el pago presencial</strong><br><strong>Dado que</strong> existe una sesión de estacionamiento de invitado activa<br><strong>Cuando</strong> el Parking Admin registra la salida y confirma el pago presencial en efectivo o con POS<br><strong>Entonces</strong> el sistema registra la hora de salida, calcula la duración y el importe, cierra la sesión y conserva la confirmación del pago sin procesar ni almacenar datos financieros sensibles<br><br><strong>Escenario 4: Datos obligatorios en cada operación</strong><br><strong>Dado que</strong> el Parking Admin intenta iniciar la sesión sin espacio, placa u hora de ingreso, o cerrarla sin hora de salida o confirmación de pago<br><strong>Cuando</strong> el Parking Admin inicia o cierra la sesión<br><strong>Entonces</strong> el sistema rechaza la operación y mantiene sin cambios los registros existentes</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US03</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E2</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Registrar una sesión de estacionamiento de invitado</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> registrar una sesión de estacionamiento cuando llega un invitado,<br><strong>para</strong> que SpotGo calcule su tiempo de estacionamiento mientras el pago presencial se realiza al salir.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Iniciar una sesión de invitado</strong><br><strong>Dado que</strong> llega un invitado, Parking Admin está autorizado para operar y hay un espacio disponible<br><strong>Cuando</strong> el Parking Admin selecciona el espacio, ingresa manualmente la placa e inicia la sesión<br><strong>Entonces</strong> el sistema crea una sesión activa con el espacio, la placa y la hora de ingreso; no crea una cuenta Driver ni un vehículo permanente, no crea una reserva ni procesa un pago<br><br><strong>Escenario 2: Conflicto por espacio reservado, ocupado o no disponible</strong><br><strong>Dado que</strong> el espacio solicitado tiene una reserva activa, está ocupado o figura como no disponible<br><strong>Cuando</strong> el Parking Admin intenta iniciar la sesión de invitado<br><strong>Entonces</strong> el sistema rechaza la operación y solicita seleccionar un espacio disponible<br><br><strong>Escenario 3: Cerrar la sesión y confirmar el pago presencial</strong><br><strong>Dado que</strong> existe una sesión de estacionamiento de invitado activa<br><strong>Cuando</strong> el Parking Admin registra la salida y confirma el pago presencial en efectivo o con POS<br><strong>Entonces</strong> el sistema registra la hora de salida, calcula la duración y el importe, cierra la sesión y conserva la confirmación del pago sin procesar ni almacenar datos financieros sensibles<br><br><strong>Escenario 4: Datos obligatorios en cada operación</strong><br><strong>Dado que</strong> el Parking Admin intenta iniciar la sesión sin espacio, placa u hora de ingreso, o cerrarla sin hora de salida o confirmación de pago<br><strong>Cuando</strong> el Parking Admin inicia o cierra la sesión<br><strong>Entonces</strong> el sistema rechaza la operación y mantiene sin cambios los registros existentes</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US04</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar las zonas permitidas</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> saber qué zonas de estacionamiento están permitidas para mi perfil de usuario,<br><strong>para</strong> utilizar solo las áreas asignadas a mi categoría.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Perfil con zonas permitidas</strong><br><strong>Dado que</strong> el Driver tiene un perfil activo y existen zonas asociadas<br><strong>Cuando</strong> la aplicación consulta la información del perfil<br><strong>Entonces</strong> el sistema devuelve las zonas permitidas junto con su disponibilidad actual<br><br><strong>Escenario 2: Sin zonas permitidas disponibles</strong><br><strong>Dado que</strong> el Driver no tiene ninguna zona permitida con espacios disponibles<br><strong>Cuando</strong> la aplicación consulta las zonas correspondientes<br><strong>Entonces</strong> el sistema informa que no hay disponibilidad en las zonas autorizadas y excluye las zonas no autorizadas</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US04</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E1</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Consultar las zonas permitidas</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> saber qué zonas de estacionamiento están permitidas para mi perfil de usuario,<br><strong>para</strong> utilizar solo las áreas asignadas a mi categoría.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Perfil con zonas permitidas</strong><br><strong>Dado que</strong> el Driver tiene un perfil activo y existen zonas asociadas<br><strong>Cuando</strong> la aplicación consulta la información del perfil<br><strong>Entonces</strong> el sistema devuelve las zonas permitidas junto con su disponibilidad actual<br><br><strong>Escenario 2: Sin zonas permitidas disponibles</strong><br><strong>Dado que</strong> el Driver no tiene ninguna zona permitida con espacios disponibles<br><strong>Cuando</strong> la aplicación consulta las zonas correspondientes<br><strong>Entonces</strong> el sistema informa que no hay disponibilidad en las zonas autorizadas y excluye las zonas no autorizadas</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US05</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E3 - Monitoreo de ocupación y operaciones</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Supervisar la ocupación por zona</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> supervisar el estado de ocupación de los espacios agrupados por zona,<br><strong>para</strong> controlar la operación actual del estacionamiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Datos de monitoreo actuales</strong><br><strong>Dado que</strong> los sensores transmiten el estado actual de los espacios de un estacionamiento interior o exterior<br><strong>Cuando</strong> el Parking Admin solicita los datos de monitoreo<br><strong>Entonces</strong> el sistema agrupa la información por zona y muestra el estado de ocupación (disponible, ocupado o no disponible) y, cuando corresponda, el estado de la reserva por separado<br><br><strong>Escenario 2: Cambio de ocupación dentro del tiempo máximo</strong><br><strong>Dado que</strong> un sensor instalado en un espacio detecta un cambio de ocupación<br><strong>Cuando</strong> el sistema recibe el evento del sensor<br><strong>Entonces</strong> actualiza el estado de ocupación, recalcula la disponibilidad de la zona y pone la información a disposición de la aplicación móvil en un máximo de 5 segundos<br><br><strong>Escenario 3: Sensor no disponible</strong><br><strong>Dado que</strong> un sensor deja de transmitir datos confiables<br><strong>Cuando</strong> el sistema detecta el incidente<br><strong>Entonces</strong> marca el espacio como no disponible, bloquea nuevas reservas y sesiones de invitados, evita cargos automáticos basados en lecturas no confiables, notifica a Parking Admin e inicia la revisión de las reservas afectadas</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US05</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E3</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Supervisar la ocupación por zona</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> supervisar el estado de ocupación de los espacios agrupados por zona,<br><strong>para</strong> controlar la operación actual del estacionamiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Datos de monitoreo actuales</strong><br><strong>Dado que</strong> los sensores transmiten el estado actual de los espacios de un estacionamiento interior o exterior<br><strong>Cuando</strong> el Parking Admin solicita los datos de monitoreo<br><strong>Entonces</strong> el sistema agrupa la información por zona y muestra el estado de ocupación (disponible, ocupado o no disponible) y, cuando corresponda, el estado de la reserva por separado<br><br><strong>Escenario 2: Cambio de ocupación dentro del tiempo máximo</strong><br><strong>Dado que</strong> un sensor instalado en un espacio detecta un cambio de ocupación<br><strong>Cuando</strong> el sistema recibe el evento del sensor<br><strong>Entonces</strong> actualiza el estado de ocupación, recalcula la disponibilidad de la zona y pone la información a disposición de la aplicación móvil en un máximo de 5 segundos<br><br><strong>Escenario 3: Sensor no disponible</strong><br><strong>Dado que</strong> un sensor deja de transmitir datos confiables<br><strong>Cuando</strong> el sistema detecta el incidente<br><strong>Entonces</strong> marca el espacio como no disponible, bloquea nuevas reservas y sesiones de invitados, evita cargos automáticos basados en lecturas no confiables, notifica a Parking Admin e inicia la revisión de las reservas afectadas</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US06</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E3 - Monitoreo de ocupación y operaciones</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Generar alertas operativas</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> recibir alertas sobre estacionamiento no autorizado y alta ocupación,<br><strong>para</strong> revisar incidentes y actuar antes de que afecten la operación.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Ocupación no autorizada o no validada</strong><br><strong>Dado que</strong> un espacio está ocupado y no existe una reserva o sesión de invitado activa que autorice su uso<br><strong>Cuando</strong> el sistema compara la ocupación con las autorizaciones registradas<br><strong>Entonces</strong> crea una alerta de estacionamiento no autorizado con la zona, el espacio y la hora del evento, clasifica la ocupación como no validada y no intenta identificar el vehículo mediante imágenes o la placa<br><br><strong>Escenario 2: Conflicto con una reserva</strong><br><strong>Dado que</strong> una reserva futura está asignada a un espacio que sigue ocupado por una sesión anterior<br><strong>Cuando</strong> el sistema detecta el conflicto<br><strong>Entonces</strong> busca un espacio disponible y compatible, conserva el registro del incidente y notifica a Parking Admin y a Driver cuando confirma la reasignación o una alternativa<br><br><strong>Escenario 3: Alta ocupación</strong><br><strong>Dado que</strong> la ocupación total supera el 95% de los espacios operativos disponibles<br><strong>Cuando</strong> el sistema evalúa el nivel de ocupación<br><strong>Entonces</strong> crea una alerta crítica de alta ocupación y la pone a disposición de Parking Admin<br><br><strong>Escenario 4: Resolución de una alerta</strong><br><strong>Dado que</strong> existe una alerta operativa pendiente<br><strong>Cuando</strong> el Parking Admin registra la clasificación del incidente y la acción realizada<br><strong>Entonces</strong> el sistema marca la alerta como resuelta solo cuando se completa la acción requerida y conserva su historial</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US06</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E3</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Generar alertas operativas</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> recibir alertas sobre estacionamiento no autorizado y alta ocupación,<br><strong>para</strong> revisar incidentes y actuar antes de que afecten la operación.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Ocupación no autorizada o no validada</strong><br><strong>Dado que</strong> un espacio está ocupado y no existe una reserva o sesión de invitado activa que autorice su uso<br><strong>Cuando</strong> el sistema compara la ocupación con las autorizaciones registradas<br><strong>Entonces</strong> crea una alerta de estacionamiento no autorizado con la zona, el espacio y la hora del evento, clasifica la ocupación como no validada y no intenta identificar el vehículo mediante imágenes o la placa<br><br><strong>Escenario 2: Conflicto con una reserva</strong><br><strong>Dado que</strong> una reserva futura está asignada a un espacio que sigue ocupado por una sesión anterior<br><strong>Cuando</strong> el sistema detecta el conflicto<br><strong>Entonces</strong> busca un espacio disponible y compatible, conserva el registro del incidente y notifica a Parking Admin y a Driver cuando confirma la reasignación o una alternativa<br><br><strong>Escenario 3: Alta ocupación</strong><br><strong>Dado que</strong> la ocupación total supera el 95% de los espacios operativos disponibles<br><strong>Cuando</strong> el sistema evalúa el nivel de ocupación<br><strong>Entonces</strong> crea una alerta crítica de alta ocupación y la pone a disposición de Parking Admin<br><br><strong>Escenario 4: Resolución de una alerta</strong><br><strong>Dado que</strong> existe una alerta operativa pendiente<br><strong>Cuando</strong> el Parking Admin registra la clasificación del incidente y la acción realizada<br><strong>Entonces</strong> el sistema marca la alerta como resuelta solo cuando se completa la acción requerida y conserva su historial</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US07</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E3 - Monitoreo de ocupación y operaciones</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar el panel operativo móvil</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar un resumen operativo centralizado y el mapa de ocupación en tiempo real desde la aplicación móvil,<br><strong>para</strong> revisar la ocupación, la disponibilidad y los incidentes pendientes en un solo lugar.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Resumen operativo actual</strong><br><strong>Dado que</strong> el Parking Admin tiene acceso autorizado y existen datos operativos<br><strong>Cuando</strong> el Parking Admin solicita el resumen actual<br><strong>Entonces</strong> el sistema devuelve el total de espacios, la disponibilidad por zona, las reservas activas, las sesiones de invitados abiertas, los saldos pendientes de operaciones de los conductores asociadas con el Tenant y las alertas operativas pendientes<br><br><strong>Escenario 2: Detalle de una zona</strong><br><strong>Dado que</strong> el Parking Admin solicita información de una zona específica<br><strong>Cuando</strong> el sistema procesa la solicitud<br><strong>Entonces</strong> devuelve el estado de ocupación de cada espacio, el estado de la reserva cuando corresponda, las sesiones de invitados activas y el estado de los sensores; permite filtrar por perfil de usuario o zona<br><br><strong>Escenario 3: Auditoría administrativa</strong><br><strong>Dado que</strong> el Parking Admin modifica una configuración, asignación, reserva, sesión de invitado o incidente<br><strong>Cuando</strong> el sistema confirma la operación<br><strong>Entonces</strong> registra en el historial de auditoría al usuario, la acción, la fecha, la hora y los datos anteriores y nuevos</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US07</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E3</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Consultar el panel operativo móvil</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar un resumen operativo centralizado y el mapa de ocupación en tiempo real desde la aplicación móvil,<br><strong>para</strong> revisar la ocupación, la disponibilidad y los incidentes pendientes en un solo lugar.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Resumen operativo actual</strong><br><strong>Dado que</strong> el Parking Admin tiene acceso autorizado y existen datos operativos<br><strong>Cuando</strong> el Parking Admin solicita el resumen actual<br><strong>Entonces</strong> el sistema devuelve el total de espacios, la disponibilidad por zona, las reservas activas, las sesiones de invitados abiertas, los saldos pendientes de operaciones de los conductores asociadas con el Tenant y las alertas operativas pendientes<br><br><strong>Escenario 2: Detalle de una zona</strong><br><strong>Dado que</strong> el Parking Admin solicita información de una zona específica<br><strong>Cuando</strong> el sistema procesa la solicitud<br><strong>Entonces</strong> devuelve el estado de ocupación de cada espacio, el estado de la reserva cuando corresponda, las sesiones de invitados activas y el estado de los sensores; permite filtrar por perfil de usuario o zona<br><br><strong>Escenario 3: Auditoría administrativa</strong><br><strong>Dado que</strong> el Parking Admin modifica una configuración, asignación, reserva, sesión de invitado o incidente<br><strong>Cuando</strong> el sistema confirma la operación<br><strong>Entonces</strong> registra en el historial de auditoría al usuario, la acción, la fecha, la hora y los datos anteriores y nuevos</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US08</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E3 - Monitoreo de ocupación y operaciones</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Generar reportes de ocupación</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar reportes de ocupación agrupados por periodo y zona,<br><strong>para</strong> identificar patrones de uso y respaldar decisiones operativas.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Periodo con datos históricos</strong><br><strong>Dado que</strong> existen registros del estado de ocupación, reservas, sesiones de invitados y sesiones de estacionamiento para el periodo solicitado<br><strong>Cuando</strong> el Parking Admin genera el reporte de ocupación<br><strong>Entonces</strong> el sistema agrupa los datos por zona y periodo e informa patrones de uso, sesiones de invitados completadas, reservas marcadas como inasistencia, tiempos excedidos e incidentes registrados<br><br><strong>Escenario 2: Periodo sin datos</strong><br><strong>Dado que</strong> no existen registros para el periodo solicitado<br><strong>Cuando</strong> el Parking Admin genera el reporte de ocupación<br><strong>Entonces</strong> el sistema informa que no hay datos disponibles y no infiere valores inexistentes</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US08</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E3</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Generar reportes de ocupación</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar reportes de ocupación agrupados por periodo y zona,<br><strong>para</strong> identificar patrones de uso y respaldar decisiones operativas.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Periodo con datos históricos</strong><br><strong>Dado que</strong> existen registros del estado de ocupación, reservas, sesiones de invitados y sesiones de estacionamiento para el periodo solicitado<br><strong>Cuando</strong> el Parking Admin genera el reporte de ocupación<br><strong>Entonces</strong> el sistema agrupa los datos por zona y periodo e informa patrones de uso, sesiones de invitados completadas, reservas marcadas como inasistencia, tiempos excedidos e incidentes registrados<br><br><strong>Escenario 2: Periodo sin datos</strong><br><strong>Dado que</strong> no existen registros para el periodo solicitado<br><strong>Cuando</strong> el Parking Admin genera el reporte de ocupación<br><strong>Entonces</strong> el sistema informa que no hay datos disponibles y no infiere valores inexistentes</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
-    <th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
-  </tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US09</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver, Parking Admin y SuperAdmin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Autenticarse y acceder a las funciones móviles según el rol</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver, Parking Admin o SuperAdmin,<br><strong>quiero</strong> acceder a SpotGo con mi cuenta autorizada,<br><strong>para</strong> utilizar solo las funciones correspondientes a mi rol.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Acceso válido con credenciales de SpotGo</strong><br><strong>Dado que</strong> la cuenta está activa y las credenciales son válidas<br><strong>Cuando</strong> el usuario solicita acceso a SpotGo<br><strong>Entonces</strong> el sistema autentica al usuario, crea una sesión válida y habilita las funciones asociadas con su rol<br><br><strong>Escenario 2: Acceso inválido o vencido</strong><br><strong>Dado que</strong> las credenciales son inválidas o la sesión ya no es válida<br><strong>Cuando</strong> el usuario solicita acceder a información protegida<br><strong>Entonces</strong> el sistema rechaza la solicitud y no entrega datos de ocupación, perfil o zonas restringidas<br><br><strong>Escenario 3: Acceso válido con Google</strong><br><strong>Dado que</strong> Google devuelve un token de identidad con firma, emisor, audiencia y vencimiento válidos, y la cuenta SpotGo vinculada está activa<br><strong>Cuando</strong> el usuario envía el token al servicio de gestión de identidad y acceso<br><strong>Entonces</strong> SpotGo autentica la cuenta vinculada, crea su propia sesión y habilita solo las funciones de los roles previamente autorizados<br><br><strong>Escenario 4: Acceso de Google rechazado o cancelado</strong><br><strong>Dado que</strong> se cancela el acceso de Google o el token de identidad es inválido o venció<br><strong>Cuando</strong> el usuario intenta completar la autenticación<br><strong>Entonces</strong> SpotGo no emite una sesión y permite reintentar o usar correo electrónico y contraseña<br><br><strong>Escenario 5: Restricción de roles administrativos</strong><br><strong>Dado que</strong> una identidad de Google no tiene una cuenta Parking Admin o SuperAdmin habilitada<br><strong>Cuando</strong> el usuario inicia sesión mediante el acceso público<br><strong>Entonces</strong> SpotGo no asigna un rol administrativo; solo crea una cuenta pública como Driver mediante US13</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US09</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver, Parking Admin y SuperAdmin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E5</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Autenticarse y acceder a las funciones de SpotGo según el rol</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver, Parking Admin o SuperAdmin,<br><strong>quiero</strong> acceder a SpotGo con mi cuenta autorizada,<br><strong>para</strong> utilizar solo las funciones correspondientes a mi rol.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Acceso válido con credenciales de SpotGo</strong><br><strong>Dado que</strong> la cuenta está activa y las credenciales son válidas<br><strong>Cuando</strong> el usuario solicita acceso a SpotGo<br><strong>Entonces</strong> el sistema autentica al usuario, crea una sesión válida y habilita las funciones asociadas con su rol<br><br><strong>Escenario 2: Acceso inválido o vencido</strong><br><strong>Dado que</strong> las credenciales son inválidas o la sesión ya no es válida<br><strong>Cuando</strong> el usuario solicita acceder a información protegida<br><strong>Entonces</strong> el sistema rechaza la solicitud y no entrega datos de ocupación, perfil o zonas restringidas<br><br><strong>Escenario 3: Acceso válido con Google</strong><br><strong>Dado que</strong> Google devuelve un token de identidad con firma, emisor, audiencia y vencimiento válidos, y la cuenta SpotGo vinculada está activa<br><strong>Cuando</strong> el usuario envía el token al servicio de gestión de identidad y acceso<br><strong>Entonces</strong> SpotGo autentica la cuenta vinculada, crea su propia sesión y habilita solo las funciones de los roles previamente autorizados<br><br><strong>Escenario 4: Acceso de Google rechazado o cancelado</strong><br><strong>Dado que</strong> se cancela el acceso de Google o el token de identidad es inválido o venció<br><strong>Cuando</strong> el usuario intenta completar la autenticación<br><strong>Entonces</strong> SpotGo no emite una sesión y permite reintentar o usar correo electrónico y contraseña<br><br><strong>Escenario 5: Restricción de roles administrativos</strong><br><strong>Dado que</strong> una identidad de Google no tiene una cuenta Parking Admin o SuperAdmin habilitada<br><strong>Cuando</strong> el usuario inicia sesión mediante el acceso público<br><strong>Entonces</strong> SpotGo no asigna un rol administrativo; el registro público solo crea cuentas Driver mediante US13. La aplicación Flutter de Parking Admin y la página web administrativa de SpotGo autentican cuentas provisionadas y no ofrecen registro público.</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US10</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver o Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Incorporar accesibilidad y opciones de idioma en la aplicación móvil</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Accessibility Baseline</th></tr>
-    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">La aplicación móvil expone las funciones de accesibilidad de la plataforma y se verifica con un lector de pantalla compatible y ajustes de tamaño de texto en los dispositivos admitidos.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver o Parking Admin,<br><strong>quiero</strong> que la aplicación móvil ofrezca funciones de accesibilidad y los idiomas inglés (en_US) y español latinoamericano (es_419),<br><strong>para</strong> usar SpotGo según mis necesidades y preferencia de idioma.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Selección de idioma</strong><br><strong>Dado que</strong> el usuario selecciona inglés (en_US) o español latinoamericano (es_419) como idioma de la aplicación<br><strong>Cuando</strong> la aplicación carga la información del producto<br><strong>Entonces</strong> muestra los textos y estados del dominio en el idioma seleccionado y usa inglés (en_US) como idioma predeterminado si no hay una preferencia<br><br><strong>Escenario 2: Controles y campos accesibles</strong><br><strong>Dado que</strong> el usuario abre una pantalla móvil con acciones, formularios o estados<br><strong>Cuando</strong> el usuario navega con un lector de pantalla compatible<br><strong>Entonces</strong> cada elemento interactivo comunica un nombre, rol y estado actual comprensibles, y cada error de validación se asocia con el campo correspondiente y se comunica al usuario<br><br><strong>Escenario 3: Mensajes de estado accesibles</strong><br><strong>Dado que</strong> la aplicación muestra o actualiza la disponibilidad, el estado de ocupación o de una reserva, un resultado de pago o una alerta operativa<br><strong>Cuando</strong> se presenta o cambia un estado<br><strong>Entonces</strong> la información se comunica mediante texto o un estado semántico equivalente, no depende únicamente del color y está disponible para la tecnología de asistencia<br><br><strong>Escenario 4: Orden de lectura y tamaño de texto</strong><br><strong>Dado que</strong> el usuario utiliza un lector de pantalla o aumenta el tamaño del texto del dispositivo<br><strong>Cuando</strong> navega por los flujos principales de la aplicación<br><strong>Entonces</strong> el orden de lectura es lógico, el contenido y las acciones no se recortan ni se superponen, y todas las acciones requeridas siguen disponibles<br><br><strong>Escenario 5: Verificación de accesibilidad</strong><br><strong>Dado que</strong> una versión candidata incluye los flujos principales de la aplicación<br><strong>Cuando</strong> el equipo verifica los flujos con TalkBack o VoiceOver y los ajustes de tamaño de texto configurados<br><strong>Entonces</strong> el informe compartido registra el dispositivo y sistema operativo, los flujos probados, resultados, defectos y evidencias, y no queda ningún problema crítico de accesibilidad sin resolver</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US10</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver o Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E4</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Incorporar accesibilidad y opciones de idioma en la aplicación móvil</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Accessibility Baseline</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 12px; border: 1px solid #666; text-align: left;">La aplicación móvil expone las funciones de accesibilidad de la plataforma y se verifica con un lector de pantalla compatible y ajustes de tamaño de texto en los dispositivos admitidos.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver o Parking Admin,<br><strong>quiero</strong> que la aplicación móvil ofrezca funciones de accesibilidad y los idiomas inglés (en_US) y español latinoamericano (es_419),<br><strong>para</strong> usar SpotGo según mis necesidades y preferencia de idioma.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Selección de idioma</strong><br><strong>Dado que</strong> el usuario selecciona inglés (en_US) o español latinoamericano (es_419) como idioma de la aplicación<br><strong>Cuando</strong> la aplicación carga la información del producto<br><strong>Entonces</strong> muestra los textos y estados del dominio en el idioma seleccionado y usa inglés (en_US) como idioma predeterminado si no hay una preferencia<br><br><strong>Escenario 2: Controles y campos accesibles</strong><br><strong>Dado que</strong> el usuario abre una pantalla móvil con acciones, formularios o estados<br><strong>Cuando</strong> el usuario navega con un lector de pantalla compatible<br><strong>Entonces</strong> cada elemento interactivo comunica un nombre, rol y estado actual comprensibles, y cada error de validación se asocia con el campo correspondiente y se comunica al usuario<br><br><strong>Escenario 3: Mensajes de estado accesibles</strong><br><strong>Dado que</strong> la aplicación muestra o actualiza la disponibilidad, el estado de ocupación o de una reserva, un resultado de pago o una alerta operativa<br><strong>Cuando</strong> se presenta o cambia un estado<br><strong>Entonces</strong> la información se comunica mediante texto o un estado semántico equivalente, no depende únicamente del color y está disponible para la tecnología de asistencia<br><br><strong>Escenario 4: Orden de lectura y tamaño de texto</strong><br><strong>Dado que</strong> el usuario utiliza un lector de pantalla o aumenta el tamaño del texto del dispositivo<br><strong>Cuando</strong> navega por los flujos principales de la aplicación<br><strong>Entonces</strong> el orden de lectura es lógico, el contenido y las acciones no se recortan ni se superponen, y todas las acciones requeridas siguen disponibles<br><br><strong>Escenario 5: Verificación de accesibilidad</strong><br><strong>Dado que</strong> una versión candidata incluye los flujos principales de la aplicación<br><strong>Cuando</strong> el equipo verifica los flujos con TalkBack o VoiceOver y los ajustes de tamaño de texto configurados<br><strong>Entonces</strong> el informe compartido registra el dispositivo y sistema operativo, los flujos probados, resultados, defectos y evidencias, y no queda ningún problema crítico de accesibilidad sin resolver</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US11</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Comunicar la propuesta de valor en la página de presentación</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Accessibility Baseline</th></tr>
-    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">La página de presentación busca cumplir los criterios de éxito aplicables del nivel AA de las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.2 (World Wide Web Consortium, 2024).</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> conocer el problema, la propuesta de valor y las principales funciones de SpotGo mediante una página de presentación estática,<br><strong>para</strong> evaluar el producto y acceder a la aplicación móvil.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Contenido público</strong><br><strong>Dado que</strong> el Driver accede a la página de presentación<br><strong>Cuando</strong> se carga el contenido<br><strong>Entonces</strong> la página comunica el problema, la propuesta de valor y las principales funciones de SpotGo sin exigir autenticación<br><br><strong>Escenario 2: Vista en dispositivos móviles</strong><br><strong>Dado que</strong> el Driver accede a la página desde un dispositivo móvil<br><strong>Cuando</strong> consulta la página<br><strong>Entonces</strong> el contenido sigue siendo legible, se adapta al tamaño disponible y mantiene un acceso claro a la información de la aplicación móvil<br><br><strong>Escenario 3: Navegación semántica y con teclado</strong><br><strong>Dado que</strong> el Driver navega por la página con teclado o lector de pantalla<br><strong>Cuando</strong> recorre las secciones y acciones<br><strong>Entonces</strong> la página ofrece un título descriptivo, encabezados jerárquicos, regiones identificables, una opción para saltar la navegación repetida, enlaces y botones operables con teclado, un orden lógico de tabulación y foco visible; usa roles, estados y propiedades ARIA cuando el HTML nativo no brinda la información requerida<br><br><strong>Escenario 4: Alternativas de texto y distinción visual</strong><br><strong>Dado que</strong> la página contiene imágenes, íconos, video u otra información visual<br><strong>Cuando</strong> se carga el contenido<br><strong>Entonces</strong> el contenido informativo no textual tiene una alternativa equivalente en texto, el contenido decorativo puede ignorarse con tecnología de asistencia, ningún estado depende solo del color, el texto normal alcanza una relación de contraste de al menos 4,5:1, el texto grande al menos 3:1, los componentes de interfaz y los indicadores de foco al menos 3:1, y el contenido sigue siendo utilizable con texto ampliado al 200% y en una vista móvil estrecha<br><br><strong>Escenario 5: Verificación de accesibilidad</strong><br><strong>Dado que</strong> hay una versión candidata de la página de presentación<br><strong>Cuando</strong> el equipo la verifica con navegación por teclado, lector de pantalla, herramienta automatizada de accesibilidad y vistas adaptables<br><strong>Entonces</strong> el informe compartido registra la página, vista, navegador, herramientas, resultados, defectos y evidencias, y no queda ningún problema crítico de accesibilidad sin resolver</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US11</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E4</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Comunicar la propuesta de valor en la página de presentación</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Accessibility Baseline</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 12px; border: 1px solid #666; text-align: left;">La página de presentación busca cumplir los criterios de éxito aplicables del nivel AA de las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.2 (World Wide Web Consortium, 2024).</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> conocer el problema, la propuesta de valor y las principales funciones de SpotGo mediante una página de presentación estática,<br><strong>para</strong> evaluar el producto y acceder a la aplicación móvil.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Contenido público</strong><br><strong>Dado que</strong> el Driver accede a la página de presentación<br><strong>Cuando</strong> se carga el contenido<br><strong>Entonces</strong> la página comunica el problema, la propuesta de valor y las principales funciones de SpotGo sin exigir autenticación<br><br><strong>Escenario 2: Vista en dispositivos móviles</strong><br><strong>Dado que</strong> el Driver accede a la página desde un dispositivo móvil<br><strong>Cuando</strong> consulta la página<br><strong>Entonces</strong> el contenido sigue siendo legible, se adapta al tamaño disponible y mantiene un acceso claro a la información de la aplicación móvil<br><br><strong>Escenario 3: Navegación semántica y con teclado</strong><br><strong>Dado que</strong> el Driver navega por la página con teclado o lector de pantalla<br><strong>Cuando</strong> recorre las secciones y acciones<br><strong>Entonces</strong> la página ofrece un título descriptivo, encabezados jerárquicos, regiones identificables, una opción para saltar la navegación repetida, enlaces y botones operables con teclado, un orden lógico de tabulación y foco visible; usa roles, estados y propiedades ARIA cuando el HTML nativo no brinda la información requerida<br><br><strong>Escenario 4: Alternativas de texto y distinción visual</strong><br><strong>Dado que</strong> la página contiene imágenes, íconos, video u otra información visual<br><strong>Cuando</strong> se carga el contenido<br><strong>Entonces</strong> el contenido informativo no textual tiene una alternativa equivalente en texto, el contenido decorativo puede ignorarse con tecnología de asistencia, ningún estado depende solo del color, el texto normal alcanza una relación de contraste de al menos 4,5:1, el texto grande al menos 3:1, los componentes de interfaz y los indicadores de foco al menos 3:1, y el contenido sigue siendo utilizable con texto ampliado al 200% y en una vista móvil estrecha<br><br><strong>Escenario 5: Verificación de accesibilidad</strong><br><strong>Dado que</strong> hay una versión candidata de la página de presentación<br><strong>Cuando</strong> el equipo la verifica con navegación por teclado, lector de pantalla, herramienta automatizada de accesibilidad y vistas adaptables<br><strong>Entonces</strong> el informe compartido registra la página, vista, navegador, herramientas, resultados, defectos y evidencias, y no queda ningún problema crítico de accesibilidad sin resolver</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US12</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Navegar desde la página de presentación hasta el producto móvil</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> recorrer las secciones de la página de presentación y llegar al destino del producto móvil,<br><strong>para</strong> pasar de la información del producto a la aplicación.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Navegación entre secciones</strong><br><strong>Dado que</strong> el Driver solicita una sección disponible de la página de presentación<br><strong>Cuando</strong> se procesa la navegación<br><strong>Entonces</strong> el sistema dirige al contenido correspondiente sin perder el contexto de la página<br><br><strong>Escenario 2: Destino del producto móvil</strong><br><strong>Dado que</strong> el Driver solicita acceder al producto móvil<br><strong>Cuando</strong> se procesa el enlace de acceso<br><strong>Entonces</strong> la página dirige al destino oficial de la aplicación móvil configurado para la versión vigente</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US12</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E4</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Navegar desde la página de presentación hasta el producto móvil</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> recorrer las secciones de la página de presentación y llegar al destino del producto móvil,<br><strong>para</strong> pasar de la información del producto a la aplicación.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Navegación entre secciones</strong><br><strong>Dado que</strong> el Driver solicita una sección disponible de la página de presentación<br><strong>Cuando</strong> se procesa la navegación<br><strong>Entonces</strong> el sistema dirige al contenido correspondiente sin perder el contexto de la página<br><br><strong>Escenario 2: Destino del producto móvil</strong><br><strong>Dado que</strong> el Driver solicita acceder al producto móvil<br><strong>Cuando</strong> se procesa el enlace de acceso<br><strong>Entonces</strong> la página dirige al destino oficial de la aplicación móvil configurado para la versión vigente</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US13</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Registrar una cuenta Driver</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> crear una cuenta en la aplicación móvil de SpotGo,<br><strong>para</strong> utilizar los servicios de estacionamiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto con credenciales de SpotGo</strong><br><strong>Dado que</strong> el Driver proporciona los datos requeridos (nombre, correo electrónico y contraseña) y un correo que no está registrado<br><strong>Cuando</strong> el Driver envía la solicitud de registro<br><strong>Entonces</strong> el sistema crea una cuenta activa y asigna por defecto el perfil de usuario Driver<br><br><strong>Escenario 2: Correo existente o datos inválidos</strong><br><strong>Dado que</strong> el correo ya está registrado o falta un dato obligatorio<br><strong>Cuando</strong> el Driver envía la solicitud de registro<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y no crea una cuenta duplicada<br><br><strong>Escenario 3: Primer acceso con Google</strong><br><strong>Dado que</strong> el Driver completa la autenticación de Google, el backend valida el token de identidad, están disponibles los datos de perfil requeridos y no existe una cuenta SpotGo vinculada<br><strong>Cuando</strong> el Driver confirma el registro público<br><strong>Entonces</strong> SpotGo crea una cuenta activa y un perfil Driver, asocia el identificador de Google validado y no solicita ni almacena la contraseña de Google<br><br><strong>Escenario 4: Vincular una identidad con una cuenta existente</strong><br><strong>Dado que</strong> existe una cuenta SpotGo con el mismo correo, pero sin una asociación de Google validada<br><strong>Cuando</strong> el usuario intenta asociar su identidad de Google<br><strong>Entonces</strong> SpotGo exige verificar de forma autorizada la cuenta existente antes de vincularla, conserva su identidad y roles, no crea una cuenta duplicada ni asigna automáticamente un rol administrativo</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US13</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E1</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Registrar una cuenta Driver</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> crear una cuenta en la aplicación móvil de SpotGo,<br><strong>para</strong> utilizar los servicios de estacionamiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto con credenciales de SpotGo</strong><br><strong>Dado que</strong> el Driver proporciona los datos requeridos (nombre, correo electrónico y contraseña) y un correo que no está registrado<br><strong>Cuando</strong> el Driver envía la solicitud de registro<br><strong>Entonces</strong> el sistema crea una cuenta activa y asigna por defecto el perfil de usuario Driver<br><br><strong>Escenario 2: Correo existente o datos inválidos</strong><br><strong>Dado que</strong> el correo ya está registrado o falta un dato obligatorio<br><strong>Cuando</strong> el Driver envía la solicitud de registro<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y no crea una cuenta duplicada<br><br><strong>Escenario 3: Primer acceso con Google</strong><br><strong>Dado que</strong> el Driver completa la autenticación de Google, el backend valida el token de identidad, están disponibles los datos de perfil requeridos y no existe una cuenta SpotGo vinculada<br><strong>Cuando</strong> el Driver confirma el registro público<br><strong>Entonces</strong> SpotGo crea una cuenta activa y un perfil Driver, asocia el identificador de Google validado y no solicita ni almacena la contraseña de Google<br><br><strong>Escenario 4: Vincular una identidad con una cuenta existente</strong><br><strong>Dado que</strong> existe una cuenta SpotGo con el mismo correo, pero sin una asociación de Google validada<br><strong>Cuando</strong> el usuario intenta asociar su identidad de Google<br><strong>Entonces</strong> SpotGo exige verificar de forma autorizada la cuenta existente antes de vincularla, conserva su identidad y roles, no crea una cuenta duplicada ni asigna automáticamente un rol administrativo</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US14</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">SuperAdmin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Registrar un cliente B2B y su cuenta Parking Admin</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> SuperAdmin,<br><strong>quiero</strong> registrar un estacionamiento como cliente B2B y habilitar su cuenta Parking Admin inicial,<br><strong>para</strong> que Parking Admin configure y opere SpotGo en ese establecimiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto del cliente y habilitación de Parking Admin</strong><br><strong>Dado que</strong> el SuperAdmin proporciona los datos requeridos de un estacionamiento aún no registrado y de la cuenta Parking Admin inicial<br><strong>Cuando</strong> el SuperAdmin confirma el registro del cliente<br><strong>Entonces</strong> el sistema crea el cliente, habilita la cuenta inicial con el rol Parking Admin, la asocia con el cliente y envía una invitación de acceso<br><br><strong>Escenario 2: Falta información obligatoria</strong><br><strong>Dado que</strong> falta el nombre del estacionamiento, los datos de Parking Admin u otro campo obligatorio<br><strong>Cuando</strong> el SuperAdmin intenta confirmar el registro<br><strong>Entonces</strong> el sistema rechaza la operación y no crea el cliente ni la cuenta Parking Admin incompletos<br><br><strong>Escenario 3: Restricción del autorregistro de Parking Admin</strong><br><strong>Dado que</strong> una persona intenta crear una cuenta Parking Admin desde la aplicación móvil sin invitación de SuperAdmin<br><strong>Cuando</strong> envía la solicitud de registro<br><strong>Entonces</strong> el sistema la rechaza porque las cuentas Parking Admin son habilitadas internamente por SuperAdmin</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US14</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">SuperAdmin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E2</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Registrar un cliente B2B y su cuenta Parking Admin</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> SuperAdmin,<br><strong>quiero</strong> registrar un estacionamiento como cliente B2B y habilitar su cuenta Parking Admin inicial,<br><strong>para</strong> que Parking Admin configure y opere SpotGo en ese establecimiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto del cliente y habilitación de Parking Admin</strong><br><strong>Dado que</strong> el SuperAdmin proporciona los datos requeridos de un estacionamiento aún no registrado y de la cuenta Parking Admin inicial<br><strong>Cuando</strong> el SuperAdmin confirma el registro del cliente<br><strong>Entonces</strong> el sistema crea el cliente, habilita la cuenta inicial con el rol Parking Admin, la asocia con el cliente y envía una invitación de acceso<br><br><strong>Escenario 2: Falta información obligatoria</strong><br><strong>Dado que</strong> falta el nombre del estacionamiento, los datos de Parking Admin u otro campo obligatorio<br><strong>Cuando</strong> el SuperAdmin intenta confirmar el registro<br><strong>Entonces</strong> el sistema rechaza la operación y no crea el cliente ni la cuenta Parking Admin incompletos<br><br><strong>Escenario 3: Restricción del autorregistro de Parking Admin</strong><br><strong>Dado que</strong> una persona intenta crear una cuenta Parking Admin desde la aplicación móvil sin invitación de SuperAdmin<br><strong>Cuando</strong> envía la solicitud de registro<br><strong>Entonces</strong> el sistema la rechaza porque las cuentas Parking Admin son habilitadas internamente por SuperAdmin</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US15</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">SuperAdmin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Habilitar una cuenta Parking Admin</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> SuperAdmin,<br><strong>quiero</strong> habilitar una cuenta Parking Admin y asociarla con un cliente,<br><strong>para</strong> que Parking Admin utilice las vistas administrativas y funciones operativas del estacionamiento asignado.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Habilitación correcta de Parking Admin</strong><br><strong>Dado que</strong> el SuperAdmin está autenticado, el cliente está activo y los datos de Parking Admin son válidos y no están registrados<br><strong>Cuando</strong> el SuperAdmin habilita la cuenta<br><strong>Entonces</strong> el sistema crea una cuenta con el rol Parking Admin, crea un perfil de usuario independiente para Parking Admin, lo asocia con el cliente y envía una invitación de acceso<br><br><strong>Escenario 2: Habilitación inválida o duplicada</strong><br><strong>Dado que</strong> los datos de Parking Admin están incompletos, el cliente está inactivo o ya existe una cuenta con la misma identidad<br><strong>Cuando</strong> el SuperAdmin envía la solicitud<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y no crea una asignación duplicada de Parking Admin<br><br><strong>Escenario 3: Restricción del registro público</strong><br><strong>Dado que</strong> una persona intenta seleccionar o crear el rol Parking Admin mediante el flujo público de registro Driver<br><strong>Cuando</strong> envía la solicitud de registro<br><strong>Entonces</strong> el sistema rechaza la solicitud de rol porque el registro público solo crea cuentas Driver</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US15</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">SuperAdmin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E2</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Habilitar una cuenta Parking Admin</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> SuperAdmin,<br><strong>quiero</strong> habilitar una cuenta Parking Admin y asociarla con un cliente,<br><strong>para</strong> que Parking Admin utilice las vistas administrativas y funciones operativas del estacionamiento asignado.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Habilitación correcta de Parking Admin</strong><br><strong>Dado que</strong> el SuperAdmin está autenticado, el cliente está activo y los datos de Parking Admin son válidos y no están registrados<br><strong>Cuando</strong> el SuperAdmin habilita la cuenta<br><strong>Entonces</strong> el sistema crea una cuenta con el rol Parking Admin, crea un perfil de usuario independiente para Parking Admin, lo asocia con el cliente y envía una invitación de acceso<br><br><strong>Escenario 2: Habilitación inválida o duplicada</strong><br><strong>Dado que</strong> los datos de Parking Admin están incompletos, el cliente está inactivo o ya existe una cuenta con la misma identidad<br><strong>Cuando</strong> el SuperAdmin envía la solicitud<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y no crea una asignación duplicada de Parking Admin<br><br><strong>Escenario 3: Restricción del registro público</strong><br><strong>Dado que</strong> una persona intenta seleccionar o crear el rol Parking Admin mediante el flujo público de registro Driver<br><strong>Cuando</strong> envía la solicitud de registro<br><strong>Entonces</strong> el sistema rechaza la solicitud de rol porque el registro público solo crea cuentas Driver</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US16</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Cargar el plano del estacionamiento</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> cargar el plano del estacionamiento,<br><strong>para</strong> que sea la fuente oficial para generar el mapa digital del estacionamiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Plano válido</strong><br><strong>Dado que</strong> el Parking Admin selecciona un archivo de imagen PNG o JPG válido que representa la distribución del establecimiento<br><strong>Cuando</strong> el Parking Admin lo envía para configurar el estacionamiento<br><strong>Entonces</strong> el sistema acepta el archivo, lo establece como plano oficial y lo pone a disposición del proceso de generación del mapa<br><br><strong>Escenario 2: Formato inválido</strong><br><strong>Dado que</strong> el archivo seleccionado es un PDF, un documento de texto u otro formato no admitido<br><strong>Cuando</strong> el Parking Admin intenta enviarlo<br><strong>Entonces</strong> el sistema rechaza el archivo e informa que el formato no es válido<br><br><strong>Escenario 3: Reemplazo del plano</strong><br><strong>Dado que</strong> ya existe un plano oficial<br><strong>Cuando</strong> el Parking Admin carga un plano nuevo y válido<br><strong>Entonces</strong> el sistema conserva la versión anterior para auditoría y utiliza el nuevo plano como fuente de las siguientes configuraciones del mapa</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US16</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E2</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Cargar el plano del estacionamiento</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> cargar el plano del estacionamiento,<br><strong>para</strong> que sea la fuente oficial para generar el mapa digital del estacionamiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Plano válido</strong><br><strong>Dado que</strong> el Parking Admin selecciona un archivo de imagen PNG o JPG válido que representa la distribución del establecimiento<br><strong>Cuando</strong> el Parking Admin lo envía para configurar el estacionamiento<br><strong>Entonces</strong> el sistema acepta el archivo, lo establece como plano oficial y lo pone a disposición del proceso de generación del mapa<br><br><strong>Escenario 2: Formato inválido</strong><br><strong>Dado que</strong> el archivo seleccionado es un PDF, un documento de texto u otro formato no admitido<br><strong>Cuando</strong> el Parking Admin intenta enviarlo<br><strong>Entonces</strong> el sistema rechaza el archivo e informa que el formato no es válido<br><br><strong>Escenario 3: Reemplazo del plano</strong><br><strong>Dado que</strong> ya existe un plano oficial<br><strong>Cuando</strong> el Parking Admin carga un plano nuevo y válido<br><strong>Entonces</strong> el sistema conserva la versión anterior para auditoría y utiliza el nuevo plano como fuente de las siguientes configuraciones del mapa</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US17</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E2 - Organización del estacionamiento y perfiles</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Generar el mapa digital del estacionamiento</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> que el sistema procese el plano oficial,<br><strong>para</strong> iniciar el mapa digital, los espacios y las zonas de acuerdo con la distribución del establecimiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Generar el mapa a partir del plano</strong><br><strong>Dado que</strong> existe un plano oficial y Parking Admin definió los elementos de infraestructura que representa<br><strong>Cuando</strong> el Parking Admin inicia la generación<br><strong>Entonces</strong> el sistema crea el mapa digital a partir del plano, registra los espacios y las zonas definidos e inicializa cada espacio como no disponible hasta recibir datos operativos confiables<br><br><strong>Escenario 2: Plano poco claro o insuficiente</strong><br><strong>Dado que</strong> la información del plano no basta para configurar los elementos del estacionamiento<br><strong>Cuando</strong> el Parking Admin inicia la generación<br><strong>Entonces</strong> el sistema no publica un mapa incompleto, informa la limitación y permite continuar con una configuración manual basada en el mismo plano</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US17</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E2</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Generar el mapa digital del estacionamiento</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> que el sistema procese el plano oficial,<br><strong>para</strong> iniciar el mapa digital, los espacios y las zonas de acuerdo con la distribución del establecimiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Generar el mapa a partir del plano</strong><br><strong>Dado que</strong> existe un plano oficial y Parking Admin definió los elementos de infraestructura que representa<br><strong>Cuando</strong> el Parking Admin inicia la generación<br><strong>Entonces</strong> el sistema crea el mapa digital a partir del plano, registra los espacios y las zonas definidos e inicializa cada espacio como no disponible hasta recibir datos operativos confiables<br><br><strong>Escenario 2: Plano poco claro o insuficiente</strong><br><strong>Dado que</strong> la información del plano no basta para configurar los elementos del estacionamiento<br><strong>Cuando</strong> el Parking Admin inicia la generación<br><strong>Entonces</strong> el sistema no publica un mapa incompleto, informa la limitación y permite continuar con una configuración manual basada en el mismo plano</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US18</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Gestionar reservas y comprobantes virtuales</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> reservar un espacio en una zona permitida y gestionar la reserva durante su ciclo de vida,<br><strong>para</strong> usar el espacio asignado con mi vehículo registrado y recibir información actualizada de la operación.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Reserva correcta</strong><br><strong>Dado que</strong> el Driver tiene un vehículo registrado y un medio de pago válido, existe una zona permitida y contiene un espacio disponible con sensor operativo<br><strong>Cuando</strong> el Driver selecciona el vehículo, la zona y el espacio, indica una fecha, hora de inicio y duración válidas, y envía la solicitud de pago digital<br><strong>Entonces</strong> el sistema crea un bloqueo temporal y una transacción pendiente; cuando el servicio interno de pagos confirma la aprobación, confirma la transacción, crea la reserva con estado Reservada, bloquea el espacio para otros Driver y genera un comprobante virtual con la zona, el espacio, el vehículo y el periodo de vigencia<br><br><strong>Escenario 2: Vehículo obligatorio</strong><br><strong>Dado que</strong> el Driver no tiene un vehículo registrado en su cuenta<br><strong>Cuando</strong> el Driver intenta iniciar una reserva<br><strong>Entonces</strong> el sistema no le permite continuar y solicita registrar un vehículo antes de seleccionar un espacio<br><br><strong>Escenario 3: El espacio ya no está disponible</strong><br><strong>Dado que</strong> el espacio seleccionado dejó de estar disponible o fue reservado por otro Driver antes de que se confirmara la reserva<br><strong>Cuando</strong> el Driver intenta completar la operación<br><strong>Entonces</strong> el sistema libera cualquier bloqueo temporal, no crea una reserva para ese espacio e informa que debe seleccionar otra alternativa<br><br><strong>Escenario 4: Pago rechazado</strong><br><strong>Dado que</strong> el servicio interno de pagos envía una notificación de rechazo del pago digital de la reserva<br><strong>Cuando</strong> el sistema procesa la notificación<br><strong>Entonces</strong> libera el bloqueo temporal, no confirma la reserva ni genera el comprobante virtual<br><br><strong>Escenario 5: Inasistencia y reembolso</strong><br><strong>Dado que</strong> una reserva pagada tiene un sensor operativo y el sensor no registra ocupación durante todo el periodo reservado<br><strong>Cuando</strong> finaliza el periodo reservado<br><strong>Entonces</strong> el sistema marca la reserva como inasistencia, libera el espacio y reembolsa el importe pagado<br><br><strong>Escenario 6: Llegada tardía dentro del periodo reservado</strong><br><strong>Dado que</strong> una reserva tiene estado Reservada y Driver llega después de la hora de inicio, pero antes de la hora de fin<br><strong>Cuando</strong> el Driver confirma su llegada o Parking Admin confirma que la ocupación corresponde a la reserva<br><strong>Entonces</strong> el sistema cambia la reserva a Activa, registra la sesión de estacionamiento vinculada con la reserva y el espacio asignado, y conserva la hora de fin y el importe originales; la lectura del sensor por sí sola no identifica el vehículo ni inicia la sesión<br><br><strong>Escenario 7: Cancelación antes del inicio</strong><br><strong>Dado que</strong> una reserva pagada aún no ha comenzado<br><strong>Cuando</strong> el Driver solicita cancelarla<br><strong>Entonces</strong> el sistema cambia el estado de la reserva a Cancelada, libera el espacio y reembolsa el importe pagado<br><br><strong>Escenario 8: Modificar o ampliar una reserva</strong><br><strong>Dado que</strong> el Driver solicita cambiar el horario, el espacio o la duración de una reserva<br><strong>Cuando</strong> la nueva asignación es válida, compatible con el perfil de usuario y no afecta reservas posteriores<br><strong>Entonces</strong> el sistema actualiza la reserva, recalcula cualquier diferencia de precio y genera un comprobante virtual actualizado antes de confirmar el cambio<br><br><strong>Escenario 9: Reasignar una reserva</strong><br><strong>Dado que</strong> una reserva está asignada a un espacio ocupado antes de su inicio o por una sesión de estacionamiento que excedió el tiempo reservado<br><strong>Cuando</strong> el sistema confirma una alternativa disponible y compatible<br><strong>Entonces</strong> actualiza la reserva, el comprobante virtual y la zona de destino que Driver puede abrir en Google Maps, y notifica a Driver<br><br><strong>Escenario 10: No hay una alternativa compatible</strong><br><strong>Dado que</strong> se debe reasignar una reserva y no hay otro espacio compatible disponible<br><strong>Cuando</strong> el sistema procesa el conflicto<br><strong>Entonces</strong> ofrece estacionamientos alternativos o cancela la reserva con un reembolso completo<br><br><strong>Escenario 11: Salida anticipada</strong><br><strong>Dado que</strong> una sesión de estacionamiento activa está vinculada con una reserva y termina antes de la hora de fin<br><strong>Cuando</strong> el sensor registra el espacio asignado como disponible<br><strong>Entonces</strong> el sistema mantiene protegido el espacio hasta la hora de fin, no emite un reembolso y no permite que otro Driver lo reserve durante el periodo activo<br><br><strong>Escenario 12: Un espacio activo por vehículo</strong><br><strong>Dado que</strong> el vehículo ya tiene asignado un espacio activo o una reserva<br><strong>Cuando</strong> el Driver intenta obtener una segunda asignación<br><strong>Entonces</strong> el sistema rechaza la nueva asignación y mantiene como máximo un espacio activo para ese vehículo</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US18</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E1</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Gestionar reservas y comprobantes virtuales</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> reservar un espacio en una zona permitida y gestionar la reserva durante su ciclo de vida,<br><strong>para</strong> usar el espacio asignado con mi vehículo registrado y recibir información actualizada de la operación.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Reserva correcta</strong><br><strong>Dado que</strong> el Driver tiene un vehículo registrado y un medio de pago válido, existe una zona permitida y contiene un espacio disponible con sensor operativo<br><strong>Cuando</strong> el Driver selecciona el vehículo, la zona y el espacio, indica una fecha, hora de inicio y duración válidas, y envía la solicitud de pago digital<br><strong>Entonces</strong> el sistema crea un bloqueo temporal y una transacción pendiente; cuando el servicio interno de pagos confirma la aprobación, confirma la transacción, crea la reserva con estado Reservada, bloquea el espacio para otros Driver y genera un comprobante virtual con la zona, el espacio, el vehículo y el periodo de vigencia<br><br><strong>Escenario 2: Vehículo obligatorio</strong><br><strong>Dado que</strong> el Driver no tiene un vehículo registrado en su cuenta<br><strong>Cuando</strong> el Driver intenta iniciar una reserva<br><strong>Entonces</strong> el sistema no le permite continuar y solicita registrar un vehículo antes de seleccionar un espacio<br><br><strong>Escenario 3: El espacio ya no está disponible</strong><br><strong>Dado que</strong> el espacio seleccionado dejó de estar disponible o fue reservado por otro Driver antes de que se confirmara la reserva<br><strong>Cuando</strong> el Driver intenta completar la operación<br><strong>Entonces</strong> el sistema libera cualquier bloqueo temporal, no crea una reserva para ese espacio e informa que debe seleccionar otra alternativa<br><br><strong>Escenario 4: Pago rechazado</strong><br><strong>Dado que</strong> el servicio interno de pagos envía una notificación de rechazo del pago digital de la reserva<br><strong>Cuando</strong> el sistema procesa la notificación<br><strong>Entonces</strong> libera el bloqueo temporal, no confirma la reserva ni genera el comprobante virtual<br><br><strong>Escenario 5: Inasistencia y reembolso</strong><br><strong>Dado que</strong> una reserva pagada tiene un sensor operativo y el sensor no registra ocupación durante todo el periodo reservado<br><strong>Cuando</strong> finaliza el periodo reservado<br><strong>Entonces</strong> el sistema marca la reserva como inasistencia, libera el espacio y reembolsa el importe pagado<br><br><strong>Escenario 6: Llegada tardía dentro del periodo reservado</strong><br><strong>Dado que</strong> una reserva tiene estado Reservada y Driver llega después de la hora de inicio, pero antes de la hora de fin<br><strong>Cuando</strong> el Driver confirma su llegada o Parking Admin confirma que la ocupación corresponde a la reserva<br><strong>Entonces</strong> el sistema cambia la reserva a Activa, registra la sesión de estacionamiento vinculada con la reserva y el espacio asignado, y conserva la hora de fin y el importe originales; la lectura del sensor por sí sola no identifica el vehículo ni inicia la sesión<br><br><strong>Escenario 7: Cancelación antes del inicio</strong><br><strong>Dado que</strong> una reserva pagada aún no ha comenzado<br><strong>Cuando</strong> el Driver solicita cancelarla<br><strong>Entonces</strong> el sistema cambia el estado de la reserva a Cancelada, libera el espacio y reembolsa el importe pagado<br><br><strong>Escenario 8: Modificar o ampliar una reserva</strong><br><strong>Dado que</strong> el Driver solicita cambiar el horario, el espacio o la duración de una reserva<br><strong>Cuando</strong> la nueva asignación es válida, compatible con el perfil de usuario y no afecta reservas posteriores<br><strong>Entonces</strong> el sistema actualiza la reserva, recalcula cualquier diferencia de precio y genera un comprobante virtual actualizado antes de confirmar el cambio<br><br><strong>Escenario 9: Reasignar una reserva</strong><br><strong>Dado que</strong> una reserva está asignada a un espacio ocupado antes de su inicio o por una sesión de estacionamiento que excedió el tiempo reservado<br><strong>Cuando</strong> el sistema confirma una alternativa disponible y compatible<br><strong>Entonces</strong> actualiza la reserva, el comprobante virtual y la zona de destino que Driver puede abrir en Google Maps, y notifica a Driver<br><br><strong>Escenario 10: No hay una alternativa compatible</strong><br><strong>Dado que</strong> se debe reasignar una reserva y no hay otro espacio compatible disponible<br><strong>Cuando</strong> el sistema procesa el conflicto<br><strong>Entonces</strong> ofrece estacionamientos alternativos o cancela la reserva con un reembolso completo<br><br><strong>Escenario 11: Salida anticipada</strong><br><strong>Dado que</strong> una sesión de estacionamiento activa está vinculada con una reserva y termina antes de la hora de fin<br><strong>Cuando</strong> el sensor registra el espacio asignado como disponible<br><strong>Entonces</strong> el sistema mantiene protegido el espacio hasta la hora de fin, no emite un reembolso y no permite que otro Driver lo reserve durante el periodo activo<br><br><strong>Escenario 12: Un espacio activo por vehículo</strong><br><strong>Dado que</strong> el vehículo ya tiene asignado un espacio activo o una reserva<br><strong>Cuando</strong> el Driver intenta obtener una segunda asignación<br><strong>Entonces</strong> el sistema rechaza la nueva asignación y mantiene como máximo un espacio activo para ese vehículo</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US19</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Procesar pagos de reservas y cargos adicionales</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> pagar mi reserva y el tiempo adicional de estacionamiento con un medio de pago guardado,<br><strong>para</strong> confirmar mi espacio y pagar la duración real de mi sesión de estacionamiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Medio de pago guardado</strong><br><strong>Dado que</strong> el Driver agrega y autoriza un medio de pago mediante el servicio interno de pagos<br><strong>Cuando</strong> el servicio interno confirma la autorización<br><strong>Entonces</strong> el sistema guarda el token de pago asociado con el perfil de Driver, no almacena todos los datos del medio de pago y lo deja disponible para futuras operaciones<br><br><strong>Escenario 2: Pago correcto de una reserva</strong><br><strong>Dado que</strong> el Driver tiene una solicitud válida para un espacio seleccionado y un token de pago autorizado<br><strong>Cuando</strong> el servicio interno envía una notificación de aprobación del pago digital<br><strong>Entonces</strong> el sistema registra la transacción como aprobada, confirma la reserva, notifica el resultado a Driver y permite generar el comprobante virtual<br><br><strong>Escenario 3: Pago de reserva rechazado</strong><br><strong>Dado que</strong> el servicio interno envía una notificación de rechazo del pago digital de la reserva<br><strong>Cuando</strong> el sistema procesa la notificación<br><strong>Entonces</strong> registra el pago como fallido, informa a Driver, libera el bloqueo temporal y no confirma la reserva ni el espacio seleccionado<br><br><strong>Escenario 4: Tiempo adicional después de la tolerancia</strong><br><strong>Dado que</strong> una sesión de estacionamiento sigue ocupando el espacio después de la hora de fin de la reserva y del periodo de tolerancia de 5 minutos<br><strong>Cuando</strong> el sistema calcula el tiempo adicional<br><strong>Entonces</strong> marca la reserva como tiempo excedido, genera un cargo adicional según la fracción configurada por el estacionamiento y aplica el descuento fijo de la suscripción activa de Driver<br><br><strong>Escenario 5: Cargo adicional aprobado</strong><br><strong>Dado que</strong> se calculó un cargo adicional y el token de pago está autorizado<br><strong>Cuando</strong> el servicio interno confirma la transacción<br><strong>Entonces</strong> registra el cargo como aprobado, actualiza el historial de pagos, notifica el resultado a Driver y genera el comprobante aplicable según los datos tributarios disponibles: comprobante virtual, boleta electrónica o factura electrónica<br><br><strong>Escenario 6: Cargo adicional fallido</strong><br><strong>Dado que</strong> el servicio interno no puede completar el cargo adicional con el token de pago<br><strong>Cuando</strong> el sistema recibe el resultado fallido<br><strong>Entonces</strong> registra un saldo pendiente, notifica a Driver, permite reintentar con el mismo medio u otro y bloquea nuevas reservas hasta regularizar el saldo</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US19</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E6</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Procesar pagos de reservas y cargos adicionales</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> pagar mi reserva y el tiempo adicional de estacionamiento con un medio de pago guardado,<br><strong>para</strong> confirmar mi espacio y pagar la duración real de mi sesión de estacionamiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Medio de pago guardado</strong><br><strong>Dado que</strong> el Driver agrega y autoriza un medio de pago mediante el servicio interno de pagos<br><strong>Cuando</strong> el servicio interno confirma la autorización<br><strong>Entonces</strong> el sistema guarda el token de pago asociado con el perfil de Driver, no almacena todos los datos del medio de pago y lo deja disponible para futuras operaciones<br><br><strong>Escenario 2: Pago correcto de una reserva</strong><br><strong>Dado que</strong> el Driver tiene una solicitud válida para un espacio seleccionado y un token de pago autorizado<br><strong>Cuando</strong> el servicio interno envía una notificación de aprobación del pago digital<br><strong>Entonces</strong> el sistema registra la transacción como aprobada, confirma la reserva, notifica el resultado a Driver y permite generar el comprobante virtual<br><br><strong>Escenario 3: Pago de reserva rechazado</strong><br><strong>Dado que</strong> el servicio interno envía una notificación de rechazo del pago digital de la reserva<br><strong>Cuando</strong> el sistema procesa la notificación<br><strong>Entonces</strong> registra el pago como fallido, informa a Driver, libera el bloqueo temporal y no confirma la reserva ni el espacio seleccionado<br><br><strong>Escenario 4: Tiempo adicional después de la tolerancia</strong><br><strong>Dado que</strong> una sesión de estacionamiento sigue ocupando el espacio después de la hora de fin de la reserva y del periodo de tolerancia de 5 minutos<br><strong>Cuando</strong> el sistema calcula el tiempo adicional<br><strong>Entonces</strong> marca la reserva como tiempo excedido, genera un cargo adicional según la fracción configurada por el estacionamiento y aplica el descuento fijo de la suscripción activa de Driver<br><br><strong>Escenario 5: Cargo adicional aprobado</strong><br><strong>Dado que</strong> se calculó un cargo adicional y el token de pago está autorizado<br><strong>Cuando</strong> el servicio interno confirma la transacción<br><strong>Entonces</strong> registra el cargo como aprobado, actualiza el historial de pagos, notifica el resultado a Driver y genera el comprobante aplicable según los datos tributarios disponibles: comprobante virtual, boleta electrónica o factura electrónica<br><br><strong>Escenario 6: Cargo adicional fallido</strong><br><strong>Dado que</strong> el servicio interno no puede completar el cargo adicional con el token de pago<br><strong>Cuando</strong> el sistema recibe el resultado fallido<br><strong>Entonces</strong> registra un saldo pendiente, notifica a Driver, permite reintentar con el mismo medio u otro y bloquea nuevas reservas hasta regularizar el saldo</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US20</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Gestionar planes de suscripción</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar, seleccionar y gestionar los planes de suscripción Free, Plus Monthly y Plus Annual,<br><strong>para</strong> obtener los beneficios que se ajustan a mi uso de estacionamientos.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Plan Free</strong><br><strong>Dado que</strong> el Driver selecciona el plan Free<br><strong>Cuando</strong> el sistema activa el plan<br><strong>Entonces</strong> permite consultar disponibilidad, buscar estacionamientos y reservar espacios a la tarifa regular, aplica un descuento de 0% por operación y no habilita zonas especiales<br><br><strong>Escenario 2: Plan Plus Monthly</strong><br><strong>Dado que</strong> el Driver selecciona Plus Monthly y se aprueba el pago digital<br><strong>Cuando</strong> el sistema confirma la compra<br><strong>Entonces</strong> activa la suscripción por 30 días, da prioridad a las reservas de Driver, habilita el acceso a zonas especiales y aplica un descuento fijo del 10% a las reservas y a los cargos por fracción u hora<br><br><strong>Escenario 3: Plan Plus Annual</strong><br><strong>Dado que</strong> el Driver selecciona Plus Annual y se aprueba el pago digital<br><strong>Cuando</strong> el sistema confirma la compra<br><strong>Entonces</strong> activa la suscripción por 12 meses, conserva los beneficios de Plus Monthly, habilita el acceso a zonas especiales y aplica un descuento fijo del 15% a las reservas y a los cargos por fracción u hora<br><br><strong>Escenario 4: Descuento de suscripción por tiempo excedido</strong><br><strong>Dado que</strong> el Driver tiene una suscripción activa y genera un cargo por exceder el tiempo<br><strong>Cuando</strong> el sistema calcula el importe adicional<br><strong>Entonces</strong> aplica 0%, 10% o 15% según el plan activo antes de procesar el cargo, sin aplicar otro descuento a la misma operación<br><br><strong>Escenario 5: Cambiar o cancelar un plan</strong><br><strong>Dado que</strong> el Driver tiene un plan activo<br><strong>Cuando</strong> el Driver solicita cambiarlo, mejorarlo o cancelar su renovación<br><strong>Entonces</strong> el sistema aplica el cambio o la mejora según las condiciones validadas de pago y disponibilidad; si Driver cancela la renovación, conserva los beneficios hasta la fecha correspondiente y no genera un nuevo cargo por la renovación cancelada</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US20</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E6</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Gestionar planes de suscripción</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar, seleccionar y gestionar los planes de suscripción Free, Plus Monthly y Plus Annual,<br><strong>para</strong> obtener los beneficios que se ajustan a mi uso de estacionamientos.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Plan Free</strong><br><strong>Dado que</strong> el Driver selecciona el plan Free<br><strong>Cuando</strong> el sistema activa el plan<br><strong>Entonces</strong> permite consultar disponibilidad, buscar estacionamientos y reservar espacios a la tarifa regular, aplica un descuento de 0% por operación y no habilita zonas especiales<br><br><strong>Escenario 2: Plan Plus Monthly</strong><br><strong>Dado que</strong> el Driver selecciona Plus Monthly y se aprueba el pago digital<br><strong>Cuando</strong> el sistema confirma la compra<br><strong>Entonces</strong> activa la suscripción por 30 días, da prioridad a las reservas de Driver, habilita el acceso a zonas especiales y aplica un descuento fijo del 10% a las reservas y a los cargos por fracción u hora<br><br><strong>Escenario 3: Plan Plus Annual</strong><br><strong>Dado que</strong> el Driver selecciona Plus Annual y se aprueba el pago digital<br><strong>Cuando</strong> el sistema confirma la compra<br><strong>Entonces</strong> activa la suscripción por 12 meses, conserva los beneficios de Plus Monthly, habilita el acceso a zonas especiales y aplica un descuento fijo del 15% a las reservas y a los cargos por fracción u hora<br><br><strong>Escenario 4: Descuento de suscripción por tiempo excedido</strong><br><strong>Dado que</strong> el Driver tiene una suscripción activa y genera un cargo por exceder el tiempo<br><strong>Cuando</strong> el sistema calcula el importe adicional<br><strong>Entonces</strong> aplica 0%, 10% o 15% según el plan activo antes de procesar el cargo, sin aplicar otro descuento a la misma operación<br><br><strong>Escenario 5: Cambiar o cancelar un plan</strong><br><strong>Dado que</strong> el Driver tiene un plan activo<br><strong>Cuando</strong> el Driver solicita cambiarlo, mejorarlo o cancelar su renovación<br><strong>Entonces</strong> el sistema aplica el cambio o la mejora según las condiciones validadas de pago y disponibilidad; si Driver cancela la renovación, conserva los beneficios hasta la fecha correspondiente y no genera un nuevo cargo por la renovación cancelada</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US21</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar comprobantes y facturas</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar mi historial de pagos y obtener mis comprobantes virtuales, boletas electrónicas y facturas electrónicas,<br><strong>para</strong> hacer seguimiento a mis operaciones de estacionamiento y gastos.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Descargar un comprobante o una factura</strong><br><strong>Dado que</strong> el historial de Driver contiene una reserva, una sesión de estacionamiento vinculada con una reserva, una suscripción o un cargo adicional<br><strong>Cuando</strong> el Driver solicita el documento<br><strong>Entonces</strong> el sistema permite consultar los datos de la operación y descargar una copia PDF del comprobante virtual, la boleta electrónica o la factura electrónica disponible<br><br><strong>Escenario 2: Enviar un comprobante o una factura por correo</strong><br><strong>Dado que</strong> el Driver consulta una transacción con un comprobante virtual, boleta electrónica o factura electrónica disponible<br><strong>Cuando</strong> el Driver solicita que se envíe al correo registrado<br><strong>Entonces</strong> el sistema envía el documento asociado y conserva la operación en el historial<br><br><strong>Escenario 3: Reembolso o saldo pendiente</strong><br><strong>Dado que</strong> una operación tiene asociado un reembolso o saldo pendiente<br><strong>Cuando</strong> el Driver consulta el historial<br><strong>Entonces</strong> el sistema muestra el estado del ajuste, el importe correspondiente y su relación con la operación original</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US21</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E6</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Consultar comprobantes y facturas</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> consultar mi historial de pagos y obtener mis comprobantes virtuales, boletas electrónicas y facturas electrónicas,<br><strong>para</strong> hacer seguimiento a mis operaciones de estacionamiento y gastos.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Descargar un comprobante o una factura</strong><br><strong>Dado que</strong> el historial de Driver contiene una reserva, una sesión de estacionamiento vinculada con una reserva, una suscripción o un cargo adicional<br><strong>Cuando</strong> el Driver solicita el documento<br><strong>Entonces</strong> el sistema permite consultar los datos de la operación y descargar una copia PDF del comprobante virtual, la boleta electrónica o la factura electrónica disponible<br><br><strong>Escenario 2: Enviar un comprobante o una factura por correo</strong><br><strong>Dado que</strong> el Driver consulta una transacción con un comprobante virtual, boleta electrónica o factura electrónica disponible<br><strong>Cuando</strong> el Driver solicita que se envíe al correo registrado<br><strong>Entonces</strong> el sistema envía el documento asociado y conserva la operación en el historial<br><br><strong>Escenario 3: Reembolso o saldo pendiente</strong><br><strong>Dado que</strong> una operación tiene asociado un reembolso o saldo pendiente<br><strong>Cuando</strong> el Driver consulta el historial<br><strong>Entonces</strong> el sistema muestra el estado del ajuste, el importe correspondiente y su relación con la operación original</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US22</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Parking Admin</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Gestionar la facturación B2B</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar las facturas del servicio SpotGo y actualizar los datos tributarios del cliente,<br><strong>para</strong> controlar la facturación B2B de mi estacionamiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Consultar facturas del servicio</strong><br><strong>Dado que</strong> el Parking Admin tiene un cliente activo y existen facturas del servicio SpotGo<br><strong>Cuando</strong> el Parking Admin solicita el historial de facturación B2B<br><strong>Entonces</strong> el sistema muestra las facturas disponibles con su estado, fecha e importe<br><br><strong>Escenario 2: Actualizar datos tributarios</strong><br><strong>Dado que</strong> el Parking Admin tiene autorización para modificar los datos tributarios del cliente<br><strong>Cuando</strong> el Parking Admin actualiza el RUC o la dirección con información válida<br><strong>Entonces</strong> el sistema guarda los datos nuevos y los utiliza en futuras facturas B2B</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US22</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Parking Admin</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E6</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Gestionar la facturación B2B</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Parking Admin,<br><strong>quiero</strong> consultar las facturas del servicio SpotGo y actualizar los datos tributarios del cliente,<br><strong>para</strong> controlar la facturación B2B de mi estacionamiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Consultar facturas del servicio</strong><br><strong>Dado que</strong> el Parking Admin tiene un cliente activo y existen facturas del servicio SpotGo<br><strong>Cuando</strong> el Parking Admin solicita el historial de facturación B2B<br><strong>Entonces</strong> el sistema muestra las facturas disponibles con su estado, fecha e importe<br><br><strong>Escenario 2: Actualizar datos tributarios</strong><br><strong>Dado que</strong> el Parking Admin tiene autorización para modificar los datos tributarios del cliente<br><strong>Cuando</strong> el Parking Admin actualiza el RUC o la dirección con información válida<br><strong>Entonces</strong> el sistema guarda los datos nuevos y los utiliza en futuras facturas B2B</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US23</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Low</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Reproducir el video promocional del producto</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> reproducir un video promocional en la página de presentación,<br><strong>para</strong> conocer SpotGo mediante un ejemplo de su funcionamiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Video disponible</strong><br><strong>Dado que</strong> el Driver accede a la sección audiovisual de la página de presentación y el recurso está disponible<br><strong>Cuando</strong> el Driver inicia la reproducción<br><strong>Entonces</strong> el video se muestra dentro de la página<br><br><strong>Escenario 2: Video no disponible</strong><br><strong>Dado que</strong> no se puede cargar el recurso audiovisual<br><strong>Cuando</strong> se muestra la sección<br><strong>Entonces</strong> la página de presentación muestra una alternativa visual estática y mantiene el acceso al resto del contenido<br><br><strong>Escenario 3: Contenido audiovisual accesible</strong><br><strong>Dado que</strong> el video promocional está disponible<br><strong>Cuando</strong> el Driver reproduce o pausa el video<br><strong>Entonces</strong> los controles de reproducción tienen nombres accesibles y se pueden usar con teclado; el video incluye subtítulos sincronizados y una alternativa equivalente en texto</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US23</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Low</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E4</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Reproducir el video promocional del producto</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> reproducir un video promocional en la página de presentación,<br><strong>para</strong> conocer SpotGo mediante un ejemplo de su funcionamiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Video disponible</strong><br><strong>Dado que</strong> el Driver accede a la sección audiovisual de la página de presentación y el recurso está disponible<br><strong>Cuando</strong> el Driver inicia la reproducción<br><strong>Entonces</strong> el video se muestra dentro de la página<br><br><strong>Escenario 2: Video no disponible</strong><br><strong>Dado que</strong> no se puede cargar el recurso audiovisual<br><strong>Cuando</strong> se muestra la sección<br><strong>Entonces</strong> la página de presentación muestra una alternativa visual estática y mantiene el acceso al resto del contenido<br><br><strong>Escenario 3: Contenido audiovisual accesible</strong><br><strong>Dado que</strong> el video promocional está disponible<br><strong>Cuando</strong> el Driver reproduce o pausa el video<br><strong>Entonces</strong> los controles de reproducción tienen nombres accesibles y se pueden usar con teclado; el video incluye subtítulos sincronizados y una alternativa equivalente en texto</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US24</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E4 - Presencia digital y calidad móvil</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Cambiar el idioma de la página de presentación</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> cambiar el idioma de la página de presentación entre inglés (en_US) y español latinoamericano (es_419),<br><strong>para</strong> comprender la información del producto en mi idioma preferido.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Cambiar a español latinoamericano</strong><br><strong>Dado que</strong> la página está en inglés (en_US) y existe una traducción es_419<br><strong>Cuando</strong> el Driver selecciona español latinoamericano (es_419)<br><strong>Entonces</strong> el contenido disponible cambia a es_419 sin perder la sección que se está consultando<br><br><strong>Escenario 2: Volver al inglés</strong><br><strong>Dado que</strong> la página está en español latinoamericano (es_419)<br><strong>Cuando</strong> el Driver selecciona inglés (en_US)<br><strong>Entonces</strong> el contenido disponible vuelve a inglés (en_US) sin recargar toda la navegación</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US24</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E4</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Cambiar el idioma de la página de presentación</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> cambiar el idioma de la página de presentación entre inglés (en_US) y español latinoamericano (es_419),<br><strong>para</strong> comprender la información del producto en mi idioma preferido.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Cambiar a español latinoamericano</strong><br><strong>Dado que</strong> la página está en inglés (en_US) y existe una traducción es_419<br><strong>Cuando</strong> el Driver selecciona español latinoamericano (es_419)<br><strong>Entonces</strong> el contenido disponible cambia a es_419 sin perder la sección que se está consultando<br><br><strong>Escenario 2: Volver al inglés</strong><br><strong>Dado que</strong> la página está en español latinoamericano (es_419)<br><strong>Cuando</strong> el Driver selecciona inglés (en_US)<br><strong>Entonces</strong> el contenido disponible vuelve a inglés (en_US) sin recargar toda la navegación</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US25</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Consultar zonas de estacionamiento cercanas</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> ver en un mapa integrado las zonas de estacionamiento registradas en SpotGo,<br><strong>para</strong> consultar sus datos operativos e identificar alternativas cercanas.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Zonas cercanas con permiso de ubicación</strong><br><strong>Dado que</strong> el Driver permite el acceso a su ubicación y hay zonas de estacionamiento registradas en el área consultada<br><strong>Cuando</strong> el Driver solicita ver zonas cercanas mientras usa la función<br><strong>Entonces</strong> la API de Google Maps muestra el mapa integrado, SpotGo presenta las zonas registradas como marcadores y la aplicación muestra datos de SpotGo, como disponibilidad, precio, horario de operación y detalles de cada zona<br><br><strong>Escenario 2: Permiso de ubicación denegado</strong><br><strong>Dado que</strong> el Driver no permite el acceso a su ubicación<br><strong>Cuando</strong> el Driver abre la función de zonas cercanas<br><strong>Entonces</strong> la API de Google Maps muestra el mapa centrado en el área predeterminada, como Cercado de Lima; la aplicación informa que la ubicación mejora los resultados y no solicita acceso a la ubicación en segundo plano<br><br><strong>Escenario 3: Permiso habilitado mientras se usa la función</strong><br><strong>Dado que</strong> el Driver denegó inicialmente el permiso de ubicación y luego lo habilita mientras usa la función<br><strong>Cuando</strong> el Driver vuelve a solicitar zonas cercanas<br><strong>Entonces</strong> SpotGo usa la ubicación actual para esa consulta, sin requerir acceso continuo en segundo plano<br><br><strong>Escenario 4: No hay zonas registradas o falla el servicio de mapas</strong><br><strong>Dado que</strong> no hay zonas SpotGo en el área consultada o la API de Google Maps no responde<br><strong>Cuando</strong> el Driver solicita la información<br><strong>Entonces</strong> la aplicación informa la situación y no muestra ubicaciones inexistentes</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US25</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E1</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Consultar zonas de estacionamiento cercanas</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> ver en un mapa integrado las zonas de estacionamiento registradas en SpotGo,<br><strong>para</strong> consultar sus datos operativos e identificar alternativas cercanas.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Zonas cercanas con permiso de ubicación</strong><br><strong>Dado que</strong> el Driver permite el acceso a su ubicación y hay zonas de estacionamiento registradas en el área consultada<br><strong>Cuando</strong> el Driver solicita ver zonas cercanas mientras usa la función<br><strong>Entonces</strong> la API de Google Maps muestra el mapa integrado, SpotGo presenta las zonas registradas como marcadores y la aplicación muestra datos de SpotGo, como disponibilidad, precio, horario de operación y detalles de cada zona<br><br><strong>Escenario 2: Permiso de ubicación denegado</strong><br><strong>Dado que</strong> el Driver no permite el acceso a su ubicación<br><strong>Cuando</strong> el Driver abre la función de zonas cercanas<br><strong>Entonces</strong> la API de Google Maps muestra el mapa centrado en el área predeterminada, como Cercado de Lima; la aplicación informa que la ubicación mejora los resultados y no solicita acceso a la ubicación en segundo plano<br><br><strong>Escenario 3: Permiso habilitado mientras se usa la función</strong><br><strong>Dado que</strong> el Driver denegó inicialmente el permiso de ubicación y luego lo habilita mientras usa la función<br><strong>Cuando</strong> el Driver vuelve a solicitar zonas cercanas<br><strong>Entonces</strong> SpotGo usa la ubicación actual para esa consulta, sin requerir acceso continuo en segundo plano<br><br><strong>Escenario 4: No hay zonas registradas o falla el servicio de mapas</strong><br><strong>Dado que</strong> no hay zonas SpotGo en el área consultada o la API de Google Maps no responde<br><strong>Cuando</strong> el Driver solicita la información<br><strong>Entonces</strong> la aplicación informa la situación y no muestra ubicaciones inexistentes</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US26</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Abrir una ruta en Google Maps</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> seleccionar el enlace de navegación externa de una zona elegida,<br><strong>para</strong> que la aplicación Google Maps calcule la ruta desde mi ubicación hasta el estacionamiento.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Abrir una ruta externa</strong><br><strong>Dado que</strong> el Driver eligió una zona SpotGo con una ubicación configurada válida<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> SpotGo abre Google Maps con la zona como destino y no calcula una ruta interna dentro del estacionamiento<br><br><strong>Escenario 2: Google Maps no está disponible</strong><br><strong>Dado que</strong> Google Maps no está instalado o no se puede abrir<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> SpotGo ofrece un enlace web compatible o informa que no se puede abrir la navegación externa<br><br><strong>Escenario 3: Datos de destino inválidos</strong><br><strong>Dado que</strong> la zona seleccionada fue eliminada o tiene una ubicación configurada inválida<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> la aplicación informa que el destino no está disponible y no genera una ruta con coordenadas inválidas</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US26</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E1</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Abrir una ruta en Google Maps</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> seleccionar el enlace de navegación externa de una zona elegida,<br><strong>para</strong> que la aplicación Google Maps calcule la ruta desde mi ubicación hasta el estacionamiento.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Abrir una ruta externa</strong><br><strong>Dado que</strong> el Driver eligió una zona SpotGo con una ubicación configurada válida<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> SpotGo abre Google Maps con la zona como destino y no calcula una ruta interna dentro del estacionamiento<br><br><strong>Escenario 2: Google Maps no está disponible</strong><br><strong>Dado que</strong> Google Maps no está instalado o no se puede abrir<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> SpotGo ofrece un enlace web compatible o informa que no se puede abrir la navegación externa<br><br><strong>Escenario 3: Datos de destino inválidos</strong><br><strong>Dado que</strong> la zona seleccionada fue eliminada o tiene una ubicación configurada inválida<br><strong>Cuando</strong> el Driver selecciona el botón de navegación externa<br><strong>Entonces</strong> la aplicación informa que el destino no está disponible y no genera una ruta con coordenadas inválidas</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">US27</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Driver</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E1 - Experiencia móvil de Driver</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Registrar un vehículo</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> registrar un vehículo desde mi cuenta,<br><strong>para</strong> seleccionarlo cuando haga una reserva.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto de un vehículo</strong><br><strong>Dado que</strong> el Driver tiene una cuenta activa y proporciona los datos requeridos del vehículo, incluida la placa<br><strong>Cuando</strong> el Driver guarda el registro desde la vista de vehículos<br><strong>Entonces</strong> el sistema crea el vehículo, lo asocia con Driver, guarda la placa y los datos descriptivos registrados, y lo deja disponible para seleccionarlo en una reserva<br><br><strong>Escenario 2: Vehículo inválido o duplicado</strong><br><strong>Dado que</strong> falta información obligatoria o el vehículo ya está asociado con la cuenta de Driver<br><strong>Cuando</strong> el Driver intenta guardar el registro<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y conserva los registros existentes</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">US27</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Driver</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E1</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Registrar un vehículo</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Driver,<br><strong>quiero</strong> registrar un vehículo desde mi cuenta,<br><strong>para</strong> seleccionarlo cuando haga una reserva.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Registro correcto de un vehículo</strong><br><strong>Dado que</strong> el Driver tiene una cuenta activa y proporciona los datos requeridos del vehículo, incluida la placa<br><strong>Cuando</strong> el Driver guarda el registro desde la vista de vehículos<br><strong>Entonces</strong> el sistema crea el vehículo, lo asocia con Driver, guarda la placa y los datos descriptivos registrados, y lo deja disponible para seleccionarlo en una reserva<br><br><strong>Escenario 2: Vehículo inválido o duplicado</strong><br><strong>Dado que</strong> falta información obligatoria o el vehículo ya está asociado con la cuenta de Driver<br><strong>Cuando</strong> el Driver intenta guardar el registro<br><strong>Entonces</strong> el sistema rechaza la operación, informa la causa y conserva los registros existentes</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS01</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Sincronizar datos móviles mediante servicios REST</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que los servicios REST expongan zonas, disponibilidad, perfiles de usuario, vehículos, estados de ocupación, reservas, sesiones de estacionamiento, pagos digitales y datos de facturación electrónica,<br><strong>para</strong> que la aplicación móvil sincronice la información que requiere cada usuario.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Solicitud operativa autorizada</strong><br><strong>Dado que</strong> la aplicación móvil envía una solicitud válida y autorizada de zonas, disponibilidad, vehículos, reservas, sesiones de estacionamiento o estados operativos<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> responde con la información actual, incluidos los estados de ocupación y de reserva y el estado del sensor cuando corresponda, mediante un esquema consistente para la aplicación móvil y el idioma solicitado para mensajes dirigidos al usuario<br><br><strong>Escenario 2: Solicitud de transacción y facturación</strong><br><strong>Dado que</strong> la aplicación móvil envía una solicitud válida y autorizada sobre un pago digital, token de pago, suscripción, saldo pendiente o factura electrónica<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> responde con el estado actual de la operación y su relación con el Driver o cliente correspondiente, y presenta los mensajes dirigidos al usuario en inglés (en_US) o español latinoamericano (es_419), según el idioma solicitado<br><br><strong>Escenario 3: Solicitud inválida o no autorizada</strong><br><strong>Dado que</strong> la solicitud contiene datos inválidos o no está autorizada<br><strong>Cuando</strong> el servicio la procesa<br><strong>Entonces</strong> responde con un error identificable y no expone información protegida</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">TS01</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Developer</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E5</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Sincronizar datos móviles mediante servicios REST</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que los servicios REST expongan zonas, disponibilidad, perfiles de usuario, vehículos, estados de ocupación, reservas, sesiones de estacionamiento, pagos digitales y datos de facturación electrónica,<br><strong>para</strong> que la aplicación móvil sincronice la información que requiere cada usuario.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Solicitud operativa autorizada</strong><br><strong>Dado que</strong> la aplicación móvil envía una solicitud válida y autorizada de zonas, disponibilidad, vehículos, reservas, sesiones de estacionamiento o estados operativos<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> responde con la información actual, incluidos los estados de ocupación y de reserva y el estado del sensor cuando corresponda, mediante un esquema consistente para la aplicación móvil y el idioma solicitado para mensajes dirigidos al usuario<br><br><strong>Escenario 2: Solicitud de transacción y facturación</strong><br><strong>Dado que</strong> la aplicación móvil envía una solicitud válida y autorizada sobre un pago digital, token de pago, suscripción, saldo pendiente o factura electrónica<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> responde con el estado actual de la operación y su relación con el Driver o cliente correspondiente, y presenta los mensajes dirigidos al usuario en inglés (en_US) o español latinoamericano (es_419), según el idioma solicitado<br><br><strong>Escenario 3: Solicitud inválida o no autorizada</strong><br><strong>Dado que</strong> la solicitud contiene datos inválidos o no está autorizada<br><strong>Cuando</strong> el servicio la procesa<br><strong>Entonces</strong> responde con un error identificable y no expone información protegida</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS02</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Guardar y sincronizar datos en el dispositivo móvil</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que la aplicación móvil conserve localmente la última información sincronizada,<br><strong>para</strong> que los usuarios consulten los datos conocidos más recientes durante interrupciones temporales de conectividad.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Pérdida temporal de conectividad</strong><br><strong>Dado que</strong> la aplicación sincronizó datos previamente y no hay conexión de forma temporal<br><strong>Cuando</strong> el usuario consulta la disponibilidad o las zonas permitidas<br><strong>Entonces</strong> la aplicación muestra la última información conocida, su hora de actualización y que podría estar desactualizada<br><br><strong>Escenario 2: Conectividad restablecida</strong><br><strong>Dado que</strong> se restableció la conexión con los servicios<br><strong>Cuando</strong> la aplicación ejecuta la sincronización<br><strong>Entonces</strong> actualiza la información local con los datos más recientes, sin duplicar registros ni conservar estados obsoletos cuando existe una versión más nueva</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">TS02</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Developer</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E5</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Guardar y sincronizar datos en el dispositivo móvil</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que la aplicación móvil conserve localmente la última información sincronizada,<br><strong>para</strong> que los usuarios consulten los datos conocidos más recientes durante interrupciones temporales de conectividad.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Pérdida temporal de conectividad</strong><br><strong>Dado que</strong> la aplicación sincronizó datos previamente y no hay conexión de forma temporal<br><strong>Cuando</strong> el usuario consulta la disponibilidad o las zonas permitidas<br><strong>Entonces</strong> la aplicación muestra la última información conocida, su hora de actualización y que podría estar desactualizada<br><br><strong>Escenario 2: Conectividad restablecida</strong><br><strong>Dado que</strong> se restableció la conexión con los servicios<br><strong>Cuando</strong> la aplicación ejecuta la sincronización<br><strong>Entonces</strong> actualiza la información local con los datos más recientes, sin duplicar registros ni conservar estados obsoletos cuando existe una versión más nueva</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS03</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Low</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Documentar el contrato de los servicios REST</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Contract Scope</th></tr>
-    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Contrato REST versionado para los recursos activos que utiliza la aplicación móvil: zonas de estacionamiento, disponibilidad, perfiles de usuario, vehículos, reservas, sesiones de estacionamiento, pagos digitales, suscripciones, saldos pendientes y facturación electrónica.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Evidencia</th></tr>
-    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Artefacto OpenAPI/Swagger versionado con una URL base accesible o una ruta en el repositorio, además de ejemplos de solicitudes ejecutables para el servicio activo.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que los servicios REST activos tengan un contrato versionado y trazable,<br><strong>para</strong> que el equipo de la aplicación móvil pueda integrarlos de forma consistente.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Documentación completa de los endpoints</strong><br><strong>Dado que</strong> existe un contrato OpenAPI versionado para el servicio activo y está disponible su URL base o ruta en el repositorio<br><strong>Cuando</strong> el Developer consulta la documentación OpenAPI/Swagger<br><strong>Entonces</strong> encuentra las rutas y verbos HTTP, versión de la API, parámetros y cuerpos requeridos, respuestas correctas y de error, requisitos de autorización y ejemplos para cada recurso activo<br><br><strong>Escenario 2: Ejemplo del contrato</strong><br><strong>Dado que</strong> el Developer ejecuta una solicitud válida con los datos de ejemplo de la documentación versionada<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> la respuesta cumple el esquema, código de estado y reglas de error documentados, y muestra un resultado verificable</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">TS03</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Developer</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Low</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E5</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Documentar el contrato de los servicios REST</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Contract Scope</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 12px; border: 1px solid #666; text-align: left;">Contrato REST versionado para los recursos activos que utiliza la aplicación móvil: zonas de estacionamiento, disponibilidad, perfiles de usuario, vehículos, reservas, sesiones de estacionamiento, pagos digitales, suscripciones, saldos pendientes y facturación electrónica.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Evidencia</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 12px; border: 1px solid #666; text-align: left;">Artefacto OpenAPI/Swagger versionado con una URL base accesible o una ruta en el repositorio, además de ejemplos de solicitudes ejecutables para el servicio activo.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que los servicios REST activos tengan un contrato versionado y trazable,<br><strong>para</strong> que el equipo de la aplicación móvil pueda integrarlos de forma consistente.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Documentación completa de los endpoints</strong><br><strong>Dado que</strong> existe un contrato OpenAPI versionado para el servicio activo y está disponible su URL base o ruta en el repositorio<br><strong>Cuando</strong> el Developer consulta la documentación OpenAPI/Swagger<br><strong>Entonces</strong> encuentra las rutas y verbos HTTP, versión de la API, parámetros y cuerpos requeridos, respuestas correctas y de error, requisitos de autorización y ejemplos para cada recurso activo<br><br><strong>Escenario 2: Ejemplo del contrato</strong><br><strong>Dado que</strong> el Developer ejecuta una solicitud válida con los datos de ejemplo de la documentación versionada<br><strong>Cuando</strong> el servicio procesa la solicitud<br><strong>Entonces</strong> la respuesta cumple el esquema, código de estado y reglas de error documentados, y muestra un resultado verificable</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS04</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Generar comprobantes electrónicos</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que el servicio de facturación genere o actualice la boleta electrónica o factura electrónica correspondiente a pagos digitales aprobados, cargos adicionales y reembolsos,<br><strong>para</strong> que SpotGo proporcione un registro tributario consistente por cada operación de un conductor registrado.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Generar una boleta electrónica</strong><br><strong>Dado que</strong> existe un pago digital aprobado de un Driver registrado y Driver proporciona un DNI válido<br><strong>Cuando</strong> el servicio de facturación procesa la operación<br><strong>Entonces</strong> genera y asocia una boleta electrónica con el pago y con la reserva o sesión de estacionamiento vinculada del Driver registrado<br><br><strong>Escenario 2: Generar una factura electrónica</strong><br><strong>Dado que</strong> quien solicita el comprobante requiere una factura electrónica y proporciona un RUC válido<br><strong>Cuando</strong> el servicio de facturación procesa el pago digital aprobado<br><strong>Entonces</strong> genera una factura electrónica y la asocia con los datos tributarios proporcionados<br><br><strong>Escenario 3: Cargo adicional o reembolso</strong><br><strong>Dado que</strong> una reserva o sesión de estacionamiento vinculada de un Driver registrado genera un cargo adicional aprobado o un reembolso autorizado<br><strong>Cuando</strong> el servicio de facturación procesa el ajuste<br><strong>Entonces</strong> genera o actualiza el documento tributario aplicable cuando dispone de datos válidos; de lo contrario, conserva el comprobante virtual asociado, mantiene el vínculo con la operación original y refleja el importe ajustado</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">TS04</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Developer</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E6</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Generar comprobantes electrónicos</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> que el servicio de facturación genere o actualice la boleta electrónica o factura electrónica correspondiente a pagos digitales aprobados, cargos adicionales y reembolsos,<br><strong>para</strong> que SpotGo proporcione un registro tributario consistente por cada operación de un conductor registrado.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Generar una boleta electrónica</strong><br><strong>Dado que</strong> existe un pago digital aprobado de un Driver registrado y Driver proporciona un DNI válido<br><strong>Cuando</strong> el servicio de facturación procesa la operación<br><strong>Entonces</strong> genera y asocia una boleta electrónica con el pago y con la reserva o sesión de estacionamiento vinculada del Driver registrado<br><br><strong>Escenario 2: Generar una factura electrónica</strong><br><strong>Dado que</strong> quien solicita el comprobante requiere una factura electrónica y proporciona un RUC válido<br><strong>Cuando</strong> el servicio de facturación procesa el pago digital aprobado<br><strong>Entonces</strong> genera una factura electrónica y la asocia con los datos tributarios proporcionados<br><br><strong>Escenario 3: Cargo adicional o reembolso</strong><br><strong>Dado que</strong> una reserva o sesión de estacionamiento vinculada de un Driver registrado genera un cargo adicional aprobado o un reembolso autorizado<br><strong>Cuando</strong> el servicio de facturación procesa el ajuste<br><strong>Entonces</strong> genera o actualiza el documento tributario aplicable cuando dispone de datos válidos; de lo contrario, conserva el comprobante virtual asociado, mantiene el vínculo con la operación original y refleja el importe ajustado</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">TS05</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E6 - Monetización y facturación</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Confirmar pagos de forma asíncrona</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> procesar notificaciones asíncronas de pagos de reservas, suscripciones, cargos adicionales y reembolsos de conductores registrados,<br><strong>para</strong> mantener consistentes los pagos digitales, estados de reserva, sesiones y registros de facturación sin procesar pagos de sesiones de estacionamiento de invitados.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Pago de reserva aprobado</strong><br><strong>Dado que</strong> el servicio interno de pagos envía una notificación aprobada con un identificador válido para una reserva de Driver registrado<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción como aprobada, confirma la reserva, permite generar el comprobante virtual y, si hay datos válidos de DNI o RUC, la boleta o factura electrónica correspondiente; además, notifica a Driver<br><br><strong>Escenario 2: Cargo adicional aprobado</strong><br><strong>Dado que</strong> el servicio interno envía una notificación aprobada de un cargo adicional con identificador válido<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> registra el cargo, actualiza el historial de la sesión de estacionamiento y permite generar el comprobante aplicable según los datos tributarios disponibles<br><br><strong>Escenario 3: Pago fallido</strong><br><strong>Dado que</strong> el servicio interno envía una notificación de pago rechazado con identificador válido<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción como fallida, registra un saldo pendiente cuando corresponda, no confirma la operación pendiente si se trata de una reserva y notifica a Driver<br><br><strong>Escenario 4: Reembolso</strong><br><strong>Dado que</strong> el servicio interno confirma un reembolso autorizado para una reserva de Driver registrado<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción, conserva su relación con la operación original y pone el estado del reembolso a disposición de Driver</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">TS05</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Developer</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E6</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Confirmar pagos de forma asíncrona</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> procesar notificaciones asíncronas de pagos de reservas, suscripciones, cargos adicionales y reembolsos de conductores registrados,<br><strong>para</strong> mantener consistentes los pagos digitales, estados de reserva, sesiones y registros de facturación sin procesar pagos de sesiones de estacionamiento de invitados.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Pago de reserva aprobado</strong><br><strong>Dado que</strong> el servicio interno de pagos envía una notificación aprobada con un identificador válido para una reserva de Driver registrado<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción como aprobada, confirma la reserva, permite generar el comprobante virtual y, si hay datos válidos de DNI o RUC, la boleta o factura electrónica correspondiente; además, notifica a Driver<br><br><strong>Escenario 2: Cargo adicional aprobado</strong><br><strong>Dado que</strong> el servicio interno envía una notificación aprobada de un cargo adicional con identificador válido<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> registra el cargo, actualiza el historial de la sesión de estacionamiento y permite generar el comprobante aplicable según los datos tributarios disponibles<br><br><strong>Escenario 3: Pago fallido</strong><br><strong>Dado que</strong> el servicio interno envía una notificación de pago rechazado con identificador válido<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción como fallida, registra un saldo pendiente cuando corresponda, no confirma la operación pendiente si se trata de una reserva y notifica a Driver<br><br><strong>Escenario 4: Reembolso</strong><br><strong>Dado que</strong> el servicio interno confirma un reembolso autorizado para una reserva de Driver registrado<br><strong>Cuando</strong> el backend procesa el evento<br><strong>Entonces</strong> actualiza la transacción, conserva su relación con la operación original y pone el estado del reembolso a disposición de Driver</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">SP01</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">High</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Validar el monitoreo de ocupación con sensores</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Research Objective</th></tr>
-    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Comparar alternativas de sensores de ocupación y validarlas mediante una prueba de concepto en interiores y exteriores, evaluando precisión, latencia máxima de 5 segundos, conectividad, consumo, mantenimiento e integración; confirmar que detectan únicamente la ocupación física y no identifican vehículos.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Evidencia esperada</th></tr>
-    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Matriz comparativa, informe de pruebas con resultados observados, evidencia del prototipo o integración, decisión técnica adoptada, limitaciones y restricciones para la implementación posterior.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> validar sensores de ocupación instalados en cada espacio,<br><strong>para</strong> que SpotGo reciba actualizaciones confiables del estado de ocupación en un máximo de 5 segundos en estacionamientos interiores y exteriores, sin afirmar que identifica el vehículo.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Validación de sensores</strong><br><strong>Dado que</strong> hay al menos dos alternativas de sensores de ocupación para evaluar y se definieron espacios de prueba<br><strong>Cuando</strong> el equipo realiza pruebas en interiores y exteriores<br><strong>Entonces</strong> registra en el informe los criterios de comparación y los resultados observados en cuanto a precisión, latencia, conectividad, consumo, mantenimiento e integración; además, declara explícitamente que los sensores seleccionados solo detectan la ocupación física<br><br><strong>Escenario 2: Integración del evento de ocupación</strong><br><strong>Dado que</strong> un sensor detecta que un vehículo ocupa o deja libre un espacio<br><strong>Cuando</strong> el backend procesa el evento recibido<br><strong>Entonces</strong> actualiza el estado de ocupación, recalcula la disponibilidad de la zona relacionada y pone la información a disposición de la aplicación móvil en un máximo de 5 segundos, sin identificar imágenes, placas ni el vehículo específico<br><br><strong>Escenario 3: Sensor no disponible</strong><br><strong>Dado que</strong> un sensor deja de comunicar datos confiables<br><strong>Cuando</strong> el backend confirma la falla o desconexión<br><strong>Entonces</strong> marca el espacio como no disponible, bloquea nuevas reservas y sesiones de invitados, y conserva el incidente para que Parking Admin lo resuelva<br><br><strong>Escenario 4: Cierre de la investigación</strong><br><strong>Dado que</strong> la investigación técnica completó las pruebas en interiores y exteriores<br><strong>Cuando</strong> el equipo cierra SP01<br><strong>Entonces</strong> el informe compartido enlaza la matriz de comparación, las evidencias de pruebas o prototipo, la conclusión de viabilidad, la decisión adoptada, las limitaciones y las historias o restricciones posteriores; marca SP01 como completada solo cuando esos artefactos están listos</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">SP01</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Developer</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">High</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E5</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Validar el monitoreo de ocupación con sensores</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Research Objective</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 12px; border: 1px solid #666; text-align: left;">Comparar alternativas de sensores de ocupación y validarlas mediante una prueba de concepto en interiores y exteriores, evaluando precisión, latencia máxima de 5 segundos, conectividad, consumo, mantenimiento e integración; confirmar que detectan únicamente la ocupación física y no identifican vehículos.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Evidencia esperada</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 12px; border: 1px solid #666; text-align: left;">Matriz comparativa, informe de pruebas con resultados observados, evidencia del prototipo o integración, decisión técnica adoptada, limitaciones y restricciones para la implementación posterior.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> validar sensores de ocupación instalados en cada espacio,<br><strong>para</strong> que SpotGo reciba actualizaciones confiables del estado de ocupación en un máximo de 5 segundos en estacionamientos interiores y exteriores, sin afirmar que identifica el vehículo.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Validación de sensores</strong><br><strong>Dado que</strong> hay al menos dos alternativas de sensores de ocupación para evaluar y se definieron espacios de prueba<br><strong>Cuando</strong> el equipo realiza pruebas en interiores y exteriores<br><strong>Entonces</strong> registra en el informe los criterios de comparación y los resultados observados en cuanto a precisión, latencia, conectividad, consumo, mantenimiento e integración; además, declara explícitamente que los sensores seleccionados solo detectan la ocupación física<br><br><strong>Escenario 2: Integración del evento de ocupación</strong><br><strong>Dado que</strong> un sensor detecta que un vehículo ocupa o deja libre un espacio<br><strong>Cuando</strong> el backend procesa el evento recibido<br><strong>Entonces</strong> actualiza el estado de ocupación, recalcula la disponibilidad de la zona relacionada y pone la información a disposición de la aplicación móvil en un máximo de 5 segundos, sin identificar imágenes, placas ni el vehículo específico<br><br><strong>Escenario 3: Sensor no disponible</strong><br><strong>Dado que</strong> un sensor deja de comunicar datos confiables<br><strong>Cuando</strong> el backend confirma la falla o desconexión<br><strong>Entonces</strong> marca el espacio como no disponible, bloquea nuevas reservas y sesiones de invitados, y conserva el incidente para que Parking Admin lo resuelva<br><br><strong>Escenario 4: Cierre de la investigación</strong><br><strong>Dado que</strong> la investigación técnica completó las pruebas en interiores y exteriores<br><strong>Cuando</strong> el equipo cierra SP01<br><strong>Entonces</strong> el informe compartido enlaza la matriz de comparación, las evidencias de pruebas o prototipo, la conclusión de viabilidad, la decisión adoptada, las limitaciones y las historias o restricciones posteriores; marca SP01 como completada solo cuando esos artefactos están listos</td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<div style="width: 100%; max-width: 100%; box-sizing: border-box;">
-<table style="width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; box-sizing: border-box;">
-  <thead><tr><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th><th style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th></tr></thead>
+<div style="display: block; width: 100% !important; min-width: 100% !important; max-width: 100% !important; box-sizing: border-box;">
+<table width="1024" style="display: table; width: 100% !important; min-width: 100% !important; max-width: 100% !important; table-layout: fixed !important; border-collapse: collapse; text-align: center; box-sizing: border-box;">
+  <colgroup>
+    <col width="256">
+    <col width="256">
+    <col width="256">
+    <col width="256">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User Story ID</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">User</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Priority</th>
+      <th width="256" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Epic</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">SP02</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Developer</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">Medium</td><td style="padding: 8px; border: 1px solid #666; text-align: center; vertical-align: middle;">E5 - Servicios y habilitación técnica</td></tr>
-    <tr><th style="padding: 8px; border: 1px solid #666;">Title</th><td colspan="3" style="padding: 8px; border: 1px solid #666;">Investigar la estrategia de sincronización móvil</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Research Objective</th></tr>
-    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Comparar alternativas de persistencia local y sincronización para contextos con conectividad variable, considerando funcionamiento sin conexión, datos desactualizados, reintentos, resolución de conflictos, recuperación y fuente de verdad, y seleccionar la estrategia que mejor respalde los flujos móviles.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Evidencia esperada</th></tr>
-    <tr><td colspan="4" style="padding: 12px; border: 1px solid #666; text-align: left;">Matriz comparativa, evidencia de pruebas o prototipo en línea y sin conexión, decisión documentada, conclusión técnica, limitaciones y restricciones para la implementación posterior.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Description</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> evaluar la estrategia de persistencia local y sincronización de la aplicación móvil,<br><strong>para</strong> que SpotGo responda de forma predecible ante interrupciones temporales de conectividad.</td></tr>
-    <tr><th colspan="4" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th></tr>
-    <tr><td colspan="4" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Evaluación de la estrategia</strong><br><strong>Dado que</strong> la aplicación debe consultar información en contextos con conectividad variable y existen al menos dos alternativas de persistencia o sincronización para comparar<br><strong>Cuando</strong> el equipo prueba las alternativas<br><strong>Entonces</strong> registra en la matriz de comparación y el informe el comportamiento observado ante pérdida de conexión, consulta de datos desactualizados, recuperación, reintentos, actualizaciones y conflictos<br><br><strong>Escenario 2: Evidencia y decisión</strong><br><strong>Dado que</strong> se completaron la prueba técnica y el prototipo<br><strong>Cuando</strong> el equipo cierra la investigación<br><strong>Entonces</strong> el informe compartido enlaza la evidencia de prueba o prototipo, identifica la estrategia adoptada y su conclusión técnica, registra limitaciones y restricciones posteriores, y marca SP02 como completada solo cuando esos artefactos están documentados</td></tr>
+    <tr>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">SP02</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Developer</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">Medium</td>
+      <td width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666; text-align: center !important; vertical-align: middle;">E5</td>
+    </tr>
+    <tr>
+      <th width="256" align="center" style="width: 25%; padding: 8px; border: 1px solid #666;">Title</th>
+      <td colspan="3" width="768" align="center" style="width: 75%; padding: 8px; border: 1px solid #666; text-align: center !important;">Investigar la estrategia de sincronización móvil</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Research Objective</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 12px; border: 1px solid #666; text-align: left;">Comparar alternativas de persistencia local y sincronización para contextos con conectividad variable, considerando funcionamiento sin conexión, datos desactualizados, reintentos, resolución de conflictos, recuperación y fuente de verdad, y seleccionar la estrategia que mejor respalde los flujos móviles.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Evidencia esperada</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 12px; border: 1px solid #666; text-align: left;">Matriz comparativa, evidencia de pruebas o prototipo en línea y sin conexión, decisión documentada, conclusión técnica, limitaciones y restricciones para la implementación posterior.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Como</strong> Developer,<br><strong>quiero</strong> evaluar la estrategia de persistencia local y sincronización de la aplicación móvil,<br><strong>para</strong> que SpotGo responda de forma predecible ante interrupciones temporales de conectividad.</td>
+    </tr>
+    <tr>
+      <th colspan="4" width="1024" style="padding: 8px; border: 1px solid #666;">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4" width="1024" style="padding: 20px; border: 1px solid #666; text-align: left;"><strong>Escenario 1: Evaluación de la estrategia</strong><br><strong>Dado que</strong> la aplicación debe consultar información en contextos con conectividad variable y existen al menos dos alternativas de persistencia o sincronización para comparar<br><strong>Cuando</strong> el equipo prueba las alternativas<br><strong>Entonces</strong> registra en la matriz de comparación y el informe el comportamiento observado ante pérdida de conexión, consulta de datos desactualizados, recuperación, reintentos, actualizaciones y conflictos<br><br><strong>Escenario 2: Evidencia y decisión</strong><br><strong>Dado que</strong> se completaron la prueba técnica y el prototipo<br><strong>Cuando</strong> el equipo cierra la investigación<br><strong>Entonces</strong> el informe compartido enlaza la evidencia de prueba o prototipo, identifica la estrategia adoptada y su conclusión técnica, registra limitaciones y restricciones posteriores, y marca SP02 como completada solo cuando esos artefactos están documentados</td>
+    </tr>
   </tbody>
 </table>
 </div>
+
 **Trazabilidad con Lean UX y habilitación técnica**
 
-| Lean UX item or technical concern | Related requirements |
+| Ítem de Lean UX o cuestión técnica | User Stories |
 | --- | --- |
 | FA01 / HS01 - Monitoreo de ocupación por zonas | US05, TS01, TS02, SP01 |
 | FA02 / HS02 - Registro de Driver, perfiles y vehículos | US09, US13, US15, US27 |
@@ -963,9 +1937,11 @@ Los actores se toman de los User Personas definidos previamente: **Carlos Ramire
 
 Para calcular BG02 y BG03 se propone establecer una línea base antes de iniciar los pilotos, que incluya el tiempo de búsqueda de los conductores y la cantidad de incidencias de estacionamiento indebido durante un periodo comparable. Así, los porcentajes planteados podrán verificarse con datos observables y no solo con percepciones. Las capacidades de reserva, Digital Payment, Subscription y Electronic Billing se relacionan con BG01 porque su validación requiere comprobar el recorrido móvil completo del Driver en los estacionamientos piloto.
 
+**Detalle del Impact Map**
+
 | Business Goal | Actor / Persona | Impact | Deliverable | User Stories |
 | --- | --- | --- | --- | --- |
-| **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Carlos Ramirez - Parking Admin | Configura y opera el Tenant, la infraestructura, los perfiles, las Guest Parking Sessions y la información de facturación de acuerdo con las reglas de cada estacionamiento. | Capacidades móviles para configurar infraestructura, Parking Zones, User Profiles, Guest Parking Sessions y facturación B2B. | **US02:** Como Parking Admin, deseo configurar las Parking Zones y asociarlas con perfiles, para organizar la operación del estacionamiento.<br>**US03:** Como Parking Admin, deseo registrar Guest Parking Sessions, para atender a Guests que llegan sin una cuenta registrada.<br>**US15:** Como SuperAdmin, deseo provisionar cuentas Parking Admin asociadas a un Tenant, para habilitar el acceso administrativo.<br>**US16:** Como Parking Admin, deseo cargar el Floor Plan, para configurar la infraestructura.<br>**US17:** Como Parking Admin, deseo generar el Digital Parking Map, para representar los espacios operativos.<br>**US22:** Como Parking Admin, deseo consultar la facturación B2B, para controlar el servicio contratado. |
+| **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Carlos Ramirez - Parking Admin | Configura y opera el Tenant, la infraestructura, los perfiles, las Guest Parking Sessions y la información de facturación de acuerdo con las reglas de cada estacionamiento. | Capacidades móviles para configurar infraestructura, Parking Zones, User Profiles, Guest Parking Sessions y facturación B2B. | **US02:** Como Parking Admin, deseo configurar las Parking Zones y asociarlas con perfiles, para organizar la operación del estacionamiento.<br>**US03:** Como Parking Admin, deseo registrar Guest Parking Sessions, para atender a invitados que llegan sin una cuenta registrada.<br>**US15:** Como SuperAdmin, deseo provisionar cuentas Parking Admin asociadas a un Tenant, para habilitar el acceso administrativo.<br>**US16:** Como Parking Admin, deseo cargar el Floor Plan, para configurar la infraestructura.<br>**US17:** Como Parking Admin, deseo generar el Digital Parking Map, para representar los espacios operativos.<br>**US22:** Como Parking Admin, deseo consultar la facturación B2B, para controlar el servicio contratado. |
 | **BG01:** Validar SpotGo en 3 estacionamientos piloto de alta afluencia durante los primeros 6 meses de operación. | Andres Salazar - Driver | Se registra como Driver, registra su Vehicle y completa desde la app el recorrido de reserva, Digital Payment o Subscription, Virtual Receipt y Electronic Billing. | Experiencia móvil de registro de vehículo, reservas, pagos, suscripciones, comprobantes y confirmación de operaciones. | **US13:** Como Driver, deseo crear una cuenta, para utilizar los servicios de estacionamiento.<br>**US27:** Como Driver, deseo registrar un Vehicle, para seleccionarlo al reservar.<br>**US18:** Como Driver, deseo reservar un espacio y recibir un Virtual Receipt, para conocer mi asignación.<br>**US19:** Como Driver, deseo pagar digitalmente, para completar la operación sin una caja física.<br>**US20:** Como Driver, deseo administrar una Subscription, para usar el servicio durante su vigencia.<br>**US21:** Como Driver, deseo consultar mis comprobantes, para controlar mis operaciones y gastos.<br>**TS04:** Como Developer, deseo generar Electronic Billing, para respaldar los pagos aprobados.<br>**TS05:** Como Developer, deseo confirmar pagos de forma asíncrona, para mantener consistentes las operaciones. |
 | **BG02:** Reducir en 20% el tiempo promedio de búsqueda reportado por los conductores en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Andres Salazar - Driver | Consulta información actualizada, identifica una zona permitida, revisa Parking Zones cercanas y abre una ruta externa en Google Maps, reduciendo recorridos innecesarios. | Vista móvil de Availability, sincronización, consulta de Parking Zones cercanas e integración con Google Maps. | **US01:** Como Driver, deseo consultar la Availability por zona, para identificar una zona con posibilidad de espacio.<br>**US04:** Como Driver, deseo consultar mis zonas permitidas, para enfocar mi búsqueda en áreas que puedo utilizar.<br>**US18:** Como Driver, deseo recibir la asignación de mi reserva, para conocer mi destino.<br>**US25:** Como Driver, deseo consultar Parking Zones cercanas, para identificar alternativas alrededor de mi ubicación.<br>**US26:** Como Driver, deseo abrir una ruta en Google Maps, para llegar al estacionamiento seleccionado.<br>**TS01:** Como Developer, deseo sincronizar Availability mediante servicios RESTful, para entregar datos consistentes a la aplicación móvil.<br>**TS02:** Como Developer, deseo conservar datos sincronizados localmente, para responder ante interrupciones temporales. |
 | **BG03:** Reducir en 15% las incidencias de estacionamiento indebido en los estacionamientos piloto al finalizar el sexto mes, frente a la línea base. | Carlos Ramirez - Parking Admin | Monitorea el Occupancy Status proveniente de sensores, atiende alertas operativas y revisa patrones de uso. | Dashboard móvil con Occupancy Map, alertas por Unauthorized Parking, alertas de High Capacity y Occupancy Reports. | **US05:** Como Parking Admin, deseo monitorear el Occupancy Status por zona, para supervisar la operación.<br>**US06:** Como Parking Admin, deseo recibir alertas operativas, para revisar usos indebidos y alta capacidad.<br>**US07:** Como Parking Admin, deseo consultar un resumen operativo y live Digital Parking Map, para controlar ocupación y alertas.<br>**US08:** Como Parking Admin, deseo consultar Occupancy Reports, para apoyar decisiones operativas.<br>**SP01:** Como Developer, deseo validar el monitoreo basado en sensores, para actualizar la ocupación en un máximo de 5 segundos. |
@@ -973,7 +1949,7 @@ Para calcular BG02 y BG03 se propone establecer una línea base antes de iniciar
 *Figura 11 (Impact Map)*
 ![Impact Map](../assets/images/figures/11-impact-map.png)
 
-La figura presenta una vista ejecutiva de la relación entre los tres Business Goals, los User Personas, los cambios de comportamiento esperados, los entregables y las historias principales que los habilitan. La tabla desarrolla el detalle completo de las capacidades de pagos, reservas, suscripciones, facturación, consulta de Parking Zones cercanas e integración con Google Maps. El producto principal es la aplicación móvil y la Landing Page se mantiene como producto digital complementario.
+La figura presenta una vista ejecutiva de la relación entre los tres Business Goals, los User Personas, los cambios de comportamiento esperados, los entregables y las historias principales que los habilitan. La tabla desarrolla el detalle completo de las capacidades de pagos, reservas, suscripciones, facturación, consulta de Parking Zones cercanas e integración con Google Maps. Las aplicaciones móviles y la aplicación web administrativa conforman los clientes del producto; la Landing Page se mantiene como producto digital complementario.
 
 ### 2.4.3. Product Backlog
 
@@ -981,13 +1957,15 @@ El Product Backlog organiza las historias en los tres sprints previstos hasta la
 
 Las estimaciones en puntos de historia usan los valores 1, 2, 3 y 5, con un máximo de 5 puntos por historia. Consideran el esfuerzo, las validaciones, las integraciones y la incertidumbre del alcance completo, incluidos los criterios de aceptación. US12 tiene 1 punto por su navegación mediante enlaces; US04, 2 por consultar zonas según permisos existentes; y US16, 3 por cargar, validar y conservar versiones de una imagen, sin incluir la generación del mapa digital de US17. US13 tiene 2 puntos, suponiendo que reutiliza la autenticación con credenciales y Google de US09; mantiene la creación de la cuenta y el perfil y la validación de duplicados. US27 tiene 2 puntos por registrar y validar los datos de un vehículo asociado con una cuenta. US22 tiene 2 puntos porque consulta facturas existentes y actualiza datos tributarios, sin generar documentos fiscales. US24 tiene 2 puntos por alternar las traducciones existentes de una página estática. TS02 tiene 3 puntos por guardar datos de consulta, identificar información desactualizada y actualizarla al recuperar la conexión; no incluye operaciones de escritura sin conexión. US11 mantiene 3 puntos por su contenido, diseño adaptable y verificación de accesibilidad. Las historias de reservas, pagos, generación del mapa y geolocalización tienen 5 puntos por sus reglas e integraciones. Estos ajustes no reducen los criterios de aceptación ni modifican el alcance. Los sprints representan una distribución inicial de trabajo basada en el valor de negocio y las dependencias funcionales.
 
-La siguiente tabla resume el objetivo, el alcance y los puntos previstos para cada sprint. Las fechas específicas se consignarán en la planificación de cada sprint.
+**Detalle de Sprints**
 
-| Sprint | Objective | Planned Stories | Story Points |
-| --- | --- | --- | ---: |
-| Sprint 1 | Publicar la página de presentación y demostrar los flujos principales: autenticación y registro, disponibilidad, reservas, pagos y configuración del estacionamiento. | US01, US02, US04, US09, US11, US12, US13, US16, US17, US18, US19 | 39 |
-| Sprint 2 | Completar el registro de vehículos, las sesiones de invitados y la administración de estacionamientos; validar sensores, ocupación, alertas y sincronización; e integrar y documentar servicios. | US03, US05, US06, US14, US15, US27, TS01, TS03, TS05, SP01, SP02 | 34 |
-| Sprint 3 | Completar la consulta de zonas y rutas, el panel y los reportes, las suscripciones y la facturación, la sincronización local, la accesibilidad, los idiomas y el video promocional. | US07, US08, US10, US20, US21, US22, US23, US24, US25, US26, TS02, TS04 | 42 |
+| Sprint | Objetivo | US Planeadas | Story Points |
+| --- | --- | --- | --- |
+| Sprint 1 | Desplegar la versión inicial de la Landing Page, desplegar el Backend con un avance del 70% y presentar las pantallas principales de Driver y Parking Admin desarrolladas inicialmente con Jetpack Compose. | US01, US02, US04, US09, US11, US12, US13, US16, US17, US18, US19 | 39 |
+| Sprint 2 | Completar y desplegar al 100% la Landing Page y el Backend, completar al 100% la aplicación Android nativa de Driver con Kotlin y Jetpack Compose, y desarrollar al 40% la aplicación multiplataforma de Parking Admin con Flutter; completar las historias planificadas del sprint. | US03, US05, US06, US14, US15, US27, TS01, TS03, TS05, SP01, SP02 | 34 |
+| Sprint 3 | Completar al 100% el desarrollo previsto, incluida la página web administrativa de SpotGo, y entregar las dos aplicaciones móviles funcionando mediante Firebase App Distribution; completar las historias planificadas del sprint. | US07, US08, US10, US20, US21, US22, US23, US24, US25, US26, TS02, TS04 | 42 |
+
+**Product Backlog**
 
 | Order # | Story ID | Title | Story Points | Sprint |
 | --- | --- | --- | --- | --- |
@@ -999,7 +1977,7 @@ La siguiente tabla resume el objetivo, el alcance y los puntos previstos para ca
 | 6 | US02 | Configurar zonas de estacionamiento | 5 | Sprint 1 |
 | 7 | US16 | Cargar el plano del estacionamiento | 3 | Sprint 1 |
 | 8 | US17 | Generar el mapa digital del estacionamiento | 5 | Sprint 1 |
-| 9 | US09 | Autenticarse y acceder a las funciones móviles según el rol | 3 | Sprint 1 |
+| 9 | US09 | Autenticarse y acceder a las funciones de SpotGo según el rol | 3 | Sprint 1 |
 | 10 | US11 | Comunicar la propuesta de valor en la página de presentación | 3 | Sprint 1 |
 | 11 | US12 | Navegar desde la página de presentación hasta el producto móvil | 1 | Sprint 1 |
 | 12 | US27 | Registrar un vehículo | 2 | Sprint 2 |
@@ -1026,11 +2004,9 @@ La siguiente tabla resume el objetivo, el alcance y los puntos previstos para ca
 | 33 | US24 | Cambiar el idioma de la página de presentación | 2 | Sprint 3 |
 | 34 | US10 | Incorporar accesibilidad y opciones de idioma en la aplicación móvil | 3 | Sprint 3 |
 
-La distribución se alinea con la planificación del Sprint 1: incluye las 11 historias seleccionadas para la página de presentación, las pantallas principales y el avance parcial del backend, con 39 puntos de historia. Esto no implica que todos los flujos integrados estén completos al finalizar el primer sprint. El Sprint 2 incorpora el registro de vehículos, clientes y cuentas administrativas, las sesiones de invitados, la confirmación asíncrona de pagos y la integración y documentación de servicios. También comprende las investigaciones SP01 y SP02 antes de implementar las capacidades de monitoreo y sincronización correspondientes. Estas dependencias permiten completar y validar los flujos iniciados en el Sprint 1. El Sprint 3 reúne la navegación con Google Maps, el panel y los reportes, las suscripciones, la facturación, la sincronización local, el video promocional, la accesibilidad y los idiomas.
+La distribución conserva las 11 historias y los 39 puntos previstos para el Sprint 1. Al cierre de ese sprint, está desplegada la versión inicial de la Landing Page, el Backend registra un avance del 70% y se presentan las pantallas principales de Driver y Parking Admin desarrolladas inicialmente con Jetpack Compose. Esto no implica que todos los flujos integrados estén completos. En el Sprint 2 se prevé completar y desplegar al 100% la Landing Page y el Backend, completar al 100% la aplicación Android nativa de Driver y avanzar al 40% con la aplicación Flutter de Parking Admin. El Sprint 3 completará al 100% el desarrollo previsto, incluida la página web administrativa de SpotGo para SuperAdmin, y publicará las dos aplicaciones móviles en Firebase App Distribution. La distribución de historias mantiene las dependencias de registro, administración de cuentas, sensores, pagos, sincronización, reportes, facturación, accesibilidad e idiomas.
 
 **Evidencia del Product Backlog en Trello**
-
-La rúbrica solicita una captura del tablero y una referencia al URL público del Product Backlog.
 
 **Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo)
 
@@ -1064,7 +2040,7 @@ A partir del **Design-Level EventStorming** se agruparon los eventos, comandos, 
 
 | Contexto candidato | Responsabilidad principal | Clasificación |
 | --- | --- | --- |
-| **Profiles & Vehicles Management** | Gestionar los datos del Driver, sus Vehicles y los perfiles asociados. | Supporting Domain |
+| **Profiles & Vehicles Management** | Gestionar los datos del Driver, sus vehículos y los perfiles asociados. | Supporting Domain |
 | **Identity & Access Management** | Gestionar credenciales, sesiones y autorización según el rol del usuario. | Generic Domain |
 | **Parking Infrastructure** | Gestionar Parking Zones, Parking Spots, disponibilidad y el ciclo de las reservas. | Core Domain |
 | **Payments & Billing** | Gestionar pagos digitales, Payment Tokens, devoluciones, saldos y Subscriptions. | Supporting Domain |
@@ -1088,7 +2064,7 @@ Occupancy & Monitoring también puede informar sobre conflictos de ocupación, e
 
 Además, SpotGo utiliza **Google Identity** para verificar la identidad presentada durante el inicio de sesión con Google, **Google Maps** para la navegación hacia la Parking Zone seleccionada y **Firebase Cloud Messaging** para comunicar eventos relacionados con reservas, pagos y monitoreo. La validación del proveedor no sustituye la autorización ni la sesión de SpotGo.
 
-Los principales mensajes entre contextos son:
+**Principales mensajes entre contextos**
 
 | Origen | Mensaje | Destino |
 | --- | --- | --- |
@@ -1114,7 +2090,7 @@ A partir de los cinco Bounded Contexts identificados se elaboraron sus respectiv
 
 **Profiles & Vehicles Management**
 
-Este contexto administra la información del **Driver**, sus **Vehicles** y los perfiles asociados. Su responsabilidad es mantener estos datos disponibles para que otros contextos puedan validar si un Driver y su vehículo se encuentran habilitados para realizar determinadas operaciones.
+Este contexto administra la información del **Driver**, sus vehículos y los perfiles asociados. Su responsabilidad es mantener estos datos disponibles para que otros contextos puedan validar si un Driver y su vehículo se encuentran habilitados para realizar determinadas operaciones.
 
 Se clasifica como **Supporting Domain**, ya que brinda soporte a los procesos principales del sistema, especialmente a la creación de reservas y a la validación de usuarios.
 
@@ -1266,23 +2242,24 @@ En cuanto a las integraciones externas, SpotGo se comunica con los **Sensores F�
 
 #### *2.5.3.2. Software Architecture Container Level Diagrams*
 
-El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y descompone SpotGo en sus principales unidades de software. La propuesta distingue una sola aplicación móvil construida con una parte nativa Android en Kotlin y otra con Flutter, la Landing Page estática, la aplicación web administrativa y el **API Gateway**, junto con cinco contextos de negocio y el sistema de pagos internos.
+El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y descompone SpotGo en sus principales unidades de software. La propuesta distingue tres aplicaciones cliente independientes: la aplicación Android nativa de Driver, la aplicación multiplataforma Flutter de Parking Admin y la página web administrativa de SpotGo para SuperAdmin. También incluye la Landing Page estática, el **API Gateway**, cinco contextos de negocio y el sistema de pagos internos.
 
 *Figura 23 (Container Level Diagram)*
 ![Container Level Diagram](../assets/diagrams/container-level-diagram.svg)
 
 La solución cuenta con los siguientes contenedores principales:
 
-1. **SpotGo Mobile App:** Una sola aplicación móvil para Driver y Parking Admin, construida con una parte nativa Android en Kotlin y otra con Flutter y Dart. Ambas partes comparten las reglas del dominio, los contratos backend y una experiencia de usuario coherente.
-2. **SpotGo Landing Page:** Sitio estático desarrollado con HTML, CSS y Vanilla JS, desplegado en GitHub Pages. Presenta la propuesta de valor y dirige al visitante al destino de la aplicación móvil.
-3. **SpotGo Administration Web App:** Aplicación web administrativa propuesta con Angular para Parking Admin y SuperAdmin, separada de la Landing Page estática.
-4. **API Gateway:** Punto único de entrada a los servicios internos de SpotGo, encargado de enrutar las solicitudes de las aplicaciones cliente hacia los contextos de negocio mediante HTTPS / REST.
-5. **Internal Payment System:** Sistema de pagos internos de SpotGo que procesa pagos digitales, consultas de estado y reembolsos mediante un contrato con idempotencia. Se representa dentro del límite de SpotGo y se ejecuta en su infraestructura de aplicaciones.
-6. **Profiles & Vehicles Management:** Gestiona Driver, User Profiles, Vehicles y referencias de asignación a los Tenants administrados por Parking Infrastructure. Los visitantes de la Landing Page no tienen un User Profile.
-7. **Identity & Access Management:** Gestiona autenticación con correo y contraseña o Google, sesiones, autorización y auditoría. Reconoce únicamente los roles DRIVER, PARKING_ADMIN y SUPER_ADMIN.
-8. **Parking Infrastructure:** Gestiona Tenants, zonas, espacios, disponibilidad, reservas, sesiones de estacionamiento, asignaciones y reasignaciones.
-9. **Payments & Billing:** Gestiona pagos digitales tokenizados, suscripciones, sobretiempo, reembolsos, comprobantes y saldos pendientes.
-10. **Occupancy & Monitoring:** Recibe información de sensores IoT, determina la ocupación física, supervisa la salud de los sensores y genera eventos de conflictos y sobretiempo.
+1. **SpotGo Driver Android App:** Aplicación nativa Android desarrollada con Kotlin y Jetpack Compose para Driver. Permite iniciar sesión y crear una cuenta mediante el registro público.
+2. **SpotGo Landing Page:** Sitio estático desarrollado con HTML, CSS y Vanilla JS, desplegado en GitHub Pages. Presenta la propuesta de valor y dirige a cada perfil hacia el canal correspondiente.
+3. **SpotGo Administration Web App:** Aplicación web desarrollada con Angular, TypeScript y Angular Material para SuperAdmin. Permite iniciar sesión con una cuenta provisionada y administrar Tenants y cuentas Parking Admin.
+4. **SpotGo Parking Admin Flutter App:** Aplicación independiente y multiplataforma desarrollada con Flutter y Dart para Parking Admin. Permite iniciar sesión con una cuenta provisionada y no incluye registro público.
+5. **API Gateway:** Punto único de entrada a los servicios internos de SpotGo, encargado de enrutar las solicitudes de las aplicaciones cliente hacia los contextos de negocio mediante HTTPS / REST.
+6. **Internal Payment System:** Sistema de pagos internos de SpotGo que procesa pagos digitales, consultas de estado y reembolsos mediante un contrato con idempotencia. Se representa dentro del límite de SpotGo y se ejecuta en su infraestructura de aplicaciones.
+7. **Profiles & Vehicles Management:** Gestiona Driver, User Profiles, vehículos y referencias de asignación a los Tenants administrados por Parking Infrastructure. Los visitantes de la Landing Page no tienen un User Profile.
+8. **Identity & Access Management:** Gestiona autenticación con correo y contraseña o Google, sesiones, autorización y auditoría. Reconoce únicamente los roles DRIVER, PARKING_ADMIN y SUPER_ADMIN.
+9. **Parking Infrastructure:** Gestiona Tenants, zonas, espacios, disponibilidad, reservas, sesiones de estacionamiento, asignaciones y reasignaciones.
+10. **Payments & Billing:** Gestiona pagos digitales tokenizados, suscripciones, sobretiempo, reembolsos, comprobantes y saldos pendientes.
+11. **Occupancy & Monitoring:** Recibe información de sensores IoT, determina la ocupación física, supervisa la salud de los sensores y genera eventos de conflictos y sobretiempo.
 
 Cada contexto de negocio mantiene además una base de datos PostgreSQL independiente, permitiendo separar la persistencia de información según las responsabilidades de cada dominio. Los servicios se comunican entre sí mediante HTTPS / REST y, para determinados procesos, mediante eventos asíncronos.
 
@@ -1293,7 +2270,7 @@ El **Diagrama de Despliegue** representa la distribución física de los element
 *Figura 24 (Deployment Diagram)*
 ![Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
 
-La infraestructura contempla un **Driver Device**, utilizado para ejecutar la aplicación móvil, y un **Parking Admin Device**, desde el cual el Parking Admin accede a sus vistas administrativas móviles y web. El **SuperAdmin** utiliza un **SuperAdmin Device** con acceso a la aplicación web para provisionar Parking Admin y administrar Tenants. Los dispositivos se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de recibir y enrutar las solicitudes hacia los servicios de SpotGo.
+La infraestructura contempla un **Driver Device** que ejecuta la aplicación Android nativa de Driver, un **Parking Admin Device** que ejecuta la aplicación multiplataforma de Parking Admin y un **SuperAdmin Device** desde el cual se accede a la página web administrativa de SpotGo. Los tres clientes se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de enrutar las solicitudes hacia los servicios de SpotGo.
 
 Dentro de la infraestructura cloud se encuentra el **Application Server**, donde se ejecutan los cinco servicios de los contextos de negocio y el **Internal Payment System**. La persistencia se concentra en una sola instancia física de **PostgreSQL Server**, alojada dentro de la **Database Infrastructure**, con cinco bases de datos lógicas independientes, una por contexto. La Landing Page estática se aloja de forma independiente en **GitHub Pages**.
 
@@ -1305,7 +2282,7 @@ El diseño táctico traduce los límites identificados durante el diseño estrat
 
 La propuesta se organiza en cuatro capas. La Domain Layer contiene las entidades, objetos de valor, agregados, fábricas, servicios de dominio e interfaces de repositorio. La Interface Layer expone controladores REST y consumidores de eventos. La Application Layer coordina comandos, casos de uso y manejadores de eventos, mientras que la Infrastructure Layer implementa la persistencia, los adaptadores de integración y la mensajería. Las tablas de cada contexto explican los componentes, las clases y los objetos de base de datos presentados en los diagramas de las secciones siguientes.
 
-Como línea base tecnológica, el backend se implementará con Java y Spring Boot, con cinco bases de datos lógicas independientes en una sola instancia física de PostgreSQL Server. Se construirá una sola aplicación móvil, con una parte nativa Android en Kotlin y otra con Flutter. Ambas partes comparten los contratos backend y las reglas del dominio. La comunicación utiliza APIs REST sobre HTTPS y mensajería asíncrona cuando el flujo lo requiere. Google Maps, Google Identity para el inicio de sesión y Firebase Cloud Messaging son servicios externos; el sistema de pagos internos pertenece a SpotGo.
+Como línea base tecnológica, el backend se implementará con Java y Spring Boot, con cinco bases de datos lógicas independientes en una sola instancia física de PostgreSQL Server. SpotGo contará con tres clientes separados por perfil: una aplicación Android nativa con Kotlin y Jetpack Compose para Driver, una aplicación multiplataforma con Flutter y Dart para Parking Admin, y una aplicación web con Angular, TypeScript y Angular Material para SuperAdmin. Los clientes utilizan los contratos backend y las reglas del dominio correspondientes a sus permisos. La comunicación utiliza APIs REST sobre HTTPS y mensajería asíncrona cuando el flujo lo requiere. Google Maps, Google Identity para el inicio de sesión y Firebase Cloud Messaging son servicios externos; el sistema de pagos internos pertenece a SpotGo.
 
 Los contextos se integran mediante contratos REST, identificadores y eventos de dominio. Un bounded context no accederá directamente a las tablas de otro ni establecerá claves foráneas entre bases de datos independientes. Cuando un modelo necesite identificar información administrada por otro contexto, conservará únicamente la referencia necesaria y validará su vigencia mediante una API o un evento. Esta regla mantiene la autonomía de cada contexto y evita duplicar la responsabilidad de las reglas de negocio.
 
@@ -1316,6 +2293,6 @@ Los contextos se integran mediante contratos REST, identificadores y eventos de 
 | Temporary Lock | Al iniciar el pago digital de una reserva se crea un bloqueo temporal del espacio por 10 minutos. Durante ese periodo el espacio no puede ser asignado a otra reserva. Un pago aprobado dentro del plazo transforma la intención en una reserva confirmada; un rechazo, cancelación o vencimiento libera el espacio. Una aprobación recibida después del vencimiento no reactiva el bloqueo y pasa por un flujo de conciliación y reembolso o revisión. |
 | Reintentos de pago | El proveedor interno recibe una clave de idempotencia por operación. Los errores transitorios, como timeout, indisponibilidad de red o respuesta 5xx, se reintentan con espera progresiva. Los rechazos definitivos, tokens inválidos, fondos insuficientes o respuestas asociadas a fraude no se reintentan automáticamente. Las operaciones de invitados pagadas en efectivo o POS no ingresan al flujo digital ni generan reintentos en Payments & Billing. |
 | Retención del historial | Como política base propuesta, las reservas, sesiones, pagos, comprobantes, reembolsos, saldos y auditorías se conservan durante cinco años. Las lecturas de sensores en bruto se conservan durante doce meses y los reportes o agregados de ocupación durante veinticuatro meses. Los plazos son configurables y cualquier investigación, reclamo o auditoría abierta suspende la eliminación. Al finalizar el plazo, los datos personales se anonimizan o eliminan cuando no sean necesarios para conservar estadísticas agregadas. |
-| Expiración de sesiones de acceso | El token de acceso dura 15 minutos. El token de renovación dura siete días, se rota al utilizarse y se revoca al cerrar sesión, cambiar credenciales o detectar un evento de seguridad. En la aplicación web administrativa se aplica una expiración por inactividad de 30 minutos y una duración máxima de ocho horas por sesión. |
+| Expiración de sesiones de acceso | El token de acceso dura 15 minutos. El token de renovación dura siete días, se rota al utilizarse y se revoca al cerrar sesión, cambiar credenciales o detectar un evento de seguridad. En la página web administrativa de SpotGo, utilizada por SuperAdmin, se aplica una expiración por inactividad de 30 minutos y una duración máxima de ocho horas por sesión. |
 | Guest Parking Session | La sesión de un invitado no se cierra automáticamente solo por el paso del tiempo, porque su entrada, salida y pago físico son confirmados manualmente por Parking Admin. Si permanece abierta durante 24 horas, se genera una alerta de revisión; este umbral puede configurarse sin cambiar la regla de cierre manual. |
 | Sobretiempo y ocupación | La tolerancia operativa para detectar sobretiempo es de cinco minutos. La ocupación física y el estado de una reserva se mantienen independientes. No se genera un cobro adicional únicamente con una lectura no confiable ni se infiere la identidad del vehículo a partir del sensor. |

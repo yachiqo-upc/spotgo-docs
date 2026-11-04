@@ -43,6 +43,10 @@ Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of sof
 
 **Languages, frameworks and tools**
 
+Angular. (s. f.). *Angular documentation*. https://angular.dev/
+
+Angular Material. (s. f.). *Angular Material components*. https://material.angular.dev/
+
 Apache Software Foundation. (s. f.). *Maven documentation*. https://maven.apache.org/guides/
 
 Brown, S. (s. f.). *The C4 model for visualising software architecture*. https://c4model.com/
@@ -50,6 +54,8 @@ Brown, S. (s. f.). *The C4 model for visualising software architecture*. https:/
 Figma. (s. f.). *Figma help center*. https://help.figma.com/
 
 Firebase. (s. f.). *Firebase Cloud Messaging*. https://firebase.google.com/docs/cloud-messaging
+
+Firebase. (s. f.). *Firebase App Distribution*. https://firebase.google.com/docs/app-distribution/
 
 Flutter team. (s. f.). *Flutter documentation*. https://docs.flutter.dev/
 
@@ -67,20 +73,32 @@ Gradle. (s. f.). *The Gradle Wrapper*. https://docs.gradle.org/current/userguide
 
 JetBrains. (s. f.). *Kotlin documentation*. https://kotlinlang.org/docs/home.html
 
+Lucid Software. (s. f.). *Lucidchart*. https://www.lucidchart.com/
+
 Mozilla. (s. f.). *MDN Web Docs: Web technology for developers*. https://developer.mozilla.org/en-US/docs/Web
 
 Neon. (s. f.). *Neon documentation*. https://neon.com/docs/introduction
 
 OpenAPI Initiative. (s. f.). *OpenAPI specification*. https://spec.openapis.org/oas/latest.html
 
-Oracle. (s. f.). *Java Platform, Standard Edition 26 documentation*. https://docs.oracle.com/en/java/javase/26/
+PlantUML. (s. f.). *PlantUML Language Reference Guide*. https://plantuml.com/en/guide
+
+Oracle. (s. f.). *Java Platform, Standard Edition 25 documentation*. https://docs.oracle.com/en/java/javase/25/
 
 PostgreSQL Global Development Group. (s. f.). *PostgreSQL documentation*. https://www.postgresql.org/docs/
 
-Railpack. (s. f.). *Java*. https://railpack.com/languages/java
+Render. (s. f.). *Docker on Render*. https://render.com/docs/docker
 
-Railway. (s. f.). *Using variables*. https://docs.railway.com/variables
+Render. (s. f.). *Environment Variables and Secrets*. https://render.com/docs/configure-environment-variables
+
+Render. (s. f.). *Static Sites*. https://render.com/docs/static-sites
+
+Render. (s. f.). *Supported Languages*. https://render.com/docs/language-support
 
 Spring. (s. f.). *Spring Boot reference documentation*. https://docs.spring.io/spring-boot/index.html
+
+Structurizr. (s. f.). *Structurizr DSL*. https://docs.structurizr.com/dsl
+
+TypeScript. (s. f.). *TypeScript documentation*. https://www.typescriptlang.org/docs/
 
 World Wide Web Consortium. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/

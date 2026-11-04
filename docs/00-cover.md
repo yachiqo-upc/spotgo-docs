@@ -1,70 +1,51 @@
 <div align="center" style="width: 100%; margin: 0 auto; text-align: center;">
-
-<img src="../assets/images/others/upc-logo.png" alt="UPC Logo" width="150px">
-
-Universidad Peruana de Ciencias Aplicadas
-
-Carrera de Ingeniería de Software
-
-**1ACC0238**
-
-**Aplicaciones para Dispositivos Móviles**
-
-NRC
-
-**13984**
-
-**Informe del Trabajo Final**
-
-Docente
-
-**Quevedo Velasco, David Gerardo**
-
-Equipo
-
-**Yachiqo**
-
-Proyecto
-
-**SpotGo**
-
-**Integrantes**
-
-<table style="width: auto; margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center;">
-  <thead>
-    <tr>
-      <th style="padding: 8px; border: 1px solid #666; text-align: center;">Código</th>
-      <th style="padding: 8px; border: 1px solid #666; text-align: center;">Apellidos, Nombres</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241D932</td>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Carhuaz Centeno, Briguite Eryka</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241D995</td>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Contreras Rojas, Cesar Jair</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20231B120</td>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Cotrina Siclla, Sofia Alessandra</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U202317099</td>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Rojas Tello, Nestor Alonso</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241E177</td>
-      <td style="padding: 8px; border: 1px solid #666; text-align: center;">Ruiz Mideyros, Adrian</td>
-    </tr>
-  </tbody>
-</table>
-
-**Período 202620**
-
-**Octubre 2026**
-
+    <img src="../assets/images/others/upc-logo.png" alt="UPC Logo" width="150px">
+    <p>Universidad Peruana de Ciencias Aplicadas</p>
+    <p>Carrera de Ingeniería de Software</p><br>
+    <p><strong>1ACC0238</strong></p>
+    <p><strong>Aplicaciones para Dispositivos Móviles</strong></p>
+    <p>NRC</p>
+    <p><strong>13984</strong></p>
+    <p><strong>Informe del Trabajo Final</strong></p>
+    <p>Docente</p>
+    <p><strong>Quevedo Velasco, David Gerardo</strong></p><br>
+    <p>Equipo</p>
+    <p><strong>Yachiqo</strong></p>
+    <p>Proyecto</p>
+    <p><strong>SpotGo</strong></p><br>
+    <p><strong>Integrantes</strong></p>
+    <table style="width: auto; margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center;">
+      <thead>
+        <tr>
+          <th style="padding: 8px; border: 1px solid #666; text-align: center;">Código</th>
+          <th style="padding: 8px; border: 1px solid #666; text-align: center;">Apellidos, Nombres</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241D932</td>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">Carhuaz Centeno, Briguite Eryka</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241D995</td>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">Contreras Rojas, Cesar Jair</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20231B120</td>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">Cotrina Siclla, Sofia Alessandra</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">U202317099</td>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">Rojas Tello, Nestor Alonso</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">U20241E177</td>
+          <td style="padding: 8px; border: 1px solid #666; text-align: center;">Ruiz Mideyros, Adrian</td>
+        </tr>
+      </tbody>
+    </table>
+    <br><p><strong>Período 202620</strong></p>
+    <p><strong>Noviembre 2026</strong></p>
 </div>
 
 ---

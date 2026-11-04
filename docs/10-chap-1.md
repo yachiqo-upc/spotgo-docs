@@ -10,7 +10,7 @@ Yachiqo
 
 **Descripción**
 
-Yachiqo es una startup de ingeniería de software especializada en el diseño y desarrollo de soluciones móviles nativas y multiplataforma adaptables a cualquier sector o modelo de negocio. Nuestra propuesta combina arquitecturas distribuidas orientadas al dominio (Domain-Driven Design), persistencia local de datos y servicios web RESTful para transformar necesidades operativas en aplicaciones móviles robustas, escalables y con un alto enfoque en accesibilidad e internacionalización.
+Yachiqo es una startup ficticia de ingeniería de software dedicada al diseño y desarrollo de soluciones digitales, con énfasis en aplicaciones móviles nativas y multiplataforma para distintos sectores y modelos de negocio. La arquitectura, las tecnologías y las integraciones se definen de acuerdo con los objetivos y las necesidades de cada proyecto.
 
 **Visión**
 
@@ -26,10 +26,10 @@ Ofrecemos un ecosistema de desarrollo móvil flexible y a medida para cualquier 
 
 **Características principales**
 
-- Desarrollo de aplicaciones móviles que combinan partes nativas en Kotlin con partes desarrolladas en Flutter dentro de una sola aplicación.
-- Modelado del negocio con Domain-Driven Design para adaptar la solución a las reglas de cualquier industria.
-- Almacenamiento de datos local en el dispositivo para garantizar su uso continuo en entornos sin conexión a internet.
-- Integración con servicios web RESTful propios para la sincronización y consumo de información en tiempo real.
+- Diseño y desarrollo de aplicaciones móviles nativas y multiplataforma para distintos sectores, con soluciones web complementarias cuando las necesidades del proyecto lo requieren.
+- Aplicación de Domain-Driven Design para organizar las reglas del negocio y adaptar cada solución a su contexto.
+- Diseño de mecanismos de almacenamiento local cuando el producto requiere mantener algunas funciones sin conexión a internet.
+- Integración con servicios web RESTful para sincronizar información entre aplicaciones y plataformas.
 - Diseño inclusivo con soporte de internacionalización (i18n) y accesibilidad (a11y) para todo tipo de público.
 
 La selección de criterios para la experiencia de usuario móvil y el uso de prototipos se fundamenta en investigaciones recientes sobre atributos, métodos de evaluación y procesos de diseño de aplicaciones móviles (Alshammare et al., 2025; İlhan, 2025).

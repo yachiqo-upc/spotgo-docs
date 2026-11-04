@@ -8,7 +8,7 @@ Las Style Guidelines de SpotGo establecen los criterios visuales y de interacci�
 
 El objetivo es contar con un lenguaje visual centralizado que permita que todos los componentes mantengan una apariencia consistente, independientemente de la pantalla o funcionalidad en la que sean utilizados.
 
-#### 3.1.1.1. General Style Guidelines
+#### 3.1.1.1. *General Style Guidelines*
 
 **Branding**
 
@@ -21,7 +21,7 @@ El nombre SpotGo representa la idea de encontrar y utilizar un espacio de estaci
 *Figura 40 (SpotGo Logo)*
 ![SpotGo Logo](../assets/images/others/spotgo-logo.png)
 
-**Typography**
+**Tipografía**
 
 Se utilizará Plus Jakarta Sans como familia tipográfica principal. La tipografía se empleará de manera consistente en títulos, textos, botones, etiquetas, estados y metadatos.
 
@@ -30,7 +30,7 @@ Se propone la siguiente jerarquía:
 *Figura 41 (SpotGo Typography)*
 ![SpotGo Typography](../assets/images/others/spotgo-tipography.png)
 
-**Colors**
+**Paleta de colores**
 
 La paleta implementa un Dark Design System diseñado para reducir la fatiga visual del usuario en entornos de baja luminosidad, priorizando el contraste para identificar rápidamente el estado del estacionamiento:
 
@@ -44,7 +44,7 @@ La paleta implementa un Dark Design System diseñado para reducir la fatiga visu
 *Figura 42 (SpotGo Palette)*
 ![SpotGo Palette](../assets/images/others/spotgo-palette.png)
 
-**Spacing**
+**Espaciado**
 
 La propuesta utiliza una escala de espaciado basada en 4 unidades: 4, 8, 12, 16, 24, 32 y 48. Los espacios de 4 y 8 separan elementos relacionados, como un icono y su etiqueta; 12 y 16 organizan controles y contenido dentro de tarjetas; 24, 32 y 48 separan grupos y secciones. La proximidad distingue información relacionada y la repetición mantiene un ritmo visual consistente.
 
@@ -63,7 +63,7 @@ La interfaz utiliza English (en_US) por defecto y Latin American Spanish (es_419
 
 **Mobile Style Guidelines**
 
-La aplicación móvil integra una parte Android nativa con Kotlin y otra con Flutter. Ambas partes comparten tipografía, paleta, espaciado y significado de los estados. La implementación adapta las unidades al entorno: dp para dimensiones y sp para texto en Android, y píxeles lógicos con soporte de escalado de texto en Flutter. La propuesta parte de texto de cuerpo de 16 sp o su equivalente y áreas de interacción de al menos 48 dp o píxeles lógicos, separadas para reducir selecciones accidentales.
+SpotGo contará con dos aplicaciones móviles independientes. La aplicación nativa de Driver se desarrollará con Kotlin y Jetpack Compose; la aplicación multiplataforma de Parking Admin, con Flutter y Dart. Ambas seguirán la misma identidad visual y los mismos criterios de espaciado, sin combinarse en un solo artefacto. Las dimensiones se adaptarán a cada entorno: dp y sp en Android, y píxeles lógicos con escalado de texto en Flutter. La propuesta parte de texto de cuerpo de 16 sp o su equivalente y áreas de interacción de al menos 48 dp o píxeles lógicos, separadas para reducir selecciones accidentales.
 
 Driver utiliza navegación inferior con Explore, Reservations, Payments y Profile; Parking Admin utiliza Dashboard, Occupancy, Alerts y More. Los formularios presentan etiquetas persistentes, errores junto al campo y acciones de recuperación. Las pantallas de reservas y pagos muestran el espacio, horario, importe y resultado antes de continuar. El contenido respeta las áreas seguras del dispositivo y debe seguir siendo utilizable con texto ampliado.
 
@@ -73,7 +73,7 @@ La ocupación, el estado de reserva y la salud del sensor se muestran por separa
 
 Esta sección define la organización del contenido de la Landing Page y la aplicación de SpotGo mediante sistemas de organización, etiquetado, búsqueda y navegación que reducen la carga cognitiva. La arquitectura prioriza las necesidades de los usuarios con los roles Driver y Parking Admin. Driver se enfoca en buscar, consultar disponibilidad y reservar espacios; Parking Admin, en administrar y monitorear los estacionamientos.
 
-#### 3.1.2.1. Organization Systems
+#### *3.1.2.1. Organization Systems*
 
 En esta sección se definen los sistemas de organización que se plantearán para SpotGo, considerando tanto la Landing Page como las aplicaciones destinadas a los roles Driver y Parking Admin. El objetivo será estructurar la información de manera clara y facilitar el acceso a las funcionalidades principales.
 
@@ -95,7 +95,7 @@ En esta sección se definen los sistemas de organización que se plantearán par
 
 - **Por estado:** Los Parking Spots se clasifican según su Occupancy Status: **Available, Occupied o Unavailable**. Las reservas se organizan según el estado de la reserva, como **Pending Payment, Reserved, Active, Completed, Cancelled, No-show, Overstayed o Payment Rejected**. Ambas dimensiones se muestran por separado: un espacio físicamente Available puede seguir protegido por una reserva vigente y no estar disponible para una nueva reserva.
 
-#### 3.1.2.2. Labelling Systems
+#### *3.1.2.2. Labelling Systems*
 
 En esta sección se definen las etiquetas que se plantearán para representar la información y funcionalidades de SpotGo. Estas etiquetas buscarán ser cortas, directas y consistentes, permitiendo que los usuarios comprendan rápidamente el propósito de cada sección o acción.
 
@@ -129,7 +129,7 @@ La etiqueta **Reserved** se utiliza exclusivamente para el estado de la reserva.
 
 Las etiquetas de las acciones utilizarán términos directos como **Reserve**, **View Details**, **Get Directions**, **Confirm** y **Cancel**, evitando textos extensos que puedan dificultar la comprensión de las acciones.
 
-#### 3.1.2.3. SEO Tags and Meta Tags
+#### *3.1.2.3. SEO Tags and Meta Tags*
 
 En esta sección se definen los SEO Tags y Meta Tags que se plantearán para la Landing Page de SpotGo. Estos elementos estarán orientados a comunicar claramente la propuesta de valor del producto y facilitar su posicionamiento en motores de búsqueda.
 
@@ -158,7 +158,7 @@ La estructura de la Landing Page se organizará alrededor de contenidos dirigido
 
 **ASO Elements de las aplicaciones móviles**
 
-Los siguientes valores constituyen la propuesta de metadatos para la aplicación móvil que integra Kotlin nativo y Flutter. Su publicación se ajustará a las funcionalidades disponibles en la versión entregada y a los campos admitidos por cada tienda.
+Los siguientes valores constituyen la propuesta inicial de metadatos para las dos aplicaciones móviles independientes: la aplicación nativa de Driver y la aplicación multiplataforma de Parking Admin. La publicación de cada una se ajustará a sus funciones y a los campos admitidos por cada tienda; la descripción actual resume la propuesta de SpotGo y deberá adaptarse a cada perfil antes de su publicación.
 
 | Elemento | English (en_US), idioma predeterminado | Latin American Spanish (es_419) |
 | --- | --- | --- |
@@ -169,7 +169,7 @@ Los siguientes valores constituyen la propuesta de metadatos para la aplicación
 
 App Keywords expresa los términos de búsqueda del producto; App Subtitle resume su beneficio y App Description explica las funciones y el acceso según el rol. Estos metadatos son una propuesta de diseño y no una evidencia de publicación en una app store.
 
-#### 3.1.2.4. Searching Systems
+#### *3.1.2.4. Searching Systems*
 
 En esta sección se definen los mecanismos de búsqueda que se plantearán en SpotGo para facilitar que los usuarios encuentren rápidamente la información que necesitan.
 
@@ -187,7 +187,7 @@ Los resultados de búsqueda se plantearán mediante tarjetas y elementos visuale
 
 Para el rol **Parking Admin**, las consultas se realizan dentro de cada sección administrativa. En **Occupancy** se proponen filtros por Parking Zone, Occupancy Status, estado de la reserva y Sensor Health. En **Alerts**, los filtros corresponden al tipo de incidencia, severidad y estado de resolución; en los registros y reportes, al periodo y la zona. Los resultados muestran el identificador del espacio o registro, sus estados y la última actualización. **Dashboard, Occupancy, Alerts y More** son destinos de navegación y no filtros de búsqueda.
 
-#### 3.1.2.5. Navigation Systems
+#### *3.1.2.5. Navigation Systems*
 
 En esta sección se definen los sistemas de navegación que se plantearán para guiar a los usuarios a través de la Landing Page y las aplicaciones de SpotGo, permitiéndoles acceder a las funcionalidades necesarias de acuerdo con sus objetivos.
 
@@ -216,12 +216,12 @@ Finalmente, la navegación mantendrá una estructura consistente entre las difer
 
 Esta sección presenta el diseño de la interfaz de la Landing Page de SpotGo, orientada a comunicar su propuesta de valor a Driver y Parking Admin. El wireframe define la estructura y jerarquía del contenido, mientras que el mock-up muestra su apariencia visual. Ambos artefactos aplican los lineamientos generales de diseño y organizan las funcionalidades, los planes y los medios de contacto para facilitar la navegación y la comprensión del producto.
 
-#### 3.1.3.1. Landing Page Wireframe
+#### *3.1.3.1. Landing Page Wireframe*
 
 *Figura 43 (Wireframe de la landing page)*
 ![Landing Page Wireframe](../assets/images/figures/43-landing-page-wireframe.png)
 
-#### 3.1.3.2. Landing Page Mock-up
+#### *3.1.3.2. Landing Page Mock-up*
 
 *Figura 44 (Mock-up de la landing page)*
 ![Landing Page Mock-up](../assets/images/figures/44-landing-page-mock-up.png)
@@ -230,7 +230,7 @@ Esta sección presenta el diseño de la interfaz de la Landing Page de SpotGo, o
 
 Esta sección presenta la propuesta de experiencia e interfaz para la aplicación móvil de SpotGo dirigida a Driver y Parking Admin. Los wireframes describen la organización y jerarquía de los elementos; los mock-ups muestran su apariencia visual; y los diagramas resumen las secuencias de interacción y las rutas principales de cada perfil. El repositorio incluye todas las pantallas principales de ambos perfiles, mientras que aquí se muestran únicamente ejemplos representativos.
 
-#### 3.1.4.1. Applications Wireframes
+#### *3.1.4.1. Applications Wireframes*
 
 Los wireframes de baja fidelidad permiten revisar la estructura de cada pantalla y la ubicación de sus controles antes de evaluar el tratamiento visual final. Para Driver, se incluyen ejemplos de acceso, exploración del mapa, consulta y reserva de una zona, gestión de reservas, pagos, vehículos y comprobantes. Para Parking Admin, se muestran ejemplos del dashboard, alertas, zonas, sesiones de invitados, mapa digital y facturación.
 
@@ -277,7 +277,7 @@ Los wireframes de baja fidelidad permiten revisar la estructura de cada pantalla
 *Figura 57 (Wireframe de facturación para clientes empresariales)*
 ![Parking Admin B2B Billing Wireframe](../assets/images/ui-ux/wireframes/parking-admin/26-b2b-billing.png)
 
-#### 3.1.4.2. Applications Wireflow Diagrams
+#### *3.1.4.2. Applications Wireflow Diagrams*
 
 Los wireflows combinan pantallas esquemáticas con conexiones para mostrar el orden de navegación y las decisiones disponibles dentro de una tarea. Los seis diagramas siguientes cubren los principales escenarios de acceso, gestión de vehículos, reservas y pagos para Driver, así como infraestructura, operaciones, invitados, reportes y facturación para Parking Admin.
 
@@ -303,7 +303,7 @@ Los wireflows combinan pantallas esquemáticas con conexiones para mostrar el or
 *Figura 63 (Wireflow de reportes y facturación para Parking Admin)*
 ![Parking Admin Reports and Billing Wireflow](../assets/diagrams/ui-ux/wireflows/wireflow-admin-03-reports-billing.svg)
 
-#### 3.1.4.3. Applications Mock-ups
+#### *3.1.4.3. Applications Mock-ups*
 
 Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten apreciar la jerarquía, los componentes y la presentación de la información en cada aplicación. Se presentan las mismas áreas funcionales seleccionadas en los wireframes para facilitar la comparación entre estructura y propuesta visual.
 
@@ -350,7 +350,7 @@ Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten ap
 *Figura 76 (Mock-up de facturación para clientes empresariales)*
 ![Parking Admin B2B Billing Mock-up](../assets/images/ui-ux/mockups/parking-admin/26-b2b-billing.png)
 
-#### 3.1.4.4. Applications User Flow Diagrams
+#### *3.1.4.4. Applications User Flow Diagrams*
 
 Los user flows ofrecen una vista de alto nivel de los objetivos, decisiones y recorridos posibles de cada perfil. El flujo de Driver abarca el uso de la aplicación móvil para encontrar y reservar estacionamiento y gestionar servicios asociados. El flujo de Parking Admin representa las tareas de supervisión y administración de la operación.
 
@@ -360,7 +360,7 @@ Los user flows ofrecen una vista de alto nivel de los objetivos, decisiones y re
 *Figura 78 (User flow de la aplicación para Parking Admin)*
 ![Parking Admin User Flow](../assets/diagrams/ui-ux/user-flows/userflow-parking-admin.svg)
 
-#### 3.1.4.5. Applications Prototypes
+#### *3.1.4.5. Applications Prototypes*
 
 Los prototipos interactivos de SpotGo permiten validar la navegación y los principales flujos definidos para los perfiles Driver y Parking Admin.
 

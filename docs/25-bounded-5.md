@@ -2,7 +2,7 @@
 
 Occupancy & Monitoring es un bounded context principal que recibe y procesa la información de los sensores instalados en los Parking Spots. Su responsabilidad es mantener el estado físico de ocupación, supervisar la salud de los sensores, identificar conflictos, detectar condiciones de sobretiempo y generar alertas y reportes para la operación.
 
-El sensor confirma si un espacio está disponible u ocupado, pero no identifica la placa ni el vehículo que se encuentra en él. Por ello, este contexto no crea ni administra Driver, Vehicles, reservas o Parking Sessions. Parking Infrastructure conserva la propiedad de esas entidades y consume los eventos de ocupación para actualizar la disponibilidad, resolver conflictos o solicitar un cargo adicional cuando exista evidencia confiable.
+El sensor confirma si un espacio está disponible u ocupado, pero no identifica la placa ni el vehículo que se encuentra en él. Por ello, este contexto no crea ni administra conductores, vehículos, reservas o sesiones de estacionamiento. Parking Infrastructure conserva la propiedad de esas entidades y consume los eventos de ocupación para actualizar la disponibilidad, resolver conflictos o solicitar un cargo adicional cuando exista evidencia confiable.
 
 Los estados de ocupación se mantienen independientes de los estados de la reserva. Un Parking Spot puede estar físicamente ocupado mientras una reserva aparece como RESERVED, ACTIVE, COMPLETED o en otro estado; la diferencia se analiza como una condición operativa y no se corrige modificando automáticamente una entidad del otro contexto.
 
@@ -64,7 +64,7 @@ La Interface Layer recibe mensajes de los sensores por MQTT o HTTP y expone cons
 | Monitoring Event Publisher | Evento asíncrono | Publica estados, fallas, conflictos y solicitudes de cargos adicionales. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected, AdditionalChargeRequested. |
 | Notification Adapter | Evento o API interna | Envía alertas operativas mediante Firebase Cloud Messaging cuando corresponda. | HighCapacityReached, UnauthorizedParkingDetected, SensorFailureDetected. |
 
-La aplicación móvil, construida con una parte nativa en Kotlin y otra en Flutter, y la aplicación web administrativa consultan el estado a través del API Gateway. Ambas partes de la aplicación móvil utilizan el mismo contrato de Occupancy Status y las mismas reglas de monitoreo; ninguna incorpora identificación automática del vehículo.
+La aplicación Android nativa de Driver y la aplicación Flutter de Parking Admin consultan los datos de disponibilidad y ocupación permitidos para sus roles a través del API Gateway. Ambas utilizan el mismo contrato de Occupancy Status y las mismas reglas de monitoreo; ninguna incorpora identificación automática del vehículo. La página web administrativa de SpotGo permite a SuperAdmin administrar los Tenants y las cuentas provisionadas sin sustituir las vistas operativas de Parking Admin.
 
 #### *2.6.5.3. Application Layer*
 
