@@ -141,7 +141,7 @@ El Temporary Lock se almacena con lockedAt, expiresAt y status, y debe estar pro
 
 El diagrama de componentes representa Parking Infrastructure como un contenedor autónomo dentro del backend, con su base de datos PostgreSQL y adaptadores para Profiles & Vehicles Management, Identity & Access Management, Payments & Billing, Occupancy & Monitoring y Google Maps. Las aplicaciones Android de Driver y Flutter de Parking Admin se sitúan fuera del bounded context y acceden a través del API Gateway.
 
-*Figura 31 (Parking Infrastructure Component Level Diagram)*
+*Figura 31 (Parking Infrastructure Component Level Diagram)*  
 ![Parking Infrastructure Component Level Diagram](../assets/diagrams/components-diagram-parking.svg)
 
 | Componente | Responsabilidad | Dependencias principales |
@@ -168,7 +168,7 @@ La vista de código se concentra en los agregados y servicios de dominio que gob
 
 #### ***2.6.3.6.1. Bounded Context Domain Layer Class Diagrams***
 
-*Figura 32 (Parking Infrastructure Domain Layer Class Diagram)*
+*Figura 32 (Parking Infrastructure Domain Layer Class Diagram)*  
 ![Parking Infrastructure Domain Layer Class Diagram](../assets/diagrams/class-diagram-parking.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -221,7 +221,7 @@ La vista de código se concentra en los agregados y servicios de dominio que gob
 
 Parking Infrastructure Database contiene la configuración física y los procesos de reserva y sesión. Las foreign keys se aplican a relaciones internas. profile_id, vehicle_id y payment_ref son referencias lógicas a otros bounded contexts y no crean foreign keys entre bases.
 
-*Figura 33 (Parking Infrastructure Database Design Diagram)*
+*Figura 33 (Parking Infrastructure Database Design Diagram)*  
 ![Parking Infrastructure Database Design Diagram](../assets/diagrams/db-diagram-parking.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |

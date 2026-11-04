@@ -54,13 +54,13 @@
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | --- | --- | --- | --- |
-| 0.1.0 | 04/09/26 | @AdrixRyz | docs: copiar y ajustar todos los puntos previos de SpotGo hasta Requirements specification al nuevo proyecto |
+| 0.1.0 | 04/09/26 | @AdrixRyz | docs: copiar y ajustar todos los puntos previos de SpotGo hasta Requirements specification |
 | 0.1.1 | 10/09/26 | @briicarhuaz | docs: agregar todos los puntos de EventStorming |
 | 0.1.2 | 12/09/26 | @IamAndreek | docs: agregar los puntos de Context Mapping y Software Architecture |
 | 0.1.3 | 14/09/26 | @CesarJrCR | docs: agregar parte de los puntos de Tactical-Level Domain-Driven Design |
 | 0.1.4 | 15/09/26 | @nes-ro | docs: agregar parte de los puntos de Tactical-Level Domain-Driven Design |
-| 0.1.5 | 16/09/26 | @AdrixRyz | docs: revisar todos los puntos agregados del AV1 |
-| 0.2.0 | 29/09/26 | @nes-ro | docs: corregir los errores del AV1 |
+| 0.1.5 | 16/09/26 | @AdrixRyz | docs: realizar correcciones finales para el AV1 |
+| 0.2.0 | 29/09/26 | @nes-ro | docs: corregir los comentarios del AV1 |
 | 0.2.1 | 30/09/26 | @IamAndreek | docs: agregar todos los puntos de Style Guidelines |
 | 0.2.2 | 30/09/26 | @IamAndreek | docs: agregar todos los puntos de Information Architecture |
 | 0.2.3 | 01/10/26 | @briicarhuaz | docs: agregar todos los puntos de Landing Page UI Design |
@@ -68,7 +68,10 @@
 | 0.2.5 | 03/10/26 | @CesarJrCR | docs: agregar todos los puntos de Software Configuration Management |
 | 0.2.6 | 05/10/26 | @nes-ro | docs: agregar todos los puntos de Sprint 1 |
 | 0.2.7 | 06/10/26 | @AdrixRyz | docs: realizar correcciones finales para el TB1 |
-| 0.3.0 | 02/11/26 | @AdrixRyz | docs: corregir los errores del TB1 |
+| 0.3.0 | 02/11/26 | @AdrixRyz | docs: corregir los comentarios del TB1 |
+| 0.3.1 | 06/11/26 | @AdrixRyz | docs: agregar todos los puntos de Sprint 2 |
+| 0.3.2 | 09/11/26 | @AdrixRyz | docs: agregar todos los puntos de Validation Interviews |
+| 0.3.3 | 11/11/26 | @AdrixRyz | docs: realizar correcciones finales para el AV2 |
 
 # Project Report Collaboration Insights
 
@@ -227,16 +230,20 @@
 4.2.1.7. Services Documentation Evidence for Sprint Review  
 4.2.1.8. Software Deployment Evidence for Sprint Review  
 4.2.1.9. Team Collaboration Insights during Sprint  
-[**4.2.2. Sprint 2**](42-sprint-2.md)<br>
-4.2.2.1. Sprint Planning 2<br>
-4.2.2.2. Aspect Leaders and Collaborators<br>
-4.2.2.3. Sprint Backlog 2<br>
-4.2.2.4. Development Evidence for Sprint Review<br>
-4.2.2.5. Testing Suite Evidence for Sprint Review<br>
-4.2.2.6. Execution Evidence for Sprint Review<br>
-4.2.2.7. Services Documentation Evidence for Sprint Review<br>
-4.2.2.8. Software Deployment Evidence for Sprint Review<br>
-4.2.2.9. Team Collaboration Insights during Sprint<br>
+[**4.2.2. Sprint 2**](42-sprint-2.md)  
+4.2.2.1. Sprint Planning 2  
+4.2.2.2. Aspect Leaders and Collaborators  
+4.2.2.3. Sprint Backlog 2  
+4.2.2.4. Development Evidence for Sprint Review  
+4.2.2.5. Testing Suite Evidence for Sprint Review  
+4.2.2.6. Execution Evidence for Sprint Review  
+4.2.2.7. Services Documentation Evidence for Sprint Review  
+4.2.2.8. Software Deployment Evidence for Sprint Review  
+4.2.2.9. Team Collaboration Insights during Sprint  
+[**4.3. Validation Interviews**](50-validation-interviews.md)  
+4.3.1. Diseño de Entrevistas  
+4.3.2. Registro de Entrevistas  
+4.3.3. Evaluaciones según heurísticas  
 
 [**Conclusiones**](70-conclusions.md)  
 [**Glosario**](80-glossary.md)  

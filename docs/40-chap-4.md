@@ -135,7 +135,7 @@ Al finalizar el Sprint 3, se cargarán por separado las versiones Android de la 
 
 La vista de despliegue presenta la distribución propuesta de clientes, servicios, instancia PostgreSQL y sensores. Su explicación corresponde a la sección 2.5.3.3. Software Architecture Deployment Diagrams.
 
-*Figura 79 (Diagrama C4 de despliegue)*
+*Figura 79 (Diagrama C4 de despliegue)*  
 ![SpotGo C4 Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
 
 ### 4.2. Landing Page & Mobile Application Implementation

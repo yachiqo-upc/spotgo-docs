@@ -125,7 +125,7 @@ El monitor de salud debe comprobar que una lectura no supere el intervalo operat
 
 El diagrama de componentes delimita el límite de Occupancy & Monitoring, la entrada de sensores mediante MQTT/HTTP, los componentes internos de estado, salud, conflictos, sobretiempo, alertas y reportes, y la base de datos PostgreSQL propia. También delimita las dependencias asíncronas con Parking Infrastructure y Payments & Billing, además de la integración con Firebase Cloud Messaging.
 
-*Figura 37 (Occupancy & Monitoring Component Level Diagram)*
+*Figura 37 (Occupancy & Monitoring Component Level Diagram)*  
 ![Occupancy & Monitoring Component Level Diagram](../assets/diagrams/components-diagram-occupancy.svg)
 
 | Componente | Responsabilidad | Dependencias principales |
@@ -151,7 +151,7 @@ La vista de código representa el modelo físico de ocupación y los servicios q
 
 #### ***2.6.5.6.1. Bounded Context Domain Layer Class Diagrams***
 
-*Figura 38 (Occupancy & Monitoring Domain Layer Class Diagram)*
+*Figura 38 (Occupancy & Monitoring Domain Layer Class Diagram)*  
 ![Occupancy & Monitoring Domain Layer Class Diagram](../assets/diagrams/class-diagram-occupancy.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -201,7 +201,7 @@ La vista de código representa el modelo físico de ocupación y los servicios q
 
 Occupancy & Monitoring Database almacena sensores, lecturas, estados de salud, conflictos, alertas y reportes. Las relaciones internas utilizan foreign keys. tenant_id, zone_id, spot_id, reservation_ref y session_ref son referencias de integración; no se crean foreign keys hacia las bases de Parking Infrastructure.
 
-*Figura 39 (Occupancy & Monitoring Database Design Diagram)*
+*Figura 39 (Occupancy & Monitoring Database Design Diagram)*  
 ![Occupancy & Monitoring Database Design Diagram](../assets/diagrams/db-diagram-occupancy.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |

@@ -5,19 +5,56 @@ Durante el primer sprint nos centramos en el desarrollo y despliegue de la versi
 #### *4.2.1.1. Sprint Planning 1*
 
 <table>
-  <tr><td><strong>Sprint #</strong></td><td>Sprint 1</td></tr>
-  <tr><th colspan="2" align="left">Sprint Planning Background</th></tr>
-  <tr><td><strong>Date</strong></td><td>2026-10-05</td></tr>
-  <tr><td><strong>Time</strong></td><td>5:00 PM</td></tr>
-  <tr><td><strong>Location</strong></td><td>Reuni&#243;n virtual</td></tr>
-  <tr><td><strong>Prepared By</strong></td><td>Nestor Rojas Tello</td></tr>
-  <tr><td><strong>Attendees (to planning meeting)</strong></td><td>Carhuaz Centeno, Briguite Eryka / Contreras Rojas, Cesar Jair / Cotrina Siclla, Sofia Alessandra / Rojas Tello, Nestor Alonso / Ruiz Mideyros, Adrian.</td></tr>
-  <tr><td><strong>Sprint 0 Review Summary</strong></td><td>No aplica, por ser el primer sprint.</td></tr>
-  <tr><td><strong>Sprint 0 Retrospective Summary</strong></td><td>No aplica, por ser el primer sprint.</td></tr>
-  <tr><th colspan="2" align="left">Sprint Goal &amp; User Stories</th></tr>
-  <tr><td><strong>Sprint 1 Goal</strong></td><td>Desplegar la versi&#243;n inicial de la Landing Page (US11 y US12), alcanzar un avance del 70% en el despliegue del backend y presentar las pantallas core de la aplicaci&#243;n m&#243;vil: autenticaci&#243;n y acceso por rol (US09), registro de cuenta (US13), consulta de disponibilidad y zonas permitidas (US01 y US04), gesti&#243;n de reservas y comprobantes virtuales (US18), pagos (US19), carga de plano, generaci&#243;n del mapa digital y configuraci&#243;n de zonas (US16, US17 y US02). Estas HU orientan tanto las pantallas core como los servicios backend que las respaldan. El cumplimiento se verificar&#225; mediante la publicaci&#243;n de la versi&#243;n inicial de la Landing Page, el porcentaje de funcionalidades backend desplegadas respecto al total previsto y la demostraci&#243;n de las pantallas core.</td></tr>
-  <tr><td><strong>Sprint 1 Velocity</strong></td><td>39 Story Points como capacidad planificada para el Sprint 1, correspondientes a las 11 historias de usuario seleccionadas.</td></tr>
-  <tr><td><strong>Sum of Story Points</strong></td><td>39 Story Points: 35 de las nueve HU seleccionadas y 4 de las HU de la Landing Page (US11 y US12), seg&#250;n las estimaciones del Product Backlog.</td></tr>
+  <tr>
+    <td><strong>Sprint #</strong></td>
+    <td>Sprint 1</td>
+  </tr>
+  <tr>
+    <th colspan="2" align="left">Sprint Planning Background</th>
+  </tr>
+  <tr>
+    <td><strong>Date</strong></td>
+    <td>2026-10-05</td>
+  </tr>
+  <tr>
+    <td><strong>Time</strong></td>
+    <td>5:00 PM</td>
+  </tr>
+  <tr>
+    <td><strong>Location</strong></td>
+    <td>Reuni&#243;n virtual</td>
+  </tr>
+  <tr>
+    <td><strong>Prepared By</strong></td>
+    <td>Nestor Rojas Tello</td>
+  </tr>
+  <tr>
+    <td><strong>Attendees (to planning meeting)</strong></td>
+    <td>Carhuaz Centeno, Briguite Eryka / Contreras Rojas, Cesar Jair / Cotrina Siclla, Sofia Alessandra / Rojas Tello, Nestor Alonso / Ruiz Mideyros, Adrian.</td>
+  </tr>
+  <tr>
+    <td><strong>Sprint 0 Review Summary</strong></td>
+    <td>No aplica, por ser el primer sprint.</td>
+  </tr>
+  <tr>
+    <td><strong>Sprint 0 Retrospective Summary</strong></td>
+    <td>No aplica, por ser el primer sprint.</td>
+  </tr>
+  <tr>
+    <th colspan="2" align="left">Sprint Goal &amp; User Stories</th>
+  </tr>
+  <tr>
+    <td><strong>Sprint 1 Goal</strong></td>
+    <td>Desplegar la versi&#243;n inicial de la Landing Page (US11 y US12), alcanzar un avance del 70% en el despliegue del backend y presentar las pantallas core de la aplicaci&#243;n m&#243;vil: autenticaci&#243;n y acceso por rol (US09), registro de cuenta (US13), consulta de disponibilidad y zonas permitidas (US01 y US04), gesti&#243;n de reservas y comprobantes virtuales (US18), pagos (US19), carga de plano, generaci&#243;n del mapa digital y configuraci&#243;n de zonas (US16, US17 y US02). Estas HU orientan tanto las pantallas core como los servicios backend que las respaldan. El cumplimiento se verificar&#225; mediante la publicaci&#243;n de la versi&#243;n inicial de la Landing Page, el porcentaje de funcionalidades backend desplegadas respecto al total previsto y la demostraci&#243;n de las pantallas core.</td>
+  </tr>
+  <tr>
+    <td><strong>Sprint 1 Velocity</strong></td>
+    <td>39 Story Points como capacidad planificada para el Sprint 1, correspondientes a las 11 historias de usuario seleccionadas.</td>
+  </tr>
+  <tr>
+    <td><strong>Sum of Story Points</strong></td>
+    <td>39 Story Points: 35 de las nueve HU seleccionadas y 4 de las HU de la Landing Page (US11 y US12), seg&#250;n las estimaciones del Product Backlog.</td>
+  </tr>
 </table>
 
 #### *4.2.1.2. Aspect Leaders and Collaborators*
@@ -89,7 +126,7 @@ El Sprint Backlog 1 reúne las tareas necesarias para desarrollar las historias 
 
 **Trello Board Link:** [https://trello.com/b/6aa6e46ebebf57986f7fcd37](https://trello.com/b/6aa6e46ebebf57986f7fcd37)
 
-*Figura 80 (Trello Board Sprint 1)*
+*Figura 80 (Trello Board Sprint 1)*  
 ![Trello Board Sprint 1](../assets/images/others/trello-board-sprint-1.png)
 
 El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus responsables y su estado de finalización, de acuerdo con la distribución de liderazgo y colaboración de la matriz LACX.
@@ -102,80 +139,80 @@ El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus re
   <tbody>
     <tr>
       <td rowspan="2">US01</td><td rowspan="2">Consultar disponibilidad por zona</td><td rowspan="2" align="center">5</td>
-      <td>T01</td><td>Pantalla de disponibilidad</td><td>Mostrar espacios disponibles por zona y la fecha de actualizaci&#243;n.</td><td>1</td><td>@briicarhuaz</td><td>Completed</td>
+      <td>T01</td><td>Pantalla de disponibilidad</td><td>Mostrar espacios disponibles por zona y la fecha de actualizaci&#243;n.</td><td>1</td><td>@briicarhuaz</td><td>Done</td>
     </tr>
     <tr>
-      <td>T02</td><td>Consulta de disponibilidad</td><td>Desarrollar la consulta backend de disponibilidad prevista para este sprint.</td><td>2</td><td>@briicarhuaz</td><td>Completed</td>
+      <td>T02</td><td>Consulta de disponibilidad</td><td>Desarrollar la consulta backend de disponibilidad prevista para este sprint.</td><td>2</td><td>@briicarhuaz</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US04</td><td rowspan="2">Consultar las zonas permitidas</td><td rowspan="2" align="center">2</td>
-      <td>T03</td><td>Pantalla de zonas permitidas</td><td>Mostrar las zonas habilitadas para el perfil del Driver.</td><td>0.5</td><td>@briicarhuaz</td><td>Completed</td>
+      <td>T03</td><td>Pantalla de zonas permitidas</td><td>Mostrar las zonas habilitadas para el perfil del Driver.</td><td>0.5</td><td>@briicarhuaz</td><td>Done</td>
     </tr>
     <tr>
-      <td>T04</td><td>Consulta de permisos</td><td>Implementar la consulta de zonas seg&#250;n el perfil del Driver.</td><td>1</td><td>@briicarhuaz</td><td>Completed</td>
+      <td>T04</td><td>Consulta de permisos</td><td>Implementar la consulta de zonas seg&#250;n el perfil del Driver.</td><td>1</td><td>@briicarhuaz</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US13</td><td rowspan="2">Registrar una cuenta Driver</td><td rowspan="2" align="center">2</td>
-      <td>T05</td><td>Pantalla de registro</td><td>Desarrollar el formulario de registro y sus mensajes de validaci&#243;n.</td><td>1</td><td>@nes-ro</td><td>Completed</td>
+      <td>T05</td><td>Pantalla de registro</td><td>Desarrollar el formulario de registro y sus mensajes de validaci&#243;n.</td><td>1</td><td>@nes-ro</td><td>Done</td>
     </tr>
     <tr>
-      <td>T06</td><td>Registro de cuenta</td><td>Implementar la creaci&#243;n de cuenta y perfil Driver reutilizando los mecanismos de IAM.</td><td>1.5</td><td>@nes-ro</td><td>Completed</td>
+      <td>T06</td><td>Registro de cuenta</td><td>Implementar la creaci&#243;n de cuenta y perfil Driver reutilizando los mecanismos de IAM.</td><td>1.5</td><td>@nes-ro</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US18</td><td rowspan="2">Gestionar reservas y comprobantes virtuales</td><td rowspan="2" align="center">5</td>
-      <td>T07</td><td>Pantallas de reservas</td><td>Presentar las vistas de creaci&#243;n y consulta de reservas.</td><td>1.5</td><td>@CesarJrCR</td><td>Completed</td>
+      <td>T07</td><td>Pantallas de reservas</td><td>Presentar las vistas de creaci&#243;n y consulta de reservas.</td><td>1.5</td><td>@CesarJrCR</td><td>Done</td>
     </tr>
     <tr>
-      <td>T08</td><td>Comprobante virtual y servicios</td><td>Presentar el comprobante virtual y desarrollar el avance de servicios de reservas previsto para el sprint.</td><td>2</td><td>@CesarJrCR</td><td>Completed</td>
+      <td>T08</td><td>Comprobante virtual y servicios</td><td>Presentar el comprobante virtual y desarrollar el avance de servicios de reservas previsto para el sprint.</td><td>2</td><td>@CesarJrCR</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US19</td><td rowspan="2">Procesar pagos de reservas y cargos adicionales</td><td rowspan="2" align="center">5</td>
-      <td>T09</td><td>Pantalla de pagos</td><td>Presentar el flujo de pago de reservas y cargos adicionales.</td><td>1.5</td><td>@CesarJrCR</td><td>Completed</td>
+      <td>T09</td><td>Pantalla de pagos</td><td>Presentar el flujo de pago de reservas y cargos adicionales.</td><td>1.5</td><td>@CesarJrCR</td><td>Done</td>
     </tr>
     <tr>
-      <td>T10</td><td>Servicios de pago</td><td>Desarrollar el avance backend del procesamiento de pagos previsto para este sprint.</td><td>2</td><td>@CesarJrCR</td><td>Completed</td>
+      <td>T10</td><td>Servicios de pago</td><td>Desarrollar el avance backend del procesamiento de pagos previsto para este sprint.</td><td>2</td><td>@CesarJrCR</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US02</td><td rowspan="2">Configurar zonas de estacionamiento</td><td rowspan="2" align="center">5</td>
-      <td>T11</td><td>Pantalla de zonas</td><td>Desarrollar la interfaz de configuraci&#243;n de zonas y sus reglas.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
+      <td>T11</td><td>Pantalla de zonas</td><td>Desarrollar la interfaz de configuraci&#243;n de zonas y sus reglas.</td><td>1.5</td><td>@IamAndreek</td><td>Done</td>
     </tr>
     <tr>
-      <td>T12</td><td>Configuraci&#243;n de zonas</td><td>Implementar el avance de servicios para registrar zonas y asociar espacios y perfiles.</td><td>2</td><td>@IamAndreek</td><td>Completed</td>
+      <td>T12</td><td>Configuraci&#243;n de zonas</td><td>Implementar el avance de servicios para registrar zonas y asociar espacios y perfiles.</td><td>2</td><td>@IamAndreek</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US16</td><td rowspan="2">Cargar el plano del estacionamiento</td><td rowspan="2" align="center">3</td>
-      <td>T13</td><td>Pantalla de carga de plano</td><td>Desarrollar la selecci&#243;n y carga del plano del estacionamiento.</td><td>1</td><td>@IamAndreek</td><td>Completed</td>
+      <td>T13</td><td>Pantalla de carga de plano</td><td>Desarrollar la selecci&#243;n y carga del plano del estacionamiento.</td><td>1</td><td>@IamAndreek</td><td>Done</td>
     </tr>
     <tr>
-      <td>T14</td><td>Validaci&#243;n del plano</td><td>Implementar la validaci&#243;n de formato y almacenamiento del plano.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
+      <td>T14</td><td>Validaci&#243;n del plano</td><td>Implementar la validaci&#243;n de formato y almacenamiento del plano.</td><td>1.5</td><td>@IamAndreek</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US17</td><td rowspan="2">Generar el mapa digital del estacionamiento</td><td rowspan="2" align="center">5</td>
-      <td>T15</td><td>Pantalla de mapa digital</td><td>Presentar la configuraci&#243;n del mapa digital a partir del plano cargado.</td><td>1.5</td><td>@IamAndreek</td><td>Completed</td>
+      <td>T15</td><td>Pantalla de mapa digital</td><td>Presentar la configuraci&#243;n del mapa digital a partir del plano cargado.</td><td>1.5</td><td>@IamAndreek</td><td>Done</td>
     </tr>
     <tr>
-      <td>T16</td><td>Generaci&#243;n del mapa</td><td>Desarrollar el avance de generaci&#243;n de zonas y espacios a partir del plano previsto para el sprint.</td><td>2</td><td>@IamAndreek</td><td>Completed</td>
+      <td>T16</td><td>Generaci&#243;n del mapa</td><td>Desarrollar el avance de generaci&#243;n de zonas y espacios a partir del plano previsto para el sprint.</td><td>2</td><td>@IamAndreek</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US09</td><td rowspan="2">Autenticarse y acceder a las funciones de SpotGo según el rol</td><td rowspan="2" align="center">3</td>
-      <td>T17</td><td>Pantalla de acceso</td><td>Desarrollar la interfaz de inicio de sesi&#243;n y sus mensajes de error.</td><td>1</td><td>@nes-ro</td><td>Completed</td>
+      <td>T17</td><td>Pantalla de acceso</td><td>Desarrollar la interfaz de inicio de sesi&#243;n y sus mensajes de error.</td><td>1</td><td>@nes-ro</td><td>Done</td>
     </tr>
     <tr>
-      <td>T18</td><td>Autenticaci&#243;n y autorizaci&#243;n</td><td>Implementar el avance de autenticaci&#243;n y acceso por rol previsto para el sprint.</td><td>2</td><td>@nes-ro</td><td>Completed</td>
+      <td>T18</td><td>Autenticaci&#243;n y autorizaci&#243;n</td><td>Implementar el avance de autenticaci&#243;n y acceso por rol previsto para el sprint.</td><td>2</td><td>@nes-ro</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US11</td><td rowspan="2">Comunicar la propuesta de valor en la página de presentación</td><td rowspan="2" align="center">3</td>
-      <td>T19</td><td>Contenido y dise&#241;o adaptable</td><td>Implementar las secciones de SpotGo y revisar su presentaci&#243;n y accesibilidad.</td><td>2</td><td>@AdrixRyz</td><td>Completed</td>
+      <td>T19</td><td>Contenido y dise&#241;o adaptable</td><td>Implementar las secciones de SpotGo y revisar su presentaci&#243;n y accesibilidad.</td><td>2</td><td>@AdrixRyz</td><td>Done</td>
     </tr>
     <tr>
-      <td>T20</td><td>Despliegue de Landing Page</td><td>Publicar la Landing Page y comprobar su acceso p&#250;blico.</td><td>1</td><td>@AdrixRyz</td><td>Completed</td>
+      <td>T20</td><td>Despliegue de Landing Page</td><td>Publicar la Landing Page y comprobar su acceso p&#250;blico.</td><td>1</td><td>@AdrixRyz</td><td>Done</td>
     </tr>
     <tr>
       <td rowspan="2">US12</td><td rowspan="2">Navegar desde la página de presentación hasta el producto móvil</td><td rowspan="2" align="center">1</td>
-      <td>T21</td><td>Navegaci&#243;n entre secciones</td><td>Implementar los enlaces de navegaci&#243;n de la Landing Page.</td><td>0.5</td><td>@AdrixRyz</td><td>Completed</td>
+      <td>T21</td><td>Navegaci&#243;n entre secciones</td><td>Implementar los enlaces de navegaci&#243;n de la Landing Page.</td><td>0.5</td><td>@AdrixRyz</td><td>Done</td>
     </tr>
     <tr>
-      <td>T22</td><td>Acceso al producto m&#243;vil</td><td>Configurar el enlace al destino oficial del producto m&#243;vil.</td><td>0.5</td><td>@AdrixRyz</td><td>Completed</td>
+      <td>T22</td><td>Acceso al producto m&#243;vil</td><td>Configurar el enlace al destino oficial del producto m&#243;vil.</td><td>0.5</td><td>@AdrixRyz</td><td>Done</td>
     </tr>
     <tr><td colspan="2"><strong>Total de HU seleccionadas</strong></td><td align="center"><strong>39</strong></td><td colspan="6">11 HU y 22 tareas; 30.5 horas estimadas en total.</td></tr>
   </tbody>
@@ -217,74 +254,140 @@ Durante este sprint, el equipo desplegó la versión inicial de la **Landing Pag
 
 **Landing Page**
 
-*Figura 81 (SpotGo Landing Page Home)*
+*Figura 81 (SpotGo Landing Page Home)*  
 ![SpotGo Landing Page Home](../assets/images/others/spotgo-landing-home.png)
 
-*Figura 82 (SpotGo Landing Page Drivers)*
+*Figura 82 (SpotGo Landing Page Drivers)*  
 ![SpotGo Landing Page Drivers](../assets/images/others/spotgo-landing-drivers.png)
 
-*Figura 83 (SpotGo Landing Page Admins)*
+*Figura 83 (SpotGo Landing Page Admins)*  
 ![SpotGo Landing Page Admins](../assets/images/others/spotgo-landing-admins.png)
 
-*Figura 84 (SpotGo Landing Page How Work)*
+*Figura 84 (SpotGo Landing Page How Work)*  
 ![SpotGo Landing Page How Work](../assets/images/others/spotgo-landing-how-work.png)
 
-*Figura 85 (SpotGo Landing Page Pricing)*
+*Figura 85 (SpotGo Landing Page Pricing)*  
 ![SpotGo Landing Page Pricing](../assets/images/others/spotgo-landing-pricing.png)
 
-*Figura 86 (SpotGo Landing Page FAQ)*
+*Figura 86 (SpotGo Landing Page FAQ)*  
 ![SpotGo Landing Page FAQ](../assets/images/others/spotgo-landing-faq.png)
 
-**Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
+**Landing Page Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
 
 **Pantallas iniciales de Driver: Jetpack Compose**
 
-*Figura 87 (Driver-Explore Parking)*
+*Figura 87 (Driver-Explore Parking)*  
 ![SpotGo Mobile Explore Parking](../assets/images/others/spotgo-mobile-parking%20nearby.jpeg)
 
-*Figura 88 (Driver-Zone Details)*
+*Figura 88 (Driver-Zone Details)*  
 ![SpotGo Mobile Zone Details](../assets/images/others/spotgo-mobile-zone%20details.jpeg)
 
-*Figura 89 (Driver-Reserve)*
+*Figura 89 (Driver-Reserve)*  
 ![SpotGo Mobile Reserve](../assets/images/others/spotgo-mobile-reserve.jpeg)
 
-*Figura 90 (Driver-Payments)*
+*Figura 90 (Driver-Payments)*  
 ![SpotGo Mobile Payments](../assets/images/others/spotgo-mobile-payments.jpeg)
 
 **Pantallas iniciales de Parking Admin: Jetpack Compose**
 
-*Figura 91 (Parking Admin-Dashboard)*
+*Figura 91 (Parking Admin-Dashboard)*  
 ![SpotGo Mobile Dashboard](../assets/images/others/spotgo-mobile-dashboard.jpeg)
 
-*Figura 92 (Parking Admin-Live Occupancy)*
+*Figura 92 (Parking Admin-Live Occupancy)*  
 ![SpotGo Mobile Live Occupancy](../assets/images/others/spotgo-mobile-live%20occupancy.jpeg)
 
-**Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg)
+**Android App Preview Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg)
 
 #### *4.2.1.7. Services Documentation Evidence for Sprint Review*
 
 La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/Swagger. Para la revisión del Sprint 1, se incluyen las rutas base y las operaciones disponibles en el backend, resumidas por recurso en la siguiente tabla.
 
-**Referencias:** [Código fuente del backend](https://github.com/yachiqo-upc/spotgo-backend).
-
 <table>
-  <tr><th align="left">Recurso</th><th align="left">Endpoint Base</th><th align="left">Acciones Implementadas</th></tr>
-  <tr><td>Authentication</td><td><code>/api/v1/authentication</code></td><td>POST <code>/sign-up</code>, POST <code>/sign-in</code>, POST <code>/password-reset/request</code>, POST <code>/password-reset/confirm</code></td></tr>
-  <tr><td>DetectedSpots</td><td><code>/api/v1/detectedSpots</code></td><td>GET, POST, PATCH <code>/{spotId}/status</code>, GET <code>/blueprint/{blueprintId}</code></td></tr>
-  <tr><td>Receipts</td><td><code>/api/v1/receipts</code></td><td>GET, POST, GET <code>/{receiptId}</code>, DELETE <code>/{receiptId}</code></td></tr>
-  <tr><td>Reservations</td><td><code>/api/v1/reservations</code></td><td>GET, POST, PATCH <code>/{reservationId}</code></td></tr>
-  <tr><td>Users</td><td><code>/api/v1/users</code></td><td>GET, GET <code>/{userId}</code>, PATCH <code>/{userId}</code>, PATCH <code>/{userId}/password</code></td></tr>
-  <tr><td>Employees</td><td><code>/api/v1/employees</code></td><td>GET, POST, PUT <code>/{employeeId}</code>, PATCH <code>/{employeeId}</code>, DELETE <code>/{employeeId}</code></td></tr>
-  <tr><td>Blueprints</td><td><code>/api/v1/blueprints</code></td><td>GET, POST, PUT <code>/{blueprintId}</code>, PATCH <code>/{blueprintId}</code>, DELETE <code>/{blueprintId}</code>, GET <code>/parking/{parkingId}</code></td></tr>
-  <tr><td>ClientReports</td><td><code>/api/v1/clientReports</code></td><td>GET, POST, PATCH <code>/{reportId}</code></td></tr>
-  <tr><td>OccupancyByHour</td><td><code>/api/v1/occupancyByHour</code></td><td>GET</td></tr>
-  <tr><td>WeeklyTrends</td><td><code>/api/v1/weeklyTrends</code></td><td>GET</td></tr>
-  <tr><td>Parkings</td><td><code>/api/v1/parkings</code></td><td>GET, POST, GET <code>/{parkingId}</code>, PATCH <code>/{parkingId}</code></td></tr>
-  <tr><td>Vehicles</td><td><code>/api/v1/vehicles</code></td><td>GET, POST, DELETE <code>/{vehicleId}</code>, PATCH <code>/{vehicleId}</code></td></tr>
-  <tr><td>Analytics</td><td><code>/api/v1/analytics</code></td><td>GET</td></tr>
-  <tr><td>Client Plans</td><td><code>/api/v1/clientPlans</code></td><td>GET, GET <code>/{clientPlanId}</code></td></tr>
-  <tr><td>Subscriptions</td><td><code>/api/v1/subscriptions</code></td><td>GET, POST, GET <code>/{subscriptionId}</code>, PUT <code>/{subscriptionId}</code>, PATCH <code>/{subscriptionId}</code></td></tr>
-  <tr><td>Favorites</td><td><code>/api/v1/favorites</code></td><td>GET, POST, DELETE <code>/{favoriteId}</code></td></tr>
+  <tr>
+    <th align="left">Recurso</th>
+    <th align="left">Endpoint Base</th>
+    <th align="left">Acciones Implementadas</th>
+  </tr>
+  <tr>
+    <td>Authentication</td>
+    <td><code>/api/v1/authentication</code></td>
+    <td>POST <code>/sign-up</code>, POST <code>/sign-in</code>, POST <code>/password-reset/request</code>, POST <code>/password-reset/confirm</code></td>
+  </tr>
+  <tr>
+    <td>DetectedSpots</td>
+    <td><code>/api/v1/detectedSpots</code></td>
+    <td>GET, POST, PATCH <code>/{spotId}/status</code>, GET <code>/blueprint/{blueprintId}</code></td>
+  </tr>
+  <tr>
+    <td>Receipts</td>
+    <td><code>/api/v1/receipts</code></td>
+    <td>GET, POST, GET <code>/{receiptId}</code>, DELETE <code>/{receiptId}</code></td>
+  </tr>
+  <tr>
+    <td>Reservations</td>
+    <td><code>/api/v1/reservations</code></td>
+    <td>GET, POST, PATCH <code>/{reservationId}</code></td>
+  </tr>
+  <tr>
+    <td>Users</td>
+    <td><code>/api/v1/users</code></td>
+    <td>GET, GET <code>/{userId}</code>, PATCH <code>/{userId}</code>, PATCH <code>/{userId}/password</code></td>
+  </tr>
+  <tr>
+    <td>Employees</td>
+    <td><code>/api/v1/employees</code></td>
+    <td>GET, POST, PUT <code>/{employeeId}</code>, PATCH <code>/{employeeId}</code>, DELETE <code>/{employeeId}</code></td>
+  </tr>
+  <tr>
+    <td>Blueprints</td>
+    <td><code>/api/v1/blueprints</code></td>
+    <td>GET, POST, PUT <code>/{blueprintId}</code>, PATCH <code>/{blueprintId}</code>, DELETE <code>/{blueprintId}</code>, GET <code>/parking/{parkingId}</code></td>
+  </tr>
+  <tr>
+    <td>ClientReports</td>
+    <td><code>/api/v1/clientReports</code></td>
+    <td>GET, POST, PATCH <code>/{reportId}</code></td>
+  </tr>
+  <tr>
+    <td>OccupancyByHour</td>
+    <td><code>/api/v1/occupancyByHour</code></td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>WeeklyTrends</td>
+    <td><code>/api/v1/weeklyTrends</code></td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>Parkings</td>
+    <td><code>/api/v1/parkings</code></td>
+    <td>GET, POST, GET <code>/{parkingId}</code>, PATCH <code>/{parkingId}</code></td>
+  </tr>
+  <tr>
+    <td>Vehicles</td>
+    <td><code>/api/v1/vehicles</code></td>
+    <td>GET, POST, DELETE <code>/{vehicleId}</code>, PATCH <code>/{vehicleId}</code></td>
+  </tr>
+  <tr>
+    <td>Analytics</td>
+    <td><code>/api/v1/analytics</code></td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>Client Plans</td>
+    <td><code>/api/v1/clientPlans</code></td>
+    <td>GET, GET <code>/{clientPlanId}</code></td>
+  </tr>
+  <tr>
+    <td>Subscriptions</td>
+    <td><code>/api/v1/subscriptions</code></td>
+    <td>GET, POST, GET <code>/{subscriptionId}</code>, PUT <code>/{subscriptionId}</code>, PATCH <code>/{subscriptionId}</code></td>
+  </tr>
+  <tr>
+    <td>Favorites</td>
+    <td><code>/api/v1/favorites</code></td>
+    <td>GET, POST, DELETE <code>/{favoriteId}</code></td>
+  </tr>
 </table>
 
 **Entradas y respuestas de operaciones representativas**
@@ -328,22 +431,22 @@ Ejemplo ilustrativo de los campos principales de una respuesta `201`, conforme a
 
 Estos ejemplos describen el contrato de los servicios; no representan resultados de pruebas del sprint.
 
-*Figura 93 (POST /api/v1/authentication/sign-in: Inicio de sesión)*
+*Figura 93 (POST /api/v1/authentication/sign-in: Inicio de sesión)*  
 ![SpotGo Backend Sign-in](../assets/images/others/spotgo-backend-signin.png)
 
-*Figura 94 (GET /api/v1/users: Listado de usuarios)*
+*Figura 94 (GET /api/v1/users: Listado de usuarios)*  
 ![SpotGo Backend Users](../assets/images/others/spotgo-backend-users.png)
 
-*Figura 95 (POST /api/v1/reservations: Crear una reserva)*
+*Figura 95 (POST /api/v1/reservations: Crear una reserva)*  
 ![SpotGo Backend Reservation](../assets/images/others/spotgo-backend-reservation.png)
 
-*Figura 96 (GET /api/v1/parkings: Listado de estacionamientos)*
+*Figura 96 (GET /api/v1/parkings: Listado de estacionamientos)*  
 ![SpotGo Backend Parkings](../assets/images/others/spotgo-backend-parkings.png)
 
-*Figura 97 (POST /api/v1/employees: Crear un empleado)*
+*Figura 97 (POST /api/v1/employees: Crear un empleado)*  
 ![SpotGo Backend Employee](../assets/images/others/spotgo-backend-employee.png)
 
-**Demonstration Video Link**: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI)
+**Backend Swagger Demonstration Video Link**: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI)
 
 #### *4.2.1.8. Software Deployment Evidence for Sprint Review*
 
@@ -357,16 +460,14 @@ Durante el Sprint 1, se desplegó la versión inicial de la Landing Page de Spot
 
 **Landing Page: GitHub Pages**
 
-**Deployment Link:** [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing)
+**Landing Page Deployment Link:** [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing)
 
-*Figura 98 (Evidencia del despliegue de la Landing Page en GitHub Pages)*
+*Figura 98 (Evidencia del despliegue de la Landing Page en GitHub Pages)*  
 ![Deployment Evidence Landing](../assets/images/others/deployment-evidence-landing.png)
 
 #### *4.2.1.9. Team Collaboration Insights during Sprint*
 
 La siguiente captura corresponde a las contribuciones del repositorio `spotgo-android-app` durante el Sprint 1.
 
-*Figura 99 (Sprint 1: Insights de spotgo-android-app)*
-![Sprint 1 Insights de la aplicación móvil](../assets/images/others/s1-insights-mobile-app.png)
-
-La captura registra 17 commits de AdrixRyz, con 5,913 líneas añadidas y 237 eliminadas, y concentra las contribuciones visibles en octubre de 2026. Esta evidencia muestra la actividad registrada en GitHub para la aplicación móvil; la distribución de responsabilidades del equipo se presenta en la matriz LACX y el Sprint Backlog.
+*Figura 99 (Sprint 1: Insights de spotgo-android-app)*  
+![Sprint 1 Insights de la aplicación móvil](../assets/images/others/s1-insights-android-app.png)

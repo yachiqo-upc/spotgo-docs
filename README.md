@@ -17,22 +17,24 @@ SpotGo busca reducir el tiempo que los conductores dedican a encontrar estaciona
 - Monitoreo de la ocupación física mediante sensores, sin identificar vehículos ni leer placas automáticamente.
 - Notificaciones operativas y de negocio mediante Firebase Cloud Messaging.
 
-## Arquitectura y tecnologías propuestas
+## Arquitectura, tecnologías y despliegue
 
-La documentación plantea una arquitectura distribuida orientada al dominio, organizada en cinco bounded contexts. Entre las tecnologías e integraciones consideradas se encuentran:
+La documentación describe una arquitectura distribuida orientada al dominio, organizada en cinco bounded contexts. La solución incluye las siguientes tecnologías, integraciones y plataformas de despliegue:
 
 - Una aplicación Android nativa con Kotlin y Jetpack Compose para Driver.
 - Una aplicación multiplataforma con Flutter y Dart para Parking Admin.
 - Una aplicación web con Angular, TypeScript y Angular Material para SuperAdmin.
-- Servicios backend en Java con Spring Boot.
+- Backend desarrollado con Java 25 LTS y Spring Boot, empaquetado con Docker y desplegado como Web Service en Render.
 - Cinco bases de datos PostgreSQL independientes por bounded context, alojadas en una sola instancia física de PostgreSQL Server.
 - Comunicación mediante APIs REST sobre HTTPS y eventos asíncronos.
 - Integración con Google Maps API y Firebase Cloud Messaging.
 - Comunicación con sensores físicos IoT mediante MQTT/HTTP para reportar la ocupación.
+- Landing Page publicada en GitHub Pages y SpotGo Administration Web App desplegada como Static Site en Render.
+- SpotGo Driver Android App y SpotGo Parking Admin Flutter App distribuidas mediante Firebase App Distribution.
 
 ## Equipo
 
-Proyecto desarrollado por el equipo **Yachiqo** para el curso **Aplicaciones para Dispositivos Móviles** de la Universidad Peruana de Ciencias Aplicadas (UPC).
+Proyecto desarrollado por el equipo **Yachiqo** para el curso **Aplicaciones para Dispositivos Móviles (1ACC0238)** de la Universidad Peruana de Ciencias Aplicadas (UPC).
 
 ## Licencia
 

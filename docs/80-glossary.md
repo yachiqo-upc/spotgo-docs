@@ -7,8 +7,8 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **Additional Charge (Cargo adicional):** Importe generado cuando un Driver excede el periodo de su reserva y supera el tiempo de tolerancia configurado.
 - **Availability (Disponibilidad):** Información que indica la existencia de Parking Spots libres dentro de una Parking Zone.
 - **Check-in / Check-out (Ingreso / Salida):** Eventos que marcan, respectivamente, el inicio y el final de la estadía de un vehículo en el estacionamiento.
-- **Digital Payment (Pago digital):** Transacción económica realizada desde la aplicación móvil por un Driver registrado para pagar una reserva, una estadía o un servicio contratado.
 - **Digital Parking Map (Mapa digital del estacionamiento):** Representación de la infraestructura del estacionamiento que identifica sus Parking Spots, Parking Zones, accesos y destinos de navegación.
+- **Digital Payment (Pago digital):** Transacción económica realizada desde la aplicación móvil por un Driver registrado para pagar una reserva, una estadía o un servicio contratado.
 - **Driver (Conductor):** Usuario con una cuenta propia creada mediante el registro público de la aplicación móvil, con credenciales propias o una cuenta externa autorizada. Administra su User Profile y sus vehículos, consulta Availability y crea reservas.
 - **Electronic Billing (Facturación electrónica):** Capacidad del negocio que determina y genera el Electronic Receipt o Electronic Invoice aplicable a una operación elegible de un Driver.
 - **Electronic Invoice (Factura electrónica):** Documento fiscal digital generado para una operación que requiere información tributaria empresarial, como un RUC, y que conserva su relación con el Digital Payment y la operación correspondiente.
@@ -23,6 +23,7 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **Occupancy Sensor (Sensor de ocupación):** Dispositivo instalado en un Parking Spot para detectar si el espacio está disponible u ocupado y comunicar el cambio de estado al sistema.
 - **Occupancy Status (Estado de ocupación):** Estado físico actual de un Parking Spot. Puede ser *Available*, *Occupied* o *Unavailable*; *Reserved* pertenece al estado de la reserva y no reemplaza el estado físico del espacio.
 - **Outstanding Balance (Saldo pendiente):** Importe que no pudo cobrarse mediante el Payment Token y que debe regularizarse antes de crear nuevas reservas.
+- **Parking Admin (Administrador de estacionamiento):** Usuario administrativo cuya cuenta y rol PARKING_ADMIN son provisionados internamente por un SuperAdmin y asociados con un Tenant. Cuenta con vistas administrativas y funciones operativas; es distinto del Driver (Conductor) y no se crea mediante el registro público.
 - **Parking Session (Sesión de estacionamiento):** Registro de la ocupación real de un Parking Spot. En una reserva de un Driver se relaciona con la reserva y el espacio asignado; en un Guest se utiliza Guest Parking Session.
 - **Parking Spot (Espacio de estacionamiento):** Espacio físico individual dentro de un estacionamiento destinado a la ubicación de un solo vehículo.
 - **Parking Zone (Zona de estacionamiento):** Área del estacionamiento que agrupa múltiples Parking Spots y puede asociarse con uno o más tipos de usuario definidos por la administración.
@@ -31,7 +32,6 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **Reservation (Reserva):** Registro mediante el cual un Driver registrado obtiene el uso de un Parking Spot dentro de una Parking Zone en una fecha, hora de inicio y duración determinadas, después de la aprobación del Digital Payment correspondiente.
 - **Reservation Status (Estado de reserva):** Estado comercial y operativo de una reserva. Puede ser *Pending Payment*, *Reserved*, *Active*, *Completed*, *Cancelled*, *No-show*, *Overstayed* o *Payment Rejected*; *Pending Payment* y *Payment Rejected* representan la intención y el resultado del pago.
 - **Sensor Health (Salud del sensor):** Estado operativo de un Occupancy Sensor. Cuando el sensor no comunica datos confiables, el Occupancy Status correspondiente es *Unavailable*.
-- **Parking Admin (Administrador de estacionamiento):** Usuario administrativo cuya cuenta y rol PARKING_ADMIN son provisionados internamente por un SuperAdmin y asociados con un Tenant. Cuenta con vistas administrativas y funciones operativas; es distinto del Driver (Conductor) y no se crea mediante el registro público.
 - **Subscription (Suscripción):** Plan de acceso periódico de SpotGo. Puede ser *Free*, *Plus Monthly* o *Plus Annual*, con beneficios, descuentos y condiciones de renovación definidos para cada plan.
 - **SuperAdmin (Administrador de plataforma):** Usuario encargado de registrar Tenants, crear las cuentas iniciales de los administradores de estacionamiento y administrar la configuración de los clientes B2B.
 - **Tenant (Cliente B2B):** Estacionamiento o entidad operativa registrada en SpotGo, con su propia configuración de zonas, perfiles, usuarios y facturación del servicio.
@@ -46,67 +46,66 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 **Technical terms and abbreviations**
 
 - **5W2H:** Herramienta de análisis que organiza una situación mediante cinco preguntas con W (qué, por qué, quién, dónde y cuándo) y dos con H (cómo y cuánto).
+- **AAB (Android App Bundle):** Formato de publicación de Android que contiene los recursos y el código de una aplicación para generar paquetes instalables según el dispositivo.
 - **Accessibility (a11y):** Prácticas y criterios técnicos que permiten utilizar los productos digitales mediante distintas capacidades, dispositivos y tecnologías de asistencia.
 - **Angular:** Framework de TypeScript para desarrollar aplicaciones web.
 - **Angular Material:** Biblioteca de componentes de interfaz basada en Material Design para aplicaciones Angular.
-- **AAB (Android App Bundle):** Formato de publicación de Android que contiene los recursos y el código de una aplicación para generar paquetes instalables según el dispositivo.
 - **API (Application Programming Interface):** Interfaz que define cómo un sistema puede solicitar datos o acciones a otro sistema.
 - **API Gateway:** Punto de entrada que recibe solicitudes de los clientes y las dirige a los servicios correspondientes.
 - **APK (Android Package Kit):** Paquete instalable de una aplicación Android.
 - **ASO (App Store Optimization):** Prácticas para mejorar la presentación y la posibilidad de encontrar una aplicación en una tienda digital.
 - **B2B (Business-to-Business):** Relación comercial entre organizaciones o empresas.
 - **Bounded Context:** Límite dentro del cual un modelo de dominio y su lenguaje mantienen un significado consistente.
-- **CSS (Cascading Style Sheets):** Lenguaje que define la presentación visual de documentos HTML.
 - **C4:** Modelo de representación de arquitectura mediante vistas de contexto, contenedores, componentes y código.
-- **DDD (Domain-Driven Design):** Enfoque de diseño de software que organiza el modelo y sus responsabilidades alrededor del dominio del negocio.
+- **CSS (Cascading Style Sheets):** Lenguaje que define la presentación visual de documentos HTML.
 - **Dashboard:** Interfaz de consulta y operación que reúne información de ocupación, zonas, incidencias y reportes para el Parking Admin.
+- **DDD (Domain-Driven Design):** Enfoque de diseño de software que organiza el modelo y sus responsabilidades alrededor del dominio del negocio.
 - **Developer:** Rol usado en las historias técnicas para representar al responsable de desarrollo; no es un actor que inicie sesión en SpotGo.
 - **DNI (Documento Nacional de Identidad):** Documento peruano de identificación personal.
 - **DTO (Data Transfer Object):** Objeto que transporta datos entre capas o servicios sin exponer directamente las entidades internas.
-- **en_US:** Locale de English utilizado como idioma predeterminado en los productos, mensajes, interfaces y documentación de SpotGo.
-- **es_419:** Locale de Latin American Spanish ofrecido como alternativa de idioma.
+- **en_US:** Código de localización para el inglés de Estados Unidos, utilizado como idioma predeterminado en los productos, mensajes e interfaces de SpotGo.
+- **es_419:** Código de localización para el español de Latinoamérica, ofrecido como alternativa de idioma.
 - **External Navigation Link:** Enlace que abre la aplicación de Google Maps con una Parking Zone como destino para que dicha aplicación calcule la ruta.
 - **FAQ (Frequently Asked Questions):** Sección de preguntas frecuentes y sus respuestas.
-- **FCM (Firebase Cloud Messaging):** Servicio de Google que entrega notificaciones push a dispositivos registrados.
-- **Firebase Cloud Messaging:** Servicio externo de notificaciones push. El backend decide el evento que se comunica y Firebase Cloud Messaging entrega el mensaje al dispositivo registrado.
-- **Firebase App Distribution:** Servicio para distribuir versiones de prueba de aplicaciones móviles a grupos de usuarios de prueba.
 - **Figma:** Herramienta utilizada para elaborar wireframes, mockups y prototipos de las interfaces.
+- **Firebase App Distribution:** Servicio para distribuir versiones de prueba de aplicaciones móviles a grupos de usuarios de prueba.
+- **Firebase Cloud Messaging (FCM):** Servicio externo de Google que entrega notificaciones push a dispositivos registrados. SpotGo determina qué evento comunicar y el Backend envía el mensaje al dispositivo mediante este servicio.
 - **Flutter y Dart:** Framework multiplataforma y lenguaje de programación utilizados para desarrollar la aplicación de Parking Admin.
-- **HTML (HyperText Markup Language):** Lenguaje de marcado que estructura el contenido de páginas web.
-- **Google Sign-In:** Servicio externo de autenticación de Google. SpotGo verifica la identidad proporcionada y administra sus propios roles, permisos y sesiones.
-- **HTTP/HTTPS (Hypertext Transfer Protocol / Secure):** Protocolos para transferir información entre clientes y servidores; HTTPS cifra la comunicación.
-- **ID token:** Token de identidad emitido por un proveedor como Google. Su atributo `sub` identifica al usuario dentro del proveedor; IAM verifica el token antes de vincularlo con una cuenta de SpotGo.
-- **IAM (Identity & Access Management):** Contexto que gestiona identidades, credenciales, sesiones, autorización y auditoría.
 - **Google Maps API:** API utilizada para mostrar el mapa integrado dentro de SpotGo. SpotGo proporciona las ubicaciones y detalles de sus Parking Zones; la aplicación de Google Maps calcula la ruta externa hacia la zona seleccionada.
 - **Google Maps application:** Aplicación externa que abre la ruta desde la ubicación del Driver hasta la Parking Zone seleccionada.
-- **IoT (Internet of Things):** Red de dispositivos físicos conectados que recopilan o transmiten datos.
+- **Google Sign-In:** Servicio externo de autenticación de Google. SpotGo verifica la identidad proporcionada y administra sus propios roles, permisos y sesiones.
+- **HTML (HyperText Markup Language):** Lenguaje de marcado que estructura el contenido de páginas web.
+- **HTTP/HTTPS (Hypertext Transfer Protocol / Secure):** Protocolos para transferir información entre clientes y servidores; HTTPS cifra la comunicación.
+- **IAM (Identity & Access Management):** Contexto que gestiona identidades, credenciales, sesiones, autorización y auditoría.
+- **ID token:** Token de identidad emitido por un proveedor como Google. Su atributo `sub` identifica al usuario dentro del proveedor; IAM verifica el token antes de vincularlo con una cuenta de SpotGo.
 - **Internationalization (i18n):** Capacidad de preparar un producto para soportar varios idiomas y locales, incluidos en_US y es_419.
+- **IoT (Internet of Things):** Red de dispositivos físicos conectados que recopilan o transmiten datos.
 - **JavaScript (JS):** Lenguaje de programación utilizado para implementar interacciones y lógica en páginas web.
 - **JDK (Java Development Kit):** Herramientas para desarrollar, compilar y ejecutar programas Java.
-- **JSON (JavaScript Object Notation):** Formato de texto para intercambiar datos estructurados entre sistemas.
 - **Jetpack Compose:** Toolkit declarativo de Android para construir interfaces nativas con Kotlin.
-- **Lucidchart:** Herramienta de diagramación utilizada para elaborar el diagrama de base de datos, los User Flows y los Wireflows.
+- **JSON (JavaScript Object Notation):** Formato de texto para intercambiar datos estructurados entre sistemas.
 - **JWT (JSON Web Token):** Formato de token que contiene claims. SpotGo utiliza tokens firmados para transmitir información de autenticación y verificar su integridad.
 - **Kotlin:** Lenguaje de programación utilizado para la aplicación Android nativa de Driver.
+- **Lucidchart:** Herramienta de diagramación utilizada para elaborar el diagrama de base de datos, los User Flows y los Wireflows.
 - **MQTT:** Protocolo de mensajería mediante publicación y suscripción, utilizado en la comunicación de sensores con un broker.
 - **OpenAPI/Swagger:** Especificación y herramientas utilizadas para documentar, consultar y verificar el contrato de los Web Services RESTful.
 - **PK (Primary Key) / FK (Foreign Key):** Clave primaria que identifica un registro y clave foránea que referencia un registro relacionado en otra tabla.
 - **PlantUML:** Herramienta que genera diagramas a partir de descripciones textuales, utilizada para elaborar diagramas UML.
 - **Render:** Plataforma de alojamiento utilizada para publicar el Backend como Web Service y la SpotGo Administration Web App como Static Site.
+- **RESTful API:** Servicio web que expone recursos y operaciones mediante convenciones REST para que los clientes de SpotGo intercambien información con el backend.
 - **RUC (Registro Único de Contribuyentes):** Identificador tributario utilizado en Perú para personas y entidades inscritas ante la SUNAT.
 - **SDK (Software Development Kit):** Conjunto de herramientas y bibliotecas para desarrollar aplicaciones para una plataforma.
 - **SEO (Search Engine Optimization):** Prácticas para mejorar la visibilidad de una página en los resultados de motores de búsqueda.
 - **SMART:** Criterios para formular objetivos específicos, medibles, alcanzables, relevantes y delimitados en el tiempo.
-- **Structurizr DSL:** Lenguaje textual utilizado para definir el modelo C4 y generar sus vistas de arquitectura.
-- **SQL (Structured Query Language):** Lenguaje para consultar y modificar datos en bases de datos relacionales.
 - **SpotGo Administration Web App:** Aplicación web desarrollada con Angular, TypeScript y Angular Material para el SuperAdmin.
 - **SpotGo Driver Android App:** Aplicación Android nativa desarrollada con Kotlin y Jetpack Compose; permite iniciar sesión y registrarse como Driver.
 - **SpotGo Parking Admin Flutter App:** Aplicación multiplataforma desarrollada con Flutter y Dart para Parking Admin; permite iniciar sesión con una cuenta provisionada y no ofrece registro público.
+- **SQL (Structured Query Language):** Lenguaje para consultar y modificar datos en bases de datos relacionales.
+- **Structurizr DSL:** Lenguaje textual utilizado para definir el modelo C4 y generar sus vistas de arquitectura.
 - **TypeScript:** Lenguaje basado en JavaScript que añade tipos estáticos y se utiliza para desarrollar la página web administrativa de SpotGo.
 - **UI (User Interface) / UX (User Experience):** La interfaz de usuario comprende los elementos de interacción; la experiencia de usuario comprende la percepción y el recorrido de uso del producto.
 - **UML (Unified Modeling Language):** Lenguaje de modelado visual para especificar y documentar sistemas de software.
 - **URL (Uniform Resource Locator):** Dirección que identifica la ubicación de un recurso en una red.
-- **W3C (World Wide Web Consortium):** Organización que publica estándares para la Web.
-- **RESTful API:** Servicio web que expone recursos y operaciones mediante convenciones REST para que los clientes de SpotGo intercambien información con el backend.
 - **UXPressia:** Herramienta utilizada para elaborar User Personas, Empathy Maps, User Journey Maps e Impact Maps.
+- **W3C (World Wide Web Consortium):** Organización que publica estándares para la Web.
 - **WCAG 2.2:** Estándar del W3C con criterios verificables para evaluar la accesibilidad del contenido web y de los productos digitales.

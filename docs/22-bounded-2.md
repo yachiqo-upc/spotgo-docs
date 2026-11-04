@@ -98,7 +98,7 @@ El adaptador sigue los criterios de [verificación de ID tokens de Google](https
 
 El diagrama de componentes delimita la frontera de Identity & Access Management, sus componentes de seguridad, la base de datos y sus relaciones con Profiles & Vehicles Management, Parking Infrastructure y los tres clientes de SpotGo: la aplicación Android nativa de Driver, la aplicación Flutter de Parking Admin y la página web administrativa de SpotGo para SuperAdmin. Guest y los visitantes de la Landing Page no tienen cuentas ni perfiles de autenticación.
 
-*Figura 28 (Identity & Access Management Component Level Diagram)*
+*Figura 28 (Identity & Access Management Component Level Diagram)*  
 ![Identity & Access Management Component Level Diagram](../assets/diagrams/components-diagram-identity.svg)
 
 | Componente | Responsabilidad | Dependencias principales |
@@ -120,7 +120,7 @@ La vista de código describe el modelo de dominio de identidad, sus interfaces d
 
 #### ***2.6.2.6.1. Bounded Context Domain Layer Class Diagrams***
 
-*Figura 29 (Identity & Access Management Domain Layer Class Diagram)*
+*Figura 29 (Identity & Access Management Domain Layer Class Diagram)*  
 ![Identity & Access Management Domain Layer Class Diagram](../assets/diagrams/class-diagram-identity.png)
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
@@ -160,7 +160,7 @@ La vista de código describe el modelo de dominio de identidad, sus interfaces d
 
 Identity Database es independiente de las bases de datos de los demás bounded contexts. Las foreign keys se aplican solo dentro de esta base; identityRef, tenantId o correlationId utilizados por otros contextos no se convierten en relaciones físicas entre bases.
 
-*Figura 30 (Identity & Access Management Database Design Diagram)*
+*Figura 30 (Identity & Access Management Database Design Diagram)*  
 ![Identity & Access Management Database Design Diagram](../assets/diagrams/db-diagram-identity.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
