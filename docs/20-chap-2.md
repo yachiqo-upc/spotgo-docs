@@ -2008,10 +2008,10 @@ La distribución conserva las 11 historias y los 39 puntos previstos para el Spr
 
 **Evidencia del Product Backlog en Trello**
 
-**Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/product-backlog-spotgo)
+**Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/spotgo-trello-board](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/spotgo-trello-board)
 
-*Figura 12 (Trello Board Evidence)*  
-![Trello Board Evidence](../assets/images/others/trello-board-evidence.png)
+*Figura 12 (Trello Board: Product Backlog)*  
+![Trello Board: Product Backlog](../assets/images/figures/12-trello-board-product-backlog.png)
 
 La tabla anterior deja listo el contenido que debe reflejarse en la herramienta y permite comprobar la correspondencia entre el orden, los Story Points y los Sprints.
 
@@ -2154,7 +2154,7 @@ Los Bounded Contexts considerados son:
 El análisis considera las dependencias entre contextos y los patrones de relación propuestos por Domain-Driven Design.
 
 *Figura 20 (Context Mapping Discussion Evidence)*  
-![Context Mapping Discussion Evidence](../assets/images/others/context-mapping-discussion-evidence.png)
+![Context Mapping Discussion Evidence](../assets/images/figures/20-context-mapping-discussion-evidence.png)
 
 **Análisis de alternativas**
 

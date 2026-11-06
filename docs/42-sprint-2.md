@@ -116,10 +116,10 @@ La Leadership-and-Collaboration Matrix (LACX) identifica a las personas responsa
 
 El Sprint Backlog 2 reúne las tareas vinculadas a los elementos planificados del Product Backlog. Las historias de usuario aparecen primero, seguidas de las historias técnicas y las historias de investigación.
 
-**Trello Board Link:** [https://trello.com/b/6aa6e46ebebf57986f7fcd37](https://trello.com/b/6aa6e46ebebf57986f7fcd37)
+**Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/spotgo-trello-board](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/spotgo-trello-board)
 
-*Figura 100 (Trello Board Sprint 2)*  
-![Trello Board Sprint 2](../assets/images/others/trello-board-sprint-2.png)
+*Figura 100 (Trello Board: Sprint Backlog 2)*  
+![Trello Board: Sprint Backlog 2](../assets/images/figures/100-trello-board-sprint-backlog-2.png)
 
 <table>
   <thead>
@@ -183,7 +183,7 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 | Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
 | --- | --- | --- | --- | --- |
-| [spotgo-landing](https://github.com/yachiqo-upc/spotgo-landing) |  |  |  |  |
+| [spotgo-landing](https://github.com/yachiqo-upc/spotgo-landing) | develop  | d6d9470 | feat: redesign SpotGo Landing Page for mobile apps | 2026-11-05 |
 | [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) |  |  |  |  |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) |  |  |  |  |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) |  |  |  |  |
@@ -192,49 +192,47 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 *Figura 101 (Backend Test Evidence)*  
 
-*Figura 102 (SpotGo Driver Android App Test Evidence)*  
+*Figura 102 (SpotGo Android App Test Evidence)*  
 
-*Figura 103 (SpotGo Parking Admin Flutter App Test Evidence)*  
-
-*Figura 104 (Landing Page Test Evidence)*  
+*Figura 103 (SpotGo Flutter App Test Evidence)*  
 
 #### *4.2.2.6. Execution Evidence for Sprint Review*
 
 **Landing Page**
 
-*Figura 105 (SpotGo Landing Page Home)*  
+*Figura 104 (SpotGo Landing Page: Home)*  
+![SpotGo Landing Page: Home](../assets/images/figures/104-landing-page-home.png)
 
-*Figura 106 (SpotGo Landing Page Drivers)*  
+*Figura 105 (SpotGo Landing Page: The Apps)*  
+![SpotGo Landing Page: The Apps](../assets/images/figures/105-landing-page-the-apps.png)
 
-*Figura 107 (SpotGo Landing Page Admins)*  
+*Figura 106 (SpotGo Landing Page: How it Works)*  
+![SpotGo Landing Page: How it Works](../assets/images/figures/106-landing-page-how-it-works.png)
 
-*Figura 108 (SpotGo Landing Page How Work)*  
+*Figura 107 (SpotGo Landing Page: FAQ)*  
+![SpotGo Landing Page: FAQ](../assets/images/figures/107-landing-page-faq.png)
 
-*Figura 109 (SpotGo Landing Page Pricing)*  
+**Landing Page Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQB_Jj5fMDvRTLXgP8g9FbLZAdG4cpDEmi_4JIVIlebIiy8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Jx3xOS](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQB_Jj5fMDvRTLXgP8g9FbLZAdG4cpDEmi_4JIVIlebIiy8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Jx3xOS)
 
-*Figura 110 (SpotGo Landing Page FAQ)*  
+**SpotGo Android App**
 
-**Landing Page Demonstration Video Link:**
+*Figura 108 (SpotGo Android App: Sign-up and Sign-in)*  
 
-**SpotGo Driver Android App**
+*Figura 109 (SpotGo Android App: Vehicle Registration)*  
 
-*Figura 111 (SpotGo Driver Android App Sign-up and Sign-in)*  
+*Figura 110 (SpotGo Android App: Availability and Reservations)*  
 
-*Figura 112 (SpotGo Driver Android App Vehicle Registration)*  
-
-*Figura 113 (SpotGo Driver Android App Availability and Reservations)*  
-
-*Figura 114 (SpotGo Driver Android App Payments and Receipts)*  
+*Figura 111 (SpotGo Android App: Payments and Receipts)*  
 
 **Android App Demonstration Video Link:**
 
-**SpotGo Parking Admin Flutter App**
+**SpotGo Flutter App**
 
-*Figura 115 (SpotGo Parking Admin Flutter App Guest Parking Sessions)*  
+*Figura 112 (SpotGo Flutter App: Guest Parking Sessions)*  
 
-*Figura 116 (SpotGo Parking Admin Flutter App Occupancy by Zone)*  
+*Figura 113 (SpotGo Flutter App: Occupancy by Zone)*  
 
-*Figura 117 (SpotGo Parking Admin Flutter App Operational Alerts)*  
+*Figura 114 (SpotGo Flutter App: Operational Alerts)*  
 
 **Demonstration Video Evidence for Sprint Review**
 
@@ -244,15 +242,15 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 La documentación OpenAPI/Swagger del Sprint 2 reúne los contratos REST de vehículos, sesiones de invitados, cuentas Parking Admin, ocupación, alertas, pagos asíncronos y sincronización móvil.
 
-*Figura 118 (OpenAPI/Swagger: Vehicle and Guest Parking Session Services)*  
+*Figura 115 (OpenAPI/Swagger: Vehicle and Guest Parking Session Services)*  
 
-*Figura 119 (OpenAPI/Swagger: Occupancy, Sensor and Alert Services)*  
+*Figura 116 (OpenAPI/Swagger: Occupancy, Sensor and Alert Services)*  
 
-*Figura 120 (OpenAPI/Swagger: Asynchronous Payment and Mobile Synchronization Services)*  
+*Figura 117 (OpenAPI/Swagger: Asynchronous Payment and Mobile Synchronization Services)*  
 
 #### *4.2.2.8. Software Deployment Evidence for Sprint Review*
 
-Durante el Sprint 2 se completará el despliegue de la Landing Page en GitHub Pages y se actualizará el Backend como Web Service en Render, construido con Java 25 LTS y Docker.
+Durante el Sprint 2 se completará el despliegue de la Landing Page en GitHub Pages y se desplegará el Backend como Web Service en Render, construido con Java 25 LTS y Docker.
 
 **Procedimiento de publicación y reproducción**
 
@@ -264,22 +262,28 @@ Durante el Sprint 2 se completará el despliegue de la Landing Page en GitHub Pa
 
 **Landing Page Deployment Link:** [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing)
 
-*Figura 121 (Evidencia del despliegue de la Landing Page en GitHub Pages)*  
+*Figura 118 (Sprint 2: Deployment Evidence Landing Page)*  
+![Sprint 2: Deployment Evidence Landing Page](../assets/images/figures/118-s2-deployment-evidence-landing-page.png)
 
 **Backend: Render Web Service**
 
-*Figura 122 (Evidencia del despliegue del Backend en Render)*  
-
 **Backend Deployment Link:** [https://spotgo-backend.onrender.com/swagger-ui/index.html](https://spotgo-backend.onrender.com/swagger-ui/index.html)
+
+*Figura 119 (Sprint 2: Deployment Evidence Backend)*  
+![Sprint 2: Deployment Evidence Backend](../assets/images/figures/119-s2-deployment-evidence-backend.png)
 
 #### *4.2.2.9. Team Collaboration Insights during Sprint*
 
-Las siguientes capturas corresponden a la actividad de los repositorios del Sprint 2.
+Las siguientes capturas corresponden a la actividad de los repositorios `spotgo-landing`, `spotgo-backend`, `spotgo-android-app` y `spotgo-flutter-app` durante el Sprint 2.
 
-*Figura 123 (Sprint 2: Insights de spotgo-flutter-app)*  
+*Figura 120 (Sprint 2: Insights SpotGo Landing Page)*  
+![Sprint 2: Insights SpotGo Landing Page](../assets/images/figures/120-s2-insights-landing-page.png)
 
-*Figura 124 (Sprint 2: Insights de spotgo-android-app)*  
+*Figura 121 (Sprint 2: Insights SpotGo Backend)*  
+![Sprint 2: Insights SpotGo Backend](../assets/images/figures/121-s2-insights-backend.png)
 
-*Figura 125 (Sprint 2: Insights de spotgo-landing)*  
+*Figura 122 (Sprint 2: Insights SpotGo Android App)*  
+![Sprint 2: Insights SpotGo Android App](../assets/images/figures/122-s2-insights-android-app.png)
 
-*Figura 126 (Sprint 2: Insights de spotgo-backend)*  
+*Figura 123 (Sprint 2: Insights SpotGo Flutter App)*  
+![Sprint 2: Insights SpotGo Flutter App](../assets/images/figures/123-s2-insights-flutter-app.png)

@@ -135,32 +135,18 @@ En esta sección se definen los SEO Tags y Meta Tags que se plantearán para la 
 
 **Landing Page**
 
-- **Title:** `SpotGo | Smart Parking`
-- **Description:** `Find and reserve available parking with SpotGo, while parking administrators manage spaces, monitor occupancy and optimize parking operations.`
+- **Title:** `SpotGo · Smart Parking`
+- **Description:** `Meet SpotGo: mobile parking apps for drivers and parking teams. Find a space, manage reservations and follow parking operations.`
 - **Keywords:** `smart parking, parking reservation, parking availability, parking management, Parking Admin, parking spaces`
 - **Author:** `SpotGo Team`
 
-**For Driver**
-
-- **Title:** `SpotGo for Driver | Find and Reserve Parking`
-- **Description:** `Find available parking spaces, check availability and reserve your spot with SpotGo.`
-- **Keywords:** `find parking, parking reservation, available parking, smart parking`
-- **Author:** `SpotGo Team`
-
-**For Parking Admin**
-
-- **Title:** `SpotGo for Parking Admin | Smart Parking Management`
-- **Description:** `Manage parking spaces, monitor occupancy and optimize parking operations with SpotGo.`
-- **Keywords:** `parking management, Parking Admin, occupancy monitoring, parking operations`
-- **Author:** `SpotGo Team`
-
-La estructura de la Landing Page se organizará alrededor de contenidos dirigidos a **Driver** y **Parking Admin**, además de las secciones **How it works, Pricing y FAQ**.
+La Landing Page se organiza como una página única con seis secciones. **Home** presenta la propuesta de valor; **The apps** reúne las opciones para Driver y Parking Admin; **How it works** explica el recorrido de uso; **About the product** presenta SpotGo; **About the team** presenta a sus integrantes; y **FAQ** responde las preguntas frecuentes.
 
 **ASO Elements de las aplicaciones móviles**
 
 Los siguientes valores constituyen la propuesta inicial de metadatos para las dos aplicaciones móviles independientes: la aplicación nativa de Driver y la aplicación multiplataforma de Parking Admin. La publicación de cada una se ajustará a sus funciones y a los campos admitidos por cada tienda; la descripción actual resume la propuesta de SpotGo y deberá adaptarse a cada perfil antes de su publicación.
 
-| Elemento | English (en_US), idioma predeterminado | Latin American Spanish (es_419) |
+| Item | English (en_US) | Latin American Spanish (es_419) |
 | --- | --- | --- |
 | App Title | SpotGo: Smart Parking | SpotGo: Estacionamiento |
 | App Keywords | parking, reservations, availability, parking management, occupancy | estacionamiento, reservas, disponibilidad, gestión, ocupación |
@@ -191,20 +177,20 @@ Para el rol **Parking Admin**, las consultas se realizan dentro de cada sección
 
 En esta sección se definen los sistemas de navegación que se plantearán para guiar a los usuarios a través de la Landing Page y las aplicaciones de SpotGo, permitiéndoles acceder a las funcionalidades necesarias de acuerdo con sus objetivos.
 
-**Navegación de la Landing Page:**
+**Navegación de la Landing Page**
 
-- **Global Navigation:** Se planteará una barra de navegación superior con accesos a las principales secciones: **For Driver, For Parking Admin, How it works, Pricing y FAQ**.
-- **Section Navigation:** Los elementos de navegación permitirán desplazarse hacia las diferentes secciones de la Landing Page sin necesidad de abandonar la página.
-- **Call To Action:** Se utilizarán botones como **Open App** para dirigir al usuario hacia la experiencia principal del producto.
-- **Mobile Navigation:** En dispositivos móviles se planteará un menú desplegable que permitirá acceder a las diferentes secciones manteniendo una interfaz limpia y aprovechando el espacio reducido de la pantalla.
+- **Global Navigation:** La barra superior ofrece accesos a **The apps, How it works, About the product, About the team y FAQ**. El logotipo permite regresar a **Home**.
+- **Section Navigation:** Los enlaces desplazan a la sección correspondiente dentro de la misma página.
+- **Call To Action:** Los botones **Explore the apps**, **How SpotGo works** y **Open app** conducen a las secciones de aplicaciones, explicación del producto y acceso a las aplicaciones.
+- **Mobile Navigation:** En dispositivos móviles, un menú desplegable permite acceder a las mismas secciones y conserva el acceso a las acciones principales.
 
-**Navegación de la aplicación para Driver:**
+**Navegación de SpotGo Driver Android App**
 
 - **Bottom Navigation:** Se planteará una barra de navegación inferior con acceso a las principales funcionalidades: **Explore, Reservations, Payments y Profile**.
 - **Contextual Navigation:** Dentro de cada sección se incluirán acciones relacionadas con el contexto del usuario, como **Reserve, View Details, Get Directions y Cancel**.
 - **Reservation Flow:** El proceso de reserva utilizará navegación secuencial para guiar al Driver desde la selección del estacionamiento hasta la confirmación de la reserva y el pago.
 
-**Navegación de la aplicación para Parking Admin:**
+**Navegación de SpotGo Parking Admin Flutter App**
 
 - **Bottom Navigation:** La aplicación móvil utiliza una barra inferior con **Dashboard, Occupancy, Alerts y More**, consistente con los wireframes y mock-ups de Parking Admin.
 - **Dashboard Navigation:** El Dashboard funcionará como punto de entrada para visualizar información general y acceder rápidamente a las principales funciones de administración.
@@ -214,7 +200,7 @@ Finalmente, la navegación mantendrá una estructura consistente entre las difer
 
 ### 3.1.3. Landing Page UI Design
 
-Esta sección presenta el diseño de la interfaz de la Landing Page de SpotGo, orientada a comunicar su propuesta de valor a Driver y Parking Admin. El wireframe define la estructura y jerarquía del contenido, mientras que el mock-up muestra su apariencia visual. Ambos artefactos aplican los lineamientos generales de diseño y organizan las funcionalidades, los planes y los medios de contacto para facilitar la navegación y la comprensión del producto.
+Esta sección presenta el diseño de la interfaz de la Landing Page de SpotGo, organizada en **Home, The apps, How it works, About the product, About the team y FAQ**. El wireframe define la estructura y jerarquía de esas secciones; el mock-up muestra su apariencia visual, las tarjetas informativas de las aplicaciones, la presentación del producto y del equipo, y las preguntas frecuentes.
 
 #### *3.1.3.1. Landing Page Wireframe*
 
@@ -354,16 +340,16 @@ Los mock-ups aplican la identidad visual de SpotGo a las pantallas y permiten ap
 
 Los user flows ofrecen una vista de alto nivel de los objetivos, decisiones y recorridos posibles de cada perfil. El flujo de Driver abarca el uso de la aplicación móvil para encontrar y reservar estacionamiento y gestionar servicios asociados. El flujo de Parking Admin representa las tareas de supervisión y administración de la operación.
 
-*Figura 77 (User flow de la aplicación para Driver)*  
+*Figura 77 (User Flow de la aplicación para Driver)*  
 ![Driver User Flow](../assets/diagrams/ui-ux/user-flows/userflow-driver.svg)
 
-*Figura 78 (User flow de la aplicación para Parking Admin)*  
+*Figura 78 (User Flow de la aplicación para Parking Admin)*  
 ![Parking Admin User Flow](../assets/diagrams/ui-ux/user-flows/userflow-parking-admin.svg)
 
 #### *3.1.4.5. Applications Prototypes*
 
 Los prototipos interactivos de SpotGo permiten validar la navegación y los principales flujos definidos para los perfiles Driver y Parking Admin.
 
-- **Driver Prototype:** [https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-4&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=73%3A2736](https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-4&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=73%3A2736)
+**Driver Prototype:** [https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-4&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=73%3A2736](https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-4&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=73%3A2736)
 
-- **Parking Admin Prototype:** [https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-5&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=65%3A5626](https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-5&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=65%3A5626)
+**Parking Admin Prototype:** [https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-5&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=65%3A5626](https://www.figma.com/proto/sQ2XbvLctkCFweIj0w0SjQ/SpotGo-Design?node-id=1-5&p=f&t=fXxztYJQpDayYoxc-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=65%3A5626)
