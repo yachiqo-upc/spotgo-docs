@@ -186,7 +186,17 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 | [spotgo-landing](https://github.com/yachiqo-upc/spotgo-landing) | develop  | d6d9470 | feat: redesign SpotGo Landing Page for mobile apps | 2026-11-05 |
 | [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) |  |  |  |  |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) |  |  |  |  |
-| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) |  |  |  |  |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 2bf176a | chore(flutter): configure theme and assets | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 5db9354 | feat(auth): implement parking admin access | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 6a05d2b | feat(navigation): add admin navigation | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 89c4dcb | feat(dashboard): build operational dashboard | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 5379b9e | feat(occupancy): implement occupancy monitoring | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 05ee55b | feat(alerts): implement operational alerts | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | b9e2cf7 | feat(zones): add parking zone management | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 8048c26 | feat(guests): implement guest sessions | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | ca8f26b | feat(guests): add creation and checkout flows | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 2f5ceca | test(admin): validate parking admin workflows | 2026-11-07 |
+| [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 244e26f | fix(admin): resolve analyzer, format and test issues | 2026-11-08 |
 
 #### *4.2.2.5. Testing Suite Evidence for Sprint Review*
 
@@ -195,6 +205,7 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 *Figura 102 (SpotGo Android App Test Evidence)*  
 
 *Figura 103 (SpotGo Flutter App Test Evidence)*  
+![SpotGo Flutter App Test Evidence](../assets/images/figures/103-flutter-app-test-evidence.png)
 
 #### *4.2.2.6. Execution Evidence for Sprint Review*
 
@@ -229,10 +240,13 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 **SpotGo Flutter App**
 
 *Figura 112 (SpotGo Flutter App: Guest Parking Sessions)*  
+![SpotGo Flutter App: Guest Parking Sessions](../assets/images/figures/112-flutter-app-guest-parking-sessions.png)
 
 *Figura 113 (SpotGo Flutter App: Occupancy by Zone)*  
+![SpotGo Flutter App: Occupancy by Zone](../assets/images/figures/113-flutter-app-occupancy-by-zone.png)
 
 *Figura 114 (SpotGo Flutter App: Operational Alerts)*  
+![SpotGo Flutter App: Operational Alerts](../assets/images/figures/114-flutter-app-operational-alerts.png)
 
 **Demonstration Video Evidence for Sprint Review**
 
