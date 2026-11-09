@@ -51,7 +51,7 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **Angular:** Framework de TypeScript para desarrollar aplicaciones web.
 - **Angular Material:** Biblioteca de componentes de interfaz basada en Material Design para aplicaciones Angular.
 - **API (Application Programming Interface):** Interfaz que define cómo un sistema puede solicitar datos o acciones a otro sistema.
-- **API Gateway:** Punto de entrada que recibe solicitudes de los clientes y las dirige a los servicios correspondientes.
+- **API Gateway:** Componente del Backend que recibe solicitudes de los clientes y las dirige a los módulos funcionales correspondientes.
 - **APK (Android Package Kit):** Paquete instalable de una aplicación Android.
 - **ASO (App Store Optimization):** Prácticas para mejorar la presentación y la posibilidad de encontrar una aplicación en una tienda digital.
 - **B2B (Business-to-Business):** Relación comercial entre organizaciones o empresas.
@@ -87,6 +87,7 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **JWT (JSON Web Token):** Formato de token que contiene claims. SpotGo utiliza tokens firmados para transmitir información de autenticación y verificar su integridad.
 - **Kotlin:** Lenguaje de programación utilizado para la aplicación Android nativa de Driver.
 - **Lucidchart:** Herramienta de diagramación utilizada para elaborar el diagrama de base de datos, los User Flows y los Wireflows.
+- **Monolito modular:** Aplicación que se despliega como una sola unidad y organiza sus responsabilidades en módulos con límites definidos. SpotGo reúne sus cinco bounded contexts en una única aplicación Backend Spring Boot.
 - **MQTT:** Protocolo de mensajería mediante publicación y suscripción, utilizado en la comunicación de sensores con un broker.
 - **OpenAPI/Swagger:** Especificación y herramientas utilizadas para documentar, consultar y verificar el contrato de los Web Services RESTful.
 - **PK (Primary Key) / FK (Foreign Key):** Clave primaria que identifica un registro y clave foránea que referencia un registro relacionado en otra tabla.

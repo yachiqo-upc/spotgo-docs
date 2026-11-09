@@ -74,7 +74,7 @@ Se establece el uso estricto del idioma **inglés (en_US)** para la denominació
 
 #### 4.1.4. Software Deployment Configuration
 
-La Landing Page se publica en **GitHub Pages**. El Backend se despliega en **Render** como Web Service y se conecta con PostgreSQL en **Neon**. La página web administrativa de SpotGo para SuperAdmin se despliega en Render como Static Site y se desarrolla con Angular, TypeScript y Angular Material. Las aplicaciones móviles de Driver y Parking Admin son clientes independientes y se distribuirán por separado mediante **Firebase App Distribution** al cierre del Sprint 3.
+La Landing Page se publica en **GitHub Pages**. El Backend, implementado como monolito modular en una única aplicación Spring Boot, se despliega en **Render** como Web Service y se conecta con una única instancia PostgreSQL en **Neon**. La página web administrativa de SpotGo para SuperAdmin se despliega en Render como Static Site y se desarrolla con Angular, TypeScript y Angular Material. Las aplicaciones móviles de Driver y Parking Admin son clientes independientes y se distribuirán por separado mediante **Firebase App Distribution** al cierre del Sprint 3.
 
 **Landing Page: GitHub Pages**
 
@@ -86,7 +86,7 @@ La Landing Page se publica en **GitHub Pages**. El Backend se despliega en **Ren
 **Backend: Render Web Service y PostgreSQL**
 
 1. Clonar `spotgo-backend`, instalar JDK 25 LTS y comprobar `java -version`. Desde la raíz, empaquetar con `./mvnw.cmd -B -DskipTests package` en Windows o `./mvnw -B -DskipTests package` en Linux/macOS. El empaquetado genera `target/spotgo-1.0.0.jar` según el `pom.xml`; `-DskipTests` solo omite pruebas durante este paso y no constituye evidencia de validación.
-2. Crear o seleccionar la base PostgreSQL de Neon que utilizará el servicio y obtener su host, nombre de base, usuario y contraseña. Preparar una URL JDBC con el formato `jdbc:postgresql://<host>/<database>?sslmode=require`; los valores reales se configuran como variables del servicio.
+2. Crear o seleccionar la instancia PostgreSQL de Neon que utilizará el Backend y obtener su host, nombre de base, usuario y contraseña. Preparar una URL JDBC con el formato `jdbc:postgresql://<host>/<database>?sslmode=require`; los valores reales se configuran como variables del servicio.
 3. En Render, crear o seleccionar el Web Service conectado al repositorio `yachiqo-upc/spotgo-backend` y a la rama `main`. Render no ofrece un runtime nativo para Java; el servicio debe ejecutarse con una imagen Docker de Java 25 LTS, construida desde un Dockerfile o publicada previamente en un registro. Consultar la [guía oficial de Docker en Render](https://render.com/docs/docker).
 4. Configurar en **Environment** las variables siguientes, correspondientes a las propiedades del proyecto. Render administra las variables y los secretos desde el panel del servicio, y los aplica al próximo despliegue ([documentación](https://render.com/docs/configure-environment-variables)):
 
@@ -108,7 +108,7 @@ La Landing Page se publica en **GitHub Pages**. El Backend se despliega en **Ren
 6. Incluir en la imagen Docker el artefacto `target/spotgo-1.0.0.jar` y ejecutar `java -jar target/spotgo-1.0.0.jar`. Si se cambia la versión del proyecto, actualizar también el nombre del JAR. El Web Service debe escuchar en el puerto que Render asigna mediante `PORT` y aceptar tráfico externo.
 7. Ejecutar el despliegue y revisar los logs de compilación, inicio y conexión PostgreSQL. Render asigna una URL HTTPS al servicio. Comprobar `/v3/api-docs`, `/swagger-ui/index.html` y una operación pública documentada. Las [verificaciones de estado de Render](https://render.com/docs/health-checks) permiten comprobar que el servicio puede recibir tráfico.
 
-El procedimiento anterior utiliza la conexión configurada por el servicio Spring Boot actual. La arquitectura objetivo del capítulo II separa la persistencia en cinco bases lógicas dentro de una sola instancia PostgreSQL; al desplegar servicios independientes, cada contexto debe recibir únicamente las credenciales de su propia base. La URL de un servicio no demuestra por sí sola que toda esa distribución esté implementada.
+El Backend desplegado en Render se conecta a una única instancia PostgreSQL de Neon. El monolito modular conserva la separación lógica de los datos por bounded context dentro de esa instancia; los contextos no requieren instancias de Backend ni conexiones de base de datos desplegadas por separado.
 
 **SpotGo Driver Android App: Kotlin y Jetpack Compose**
 
@@ -133,11 +133,11 @@ Al finalizar el Sprint 3, se cargarán por separado las versiones Android de la 
 
 **Diagrama C4 de despliegue**
 
-La vista de despliegue presenta la distribución propuesta de clientes, servicios, instancia PostgreSQL y sensores. Su explicación corresponde a la sección 2.5.3.3. Software Architecture Deployment Diagrams.
+La vista de despliegue presenta los clientes, el Backend modular y su única instancia PostgreSQL, además de los sensores. Su explicación corresponde a la sección 2.5.3.3. Software Architecture Deployment Diagrams.
 
 *Figura 79 (Diagrama C4 de despliegue)*  
 ![SpotGo C4 Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
 
 ### 4.2. Landing Page & Mobile Application Implementation
 
-Esta sección presenta, para cada sprint, la planificación y las evidencias de desarrollo, pruebas, ejecución, documentación de servicios, despliegue y colaboración del equipo correspondientes a los productos digitales de SpotGo: la Landing Page, los servicios backend, la aplicación Android de Driver, la aplicación Flutter de Parking Admin y la aplicación web Angular de SuperAdmin. Cada sprint reúne los artefactos y resultados que permiten documentar el avance de la solución según su alcance.
+Esta sección presenta, para cada sprint, la planificación y las evidencias de desarrollo, pruebas, ejecución, documentación de la API, despliegue y colaboración del equipo correspondientes a los productos digitales de SpotGo: la Landing Page, el Backend modular, la aplicación Android de Driver, la aplicación Flutter de Parking Admin y la aplicación web Angular de SuperAdmin. Cada sprint reúne los artefactos y resultados que permiten documentar el avance de la solución según su alcance.

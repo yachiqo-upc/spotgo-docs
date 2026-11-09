@@ -40,7 +40,7 @@ La Interface Layer expone operaciones de autenticación y administración de acc
 | Authentication Controller | REST/HTTPS | Inicia la autenticación de una Account con credenciales propias o un ID token de Google y devuelve el resultado de acceso. | Iniciar sesión con correo y contraseña, iniciar sesión con Google y cerrar sesión. |
 | Session Controller | REST/HTTPS | Administra la renovación y revocación de sesiones. | Renovar token, consultar sesión propia y revocar sesiones. |
 | Account Administration Controller | REST/HTTPS | Permite a SuperAdmin administrar cuentas y asignaciones de rol. | Activar, suspender o bloquear cuenta; asignar o revocar rol. |
-| Authorization Controller | REST/HTTPS interno | Responde consultas de autorización realizadas por otros contextos. | Validar identityRef, roleType y alcance de Tenant. |
+| Authorization Controller | Contrato interno | Responde consultas de autorización realizadas por otros módulos. | Validar identityRef, roleType y alcance de Tenant. |
 | Security Event Consumer | Evento asíncrono | Recibe eventos de seguridad que requieren revocar sesiones o bloquear una cuenta. | CredentialChanged, AccountCompromised, AccountSuspended. |
 | Identity Event Publisher | Evento asíncrono | Publica cambios de identidad y de autorización para los contextos consumidores. | IdentityValidated, RoleAssigned, AccountSuspended, AccessRevoked. |
 
@@ -88,7 +88,7 @@ La infraestructura se implementará con Java y Spring Boot, utilizando capacidad
 | Audit Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste acciones relevantes con correlationId y resultado. |
 | Authorization Interceptor | Spring Security | Verifica token, rol, alcance y permisos antes de ejecutar los controladores. |
 | Identity Event Publisher | Adaptador de mensajería | Publica cambios de identidad sin enviar secretos ni tokens completos. |
-| Identity Database | PostgreSQL | Mantiene la persistencia autónoma de IAM y sus índices de consulta. |
+| Identity Database | PostgreSQL | Mantiene los datos asignados lógicamente a IAM y sus índices dentro de la instancia compartida de Neon. |
 
 La expiración operativa se configura con access token de 15 minutos, refresh token de siete días y rotación obligatoria, tanto para acceso con contraseña como con Google. En la página web administrativa de SpotGo, utilizada por SuperAdmin, la sesión se invalida después de 30 minutos de inactividad y no puede superar ocho horas. Estos valores se pueden parametrizar sin cambiar las clases de dominio. Las auditorías se conservan según la política transversal de cinco años, mientras que la expiración de una sesión no elimina automáticamente los registros de auditoría.
 
@@ -96,7 +96,7 @@ El adaptador sigue los criterios de [verificación de ID tokens de Google](https
 
 #### *2.6.2.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes delimita la frontera de Identity & Access Management, sus componentes de seguridad, la base de datos y sus relaciones con Profiles & Vehicles Management, Parking Infrastructure y los tres clientes de SpotGo: la aplicación Android nativa de Driver, la aplicación Flutter de Parking Admin y la página web administrativa de SpotGo para SuperAdmin. Guest y los visitantes de la Landing Page no tienen cuentas ni perfiles de autenticación.
+El diagrama de componentes delimita el módulo de Identity & Access Management dentro del monolito modular, sus componentes de seguridad, su partición lógica de datos en PostgreSQL y sus relaciones con Profiles & Vehicles Management, Parking Infrastructure y los tres clientes de SpotGo: la aplicación Android nativa de Driver, la aplicación Flutter de Parking Admin y la página web administrativa de SpotGo para SuperAdmin. Guest y los visitantes de la Landing Page no tienen cuentas ni perfiles de autenticación.
 
 *Figura 28 (Identity & Access Management Component Level Diagram)*  
 ![Identity & Access Management Component Level Diagram](../assets/diagrams/components-diagram-identity.svg)
@@ -110,9 +110,9 @@ El diagrama de componentes delimita la frontera de Identity & Access Management,
 | Audit Log Component | Registra eventos de autenticación, autorización y administración. | Audit Event Handler, Audit Entry Repository. |
 | Token Service Component | Firma y valida tokens, aplicando los tiempos de expiración. | Authentication Component, Session Management Component. |
 | Identity Database | Persiste cuentas, sesiones y auditoría. | Implementaciones de repositorio. |
-| Identity Event Publisher | Distribuye cambios de identidad y permisos. | Canal de mensajería asíncrona. |
+| Identity Event Publisher | Distribuye cambios de identidad y permisos. | Canal interno de eventos de dominio. |
 
-Las relaciones visuales describen que los clientes acceden por el API Gateway, que los controladores delegan en la Application Layer y que la Domain Layer aplica las invariantes. Los demás bounded contexts consumen validaciones o eventos, pero no acceden directamente a Identity Database.
+Las relaciones visuales describen que los clientes acceden al API Gateway del Backend, que los controladores delegan en la Application Layer y que la Domain Layer aplica las invariantes. Los demás bounded contexts consumen validaciones o eventos mediante contratos internos, pero no acceden directamente a las tablas de IAM.
 
 #### *2.6.2.6. Bounded Context Software Architecture Code Level Diagrams*
 
@@ -158,7 +158,7 @@ La vista de código describe el modelo de dominio de identidad, sus interfaces d
 
 #### ***2.6.2.6.2. Bounded Context Database Design Diagram***
 
-Identity Database es independiente de las bases de datos de los demás bounded contexts. Las foreign keys se aplican solo dentro de esta base; identityRef, tenantId o correlationId utilizados por otros contextos no se convierten en relaciones físicas entre bases.
+Identity Database representa la partición lógica de datos de IAM dentro de la instancia PostgreSQL compartida. Las foreign keys se aplican entre entidades de este contexto; identityRef, tenantId o correlationId utilizados por otros módulos no crean relaciones físicas entre entidades de distintos bounded contexts.
 
 *Figura 30 (Identity & Access Management Database Design Diagram)*  
 ![Identity & Access Management Database Design Diagram](../assets/diagrams/db-diagram-identity.svg)
@@ -177,6 +177,6 @@ Identity Database es independiente de las bases de datos de los demás bounded c
 | accounts — role_assignments | 1 a 0..* | Una Account puede tener roles con vigencias y alcances distintos. |
 | accounts — sessions | 1 a 0..* | Las sesiones pueden expirar o revocarse sin eliminar la cuenta. |
 | accounts — audit_entries | 1 a 0..* | Los eventos de una cuenta se conservan según la política de retención. |
-| tenant_id — Parking Infrastructure | Referencia externa | La validez del Tenant se comprueba mediante API o eventos; no existe FK entre bases. |
+| tenant_id — Parking Infrastructure | Referencia externa | La validez del Tenant se comprueba mediante contratos internos o eventos; no existe FK hacia entidades de otro bounded context. |
 
 Las tablas de IAM no incluyen vehículos, reservas, Guest Parking Sessions, datos de tarjeta ni comprobantes. La retención de audit_entries sigue el plazo transversal de cinco años, mientras que las sesiones vencidas pueden depurarse según la política de seguridad sin eliminar los registros necesarios para auditoría.

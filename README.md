@@ -19,14 +19,14 @@ SpotGo busca reducir el tiempo que los conductores dedican a encontrar estaciona
 
 ## Arquitectura, tecnologías y despliegue
 
-La documentación describe una arquitectura distribuida orientada al dominio, organizada en cinco bounded contexts. La solución incluye las siguientes tecnologías, integraciones y plataformas de despliegue:
+La documentación describe un monolito modular orientado al dominio, organizado en cinco bounded contexts. SpotGo utiliza una sola instancia de backend y una sola instancia PostgreSQL, con separación lógica de responsabilidades y datos por contexto. La solución incluye las siguientes tecnologías, integraciones y plataformas de despliegue:
 
 - Una aplicación Android nativa con Kotlin y Jetpack Compose para Driver.
 - Una aplicación multiplataforma con Flutter y Dart para Parking Admin.
 - Una aplicación web con Angular, TypeScript y Angular Material para SuperAdmin.
-- Backend desarrollado con Java 25 LTS y Spring Boot, empaquetado con Docker y desplegado como Web Service en Render.
-- Cinco bases de datos PostgreSQL independientes por bounded context, alojadas en una sola instancia física de PostgreSQL Server.
-- Comunicación mediante APIs REST sobre HTTPS y eventos asíncronos.
+- Monolito modular de backend desarrollado con Java 25 LTS y Spring Boot, empaquetado con Docker y desplegado como un único Web Service en Render.
+- Una instancia PostgreSQL en Neon, con separación lógica de los datos según los cinco bounded contexts.
+- Los clientes consumen la API REST del backend sobre HTTPS; los módulos colaboran mediante contratos internos y eventos de dominio.
 - Integración con Google Maps API y Firebase Cloud Messaging.
 - Comunicación con sensores físicos IoT mediante MQTT/HTTP para reportar la ocupación.
 - Landing Page publicada en GitHub Pages y SpotGo Administration Web App desplegada como Static Site en Render.

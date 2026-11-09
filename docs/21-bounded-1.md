@@ -39,9 +39,9 @@ La Interface Layer recibe solicitudes del API Gateway y eventos provenientes de 
 | Vehicle Controller | REST/HTTPS | Gestiona los vehículos pertenecientes a un Driver. | Registrar Vehicle, listar vehículos, actualizar datos, activar o desactivar Vehicle. |
 | User Profile Controller | REST/HTTPS | Consulta y administra el User Profile de una identidad autorizada. | Consultar perfil operativo y actualizar su estado. |
 | Parking Admin Assignment Controller | REST/HTTPS | Registra o finaliza asignaciones de perfiles Parking Admin a un Tenant. | Asignar Parking Admin, consultar asignaciones y finalizar asignación. |
-| Eligibility Controller | REST/HTTPS interno | Expone una consulta para que Parking Infrastructure valide Driver y Vehicle antes de crear una reserva. | Validar elegibilidad y devolver resultado con referencias de Driver y Vehicle. |
+| Eligibility Controller | Contrato interno | Expone una consulta para que Parking Infrastructure valide Driver y Vehicle antes de crear una reserva. | Validar elegibilidad y devolver resultado con referencias de Driver y Vehicle. |
 | Identity Event Consumer | Evento asíncrono | Recibe la validación, asignación de rol o suspensión de una identidad para sincronizar la referencia mínima del perfil. | IdentityValidated, RoleAssigned, AccountSuspended. |
-| Profile Event Publisher | Evento asíncrono | Publica cambios que otros contextos necesitan conocer sin compartir la base de datos. | DriverProfileCreated, DriverProfileValidated, VehicleRegistered, VehicleDeactivated, ParkingAdminProfileAssigned. |
+| Profile Event Publisher | Evento de dominio | Publica cambios que otros módulos necesitan conocer sin acceder directamente a las tablas de este contexto. | DriverProfileCreated, DriverProfileValidated, VehicleRegistered, VehicleDeactivated, ParkingAdminProfileAssigned. |
 
 Las respuestas no exponen credenciales, tokens ni información de pago. SpotGo utiliza clientes separados por rol: la aplicación Android nativa con Kotlin y Jetpack Compose para Driver, la aplicación multiplataforma con Flutter y Dart para Parking Admin, y la página web administrativa de SpotGo, desarrollada con Angular, TypeScript y Angular Material, para SuperAdmin. Cada cliente consume los contratos REST y las reglas de identidad y perfil que corresponden a su rol.
 
@@ -75,24 +75,24 @@ Un evento de VehicleDeactivated no cancela por sí solo una reserva confirmada, 
 
 #### *2.6.1.4. Infrastructure Layer*
 
-La Infrastructure Layer implementa los puertos definidos por el dominio y la aplicación. La implementación base utiliza Java y Spring Boot para la API y los procesos de aplicación, PostgreSQL para la persistencia independiente del contexto y un mecanismo de mensajería asíncrona compatible con los contratos de SpotGo.
+La Infrastructure Layer implementa los puertos definidos por el dominio y la aplicación. La implementación base utiliza Java y Spring Boot para la API y los procesos de aplicación, y mantiene los datos de este contexto separados lógicamente en la instancia PostgreSQL compartida. Los módulos intercambian información mediante contratos internos y eventos de dominio.
 
 | Componente de infraestructura | Implementación propuesta | Responsabilidad |
 | --- | --- | --- |
 | Driver Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste y consulta Driver, aplicando las restricciones internas del contexto. |
 | Vehicle Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste los vehículos y verifica su asociación con un Driver. |
 | User Profile Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste perfiles Driver y Parking Admin sin guardar credenciales. |
-| Identity Context Client | Cliente REST/HTTPS | Consulta o valida referencias de identidad y roles en Identity & Access Management. |
-| Tenant Reference Adapter | Cliente REST o consumidor de eventos | Verifica que un tenantId utilizado en Parking Admin Assignment corresponda a un Tenant vigente, sin crear una clave foránea entre bases. |
+| Identity Context Client | Contrato interno | Consulta o valida referencias de identidad y roles en Identity & Access Management. |
+| Tenant Reference Adapter | Contrato interno o evento de dominio | Verifica que un tenantId utilizado en Parking Admin Assignment corresponda a un Tenant vigente, sin crear claves foráneas entre bounded contexts. |
 | Event Publisher | Adaptador de mensajería | Publica eventos de perfil y vehículo con identificadores, versión de contrato y fecha de emisión. |
-| Profiles & Vehicles Database | PostgreSQL | Mantiene las tablas propias del contexto y sus índices. |
+| Profiles & Vehicles Database | PostgreSQL | Mantiene las tablas asignadas lógicamente al contexto y sus índices dentro de la instancia compartida de Neon. |
 | Security Boundary | Spring Security en el backend y tokens emitidos por IAM | Protege los endpoints sin duplicar la gestión de credenciales. |
 
-El contexto conservará únicamente identificadores de otros bounded contexts, como identityRef y tenantId. Esas referencias son lógicas: su integridad se valida mediante contratos de integración, no mediante foreign keys en PostgreSQL. Los datos de Guest no se almacenan como registros de este contexto; solo pueden circular en un flujo administrativo de Parking Infrastructure sin convertirse en un perfil persistente.
+El contexto conservará únicamente identificadores de otros bounded contexts, como identityRef y tenantId. Esas referencias son lógicas: su integridad se valida mediante contratos internos, no mediante foreign keys entre entidades de distintos bounded contexts. Los datos de Guest no se almacenan como registros de este contexto; solo pueden circular en un flujo administrativo de Parking Infrastructure sin convertirse en un perfil persistente.
 
 #### *2.6.1.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes de Profiles & Vehicles Management representa la frontera del bounded context, sus componentes internos, la base de datos propia y las dependencias con Identity & Access Management y Parking Infrastructure. Las aplicaciones cliente para Driver, Parking Admin y SuperAdmin consumen los servicios a través del API Gateway y se mantienen fuera de este bounded context.
+El diagrama de componentes de Profiles & Vehicles Management representa este módulo dentro del monolito modular, sus componentes internos, su partición lógica de datos en la instancia PostgreSQL compartida y sus dependencias con Identity & Access Management y Parking Infrastructure. Las aplicaciones cliente para Driver, Parking Admin y SuperAdmin consumen la API mediante el API Gateway del Backend y se mantienen fuera de este bounded context.
 
 *Figura 25 (Profiles & Vehicles Management Component Level Diagram)*  
 ![Profiles & Vehicles Management Component Level Diagram](../assets/diagrams/components-diagram-profiles.svg)
@@ -105,10 +105,10 @@ El diagrama de componentes de Profiles & Vehicles Management representa la front
 | Parking Admin Assignment Component | Gestiona la asignación de Parking Admin a un tenantId. | Parking Admin Assignment Controller, User Profile Repository, Tenant Reference Adapter. |
 | Driver Eligibility Component | Orquesta la validación de Driver, perfil y Vehicle para una operación. | Eligibility Controller, Driver Eligibility Service, repositorios. |
 | Profiles & Vehicles Database | Persiste el modelo del contexto. | Implementaciones de repositorio. |
-| Identity & Access Management Adapter | Obtiene el estado mínimo de la identidad y el rol. | REST/HTTPS y eventos de identidad. |
-| Profile Event Publisher | Publica cambios de perfiles y vehículos. | Broker o canal de eventos asíncronos. |
+| Identity & Access Management Adapter | Obtiene el estado mínimo de la identidad y el rol. | Contratos internos y eventos de dominio. |
+| Profile Event Publisher | Publica cambios de perfiles y vehículos. | Canal interno de eventos de dominio. |
 
-Las relaciones visuales describen que los controladores llaman a la Application Layer, los manejadores utilizan la Domain Layer, los repositorios acceden únicamente a Profiles & Vehicles Database y los adaptadores se comunican con otros contextos mediante contratos. El visitante de la Landing Page no tiene un User Profile y la persistencia de este contexto es independiente.
+Las relaciones visuales describen que los controladores llaman a la Application Layer, los manejadores utilizan la Domain Layer, los repositorios acceden únicamente a los datos asignados lógicamente a Profiles & Vehicles Management y los adaptadores se comunican con otros módulos mediante contratos internos. El visitante de la Landing Page no tiene un User Profile y este contexto conserva una frontera lógica para sus datos.
 
 #### *2.6.1.6. Bounded Context Software Architecture Code Level Diagrams*
 
@@ -150,7 +150,7 @@ La vista de código se concentra en la Domain Layer y presenta las clases, inter
 
 #### ***2.6.1.6.2. Bounded Context Database Design Diagram***
 
-El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. El modelo físico utiliza una tabla `profiles` para los perfiles de Driver y Parking Admin, mientras que la distinción del dominio se conserva mediante `profile_type`. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no como foreign keys entre bases de datos independientes.
+El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. El modelo físico utiliza una tabla `profiles` para los perfiles de Driver y Parking Admin, mientras que la distinción del dominio se conserva mediante `profile_type`. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no crean foreign keys entre entidades de distintos bounded contexts.
 
 *Figura 27 (Profiles & Vehicles Management Database Design Diagram)*  
 ![Profiles & Vehicles Management Database Design Diagram](../assets/diagrams/db-diagram-profiles.svg)
@@ -165,7 +165,7 @@ El diseño de base de datos representa únicamente la persistencia de Profiles &
 | --- | --- | --- |
 | profiles — vehicles | 1 a 0..* | Todo Vehicle persistente pertenece a un perfil con profile_type DRIVER. |
 | profiles — parking_admin_assignments | 1 a 0..* | Solo los perfiles Parking Admin pueden tener asignaciones; las asignaciones conservan su historial y se consulta cuál está vigente. |
-| identity_ref — Identity & Access Management | Referencia externa | Se valida por API o evento; no se crea FK entre bases de datos. |
+| identity_ref — Identity & Access Management | Referencia externa | Se valida mediante contrato interno o evento; no se crea FK hacia entidades de otro bounded context. |
 | tenant_id — Parking Infrastructure | Referencia externa | Se valida contra Tenant; el Tenant no se duplica en esta base. |
 
 El esquema no incluye tablas de invitados, Guest Parking Sessions, credenciales, tokens de pago ni reservas. Esta exclusión hace visible en el diseño de datos la frontera del bounded context y evita que una sesión de invitado se convierta accidentalmente en un perfil persistente.

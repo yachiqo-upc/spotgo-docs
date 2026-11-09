@@ -63,7 +63,7 @@ La Interface Layer expone las operaciones económicas de Driver y recibe solicit
 | Payment Token Controller | REST/HTTPS | Administra referencias tokenizadas de pago. | Registrar, consultar, activar o revocar Payment Token. |
 | Subscription Controller | REST/HTTPS | Gestiona suscripciones y sus estados. | Crear, consultar, pausar, reactivar o cancelar Subscription. |
 | Billing Controller | REST/HTTPS | Recibe datos de facturación y expone comprobantes. | Registrar DNI o RUC, emitir Receipt, consultar o invalidar documento. |
-| Refund Controller | REST/HTTPS interno | Inicia o consulta reembolsos autorizados por Parking Infrastructure. | Solicitar Refund y consultar resultado. |
+| Refund Controller | Contrato interno | Inicia o consulta reembolsos autorizados por Parking Infrastructure. | Solicitar Refund y consultar resultado. |
 | Reservation and Refund Consumer | Evento asíncrono | Recibe solicitudes de pago y reembolso originadas en Parking Infrastructure. | ReservationPaymentRequested, RefundRequested. |
 | Additional Charge Consumer | Evento asíncrono | Recibe cargos adicionales validados por reglas de ocupación y parking. | AdditionalChargeRequested. |
 | Payment Provider Notification Consumer | Evento o callback interno | Recibe confirmaciones, rechazos o cambios del proveedor interno. | ProviderPaymentApproved, ProviderPaymentRejected, ProviderRefundUpdated. |
@@ -112,7 +112,7 @@ La infraestructura se implementará con Java y Spring Boot, PostgreSQL y adaptad
 
 | Componente de infraestructura | Implementación propuesta | Responsabilidad |
 | --- | --- | --- |
-| Internal Payment System Adapter | Cliente REST/HTTPS o mensajería interna | Traduce Payment Provider Gateway al contrato del sistema de pagos internos de SpotGo. |
+| Internal Payment System Adapter | Contrato interno | Traduce Payment Provider Gateway al contrato del sistema de pagos internos de SpotGo. |
 | Provider Notification Adapter | Consumidor de eventos o callback interno | Verifica y transforma confirmaciones o cambios de estado del proveedor. |
 | Payment Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste Digital Payment y sus transiciones. |
 | Payment Attempt Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste cada intento, error clasificado y próxima fecha de reintento. |
@@ -122,13 +122,13 @@ La infraestructura se implementará con Java y Spring Boot, PostgreSQL y adaptad
 | Billing Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste comprobantes y datos de facturación permitidos. |
 | Balance Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste saldos pendientes y su regularización. |
 | Payment Event Publisher | Adaptador de mensajería | Publica resultados aprobados, rechazados, reembolsos y saldos. |
-| Payments & Billing Database | PostgreSQL | Mantiene la persistencia autónoma del contexto. |
+| Payments & Billing Database | PostgreSQL | Mantiene los datos asignados lógicamente a este contexto dentro de la instancia compartida de Neon. |
 
 La retención base de pagos, comprobantes, reembolsos, cargos y saldos es de cinco años. Los tokens de pago (`Payment Token`) se conservan mientras estén activos y pueden revocarse o depurarse cuando ya no sean necesarios para conciliación; los registros de operación e idempotencia se mantienen durante el periodo de auditoría. Ningún plazo de retención elimina una operación vinculada a un reclamo o investigación abierta.
 
 #### *2.6.4.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes delimita Payments & Billing como un contenedor independiente con sus componentes de procesamiento, tokenización, suscripciones, cargos, saldos, reembolsos y facturación. El sistema de pagos internos de SpotGo es una dependencia de infraestructura, sin representar datos completos de tarjeta ni incluir el pago físico de Guests dentro del contenedor.
+El diagrama de componentes representa Payments & Billing como un módulo dentro del Backend monolítico, con sus componentes de procesamiento, tokenización, suscripciones, cargos, saldos, reembolsos y facturación. El sistema de pagos internos forma parte de este módulo y no constituye un despliegue separado. El modelo no almacena datos completos de tarjeta ni incluye el pago físico de Guests dentro del flujo digital.
 
 *Figura 34 (Payments & Billing Component Level Diagram)*  
 ![Payments & Billing Component Level Diagram](../assets/diagrams/components-diagram-payments.svg)
@@ -202,7 +202,7 @@ La vista de código describe las clases de dominio que separan pago, facturació
 
 #### ***2.6.4.6.2. Bounded Context Database Design Diagram***
 
-Payments & Billing Database persiste únicamente operaciones digitales y sus documentos. Los identificadores de Driver, reserva y Parking Session se almacenan como referencias de integración. Una Guest Parking Session queda fuera del flujo digital y no se almacena como Digital Payment. No se incluyen datos completos de tarjeta y no se crean foreign keys hacia bases de otros bounded contexts.
+Payments & Billing Database representa la partición lógica de datos de este contexto y persiste únicamente operaciones digitales y sus documentos dentro de la instancia PostgreSQL compartida. Los identificadores de Driver, reserva y Parking Session se almacenan como referencias de integración. Una Guest Parking Session queda fuera del flujo digital y no se almacena como Digital Payment. No se incluyen datos completos de tarjeta ni se crean foreign keys hacia entidades de otros bounded contexts.
 
 *Figura 36 (Payments & Billing Database Design Diagram)*  
 ![Payments & Billing Database Design Diagram](../assets/diagrams/db-diagram-payments.svg)
@@ -224,7 +224,7 @@ Payments & Billing Database persiste únicamente operaciones digitales y sus doc
 | digital_payments — refunds | 1 a 0..* | Los reembolsos se trazan al pago original. |
 | digital_payments — billing_documents | 1 a 0..1 | Un pago aprobado genera como máximo el documento principal correspondiente. |
 | payment_tokens — digital_payments | 1 a 0..* mediante payment_token_id | Un token puede reutilizarse mientras esté activo y autorizado. |
-| profile_id — Profiles & Vehicles Management | Referencia externa | Identifica al perfil Driver sin crear FK entre bases. |
+| profile_id — Profiles & Vehicles Management | Referencia externa | Identifica al perfil Driver sin crear FK hacia entidades de otro bounded context. |
 | reservation_ref — Parking Infrastructure | Referencia externa | Relaciona la operación económica con una reserva. |
 | session_ref — Parking Infrastructure | Referencia externa | Relaciona el cargo con Parking Session cuando corresponda. |
 

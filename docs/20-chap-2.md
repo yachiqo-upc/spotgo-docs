@@ -379,11 +379,11 @@ Los planes se organizan como *Free*, *Plus Monthly* y *Plus Annual*. Free permit
 
 El backend genera notificaciones por la proximidad del inicio, el inicio y la finalización de las reservas, sobretiempo, reasignaciones, pagos exitosos o fallidos, devoluciones y saldos pendientes. Firebase Cloud Messaging entrega estas notificaciones push a los dispositivos registrados, mientras que las acciones realizadas por un administrador de estacionamiento se conservan en una bitácora de auditoría con el usuario, la acción, la fecha, la hora y los datos modificados.
 
-Las historias de usuario de SpotGo se organizan por capacidades funcionales, técnicas y de investigación para mantener claridad, trazabilidad y verificabilidad. La página de presentación se mantiene como producto digital complementario; las capacidades operativas, comerciales y administrativas se especifican para las aplicaciones móviles, la aplicación web de SuperAdmin y sus servicios backend. La tabla de trazabilidad incluida más adelante relaciona las capacidades del producto con los requisitos definidos.
+Las historias de usuario de SpotGo se organizan por capacidades funcionales, técnicas y de investigación para mantener claridad, trazabilidad y verificabilidad. La página de presentación se mantiene como producto digital complementario; las capacidades operativas, comerciales y administrativas se especifican para las aplicaciones móviles, la aplicación web de SuperAdmin y la API del backend. La tabla de trazabilidad incluida más adelante relaciona las capacidades del producto con los requisitos definidos.
 
 ### 2.4.1. User Stories
 
-Las siguientes historias especifican los requisitos funcionales, técnicos y de investigación para los clientes de SpotGo y sus servicios backend. Cada historia se relaciona con una épica, tiene una prioridad de negocio y define criterios de aceptación comprobables. Priority **High** identifica capacidades directamente vinculadas con los objetivos de negocio; **Medium** corresponde a capacidades de soporte; y **Low**, a documentación o capacidades complementarias.
+Las siguientes historias especifican los requisitos funcionales, técnicos y de investigación para los clientes de SpotGo y la API del backend. Cada historia se relaciona con una épica, tiene una prioridad de negocio y define criterios de aceptación comprobables. Priority **High** identifica capacidades directamente vinculadas con los objetivos de negocio; **Medium** corresponde a capacidades de soporte; y **Low**, a documentación o capacidades complementarias.
 
 Los criterios de aceptación siguen la estructura Gherkin **Dado que - Cuando - Entonces**, se redactan en presente y tercera persona, y describen resultados observables sin fijar detalles innecesarios de interfaz. Las historias técnicas utilizan el rol Developer cuando la capacidad no implica interacción directa con un usuario final. Las historias de investigación deben cerrarse con resultados documentados y evidencia suficiente para reducir la incertidumbre.
 
@@ -2242,26 +2242,26 @@ En cuanto a las integraciones externas, SpotGo se comunica con los **Sensores F�
 
 #### *2.5.3.2. Software Architecture Container Level Diagrams*
 
-El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y descompone SpotGo en sus principales unidades de software. La propuesta distingue tres aplicaciones cliente independientes: la aplicación Android nativa de Driver, la aplicación multiplataforma Flutter de Parking Admin y la página web administrativa de SpotGo para SuperAdmin. También incluye la Landing Page estática, el **API Gateway**, cinco contextos de negocio y el sistema de pagos internos.
+El **Diagrama de Contenedores** constituye el segundo nivel del Modelo C4 y descompone SpotGo en sus principales unidades de software. La propuesta distingue tres aplicaciones cliente independientes: la aplicación Android nativa de Driver, la aplicación multiplataforma Flutter de Parking Admin y la página web administrativa de SpotGo para SuperAdmin. También incluye la Landing Page estática, una única instancia del Backend implementada como monolito modular y una única instancia PostgreSQL. El API Gateway y los cinco bounded contexts forman parte del Backend.
 
 *Figura 23 (Container Level Diagram)*  
 ![Container Level Diagram](../assets/diagrams/container-level-diagram.svg)
 
-La solución cuenta con los siguientes contenedores principales:
+El diagrama representa los siguientes contenedores y módulos:
 
 1. **SpotGo Driver Android App:** Aplicación nativa Android desarrollada con Kotlin y Jetpack Compose para Driver. Permite iniciar sesión y crear una cuenta mediante el registro público.
 2. **SpotGo Landing Page:** Sitio estático desarrollado con HTML, CSS y Vanilla JS, desplegado en GitHub Pages. Presenta la propuesta de valor y dirige a cada perfil hacia el canal correspondiente.
 3. **SpotGo Administration Web App:** Aplicación web desarrollada con Angular, TypeScript y Angular Material para SuperAdmin. Permite iniciar sesión con una cuenta provisionada y administrar Tenants y cuentas Parking Admin.
 4. **SpotGo Parking Admin Flutter App:** Aplicación independiente y multiplataforma desarrollada con Flutter y Dart para Parking Admin. Permite iniciar sesión con una cuenta provisionada y no incluye registro público.
-5. **API Gateway:** Punto único de entrada a los servicios internos de SpotGo, encargado de enrutar las solicitudes de las aplicaciones cliente hacia los contextos de negocio mediante HTTPS / REST.
-6. **Internal Payment System:** Sistema de pagos internos de SpotGo que procesa pagos digitales, consultas de estado y reembolsos mediante un contrato con idempotencia. Se representa dentro del límite de SpotGo y se ejecuta en su infraestructura de aplicaciones.
-7. **Profiles & Vehicles Management:** Gestiona Driver, User Profiles, vehículos y referencias de asignación a los Tenants administrados por Parking Infrastructure. Los visitantes de la Landing Page no tienen un User Profile.
-8. **Identity & Access Management:** Gestiona autenticación con correo y contraseña o Google, sesiones, autorización y auditoría. Reconoce únicamente los roles DRIVER, PARKING_ADMIN y SUPER_ADMIN.
-9. **Parking Infrastructure:** Gestiona Tenants, zonas, espacios, disponibilidad, reservas, sesiones de estacionamiento, asignaciones y reasignaciones.
-10. **Payments & Billing:** Gestiona pagos digitales tokenizados, suscripciones, sobretiempo, reembolsos, comprobantes y saldos pendientes.
-11. **Occupancy & Monitoring:** Recibe información de sensores IoT, determina la ocupación física, supervisa la salud de los sensores y genera eventos de conflictos y sobretiempo.
+5. **SpotGo Backend:** Única aplicación backend de SpotGo, desarrollada con Java 25 LTS y Spring Boot. Se despliega como un Web Service en Render y organiza sus responsabilidades como monolito modular.
+6. **API Gateway:** Componente del Backend que recibe las solicitudes de las aplicaciones cliente mediante HTTPS / REST y las dirige a los módulos correspondientes.
+7. **Profiles & Vehicles Management:** Módulo del Backend que gestiona Driver, User Profiles, vehículos y referencias de asignación a los Tenants administrados por Parking Infrastructure. Los visitantes de la Landing Page no tienen un User Profile.
+8. **Identity & Access Management:** Módulo del Backend que gestiona autenticación con correo y contraseña o Google, sesiones, autorización y auditoría. Reconoce únicamente los roles DRIVER, PARKING_ADMIN y SUPER_ADMIN.
+9. **Parking Infrastructure:** Módulo del Backend que gestiona Tenants, zonas, espacios, disponibilidad, reservas, sesiones de estacionamiento, asignaciones y reasignaciones.
+10. **Payments & Billing:** Módulo del Backend que gestiona pagos digitales tokenizados, suscripciones, sobretiempo, reembolsos, comprobantes y saldos pendientes. Incluye el procesamiento interno de pagos con idempotencia.
+11. **Occupancy & Monitoring:** Módulo del Backend que recibe información de sensores IoT, determina la ocupación física, supervisa la salud de los sensores y genera eventos de conflictos y sobretiempo.
 
-Cada contexto de negocio mantiene además una base de datos PostgreSQL independiente, permitiendo separar la persistencia de información según las responsabilidades de cada dominio. Los servicios se comunican entre sí mediante HTTPS / REST y, para determinados procesos, mediante eventos asíncronos.
+Los cinco bounded contexts mantienen límites lógicos de responsabilidad dentro del mismo Backend y organizan sus datos en una única instancia PostgreSQL alojada en Neon. Los módulos se integran mediante contratos internos y eventos de dominio; no se despliegan como servicios independientes.
 
 #### *2.5.3.3. Software Architecture Deployment Diagrams*
 
@@ -2270,9 +2270,9 @@ El **Diagrama de Despliegue** representa la distribución física de los element
 *Figura 24 (Deployment Diagram)*  
 ![Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
 
-La infraestructura contempla un **Driver Device** que ejecuta la aplicación Android nativa de Driver, un **Parking Admin Device** que ejecuta la aplicación multiplataforma de Parking Admin y un **SuperAdmin Device** desde el cual se accede a la página web administrativa de SpotGo. Los tres clientes se comunican con la infraestructura cloud mediante el **API Gateway Server**, encargado de enrutar las solicitudes hacia los servicios de SpotGo.
+La infraestructura contempla un **Driver Device** que ejecuta la aplicación Android nativa de Driver, un **Parking Admin Device** que ejecuta la aplicación multiplataforma de Parking Admin y un **SuperAdmin Device** desde el cual se accede a la página web administrativa de SpotGo. Los tres clientes se comunican mediante HTTPS / REST con el **API Gateway**, componente del único Backend de SpotGo desplegado en Render.
 
-Dentro de la infraestructura cloud se encuentra el **Application Server**, donde se ejecutan los cinco servicios de los contextos de negocio y el **Internal Payment System**. La persistencia se concentra en una sola instancia física de **PostgreSQL Server**, alojada dentro de la **Database Infrastructure**, con cinco bases de datos lógicas independientes, una por contexto. La Landing Page estática se aloja de forma independiente en **GitHub Pages**.
+Dentro de Render se despliega una sola instancia del **SpotGo Backend**, un monolito modular desarrollado con Spring Boot que contiene los cinco bounded contexts, el API Gateway y el procesamiento interno de pagos. La persistencia se concentra en una sola instancia PostgreSQL de **Neon**; los datos se organizan lógicamente según las responsabilidades de cada contexto. La Landing Page estática se aloja en **GitHub Pages**.
 
 Finalmente, la **Parking Infrastructure** incorpora una red de sensores físicos IoT que se comunica con **Occupancy & Monitoring** mediante **MQTT / HTTP**. Los servicios externos **Google Maps** y **Firebase Cloud Messaging** permiten abrir rutas hacia una **Parking Zone** y enviar notificaciones, respectivamente.
 
@@ -2282,9 +2282,9 @@ El diseño táctico traduce los límites identificados durante el diseño estrat
 
 La propuesta se organiza en cuatro capas. La Domain Layer contiene las entidades, objetos de valor, agregados, fábricas, servicios de dominio e interfaces de repositorio. La Interface Layer expone controladores REST y consumidores de eventos. La Application Layer coordina comandos, casos de uso y manejadores de eventos, mientras que la Infrastructure Layer implementa la persistencia, los adaptadores de integración y la mensajería. Las tablas de cada contexto explican los componentes, las clases y los objetos de base de datos presentados en los diagramas de las secciones siguientes.
 
-Como línea base tecnológica, el backend se implementará con Java y Spring Boot, con cinco bases de datos lógicas independientes en una sola instancia física de PostgreSQL Server. SpotGo contará con tres clientes separados por perfil: una aplicación Android nativa con Kotlin y Jetpack Compose para Driver, una aplicación multiplataforma con Flutter y Dart para Parking Admin, y una aplicación web con Angular, TypeScript y Angular Material para SuperAdmin. Los clientes utilizan los contratos backend y las reglas del dominio correspondientes a sus permisos. La comunicación utiliza APIs REST sobre HTTPS y mensajería asíncrona cuando el flujo lo requiere. Google Maps, Google Identity para el inicio de sesión y Firebase Cloud Messaging son servicios externos; el sistema de pagos internos pertenece a SpotGo.
+Como línea base tecnológica, el backend se implementará como un monolito modular en una única aplicación Java 25 LTS con Spring Boot, desplegada en Render. La persistencia utilizará una única instancia PostgreSQL de Neon con separación lógica de los datos por bounded context. SpotGo contará con tres clientes separados por perfil: una aplicación Android nativa con Kotlin y Jetpack Compose para Driver, una aplicación multiplataforma con Flutter y Dart para Parking Admin, y una aplicación web con Angular, TypeScript y Angular Material para SuperAdmin. Los clientes consumen la API REST del Backend sobre HTTPS. Los módulos aplican contratos internos y eventos de dominio para colaborar, sin despliegues independientes por contexto. Google Maps, Google Identity para el inicio de sesión y Firebase Cloud Messaging son servicios externos; el procesamiento de pagos pertenece al Backend de SpotGo.
 
-Los contextos se integran mediante contratos REST, identificadores y eventos de dominio. Un bounded context no accederá directamente a las tablas de otro ni establecerá claves foráneas entre bases de datos independientes. Cuando un modelo necesite identificar información administrada por otro contexto, conservará únicamente la referencia necesaria y validará su vigencia mediante una API o un evento. Esta regla mantiene la autonomía de cada contexto y evita duplicar la responsabilidad de las reglas de negocio.
+Los bounded contexts se integran mediante contratos internos, identificadores y eventos de dominio. Aunque comparten una instancia PostgreSQL, cada contexto conserva la responsabilidad lógica sobre sus propios datos: un módulo no accede directamente a las tablas administradas por otro ni crea claves foráneas entre entidades de distintos bounded contexts. Cuando un modelo necesita identificar información administrada por otro contexto, conserva la referencia necesaria y valida su vigencia mediante el contrato interno correspondiente o un evento. Esta regla mantiene la autonomía de los modelos sin convertirlos en servicios desplegables por separado.
 
 **Criterios transversales de operación**
 

@@ -129,23 +129,23 @@ El Sprint Backlog 2 reúne las tareas vinculadas a los elementos planificados de
   <tbody>
     <tr>
       <td>US27</td><td>Registrar un vehículo</td><td align="center">2</td>
-      <td>T01</td><td>Registro de vehículos en Android</td><td>Completar el registro de vehículos en SpotGo Driver Android App y los servicios Backend asociados.</td><td>2</td><td>Contreras Rojas, Cesar Jair<br>Rojas Tello, Nestor Alonso<br>Ruiz Mideyros, Adrian</td><td>Done</td>
+      <td>T01</td><td>Registro de vehículos en Android</td><td>Completar el registro de vehículos en SpotGo Driver Android App y los módulos Backend asociados.</td><td>2</td><td>Contreras Rojas, Cesar Jair<br>Rojas Tello, Nestor Alonso<br>Ruiz Mideyros, Adrian</td><td>Done</td>
     </tr>
     <tr>
       <td>US03</td><td>Registrar una sesión de estacionamiento de invitado</td><td align="center">3</td>
-      <td>T02</td><td>Sesiones de estacionamiento de invitados</td><td>Completar el registro y control de sesiones de invitados desde SpotGo Parking Admin Flutter App y sus servicios Backend.</td><td>2.5</td><td>Carhuaz Centeno, Briguite Eryka<br>Rojas Tello, Nestor Alonso</td><td>Done</td>
+      <td>T02</td><td>Sesiones de estacionamiento de invitados</td><td>Completar el registro y control de sesiones de invitados desde SpotGo Parking Admin Flutter App y los módulos Backend asociados.</td><td>2.5</td><td>Carhuaz Centeno, Briguite Eryka<br>Rojas Tello, Nestor Alonso</td><td>Done</td>
     </tr>
     <tr>
       <td>US14</td><td>Registrar un cliente B2B y su cuenta Parking Admin</td><td align="center">3</td>
-      <td>T03</td><td>Registro de clientes B2B</td><td>Completar los servicios Backend para registrar un cliente B2B y crear su cuenta Parking Admin.</td><td>2.5</td><td>Rojas Tello, Nestor Alonso</td><td>Done</td>
+      <td>T03</td><td>Registro de clientes B2B</td><td>Completar en el Backend la funcionalidad para registrar un cliente B2B y crear su cuenta Parking Admin.</td><td>2.5</td><td>Rojas Tello, Nestor Alonso</td><td>Done</td>
     </tr>
     <tr>
       <td>US15</td><td>Habilitar una cuenta Parking Admin</td><td align="center">2</td>
-      <td>T04</td><td>Habilitación de cuentas Parking Admin</td><td>Completar los servicios Backend para habilitar una cuenta Parking Admin.</td><td>1.5</td><td>Rojas Tello, Nestor Alonso</td><td>Done</td>
+      <td>T04</td><td>Habilitación de cuentas Parking Admin</td><td>Completar en el Backend la funcionalidad para habilitar una cuenta Parking Admin.</td><td>1.5</td><td>Rojas Tello, Nestor Alonso</td><td>Done</td>
     </tr>
     <tr>
       <td>US05</td><td>Supervisar la ocupación por zona</td><td align="center">5</td>
-      <td>T05</td><td>Consulta de ocupación por zona</td><td>Completar los servicios Backend y avanzar la vista de ocupación por zona en SpotGo Parking Admin Flutter App.</td><td>4</td><td>Carhuaz Centeno, Briguite Eryka<br>Rojas Tello, Nestor Alonso</td><td>Done</td>
+      <td>T05</td><td>Consulta de ocupación por zona</td><td>Completar los módulos Backend y avanzar la vista de ocupación por zona en SpotGo Parking Admin Flutter App.</td><td>4</td><td>Carhuaz Centeno, Briguite Eryka<br>Rojas Tello, Nestor Alonso</td><td>Done</td>
     </tr>
     <tr>
       <td>US06</td><td>Generar alertas operativas</td><td align="center">3</td>
@@ -169,7 +169,7 @@ El Sprint Backlog 2 reúne las tareas vinculadas a los elementos planificados de
     </tr>
     <tr>
       <td>SP02</td><td>Investigar la estrategia de sincronización móvil</td><td align="center">3</td>
-      <td>T11</td><td>Estrategia de sincronización móvil</td><td>Evaluar la estrategia de sincronización para las aplicaciones Android y Flutter y los servicios Backend.</td><td>2.5</td><td>Carhuaz Centeno, Briguite Eryka<br>Contreras Rojas, Cesar Jair<br>Rojas Tello, Nestor Alonso<br>Ruiz Mideyros, Adrian</td><td>Done</td>
+      <td>T11</td><td>Estrategia de sincronización móvil</td><td>Evaluar la estrategia de sincronización para las aplicaciones Android y Flutter y el Backend.</td><td>2.5</td><td>Carhuaz Centeno, Briguite Eryka<br>Contreras Rojas, Cesar Jair<br>Rojas Tello, Nestor Alonso<br>Ruiz Mideyros, Adrian</td><td>Done</td>
     </tr>
     <tr><td colspan="2"><strong>Total de elementos seleccionados</strong></td><td align="center"><strong>34</strong></td><td colspan="6">11 elementos: 6 HU, 3 TS y 2 SP; 27.5 horas estimadas en total.</td></tr>
   </tbody>

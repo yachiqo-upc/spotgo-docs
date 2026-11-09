@@ -102,7 +102,7 @@ El handler de Overtime Detection no crea ni cierra una Parking Session. Solo emi
 
 #### *2.6.5.4. Infrastructure Layer*
 
-La infraestructura utiliza Java y Spring Boot para la API y los procesos de aplicación, PostgreSQL para el almacenamiento independiente y adaptadores MQTT/HTTP para recibir mensajes de sensores. La mensajería asíncrona distribuye los eventos a Parking Infrastructure, Payments & Billing y al servicio de notificaciones.
+La infraestructura utiliza Java y Spring Boot para la API y los procesos de aplicación, y conserva los datos de Occupancy & Monitoring en la partición lógica que le corresponde dentro de la instancia PostgreSQL compartida. Los módulos intercambian eventos de dominio dentro del monolito modular; los adaptadores MQTT/HTTP reciben lecturas externas de los sensores y Firebase Cloud Messaging envía las notificaciones.
 
 | Componente de infraestructura | Implementación propuesta | Responsabilidad |
 | --- | --- | --- |
@@ -117,13 +117,13 @@ La infraestructura utiliza Java y Spring Boot para la API y los procesos de apli
 | Report Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste reportes y agregados de ocupación. |
 | Monitoring Event Publisher | Adaptador de mensajería | Distribuye cambios de estado, fallas, conflictos y cargos solicitados. |
 | FCM Notification Adapter | Firebase Cloud Messaging | Envía notificaciones de alta capacidad, conflictos o fallas a destinatarios autorizados. |
-| Occupancy & Monitoring Database | PostgreSQL | Mantiene la persistencia propia del contexto y sus índices temporales. |
+| Occupancy & Monitoring Database | PostgreSQL | Mantiene los datos asignados lógicamente al contexto y sus índices temporales dentro de la instancia compartida de Neon. |
 
 El monitor de salud debe comprobar que una lectura no supere el intervalo operativo de cinco segundos y distinguir una falla de comunicación de una lectura OCCUPIED o AVAILABLE válida. Cuando no pueda garantizarse la confiabilidad, la proyección operativa del spot pasa a UNAVAILABLE. La eliminación de lecturas en bruto se realiza después de doce meses como política base propuesta; los reportes agregados se conservan veinticuatro meses y los incidentes abiertos suspenden la depuración.
 
 #### *2.6.5.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes delimita el límite de Occupancy & Monitoring, la entrada de sensores mediante MQTT/HTTP, los componentes internos de estado, salud, conflictos, sobretiempo, alertas y reportes, y la base de datos PostgreSQL propia. También delimita las dependencias asíncronas con Parking Infrastructure y Payments & Billing, además de la integración con Firebase Cloud Messaging.
+El diagrama de componentes delimita el módulo Occupancy & Monitoring dentro del monolito modular, la entrada de sensores mediante MQTT/HTTP, los componentes internos de estado, salud, conflictos, sobretiempo, alertas y reportes, y su partición lógica de datos dentro de PostgreSQL. También delimita sus relaciones internas basadas en contratos y eventos de dominio con Parking Infrastructure y Payments & Billing, además de la integración con Firebase Cloud Messaging.
 
 *Figura 37 (Occupancy & Monitoring Component Level Diagram)*  
 ![Occupancy & Monitoring Component Level Diagram](../assets/diagrams/components-diagram-occupancy.svg)
@@ -140,10 +140,10 @@ El diagrama de componentes delimita el límite de Occupancy & Monitoring, la ent
 | Capacity Monitoring Component | Calcula el porcentaje de ocupación y la condición mayor al 95 por ciento. | Occupancy Status Component, Alert Service. |
 | Occupancy Report Component | Genera reportes para Parking Admin. | Report Controller, Report Service, Report Repository. |
 | Occupancy & Monitoring Database | Persiste sensores, lecturas, conflictos, alertas y reportes. | Implementaciones de repositorio. |
-| Parking Infrastructure Adapter | Consume eventos y publica OccupancyStatusUpdated o conflictos. | Canal de mensajería asíncrona. |
-| Payments & Billing Adapter | Publica AdditionalChargeRequested hacia Payments & Billing cuando existe evidencia suficiente. | Canal de mensajería asíncrona. |
+| Parking Infrastructure Adapter | Consume eventos y publica OccupancyStatusUpdated o conflictos. | Canal interno de eventos de dominio. |
+| Payments & Billing Adapter | Publica AdditionalChargeRequested hacia Payments & Billing cuando existe evidencia suficiente. | Canal interno de eventos de dominio. |
 
-Las relaciones visuales describen que el sensor no envía placa, driverId ni vehicleId, y que el contexto no llama directamente a la base de datos de Parking Infrastructure. El flujo de sobretiempo debe terminar en una solicitud de cargo, no en un cobro automático dentro de Occupancy & Monitoring.
+Las relaciones visuales describen que el sensor no envía placa, driverId ni vehicleId, y que el módulo no accede directamente a las tablas asignadas a Parking Infrastructure. El flujo de sobretiempo debe terminar en una solicitud de cargo, no en un cobro automático dentro de Occupancy & Monitoring.
 
 #### *2.6.5.6. Bounded Context Software Architecture Code Level Diagrams*
 
@@ -193,13 +193,13 @@ La vista de código representa el modelo físico de ocupación y los servicios q
 | HighCapacityPolicy ..> OccupancyStatus | Dependencia dirigida | La política calcula el porcentaje según estados físicos. |
 | OvertimeDetectionService ..> OccupancyEvidence | Dependencia dirigida | Solo solicita cargos con evidencia confiable. |
 | OccupancyStatusService ..> OccupancyReadingRepository | Dependencia dirigida | Consulta la última lectura válida. |
-| OccupancyConflict ..> Reservation | Referencia externa dirigida | reservationRef identifica una reserva sin crear FK entre bases. |
+| OccupancyConflict ..> Reservation | Referencia externa dirigida | reservationRef identifica una reserva sin crear FK hacia una entidad de otro bounded context. |
 | OccupancyConflict ..> ParkingSession | Referencia externa dirigida | sessionRef identifica una sesión sin transferir su propiedad. |
 | OccupancyStatusUpdated ..> Parking Infrastructure | Evento dirigido | Comunica el estado físico para Availability Projection. |
 
 #### ***2.6.5.6.2. Bounded Context Database Design Diagram***
 
-Occupancy & Monitoring Database almacena sensores, lecturas, estados de salud, conflictos, alertas y reportes. Las relaciones internas utilizan foreign keys. tenant_id, zone_id, spot_id, reservation_ref y session_ref son referencias de integración; no se crean foreign keys hacia las bases de Parking Infrastructure.
+Occupancy & Monitoring Database representa la partición lógica de datos de este contexto y almacena sensores, lecturas, estados de salud, conflictos, alertas y reportes dentro de la instancia PostgreSQL compartida. Las relaciones internas utilizan foreign keys. tenant_id, zone_id, spot_id, reservation_ref y session_ref son referencias de integración; no se crean foreign keys hacia entidades de Parking Infrastructure.
 
 *Figura 39 (Occupancy & Monitoring Database Design Diagram)*  
 ![Occupancy & Monitoring Database Design Diagram](../assets/diagrams/db-diagram-occupancy.svg)
@@ -220,7 +220,7 @@ Occupancy & Monitoring Database almacena sensores, lecturas, estados de salud, c
 | occupancy_sensors — sensor_health_events | 1 a 0..* | Las transiciones de salud se conservan como historial. |
 | occupancy_readings — occupancy_conflicts | Referencia lógica | Una o varias lecturas confiables pueden justificar un conflicto. |
 | occupancy_alerts — occupancy_conflicts | 1 a 0..* | Una alerta puede agrupar conflictos relacionados. |
-| tenant_id, zone_id, spot_id — Parking Infrastructure | Referencias externas | Se validan mediante configuración o eventos; no hay FK entre bases. |
+| tenant_id, zone_id, spot_id — Parking Infrastructure | Referencias externas | Se validan mediante configuración o eventos; no hay FK hacia entidades de otros bounded contexts. |
 | reservation_ref, session_ref — Parking Infrastructure | Referencias externas opcionales | Solo identifican la expectativa operativa; no convierten la entidad en propiedad de Occupancy. |
 
 El historial de occupancy_readings se conserva doce meses y los reportes o snapshots agregados veinticuatro meses como política base propuesta. Las alertas, conflictos y registros relacionados con incidentes abiertos se conservan hasta su resolución y durante el plazo de auditoría aplicable. No se registra una placa como resultado del sensor.

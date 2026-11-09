@@ -58,7 +58,7 @@ Las reglas esenciales del contexto son las siguientes:
 
 #### *2.6.3.2. Interface Layer*
 
-Los controladores REST reciben solicitudes de la aplicación Android nativa de Driver, de la aplicación Flutter de Parking Admin, de la página web administrativa de SpotGo para SuperAdmin y de procesos internos. Los consumidores asíncronos reciben resultados de Payments & Billing, validaciones de identidad y eventos de Occupancy & Monitoring. La capa valida autorización, formato y versionado del contrato, y luego delega los casos de uso.
+Los controladores REST reciben solicitudes de las tres aplicaciones cliente y de los procesos internos del Backend. Los consumidores de eventos de dominio reciben resultados de Payments & Billing, validaciones de identidad y cambios de Occupancy & Monitoring dentro del monolito modular. La capa valida autorización, formato y versionado del contrato, y luego delega los casos de uso.
 
 | Componente de interfaz | Canal | Responsabilidad | Operaciones o mensajes |
 | --- | --- | --- | --- |
@@ -69,7 +69,7 @@ Los controladores REST reciben solicitudes de la aplicación Android nativa de D
 | Parking Session Controller | REST/HTTPS | Gestiona el inicio y cierre de Parking Sessions de Driver. | Iniciar sesión, registrar salida, consultar operación activa y solicitar cierre administrativo. |
 | Guest Parking Session Controller | REST/HTTPS | Permite a Parking Admin registrar y cerrar atenciones de Guests. | Abrir sesión, ingresar placa manual, calcular importe, confirmar efectivo o POS y cerrar sesión. |
 | Navigation Controller | REST/HTTPS | Construye solicitudes de navegación hacia una Parking Zone seleccionada. | Solicitar ruta y devolver enlace o parámetros para Google Maps. |
-| Driver Eligibility Consumer | REST interno o evento | Recibe la validación de Driver y Vehicle desde Profiles & Vehicles Management. | DriverProfileValidated, VehicleRegistered, VehicleDeactivated. |
+| Driver Eligibility Consumer | Contrato interno o evento de dominio | Recibe la validación de Driver y Vehicle desde Profiles & Vehicles Management. | DriverProfileValidated, VehicleRegistered, VehicleDeactivated. |
 | Payment Outcome Consumer | Evento asíncrono | Recibe los resultados del proveedor interno para una reserva y los reembolsos relacionados. | ReservationPaymentApproved, ReservationPaymentRejected, RefundCompleted. |
 | Occupancy Event Consumer | Evento asíncrono | Recibe cambios físicos, fallas y conflictos de sensores. | OccupancyStatusUpdated, SensorFailureDetected, OccupancyConflictDetected. |
 | Parking Event Publisher | Evento asíncrono | Publica los cambios que necesitan Payments & Billing y Occupancy & Monitoring. | ReservationPaymentRequested, ReservationCreated, ReservationReassigned, ParkingSessionStarted, ParkingSessionCompleted, AdditionalChargeRequested, RefundRequested, GuestParkingSessionClosed. |
@@ -118,7 +118,7 @@ El handler de ReservationPaymentApproved debe comprobar reservationId, paymentId
 
 #### *2.6.3.4. Infrastructure Layer*
 
-La implementación propuesta utiliza Java y Spring Boot para la API, los command handlers y los consumidores de eventos, y PostgreSQL para la base de datos de Parking Infrastructure. El contexto se integra con los demás mediante REST/HTTPS y mensajería asíncrona, y utiliza un adaptador externo para solicitar rutas a Google Maps.
+La implementación propuesta organiza Parking Infrastructure como un módulo de la única aplicación Java y Spring Boot. El módulo utiliza la partición lógica de datos que le corresponde en PostgreSQL y se integra con los demás mediante contratos internos y eventos de dominio. Para solicitar rutas, utiliza un adaptador que se comunica con Google Maps.
 
 | Componente de infraestructura | Implementación propuesta | Responsabilidad |
 | --- | --- | --- |
@@ -127,19 +127,19 @@ La implementación propuesta utiliza Java y Spring Boot para la API, los command
 | Reservation Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste reservas, intervalos, estados y referencias de pago. |
 | Parking Session Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste Parking Sessions y Guest Parking Sessions. |
 | Temporary Lock Scheduler | Proceso de aplicación y PostgreSQL | Detecta expiresAt, libera locks vencidos y publica su resultado de forma idempotente. |
-| Profiles Context Client | Cliente REST/HTTPS o consumidor de eventos | Valida Driver, Vehicle y estado de elegibilidad antes de una reserva. |
-| Identity Context Client | Cliente REST/HTTPS o filtro de seguridad | Valida identidad, rol y alcance para operaciones de Driver o Parking Admin. |
-| Payments Context Client | Cliente REST/HTTPS y adaptador de eventos | Solicita pago, cobro adicional o reembolso y recibe el resultado del proveedor interno. |
+| Profiles Context Client | Contrato interno o consumidor de eventos de dominio | Valida Driver, Vehicle y estado de elegibilidad antes de una reserva. |
+| Identity Context Client | Contrato interno o filtro de seguridad | Valida identidad, rol y alcance para operaciones de Driver o Parking Admin. |
+| Payments Context Client | Contrato interno y eventos de dominio | Solicita pago, cobro adicional o reembolso y recibe el resultado del proveedor interno. |
 | Occupancy Context Adapter | Consumidor de eventos | Actualiza la Availability Projection con estados físicos y conflictos confiables. |
 | Google Maps Adapter | Cliente HTTPS | Traduce una solicitud de ruta a Google Maps y devuelve el enlace o resultado permitido. |
 | Event Publisher | Adaptador de mensajería | Publica cambios de reservas, Session y solicitudes económicas. |
-| Parking Infrastructure Database | PostgreSQL | Mantiene tablas independientes, índices por intervalo y registros de operación. |
+| Parking Infrastructure Database | PostgreSQL | Mantiene las tablas asignadas lógicamente a este contexto, índices por intervalo y registros de operación dentro de la instancia compartida de Neon. |
 
 El Temporary Lock se almacena con lockedAt, expiresAt y status, y debe estar protegido por una restricción única parcial o una validación transaccional equivalente que impida dos locks activos para el mismo spot y periodo. La liberación automática no elimina el historial: cambia el estado y deja evidencia de la expiración. El historial de reservas y sesiones se conserva cinco años como mínimo propuesto, sujeto a retención legal, reclamos o auditorías.
 
 #### *2.6.3.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes representa Parking Infrastructure como un contenedor autónomo dentro del backend, con su base de datos PostgreSQL y adaptadores para Profiles & Vehicles Management, Identity & Access Management, Payments & Billing, Occupancy & Monitoring y Google Maps. Las aplicaciones Android de Driver y Flutter de Parking Admin se sitúan fuera del bounded context y acceden a través del API Gateway.
+El diagrama de componentes representa Parking Infrastructure como un módulo del monolito modular, con su partición lógica de datos en la instancia PostgreSQL compartida y adaptadores para Profiles & Vehicles Management, Identity & Access Management, Payments & Billing, Occupancy & Monitoring y Google Maps. Las aplicaciones Android de Driver y Flutter de Parking Admin se sitúan fuera del bounded context y acceden a la API mediante el API Gateway del Backend.
 
 *Figura 31 (Parking Infrastructure Component Level Diagram)*  
 ![Parking Infrastructure Component Level Diagram](../assets/diagrams/components-diagram-parking.svg)
@@ -219,7 +219,7 @@ La vista de código se concentra en los agregados y servicios de dominio que gob
 
 #### ***2.6.3.6.2. Bounded Context Database Design Diagram***
 
-Parking Infrastructure Database contiene la configuración física y los procesos de reserva y sesión. Las foreign keys se aplican a relaciones internas. profile_id, vehicle_id y payment_ref son referencias lógicas a otros bounded contexts y no crean foreign keys entre bases.
+Parking Infrastructure Database representa la partición lógica de datos de este contexto en la instancia PostgreSQL compartida y contiene la configuración física y los procesos de reserva y sesión. Las foreign keys se aplican a relaciones internas. profile_id, vehicle_id y payment_ref son referencias lógicas a otros bounded contexts y no crean foreign keys entre sus entidades.
 
 *Figura 33 (Parking Infrastructure Database Design Diagram)*  
 ![Parking Infrastructure Database Design Diagram](../assets/diagrams/db-diagram-parking.svg)
@@ -248,7 +248,7 @@ La Availability Projection se implementa como una vista o proyección materializ
 | parking_spots — reservations | 1 a 0..* | Las reservas para un spot no pueden solaparse cuando están activas. |
 | reservations — parking_sessions | 1 a 0..1 | Una reserva puede generar una Parking Session. |
 | parking_spots — guest_parking_sessions | 1 a 0..* | Un spot puede tener sesiones de Guest en distintos momentos. |
-| profile_id, vehicle_id — Profiles & Vehicles Management | Referencias externas | profile_id identifica un perfil Driver y vehicle_id identifica el Vehicle; la validez se comprueba mediante API o eventos; no hay FK externa. |
+| profile_id, vehicle_id — Profiles & Vehicles Management | Referencias externas | profile_id identifica un perfil Driver y vehicle_id identifica el Vehicle; la validez se comprueba mediante contratos internos o eventos; no hay FK hacia entidades de otros bounded contexts. |
 | payment_ref — Payments & Billing | Referencia externa | El resultado se confirma mediante eventos del proveedor interno. |
 
 La tabla guest_parking_sessions deja explícita la diferencia entre la atención de un Guest y una reserva digital. El historial de reservas y sesiones se retiene por cinco años como política base propuesta, sin eliminar registros asociados a reclamos, auditorías o incidentes abiertos.

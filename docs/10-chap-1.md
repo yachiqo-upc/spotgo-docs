@@ -132,7 +132,7 @@ La solución considera las siguientes restricciones:
 - La disponibilidad de información en tiempo real dependerá de los mecanismos de monitoreo e integración implementados en el estacionamiento.
 - La solución mostrará la disponibilidad general por zonas. La asignación de espacios específicos dependerá de las condiciones y reglas definidas para cada estacionamiento.
 - La organización de los espacios dependerá de las reglas definidas para cada estacionamiento.
-- La solución requerirá conectividad para aquellas funcionalidades que necesiten sincronización con los servicios backend.
+- La solución requerirá conectividad para aquellas funcionalidades que necesiten sincronización con el backend.
 - El alcance estará centrado en los administradores de estacionamientos y los conductores que utilizan estos espacios. La organización de las zonas considerará los tipos de usuario y las reglas definidas por cada establecimiento.
 - SpotGo no utilizará OCR, inteligencia artificial ni sensores para leer o identificar placas o vehículos. Los sensores solo detectarán la ocupación física de los espacios de estacionamiento.
 - SpotGo integrará la API de Google Maps para mostrar los estacionamientos registrados y sus datos operativos; la aplicación de Google Maps calculará la ruta externa hacia el estacionamiento seleccionado.
