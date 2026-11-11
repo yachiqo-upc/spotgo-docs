@@ -185,7 +185,9 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 | --- | --- | --- | --- | --- |
 | [spotgo-landing](https://github.com/yachiqo-upc/spotgo-landing) | develop  | d6d9470 | feat: redesign SpotGo Landing Page for mobile apps | 2026-11-05 |
 | [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) |  |  |  |  |
-| [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) |  |  |  |  |
+| [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/auth-access-flow | d1fda5c | feat: add driver access flow with in-memory data layer | 2026-11-08 |
+| [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/driver-workspace | ee730db | feat: add driver workspace screens and navigation | 2026-11-08 |
+| [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/tests | 697e391 | test: add unit and instrumented test suites | 2026-11-08 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 2bf176a | chore(flutter): configure theme and assets | 2026-11-07 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 5db9354 | feat(auth): implement parking admin access | 2026-11-07 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 6a05d2b | feat(navigation): add admin navigation | 2026-11-07 |
@@ -229,13 +231,21 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 *Figura 108 (SpotGo Android App: Sign-up and Sign-in)*  
 
+![SpotGo Flutter App: Sign-up and Sign-in](../assets/images/figures/108-android-app-sign-up-sign-in.jpeg)
+
 *Figura 109 (SpotGo Android App: Vehicle Registration)*  
+
+![SpotGo Flutter App: Vehicle Registration](../assets/images/figures/109-android-app-vehicle-registration.jpeg)
 
 *Figura 110 (SpotGo Android App: Availability and Reservations)*  
 
+![SpotGo Flutter App: Availability and Reservations](../assets/images/figures/110-android-app-availability-and-reservations.jpeg)
+
 *Figura 111 (SpotGo Android App: Payments and Receipts)*  
 
-**Android App Demonstration Video Link:**
+![SpotGo Flutter App: Payments and Receipts](../assets/images/figures/111-android-app-payments-and-receipts.jpeg)
+
+**Android App Demonstration Video Link:**[https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAxJsr3dLiDRaSmY9Q455szATUGQU5i1tn98g1UXWB7a6s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=61cAXb](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAxJsr3dLiDRaSmY9Q455szATUGQU5i1tn98g1UXWB7a6s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=61cAXb)
 
 **SpotGo Flutter App**
 
