@@ -264,52 +264,56 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 #### *4.2.2.7. Services Documentation Evidence for Sprint Review*
 
-La documentación OpenAPI/Swagger del Sprint 2 presenta los contratos REST del backend actual de SpotGo. El inventario contiene **110 operaciones HTTP** (cada combinación de método y ruta cuenta como una operación). La tabla siguiente identifica las rutas adicionales respecto de la tabla de servicios del Sprint 1.
+La documentación OpenAPI/Swagger del Sprint 2 presenta los contratos REST del backend actual de SpotGo. El inventario revisado en el código contiene **32 recursos o rutas base**, que agrupan **121 operaciones HTTP**. Cada operación se identifica por su método y ruta completa: por ejemplo, `GET /api/v1/additional-charges` y `POST /api/v1/additional-charges` son dos operaciones del mismo recurso.
 
-Esta comparación toma como referencia lo documentado en Sprint 1, no un contrato OpenAPI histórico. Incluye recursos nuevos y sustituciones de rutas anteriores; una ruta adicional no implica necesariamente una funcionalidad nueva. Las operaciones que conservan método y ruta pueden haber cambiado de contrato: por ejemplo, las reservas actuales reciben `spotId`, `vehicleId`, `startAt` y `endAt`.
+**Inventario completo de servicios del backend para Sprint 2**
 
-**Inventario de operaciones adicionales respecto de Sprint 1**
+La tabla muestra todas las operaciones actuales, incluidas las que ya figuraban en Sprint 1. La cantidad corresponde a operaciones HTTP de cada recurso, no a endpoints nuevos. Se escriben las rutas completas para evitar confundir la ruta base con sus operaciones específicas. Los nombres entre llaves, como `{chargeId}`, son parámetros que se reemplazan por el UUID del recurso.
 
-Se identifican **98 combinaciones adicionales** y **12 que conservan método y ruta**. Los sufijos se agregan al endpoint base; `/` indica la propia ruta base.
+Por ejemplo, Additional charges permite listar (`GET`), crear (`POST`) y marcar un cargo como impago (`POST /api/v1/additional-charges/{chargeId}/mark-unpaid`). Esta última acción pertenece únicamente a los cargos adicionales; cada servicio define sus propias acciones y no está obligado a implementar los mismos métodos o sufijos.
 
-| Endpoint base | Cantidad adicional | Métodos y rutas adicionales |
+| Recurso / ruta base | Cantidad de operaciones | Métodos HTTP y rutas completas |
 | --- | ---: | --- |
-| `/api/v1/additional-charges` | 3 | GET `/`, POST `/`, POST `/{chargeId}/mark-unpaid` |
-| `/api/v1/billing-documents` | 3 | GET `/`, POST `/`, POST `/{documentId}/void` |
-| `/api/v1/digital-payments` | 8 | GET `/`, GET `/{paymentId}`, POST `/reservations/{reservationId}`, POST `/subscriptions`, POST `/additional-charges/{chargeId}`, POST `/{paymentId}/process`, POST `/{paymentId}/retry`, POST `/{paymentId}/reconcile` |
-| `/api/v1/outstanding-balances` | 2 | GET `/`, GET `/total` |
-| `/api/v1/payment-attempts` | 1 | GET `/` |
-| `/api/v1/payment-tokens` | 3 | GET `/`, POST `/`, DELETE `/{tokenId}` |
-| `/api/v1/refunds` | 3 | GET `/`, POST `/`, POST `/{refundId}/process` |
-| `/api/v1/subscriptions` | 2 | GET `/plans`, POST `/{subscriptionId}/cancel` |
-| `/api/v1/accounts` | 8 | GET `/me`, GET `/`, GET `/{accountId}`, PATCH `/{accountId}/status`, GET `/me/role`, GET `/{accountId}/role`, PUT `/{accountId}/role`, PATCH `/me/password` |
-| `/api/v1/audit-entries` | 1 | GET `/` |
-| `/api/v1/authentication` | 2 | POST `/refresh`, POST `/sign-out` |
-| `/api/v1/sessions` | 2 | GET `/me`, DELETE `/{sessionId}` |
-| `/api/v1/capacity-snapshots` | 2 | GET `/`, POST `/` |
-| `/api/v1/occupancy-alerts` | 5 | GET `/`, POST `/{alertId}/acknowledge`, POST `/{alertId}/close`, PUT `/{alertId}/evidence`, GET `/{alertId}/evidence` |
-| `/api/v1/occupancy-conflicts` | 4 | GET `/`, GET `/{conflictId}`, POST `/{conflictId}/acknowledge`, POST `/{conflictId}/resolve` |
-| `/api/v1/occupancy-readings` | 2 | GET `/`, POST `/` |
-| `/api/v1/occupancy-reports` | 2 | GET `/`, POST `/` |
-| `/api/v1/occupancy-sensors` | 5 | GET `/`, GET `/{sensorId}`, POST `/`, POST `/{sensorId}/deactivate`, GET `/spots/{spotId}/occupancy` |
-| `/api/v1/sensor-health-events` | 4 | GET `/`, GET `/{healthEventId}`, POST `/`, POST `/{healthEventId}/recover` |
-| `/api/v1/digital-parking-maps` | 4 | GET `/`, POST `/`, POST `/{mapId}/publish`, POST `/{mapId}/archive` |
-| `/api/v1/floor-plans` | 4 | GET `/`, POST `/`, POST `/{floorPlanId}/publish`, POST `/{floorPlanId}/archive` |
-| `/api/v1/guest-parking-sessions` | 4 | GET `/`, POST `/`, POST `/{guestSessionId}/exit`, POST `/{guestSessionId}/confirm-payment` |
-| `/api/v1/parking-sessions` | 3 | GET `/`, POST `/`, POST `/{sessionId}/exit` |
-| `/api/v1/parking-spots` | 4 | GET `/`, GET `/availability`, POST `/`, PUT `/{spotId}` |
-| `/api/v1/parking-zones` | 3 | GET `/`, POST `/`, PUT `/{zoneId}` |
-| `/api/v1/reservations` | 4 | GET `/{reservationId}`, POST `/{reservationId}/confirm-payment`, POST `/{reservationId}/cancel`, POST `/{reservationId}/no-show` |
-| `/api/v1/tenants` | 4 | GET `/`, GET `/{tenantId}`, POST `/`, PUT `/{tenantId}` |
-| `/api/v1/driver-classifications` | 3 | PUT `/tenants/{tenantId}/profiles/{profileId}`, GET `/tenants/{tenantId}`, GET `/me` |
-| `/api/v1/profiles` | 3 | POST `/`, GET `/me`, PUT `/me` |
-| `/api/v1/vehicles` | 0 | Sin combinaciones adicionales de método y ruta. |
+| `/api/v1/additional-charges` | 3 | `GET /api/v1/additional-charges`<br>`POST /api/v1/additional-charges`<br>`POST /api/v1/additional-charges/{chargeId}/mark-unpaid` |
+| `/api/v1/billing-documents` | 3 | `GET /api/v1/billing-documents`<br>`POST /api/v1/billing-documents`<br>`POST /api/v1/billing-documents/{documentId}/void` |
+| `/api/v1/digital-payments` | 8 | `GET /api/v1/digital-payments`<br>`GET /api/v1/digital-payments/{paymentId}`<br>`POST /api/v1/digital-payments/reservations/{reservationId}`<br>`POST /api/v1/digital-payments/subscriptions`<br>`POST /api/v1/digital-payments/additional-charges/{chargeId}`<br>`POST /api/v1/digital-payments/{paymentId}/process`<br>`POST /api/v1/digital-payments/{paymentId}/retry`<br>`POST /api/v1/digital-payments/{paymentId}/reconcile` |
+| `/api/v1/outstanding-balances` | 2 | `GET /api/v1/outstanding-balances`<br>`GET /api/v1/outstanding-balances/total` |
+| `/api/v1/payment-attempts` | 1 | `GET /api/v1/payment-attempts` |
+| `/api/v1/payment-tokens` | 4 | `GET /api/v1/payment-tokens`<br>`POST /api/v1/payment-tokens`<br>`PUT /api/v1/payment-tokens/{tokenId}/default`<br>`DELETE /api/v1/payment-tokens/{tokenId}` |
+| `/api/v1/refunds` | 3 | `GET /api/v1/refunds`<br>`POST /api/v1/refunds`<br>`POST /api/v1/refunds/{refundId}/process` |
+| `/api/v1/subscriptions` | 5 | `GET /api/v1/subscriptions`<br>`GET /api/v1/subscriptions/plans`<br>`GET /api/v1/subscriptions/plans/{code}/quote`<br>`GET /api/v1/subscriptions/{subscriptionId}`<br>`POST /api/v1/subscriptions/{subscriptionId}/cancel` |
+| `/api/v1/accounts` | 9 | `GET /api/v1/accounts/me`<br>`GET /api/v1/accounts`<br>`GET /api/v1/accounts/{accountId}`<br>`PATCH /api/v1/accounts/{accountId}/status`<br>`GET /api/v1/accounts/me/role`<br>`GET /api/v1/accounts/{accountId}/role`<br>`PUT /api/v1/accounts/{accountId}/role`<br>`POST /api/v1/accounts/parking-admin`<br>`PATCH /api/v1/accounts/me/password` |
+| `/api/v1/audit-entries` | 1 | `GET /api/v1/audit-entries` |
+| `/api/v1/authentication` | 8 | `POST /api/v1/authentication/sign-in`<br>`POST /api/v1/authentication/google`<br>`POST /api/v1/authentication/google/link`<br>`POST /api/v1/authentication/sign-up`<br>`POST /api/v1/authentication/refresh`<br>`POST /api/v1/authentication/sign-out`<br>`POST /api/v1/authentication/password-reset/request`<br>`POST /api/v1/authentication/password-reset/confirm` |
+| `/api/v1/sessions` | 2 | `GET /api/v1/sessions/me`<br>`DELETE /api/v1/sessions/{sessionId}` |
+| `/api/v1/capacity-alerts` | 2 | `GET /api/v1/capacity-alerts`<br>`POST /api/v1/capacity-alerts/{alertId}/acknowledge` |
+| `/api/v1/capacity-snapshots` | 2 | `GET /api/v1/capacity-snapshots`<br>`POST /api/v1/capacity-snapshots` |
+| `/api/v1/occupancy-alerts` | 5 | `GET /api/v1/occupancy-alerts`<br>`POST /api/v1/occupancy-alerts/{alertId}/acknowledge`<br>`POST /api/v1/occupancy-alerts/{alertId}/close`<br>`PUT /api/v1/occupancy-alerts/{alertId}/evidence`<br>`GET /api/v1/occupancy-alerts/{alertId}/evidence` |
+| `/api/v1/occupancy-conflicts` | 4 | `GET /api/v1/occupancy-conflicts`<br>`GET /api/v1/occupancy-conflicts/{conflictId}`<br>`POST /api/v1/occupancy-conflicts/{conflictId}/acknowledge`<br>`POST /api/v1/occupancy-conflicts/{conflictId}/resolve` |
+| `/api/v1/occupancy-readings` | 2 | `GET /api/v1/occupancy-readings`<br>`POST /api/v1/occupancy-readings` |
+| `/api/v1/occupancy-reports` | 2 | `GET /api/v1/occupancy-reports`<br>`POST /api/v1/occupancy-reports` |
+| `/api/v1/occupancy-sensors` | 5 | `GET /api/v1/occupancy-sensors`<br>`GET /api/v1/occupancy-sensors/{sensorId}`<br>`POST /api/v1/occupancy-sensors`<br>`POST /api/v1/occupancy-sensors/{sensorId}/deactivate`<br>`GET /api/v1/occupancy-sensors/spots/{spotId}/occupancy` |
+| `/api/v1/sensor-health-events` | 4 | `GET /api/v1/sensor-health-events`<br>`GET /api/v1/sensor-health-events/{healthEventId}`<br>`POST /api/v1/sensor-health-events`<br>`POST /api/v1/sensor-health-events/{healthEventId}/recover` |
+| `/api/v1/notifications/devices` | 3 | `GET /api/v1/notifications/devices`<br>`POST /api/v1/notifications/devicesapplication/json`<br>`DELETE /api/v1/notifications/devices/{deviceTokenId}` |
+| `/api/v1/digital-parking-maps` | 4 | `GET /api/v1/digital-parking-maps`<br>`POST /api/v1/digital-parking-maps`<br>`POST /api/v1/digital-parking-maps/{mapId}/publish`<br>`POST /api/v1/digital-parking-maps/{mapId}/archive` |
+| `/api/v1/floor-plans` | 4 | `GET /api/v1/floor-plans`<br>`POST /api/v1/floor-plans`<br>`POST /api/v1/floor-plans/{floorPlanId}/publish`<br>`POST /api/v1/floor-plans/{floorPlanId}/archive` |
+| `/api/v1/guest-parking-sessions` | 4 | `GET /api/v1/guest-parking-sessions`<br>`POST /api/v1/guest-parking-sessions`<br>`POST /api/v1/guest-parking-sessions/{guestSessionId}/exit`<br>`POST /api/v1/guest-parking-sessions/{guestSessionId}/confirm-payment` |
+| `/api/v1/parking-sessions` | 3 | `GET /api/v1/parking-sessions`<br>`POST /api/v1/parking-sessions`<br>`POST /api/v1/parking-sessions/{sessionId}/exit` |
+| `/api/v1/parking-spots` | 4 | `GET /api/v1/parking-spots`<br>`GET /api/v1/parking-spots/availability`<br>`POST /api/v1/parking-spots`<br>`PUT /api/v1/parking-spots/{spotId}` |
+| `/api/v1/parking-zones` | 3 | `GET /api/v1/parking-zones`<br>`POST /api/v1/parking-zones`<br>`PUT /api/v1/parking-zones/{zoneId}` |
+| `/api/v1/reservations` | 6 | `GET /api/v1/reservations`<br>`GET /api/v1/reservations/{reservationId}`<br>`POST /api/v1/reservations`<br>`POST /api/v1/reservations/{reservationId}/confirm-payment`<br>`POST /api/v1/reservations/{reservationId}/cancel`<br>`POST /api/v1/reservations/{reservationId}/no-show` |
+| `/api/v1/tenants` | 5 | `GET /api/v1/tenants`<br>`GET /api/v1/tenants/{tenantId}`<br>`POST /api/v1/tenants`<br>`POST /api/v1/tenants/onboard`<br>`PUT /api/v1/tenants/{tenantId}` |
+| `/api/v1/driver-classifications` | 3 | `PUT /api/v1/driver-classifications/tenants/{tenantId}/profiles/{profileId}`<br>`GET /api/v1/driver-classifications/tenants/{tenantId}`<br>`GET /api/v1/driver-classifications/me` |
+| `/api/v1/profiles` | 3 | `POST /api/v1/profiles`<br>`GET /api/v1/profiles/me`<br>`PUT /api/v1/profiles/me` |
+| `/api/v1/vehicles` | 4 | `GET /api/v1/vehicles`<br>`POST /api/v1/vehicles`<br>`PATCH /api/v1/vehicles/{vehicleId}`<br>`DELETE /api/v1/vehicles/{vehicleId}` |
+
+**Referencia al Sprint 1:** al comparar método y ruta con su tabla de servicios, 109 operaciones actuales no aparecen allí y 12 conservan método y ruta. Esta diferencia incluye recursos nuevos y sustituciones de rutas; no demuestra por sí sola cuándo se implementó cada funcionalidad. Una operación con la misma ruta también puede cambiar de contrato: las reservas actuales utilizan `spotId`, `vehicleId`, `startAt` y `endAt`.
 
 **Documentación y condiciones de uso**
 
 Los cuerpos utilizan JSON (`Content-Type: application/json`), salvo la carga de evidencias de alertas, que utiliza `multipart/form-data`. Las operaciones protegidas requieren `Authorization: Bearer <accessToken>`, obtenido al iniciar sesión. Los identificadores actuales son UUID de recursos existentes. El backend valida el rol y el alcance de cuenta, perfil o tenant. Las fechas de los ejemplos corresponden a instantes ISO 8601.
 
-Swagger UI se consulta en `/swagger-ui/index.html` de la instancia ejecutada; el contrato completo se obtiene en `/v3/api-docs/06-backend-completo`. Allí se detallan los esquemas, parámetros, campos obligatorios y respuestas de cada operación. Los siguientes tres servicios representan flujos centrales de SpotGo. Sus ejemplos describen el contrato implementado; no representan resultados de pruebas ni cobros ejecutados.
+Swagger UI se consulta en `/swagger-ui/index.html` de la instancia ejecutada; el contrato completo se obtiene en `/v3/api-docs/06-complete-backend`. Allí se detallan los esquemas, parámetros, campos obligatorios y respuestas de cada operación. Los siguientes tres servicios representan flujos centrales de SpotGo. Sus ejemplos describen el contrato implementado; no representan resultados de pruebas ni cobros ejecutados.
 
 **1. Registro y salida de invitados**
 
@@ -338,7 +342,7 @@ Ejemplo ilustrativo de entrada; reemplazar el UUID por un espacio existente:
 
 <!-- FOTO PENDIENTE: 115-swagger-guest-parking-sessions.png
 Ubicación: assets/images/figures/115-swagger-guest-parking-sessions.png
-Insertar aquí una captura de Swagger del grupo 03-parking-actualizado, sección Guest parking sessions. Expandir POST /api/v1/guest-parking-sessions para mostrar GuestBody, campos obligatorios y respuesta 201 GuestView. Incluir las rutas de salida y confirmación de pago si caben. Ocultar tokens reales.
+Insertar aquí una captura de Swagger del grupo 03-parking, sección Guest parking sessions. Expandir POST /api/v1/guest-parking-sessions para mostrar GuestBody, campos obligatorios y respuesta 201 GuestView. Incluir las rutas de salida y confirmación de pago si caben. Ocultar tokens reales.
 -->
 
 **2. Cálculo y consulta de ocupación**
@@ -365,7 +369,7 @@ Ejemplo ilustrativo para calcular ocupación de todo un tenant existente:
 
 <!-- FOTO PENDIENTE: 116-swagger-capacity-snapshots.png
 Ubicación: assets/images/figures/116-swagger-capacity-snapshots.png
-Insertar aquí una captura de Swagger del grupo 05-monitoring-actualizado, sección Capacity snapshots. Expandir POST /api/v1/capacity-snapshots para mostrar tenantId, zoneId, respuesta 201 SnapshotView y error 409. Incluir GET y su filtro tenantId si caben.
+Insertar aquí una captura de Swagger del grupo 05-monitoring, sección Capacity snapshots. Expandir POST /api/v1/capacity-snapshots para mostrar tenantId, zoneId, respuesta 201 SnapshotView y error 409. Incluir GET y su filtro tenantId si caben.
 -->
 
 **3. Pago digital de reservas y seguimiento del resultado**
@@ -377,7 +381,7 @@ El backend calcula el importe y utiliza una clave de idempotencia para evitar du
 | `POST /api/v1/digital-payments/reservations/{reservationId}` | UUID de reserva; `PaymentBody`: `tokenId` (UUID obligatorio) e `idempotencyKey` (texto obligatorio, máximo 255 caracteres). Requiere `DRIVER` propietario. | `201`: `PaymentView`, creado o recuperado. Misma clave y contenido recuperan la operación; diferente contenido con la misma clave produce `409`. |
 | `GET /api/v1/digital-payments/{paymentId}` | UUID de pago; sin cuerpo. Cuenta autorizada sobre el pago. | `200`: `PaymentView` con estado y referencias del pago. |
 | `POST /api/v1/digital-payments/{paymentId}/process` | UUID de pago; sin cuerpo. `DRIVER` o `PARKING_ADMIN`, dentro de su alcance. | `200`: `PaymentView` tras procesar. Un pago aprobado se devuelve sin cobrar de nuevo. |
-| `POST /api/v1/digital-payments/{paymentId}/retry` | UUID de pago; sin cuerpo. Mismos roles y alcance. | `200`: `PaymentView`; reintenta un fallo conocido respetando la espera y conserva el identificador. |
+| `POST /api/v1/digital-payments/{paymentId}/retry` | UUID de pago; cuerpo opcional `RetryPaymentBody` con `tokenId` (UUID opcional para cambiar el medio de pago tras un rechazo definitivo). Mismos roles y alcance. | `200`: `PaymentView`; reintenta un fallo conocido respetando la espera y conserva el identificador. Un resultado desconocido requiere conciliación. |
 | `POST /api/v1/digital-payments/{paymentId}/reconcile` | UUID de pago; sin cuerpo. Mismos roles y alcance. | `200`: `PaymentView`; consulta un resultado pendiente al proveedor sin efectuar otro cargo. |
 
 `PaymentView` contiene `paymentId`, `tokenId`, `profileId`, `operationType`, `amount`, `currency`, `status`, `providerOperationRef`, `idempotencyKey`, `requestHash`, `firstSeenAt`, `lastSeenAt`, `resultReference`, `createdAt` y `approvedAt`. El cliente no envía importe, estado ni fecha de aprobación. Errores documentados: `400` datos inválidos; `401` sesión inválida; `403` rol o alcance insuficiente; `404` recurso inexistente; `409` conflicto de estado o idempotencia; `503` proveedor no configurado o no disponible.
@@ -395,7 +399,7 @@ Ejemplo ilustrativo del cuerpo para pagar una reserva propia existente, con un t
 
 <!-- FOTO PENDIENTE: 117-swagger-reservation-digital-payments.png
 Ubicación: assets/images/figures/117-swagger-reservation-digital-payments.png
-Insertar aquí una captura de Swagger del grupo 04-payments-billing-actualizado, sección Digital payments. Expandir POST /api/v1/digital-payments/reservations/{reservationId} para mostrar reservationId, PaymentBody y respuesta 201 PaymentView. Incluir process, retry y reconcile si caben. Mostrar el contrato, sin presentar una aprobación simulada como cobro real ni exponer tokens.
+Insertar aquí una captura de Swagger del grupo 04-payments-billing, sección Digital payments. Expandir POST /api/v1/digital-payments/reservations/{reservationId} para mostrar reservationId, PaymentBody y respuesta 201 PaymentView. Incluir process, retry y reconcile si caben. Mostrar el contrato, sin presentar una aprobación simulada como cobro real ni exponer tokens.
 -->
 
 #### *4.2.2.8. Software Deployment Evidence for Sprint Review*
