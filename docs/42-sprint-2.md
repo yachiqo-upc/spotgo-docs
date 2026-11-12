@@ -204,6 +204,14 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 *Figura 101 (Backend Test Evidence)*  
 
+**Ejecución de pruebas automatizadas: 178 pruebas aprobadas**
+
+![Backend: ejecución de 178 pruebas automatizadas aprobadas](../assets/images/figures/101-backend-testing-evidence-1.png)
+
+**Documentación de los servicios REST en Swagger UI**
+
+![Backend: documentación de los servicios REST en Swagger UI](../assets/images/figures/101-backend-testing-evidence-2.png)
+
 *Figura 102 (SpotGo Android App Test Evidence)*  
 
 ![SpotGo Android App Test Evidence](../assets/images/figures/102-android-app-test-evidence.png)
