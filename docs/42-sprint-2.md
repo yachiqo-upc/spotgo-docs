@@ -307,13 +307,19 @@ Por ejemplo, Additional charges permite listar (`GET`), crear (`POST`) y marcar 
 | `/api/v1/profiles` | 3 | `POST /api/v1/profiles`<br>`GET /api/v1/profiles/me`<br>`PUT /api/v1/profiles/me` |
 | `/api/v1/vehicles` | 4 | `GET /api/v1/vehicles`<br>`POST /api/v1/vehicles`<br>`PATCH /api/v1/vehicles/{vehicleId}`<br>`DELETE /api/v1/vehicles/{vehicleId}` |
 
-**Referencia al Sprint 1:** al comparar método y ruta con su tabla de servicios, 109 operaciones actuales no aparecen allí y 12 conservan método y ruta. Esta diferencia incluye recursos nuevos y sustituciones de rutas; no demuestra por sí sola cuándo se implementó cada funcionalidad. Una operación con la misma ruta también puede cambiar de contrato: las reservas actuales utilizan `spotId`, `vehicleId`, `startAt` y `endAt`.
+**Diferencia respecto del Sprint 1:** de las 121 operaciones HTTP del backend actual, 12 coinciden en método HTTP y ruta con la tabla del Sprint 1. Las otras 109 presentan una ruta distinta, un método HTTP distinto o ambos, o corresponden a servicios actualizados que no figuraban en dicha tabla.
 
 **Documentación y condiciones de uso**
 
-Los cuerpos utilizan JSON (`Content-Type: application/json`), salvo la carga de evidencias de alertas, que utiliza `multipart/form-data`. Las operaciones protegidas requieren `Authorization: Bearer <accessToken>`, obtenido al iniciar sesión. Los identificadores actuales son UUID de recursos existentes. El backend valida el rol y el alcance de cuenta, perfil o tenant. Las fechas de los ejemplos corresponden a instantes ISO 8601.
+Las solicitudes que envían datos, por ejemplo para registrar un invitado, utilizan JSON: un formato de texto con campos y valores. La cabecera `Content-Type: application/json` indica ese formato al backend. Para adjuntar una imagen como evidencia de una alerta se utiliza `multipart/form-data`, que permite enviar archivos.
 
-Swagger UI se consulta en `/swagger-ui/index.html` de la instancia ejecutada; el contrato completo se obtiene en `/v3/api-docs/06-complete-backend`. Allí se detallan los esquemas, parámetros, campos obligatorios y respuestas de cada operación. Los siguientes tres servicios representan flujos centrales de SpotGo. Sus ejemplos describen el contrato implementado; no representan resultados de pruebas ni cobros ejecutados.
+Las operaciones protegidas requieren el token obtenido al iniciar sesión, enviado mediante `Authorization: Bearer <accessToken>`. Los identificadores son UUID de los recursos correspondientes. El backend comprueba los permisos del usuario y su acceso a la cuenta, perfil o estacionamiento (tenant). Las fechas se expresan en formato ISO 8601.
+
+**Swagger UI:** `/swagger-ui/index.html`
+
+**Contrato OpenAPI completo:** `/v3/api-docs/06-complete-backend`
+
+**Acceso local:** configurar las variables de entorno requeridas por el backend, incluida `JWT_SECRET` (mínimo 32 bytes), y la conexión a PostgreSQL. Ejecutar `SpotgoBackendApplication` con Java 25 y esperar a que finalice el arranque.
 
 **1. Registro y salida de invitados**
 
