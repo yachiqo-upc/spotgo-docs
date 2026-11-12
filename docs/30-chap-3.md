@@ -371,7 +371,7 @@ Como Driver, quiero crear una cuenta o iniciar sesión en SpotGo para acceder a 
 **User Flow**
 
 *Figura 77 (User Flow 1: Registro y acceso a SpotGo)*  
-![User Flow 1: Registro y acceso a SpotGo](../assets/diagrams/ui-ux/user-flows/User-Flow-1-Registro-y-acceso-a-SpotGo.png)
+![User Flow 1: Registro y acceso a SpotGo](../assets/diagrams/ui-ux/User-Flow-1-Registro-y-acceso-a-SpotGo.png)
 
 **User Flow 2: Registrar vehículo**
 
@@ -394,7 +394,7 @@ Como Driver, quiero registrar un vehículo en mi perfil para poder seleccionarlo
 **User Flow**
 
 *Figura 78 (User Flow 2: Registrar vehículo)*  
-![User Flow 2: Registrar vehículo](../assets/diagrams/ui-ux/user-flows/User-Flow-2-Registrar-vehículo.png)
+![User Flow 2: Registrar vehículo](../assets/diagrams/ui-ux/User-Flow-2-Registrar-vehículo.png)
 
 **User Flow 3: Consultar disponibilidad por zona**
 
@@ -418,7 +418,7 @@ Como Driver, quiero consultar la disponibilidad actual de una Parking Zone para 
 **User Flow**
 
 *Figura 79 (User Flow 3: Consultar disponibilidad por zona)*  
-![User Flow 3: Consultar disponibilidad por zona](../assets/diagrams/ui-ux/user-flows/User-Flow-3-Consultar-disponibilidad-por-zona.png)
+![User Flow 3: Consultar disponibilidad por zona](../assets/diagrams/ui-ux/User-Flow-3-Consultar-disponibilidad-por-zona.png)
 
 **User Flow 4: Consultar zonas permitidas**
 
@@ -440,7 +440,7 @@ Como Driver, quiero consultar las Parking Zones permitidas para mi perfil para s
 **User Flow**
 
 *Figura 80 (User Flow 4: Consultar zonas permitidas)*  
-![User Flow 4: Consultar zonas permitidas](../assets/diagrams/ui-ux/user-flows/User-Flow-4-Consultar-zonas-permitidas.png)
+![User Flow 4: Consultar zonas permitidas](../assets/diagrams/ui-ux/User-Flow-4-Consultar-zonas-permitidas.png)
 
 **User Flow 5: Encontrar Parking Zones cercanas**
 
@@ -464,7 +464,7 @@ Como Driver, quiero visualizar las Parking Zones registradas por SpotGo en un ma
 **User Flow**
 
 *Figura 81 (User Flow 5: Encontrar Parking Zones cercanas)*  
-![User Flow 5: Encontrar Parking Zones cercanas](../assets/diagrams/ui-ux/user-flows/User-Flow-5-Encontrar-Parking-Zones-cercanas.png)
+![User Flow 5: Encontrar Parking Zones cercanas](../assets/diagrams/ui-ux/User-Flow-5-Encontrar-Parking-Zones-cercanas.png)
 
 **User Flow 6: Gestionar Reservations y comprobantes virtuales**
 
@@ -507,7 +507,7 @@ Como Driver, quiero reservar un Parking Spot dentro de una zona permitida y admi
 **User Flow**
 
 *Figura 82 (User Flow 6: Gestionar Reservations y comprobantes virtuales)*  
-![User Flow 6: Gestionar Reservations y comprobantes virtuales](../assets/diagrams/ui-ux/user-flows/User-Flow-6-Gestionar-Reservations-y-comprobantes-virtuales.png)
+![User Flow 6: Gestionar Reservations y comprobantes virtuales](../assets/diagrams/ui-ux/User-Flow-6-Gestionar-Reservations-y-comprobantes-virtuales.png)
 
 **User Flow 7: Procesar pago de Reservation y cargos adicionales**
 
@@ -538,7 +538,7 @@ Como Driver, quiero pagar mi Reservation y el tiempo adicional de estacionamient
 **User Flow**
 
 *Figura 83 (User Flow 7: Procesar pago de Reservation y cargos adicionales)*  
-![User Flow 7: Procesar pago de Reservation y cargos adicionales](../assets/diagrams/ui-ux/user-flows/User-Flow-7-Procesar-pago-de-Reservation-y-cargos-adicionales.png)
+![User Flow 7: Procesar pago de Reservation y cargos adicionales](../assets/diagrams/ui-ux/User-Flow-7-Procesar-pago-de-Reservation-y-cargos-adicionales.png)
 
 **User Flow 8: Abrir ruta en Google Maps**
 
@@ -561,7 +561,7 @@ Como Driver, quiero abrir en Google Maps la ruta hacia una Parking Zone seleccio
 **User Flow**
 
 *Figura 84 (User Flow 8: Abrir ruta en Google Maps)*  
-![User Flow 8: Abrir ruta en Google Maps](../assets/diagrams/ui-ux/user-flows/User-Flow-8-Abrir-ruta-en-Google-Maps.png)
+![User Flow 8: Abrir ruta en Google Maps](../assets/diagrams/ui-ux/User-Flow-8-Abrir-ruta-en-Google-Maps.png)
 
 **User Flow 9: Gestionar planes de suscripción**
 
@@ -594,7 +594,7 @@ Como Driver, quiero consultar, seleccionar y gestionar los planes de suscripció
 **User Flow**
 
 *Figura 85 (User Flow 9: Gestionar planes de suscripción)*  
-![User Flow 9: Gestionar planes de suscripción](../assets/diagrams/ui-ux/user-flows/User-Flow-9-Gestionar-planes-de-suscripción.png)
+![User Flow 9: Gestionar planes de suscripción](../assets/diagrams/ui-ux/User-Flow-9-Gestionar-planes-de-suscripción.png)
 
 **User Flow 10: Consultar comprobantes y facturas**
 
@@ -626,7 +626,7 @@ Como Driver, quiero consultar mi historial de pagos y obtener mis Virtual Receip
 **User Flow**
 
 *Figura 86 (User Flow 10: Consultar comprobantes y facturas)*  
-![User Flow 10: Consultar comprobantes y facturas](../assets/diagrams/ui-ux/user-flows/User-Flow-10-Consultar-comprobantes-y-facturas.png)
+![User Flow 10: Consultar comprobantes y facturas](../assets/diagrams/ui-ux/User-Flow-10-Consultar-comprobantes-y-facturas.png)
 
 **Parking Admin User Flows**
 
@@ -653,7 +653,7 @@ Como Parking Admin, quiero iniciar sesión en SpotGo para acceder a las funcione
 **User Flow**
 
 *Figura 87 (User Flow 11: Acceder al panel administrativo)*  
-![User Flow 11: Acceder al panel administrativo](../assets/diagrams/ui-ux/user-flows/User-Flow-11-Acceder-al-panel-administrativo.png)
+![User Flow 11: Acceder al panel administrativo](../assets/diagrams/ui-ux/User-Flow-11-Acceder-al-panel-administrativo.png)
 
 **User Flow 12: Configurar Parking Zones**
 
@@ -682,7 +682,7 @@ Como Parking Admin, quiero crear Parking Zones, asociarlas con User Profiles y c
 **User Flow**
 
 *Figura 88 (User Flow 12: Configurar Parking Zones)*  
-![User Flow 12: Configurar Parking Zones](../assets/diagrams/ui-ux/user-flows/User-Flow-12-Configurar-Parking-Zones.png)
+![User Flow 12: Configurar Parking Zones](../assets/diagrams/ui-ux/User-Flow-12-Configurar-Parking-Zones.png)
 
 **User Flow 13: Cargar Floor Plan y generar Digital Parking Map**
 
@@ -709,7 +709,7 @@ Como Parking Admin, quiero cargar el plano del estacionamiento y configurar sus 
 **User Flow**
 
 *Figura 89 (User Flow 13: Cargar Floor Plan y generar Digital Parking Map)*  
-![User Flow 13: Cargar Floor Plan y generar Digital Parking Map](../assets/diagrams/ui-ux/user-flows/User-Flow-13-Cargar-Floor-Plan-y-generar-Digital-Parking-Map.png)
+![User Flow 13: Cargar Floor Plan y generar Digital Parking Map](../assets/diagrams/ui-ux/User-Flow-13-Cargar-Floor-Plan-y-generar-Digital-Parking-Map.png)
 
 **User Flow 14: Monitorear ocupación por zona**
 
@@ -734,7 +734,7 @@ Como Parking Admin, quiero monitorear el Occupancy Status de los Parking Spots a
 **User Flow**
 
 *Figura 90 (User Flow 14: Monitorear ocupación por zona)*  
-![User Flow 14: Monitorear ocupación por zona](../assets/diagrams/ui-ux/user-flows/User-Flow-14-Monitorear-ocupación-por-zona.png)
+![User Flow 14: Monitorear ocupación por zona](../assets/diagrams/ui-ux/User-Flow-14-Monitorear-ocupación-por-zona.png)
 
 **User Flow 15: Gestionar alertas operativas**
 
@@ -762,7 +762,7 @@ Como Parking Admin, quiero revisar y resolver las alertas de Unauthorized Parkin
 **User Flow**
 
 *Figura 91 (User Flow 15: Gestionar alertas operativas)*  
-![User Flow 15: Gestionar alertas operativas](../assets/diagrams/ui-ux/user-flows/User-Flow-15-Gestionar-alertas-operativas.png)
+![User Flow 15: Gestionar alertas operativas](../assets/diagrams/ui-ux/User-Flow-15-Gestionar-alertas-operativas.png)
 
 **User Flow 16: Registrar Guest Parking Session**
 
@@ -800,7 +800,7 @@ Como Parking Admin, quiero registrar y finalizar una Guest Parking Session para 
 **User Flow**
 
 *Figura 92 (User Flow 16: Registrar Guest Parking Session)*  
-![User Flow 16: Registrar Guest Parking Session](../assets/diagrams/ui-ux/user-flows/User-Flow-16-Registrar-Guest-Parking-Session.png)
+![User Flow 16: Registrar Guest Parking Session](../assets/diagrams/ui-ux/User-Flow-16-Registrar-Guest-Parking-Session.png)
 
 **User Flow 17: Generar reportes de ocupación**
 
@@ -822,7 +822,7 @@ Como Parking Admin, quiero consultar reportes de ocupación agrupados por period
 **User Flow**
 
 *Figura 93 (User Flow 17: Generar reportes de ocupación)*  
-![User Flow 17: Generar reportes de ocupación](../assets/diagrams/ui-ux/user-flows/User-Flow-17-Generar-reportes-de-ocupación.png)
+![User Flow 17: Generar reportes de ocupación](../assets/diagrams/ui-ux/User-Flow-17-Generar-reportes-de-ocupación.png)
 
 **User Flow 18: Gestionar facturación B2B**
 
@@ -844,7 +844,7 @@ Como Parking Admin, quiero consultar las facturas del servicio SpotGo de mi Tena
 **User Flow**
 
 *Figura 94 (User Flow 18: Gestionar facturación B2B)*  
-![User Flow 18: Gestionar facturación B2B](../assets/diagrams/ui-ux/user-flows/User-Flow-18-Gestionar-facturación-B2B.png)
+![User Flow 18: Gestionar facturación B2B](../assets/diagrams/ui-ux/User-Flow-18-Gestionar-facturación-B2B.png)
 
 #### *3.1.4.5. Applications Prototypes*
 
