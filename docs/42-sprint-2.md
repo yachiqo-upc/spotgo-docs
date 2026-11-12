@@ -358,38 +358,77 @@ Este JSON es el contenido de **Request body** de `POST /api/v1/guest-parking-ses
 
 ![OpenAPI/Swagger: Guest Parking Session Services — parte 2](../assets/images/figures/115-swagger-guest-parking-sessions-2.png)
 
-**2. Cálculo y consulta de ocupación**
+**2. Consulta del historial de ocupación**
 
-Este caso representa al administrador que necesita conocer cuántos espacios están ocupados y qué porcentaje de su estacionamiento está en uso. El Parking Admin selecciona su estacionamiento completo o una zona y solicita el cálculo. El backend utiliza las lecturas de los sensores para generar un resumen con la cantidad de espacios ocupados, el total de espacios operativos, el porcentaje y la fecha de observación.
+Este caso representa a Ana, administradora de Parking, que consulta los resúmenes de ocupación ya registrados para su estacionamiento. Utiliza `GET /api/v1/capacity-snapshots`: esta consulta devuelve el historial disponible. El conductor no realiza esta consulta administrativa debido a la segmentacion de roles.
 
-El administrador solicita y consulta el resumen; no introduce manualmente cuántos vehículos hay ni el porcentaje. El conductor no realiza este cálculo administrativo. Si falta una lectura confiable y algún espacio tiene ocupación `UNAVAILABLE`, el backend responde `409` en lugar de presentarlo como libre. El historial permite consultar los resúmenes que ya se generaron.
+**Quién ejecuta y cómo autorizar:** iniciar sesión con la cuenta de Ana (`PARKING_ADMIN`) mediante `POST /api/v1/authentication/sign-in`. Copiar solo el `accessToken` de la respuesta en **Authorize**. Después abrir `GET /api/v1/capacity-snapshots`, pulsar **Try it out**, introducir `00000000-0000-4000-8000-000000000021` en el parámetro opcional `tenantId` y pulsar **Execute**. Esta operación no lleva **Request body**. `SUPER_ADMIN` también puede consultar el historial dentro de su alcance autorizado.
 
-**Quién ejecuta y cómo autorizar:** el administrador del estacionamiento calcula la ocupación con una cuenta `PARKING_ADMIN`. Iniciar sesión en `POST /api/v1/authentication/sign-in` y pegar solo el `accessToken` en **Authorize**. Después abrir `POST /api/v1/capacity-snapshots`, pulsar **Try it out**, completar el cuerpo y pulsar **Execute**. `SUPER_ADMIN` puede consultar el historial mediante GET, pero el POST requiere `PARKING_ADMIN`. Solo visualizar la documentación no requiere ejecutar estas operaciones.
-
-| Método y endpoint | Parámetros o cuerpo y permisos | Respuesta y comportamiento |
+| Método y endpoint | Parámetros y permisos | Respuesta y comportamiento |
 | --- | --- | --- |
-| `GET /api/v1/capacity-snapshots` | Query `tenantId` (UUID opcional); sin cuerpo. Roles `PARKING_ADMIN` o `SUPER_ADMIN`, dentro de su alcance. | `200`: lista de `SnapshotView` con historial autorizado. |
-| `POST /api/v1/capacity-snapshots` | `SnapshotBody`: `tenantId` (UUID obligatorio), `zoneId` (UUID opcional; `null` resume el tenant). Requiere `PARKING_ADMIN` del tenant. | `201`: `SnapshotView`, con cantidades y porcentaje calculados. Si no hay espacios, el porcentaje es `0.00`. |
+| `GET /api/v1/capacity-snapshots` | Query `tenantId` (UUID opcional); sin cuerpo. Roles `PARKING_ADMIN` o `SUPER_ADMIN`, dentro de su alcance. | `200`: lista de `SnapshotView` con los resúmenes de ocupación ya guardados. |
 
-`SnapshotView` contiene `snapshotId`, `tenantId`, `zoneId`, `occupiedCount`, `totalCount`, `percentage` y `observedAt`. Errores documentados: `400` datos inválidos; `401` sesión inválida; `403` rol o tenant fuera del alcance; `404` recurso inexistente; `409` referencia o estado incompatible, incluidas lecturas no confiables.
+`SnapshotView` contiene `snapshotId` (identificador del resumen), `tenantId` (estacionamiento), `zoneId` (zona o `null` para el conjunto del estacionamiento), `occupiedCount` (espacios ocupados), `totalCount` (total de espacios operativos), `percentage` (porcentaje de ocupación) y `observedAt` (fecha y hora de la observación). Una sesión inválida puede producir `401`; un rol o tenant fuera del alcance, `403`; un UUID mal formado, `400`.
 
-Ejemplo ilustrativo para calcular ocupación de todo un tenant existente:
+**Ejemplo de consulta**
 
-Este JSON se coloca en **Request body** de `POST /api/v1/capacity-snapshots`. `tenantId` es el identificador del estacionamiento administrado; obtener el `tenantId` correspondiente mediante `GET /api/v1/tenants`. El UUID del ejemplo es ficticio y debe reemplazarse por el real. `zoneId: null` pide calcular la ocupación de todo ese estacionamiento; para una zona concreta, reemplazar `null` por el UUID de una zona perteneciente al mismo tenant. El usuario no introduce cantidades ni porcentajes: el servidor los calcula a partir de las lecturas disponibles. Un identificador válido no garantiza el cálculo si faltan lecturas confiables.
+La solicitud utiliza el identificador del estacionamiento como parámetro de la URL, sin enviar JSON:
 
-```json
-{
-  "tenantId": "22222222-2222-4222-8222-222222222222",
-  "zoneId": null
-}
+```http
+GET /api/v1/capacity-snapshots?tenantId=00000000-0000-4000-8000-000000000021
 ```
 
-*Figura 116 (OpenAPI/Swagger: Capacity Snapshot Services)*
+**Respuesta obtenida en Swagger**
 
-<!-- FOTO PENDIENTE: 116-swagger-capacity-snapshots.png
-Ubicación: assets/images/figures/116-swagger-capacity-snapshots.png
-Insertar aquí una captura de Swagger del grupo 05-monitoring, sección Capacity snapshots. Expandir POST /api/v1/capacity-snapshots para mostrar tenantId, zoneId, respuesta 201 SnapshotView y error 409. Incluir GET y su filtro tenantId si caben.
--->
+El siguiente JSON es la respuesta de la consulta, no un cuerpo que deba introducirse en Swagger:
+
+```json
+[
+  {
+    "snapshotId": "00000000-0000-4000-8000-000000000291",
+    "tenantId": "00000000-0000-4000-8000-000000000021",
+    "zoneId": "00000000-0000-4000-8000-000000000031",
+    "occupiedCount": 1,
+    "totalCount": 2,
+    "percentage": 50,
+    "observedAt": "2026-11-09T13:55:01Z"
+  },
+  {
+    "snapshotId": "00000000-0000-4000-8000-000000000292",
+    "tenantId": "00000000-0000-4000-8000-000000000021",
+    "zoneId": "00000000-0000-4000-8000-000000000032",
+    "occupiedCount": 1,
+    "totalCount": 2,
+    "percentage": 50,
+    "observedAt": "2026-11-09T13:55:01Z"
+  },
+  {
+    "snapshotId": "00000000-0000-4000-8000-000000000293",
+    "tenantId": "00000000-0000-4000-8000-000000000021",
+    "zoneId": null,
+    "occupiedCount": 2,
+    "totalCount": 4,
+    "percentage": 50,
+    "observedAt": "2026-11-09T13:55:01Z"
+  }
+]
+```
+
+**Interpretación de la respuesta**
+
+| Registro | Alcance | Espacios ocupados / total | Ocupación |
+| --- | --- | --- | --- |
+| Primero | Zona con identificador terminado en `031` | 1 de 2 | 50 % |
+| Segundo | Zona con identificador terminado en `032` | 1 de 2 | 50 % |
+| Tercero | Todo Parking Sol - Demo (`zoneId: null`) | 2 de 4 | 50 % |
+
+Los tres registros pertenecen al mismo estacionamiento (`tenantId` terminado en `021`). El tercero resume todo el estacionamiento: **no representa una tercera zona ni se suma nuevamente a los dos primeros**. `observedAt` indica que estos datos corresponden al 9 de noviembre de 2026 a las 13:55:01 UTC (08:55:01 en Perú); consultar el historial hoy no convierte esas observaciones en mediciones actuales.
+
+*Figura 116 (OpenAPI/Swagger: Capacity Snapshot History Query)*
+
+![OpenAPI/Swagger: Capacity Snapshot History Query — parte 1](../assets/images/figures/116-swagger-capacity-snapshots-1.png)
+
+![OpenAPI/Swagger: Capacity Snapshot History Query — parte 2](../assets/images/figures/116-swagger-capacity-snapshots-2.png)
 
 **3. Pago digital de reservas y seguimiento del resultado**
 
