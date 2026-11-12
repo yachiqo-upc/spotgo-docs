@@ -430,41 +430,104 @@ Los tres registros pertenecen al mismo estacionamiento (`tenantId` terminado en 
 
 ![OpenAPI/Swagger: Capacity Snapshot History Query — parte 2](../assets/images/figures/116-swagger-capacity-snapshots-2.png)
 
-**3. Pago digital de reservas y seguimiento del resultado**
+**3. Pago digital de una deuda por cargo adicional**
 
-Este caso representa a un conductor con cuenta en SpotGo que ya creó una reserva y desea pagarla desde la aplicación. El Driver selecciona su reserva y un medio de pago previamente registrado. El backend toma el importe de la reserva y crea una operación de pago asociada al conductor; el usuario no envía el precio ni decide si el cobro fue aprobado.
+Este caso representa a Juan Demo, un conductor con cuenta en SpotGo que desea pagar una deuda asociada a un cargo adicional de una reserva. A diferencia del invitado del primer caso, Juan realiza el pago digital desde su propia cuenta `DRIVER`. El Parking Admin no realiza esta operación en su nombre.
 
-Quien inicia este pago es el Driver propietario de la reserva, no el Parking Admin. A diferencia del invitado del primer caso, este conductor tiene cuenta y utiliza un pago digital. Crear la operación es el primer paso: después se solicita su procesamiento y el proveedor determina el resultado. Si existe un fallo conocido, se puede reintentar; si el resultado quedó pendiente o desconocido, se consulta mediante conciliación sin efectuar otro cargo. La clave de idempotencia permite recuperar la misma operación al repetir su creación con los mismos datos, evitando duplicarla.
+**Problema:** Juan tiene dos deudas pendientes, de S/ 3 y S/ 5, que suman S/ 8. Mientras mantenga deudas abiertas, el backend le impide crear nuevas reservas. En este caso se abordará el pago de la deuda de S/ 3; la de S/ 5 deberá pagarse por separado para poder volver a reservar.
 
-**Quién ejecuta y cómo autorizar:** el conductor que es propietario de la reserva, con una cuenta `DRIVER`. Iniciar sesión en `POST /api/v1/authentication/sign-in`, copiar el `accessToken` y pegarlo en **Authorize**. Si antes se autorizó una cuenta `PARKING_ADMIN`, sustituir su token por el del conductor. Abrir `POST /api/v1/digital-payments/reservations/{reservationId}`, pulsar **Try it out**, completar el identificador de reserva y el cuerpo, y pulsar **Execute**. Un Parking Admin no puede crear este pago de reserva en nombre del conductor. Para la captura del contrato basta con desplegar la operación, sin ejecutarla.
+**Quién ejecuta y cómo autorizar:** iniciar sesión con Juan mediante `POST /api/v1/authentication/sign-in`, copiar el `accessToken` y pegar únicamente ese valor en **Authorize** de Swagger. Todas las operaciones siguientes se realizarán con esa misma cuenta. El backend identificará al conductor mediante el token, sin solicitar que se envíe su `profileId`.
 
-| Método y endpoint | Parámetros o cuerpo y permisos | Respuesta y comportamiento |
+**Flujo que se realizará**
+
+| Paso | Método y endpoint | Acción |
 | --- | --- | --- |
-| `POST /api/v1/digital-payments/reservations/{reservationId}` | UUID de reserva; `PaymentBody`: `tokenId` (UUID obligatorio) e `idempotencyKey` (texto obligatorio, máximo 255 caracteres). Requiere `DRIVER` propietario. | `201`: `PaymentView`, creado o recuperado. Misma clave y contenido recuperan la operación; diferente contenido con la misma clave produce `409`. |
-| `GET /api/v1/digital-payments/{paymentId}` | UUID de pago; sin cuerpo. Cuenta autorizada sobre el pago. | `200`: `PaymentView` con estado y referencias del pago. |
-| `POST /api/v1/digital-payments/{paymentId}/process` | UUID de pago; sin cuerpo. `DRIVER` o `PARKING_ADMIN`, dentro de su alcance. | `200`: `PaymentView` tras procesar. Un pago aprobado se devuelve sin cobrar de nuevo. |
-| `POST /api/v1/digital-payments/{paymentId}/retry` | UUID de pago; cuerpo opcional `RetryPaymentBody` con `tokenId` (UUID opcional para cambiar el medio de pago tras un rechazo definitivo). Mismos roles y alcance. | `200`: `PaymentView`; reintenta un fallo conocido respetando la espera y conserva el identificador. Un resultado desconocido requiere conciliación. |
-| `POST /api/v1/digital-payments/{paymentId}/reconcile` | UUID de pago; sin cuerpo. Mismos roles y alcance. | `200`: `PaymentView`; consulta un resultado pendiente al proveedor sin efectuar otro cargo. |
+| 1. Consultar deudas | `GET /api/v1/outstanding-balances` | Consultar las deudas del conductor e identificar el `chargeId` correspondiente al cargo de S/ 3: `00000000-0000-4000-8000-000000000202`. No se envía cuerpo. |
+| 2. Registrar el medio de pago | `POST /api/v1/payment-tokens` | Enviar `providerTokenRef` con el valor `simulated-visa-4242` y utilizar el `tokenId` que se genere. Este medio es compatible con el proveedor de demostración y no mueve dinero real. |
+| 3. Crear la operación de pago | `POST /api/v1/digital-payments/additional-charges/{chargeId}` | Colocar el identificador del cargo de S/ 3 en la ruta. Enviar en el cuerpo el nuevo `tokenId` y una `idempotencyKey`, por ejemplo `juan-deuda-202-compatible-001`, para identificar la operación y evitar duplicarla al repetir la misma solicitud. El importe se obtiene del cargo; no lo introduce el conductor. |
+| 4. Procesar el pago | `POST /api/v1/digital-payments/{paymentId}/process` | Utilizar el `paymentId` de la operación creada y solicitar su procesamiento. No se envía cuerpo. Crear la operación en el paso anterior no equivale a pagarla. |
+| 5. Conciliar si queda pendiente | `POST /api/v1/digital-payments/{paymentId}/reconcile` | Consultar el resultado del mismo pago si continúa pendiente. No se envía cuerpo ni se solicita otro cobro. |
+| 6. Verificar la regularización | `GET /api/v1/outstanding-balances` | Comprobar que el pago esté aprobado y que la deuda de S/ 3 quede regularizada. La deuda restante de S/ 5 se atenderá mediante otra operación. |
 
-`PaymentView` contiene `paymentId`, `tokenId`, `profileId`, `operationType`, `amount`, `currency`, `status`, `providerOperationRef`, `idempotencyKey`, `requestHash`, `firstSeenAt`, `lastSeenAt`, `resultReference`, `createdAt` y `approvedAt`. El cliente no envía importe, estado ni fecha de aprobación. Errores documentados: `400` datos inválidos; `401` sesión inválida; `403` rol o alcance insuficiente; `404` recurso inexistente; `409` conflicto de estado o idempotencia; `503` proveedor no configurado o no disponible.
+`tokenId` identifica el medio de pago guardado; no es el `accessToken` utilizado en **Authorize**. `paymentId` identifica la operación creada y se conserva al procesarla y conciliarla. El objetivo del flujo es verificar la aprobación del pago y la regularización de la deuda seleccionada, sin confundir la creación de la operación con la confirmación del cobro.
 
-Ejemplo ilustrativo del cuerpo para pagar una reserva propia existente, con un token de pago previamente registrado:
+**Verificación de deudas antes del pago**
 
-Este JSON va en **Request body** de `POST /api/v1/digital-payments/reservations/{reservationId}`. Además del cuerpo, completar el parámetro de ruta `reservationId` con el UUID de una reserva propia, consultable mediante `GET /api/v1/reservations`. `tokenId` identifica un medio de pago tokenizado del conductor, consultable mediante `GET /api/v1/payment-tokens`: **no es el `accessToken` usado en Authorize**. El UUID mostrado abajo es ficticio y debe sustituirse por el real. `idempotencyKey` es una clave elegida para identificar ese intento de crear una operación: reutilizarla con los mismos datos recupera la operación anterior y evita duplicarla; usar una clave nueva para una operación distinta. Este POST crea la operación de pago; procesar el cobro es una acción posterior y requiere un proveedor disponible.
+Al ejecutar `GET /api/v1/outstanding-balances` con Juan autorizado, se obtiene la siguiente respuesta. Ambas deudas están en estado `OPEN`: una de S/ 3 y otra de S/ 5, con un total pendiente de S/ 8. Este JSON es la respuesta del servicio, no un cuerpo que deba enviarse.
 
 ```json
-{
-  "tokenId": "33333333-3333-4333-8333-333333333333",
-  "idempotencyKey": "sprint2-reserva-pago-001"
-}
+[
+  {
+    "balanceId": "00000000-0000-4000-8000-000000000212",
+    "profileId": "00000000-0000-4000-8000-000000000012",
+    "chargeId": "00000000-0000-4000-8000-000000000202",
+    "amount": 3,
+    "dueAt": "2026-11-09T12:10:00Z",
+    "status": "OPEN",
+    "createdAt": "2026-11-09T12:10:00Z",
+    "regularizedAt": null
+  },
+  {
+    "balanceId": "00000000-0000-4000-8000-000000000211",
+    "profileId": "00000000-0000-4000-8000-000000000012",
+    "chargeId": "00000000-0000-4000-8000-000000000201",
+    "amount": 5,
+    "dueAt": "2026-11-09T10:15:00Z",
+    "status": "OPEN",
+    "createdAt": "2026-11-09T10:15:00Z",
+    "regularizedAt": null
+  }
+]
 ```
 
-*Figura 117 (OpenAPI/Swagger: Reservation Digital Payment Services)*
+**Verificación de deudas después del pago de S/ 3**
 
-<!-- FOTO PENDIENTE: 117-swagger-reservation-digital-payments.png
-Ubicación: assets/images/figures/117-swagger-reservation-digital-payments.png
-Insertar aquí una captura de Swagger del grupo 04-payments-billing, sección Digital payments. Expandir POST /api/v1/digital-payments/reservations/{reservationId} para mostrar reservationId, PaymentBody y respuesta 201 PaymentView. Incluir process, retry y reconcile si caben. Mostrar el contrato, sin presentar una aprobación simulada como cobro real ni exponer tokens.
--->
+Después de procesar y confirmar el pago, se vuelve a ejecutar `GET /api/v1/outstanding-balances`. La respuesta obtenida muestra que la deuda del cargo terminado en `202` tiene importe pendiente `0`, estado `REGULARIZED` y fecha de regularización. La deuda de S/ 5 del cargo terminado en `201` continúa abierta.
+
+```json
+[
+  {
+    "balanceId": "00000000-0000-4000-8000-000000000212",
+    "profileId": "00000000-0000-4000-8000-000000000012",
+    "chargeId": "00000000-0000-4000-8000-000000000202",
+    "amount": 0,
+    "dueAt": "2026-11-09T12:10:00Z",
+    "status": "REGULARIZED",
+    "createdAt": "2026-11-09T12:10:00Z",
+    "regularizedAt": "2026-11-12T08:03:12.915742Z"
+  },
+  {
+    "balanceId": "00000000-0000-4000-8000-000000000211",
+    "profileId": "00000000-0000-4000-8000-000000000012",
+    "chargeId": "00000000-0000-4000-8000-000000000201",
+    "amount": 5,
+    "dueAt": "2026-11-09T10:15:00Z",
+    "status": "OPEN",
+    "createdAt": "2026-11-09T10:15:00Z",
+    "regularizedAt": null
+  }
+]
+```
+
+| Cargo | Antes del pago | Después del pago |
+| --- | --- | --- |
+| `…202` | S/ 3 pendientes, `OPEN` | S/ 0 pendientes, `REGULARIZED` |
+| `…201` | S/ 5 pendientes, `OPEN` | S/ 5 pendientes, `OPEN` |
+| **Total pendiente** | **S/ 8** | **S/ 5** |
+
+La deuda pagada permanece en el historial con importe pendiente cero. Juan todavía debe regularizar los S/ 5 restantes antes de crear una nueva reserva.
+
+*Figura 117 (OpenAPI/Swagger: Outstanding Balance Payment Services)*
+
+![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 1](../assets/images/figures/117-swagger-reservation-digital-payments-1.png)
+
+![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 2](../assets/images/figures/117-swagger-reservation-digital-payments-2.png)
+
+![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 3](../assets/images/figures/117-swagger-reservation-digital-payments-3.png)
+
+![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 4](../assets/images/figures/117-swagger-reservation-digital-payments-4.png)
+
+![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 5](../assets/images/figures/117-swagger-reservation-digital-payments-5.png)
 
 #### *4.2.2.8. Software Deployment Evidence for Sprint Review*
 
