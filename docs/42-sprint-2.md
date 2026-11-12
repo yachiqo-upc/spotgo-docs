@@ -206,6 +206,8 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 *Figura 102 (SpotGo Android App Test Evidence)*  
 
+![SpotGo Android App Test Evidence](../assets/images/figures/102-android-app-test-evidence.png)
+
 *Figura 103 (SpotGo Flutter App Test Evidence)*  
 ![SpotGo Flutter App Test Evidence](../assets/images/figures/103-flutter-app-test-evidence.png)
 
