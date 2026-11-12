@@ -354,9 +354,9 @@ Este JSON es el contenido de **Request body** de `POST /api/v1/guest-parking-ses
 
 *Figura 115 (OpenAPI/Swagger: Guest Parking Session Services)*
 
-![OpenAPI/Swagger: Guest Parking Session Services — parte 1](../assets/images/figures/115-swagger-guest-parking-sessions-1.png)
+![OpenAPI/Swagger: Guest Parking Session Services — parte 1](../assets/images/figures/115-swagger-guest-parking-session-1.png)
 
-![OpenAPI/Swagger: Guest Parking Session Services — parte 2](../assets/images/figures/115-swagger-guest-parking-sessions-2.png)
+![OpenAPI/Swagger: Guest Parking Session Services — parte 2](../assets/images/figures/115-swagger-guest-parking-session-2.png)
 
 **2. Consulta del historial de ocupación**
 
