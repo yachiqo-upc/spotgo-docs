@@ -126,8 +126,8 @@ El Sprint Backlog 1 reúne las tareas necesarias para desarrollar las historias 
 
 **Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/spotgo-trello-board](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/spotgo-trello-board)
 
-*Figura 80 (Trello Board: Sprint Backlog 1)*  
-![Trello Board: Sprint Backlog 1](../assets/images/figures/80-trello-board-sprint-backlog-1.png)
+*Figura 94 (Trello Board: Sprint Backlog 1)*  
+![Trello Board: Sprint Backlog 1](../assets/images/figures/94-trello-board-sprint-backlog-1.png)
 
 El siguiente desglose presenta las tareas realizadas durante el Sprint 1, sus responsables y su estado de finalización, de acuerdo con la distribución de liderazgo y colaboración de la matriz LACX.
 
@@ -254,47 +254,47 @@ Durante este sprint, el equipo desplegó la versión inicial de la **Landing Pag
 
 **Landing Page**
 
-*Figura 81 (Preview Landing: Home)*  
-![Preview Landing: Home](../assets/images/figures/81-preview-landing-home.png)
+*Figura 95 (Preview Landing: Home)*  
+![Preview Landing: Home](../assets/images/figures/95-preview-landing-home.png)
 
-*Figura 82 (Preview Landing: Drivers)*  
-![Preview Landing: Drivers](../assets/images/figures/82-preview-landing-drivers.png)
+*Figura 96 (Preview Landing: Drivers)*  
+![Preview Landing: Drivers](../assets/images/figures/96-preview-landing-drivers.png)
 
-*Figura 83 (Preview Landing: Admins)*  
-![Preview Landing: Admins](../assets/images/figures/83-preview-landing-admins.png)
+*Figura 97 (Preview Landing: Admins)*  
+![Preview Landing: Admins](../assets/images/figures/97-preview-landing-admins.png)
 
-*Figura 84 (Preview Landing: How It Works)*  
-![Preview Landing: How It Works](../assets/images/figures/84-preview-landing-how-it-works.png)
+*Figura 98 (Preview Landing: How It Works)*  
+![Preview Landing: How It Works](../assets/images/figures/98-preview-landing-how-it-works.png)
 
-*Figura 85 (Preview Landing: Pricing)*  
-![Preview Landing: Pricing](../assets/images/figures/85-preview-landing-pricing.png)
+*Figura 99 (Preview Landing: Pricing)*  
+![Preview Landing: Pricing](../assets/images/figures/99-preview-landing-pricing.png)
 
-*Figura 86 (Preview Landing: FAQ)*  
-![Preview Landing: FAQ](../assets/images/figures/86-preview-landing-faq.png)
+*Figura 100 (Preview Landing: FAQ)*  
+![Preview Landing: FAQ](../assets/images/figures/100-preview-landing-faq.png)
 
 **Preview Landing Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDYdXQpcuFATYFoR1HYgMP_AQa4ZqLQcXEe6XCnQa2-WBY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=rETy8f)
 
 **Pantallas iniciales de Driver: Jetpack Compose**
 
-*Figura 87 (Preview App: Driver-Explore Parking)*  
-![Preview App: Driver-Explore Parking](../assets/images/figures/87-preview-app-explore-parking.jpeg)
+*Figura 101 (Preview App: Driver-Explore Parking)*  
+![Preview App: Driver-Explore Parking](../assets/images/figures/101-preview-app-explore-parking.jpeg)
 
-*Figura 88 (Preview App: Driver-Zone Details)*  
-![Preview App: Driver-Zone Details](../assets/images/figures/88-preview-app-zone-details.jpeg)
+*Figura 102 (Preview App: Driver-Zone Details)*  
+![Preview App: Driver-Zone Details](../assets/images/figures/102-preview-app-zone-details.jpeg)
 
-*Figura 89 (Preview App: Driver-Reserve)*  
-![Preview App: Driver-Reserve](../assets/images/figures/89-preview-app-reserve.jpeg)
+*Figura 103 (Preview App: Driver-Reserve)*  
+![Preview App: Driver-Reserve](../assets/images/figures/103-preview-app-reserve.jpeg)
 
-*Figura 90 (Preview App: Driver-Payments)*  
-![Preview App: Driver-Payments](../assets/images/figures/90-preview-app-payments.jpeg)
+*Figura 104 (Preview App: Driver-Payments)*  
+![Preview App: Driver-Payments](../assets/images/figures/104-preview-app-payments.jpeg)
 
 **Pantallas iniciales de Parking Admin: Jetpack Compose**
 
-*Figura 91 (Preview App: Parking Admin-Dashboard)*  
-![Preview App: Parking Admin-Dashboard](../assets/images/figures/91-preview-app-dashboard.jpeg)
+*Figura 105 (Preview App: Parking Admin-Dashboard)*  
+![Preview App: Parking Admin-Dashboard](../assets/images/figures/105-preview-app-dashboard.jpeg)
 
-*Figura 92 (Preview App: Parking Admin-Live Occupancy)*  
-![Preview App: Parking Admin-Live Occupancy](../assets/images/figures/92-preview-app-live-occupancy.jpeg)
+*Figura 106 (Preview App: Parking Admin-Live Occupancy)*  
+![Preview App: Parking Admin-Live Occupancy](../assets/images/figures/106-preview-app-live-occupancy.jpeg)
 
 **Preview App Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAWy4vxFCjBS63sL1J9z2-LAWXDqiMcf6jcvocyPZkb68Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=HhZGcg)
 
@@ -319,9 +319,9 @@ La documentación de los servicios REST de SpotGo se presenta mediante OpenAPI/S
     <td>GET, POST, PATCH <code>/{spotId}/status</code>, GET <code>/blueprint/{blueprintId}</code></td>
   </tr>
   <tr>
-    <td>Receipts</td>
-    <td><code>/api/v1/receipts</code></td>
-    <td>GET, POST, GET <code>/{receiptId}</code>, DELETE <code>/{receiptId}</code></td>
+    <td>Reservation Receipts (contrato actual; reemplaza la ruta inicial del Sprint 1)</td>
+    <td><code>/api/v1/reservations/{reservationId}/receipt</code></td>
+    <td>GET PDF informativo; POST <code>/api/v1/reservations/{reservationId}/receipt/email</code> solo cuando el envío esté habilitado para despliegue</td>
   </tr>
   <tr>
     <td>Reservations</td>
@@ -431,22 +431,22 @@ Ejemplo ilustrativo de los campos principales de una respuesta `201`, conforme a
 
 Estos ejemplos describen el contrato de los servicios; no representan resultados de pruebas del sprint.
 
-*Figura 93 (Preview Backend: /sign-in)*  
-![Preview Backend: /sign-in](../assets/images/figures/93-preview-backend-sign-in.png)
+*Figura 107 (Preview Backend: /sign-in)*  
+![Preview Backend: /sign-in](../assets/images/figures/107-preview-backend-sign-in.png)
 
-*Figura 94 (Preview Backend: /users)*  
-![Preview Backend: /users](../assets/images/figures/94-preview-backend-users.png)
+*Figura 108 (Preview Backend: /users)*  
+![Preview Backend: /users](../assets/images/figures/108-preview-backend-users.png)
 
-*Figura 95 (Preview Backend: /reservations)*  
-![Preview Backend: /reservations](../assets/images/figures/95-preview-backend-reservations.png)
+*Figura 109 (Preview Backend: /reservations)*  
+![Preview Backend: /reservations](../assets/images/figures/109-preview-backend-reservations.png)
 
-*Figura 96 (Preview Backend: /parkings)*  
-![Preview Backend: /parkings](../assets/images/figures/96-preview-backend-parkings.png)
+*Figura 110 (Preview Backend: /parkings)*  
+![Preview Backend: /parkings](../assets/images/figures/110-preview-backend-parkings.png)
 
-*Figura 97 (Preview Backend: /employees)*  
-![Preview Backend: /employees](../assets/images/figures/97-preview-backend-employees.png)
+*Figura 111 (Preview Backend: /employees)*  
+![Preview Backend: /employees](../assets/images/figures/111-preview-backend-employees.png)
 
-**Backend Swagger Demonstration Video Link**: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI)
+**Preview Backend Demonstration Video Link**: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQDtFg7KDwEaQL5bcVnR_3VdAaywr1kmuIA_N8LNvtO27Lo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gVgLvI)
 
 #### *4.2.1.8. Software Deployment Evidence for Sprint Review*
 
@@ -462,12 +462,12 @@ Durante el Sprint 1, se desplegó la versión inicial de la Landing Page de Spot
 
 **Landing Page Deployment Link:** [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing)
 
-*Figura 98 (Sprint 1: Deployment Evidence Preview Landing)*  
-![Sprint 1: Deployment Evidence Preview Landing](../assets/images/figures/98-s1-deployment-evidence-preview-landing.png)
+*Figura 112 (Sprint 1: Deployment Evidence Preview Landing)*  
+![Sprint 1: Deployment Evidence Preview Landing](../assets/images/figures/112-s1-deployment-evidence-preview-landing.png)
 
 #### *4.2.1.9. Team Collaboration Insights during Sprint*
 
 La siguiente captura corresponde a las contribuciones del repositorio `spotgo-android-app` durante el Sprint 1.
 
-*Figura 99 (Sprint 1: Insights Preview App)*  
-![Sprint 1: Insights Preview App](../assets/images/figures/99-s1-insights-preview-app.png)
+*Figura 113 (Sprint 1: Insights Preview App)*  
+![Sprint 1: Insights Preview App](../assets/images/figures/113-s1-insights-preview-app.png)

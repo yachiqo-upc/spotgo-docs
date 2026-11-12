@@ -1,118 +1,81 @@
 ### 2.6.1. Bounded Context: Profiles & Vehicles Management
 
-Profiles & Vehicles Management es un bounded context de soporte que concentra la información de negocio de los conductores, sus vehículos y los perfiles operativos asociados a una identidad autenticada. Su objetivo es ofrecer a los demás contextos una referencia confiable sobre la elegibilidad del conductor y la relación entre una persona y sus vehículos. El contexto no administra credenciales, sesiones de acceso, reservas, pagos ni datos persistentes de invitados.
+Profiles & Vehicles Management guarda el perfil personal asociado a una Account, los vehículos de los Drivers y la clasificación de cada Driver por Tenant. En el backend actual, `Profile.accountId` enlaza con IAM; el correo, el rol y el estado de autenticación permanecen en `Account`. No se crean perfiles para Guests. Las entidades de este contexto y las demás entidades del backend comparten una instancia PostgreSQL; algunas asociaciones entre bounded contexts están respaldadas por claves foráneas físicas.
 
-Un Guest puede utilizar el estacionamiento mediante una Guest Parking Session creada y cerrada manualmente por Parking Admin. Por ese motivo, el Guest no crea un Driver, User Profile, Vehicle ni reserva dentro de este contexto. Del mismo modo, el contexto no contiene un perfil Visitor: los perfiles persistentes considerados por SpotGo son los de Driver y Parking Admin.
+Un Parking Admin puede asignar TAXI, EMPLOYEE o PRIVATE a un Driver del Tenant que administra. Si no hay una clasificación para ese Tenant, se utiliza PRIVATE. Parking Infrastructure aplica ahora esa clasificación contra los tipos permitidos en cada Parking Zone, tanto al listar zonas/disponibilidad como al crear una reserva.
 
 #### *2.6.1.1. Domain Layer*
 
-La capa de dominio representa las reglas que determinan cuándo un Driver tiene un perfil válido y un Vehicle disponible para iniciar una operación que requiera identificación. La autenticación y la autorización pertenecen a Identity & Access Management; este contexto solo conserva la referencia de la identidad y publica el resultado de las validaciones propias de sus datos.
+El modelo persistente implementado está compuesto por tres entidades JPA y dos enumeraciones. La aplicación coordina reglas de identidad y alcance consultando directamente los repositorios de IAM y Parking Infrastructure dentro del mismo monolito modular.
 
 | Elemento | Tipo | Responsabilidad y reglas principales | Atributos u operaciones relevantes |
 | --- | --- | --- | --- |
-| Driver | Aggregate Root | Representa al Driver registrado y sus datos de perfil. Solo un Driver registrado puede tener un agregado Driver y vehículos persistentes; los perfiles de Parking Admin se mantienen de forma independiente mediante User Profile y Parking Admin Assignment. | driverId, identityRef, datos personales y de contacto, estado; register(), updateData(), activate(), deactivate(). |
-| Vehicle | Entity | Representa un vehículo asociado a un Driver. Un Driver puede registrar varios vehículos, pero cada Vehicle pertenece a un único Driver. | vehicleId, driverId, placa registrada, marca, modelo, color y estado; updateData(), activate(), deactivate(). |
-| User Profile | Entity | Representa el perfil operativo asociado a una identidad. Su tipo puede ser Driver o Parking Admin. No admite el tipo Visitor y no almacena credenciales. | profileId, identityRef, profileType, estado, fechas de creación y actualización; changeStatus(), isOperational(). |
-| Parking Admin Assignment | Entity | Registra la asignación de un perfil Parking Admin a un Tenant mediante una referencia externa. El Tenant es administrado por Parking Infrastructure. | assignmentId, profileId, tenantId, vigencia y estado; assign(), endAssignment(), isValidAt(). |
-| Profile Type | Enumeration | Define los tipos de perfil persistente permitidos en SpotGo. | DRIVER, PARKING_ADMIN. |
-| Profile Status | Enumeration | Controla la disponibilidad operativa del perfil. | ACTIVE, INACTIVE, SUSPENDED. |
-| Vehicle Status | Enumeration | Controla si el vehículo puede ser utilizado en nuevas operaciones. | ACTIVE, INACTIVE. |
-| Identity Reference | Value Object | Encapsula el identificador de la cuenta administrada por Identity & Access Management. | identityRef; validateFormat(), equals(). |
-| Vehicle Data | Value Object | Agrupa los datos descriptivos y de identificación del vehículo sin incluir información de autenticación. | placa, marca, modelo, color; isComplete(), normalize(). |
-| Contact Data | Value Object | Agrupa los datos de contacto del Driver y evita que cada entidad defina su propio formato. | correo, teléfono; validate(), update(). |
-| Driver Factory | Factory | Crea un Driver con las invariantes mínimas de identidad y datos obligatorios. | createDriver(). |
-| Vehicle Factory | Factory | Crea un Vehicle asociado a un Driver activo. | createVehicle(). |
-| Driver Eligibility Service | Domain Service | Verifica que el Driver esté activo, que su User Profile sea operativo y que el Vehicle solicitado le pertenezca y esté activo. | validateForReservation(driverId, vehicleId), validateForOperation(). |
-| Driver Repository | Repository Interface | Define cómo se persisten los conductores, sin acoplar el dominio a PostgreSQL. | findById(), findByIdentityRef(), save(), existsActive(). |
-| Vehicle Repository | Repository Interface | Define la persistencia y consulta de vehículos por Driver. | findById(), findByDriverId(), save(), existsActive(). |
-| User Profile Repository | Repository Interface | Define la persistencia de perfiles Driver y Parking Admin. | findByIdentityRef(), findOperationalProfile(), save(). |
+| Profile | Entity / Aggregate Root | Conserva los datos personales y una referencia única a una Account. | profileId, accountId, firstName, lastName, phone, createdAt, updatedAt; update(). |
+| Vehicle | Entity / Aggregate Root | Pertenece a un Profile; su placa es opcional y se normaliza a mayúsculas. | vehicleId, profileId, plate, make, model, color, status; update(), normalizePlate(). |
+| DriverClassification | Entity / Aggregate Root | Asocia un Profile Driver con un Tenant y guarda el tipo asignado por un administrador. `UNIQUE(profile_id, tenant_id)` limita una clasificación por par. | classificationId, profileId, tenantId, profileType, assignedBy, createdAt, updatedAt; assign(). |
+| DriverProfileType | Enumeration | Clasifica al Driver dentro de un Tenant y controla el acceso a zonas que permiten ese tipo. | TAXI, EMPLOYEE, PRIVATE. |
+| VehicleStatus | Enumeration | Indica si el Vehicle puede utilizarse en nuevas operaciones. | ACTIVE, INACTIVE. |
 
-Las reglas de asociación con Parking Infrastructure se exponen mediante contratos y eventos. Profiles & Vehicles Management no decide si un espacio está disponible ni si un vehículo ya ocupa un espacio; únicamente valida la propiedad y el estado del Vehicle. La regla de un solo espacio activo por Vehicle se aplica en Parking Infrastructure al crear o activar una reserva o una Parking Session.
+No existen un agregado `Driver` independiente, una entidad `UserProfile` separada, un `IdentityReference` ni factories de dominio en el código actual. La cuenta y el rol se resuelven mediante IAM; Parking Infrastructure valida la titularidad del vehículo antes de reservar.
 
 #### *2.6.1.2. Interface Layer*
 
-La Interface Layer recibe solicitudes del API Gateway y eventos provenientes de Identity & Access Management. Los controladores verifican el formato de la solicitud y delegan la ejecución a la Application Layer; no contienen las reglas de elegibilidad ni acceden directamente a los repositorios.
+Los controladores REST reciben las solicitudes autenticadas y delegan las operaciones en los servicios de aplicación. Los UUID del perfil y de la cuenta se obtienen desde la sesión o se validan contra la propiedad del recurso; el cliente no puede elegir un propietario distinto.
 
-| Componente de interfaz | Canal | Responsabilidad | Operaciones o mensajes |
+| Componente de interfaz | Canal | Responsabilidad | Operaciones principales |
 | --- | --- | --- | --- |
-| Driver Profile Controller | REST/HTTPS | Gestiona el alta, consulta, actualización y cambio de estado del perfil de Driver. | Registrar Driver, consultar perfil, actualizar datos y desactivar perfil. |
-| Vehicle Controller | REST/HTTPS | Gestiona los vehículos pertenecientes a un Driver. | Registrar Vehicle, listar vehículos, actualizar datos, activar o desactivar Vehicle. |
-| User Profile Controller | REST/HTTPS | Consulta y administra el User Profile de una identidad autorizada. | Consultar perfil operativo y actualizar su estado. |
-| Parking Admin Assignment Controller | REST/HTTPS | Registra o finaliza asignaciones de perfiles Parking Admin a un Tenant. | Asignar Parking Admin, consultar asignaciones y finalizar asignación. |
-| Eligibility Controller | Contrato interno | Expone una consulta para que Parking Infrastructure valide Driver y Vehicle antes de crear una reserva. | Validar elegibilidad y devolver resultado con referencias de Driver y Vehicle. |
-| Identity Event Consumer | Evento asíncrono | Recibe la validación, asignación de rol o suspensión de una identidad para sincronizar la referencia mínima del perfil. | IdentityValidated, RoleAssigned, AccountSuspended. |
-| Profile Event Publisher | Evento de dominio | Publica cambios que otros módulos necesitan conocer sin acceder directamente a las tablas de este contexto. | DriverProfileCreated, DriverProfileValidated, VehicleRegistered, VehicleDeactivated, ParkingAdminProfileAssigned. |
+| ProfilesController | REST/HTTPS | Crear y consultar/actualizar el perfil de la cuenta autenticada. | `POST /api/v1/profiles`, `GET /api/v1/profiles/me`, `PUT /api/v1/profiles/me`. |
+| VehiclesController | REST/HTTPS | Listar, registrar, actualizar o desactivar vehículos del Driver autenticado. | `GET/POST /api/v1/vehicles`, `PATCH/DELETE /api/v1/vehicles/{vehicleId}`. |
+| DriverClassificationsController | REST/HTTPS | Asignar y consultar clasificaciones dentro del Tenant autorizado. | `PUT /api/v1/driver-classifications/tenants/{tenantId}/profiles/{profileId}`, `GET /tenants/{tenantId}`, `GET /me`. |
 
-Las respuestas no exponen credenciales, tokens ni información de pago. SpotGo utiliza clientes separados por rol: la aplicación Android nativa con Kotlin y Jetpack Compose para Driver, la aplicación multiplataforma con Flutter y Dart para Parking Admin, y la página web administrativa de SpotGo, desarrollada con Angular, TypeScript y Angular Material, para SuperAdmin. Cada cliente consume los contratos REST y las reglas de identidad y perfil que corresponden a su rol.
+Las respuestas no exponen credenciales, tokens completos ni información de pago. Las aplicaciones cliente consumen estos contratos mediante la API REST del Backend.
 
 #### *2.6.1.3. Application Layer*
 
-La Application Layer coordina los casos de uso del contexto. Cada command handler obtiene los agregados necesarios, invoca servicios de dominio, persiste los cambios y publica los eventos resultantes. Los event handlers actualizan el modelo local o notifican a otros contextos, pero no reemplazan la autorización administrada por Identity & Access Management.
+La lógica de aplicación está implementada en servicios Spring. ProfilesManagementService valida Account, rol y pertenencia del Parking Admin al Tenant; ProfilesCommandServiceImpl ejecuta comandos de vehículos y ProfilesQueryServiceImpl consulta vehículos.
 
-| Command | Command Handler | Resultado |
+| Caso de uso | Servicio implementado | Resultado |
 | --- | --- | --- |
-| Register Driver | Register Driver Handler | Crea un Driver y su User Profile de tipo Driver después de validar la referencia de identidad. |
-| Update Driver Profile | Update Driver Profile Handler | Actualiza datos personales o de contacto conservando la identidad del Driver. |
-| Register Vehicle | Register Vehicle Handler | Crea un Vehicle asociado a un Driver activo y publica VehicleRegistered. |
-| Update Vehicle | Update Vehicle Handler | Actualiza los datos descriptivos del Vehicle sin modificar reservas existentes. |
-| Activate or Deactivate Vehicle | Change Vehicle Status Handler | Cambia el estado del Vehicle y publica el cambio para futuras validaciones. |
-| Provision Parking Admin Profile | Provision Parking Admin Profile Handler | Crea un perfil Parking Admin y una Parking Admin Assignment para un tenantId referenciado externamente, después de validar la identidad y el rol recibido; no modifica un Driver. |
-| End Parking Admin Assignment | End Parking Admin Assignment Handler | Finaliza la asignación sin eliminar el historial de auditoría. |
-| Validate Driver Eligibility | Validate Driver Eligibility Handler | Comprueba Driver, User Profile y Vehicle, y devuelve un resultado consumible por Parking Infrastructure. |
+| Create or update profile | ProfilesManagementService | Crea un Profile único por Account o actualiza firstName, lastName y phone. |
+| List, create, update, or deactivate vehicle | ProfilesQueryServiceImpl / ProfilesCommandServiceImpl | Limita la lectura y modificación de vehículos al Profile autenticado. Desactivar conserva la fila con status INACTIVE. |
+| Assign or list driver classifications | ProfilesManagementService | Solo el Parking Admin del Tenant puede asignar una clasificación a un perfil DRIVER; si profileType se omite o es null, se guarda PRIVATE. |
+| Filter allowed zones and reserve | ParkingQueryServiceImpl / ParkingCommandServiceImpl | Resuelve la clasificación explícita o PRIVATE y exige que el tipo esté permitido por la zona. |
 
-| Domain Event | Event Handler o consumidor relacionado | Acción |
-| --- | --- | --- |
-| IdentityValidated | Identity Validated Handler | Habilita la sincronización o actualización de la referencia de identidad. |
-| RoleAssigned | Role Assignment Handler | Sincroniza el rol recibido y, si corresponde a Parking Admin, habilita la provisión o actualización del perfil Parking Admin sin crear ni modificar un Driver. |
-| AccountSuspended | Account Suspended Handler | Marca como no operativo el perfil asociado, sin borrar su historial. |
-| DriverProfileCreated | Profile Notification Handler | Registra la disponibilidad del nuevo Driver para consultas internas. |
-| DriverProfileValidated | Parking Eligibility Publisher | Informa a Parking Infrastructure que la referencia del Driver y sus datos mínimos son válidos. |
-| VehicleRegistered | Parking Reference Publisher | Publica la referencia del Vehicle para que pueda ser seleccionada en una reserva. |
-| VehicleDeactivated | Parking Reference Publisher | Informa que el Vehicle no debe utilizarse en nuevas operaciones. Las operaciones existentes se revisan según sus propias reglas. |
-| ParkingAdminProfileAssigned | Tenant Administration Publisher | Comunica una asignación vigente al flujo administrativo correspondiente. |
-
-Un evento de VehicleDeactivated no cancela por sí solo una reserva confirmada, porque la decisión de cancelación o reasignación pertenece a Parking Infrastructure y debe considerar el estado de la operación. Esta separación evita que un contexto de soporte modifique directamente el ciclo de vida de una reserva.
+El backend publica eventos locales después de las operaciones de perfil, vehículo y clasificación: `profiles.driver.profile_created`, `profiles.driver.profile_updated`, `profiles.vehicle.registered`, `profiles.vehicle.updated`, `profiles.vehicle.deactivated` y `profiles.driver.classification_assigned`. No existe un consumer de eventos IAM que sincronice perfiles; la aplicación consulta IAM directamente. Los eventos se procesan dentro del proceso Spring y no cuentan con broker, outbox persistente ni entrega durable.
 
 #### *2.6.1.4. Infrastructure Layer*
 
-La Infrastructure Layer implementa los puertos definidos por el dominio y la aplicación. La implementación base utiliza Java y Spring Boot para la API y los procesos de aplicación, y mantiene los datos de este contexto separados lógicamente en la instancia PostgreSQL compartida. Los módulos intercambian información mediante contratos internos y eventos de dominio.
+Las entidades se persisten mediante Spring Data JPA y Hibernate en la instancia PostgreSQL compartida.
 
-| Componente de infraestructura | Implementación propuesta | Responsabilidad |
+| Componente de infraestructura | Implementación | Responsabilidad |
 | --- | --- | --- |
-| Driver Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste y consulta Driver, aplicando las restricciones internas del contexto. |
-| Vehicle Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste los vehículos y verifica su asociación con un Driver. |
-| User Profile Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste perfiles Driver y Parking Admin sin guardar credenciales. |
-| Identity Context Client | Contrato interno | Consulta o valida referencias de identidad y roles en Identity & Access Management. |
-| Tenant Reference Adapter | Contrato interno o evento de dominio | Verifica que un tenantId utilizado en Parking Admin Assignment corresponda a un Tenant vigente, sin crear claves foráneas entre bounded contexts. |
-| Event Publisher | Adaptador de mensajería | Publica eventos de perfil y vehículo con identificadores, versión de contrato y fecha de emisión. |
-| Profiles & Vehicles Database | PostgreSQL | Mantiene las tablas asignadas lógicamente al contexto y sus índices dentro de la instancia compartida de Neon. |
-| Security Boundary | Spring Security en el backend y tokens emitidos por IAM | Protege los endpoints sin duplicar la gestión de credenciales. |
+| ProfileRepository | Spring Data JPA | Busca un perfil por `account_id` y verifica su unicidad. |
+| VehicleRepository | Spring Data JPA | Persiste y consulta vehículos por Profile. |
+| DriverClassificationRepository | Spring Data JPA | Busca clasificaciones por Profile y Tenant o lista por Tenant/Profile. |
+| Identity and Tenant references | Asociaciones JPA entre módulos | `profiles.account_id` referencia IAM; `driver_classifications.tenant_id` referencia Parking Infrastructure. |
+| Event publisher | Spring ApplicationEventPublisher | Emite eventos locales para el listener de notificaciones después del commit. |
 
-El contexto conservará únicamente identificadores de otros bounded contexts, como identityRef y tenantId. Esas referencias son lógicas: su integridad se valida mediante contratos internos, no mediante foreign keys entre entidades de distintos bounded contexts. Los datos de Guest no se almacenan como registros de este contexto; solo pueden circular en un flujo administrativo de Parking Infrastructure sin convertirse en un perfil persistente.
+`profiles.account_id` tiene una FK física UNIQUE a `accounts.account_id`. `vehicles.profile_id` referencia `profiles`. `driver_classifications.profile_id` y `assigned_by` referencian `profiles`, y `tenant_id` referencia `tenants`. La frontera entre contexts es lógica: estas referencias no están aisladas en bases de datos distintas.
 
 #### *2.6.1.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes de Profiles & Vehicles Management representa este módulo dentro del monolito modular, sus componentes internos, su partición lógica de datos en la instancia PostgreSQL compartida y sus dependencias con Identity & Access Management y Parking Infrastructure. Las aplicaciones cliente para Driver, Parking Admin y SuperAdmin consumen la API mediante el API Gateway del Backend y se mantienen fuera de este bounded context.
+El diagrama presenta el módulo dentro del monolito modular, sus controladores, servicios, repositorios y relaciones con IAM y Parking Infrastructure. El intercambio entre módulos usa llamadas/repositorios internos y eventos Spring en memoria; no representa servicios desplegados de manera independiente.
 
 *Figura 25 (Profiles & Vehicles Management Component Level Diagram)*  
 ![Profiles & Vehicles Management Component Level Diagram](../assets/diagrams/components-diagram-profiles.svg)
 
 | Componente | Responsabilidad | Dependencias principales |
 | --- | --- | --- |
-| Driver Profile Component | Ejecuta casos de uso de Driver y expone el perfil operativo. | Driver Profile Controller, Driver Repository. |
-| Vehicle Component | Ejecuta casos de uso de Vehicle y su asociación con Driver. | Vehicle Controller, Vehicle Repository. |
-| User Profile Component | Administra perfiles Driver y Parking Admin. | User Profile Controller, User Profile Repository, Identity Context Client. |
-| Parking Admin Assignment Component | Gestiona la asignación de Parking Admin a un tenantId. | Parking Admin Assignment Controller, User Profile Repository, Tenant Reference Adapter. |
-| Driver Eligibility Component | Orquesta la validación de Driver, perfil y Vehicle para una operación. | Eligibility Controller, Driver Eligibility Service, repositorios. |
-| Profiles & Vehicles Database | Persiste el modelo del contexto. | Implementaciones de repositorio. |
-| Identity & Access Management Adapter | Obtiene el estado mínimo de la identidad y el rol. | Contratos internos y eventos de dominio. |
-| Profile Event Publisher | Publica cambios de perfiles y vehículos. | Canal interno de eventos de dominio. |
-
-Las relaciones visuales describen que los controladores llaman a la Application Layer, los manejadores utilizan la Domain Layer, los repositorios acceden únicamente a los datos asignados lógicamente a Profiles & Vehicles Management y los adaptadores se comunican con otros módulos mediante contratos internos. El visitante de la Landing Page no tiene un User Profile y este contexto conserva una frontera lógica para sus datos.
+| Profile management | Crear y actualizar el perfil de la cuenta autenticada. | ProfilesController, ProfilesManagementService, ProfileRepository. |
+| Vehicle management | Administrar vehículos que pertenecen al perfil Driver. | VehiclesController, ProfilesCommandServiceImpl, ProfilesQueryServiceImpl, VehicleRepository. |
+| Driver classification | Administrar el tipo del Driver por Tenant. | DriverClassificationsController, ProfilesManagementService, DriverClassificationRepository. |
+| Profile persistence | Persistir perfiles, vehículos y clasificaciones. | Spring Data JPA, PostgreSQL compartido. |
+| IAM and Parking references | Validar Account/roles y relacionar el Tenant. | AccountRepository, RoleAssignmentRepository, TenantRepository y FKs JPA. |
+| Domain event publisher | Publicar eventos locales de Profile, Vehicle y DriverClassification. | Spring ApplicationEventPublisher. |
 
 #### *2.6.1.6. Bounded Context Software Architecture Code Level Diagrams*
 
-La vista de código se concentra en la Domain Layer y presenta las clases, interfaces y enumeraciones que sostienen las reglas del contexto. La notación de visibilidad utiliza + para operaciones públicas, - para atributos privados y # para elementos protegidos. Las tablas siguientes explican los tipos, nombres y relaciones del modelo.
+El diagrama de clases refleja las entidades y repositorios presentes en el código. Se mantienen los nombres de clases en inglés para corresponder con la implementación.
 
 #### ***2.6.1.6.1. Bounded Context Domain Layer Class Diagrams***
 
@@ -121,51 +84,41 @@ La vista de código se concentra en la Domain Layer y presenta las clases, inter
 
 | Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
 | --- | --- | --- | --- |
-| Driver | -driverId, -identityRef, -contactData, -status | +register(), +updateData(), +activate(), +deactivate(), +isOperational() | Aggregate Root; se relaciona con Vehicle y User Profile. |
-| Vehicle | -vehicleId, -driverId, -vehicleData, -status | +updateData(), +activate(), +deactivate(), +isActive() | Entity; pertenece a un Driver. |
-| UserProfile | -profileId, -identityRef, -profileType, -status | +changeStatus(), +isOperational() | Entity; puede asociarse a Driver o a Parking Admin Assignment. |
-| ParkingAdminAssignment | -assignmentId, -profileId, -tenantId, -validFrom, -validTo, -status | +assign(), +endAssignment(), +isValidAt() | Entity; tenantId es una referencia externa a Parking Infrastructure. |
-| IdentityReference | -value | +validateFormat(), +equals() | Value Object utilizado por Driver y UserProfile. |
-| VehicleData | -plate, -make, -model, -color | +isComplete(), +normalize() | Value Object utilizado por Vehicle. |
-| ContactData | -email, -phone | +validate(), +update() | Value Object utilizado por Driver. |
-| ProfileType | DRIVER, PARKING_ADMIN | — | Enumeration utilizada por UserProfile. |
-| ProfileStatus | ACTIVE, INACTIVE, SUSPENDED | — | Enumeration utilizada por UserProfile y Driver. |
-| VehicleStatus | ACTIVE, INACTIVE | — | Enumeration utilizada por Vehicle. |
-| DriverFactory | — | +createDriver() | Factory; crea Driver con invariantes iniciales. |
-| VehicleFactory | — | +createVehicle() | Factory; crea Vehicle para un Driver válido. |
-| DriverEligibilityService | — | +validateForReservation(), +validateForOperation() | Domain Service; consulta Driver, UserProfile y Vehicle. |
-| DriverRepository | — | +findById(), +findByIdentityRef(), +save(), +existsActive() | Repository Interface implementada en Infrastructure Layer. |
-| VehicleRepository | — | +findById(), +findByDriverId(), +save(), +existsActive() | Repository Interface implementada en Infrastructure Layer. |
-| UserProfileRepository | — | +findByIdentityRef(), +findOperationalProfile(), +save() | Repository Interface implementada en Infrastructure Layer. |
+| Profile | -id, -accountId, -firstName, -lastName, -phone, -createdAt, -updatedAt | +update() | Entidad JPA; accountId es único y tiene asociación con Account. |
+| Vehicle | -id, -profile, -plate, -make, -model, -color, -status, -createdAt, -updatedAt | +update(), +normalizePlate() | Pertenece a un Profile. |
+| DriverClassification | -id, -profile, -tenantId, -profileType, -assignedBy, -createdAt, -updatedAt | +assign() | Pertenece a un Profile Driver y Tenant; assignedBy es un Profile administrador. |
+| DriverProfileType | TAXI, EMPLOYEE, PRIVATE | — | Enum usado en DriverClassification y ParkingZone. |
+| VehicleStatus | ACTIVE, INACTIVE | — | Enum usado en Vehicle. |
+| ProfileRepository | — | +findByAccountId(), +existsByAccountId() | Spring Data JPA. |
+| VehicleRepository | — | +findAllByProfileId(), +findById() | Spring Data JPA. |
+| DriverClassificationRepository | — | +findByProfileIdAndTenantId(), +findAllByTenantId(), +findAllByProfileId() | Spring Data JPA. |
 
 | Relación | Multiplicidad y dirección | Significado |
 | --- | --- | --- |
-| Driver — Vehicle | Driver 1 a Vehicle 0..*; navegación desde Driver hacia Vehicle | Un Driver puede tener cero o varios vehículos registrados. |
-| Driver — UserProfile | Driver 1 a UserProfile 1; navegación desde Driver hacia su perfil de Driver | Cada Driver creado por el registro público tiene un perfil Driver operativo, salvo que este se encuentre inactivo o suspendido. |
-| UserProfile — ParkingAdminAssignment | UserProfile Parking Admin 1 a ParkingAdminAssignment 0..*; navegación desde el perfil Parking Admin | Un perfil Parking Admin puede tener asignaciones en distintos periodos o Tenants; un perfil Driver no participa en esta relación. |
-| DriverEligibilityService ..> Driver | Dependencia dirigida | El servicio valida el estado del Driver. |
-| DriverEligibilityService ..> Vehicle | Dependencia dirigida | El servicio valida la propiedad y el estado del Vehicle. |
-| DriverRepository ..> Driver | Implementación de persistencia | El repositorio trabaja con el agregado Driver. |
-| VehicleRepository ..> Vehicle | Implementación de persistencia | El repositorio trabaja con la entidad Vehicle. |
+| Profile — Vehicle | Profile 1 a Vehicle 0..* | Cada vehículo pertenece a un perfil. |
+| Profile — DriverClassification | Profile 1 a DriverClassification 0..* | El Profile Driver clasificado se guarda en `profile_id`; el perfil administrador se guarda en `assigned_by`. |
+| Account — Profile | Account 1 a Profile 0..1 | `profiles.account_id` es UNIQUE y FK a IAM. |
+| Tenant — DriverClassification | Tenant 1 a DriverClassification 0..* | `driver_classifications.tenant_id` tiene FK a Parking Infrastructure. |
 
 #### ***2.6.1.6.2. Bounded Context Database Design Diagram***
 
-El diseño de base de datos representa únicamente la persistencia de Profiles & Vehicles Management. El modelo físico utiliza una tabla `profiles` para los perfiles de Driver y Parking Admin, mientras que la distinción del dominio se conserva mediante `profile_type`. Las relaciones internas pueden usar foreign keys; las referencias a Identity & Access Management y Parking Infrastructure se modelan como identificadores lógicos y no crean foreign keys entre entidades de distintos bounded contexts.
+El diseño de base de datos representa las tablas de Profiles & Vehicles Management en la instancia PostgreSQL compartida.
 
 *Figura 27 (Profiles & Vehicles Management Database Design Diagram)*  
 ![Profiles & Vehicles Management Database Design Diagram](../assets/diagrams/db-diagram-profiles.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
-| profiles | profile_id, identity_ref, profile_type, first_name, last_name, email, phone, status, created_at, updated_at | profile_id PK; identity_ref UNIQUE NOT NULL; profile_type solo DRIVER o PARKING_ADMIN; no existe valor VISITOR; status restringido a ACTIVE, INACTIVE o SUSPENDED. |
-| vehicles | vehicle_id, profile_id, plate, make, model, color, status, created_at, updated_at | vehicle_id PK; profile_id FK a profiles y debe corresponder a un perfil Driver; plate UNIQUE cuando tenga valor; status restringido a ACTIVE o INACTIVE. |
-| parking_admin_assignments | assignment_id, profile_id, tenant_id, valid_from, valid_to, status | assignment_id PK; profile_id FK a profiles y debe corresponder a un perfil Parking Admin; tenant_id es referencia lógica a Parking Infrastructure; valid_to no puede ser menor que valid_from. |
+| profiles | profile_id, account_id, first_name, last_name, phone, created_at, updated_at | profile_id PK; account_id UNIQUE NOT NULL y FK a accounts.account_id. |
+| vehicles | vehicle_id, profile_id, plate, make, model, color, status, created_at, updated_at | vehicle_id PK; profile_id FK a profiles; plate UNIQUE cuando no es NULL; status ACTIVE o INACTIVE. |
+| driver_classifications | classification_id, profile_id, tenant_id, profile_type, assigned_by, created_at, updated_at | classification_id PK; profile_id y assigned_by FK a profiles; tenant_id FK a tenants; UNIQUE(profile_id, tenant_id); profile_type TAXI, EMPLOYEE o PRIVATE. |
 
 | Relación de datos | Cardinalidad | Regla |
 | --- | --- | --- |
-| profiles — vehicles | 1 a 0..* | Todo Vehicle persistente pertenece a un perfil con profile_type DRIVER. |
-| profiles — parking_admin_assignments | 1 a 0..* | Solo los perfiles Parking Admin pueden tener asignaciones; las asignaciones conservan su historial y se consulta cuál está vigente. |
-| identity_ref — Identity & Access Management | Referencia externa | Se valida mediante contrato interno o evento; no se crea FK hacia entidades de otro bounded context. |
-| tenant_id — Parking Infrastructure | Referencia externa | Se valida contra Tenant; el Tenant no se duplica en esta base. |
+| profiles — vehicles | 1 a 0..* | Todo Vehicle persistente pertenece a un Profile. |
+| profiles — driver_classifications | 1 a 0..* | Un Driver puede tener como máximo una clasificación por Tenant; la unicidad corresponde a `(profile_id, tenant_id)`. |
+| profiles de Parking Admin a driver_classifications | 1 a 0..* mediante assigned_by | Guarda el perfil que asignó o actualizó la clasificación. |
+| profiles.account_id — accounts.account_id | FK física UNIQUE | Relaciona el Profile con IAM. |
+| driver_classifications.tenant_id — tenants.tenant_id | FK física | Relaciona la clasificación con el Tenant sin duplicar sus datos. |
 
-El esquema no incluye tablas de invitados, Guest Parking Sessions, credenciales, tokens de pago ni reservas. Esta exclusión hace visible en el diseño de datos la frontera del bounded context y evita que una sesión de invitado se convierta accidentalmente en un perfil persistente.
+El esquema no incluye tablas de invitados, Guest Parking Sessions, credenciales, tokens de pago, asignaciones de rol ni reservas. Esas entidades pertenecen a otros bounded contexts.

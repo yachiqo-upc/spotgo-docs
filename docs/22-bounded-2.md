@@ -1,182 +1,114 @@
 ### 2.6.2. Bounded Context: Identity & Access Management
 
-Identity & Access Management es un bounded context genérico que administra la identidad digital, la autenticación, las sesiones y la autorización de los usuarios de SpotGo. Su responsabilidad termina en comprobar quién es la persona y qué rol puede ejercer; no administra los datos de los conductores, los vehículos, la infraestructura del estacionamiento, las reservas ni las operaciones de pago.
+Identity & Access Management (IAM) administra cuentas, credenciales, roles, sesiones, recuperación de contraseña y auditoría de acceso. Cada cuenta tiene como máximo una asignación de rol. El rol DRIVER puede tener un perfil personal separado en Profiles & Vehicles Management; el perfil se crea después del registro y se relaciona con la cuenta mediante una clave foránea, no mediante `identityRef`. El Profile Type por Tenant tampoco es un rol de IAM: lo administra Profiles & Vehicles Management. Una Guest Parking Session no necesita una cuenta.
 
-El modelo considera los roles Driver, Parking Admin y SuperAdmin. Un Guest no requiere una cuenta para utilizar el estacionamiento y, por tanto, no se crea una identidad persistente para una Guest Parking Session. Los perfiles de negocio se mantienen en Profiles & Vehicles Management y se relacionan con este contexto mediante identityRef. El registro público crea únicamente cuentas de Driver; las cuentas de Parking Admin y SuperAdmin se provisionan internamente.
+Los roles implementados son `DRIVER`, `PARKING_ADMIN` y `SUPER_ADMIN`. Una asignación `PARKING_ADMIN` requiere un Tenant existente; un Tenant admite varios Parking Admins. El registro público solo crea cuentas `DRIVER`. Un SuperAdmin provisiona o cambia las cuentas administrativas. Las aplicaciones Driver, Parking Admin y SuperAdmin son clientes separados y consumen el backend sobre HTTPS.
 
 #### *2.6.2.1. Domain Layer*
 
-La capa de dominio define las invariantes de la cuenta y el ciclo de vida de las sesiones. SpotGo permite iniciar sesión con correo y contraseña o mediante Google. Las contraseñas propias se almacenan mediante hashes protegidos; para Google se conserva la referencia del proveedor y el identificador externo validado, sin almacenar la contraseña de Google. Ambos métodos generan una Session de SpotGo y aplican los mismos roles y permisos.
+El modelo de dominio implementado protege las credenciales locales con hashes, conserva el identificador externo verificado para GOOGLE y almacena únicamente el hash SHA-256 del refresh token. Una cuenta puede no tener perfil personal hasta que el Driver lo cree. La base de datos impone una asignación de rol por cuenta y las restricciones de método de autenticación.
 
-| Elemento | Tipo | Responsabilidad y reglas principales | Atributos u operaciones relevantes |
-| --- | --- | --- | --- |
-| Account | Aggregate Root | Representa la identidad autenticable de un usuario. Controla su estado y los roles asignados. | accountId, email, estado, fechas de creación y actualización; activate(), suspend(), lock(), canAuthenticate(). |
-| Credential | Entity | Representa un método de autenticación asociado a una Account. PASSWORD requiere secretHash; GOOGLE requiere un externalSubject validado y no almacena una contraseña del proveedor. | credentialId, accountId, authenticationMethod, secretHash opcional, externalSubject opcional, lastUsedAt; verify(), rotate(), revoke(). |
-| Session | Entity | Representa una sesión de acceso emitida para una Account. Controla expiración, renovación, revocación y actividad. | sessionId, accountId, refreshTokenHash, createdAt, expiresAt, lastActivityAt, status; isExpired(), refresh(), revoke(). |
-| Role Assignment | Entity | Vincula una Account con un rol autorizado y su vigencia. | assignmentId, accountId, roleType, tenantId opcional, validFrom, validTo, status; isValidAt(). |
-| Audit Entry | Entity | Registra acciones relevantes de autenticación, autorización y administración. No contiene secretos ni tokens completos. | auditId, accountId, action, result, occurredAt, source, correlationId; record(). |
-| Role Type | Enumeration | Define los roles reconocidos por el sistema. | DRIVER, PARKING_ADMIN, SUPER_ADMIN. |
-| Account Status | Enumeration | Define el estado de la cuenta para autenticar o autorizar operaciones. | PENDING, ACTIVE, SUSPENDED, LOCKED, INACTIVE. |
-| Authentication Method | Enumeration | Identifica el mecanismo utilizado para acreditar la identidad. | PASSWORD, GOOGLE. |
-| Session Status | Enumeration | Define el estado del acceso emitido. | ACTIVE, EXPIRED, REVOKED. |
-| Permission | Value Object | Representa una capacidad derivada de un rol y de un recurso. | resource, action, scope; allows(). |
-| Account Factory | Factory | Crea una Account con un estado inicial válido y sin credenciales expuestas. | createAccount(). |
-| Session Factory | Factory | Crea una Session con expiraciones y metadatos de seguridad. | createSession(). |
-| Authentication Service | Domain Service | Verifica las credenciales propias o la identidad validada por Google y determina si la Account puede iniciar sesión. | authenticate(). |
-| Authorization Service | Domain Service | Comprueba si una Account tiene el rol y el alcance necesarios para ejecutar una acción. | authorize(), hasPermission(). |
-| Session Policy | Domain Service | Aplica la expiración, rotación, revocación y duración máxima de las sesiones. | calculateExpiry(), isRefreshAllowed(), revokeOnSecurityEvent(). |
-| Account Repository | Repository Interface | Define la persistencia de las cuentas y sus estados. | findById(), findByEmail(), findByExternalSubject(), save(). |
-| Session Repository | Repository Interface | Define la persistencia de sesiones revocables y sus metadatos. | findById(), findActiveByAccount(), save(), revoke(). |
-| Audit Entry Repository | Repository Interface | Define la persistencia de eventos de auditoría. | save(), findByAccount(), findByCorrelationId(). |
+| Elemento | Tipo | Responsabilidad y atributos u operaciones implementadas |
+| --- | --- | --- |
+| Account | Aggregate Root | `id`, `email`, `status`, `createdAt`, `updatedAt`; normaliza correo, `changeStatus()` e `isActive()`. |
+| Credential | Entity | `account`, `authenticationMethod`, `secretHash`, `externalSubject`, `lastUsedAt`, `status`; GOOGLE requiere subject y no almacena hash de contraseña; `rotate()`, `usedAt()`, `revoke()`. |
+| RoleAssignment | Entity | `account`, `roleType`, `tenantId`, `validFrom`, `validTo`, `status`; solo una fila por cuenta; `PARKING_ADMIN` requiere Tenant; `assign()` e `isEffectiveAt()`. |
+| Session | Entity | `account`, `refreshTokenHash`, `lastActivityAt`, `status`, `revokedAt`, `createdAt`, `expiresAt`; `isUsableAt()`, `rotate()`, `touch()`, `revoke()`. |
+| AuditEntry | Entity | `account` opcional, `action`, `result`, `source`, `occurredAt`, `correlationId`; registra acciones sin incluir contraseñas ni tokens. |
+| PasswordResetCode | Entity | Correo, `codeHash`, `expiresAt`, `attempts`, `requestedAt`, `usedAt`; permite renovación, control de intentos y uso único. |
+| UserRole | Enumeration | `DRIVER`, `PARKING_ADMIN`, `SUPER_ADMIN`. |
+| AccountStatus | Enumeration | `PENDING`, `ACTIVE`, `SUSPENDED`, `LOCKED`, `INACTIVE`. |
+| CredentialStatus | Enumeration | `ACTIVE`, `REVOKED`. |
+| AssignmentStatus | Enumeration | `ACTIVE`, `INACTIVE`. |
+| AuthenticationMethod | Enumeration | `PASSWORD`, `GOOGLE`. |
+| SessionStatus | Enumeration | `ACTIVE`, `REVOKED`, `EXPIRED`. |
 
-Las identidades y roles se validan antes de permitir operaciones administrativas o de Driver. El registro público de Driver, con credenciales propias o mediante un primer acceso válido con Google, coordina la creación de la Account con su Driver Profile en Profiles & Vehicles Management. Una cuenta existente conserva su identidad y sus roles al utilizar Google; la vinculación requiere una verificación autorizada de la cuenta de SpotGo y no se realiza únicamente por coincidencia de correo. Una Account activa no convierte a una persona en Parking Admin: el rol PARKING_ADMIN, su Parking Admin Profile y su asignación a un Tenant deben provisionarse mediante una acción interna autorizada. El contexto tampoco administra la autorización de una Guest Parking Session como si el Guest fuera un usuario autenticado.
+Los servicios de aplicación realizan autenticación, asignación de roles, bloqueo de cuentas, renovación y revocación de sesiones. El backend verifica los ID tokens de Google en servidor y nunca acepta un ID de usuario enviado directamente. Si la dirección de Google ya pertenece a otra cuenta, el registro devuelve conflicto: el usuario debe autenticarse en su cuenta y vincular Google desde esa sesión; no se combinan cuentas solo por coincidencia de correo.
 
 #### *2.6.2.2. Interface Layer*
 
-La Interface Layer expone operaciones de autenticación y administración de acceso. Para el acceso con Google recibe el ID token obtenido por el cliente y delega su validación al adaptador del proveedor. Los controladores retornan tokens de sesión de SpotGo y resultados de autorización, pero no entregan contraseñas ni datos internos de las cuentas.
+Los controladores REST implementados son `AuthenticationController`, `AccountsController`, `SessionsController` y `AuditEntriesController`. Todos tienen operaciones documentadas en OpenAPI. El acceso administrativo a cuentas, roles y auditorías requiere `SUPER_ADMIN`; el cambio de estado a uno distinto de ACTIVE revoca las sesiones activas.
 
-| Componente de interfaz | Canal | Responsabilidad | Operaciones o mensajes |
-| --- | --- | --- | --- |
-| Authentication Controller | REST/HTTPS | Inicia la autenticación de una Account con credenciales propias o un ID token de Google y devuelve el resultado de acceso. | Iniciar sesión con correo y contraseña, iniciar sesión con Google y cerrar sesión. |
-| Session Controller | REST/HTTPS | Administra la renovación y revocación de sesiones. | Renovar token, consultar sesión propia y revocar sesiones. |
-| Account Administration Controller | REST/HTTPS | Permite a SuperAdmin administrar cuentas y asignaciones de rol. | Activar, suspender o bloquear cuenta; asignar o revocar rol. |
-| Authorization Controller | Contrato interno | Responde consultas de autorización realizadas por otros módulos. | Validar identityRef, roleType y alcance de Tenant. |
-| Security Event Consumer | Evento asíncrono | Recibe eventos de seguridad que requieren revocar sesiones o bloquear una cuenta. | CredentialChanged, AccountCompromised, AccountSuspended. |
-| Identity Event Publisher | Evento asíncrono | Publica cambios de identidad y de autorización para los contextos consumidores. | IdentityValidated, RoleAssigned, AccountSuspended, AccessRevoked. |
-
-Los clientes de SpotGo están separados por rol: Driver utiliza la aplicación Android nativa con Kotlin y Jetpack Compose; Parking Admin utiliza la aplicación multiplataforma con Flutter y Dart; y SuperAdmin utiliza la página web administrativa de SpotGo, desarrollada con Angular, TypeScript y Angular Material. Los tres clientes utilizan Authentication Controller y Session Controller mediante HTTPS. El registro público está disponible únicamente en la aplicación de Driver; las aplicaciones de Parking Admin y SuperAdmin permiten iniciar sesión con cuentas provisionadas. Continue with Google obtiene la identidad del proveedor y la presenta al backend para su validación; la autorización y la asignación de roles permanecen en Identity & Access Management.
+| Operación | Endpoint | Acceso y resultado |
+| --- | --- | --- |
+| Sign in / sign up | `POST /api/v1/authentication/sign-in`, `POST /api/v1/authentication/sign-up` | Público; inicia sesión o registra un DRIVER con correo y contraseña. El perfil se crea aparte en `/api/v1/profiles`. |
+| Google sign in / registration | `POST /api/v1/authentication/google` | Público; valida el ID token y autentica o crea una cuenta DRIVER. Si el Google Client ID no está configurado, responde 503. |
+| Link Google identity | `POST /api/v1/authentication/google/link` | Requiere sesión SpotGo; vincula el subject verificado sin combinar cuentas. |
+| Refresh / sign out | `POST /api/v1/authentication/refresh`, `POST /api/v1/authentication/sign-out` | Rota el refresh token de un solo uso o revoca la sesión actual. |
+| Password reset | `POST /api/v1/authentication/password-reset/request`, `POST /api/v1/authentication/password-reset/confirm` | Solicita y valida un código de un solo uso; la entrega de correo requiere configuración de Resend. |
+| Account and role administration | `/api/v1/accounts` | Consultar la propia cuenta/asignación; SUPER_ADMIN lista cuentas, cambia estados y asigna roles/tenants. `POST /api/v1/accounts/parking-admin` crea una cuenta PARKING_ADMIN, su asignación y perfil, y envía el código de configuración por correo. |
+| Tenant onboarding | `POST /api/v1/tenants/onboard` | SUPER_ADMIN crea Tenant y su primer Parking Admin con perfil e invitación por correo en una transacción; si falla el envío, se revierte el alta. |
+| Session administration | `/api/v1/sessions/me`, `/api/v1/sessions/{sessionId}` | Lista o revoca sesiones propias. |
+| Audit queries | `GET /api/v1/audit-entries` | SUPER_ADMIN consulta registros paginados y opcionalmente filtra por cuenta. |
 
 #### *2.6.2.3. Application Layer*
 
-La Application Layer coordina los casos de uso de identidad. Los handlers validan las credenciales propias o el resultado del adaptador de Google mediante Authentication Service, aplican la política de sesión, persisten el resultado y publican eventos con información mínima. La autorización de una operación de negocio se consulta mediante un contrato, sin exponer la base de datos de IAM.
+`AuthenticationService` coordina registro y acceso con contraseña o Google, vinculación de proveedor, actualización y recuperación de contraseña, emisión y renovación de sesiones. `AccountAdministrationService` valida privilegios y Tenant al cambiar roles, administra estados, provisiona cuentas de Parking Admin con un código de configuración por correo y entrega las consultas de auditoría. `TenantOnboardingService` crea Tenant y su administrador inicial con perfil e invitación en una sola transacción. `SessionAuthenticationService` comprueba la sesión y la asignación de rol actuales en cada petición.
 
-| Command | Command Handler | Resultado |
+| Evento de dominio publicado | Contenido | Consumidores |
 | --- | --- | --- |
-| Register Driver Account | Register Driver Account Handler | Crea una Account activa con Role Assignment DRIVER y coordina la creación del Driver Profile; este flujo público no permite crear roles PARKING_ADMIN o SUPER_ADMIN. |
-| Authenticate Account | Authenticate Account Handler | Verifica el método de autenticación, crea una Session y emite los tokens correspondientes. |
-| Authenticate with Google | Authenticate with Google Handler | Valida el ID token de Google, resuelve la Account vinculada o coordina un registro público de Driver, y emite una Session de SpotGo sin asignar roles administrativos automáticamente. |
-| Refresh Session | Refresh Session Handler | Rota el refresh token, actualiza la actividad y genera un nuevo token de acceso si la sesión sigue vigente. |
-| Revoke Session | Revoke Session Handler | Revoca la sesión indicada y evita su renovación posterior. |
-| Provision Parking Admin Account | Provision Parking Admin Account Handler | Crea o activa una Account para Parking Admin después de una acción autorizada de SuperAdmin. |
-| Assign Role | Assign Role Handler | Agrega una Role Assignment con el alcance permitido. |
-| Suspend Account | Suspend Account Handler | Suspende o bloquea una Account, revoca sus sesiones y publica el cambio. |
-| Authorize Operation | Authorize Operation Handler | Evalúa Account, Role Assignment, recurso y acción, y devuelve una decisión de autorización. |
+| `identity.account.registered` | Cuenta creada y método de autenticación; no incluye credenciales. | Notificaciones y otros listeners locales configurados en el monolito. |
+| `identity.account.status_changed` | Cuenta y nuevo estado. | Listeners locales de notificación. |
+| `identity.role.assigned` | Cuenta, rol y tenant opcional. | Listeners locales de notificación. |
+| `identity.google.linked` | Cuenta a la que se vinculó Google. | Listeners locales de notificación. |
 
-| Domain Event | Event Handler o consumidor relacionado | Acción |
-| --- | --- | --- |
-| IdentityValidated | Profiles Identity Handler | Permite a Profiles & Vehicles Management validar la referencia de identidad asociada a un perfil. |
-| RoleAssigned | Profiles & Vehicles Management / Parking Authorization Handler | Informa a los contextos autorizados el rol y alcance vigentes para sincronizar la autorización o la provisión del perfil correspondiente. |
-| SessionStarted | Audit Event Handler | Registra el inicio de sesión y su correlationId sin almacenar el token completo. |
-| SessionExpired | Session Cleanup Handler | Marca la sesión como vencida e impide su renovación. |
-| AccessRejected | Security Audit Handler | Registra el intento no autorizado y, si corresponde, incrementa el contador de protección. |
-| AccountSuspended | Profiles Status Handler | Solicita que el perfil de negocio asociado deje de considerarse operativo. |
-| AccessRevoked | Context Security Handler | Permite que los consumidores invaliden referencias locales de autorización. |
-
-La política de sesión se aplica en cada renovación y no solo en el cliente. El cierre de sesión, el cambio de credenciales, la suspensión de la cuenta o un evento de seguridad revocan el refresh token. La expiración del token de acceso no elimina la Account ni su historial de auditoría.
+Los eventos se publican dentro del proceso Spring y los listeners reaccionan después del commit. No hay broker, outbox persistente ni consumidor de eventos externos para IAM; una interrupción del proceso puede perder una notificación pendiente.
 
 #### *2.6.2.4. Infrastructure Layer*
 
-La infraestructura se implementará con Java y Spring Boot, utilizando capacidades de Spring Security para la cadena de autenticación y autorización. PostgreSQL almacenará cuentas, métodos de autenticación, sesiones, asignaciones y auditorías en una base independiente. El backend firmará sus propios tokens de sesión, protegerá las contraseñas locales mediante hash y verificará los ID tokens de Google antes de autenticar una Account.
+IAM comparte la instancia PostgreSQL de Neon con los demás módulos del monolito; no usa una base independiente. Las tablas tienen asignación lógica por bounded context y el esquema se actualiza con Hibernate. La aplicación firma tokens de acceso SpotGo y almacena hashes, no refresh tokens en texto plano.
 
-| Componente de infraestructura | Implementación propuesta | Responsabilidad |
-| --- | --- | --- |
-| Authentication Adapter | Spring Security y servicios de autenticación internos | Ejecuta la verificación de credenciales y la integración con los mecanismos de seguridad del backend. |
-| Google Identity Adapter | Cliente de verificación de ID tokens de Google | Verifica firma, emisor, audiencia y expiración del ID token, y devuelve la referencia de identidad validada a Authentication Service. |
-| Token Service | Proveedor de tokens firmado | Emite access tokens de 15 minutos y refresh tokens de siete días con rotación. |
-| Session Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste sesiones revocables, fechas de expiración y última actividad. |
-| Account Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste Account, Credential y Role Assignment. |
-| Audit Repository Implementation | Java, Spring Boot y PostgreSQL | Persiste acciones relevantes con correlationId y resultado. |
-| Authorization Interceptor | Spring Security | Verifica token, rol, alcance y permisos antes de ejecutar los controladores. |
-| Identity Event Publisher | Adaptador de mensajería | Publica cambios de identidad sin enviar secretos ni tokens completos. |
-| Identity Database | PostgreSQL | Mantiene los datos asignados lógicamente a IAM y sus índices dentro de la instancia compartida de Neon. |
+| Configuración | Valor implementado |
+| --- | --- |
+| Access token | 15 minutos por defecto (`authorization.jwt.access-expiration-minutes`). |
+| Refresh token | 7 días por defecto, se rota en cada renovación (`authorization.jwt.refresh-expiration-days`). |
+| Password reset code | 15 minutos y hasta 5 intentos por defecto. |
+| Google sign-in | Requiere `GOOGLE_CLIENT_ID`, el OAuth Web Client ID aceptado como audiencia. |
+| Password reset email | Requiere Resend; sin configuración la solicitud de entrega devuelve 503. |
 
-La expiración operativa se configura con access token de 15 minutos, refresh token de siete días y rotación obligatoria, tanto para acceso con contraseña como con Google. En la página web administrativa de SpotGo, utilizada por SuperAdmin, la sesión se invalida después de 30 minutos de inactividad y no puede superar ocho horas. Estos valores se pueden parametrizar sin cambiar las clases de dominio. Las auditorías se conservan según la política transversal de cinco años, mientras que la expiración de una sesión no elimina automáticamente los registros de auditoría.
-
-El adaptador sigue los criterios de [verificación de ID tokens de Google](https://developers.google.com/identity/sign-in/android/backend-auth): el backend verifica la firma y los valores de emisor, audiencia y expiración antes de aceptar la identidad. El identificador externo validado permite recuperar la cuenta vinculada; el ID token no sustituye el token de sesión emitido por SpotGo.
+El verificador de Google usa la biblioteca oficial del cliente Java para validar firma, emisor, audiencia y expiración del ID token, además de exigir correo verificado. El backend emite su propia sesión SpotGo después de validar la identidad del proveedor; el ID token de Google no se usa como token de autorización de la API.
 
 #### *2.6.2.5. Bounded Context Software Architecture Component Level Diagrams*
 
-El diagrama de componentes delimita el módulo de Identity & Access Management dentro del monolito modular, sus componentes de seguridad, su partición lógica de datos en PostgreSQL y sus relaciones con Profiles & Vehicles Management, Parking Infrastructure y los tres clientes de SpotGo: la aplicación Android nativa de Driver, la aplicación Flutter de Parking Admin y la página web administrativa de SpotGo para SuperAdmin. Guest y los visitantes de la Landing Page no tienen cuentas ni perfiles de autenticación.
+El diagrama de componentes muestra IAM como módulo del monolito modular, sus controladores y los clientes móviles/web. La persistencia de IAM comparte PostgreSQL con los otros bounded contexts. Los cambios se comunican dentro del proceso mediante los eventos Spring indicados arriba.
 
 *Figura 28 (Identity & Access Management Component Level Diagram)*  
 ![Identity & Access Management Component Level Diagram](../assets/diagrams/components-diagram-identity.svg)
 
-| Componente | Responsabilidad | Dependencias principales |
-| --- | --- | --- |
-| Authentication Component | Coordina la verificación de credenciales propias y del acceso con Google. | Authentication Controller, Authentication Service, Google Identity Adapter. |
-| Session Management Component | Crea, renueva, expira y revoca sesiones y tokens. | Session Controller, Session Policy, Session Repository. |
-| Authorization Component | Evalúa roles, permisos y alcance de Tenant. | Authorization Controller, Authorization Service, Account Repository. |
-| Account Component | Administra ciclo de vida de Account, Credential y Role Assignment. | Account Administration Controller, repositorios de identidad. |
-| Audit Log Component | Registra eventos de autenticación, autorización y administración. | Audit Event Handler, Audit Entry Repository. |
-| Token Service Component | Firma y valida tokens, aplicando los tiempos de expiración. | Authentication Component, Session Management Component. |
-| Identity Database | Persiste cuentas, sesiones y auditoría. | Implementaciones de repositorio. |
-| Identity Event Publisher | Distribuye cambios de identidad y permisos. | Canal interno de eventos de dominio. |
-
-Las relaciones visuales describen que los clientes acceden al API Gateway del Backend, que los controladores delegan en la Application Layer y que la Domain Layer aplica las invariantes. Los demás bounded contexts consumen validaciones o eventos mediante contratos internos, pero no acceden directamente a las tablas de IAM.
-
 #### *2.6.2.6. Bounded Context Software Architecture Code Level Diagrams*
 
-La vista de código describe el modelo de dominio de identidad, sus interfaces de repositorio y los servicios que protegen el ciclo de vida de Account y Session. La notación recomendada utiliza + para miembros públicos, - para atributos privados y # para elementos protegidos. Los tokens y valores secretos se describen mediante referencias o hashes, sin incluir valores completos.
+La vista de clases debe representar las entidades y enumeraciones implementadas descritas en la tabla de esta sección. No se modelan `Permission`, `AccountFactory`, `SessionFactory`, `SessionPolicy`, un `Authorization Controller` ni handlers/consumidores IAM separados, porque no existen como clases del backend actual.
 
 #### ***2.6.2.6.1. Bounded Context Domain Layer Class Diagrams***
 
 *Figura 29 (Identity & Access Management Domain Layer Class Diagram)*  
 ![Identity & Access Management Domain Layer Class Diagram](../assets/diagrams/class-diagram-identity.png)
 
-| Clase, interfaz o enumeración | Atributos principales | Métodos principales | Relaciones |
-| --- | --- | --- | --- |
-| Account | -accountId, -email, -status, -createdAt, -updatedAt | +activate(), +suspend(), +lock(), +canAuthenticate() | Aggregate Root; contiene o coordina Credential y Role Assignment. |
-| Credential | -credentialId, -accountId, -authenticationMethod, -secretHash, -externalSubject, -lastUsedAt, -status | +verify(), +rotate(), +revoke() | Entity; pertenece a Account y utiliza secretHash para PASSWORD o externalSubject para GOOGLE, sin exponer secretos. |
-| Session | -sessionId, -accountId, -refreshTokenHash, -createdAt, -expiresAt, -lastActivityAt, -status | +isExpired(), +refresh(), +revoke() | Entity; pertenece a Account y se relaciona con Session Policy. |
-| RoleAssignment | -assignmentId, -accountId, -roleType, -tenantId, -validFrom, -validTo, -status | +isValidAt(), +revoke() | Entity; tenantId puede ser referencia externa a Parking Infrastructure. |
-| AuditEntry | -auditId, -accountId, -action, -result, -source, -occurredAt, -correlationId | +record() | Entity; registra hechos de seguridad. |
-| Permission | -resource, -action, -scope | +allows() | Value Object derivado del rol y del recurso. |
-| RoleType | DRIVER, PARKING_ADMIN, SUPER_ADMIN | — | Enumeration utilizada por RoleAssignment. |
-| AccountStatus | PENDING, ACTIVE, SUSPENDED, LOCKED, INACTIVE | — | Enumeration utilizada por Account. |
-| AuthenticationMethod | PASSWORD, GOOGLE | — | Enumeration utilizada por Credential. |
-| SessionStatus | ACTIVE, EXPIRED, REVOKED | — | Enumeration utilizada por Session. |
-| AccountFactory | — | +createAccount() | Factory de Account. |
-| SessionFactory | — | +createSession() | Factory de Session con expiraciones seguras. |
-| AuthenticationService | — | +authenticate() | Domain Service que verifica identidad. |
-| AuthorizationService | — | +authorize(), +hasPermission() | Domain Service que evalúa permisos y alcance. |
-| SessionPolicy | -accessTokenMinutes, -refreshTokenDays, -webIdleMinutes, -webMaxHours | +calculateExpiry(), +isRefreshAllowed(), +revokeOnSecurityEvent() | Domain Service para expiración y revocación. |
-| AccountRepository | — | +findById(), +findByEmail(), +findByExternalSubject(), +save() | Repository Interface implementada en Infrastructure Layer. |
-| SessionRepository | — | +findById(), +findActiveByAccount(), +save(), +revoke() | Repository Interface implementada en Infrastructure Layer. |
-| AuditEntryRepository | — | +save(), +findByAccount(), +findByCorrelationId() | Repository Interface implementada en Infrastructure Layer. |
-
-| Relación | Multiplicidad y dirección | Significado |
+| Clase o enumeración | Atributos o valores principales | Relaciones y restricciones |
 | --- | --- | --- |
-| Account — Credential | Account 1 a Credential 1..* | Una Account puede tener uno o varios métodos de autenticación autorizados. |
-| Account — Session | Account 1 a Session 0..* | Una Account puede acumular sesiones activas o históricas. |
-| Account — RoleAssignment | Account 1 a RoleAssignment 0..* | Los roles se mantienen con vigencia y alcance. |
-| Account — AuditEntry | Account 1 a AuditEntry 0..* | Las acciones relevantes de la cuenta se auditan. |
-| AuthenticationService ..> Credential | Dependencia dirigida | El servicio verifica el método de autenticación. |
-| AuthorizationService ..> RoleAssignment | Dependencia dirigida | El servicio determina si existe un rol vigente. |
-| SessionPolicy ..> Session | Dependencia dirigida | La política calcula expiración y revocación. |
-| AccountRepository ..> Account | Implementación de persistencia | El repositorio trabaja con Account. |
-| SessionRepository ..> Session | Implementación de persistencia | El repositorio trabaja con Session. |
+| Account | `id`, `email`, `status`, `createdAt`, `updatedAt` | Email único; puede tener credenciales, sesiones, auditoría y una asignación de rol. |
+| Credential | `authenticationMethod`, `secretHash`, `externalSubject`, `lastUsedAt`, `status` | FK a Account; PASSWORD requiere hash; GOOGLE requiere external subject y no acepta hash de contraseña. |
+| RoleAssignment | `roleType`, `tenantId`, `validFrom`, `validTo`, `status` | FK única a Account; FK nullable a Tenant, obligatoria solo para PARKING_ADMIN. |
+| Session | `refreshTokenHash`, `lastActivityAt`, `status`, `revokedAt`, `createdAt`, `expiresAt` | FK a Account; hash del refresh token único por sesión. |
+| AuditEntry | `action`, `result`, `source`, `occurredAt`, `correlationId` | FK nullable a Account para registrar intentos sin una identidad autenticada. |
+| PasswordResetCode | `email`, `codeHash`, `expiresAt`, `attempts`, `requestedAt`, `usedAt` | Correo único; el código original no se persiste. |
+| UserRole, AccountStatus, CredentialStatus, AssignmentStatus, AuthenticationMethod, SessionStatus | Enumeraciones detalladas en la tabla de Domain Layer | Valores usados por las entidades IAM. |
 
 #### ***2.6.2.6.2. Bounded Context Database Design Diagram***
 
-Identity Database representa la partición lógica de datos de IAM dentro de la instancia PostgreSQL compartida. Las foreign keys se aplican entre entidades de este contexto; identityRef, tenantId o correlationId utilizados por otros módulos no crean relaciones físicas entre entidades de distintos bounded contexts.
+Identity Database representa las tablas IAM dentro de la instancia compartida de PostgreSQL. `role_assignments.tenant_id` tiene una FK física a `tenants`; el perfil Driver se almacena en Profiles & Vehicles Management y referencia `accounts` mediante FK. Las tablas no duplican datos del Tenant ni de Profile.
 
 *Figura 30 (Identity & Access Management Database Design Diagram)*  
 ![Identity & Access Management Database Design Diagram](../assets/diagrams/db-diagram-identity.svg)
 
 | Tabla | Columnas principales | Restricciones y relaciones |
 | --- | --- | --- |
-| accounts | account_id, email, status, created_at, updated_at | account_id PK; email UNIQUE NOT NULL; status restringido a PENDING, ACTIVE, SUSPENDED, LOCKED o INACTIVE. |
-| credentials | credential_id, account_id, authentication_method, secret_hash, external_subject, last_used_at, status | credential_id PK; account_id FK a accounts; authentication_method restringido a PASSWORD o GOOGLE; PASSWORD requiere secret_hash y GOOGLE requiere external_subject; combinación authentication_method y external_subject UNIQUE cuando tenga valor; no se almacena la contraseña de Google ni una contraseña local en texto plano. |
-| role_assignments | assignment_id, account_id, role_type, tenant_id, valid_from, valid_to, status | assignment_id PK; account_id FK a accounts; role_type restringido a DRIVER, PARKING_ADMIN o SUPER_ADMIN; tenant_id es referencia lógica. |
-| sessions | session_id, account_id, refresh_token_hash, created_at, expires_at, last_activity_at, status, revoked_at | session_id PK; account_id FK a accounts; refresh_token_hash UNIQUE; expires_at mayor que created_at; status ACTIVE, EXPIRED o REVOKED. |
-| audit_entries | audit_id, account_id, action, result, source, occurred_at, correlation_id | audit_id PK; account_id FK nullable para intentos sin identidad válida; no se guardan tokens completos ni secretos. |
+| `accounts` | `account_id`, `email`, `status`, `created_at`, `updated_at` | PK `account_id`; email único; estado persistido como enum. |
+| `credentials` | `credential_id`, `account_id`, `authentication_method`, `secret_hash`, `external_subject`, `last_used_at`, `status` | FK a `accounts`; restricción de consistencia PASSWORD/GOOGLE; subject externo único por método. |
+| `role_assignments` | `assignment_id`, `account_id`, `role_type`, `tenant_id`, `valid_from`, `valid_to`, `status` | `account_id` FK único; `tenant_id` FK a `tenants`; PARKING_ADMIN requiere Tenant; otros roles requieren NULL. |
+| `sessions` | `session_id`, `account_id`, `refresh_token_hash`, `created_at`, `expires_at`, `last_activity_at`, `status`, `revoked_at` | FK a `accounts`; hash único; expiración posterior a creación. |
+| `password_reset_codes` | `id`, `email`, `code_hash`, `expires_at`, `attempts`, `requested_at`, `used_at` | Email único; solo guarda el hash del código y limita expiración/intentos desde el servicio. |
+| `audit_entries` | `audit_id`, `account_id`, `action`, `result`, `source`, `occurred_at`, `correlation_id` | FK nullable a `accounts`; no guarda contraseñas ni tokens completos. |
+| `push_device_tokens` | `device_token_id`, `account_id`, `device_token`, `platform`, `created_at`, `last_seen_at` | FK a `accounts`; el campo legado `device_token` guarda el Firebase Installation ID (FID), no un token de registro FCM; es único y el ID sin procesar no se devuelve en REST. Pertenece al módulo de Notifications. |
 
-| Relación de datos | Cardinalidad | Regla |
-| --- | --- | --- |
-| accounts — credentials | 1 a 1..* | Cada método de autenticación pertenece a una Account. |
-| accounts — role_assignments | 1 a 0..* | Una Account puede tener roles con vigencias y alcances distintos. |
-| accounts — sessions | 1 a 0..* | Las sesiones pueden expirar o revocarse sin eliminar la cuenta. |
-| accounts — audit_entries | 1 a 0..* | Los eventos de una cuenta se conservan según la política de retención. |
-| tenant_id — Parking Infrastructure | Referencia externa | La validez del Tenant se comprueba mediante contratos internos o eventos; no existe FK hacia entidades de otro bounded context. |
-
-Las tablas de IAM no incluyen vehículos, reservas, Guest Parking Sessions, datos de tarjeta ni comprobantes. La retención de audit_entries sigue el plazo transversal de cinco años, mientras que las sesiones vencidas pueden depurarse según la política de seguridad sin eliminar los registros necesarios para auditoría.
+Las sesiones se revocan al cerrar sesión, cambiar contraseña, completar una recuperación o desactivar la cuenta. La duración de cinco años para auditoría es una política documental; no existe una tarea de purga automática configurada.

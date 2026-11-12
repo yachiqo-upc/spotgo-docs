@@ -8,11 +8,13 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **Availability (Disponibilidad):** Información que indica la existencia de Parking Spots libres dentro de una Parking Zone.
 - **Check-in / Check-out (Ingreso / Salida):** Eventos que marcan, respectivamente, el inicio y el final de la estadía de un vehículo en el estacionamiento.
 - **Digital Parking Map (Mapa digital del estacionamiento):** Representación de la infraestructura del estacionamiento que identifica sus Parking Spots, Parking Zones, accesos y destinos de navegación.
-- **Digital Payment (Pago digital):** Transacción económica realizada desde la aplicación móvil por un Driver registrado para pagar una reserva, una estadía o un servicio contratado.
-- **Driver (Conductor):** Usuario con una cuenta propia creada mediante el registro público de la aplicación móvil, con credenciales propias o una cuenta externa autorizada. Administra su User Profile y sus vehículos, consulta Availability y crea reservas.
-- **Electronic Billing (Facturación electrónica):** Capacidad del negocio que determina y genera el Electronic Receipt o Electronic Invoice aplicable a una operación elegible de un Driver.
-- **Electronic Invoice (Factura electrónica):** Documento fiscal digital generado para una operación que requiere información tributaria empresarial, como un RUC, y que conserva su relación con el Digital Payment y la operación correspondiente.
-- **Electronic Receipt (Comprobante de pago electrónico):** Documento fiscal digital generado para una operación elegible de un Driver cuando proporciona un DNI, y que conserva su relación con el Digital Payment y la operación correspondiente.
+- **Digital Payment (Pago digital):** Transacción económica procesada por SpotGo. Puede corresponder a una reserva o servicio de un Driver, o a una cuota de suscripción de un Tenant.
+- **Driver (Conductor):** Usuario cuya cuenta tiene el rol DRIVER y que puede registrarse mediante la aplicación móvil con correo y contraseña o con Google Identity. Tiene un único User Profile y recibe un Profile Type por Tenant; PRIVATE se aplica por defecto hasta que el Parking Admin correspondiente lo cambie. Administra sus vehículos, consulta Availability y crea reservas.
+- **Electronic Billing (Facturación electrónica):** Registro local de los datos de un Billing Document asociado con un pago aprobado. SpotGo no emite el documento ante SUNAT ni ofrece integración fiscal en el backend actual.
+- **Electronic Invoice (Factura electrónica):** Tipo de Billing Document local asociado con un pago, seleccionado por un emisor autorizado cuando registra información tributaria empresarial, como un RUC. Su registro no equivale a una emisión fiscal externa.
+- **Electronic Receipt (Comprobante de pago electrónico):** Tipo de Billing Document local asociado con un pago, seleccionado por un emisor autorizado cuando registra un DNI. El backend no lo emite ante una autoridad fiscal.
+- **Favorite Parking Facility (Estacionamiento favorito):** Relación persistida entre un perfil Driver y un Tenant. El perfil puede guardar cada Tenant una sola vez y quitarlo de sus favoritos.
+- **Firebase Installation ID (FID):** Identificador de una instalación de Firebase que el cliente Android registra en SpotGo para asociarla con notificaciones push; no es un token de registro FCM.
 - **Floor Plan (Plano):** Representación o archivo que describe la distribución física del estacionamiento y constituye la fuente autorizada para configurar el Digital Parking Map.
 - **Guest (Invitado):** Persona sin cuenta que llega directamente al estacionamiento. No crea una reserva ni un Vehicle persistente en SpotGo y paga físicamente el tiempo utilizado al finalizar su estadía.
 - **Guest Parking Session (Sesión de estacionamiento de invitado):** Registro creado manualmente por un Parking Admin cuando un Guest ingresa al estacionamiento. Conserva la placa ingresada manualmente, el Parking Spot asignado, las horas de ingreso y salida, el monto calculado y la confirmación operativa del pago físico.
@@ -23,22 +25,29 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **Occupancy Sensor (Sensor de ocupación):** Dispositivo instalado en un Parking Spot para detectar si el espacio está disponible u ocupado y comunicar el cambio de estado al sistema.
 - **Occupancy Status (Estado de ocupación):** Estado físico actual de un Parking Spot. Puede ser *Available*, *Occupied* o *Unavailable*; *Reserved* pertenece al estado de la reserva y no reemplaza el estado físico del espacio.
 - **Outstanding Balance (Saldo pendiente):** Importe que no pudo cobrarse mediante el Payment Token y que debe regularizarse antes de crear nuevas reservas.
-- **Parking Admin (Administrador de estacionamiento):** Usuario administrativo cuya cuenta y rol PARKING_ADMIN son provisionados internamente por un SuperAdmin y asociados con un Tenant. Cuenta con vistas administrativas y funciones operativas; es distinto del Driver (Conductor) y no se crea mediante el registro público.
+- **Parking Admin (Administrador de estacionamiento):** Usuario cuya cuenta tiene el rol PARKING_ADMIN, es creada por un SuperAdmin y pertenece a un único Tenant. Un Tenant puede tener uno o más Parking Admins. No se crea mediante el registro público.
+- **Parking Facility (Estacionamiento físico):** Establecimiento que cada Tenant representa junto con la empresa cliente. La dirección, las coordenadas y las reglas se guardan en el registro del Tenant; las Parking Zones se relacionan directamente con él.
 - **Parking Session (Sesión de estacionamiento):** Registro de la ocupación real de un Parking Spot. En una reserva de un Driver se relaciona con la reserva y el espacio asignado; en un Guest se utiliza Guest Parking Session.
 - **Parking Spot (Espacio de estacionamiento):** Espacio físico individual dentro de un estacionamiento destinado a la ubicación de un solo vehículo.
-- **Parking Zone (Zona de estacionamiento):** Área del estacionamiento que agrupa múltiples Parking Spots y puede asociarse con uno o más tipos de usuario definidos por la administración.
-- **Payment Token (Token de pago):** Referencia segura administrada por el servicio interno de pagos que permite reutilizar un método autorizado sin almacenar los datos completos de la tarjeta.
-- **Receipt (Comprobante):** Documento o confirmación asociado con una operación de SpotGo. Puede ser un Virtual Receipt, Electronic Receipt o Electronic Invoice, según la finalidad y la información tributaria disponible.
+- **Parking Zone (Zona de estacionamiento):** Subdivisión configurable de una Parking Facility que agrupa Parking Spots. Su nombre depende de la organización del estacionamiento, por ejemplo, por pisos o por áreas interiores y exteriores; puede asociarse con uno o más Profile Types.
+- **Payment Token (Token de pago):** Referencia sintética que representa un método de pago de prueba, sin almacenar el número completo ni el código de seguridad de la tarjeta. Driver puede agregar métodos y elegir el predeterminado (favorito) para sus pagos simulados. Tenant conserva por separado su método predeterminado para el ajuste prorrateado inmediato cuando se agrega un Parking Spot durante un periodo activo.
+- **Profile Type (Tipo de perfil):** Clasificación que un Parking Admin asigna a un Driver dentro de su Tenant para determinar las Parking Zones permitidas. Cada Driver puede tener una clasificación por Tenant; PRIVATE se aplica por defecto y también son opciones TAXI y EMPLOYEE.
+- **Informational Reservation Receipt (Comprobante informativo de reserva):** PDF no fiscal generado para una reserva con pago aprobado. Android permite descargarlo localmente; su envío por correo está limitado al comprobante de reserva y se habilita solo en despliegue.
+- **Receipt (Comprobante):** Nombre funcional de un documento asociado a una operación de SpotGo. Un Billing Document es un registro local y no equivale al PDF informativo de reserva ni a un comprobante emitido ante una autoridad fiscal.
+- **Reservation Change (Cambio de reserva):** Registro persistente de una reprogramación o extensión, con su importe, pago simulado y estado de aplicación o reembolso.
 - **Reservation (Reserva):** Registro mediante el cual un Driver registrado obtiene el uso de un Parking Spot dentro de una Parking Zone en una fecha, hora de inicio y duración determinadas, después de la aprobación del Digital Payment correspondiente.
 - **Reservation Status (Estado de reserva):** Estado comercial y operativo de una reserva. Puede ser *Pending Payment*, *Reserved*, *Active*, *Completed*, *Cancelled*, *No-show*, *Overstayed* o *Payment Rejected*; *Pending Payment* y *Payment Rejected* representan la intención y el resultado del pago.
+- **Role Type (Tipo de rol):** Rol único asociado a cada Account, que determina sus permisos en SpotGo. Los valores son DRIVER, PARKING_ADMIN y SUPERADMIN. Para PARKING_ADMIN, la cuenta pertenece a un único Tenant; un Tenant puede tener varios Parking Admins.
 - **Sensor Health (Salud del sensor):** Estado operativo de un Occupancy Sensor. Cuando el sensor no comunica datos confiables, el Occupancy Status correspondiente es *Unavailable*.
-- **Subscription (Suscripción):** Plan de acceso periódico de SpotGo. Puede ser *Free*, *Plus Monthly* o *Plus Annual*, con beneficios, descuentos y condiciones de renovación definidos para cada plan.
-- **SuperAdmin (Administrador de plataforma):** Usuario encargado de registrar Tenants, crear las cuentas iniciales de los administradores de estacionamiento y administrar la configuración de los clientes B2B.
-- **Tenant (Cliente B2B):** Estacionamiento o entidad operativa registrada en SpotGo, con su propia configuración de zonas, perfiles, usuarios y facturación del servicio.
+- **Subscription (Suscripción):** Periodo pagado de un plan SpotGo para Driver o Tenant. Driver paga S/15 al mes con 10% de descuento o S/160 al año con 15%; el descuento se aplica al precio final de las reservas y no a las multas. Tenant paga S/30 mensuales por el uso de la app más S/1 por cada Parking Spot registrado, esté operativo o no. Al agregar un spot durante un periodo activo, el backend cobra de inmediato el importe prorrateado del tiempo restante con el token predeterminado; el spot se activa cuando el proveedor simulado aprueba el pago y el snapshot se actualiza. No hay renovación mensual automática. Cada periodo pagado se conserva en una fila Subscription asociada con su pago; el Billing Document es opcional y se registra por separado.
+- **Subscription Period (Periodo de suscripción):** Intervalo pagado representado por una fila Subscription. No existe una tabla separada `SubscriptionBillingPeriod`; el JSONB `plan` conserva el precio y, para Tenant, `parking_spot_count` y `licensed_spot_ids`.
+- **Subscription Plan (Plan de suscripción):** Plan de precio fijo del catálogo del Backend. `code` y `audience` identifican la oferta para Driver o Tenant; no se configuran mediante una variable de entorno.
+- **SuperAdmin (Administrador de plataforma):** Usuario cuya cuenta tiene el rol SUPERADMIN y que puede registrar Tenants y crear cuentas de Parking Admin y de otros SuperAdmins, además de administrar la configuración de los clientes B2B.
+- **Tenant (Cliente B2B):** Empresa registrada como cliente de SpotGo que, en el modelo de datos, representa también su único estacionamiento físico. Sus datos de ubicación y reglas se guardan en Tenant; sus Parking Zones y Parking Spots se registran por separado.
 - **Unauthorized Parking (Estacionamiento indebido):** Ocupación no validada que el Parking Admin confirma como uso no autorizado después de revisar la operación y las condiciones del estacionamiento.
 - **Unauthorized Parking Alert (Alerta por estacionamiento indebido):** Alerta operativa generada cuando un Parking Spot presenta Unvalidated Occupancy. Requiere revisión y clasificación por parte del Parking Admin.
 - **Unvalidated Occupancy (Ocupación no validada):** Situación en la que un Parking Spot aparece *Occupied* sin una reserva o Guest Parking Session activa que autorice su uso.
-- **User Profile (Perfil de usuario):** Perfil operativo asociado con una identidad. Para un Driver, determina las Parking Zones que puede utilizar; para un Parking Admin, representa sus capacidades administrativas y su asignación a un Tenant. No se transfiere entre ambos roles.
+- **User Profile (Perfil de usuario):** Datos personales asociados uno a uno con una Account. Cada Account tiene un único User Profile; este no contiene el rol, el correo ni el estado, que se administran en IAM. Solo los Drivers tienen Profile Type por Tenant; la pertenencia de un Parking Admin a un Tenant se registra en IAM.
 - **Vehicle (Vehículo):** Medio de transporte asociado con un Driver y utilizado para ocupar un Parking Spot. Un Driver puede registrar varios vehículos y seleccionarlos en sus reservas; cada vehículo conserva la placa registrada y sus datos descriptivos.
 - **Virtual Receipt (Comprobante virtual):** Confirmación digital, no necesariamente fiscal, de una reserva o Digital Payment que contiene la información necesaria para identificar la operación y el espacio asignado.
 - **Zone Assignment (Asignación de zona):** Proceso mediante el cual se determina qué Parking Zone corresponde a un Driver según su User Profile.
@@ -63,22 +72,23 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **Developer:** Rol usado en las historias técnicas para representar al responsable de desarrollo; no es un actor que inicie sesión en SpotGo.
 - **DNI (Documento Nacional de Identidad):** Documento peruano de identificación personal.
 - **DTO (Data Transfer Object):** Objeto que transporta datos entre capas o servicios sin exponer directamente las entidades internas.
-- **en_US:** Código de localización para el inglés de Estados Unidos, utilizado como idioma predeterminado en los productos, mensajes e interfaces de SpotGo.
-- **es_419:** Código de localización para el español de Latinoamérica, ofrecido como alternativa de idioma.
+- **en_US:** Código de localización para el inglés de Estados Unidos, idioma predeterminado de la aplicación Android Driver y utilizado por el Backend y su documentación REST.
+- **es_419:** Código de localización para el español de Latinoamérica, disponible como idioma alternativo en la aplicación Android Driver y la Landing Page.
 - **External Navigation Link:** Enlace que abre la aplicación de Google Maps con una Parking Zone como destino para que dicha aplicación calcule la ruta.
 - **FAQ (Frequently Asked Questions):** Sección de preguntas frecuentes y sus respuestas.
 - **Figma:** Herramienta utilizada para elaborar wireframes, mockups y prototipos de las interfaces.
 - **Firebase App Distribution:** Servicio para distribuir versiones de prueba de aplicaciones móviles a grupos de usuarios de prueba.
 - **Firebase Cloud Messaging (FCM):** Servicio externo de Google que entrega notificaciones push a dispositivos registrados. SpotGo determina qué evento comunicar y el Backend envía el mensaje al dispositivo mediante este servicio.
 - **Flutter y Dart:** Framework multiplataforma y lenguaje de programación utilizados para desarrollar la aplicación de Parking Admin.
-- **Google Maps API:** API utilizada para mostrar el mapa integrado dentro de SpotGo. SpotGo proporciona las ubicaciones y detalles de sus Parking Zones; la aplicación de Google Maps calcula la ruta externa hacia la zona seleccionada.
+- **MapLibre:** SDK utilizado por la aplicación Android Driver para mostrar el mapa integrado de SpotGo. La cartografía se obtiene de OpenStreetMap; Google Maps se abre aparte para la navegación externa.
+- **OpenStreetMap:** Cartografía utilizada como base de los mapas integrados que se muestran con MapLibre.
 - **Google Maps application:** Aplicación externa que abre la ruta desde la ubicación del Driver hasta la Parking Zone seleccionada.
 - **Google Sign-In:** Servicio externo de autenticación de Google. SpotGo verifica la identidad proporcionada y administra sus propios roles, permisos y sesiones.
 - **HTML (HyperText Markup Language):** Lenguaje de marcado que estructura el contenido de páginas web.
 - **HTTP/HTTPS (Hypertext Transfer Protocol / Secure):** Protocolos para transferir información entre clientes y servidores; HTTPS cifra la comunicación.
 - **IAM (Identity & Access Management):** Contexto que gestiona identidades, credenciales, sesiones, autorización y auditoría.
 - **ID token:** Token de identidad emitido por un proveedor como Google. Su atributo `sub` identifica al usuario dentro del proveedor; IAM verifica el token antes de vincularlo con una cuenta de SpotGo.
-- **Internationalization (i18n):** Capacidad de preparar un producto para soportar varios idiomas y locales, incluidos en_US y es_419.
+- **Internationalization (i18n):** Capacidad de preparar una interfaz cliente o una Landing Page para soportar varios idiomas y locales, incluidos en_US y es_419.
 - **IoT (Internet of Things):** Red de dispositivos físicos conectados que recopilan o transmiten datos.
 - **JavaScript (JS):** Lenguaje de programación utilizado para implementar interacciones y lógica en páginas web.
 - **JDK (Java Development Kit):** Herramientas para desarrollar, compilar y ejecutar programas Java.
@@ -86,10 +96,11 @@ Este glosario fija los nombres canónicos utilizados en la documentación de Spo
 - **JSON (JavaScript Object Notation):** Formato de texto para intercambiar datos estructurados entre sistemas.
 - **JWT (JSON Web Token):** Formato de token que contiene claims. SpotGo utiliza tokens firmados para transmitir información de autenticación y verificar su integridad.
 - **Kotlin:** Lenguaje de programación utilizado para la aplicación Android nativa de Driver.
-- **Lucidchart:** Herramienta de diagramación utilizada para elaborar el diagrama de base de datos, los User Flows y los Wireflows.
+- **Lucidchart:** Herramienta de diagramación utilizada para elaborar el diagrama de base de datos.
 - **Monolito modular:** Aplicación que se despliega como una sola unidad y organiza sus responsabilidades en módulos con límites definidos. SpotGo reúne sus cinco bounded contexts en una única aplicación Backend Spring Boot.
 - **MQTT:** Protocolo de mensajería mediante publicación y suscripción, utilizado en la comunicación de sensores con un broker.
 - **OpenAPI/Swagger:** Especificación y herramientas utilizadas para documentar, consultar y verificar el contrato de los Web Services RESTful.
+- **Overflow:** Herramienta utilizada para elaborar los User Flows y Wireflows de las aplicaciones.
 - **PK (Primary Key) / FK (Foreign Key):** Clave primaria que identifica un registro y clave foránea que referencia un registro relacionado en otra tabla.
 - **PlantUML:** Herramienta que genera diagramas a partir de descripciones textuales, utilizada para elaborar diagramas UML.
 - **Render:** Plataforma de alojamiento utilizada para publicar el Backend como Web Service y la SpotGo Administration Web App como Static Site.

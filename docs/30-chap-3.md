@@ -59,7 +59,7 @@ En web, estos valores se expresan en píxeles CSS; en Android nativo, en dp; y e
 | Respetuoso / Irreverente | Respetuoso | Explicar errores sin culpar al usuario y ofrecer una acción de recuperación. |
 | Entusiasta / Sereno | Sereno | Confirmar resultados y advertir incidencias sin exageraciones ni mensajes alarmistas. |
 
-La interfaz utiliza English (en_US) por defecto y Latin American Spanish (es_419) como alternativa. Las etiquetas mantienen el mismo significado entre idiomas. Por ejemplo, ante un conflicto de disponibilidad: “This spot is no longer available. Choose another spot.” / “Este espacio ya no está disponible. Selecciona otro espacio.” Los mensajes identifican la situación y el siguiente paso; no exponen detalles de infraestructura.
+La aplicación Android Driver admite English (en_US) como idioma predeterminado y español latinoamericano (es_419) como alternativa para sus etiquetas, mensajes y estados. Ante un conflicto de disponibilidad, por ejemplo, muestra “This spot is no longer available. Choose another spot.” o “Este espacio ya no está disponible. Elige otro.”, según el idioma seleccionado. Los mensajes identifican la situación y el siguiente paso; no exponen detalles de infraestructura.
 
 **Mobile Style Guidelines**
 
@@ -153,7 +153,7 @@ Los siguientes valores constituyen la propuesta inicial de metadatos para las do
 | App Subtitle | Find parking. Manage spaces. | Encuentra y gestiona espacios. |
 | App Description | SpotGo connects drivers and parking administrators. Drivers can check parking availability, manage vehicles, reserve spaces and review their payments and receipts. Parking administrators can monitor occupancy, manage zones, review alerts and record guest parking sessions. Sign in with your SpotGo email and password or continue with Google; administrative access is provisioned by the organization. | SpotGo conecta a conductores y administradores de estacionamientos. Los conductores pueden consultar disponibilidad, gestionar vehículos, reservar espacios y revisar sus pagos y comprobantes. Los administradores pueden monitorear la ocupación, gestionar zonas, revisar alertas y registrar sesiones de invitados. Ingresa con tu correo y contraseña de SpotGo o continúa con Google; el acceso administrativo es habilitado por la organización. |
 
-App Keywords expresa los términos de búsqueda del producto; App Subtitle resume su beneficio y App Description explica las funciones y el acceso según el rol. Estos metadatos son una propuesta de diseño y no una evidencia de publicación en una app store.
+App Keywords expresa los términos de búsqueda del producto; App Subtitle resume su beneficio y App Description explica las funciones y el acceso según el rol. Estos metadatos son una propuesta de diseño y no una evidencia de publicación en una app store. La columna en español es una propuesta de metadatos localizados para la tienda; el locale es_419 también está disponible dentro de la aplicación Android Driver.
 
 #### *3.1.2.4. Searching Systems*
 
@@ -371,7 +371,7 @@ Como Driver, quiero crear una cuenta o iniciar sesión en SpotGo para acceder a 
 **User Flow**
 
 *Figura 77 (User Flow 1: Registro y acceso a SpotGo)*  
-![User Flow 1: Registro y acceso a SpotGo](../assets/diagrams/ui-ux/User-Flow-1-Registro-y-acceso-a-SpotGo.png)
+![User Flow 1: Registration and Sign In to SpotGo](../assets/diagrams/ui-ux/user-flow-01-registration-access.png)
 
 **User Flow 2: Registrar vehículo**
 
@@ -394,7 +394,7 @@ Como Driver, quiero registrar un vehículo en mi perfil para poder seleccionarlo
 **User Flow**
 
 *Figura 78 (User Flow 2: Registrar vehículo)*  
-![User Flow 2: Registrar vehículo](../assets/diagrams/ui-ux/User-Flow-2-Registrar-vehículo.png)
+![User Flow 2: Vehicle Registration](../assets/diagrams/ui-ux/user-flow-02-vehicle-registration.png)
 
 **User Flow 3: Consultar disponibilidad por zona**
 
@@ -418,7 +418,7 @@ Como Driver, quiero consultar la disponibilidad actual de una Parking Zone para 
 **User Flow**
 
 *Figura 79 (User Flow 3: Consultar disponibilidad por zona)*  
-![User Flow 3: Consultar disponibilidad por zona](../assets/diagrams/ui-ux/User-Flow-3-Consultar-disponibilidad-por-zona.png)
+![User Flow 3: Availability by Zone](../assets/diagrams/ui-ux/user-flow-03-zone-availability.png)
 
 **User Flow 4: Consultar zonas permitidas**
 
@@ -440,7 +440,7 @@ Como Driver, quiero consultar las Parking Zones permitidas para mi perfil para s
 **User Flow**
 
 *Figura 80 (User Flow 4: Consultar zonas permitidas)*  
-![User Flow 4: Consultar zonas permitidas](../assets/diagrams/ui-ux/User-Flow-4-Consultar-zonas-permitidas.png)
+![User Flow 4: Allowed Zones](../assets/diagrams/ui-ux/user-flow-04-allowed-zones.png)
 
 **User Flow 5: Encontrar Parking Zones cercanas**
 
@@ -453,18 +453,18 @@ Como Driver, quiero visualizar las Parking Zones registradas por SpotGo en un ma
 1. El Driver abre la sección de exploración de estacionamientos.
 2. El sistema solicita el permiso de ubicación solo mientras se usa la funcionalidad.
 3. Si el Driver concede el permiso, el sistema consulta las Parking Zones registradas en el área correspondiente.
-4. La Google Maps API renderiza el mapa integrado.
+4. MapLibre renderiza el mapa integrado con mosaicos de OpenStreetMap.
 5. SpotGo muestra las Parking Zones como marcadores.
 6. El Driver selecciona un marcador o una zona.
 7. SpotGo muestra los datos operativos disponibles, como Availability, precio, horario de atención y detalles de la zona.
-8. Si el Driver no concede el permiso, la Google Maps API renderiza el mapa centrado en el área por defecto configurada (por ejemplo, Cercado de Lima), la aplicación informa que la ubicación mejora los resultados y no solicita acceso a la ubicación en segundo plano.
+8. Si el Driver no concede el permiso, MapLibre renderiza el mapa centrado en el área por defecto configurada (por ejemplo, Cercado de Lima) con mosaicos de OpenStreetMap; la aplicación informa que la ubicación mejora los resultados y no solicita acceso a la ubicación en segundo plano.
 9. Si el Driver habilita el permiso más tarde mientras usa la funcionalidad y vuelve a solicitar las zonas cercanas, SpotGo usa su ubicación actual para esa consulta, sin requerir acceso continuo en segundo plano.
-10. Si no existen zonas registradas en el área consultada o la Google Maps API no responde, la aplicación informa la situación y no muestra ubicaciones inexistentes.
+10. Si no existen zonas registradas en el área consultada o el servicio de mosaicos de OpenStreetMap no responde, la aplicación informa la situación y no muestra ubicaciones inexistentes.
 
 **User Flow**
 
 *Figura 81 (User Flow 5: Encontrar Parking Zones cercanas)*  
-![User Flow 5: Encontrar Parking Zones cercanas](../assets/diagrams/ui-ux/User-Flow-5-Encontrar-Parking-Zones-cercanas.png)
+![User Flow 5: Nearby Parking Zones](../assets/diagrams/ui-ux/user-flow-05-nearby-zones.png)
 
 **User Flow 6: Gestionar Reservations y comprobantes virtuales**
 
@@ -507,7 +507,7 @@ Como Driver, quiero reservar un Parking Spot dentro de una zona permitida y admi
 **User Flow**
 
 *Figura 82 (User Flow 6: Gestionar Reservations y comprobantes virtuales)*  
-![User Flow 6: Gestionar Reservations y comprobantes virtuales](../assets/diagrams/ui-ux/User-Flow-6-Gestionar-Reservations-y-comprobantes-virtuales.png)
+![User Flow 6: Reservations and Virtual Receipts](../assets/diagrams/ui-ux/user-flow-06-reservations.png)
 
 **User Flow 7: Procesar pago de Reservation y cargos adicionales**
 
@@ -538,7 +538,7 @@ Como Driver, quiero pagar mi Reservation y el tiempo adicional de estacionamient
 **User Flow**
 
 *Figura 83 (User Flow 7: Procesar pago de Reservation y cargos adicionales)*  
-![User Flow 7: Procesar pago de Reservation y cargos adicionales](../assets/diagrams/ui-ux/User-Flow-7-Procesar-pago-de-Reservation-y-cargos-adicionales.png)
+![User Flow 7: Reservation and Additional Charge Payments](../assets/diagrams/ui-ux/user-flow-07-payments.png)
 
 **User Flow 8: Abrir ruta en Google Maps**
 
@@ -561,7 +561,7 @@ Como Driver, quiero abrir en Google Maps la ruta hacia una Parking Zone seleccio
 **User Flow**
 
 *Figura 84 (User Flow 8: Abrir ruta en Google Maps)*  
-![User Flow 8: Abrir ruta en Google Maps](../assets/diagrams/ui-ux/User-Flow-8-Abrir-ruta-en-Google-Maps.png)
+![User Flow 8: Google Maps Navigation](../assets/diagrams/ui-ux/user-flow-08-navigation.png)
 
 **User Flow 9: Gestionar planes de suscripción**
 
@@ -594,7 +594,7 @@ Como Driver, quiero consultar, seleccionar y gestionar los planes de suscripció
 **User Flow**
 
 *Figura 85 (User Flow 9: Gestionar planes de suscripción)*  
-![User Flow 9: Gestionar planes de suscripción](../assets/diagrams/ui-ux/User-Flow-9-Gestionar-planes-de-suscripción.png)
+![User Flow 9: Subscription Plans](../assets/diagrams/ui-ux/user-flow-09-subscriptions.png)
 
 **User Flow 10: Consultar comprobantes y facturas**
 
@@ -609,8 +609,8 @@ Como Driver, quiero consultar mi historial de pagos y obtener mis Virtual Receip
 3. El sistema muestra el historial de operaciones (Reservations, Parking Sessions vinculadas a una Reservation, Subscriptions y Additional Charges) y los documentos disponibles.
 4. El Driver selecciona una transacción.
 5. El sistema muestra el detalle de la operación y del documento disponible.
-6. El Driver solicita descargar el documento en PDF o enviarlo a su correo electrónico registrado.
-7. El sistema procesa la solicitud, entrega o envía el documento cuando está disponible y conserva la operación en el historial.
+6. El Driver solicita descargar el documento disponible en PDF. Si se trata del comprobante informativo de una reserva y el envío está habilitado en el despliegue, puede solicitar que el PDF se envíe al correo asociado a su cuenta.
+7. El sistema genera el PDF y lo entrega para su descarga o, si corresponde y el servicio está habilitado, envía el comprobante de reserva como archivo adjunto al correo de la cuenta. La operación se conserva en el historial.
 8. Si la operación tiene un Refund o un Outstanding Balance asociado, el sistema muestra el estado del ajuste, el importe correspondiente y su relación con la operación original.
 9. Si no existen documentos disponibles para la operación seleccionada, el sistema informa que no hay un documento disponible.
 
@@ -626,7 +626,7 @@ Como Driver, quiero consultar mi historial de pagos y obtener mis Virtual Receip
 **User Flow**
 
 *Figura 86 (User Flow 10: Consultar comprobantes y facturas)*  
-![User Flow 10: Consultar comprobantes y facturas](../assets/diagrams/ui-ux/User-Flow-10-Consultar-comprobantes-y-facturas.png)
+![User Flow 10: Receipts and Invoices](../assets/diagrams/ui-ux/user-flow-10-receipts.png)
 
 **Parking Admin User Flows**
 
@@ -653,7 +653,7 @@ Como Parking Admin, quiero iniciar sesión en SpotGo para acceder a las funcione
 **User Flow**
 
 *Figura 87 (User Flow 11: Acceder al panel administrativo)*  
-![User Flow 11: Acceder al panel administrativo](../assets/diagrams/ui-ux/User-Flow-11-Acceder-al-panel-administrativo.png)
+![User Flow 11: Administrative Dashboard Access](../assets/diagrams/ui-ux/user-flow-11-admin-access.png)
 
 **User Flow 12: Cargar Floor Plan y generar Digital Parking Map**
 
@@ -680,7 +680,7 @@ Como Parking Admin, quiero cargar el plano del estacionamiento y configurar sus 
 **User Flow**
 
 *Figura 88 (User Flow 12: Cargar Floor Plan y generar Digital Parking Map)*  
-![User Flow 12: Cargar Floor Plan y generar Digital Parking Map](../assets/diagrams/ui-ux/User-Flow-12-Cargar-Floor-Plan-y-generar-Digital-Parking-Map.png)
+![User Flow 12: Digital Parking Map Generation](../assets/diagrams/ui-ux/user-flow-12-digital-map.png)
 
 **User Flow 13: Monitorear ocupación por zona**
 
@@ -705,7 +705,7 @@ Como Parking Admin, quiero monitorear el Occupancy Status de los Parking Spots a
 **User Flow**
 
 *Figura 89 (User Flow 13: Monitorear ocupación por zona)*  
-![User Flow 13: Monitorear ocupación por zona](../assets/diagrams/ui-ux/User-Flow-13-Monitorear-ocupación-por-zona.png)
+![User Flow 13: Occupancy Monitoring by Zone](../assets/diagrams/ui-ux/user-flow-13-occupancy.png)
 
 **User Flow 14: Registrar Guest Parking Session**
 
@@ -743,7 +743,7 @@ Como Parking Admin, quiero registrar y finalizar una Guest Parking Session para 
 **User Flow**
 
 *Figura 90 (User Flow 14: Registrar Guest Parking Session)*  
-![User Flow 14: Registrar Guest Parking Session](../assets/diagrams/ui-ux/User-Flow-14-Registrar-Guest-Parking-Session.png)
+![User Flow 14: Guest Parking Session](../assets/diagrams/ui-ux/user-flow-14-guest-session.png)
 
 **User Flow 15: Generar reportes de ocupación**
 
@@ -765,7 +765,7 @@ Como Parking Admin, quiero consultar reportes de ocupación agrupados por period
 **User Flow**
 
 *Figura 91 (User Flow 15: Generar reportes de ocupación)*  
-![User Flow 15: Generar reportes de ocupación](../assets/diagrams/ui-ux/User-Flow-15-Generar-reportes-de-ocupación.png)
+![User Flow 15: Occupancy Reports](../assets/diagrams/ui-ux/user-flow-15-reports.png)
 
 **User Flow 16: Gestionar facturación B2B**
 
@@ -787,7 +787,7 @@ Como Parking Admin, quiero consultar las facturas del servicio SpotGo de mi Tena
 **User Flow**
 
 *Figura 92 (User Flow 16: Gestionar facturación B2B)*  
-![User Flow 16: Gestionar facturación B2B](../assets/diagrams/ui-ux/User-Flow-16-Gestionar-facturación-B2B.png)
+![User Flow 16: B2B Billing](../assets/diagrams/ui-ux/user-flow-16-billing.png)
 
 #### *3.1.4.5. Applications Prototypes*
 

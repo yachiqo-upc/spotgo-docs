@@ -14,7 +14,8 @@ Se listan a continuación las herramientas utilizadas y previstas a lo largo del
   - **Trello:** Herramienta SaaS para la gestión ágil del Product Backlog, Sprints y seguimiento de User Stories. [Referencia: trello.com](https://trello.com/)
   - **UXPressia:** Herramienta SaaS para la elaboración de mapas de empatía, Journey Maps y User Personas. [Referencia: uxpressia.com](https://uxpressia.com/)
 - **Modelado y diagramación:**
-  - **Lucidchart:** Utilizado para el diagrama de base de datos, los User Flows y los Wireflows. [Referencia: Lucidchart](https://www.lucidchart.com/)
+  - **Lucidchart:** Utilizado para elaborar el diagrama de base de datos. [Referencia: Lucidchart](https://www.lucidchart.com/)
+  - **Overflow:** Utilizado para elaborar los User Flows y Wireflows. [Referencia: Overflow](https://www.overflow.co/)
   - **PlantUML y Structurizr DSL:** Utilizados para los diagramas UML y las vistas C4 de la arquitectura, respectivamente.
 - **Product UX/UI Design:**
   - **Figma:** Herramienta para la creación colaborativa de Wireframes, Mock-ups y Prototipos interactivos. [Referencia: figma.com](https://www.figma.com/)
@@ -37,7 +38,7 @@ Se listan a continuación las herramientas utilizadas y previstas a lo largo del
   - **Render:** Plataforma para desplegar el Backend como Web Service y la aplicación web administrativa como Static Site. [Web Services](https://render.com/docs/web-services), [Static Sites](https://render.com/docs/static-sites) y [Docker](https://render.com/docs/docker).
   - **GitHub Pages:** Hosting de la Landing Page estática. [Referencia: GitHub Pages](https://docs.github.com/en/pages)
   - **Git & GitHub:** Control de versiones, colaboración y repositorios de código fuente. [Descarga: Git](https://git-scm.com/downloads) y [Referencia: GitHub](https://docs.github.com/)
-  - **Firebase App Distribution:** Plataforma prevista para distribuir las versiones de prueba de las dos aplicaciones móviles a usuarios de prueba al finalizar el Sprint 3. [Referencia: Firebase App Distribution](https://firebase.google.com/docs/app-distribution/)
+  - **Firebase App Distribution:** Plataforma utilizada para distribuir las versiones de prueba de las dos aplicaciones móviles a sus usuarios testers. [Referencia: Firebase App Distribution](https://firebase.google.com/docs/app-distribution/)
 
 #### 4.1.2. Source Code Management
 
@@ -74,7 +75,7 @@ Se establece el uso estricto del idioma **inglés (en_US)** para la denominació
 
 #### 4.1.4. Software Deployment Configuration
 
-La Landing Page se publica en **GitHub Pages**. El Backend, implementado como monolito modular en una única aplicación Spring Boot, se despliega en **Render** como Web Service y se conecta con una única instancia PostgreSQL en **Neon**. La página web administrativa de SpotGo para SuperAdmin se despliega en Render como Static Site y se desarrolla con Angular, TypeScript y Angular Material. Las aplicaciones móviles de Driver y Parking Admin son clientes independientes y se distribuirán por separado mediante **Firebase App Distribution** al cierre del Sprint 3.
+La Landing Page se publica en **GitHub Pages**. El Backend, implementado como monolito modular en una única aplicación Spring Boot, se despliega en **Render** como Web Service y se conecta con una única instancia PostgreSQL en **Neon**. La página web administrativa de SpotGo para SuperAdmin se despliega en Render como Static Site y se desarrolla con Angular, TypeScript y Angular Material. Las aplicaciones móviles de Driver y Parking Admin son clientes independientes y sus versiones de prueba se distribuyen mediante **Firebase App Distribution**.
 
 **Landing Page: GitHub Pages**
 
@@ -85,10 +86,10 @@ La Landing Page se publica en **GitHub Pages**. El Backend, implementado como mo
 
 **Backend: Render Web Service y PostgreSQL**
 
-1. Clonar `spotgo-backend`, instalar JDK 25 LTS y comprobar `java -version`. Desde la raíz, empaquetar con `./mvnw.cmd -B -DskipTests package` en Windows o `./mvnw -B -DskipTests package` en Linux/macOS. El empaquetado genera `target/spotgo-1.0.0.jar` según el `pom.xml`; `-DskipTests` solo omite pruebas durante este paso y no constituye evidencia de validación.
+1. Verificar el código de `spotgo-backend` en la rama `develop`. Para validarlo localmente, ejecutar `./mvnw.cmd --batch-mode test` y construir la imagen con `docker build -t spotgo-backend .`. El Dockerfile compila con Java 25 y Spring Boot 4.1.2 y ejecuta el JAR con Java 25 JRE.
 2. Crear o seleccionar la instancia PostgreSQL de Neon que utilizará el Backend y obtener su host, nombre de base, usuario y contraseña. Preparar una URL JDBC con el formato `jdbc:postgresql://<host>/<database>?sslmode=require`; los valores reales se configuran como variables del servicio.
-3. En Render, crear o seleccionar el Web Service conectado al repositorio `yachiqo-upc/spotgo-backend` y a la rama `main`. Render no ofrece un runtime nativo para Java; el servicio debe ejecutarse con una imagen Docker de Java 25 LTS, construida desde un Dockerfile o publicada previamente en un registro. Consultar la [guía oficial de Docker en Render](https://render.com/docs/docker).
-4. Configurar en **Environment** las variables siguientes, correspondientes a las propiedades del proyecto. Render administra las variables y los secretos desde el panel del servicio, y los aplica al próximo despliegue ([documentación](https://render.com/docs/configure-environment-variables)):
+3. En Render, crear o seleccionar el Web Service conectado al repositorio `yachiqo-upc/spotgo-backend` y a la rama `develop`. Render no ofrece un runtime nativo para Java; el servicio debe ejecutarse con una imagen Docker de Java 25 LTS, construida desde un Dockerfile o publicada previamente en un registro. Consultar la [guía oficial de Docker en Render](https://render.com/docs/docker).
+4. Configurar en **Environment** las variables necesarias para una base vacía. Render administra las variables y secretos desde el panel del servicio, y los aplica al próximo despliegue ([documentación](https://render.com/docs/configure-environment-variables)):
 
 | Variable | Configuración o propósito |
 | --- | --- |
@@ -97,15 +98,44 @@ La Landing Page se publica en **GitHub Pages**. El Backend, implementado como mo
 | `SPRING_DATASOURCE_USERNAME` | Usuario autorizado de la base. |
 | `SPRING_DATASOURCE_PASSWORD` | Contraseña del usuario, configurada como secreto. |
 | `JWT_SECRET` | Secreto de firma de los tokens de SpotGo, configurado como secreto. |
-| `PORT` | Puerto HTTP asignado al Web Service. `server.port` consume este valor. |
-| `APP_PASSWORD_RESET_FROM_EMAIL` | Remitente autorizado para correos de recuperación. |
-| `RESEND_API_KEY` | Credencial de envío cuando se habilita la recuperación por correo. |
-| `RESEND_API_URL` | URL del servicio de correo; utiliza el valor predeterminado del proyecto si no se redefine. |
-| `APP_SEEDER_RESET_BEFORE_SEED` | `false`, para conservar los registros existentes al iniciar. |
-| `SPRING_JPA_HIBERNATE_DDL_AUTO` | `validate` sobre un esquema previamente inicializado; `create` se limita a una base vacía de demostración durante su inicialización. |
+| `DEMO_ACCOUNT_PASSWORD` | Contraseña secreta compartida por las cuentas demo cargadas desde `db.json`; debe mantenerse configurada mientras el seeder esté habilitado. |
+| `SUPERADMIN_BOOTSTRAP_EMAIL` | Correo inicial de `SUPER_ADMIN`; obligatorio mientras la base no tenga ninguno. |
+| `SUPERADMIN_BOOTSTRAP_PASSWORD` | Contraseña inicial de `SUPER_ADMIN`, configurada como secreto y solo necesaria para crear la primera cuenta. Debe tener al menos 8 caracteres con mayúscula, minúscula, número y símbolo. |
 
-5. Preparar el esquema antes del primer arranque. El proyecto configura `ddl-auto=create` y contiene un seeder que también participa en `production`: para una base vacía de demostración se puede inicializar el esquema con `create` de forma controlada, y los arranques posteriores deben utilizar `validate` con el reinicio de datos desactivado. Una base con datos existentes requiere un esquema compatible antes de activar `validate`.
-6. Incluir en la imagen Docker el artefacto `target/spotgo-1.0.0.jar` y ejecutar `java -jar target/spotgo-1.0.0.jar`. Si se cambia la versión del proyecto, actualizar también el nombre del JAR. El Web Service debe escuchar en el puerto que Render asigna mediante `PORT` y aceptar tráfico externo.
+Variables opcionales:
+
+| Variable | Configuración o propósito |
+| --- | --- |
+| `CORS_ALLOWED_ORIGIN` | Origen adicional del cliente web, con protocolo y host. |
+| `APP_PASSWORD_RESET_FROM_EMAIL` | Remitente verificado para recuperación de contraseña, invitaciones de Parking Admin y comprobantes informativos de reserva. |
+| `RESEND_API_KEY` | Clave de Resend para recuperación de contraseña, invitaciones de Parking Admin y comprobantes informativos de reserva. |
+| `RESEND_API_URL` | Endpoint de Resend; por defecto `https://api.resend.com/emails`. |
+| `RECEIPT_EMAIL_ENABLED` | Habilita el envío del PDF informativo de una reserva por correo. Es `false` por defecto; mantenerlo desactivado localmente y establecerlo en `true` solo en el despliegue. |
+| `GOOGLE_CLIENT_ID` | ID del cliente OAuth Web que la app Driver usa como audiencia de su token de Google. |
+| `EVIDENCE_STORAGE_DIRECTORY` | Directorio de imágenes de evidencia. `/tmp/spotgo-evidence` es temporal y no desactiva las cargas; los archivos se pierden al reemplazar o reiniciar la instancia. |
+| `MONITORING_MINIMUM_QUALITY` | Calidad mínima del sensor, de 0 a 100; valor predeterminado 80. |
+| `MONITORING_FRESHNESS_SECONDS` | Antigüedad máxima de lectura en segundos; valor predeterminado 300. |
+| `FCM_ENABLED` | `true` para activar notificaciones push con Firebase Cloud Messaging; por defecto es `false`. |
+| `FCM_PROJECT_ID` | ID del proyecto Firebase; obligatorio cuando FCM está habilitado. |
+| `FCM_SERVICE_ACCOUNT_JSON` | JSON de la cuenta de servicio Firebase Admin; configurarlo como secreto en Render cuando FCM esté habilitado. |
+
+Para activar FCM en Driver, registrar la aplicación Android en el proyecto Firebase y habilitar `FCM_ENABLED` en el backend y en la compilación Android. El backend requiere `FCM_PROJECT_ID` y `FCM_SERVICE_ACCOUNT_JSON`; Android requiere además `FCM_PROJECT_ID`, `FCM_APPLICATION_ID`, `FCM_API_KEY` y `FCM_SENDER_ID`. La app autenticada registra su Firebase Installation ID (FID) con `POST /api/v1/notifications/devices` enviando `installationId` y lo elimina con `DELETE /api/v1/notifications/devices/{deviceTokenId}` antes de cerrar sesión. Para verificar la entrega, provocar un cambio de estado de reserva o de pago simulado y comprobar que la app reciba la notificación. El backend procesa los eventos en memoria después de confirmar la transacción; FCM permanece deshabilitado por defecto hasta configurar ambos lados.
+
+Las variables de integración del cliente Android se leen durante la compilación desde variables de entorno o `local.properties`; no se guardan valores privados en el repositorio.
+
+| Variable de compilación Android | Propósito |
+| --- | --- |
+| `SPOTGO_API_BASE_URL` | URL base del Backend que consumirá la aplicación. |
+| `SPOTGO_GOOGLE_WEB_CLIENT_ID` | OAuth Web Client ID utilizado en el inicio de sesión con Google; debe coincidir con la audiencia validada por `GOOGLE_CLIENT_ID` en el Backend. |
+| `FCM_ENABLED`, `FCM_PROJECT_ID`, `FCM_APPLICATION_ID`, `FCM_API_KEY`, `FCM_SENDER_ID` | Configuración de Firebase Installations y FCM del cliente Android. `FCM_ENABLED` se mantiene en `false` hasta habilitar el servicio también en el Backend. |
+| `RECEIPT_EMAIL_ENABLED` | Muestra la acción de enviar el comprobante de reserva por correo. Mantener `false` en compilaciones locales; habilitar solo junto con la variable homónima del Backend y la configuración de Resend en despliegue. |
+
+Configurar `SPOTGO_API_BASE_URL` con la URL base HTTPS de Render en la compilación Android y en los otros clientes. Para pruebas Android locales, utilizar `http://10.0.2.2:8080` si el backend corre con Maven o `http://10.0.2.2:18080` si Docker publica ese puerto. En un dispositivo físico, usar la IP local de la máquina y el puerto publicado. Para el cliente web, configurar su origen en `CORS_ALLOWED_ORIGIN`.
+
+Los precios están fijos en el Backend: Tenant paga S/30 por el uso del app más S/1 por cada Parking Spot registrado; Driver paga S/15 al mes con 10% de descuento sobre el precio final de reservas o S/160 al año con 15%. El proveedor académico predeterminado simula cargos y reembolsos con referencias sintéticas, sin procesador externo ni movimiento de dinero. Render asigna `PORT` automáticamente.
+
+5. En el perfil `production`, Hibernate usa `ddl-auto=update` y `DbSeeder` carga los datos compatibles de `src/main/resources/db.json`. Inserta las filas con sus UUID de fixture y omite las que ya existen; no modifica ni elimina filas existentes. El archivo no incluye un `SUPER_ADMIN`: el bootstrap crea esa cuenta con `SUPERADMIN_BOOTSTRAP_EMAIL` y `SUPERADMIN_BOOTSTRAP_PASSWORD` cuando la base todavía no tiene una. El correo de bootstrap debe ser distinto de los correos demo incluidos en el fixture. Las demás cuentas demo comparten `DEMO_ACCOUNT_PASSWORD`, que debe permanecer configurada para que el servicio arranque. Después del primer inicio satisfactorio se pueden retirar las dos variables de bootstrap; la contraseña demo se conserva. Una base recreada requiere nuevamente las variables de bootstrap. No utilizar `ddl-auto=update` como sustituto de migraciones versionadas si hay datos que deban conservarse.
+6. Render construye y ejecuta la imagen desde el Dockerfile del repositorio. El contenedor usa un usuario no privilegiado, escucha en el `PORT` proporcionado por Render y ejecuta el perfil `production`.
 7. Ejecutar el despliegue y revisar los logs de compilación, inicio y conexión PostgreSQL. Render asigna una URL HTTPS al servicio. Comprobar `/v3/api-docs`, `/swagger-ui/index.html` y una operación pública documentada. Las [verificaciones de estado de Render](https://render.com/docs/health-checks) permiten comprobar que el servicio puede recibir tráfico.
 
 El Backend desplegado en Render se conecta a una única instancia PostgreSQL de Neon. El monolito modular conserva la separación lógica de los datos por bounded context dentro de esa instancia; los contextos no requieren instancias de Backend ni conexiones de base de datos desplegadas por separado.
@@ -117,11 +147,13 @@ El Backend desplegado en Render se conecta a una única instancia PostgreSQL de 
 3. Para una entrega release, configurar el almacén de claves, su alias y la firma mediante **Build → Generate Signed Bundle / APK** en Android Studio. Los secretos de firma se mantienen fuera del repositorio. Con la firma configurada, ejecutar `./gradlew.bat :app:assembleRelease` para el APK o `./gradlew.bat :app:bundleRelease` para el AAB; las salidas se conservan en `app/build/outputs/apk/release/` y `app/build/outputs/bundle/release/`, respectivamente.
 4. Instalar el APK y comprobar el inicio, el registro público y la navegación de Driver. El AAB se utiliza para distribución mediante un servicio que genere los APK correspondientes y no se instala directamente en el dispositivo. Estas tareas siguen la documentación de [compilación de Android](https://developer.android.com/build/building-cmdline) y [firma de aplicaciones](https://developer.android.com/studio/publish/app-signing).
 
-El repositorio Android inspeccionado contiene las pantallas iniciales de Driver y Parking Admin construidas con Kotlin y Jetpack Compose durante el Sprint 1. La aplicación final de Driver se completará en este cliente nativo; la aplicación final de Parking Admin se desarrollará por separado con Flutter.
+La aplicación Driver permite descargar en el dispositivo un PDF informativo de la reserva pagada. La exportación de Billing Documents también genera una copia PDF local; esos documentos no se emiten ante SUNAT. El envío por correo está limitado al comprobante informativo de una reserva y se habilita únicamente en despliegue con Resend.
+
+El prototipo del Sprint 1 reunió las pantallas de Driver y Parking Admin en Kotlin y Jetpack Compose. La configuración de entrega usa el cliente Android nativo para Driver y un cliente Flutter independiente para Parking Admin.
 
 **SpotGo Parking Admin Flutter App: Flutter y Dart**
 
-La aplicación de Parking Admin es un cliente móvil independiente y multiplataforma. Se desarrollará con Flutter y Dart, permitirá iniciar sesión con una cuenta provisionada y no incluirá registro público. Cuando su repositorio esté disponible, se documentarán sus instrucciones de compilación; para generar un paquete Android de prueba se utilizará `flutter build apk`.
+Para generar un APK de Parking Admin, ejecutar `flutter pub get` y `flutter build apk` desde la raíz de su repositorio. Configurar la URL base de la API y probar el inicio de sesión con una cuenta provisionada por SuperAdmin.
 
 **SpotGo Administration Web App: Angular y Render Static Site**
 
@@ -129,13 +161,13 @@ La página web administrativa de SpotGo es exclusiva para SuperAdmin y se desarr
 
 **Distribución móvil: Firebase App Distribution**
 
-Al finalizar el Sprint 3, se cargarán por separado las versiones Android de la aplicación nativa de Driver y la aplicación Flutter de Parking Admin en Firebase App Distribution. Se habilitará el acceso de los usuarios de prueba y se comprobará la instalación y ejecución de cada paquete. Firebase App Distribution admite la distribución de versiones Android a usuarios de prueba desde la consola, Firebase CLI o Gradle ([documentación](https://firebase.google.com/docs/app-distribution/)).
+Las versiones de prueba de SpotGo Driver Android App y SpotGo Parking Admin Flutter App están disponibles mediante Firebase App Distribution para los usuarios testers autorizados. La plataforma permite distribuir nuevas compilaciones Android desde la consola, Firebase CLI o Gradle ([documentación](https://firebase.google.com/docs/app-distribution/)).
 
 **Diagrama C4 de despliegue**
 
 La vista de despliegue presenta los clientes, el Backend modular y su única instancia PostgreSQL, además de los sensores. Su explicación corresponde a la sección 2.5.3.3. Software Architecture Deployment Diagrams.
 
-*Figura 79 (Diagrama C4 de despliegue)*  
+*Figura 93 (Diagrama C4 de despliegue)*  
 ![SpotGo C4 Deployment Diagram](../assets/diagrams/deployment-diagram.svg)
 
 ### 4.2. Landing Page & Mobile Application Implementation

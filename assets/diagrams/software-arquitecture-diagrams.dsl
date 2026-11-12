@@ -10,7 +10,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
         parkingAdmin = person "Parking Admin" "Administra la operación del estacionamiento mediante sus vistas administrativas."
 
-        superAdmin = person "SuperAdmin" "Crea y administra Tenants y provisiona las cuentas de Parking Admin."
+        superAdmin = person "SuperAdmin" "Crea y administra Tenants y provisiona las cuentas de Parking Admin y de otros SuperAdmins."
 
 
         // =========================================================
@@ -21,11 +21,19 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             tags "External System"
         }
 
-        googleMaps = softwareSystem "Google Maps" "Servicio externo utilizado para abrir rutas hacia la Parking Zone seleccionada." {
+        googleMaps = softwareSystem "Google Maps" "Aplicación externa que calcula rutas hacia la Parking Zone seleccionada." {
+            tags "External System"
+        }
+
+        openStreetMapTiles = softwareSystem "OpenStreetMap Tile Service" "Servicio externo de mosaicos raster en https://tile.openstreetmap.org/{z}/{x}/{y}.png, consultado bajo demanda por Driver y renderizado con MapLibre." {
             tags "External System"
         }
 
         notificationProvider = softwareSystem "Firebase Cloud Messaging" "Servicio externo de Google utilizado para enviar notificaciones push a los usuarios." {
+            tags "External System"
+        }
+
+        resendEmail = softwareSystem "Resend Email API" "Proveedor externo de correo para códigos de restablecimiento y configuración inicial de cuentas." {
             tags "External System"
         }
 
@@ -44,7 +52,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // FRONTENDS
             // =====================================================
 
-            driverApp = container "SpotGo Driver Android App" "Aplicación Android nativa exclusiva para Driver, desarrollada con Kotlin y Jetpack Compose. Permite iniciar sesión y crear una cuenta." "Kotlin / Jetpack Compose"
+            driverApp = container "SpotGo Driver Android App" "Aplicación Android nativa exclusiva para Driver, desarrollada con Kotlin y Jetpack Compose. Integra el mapa con MapLibre y permite iniciar sesión y crear una cuenta." "Kotlin / Jetpack Compose / MapLibre"
 
             parkingAdminApp = container "SpotGo Parking Admin Flutter App" "Aplicación móvil multiplataforma exclusiva para Parking Admin, desarrollada con Flutter y Dart. Permite iniciar sesión con una cuenta provisionada y no ofrece registro público." "Flutter / Dart"
 
@@ -56,6 +64,8 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             backend = container "SpotGo Backend" "Única aplicación de backend de SpotGo, implementada como un monolito modular con cinco bounded contexts." "Java 25 LTS / Spring Boot / Docker" {
                 group "Backend API" {
                     apiGateway = component "API Gateway" "Punto de entrada REST del Backend que dirige las solicitudes a los módulos internos." "Spring Boot"
+                    domainEventDispatcher = component "Domain Event Publisher" "Emite eventos tipados dentro del monolito; los listeners los procesan después de confirmar la transacción." "Spring ApplicationEventPublisher"
+                    pushNotificationService = component "Push Notification Service" "Registra Firebase Installation IDs (FID) y procesa eventos internos después del commit; el envío FCM queda deshabilitado hasta configurar backend y cliente." "Spring Boot / Firebase Admin SDK (optional)"
                 }
 
                 // =====================================================
@@ -70,8 +80,9 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
                     identityToken = component "Token Service Component" "Firma, valida, rota y revoca access tokens y refresh tokens." "Spring Security / JWT"
                     identityAuthorization = component "Authorization Component" "Controla permisos y acceso según roles." "Spring Security"
                     identityAccount = component "Account Component" "Gestiona el estado y ciclo de vida de las cuentas." "Java / Spring Boot"
+                    identityAccountAdministration = component "Account and Role Administration Component" "SUPER_ADMIN provisiona Parking Admins para Tenants existentes, asigna roles y estados, y envía un código de configuración de un solo uso." "Spring Boot / JPA"
+                    identityInvitationEmail = component "Account Invitation Email Adapter" "Envía códigos de configuración de cuenta y recuperación de contraseña; requiere RESEND_API_KEY y APP_PASSWORD_RESET_FROM_EMAIL." "Spring Boot / Resend REST API"
                     identityAudit = component "Audit Log Component" "Registra autenticaciones, autorizaciones, cambios de cuenta y acciones administrativas relevantes." "Spring Boot"
-                    identityEventPublisher = component "Identity Event Publisher" "Publica cambios de identidad, roles, suspensión y revocación sin exponer secretos ni tokens." "Spring Boot / Domain Events"
                 }
 
                 // =====================================================
@@ -80,12 +91,9 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
                 group "Profiles & Vehicles Management" {
                     profileService = component "Profiles & Vehicles Management Module" "Módulo de Profiles & Vehicles Management dentro del monolito modular de SpotGo." "Java / Spring Boot"
-                    profileDriver = component "Driver Profile Component" "Gestiona la información del conductor." "Spring Boot"
-                    profileVehicle = component "Vehicle Component" "Registra y administra Vehicles asociados al Driver, incluida la placa registrada." "Spring Boot"
-                    profileRole = component "User Profile Component" "Gestiona User Profiles de tipo Driver y Parking Admin; no gestiona Guests ni credenciales." "Spring Boot"
-                    profileParkingAdminAssignment = component "Parking Admin Assignment Component" "Gestiona la asignación de Parking Admin a un Tenant mediante referencias externas." "Spring Boot"
-                    profileIdentityAdapter = component "Identity & Access Management Adapter (Profiles)" "Consulta y valida identidad, rol y estado de cuenta mediante el contrato de IAM." "Spring Boot / Internal Contract"
-                    profileEventPublisher = component "Profile Event Publisher" "Publica cambios validados de Driver, Vehicle y Parking Admin Assignment." "Spring Boot / Domain Events"
+                    profileDriver = component "Profile Management Component" "Crea y actualiza el perfil personal asociado a la Account autenticada." "Spring Boot / JPA"
+                    profileVehicle = component "Vehicle Component" "Registra y administra vehículos asociados al Profile Driver; desactivar conserva la fila." "Spring Boot / JPA"
+                    profileClassification = component "Driver Classification Component" "Asigna TAXI, EMPLOYEE o PRIVATE por Profile y Tenant; el valor efectivo es PRIVATE si aún no hay asignación." "Spring Boot / JPA"
                 }
 
                 // =====================================================
@@ -94,17 +102,22 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
                 group "Parking Infrastructure" {
                     parkingService = component "Parking Infrastructure Module" "Módulo de Parking Infrastructure dentro del monolito modular de SpotGo." "Java / Spring Boot"
-                    parkingZone = component "Parking Zone Component" "Gestiona las zonas del estacionamiento y sus reglas." "Spring Boot"
+                    parkingTenant = component "Tenant Component" "Gestiona al Tenant como empresa cliente y como su único estacionamiento físico, incluidos dirección, coordenadas y rules JSONB." "Spring Boot"
+                    parkingTenantOnboarding = component "Tenant Onboarding Component" "SUPER_ADMIN crea un Tenant y su primer Parking Admin, perfil e invitación dentro de una transacción atómica." "Spring Boot / Transaction Management"
+                    parkingZone = component "Parking Zone Component" "Gestiona las zonas, sus Parking Spots y los Profile Types permitidos por zona; sus nombres pueden representar pisos o áreas interiores y exteriores." "Spring Boot / JPA / JSONB"
                     parkingSpot = component "Parking Spot Component" "Gestiona los espacios y su disponibilidad." "Spring Boot"
                     parkingReservation = component "Reservation Component" "Gestiona el ciclo de vida de las reservas." "Spring Boot"
+                    parkingReservationChange = component "Reservation Change Component" "Registra reprogramaciones y extensiones, su pago simulado y los reembolsos relacionados." "Spring Boot / JPA"
+                    parkingFavorites = component "Favorites Component" "Persiste los estacionamientos favoritos de cada perfil Driver." "Spring Boot / JPA"
                     parkingAllocation = component "Spot Allocation Component" "Asigna, reasigna y aplica un Temporary Lock de 10 minutos durante el proceso de pago." "Spring Boot"
+                    parkingReassignment = component "Reservation Reassignment Component" "Ante un conflicto de ocupación elegible, busca y reasigna la siguiente reserva confirmada a un Parking Spot activo, disponible y compatible." "Spring Boot / Spring Application Events"
                     parkingAvailability = component "Availability Component" "Calcula la disponibilidad actual de las zonas y espacios." "Spring Boot"
                     parkingGuest = component "Guest Parking Session Component" "Registra manualmente la placa, el ingreso, la salida y el pago físico de una Guest Parking Session; no crea una Reservation." "Spring Boot"
-                    parkingNavigation = component "Navigation Component" "Genera una ruta hacia la Parking Zone seleccionada mediante Google Maps." "Spring Boot"
+                    parkingSession = component "Parking Session Component" "Registra el ingreso y la salida de un Driver que utiliza una Reservation confirmada." "Spring Boot"
                     parkingIdentityAdapter = component "Identity & Access Management Adapter (Parking)" "Valida el rol y el alcance del actor antes de ejecutar operaciones protegidas." "Spring Boot / Internal Contract"
                     parkingProfileAdapter = component "Profiles & Vehicles Management Adapter" "Consulta Driver, Vehicle y User Profile mediante el contrato interno, sin acceder directamente a las tablas de otro bounded context." "Spring Boot / Internal Contract"
-                    parkingPaymentAdapter = component "Payments & Billing Adapter (Parking Infrastructure)" "Solicita pagos, cargos adicionales y reembolsos mediante contratos del contexto de pagos." "Spring Boot / Internal Contract / Domain Events"
-                    parkingOccupancyAdapter = component "Occupancy & Monitoring Adapter" "Consulta el estado físico y recibe conflictos o fallas de ocupación." "Spring Boot / Domain Events"
+                    parkingPaymentAdapter = component "Payments & Billing Adapter (Parking Infrastructure)" "Solicita pagos, cargos adicionales y reembolsos mediante el contrato interno del contexto de pagos." "Spring Boot / Internal Contract"
+                    parkingOccupancyAdapter = component "Occupancy & Monitoring Adapter" "Consulta la ocupación física confiable mediante un contrato interno." "Spring Boot / Internal Contract"
                 }
 
                 // =====================================================
@@ -113,18 +126,17 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
                 group "Payments & Billing" {
                     paymentService = component "Payments & Billing Module" "Módulo de Payments & Billing dentro del monolito modular de SpotGo." "Java / Spring Boot"
-                    internalPaymentSystem = component "Internal Payment System" "Sistema interno de SpotGo que procesa pagos digitales, consultas de estado y reembolsos con idempotencia dentro del Backend." "Spring Boot"
                     paymentProcessing = component "Payment Processing Component" "Procesa pagos digitales utilizando métodos tokenizados." "Spring Boot"
                     paymentToken = component "Payment Token Component" "Gestiona tokens asociados a los métodos de pago." "Spring Boot"
-                    paymentSubscription = component "Subscription Component" "Gestiona planes Free, Plus Monthly y Plus Annual." "Spring Boot"
+                    paymentSubscription = component "Subscription Component" "Gestiona periodos pagados DRIVER y TENANT. DRIVER paga S/15 al mes con 10% o S/160 al año con 15% de descuento solo sobre el precio final de reservas. TENANT paga S/30 por uso de la app más S/1 por Parking Spot registrado. Agregar un spot durante un periodo activo genera un cobro prorrateado inmediato con el token predeterminado; el spot se activa después de aprobar el pago y el snapshot de la suscripción se actualiza. No hay renovación mensual automática." "Spring Boot"
                     paymentAdditionalCharge = component "Additional Charge Component" "Procesa cargos adicionales validados por Parking Infrastructure u Occupancy & Monitoring." "Spring Boot"
                     paymentOvertime = component "Overtime Billing Component" "Calcula y procesa cobros adicionales por sobretiempo." "Spring Boot"
                     paymentRefund = component "Refund Component" "Gestiona devoluciones de pagos." "Spring Boot"
-                    paymentInvoice = component "Invoice and Receipt Component" "Genera y consulta Electronic Receipt o Electronic Invoice según la información de facturación." "Spring Boot"
+                    paymentInvoice = component "Billing Document Component" "Registra o anula documentos de facturación asociados a pagos; no los emite ante SUNAT." "Spring Boot"
                     paymentBalance = component "Pending Balance Component" "Gestiona saldos pendientes derivados de pagos fallidos." "Spring Boot"
-                    paymentRetry = component "Payment Retry Component" "Programa hasta 4 intentos en 10 minutos para Reservations y conciliaciones según la Retry Policy." "Spring Boot / Scheduler"
-                    paymentProviderAdapter = component "Internal Payment System Adapter" "Traduce el contrato de Payments & Billing al sistema de pagos internos." "Spring Boot / Internal Contract"
-                    paymentEventPublisher = component "Payment Event Publisher" "Publica resultados de pagos, reembolsos, cargos, saldos y documentos." "Spring Boot / Domain Events"
+                    paymentRetry = component "Payment Retry and Reconciliation Component" "Permite reintentos manuales después del tiempo de espera y consulta operaciones cuyo resultado quedó desconocido." "Spring Boot"
+                    paymentProviderAdapter = component "Simulated Payment Provider" "Valida referencias sintéticas. Devuelve cargos y reembolsos pendientes y sus resultados al conciliar, sin procesador externo ni movimiento de dinero." "Spring Boot / Internal Adapter"
+                    paymentOutcomeListener = component "Simulated Payment Outcome Listener" "Después del commit, resuelve de forma asíncrona resultados simulados de cargos y reembolsos mediante eventos Spring locales." "Spring Boot / Transactional Event Listener"
                 }
 
                 // =====================================================
@@ -133,18 +145,16 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
                 group "Occupancy & Monitoring" {
                     occupancyService = component "Occupancy & Monitoring Module" "Módulo de Occupancy & Monitoring dentro del monolito modular de SpotGo." "Java / Spring Boot"
-                    occupancySensor = component "Sensor Integration Component" "Recibe y normaliza lecturas físicas; los sensores no envían placa, driverId ni vehicleId." "Spring Boot / MQTT / HTTP"
+                    occupancySensor = component "Sensor Integration Component" "Recibe lecturas reales por REST/HTTPS, comprueba frescura e idempotencia y no acepta placa, driverId ni vehicleId; MQTT requiere un gateway externo." "Spring Boot / REST"
                     occupancyStatus = component "Occupancy Status Component" "Determina el estado de ocupación del Parking Spot." "Spring Boot"
                     occupancyHealth = component "Sensor Health Component" "Controla el estado de conexión y disponibilidad de los sensores." "Spring Boot"
                     occupancyConflict = component "Occupancy Conflict Component" "Detecta conflictos entre ocupación real y reservas." "Spring Boot"
                     occupancyUnauthorized = component "Unauthorized Occupancy Component" "Genera alertas por ocupación sin una expectativa operativa válida." "Spring Boot"
                     occupancyOvertime = component "Overtime Detection Component" "Detecta sobretiempo y solicita un cargo adicional solo con evidencia confiable." "Spring Boot"
-                    occupancyAlert = component "Occupancy Alert Component" "Genera eventos y alertas operativas." "Spring Boot"
-                    occupancyCapacity = component "Capacity Monitoring Component" "Calcula High Capacity cuando la ocupación supera el 95 por ciento." "Spring Boot"
+                    occupancyAlert = component "Occupancy Alert Component" "Persiste, notifica y permite reconocer alertas; su cierre conserva la clasificación del incidente y la acción registrada por Parking Admin." "Spring Boot / PostgreSQL"
+                    occupancyCapacity = component "Capacity Monitoring Component" "Persiste una alerta CRITICAL al superar el 95 por ciento de ocupación y la resuelve al regresar al umbral." "Spring Boot / PostgreSQL"
                     occupancyReport = component "Occupancy Report Component" "Genera reportes operativos para Parking Admin." "Spring Boot"
-                    occupancyParkingAdapter = component "Parking Infrastructure Adapter" "Consume expectativas y publica estados, conflictos y fallas hacia Parking Infrastructure." "Spring Boot / Domain Events"
-                    occupancyPaymentAdapter = component "Payments & Billing Adapter (Occupancy & Monitoring)" "Publica AdditionalChargeRequested cuando existe evidencia suficiente." "Spring Boot / Domain Events"
-                    occupancyFcmAdapter = component "FCM Notification Adapter" "Envía alertas y reportes operativos mediante Firebase Cloud Messaging." "Spring Boot / FCM"
+                    occupancyBillingGateway = component "Payments & Billing Subscription Gateway" "Consulta por contrato interno el límite de sensores y los Parking Spots cubiertos por la suscripción." "Spring Boot / Internal Contract"
                 }
 
             }
@@ -163,7 +173,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
                     paymentDb = component "Payments & Billing Data" "Partición lógica de datos de pagos y facturación dentro de la instancia PostgreSQL compartida." "PostgreSQL"
                 }
                 group "Occupancy & Monitoring" {
-                    occupancyDb = component "Occupancy & Monitoring Data" "Partición lógica de datos de ocupación dentro de la instancia PostgreSQL compartida." "PostgreSQL"
+                    occupancyDb = component "Occupancy & Monitoring Data" "Partición lógica de sensores, lecturas, conflictos, alertas operativas, capacity alerts, snapshots e informes." "PostgreSQL"
                 }
             }
 
@@ -175,7 +185,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             driver -> landingPage "Consulta la propuesta de valor" "HTTPS"
             parkingAdmin -> parkingAdminApp "Utiliza la aplicación Flutter multiplataforma"
             parkingAdmin -> landingPage "Consulta la propuesta de valor" "HTTPS"
-            superAdmin -> webApp "Provisiona Parking Admin y administra Tenants"
+            superAdmin -> webApp "Crea cuentas de Parking Admin y otros SuperAdmins, y administra Tenants"
 
             // =====================================================
             // FRONTENDS - API GATEWAY
@@ -192,8 +202,11 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             apiGateway -> identityService "Autenticación y autorización" "Invocación interna"
             apiGateway -> profileService "Perfiles y vehículos" "Invocación interna"
             apiGateway -> parkingService "Zonas, espacios y reservas" "Invocación interna"
+            apiGateway -> parkingTenantOnboarding "Crea un Tenant con su primer Parking Admin" "Invocación interna"
             apiGateway -> paymentService "Pagos y facturación" "Invocación interna"
             apiGateway -> occupancyService "Disponibilidad y monitoreo" "Invocación interna"
+            apiGateway -> pushNotificationService "Registra, consulta y elimina Firebase Installation IDs" "Invocación interna"
+            apiGateway -> identityAccountAdministration "Administra cuentas y roles" "Invocación interna"
 
             // =====================================================
             // MODULOS Y PARTICIONES LOGICAS DE DATOS
@@ -204,43 +217,53 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             parkingService -> parkingDb "Lee y escribe zonas, espacios y reservas" "JDBC / SQL"
             paymentService -> paymentDb "Lee y escribe pagos y facturación" "JDBC / SQL"
             occupancyService -> occupancyDb "Lee y escribe estados y eventos de ocupación" "JDBC / SQL"
-            paymentService -> internalPaymentSystem "Coordina el procesamiento interno de pagos" "Llamada interna"
+            pushNotificationService -> identityDb "Lee cuentas y persiste Firebase Installation IDs" "JPA / SQL"
 
             // =====================================================
             // COMUNICACIONES ENTRE BOUNDED CONTEXTS
             // =====================================================
 
-            profileService -> identityService "Valida la referencia de identidad y el rol" "Contrato interno"
-            identityService -> profileService "Publica cambios de identidad, roles y provisión" "Evento de dominio"
+            profileService -> identityService "Valida la Account, su rol único y su estado" "Contrato interno"
+            identityService -> domainEventDispatcher "Publica registro de Account y cambios de estado o rol" "Evento Spring después del commit"
+            profileService -> domainEventDispatcher "Publica cambios de Profile, Vehicle y clasificación" "Evento Spring después del commit"
             parkingService -> identityService "Valida identidad y autorización" "Contrato interno"
+            parkingTenantOnboarding -> identityAccountAdministration "Provisiona la cuenta, el rol, el perfil y la invitación inicial" "Contrato interno dentro de la misma transacción"
+            identityAccountAdministration -> identityInvitationEmail "Envía el código de configuración de cuenta" "Invocación HTTP"
             parkingService -> profileService "Consulta perfiles y vehículos autorizados" "Contrato interno"
-            profileService -> parkingService "Publica Driver y Vehicle validados" "Evento de dominio"
-            parkingService -> paymentService "Solicita pagos, cargos y reembolsos" "Contrato interno / eventos de dominio"
-            paymentService -> parkingService "Publica resultados de pagos y reembolsos" "Eventos de dominio"
-            parkingService -> occupancyService "Publica Reservation, Reassignment y Parking Session expectations" "Eventos de dominio"
-            occupancyService -> parkingService "Notifica ocupación, fallas y conflictos" "Eventos de dominio"
-            occupancyService -> paymentService "Solicita cargos adicionales con evidencia" "Contrato interno / eventos de dominio"
+            parkingService -> paymentService "Solicita pagos, cargos y reembolsos" "Contrato interno"
+            parkingService -> occupancyService "Consulta ocupación física confiable" "Contrato interno"
+            paymentService -> parkingService "Consulta Tenant y Parking Spots para el snapshot de facturación" "Repositorios JPA compartidos"
+            occupancyService -> parkingService "Consulta zonas, espacios, reservas y sesiones" "Repositorios JPA compartidos"
+            occupancyService -> paymentService "Consulta los límites de sensores de la suscripción" "Contrato interno"
+
+            parkingService -> domainEventDispatcher "Publica reservas y cambios de Parking Sessions" "Evento Spring después del commit"
+            domainEventDispatcher -> parkingReassignment "Entrega monitoring.alert.opened para conflictos elegibles" "Spring Application Events after commit"
+            parkingReassignment -> domainEventDispatcher "Publica parking.reservation.reassigned" "Spring Application Events after commit"
+            paymentService -> domainEventDispatcher "Publica resultados de pagos y cambios de suscripción" "Evento Spring después del commit"
+            domainEventDispatcher -> paymentOutcomeListener "Entrega estados pendientes para conciliación simulada" "Spring Application Events after commit"
+            paymentOutcomeListener -> paymentProcessing "Aplica el resultado de cargo o reembolso" "Invocación interna asíncrona"
+            occupancyService -> domainEventDispatcher "Publica alertas de sensores y conflictos" "Evento Spring después del commit"
+            domainEventDispatcher -> pushNotificationService "Entrega eventos a listeners internos" "Spring Application Events"
 
             // =====================================================
             // SENSORES
             // =====================================================
 
-            parkingSensors -> occupancyService "Entrega lecturas al módulo Occupancy & Monitoring" "MQTT / HTTP"
+            parkingSensors -> occupancyService "Entrega lecturas por HTTPS / REST; un gateway externo puede convertir MQTT a HTTP" "HTTPS / REST"
 
             // =====================================================
             // NOTIFICACIONES
             // =====================================================
 
-            identityService -> notificationProvider "Envía notificaciones de cuenta y acceso" "HTTPS / FCM"
-            parkingService -> notificationProvider "Envía alertas de reservas y reasignaciones" "HTTPS / FCM"
-            paymentService -> notificationProvider "Envía confirmaciones, fallos, reembolsos y saldos pendientes" "HTTPS / FCM"
-            occupancyService -> notificationProvider "Envía alertas de ocupación y sobretiempo" "HTTPS / FCM"
+            pushNotificationService -> notificationProvider "Envía notificaciones a dispositivos registrados" "HTTPS / Firebase Cloud Messaging"
+            identityInvitationEmail -> resendEmail "Envía códigos de configuración y recuperación" "HTTPS / REST"
 
             // =====================================================
-            // GOOGLE MAPS
+            // MAP TILES AND EXTERNAL NAVIGATION
             // =====================================================
 
-            driverApp -> googleMaps "Abre ruta hacia la Parking Zone seleccionada" "Google Maps SDK / Deep Link"
+            driverApp -> openStreetMapTiles "Solicita mosaicos cartográficos para renderizar el mapa integrado" "HTTPS / XYZ raster tiles"
+            driverApp -> googleMaps "Abre navegación externa hacia la Parking Zone seleccionada" "Android Intent / Deep Link"
             landingPage -> driverApp "Dirige a Driver al acceso móvil" "HTTPS / App Link"
             landingPage -> parkingAdminApp "Dirige a Parking Admin al acceso móvil" "HTTPS / App Link"
 
@@ -272,9 +295,12 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             identityAuthorization -> identityDb "Consulta roles"
             identityAuthorization -> identityAudit "Registra autorización y acciones relevantes"
             identityAccount -> identityAudit "Registra cambios de cuenta"
-            identityAccount -> identityEventPublisher "Publica cambios de cuenta"
-            identityAuthorization -> identityEventPublisher "Publica cambios de rol y acceso"
-            identityEventPublisher -> profileRole "Sincroniza rol y provisión de perfil"
+            identityAccountAdministration -> identityAccount "Crea y cambia estados de cuentas"
+            identityAccountAdministration -> identityAuthorization "Asigna roles y Tenant scope"
+            identityAccountAdministration -> identityInvitationEmail "Solicita la invitación de un solo uso"
+            identityAccountAdministration -> profileService "Crea el perfil de Parking Admin"
+            identityAccount -> domainEventDispatcher "Publica registro y cambios de estado de Account"
+            identityAuthorization -> domainEventDispatcher "Publica cambios de Role Assignment"
 
             // =====================================================
             // RELACIONES DE COMPONENTES - BC02
@@ -282,44 +308,56 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
             apiGateway -> profileDriver "Expone gestión de Driver"
             apiGateway -> profileVehicle "Expone gestión de Vehicle"
-            apiGateway -> profileRole "Expone gestión de User Profile"
-            apiGateway -> profileParkingAdminAssignment "Expone asignación de Parking Admin"
+            apiGateway -> profileClassification "Expone clasificación del Driver por Tenant"
             profileDriver -> profileVehicle "Gestiona vehículos del Driver"
-            profileDriver -> profileRole "Consulta User Profile"
-            profileRole -> profileParkingAdminAssignment "Gestiona asignación de Parking Admin a Tenant"
-            profileIdentityAdapter -> identityService "Consulta identidad y rol"
-            profileDriver -> profileEventPublisher "Publica cambios del Driver"
-            profileVehicle -> profileEventPublisher "Publica registro o baja del Vehicle"
-            profileParkingAdminAssignment -> profileEventPublisher "Publica cambios de asignación"
-            profileEventPublisher -> parkingService "Publica datos validados de Driver y Vehicle"
+            profileDriver -> identityAccount "Valida la Account dentro del monolito"
+            profileClassification -> identityAccount "Consulta Account y Role Assignment dentro del monolito"
+            profileClassification -> parkingTenant "Valida el Tenant dentro del monolito"
+            profileDriver -> domainEventDispatcher "Publica cambios del Profile"
+            profileVehicle -> domainEventDispatcher "Publica registro, actualización o baja del Vehicle"
+            profileClassification -> domainEventDispatcher "Publica asignaciones de clasificación por Tenant"
             profileDriver -> profileDb "Persistencia"
             profileVehicle -> profileDb "Persistencia"
-            profileRole -> profileDb "Persistencia"
-            profileParkingAdminAssignment -> profileDb "Persistencia"
+            profileClassification -> profileDb "Persistencia"
 
             // =====================================================
             // RELACIONES DE COMPONENTES - BC03
             // =====================================================
 
+            apiGateway -> parkingTenant "Expone la gestión de la empresa y las reglas del estacionamiento"
+            apiGateway -> parkingTenantOnboarding "Expone el alta atómica de Tenant y administrador inicial"
+            parkingTenantOnboarding -> parkingTenant "Crea el Tenant"
+            parkingTenantOnboarding -> identityAccountAdministration "Provisiona cuenta, rol, perfil e invitación"
             apiGateway -> parkingZone "Expone gestión de Parking Zones"
             apiGateway -> parkingReservation "Expone gestión de Reservations"
+            apiGateway -> parkingReservationChange "Expone reprogramación, extensión e historial de cambios"
+            apiGateway -> parkingFavorites "Expone gestión de favoritos del Driver"
             apiGateway -> parkingGuest "Expone gestión de Guest Parking Sessions"
+            apiGateway -> parkingSession "Expone el ingreso y salida de Parking Sessions"
+            parkingTenant -> parkingZone "Organiza las zonas del estacionamiento que representa"
             parkingZone -> parkingSpot "Contiene espacios"
+            parkingReservation -> profileClassification "Comprueba la clasificación permitida antes de reservar"
             parkingSpot -> parkingAvailability "Proporciona disponibilidad"
             parkingReservation -> parkingAllocation "Solicita asignación"
             parkingAllocation -> parkingAvailability "Consulta disponibilidad"
             parkingAllocation -> parkingSpot "Asigna espacio"
+            parkingReservation -> parkingTenant "Aplica las reglas del estacionamiento guardadas en rules JSONB"
             parkingReservation -> parkingZone "Valida zona"
             parkingReservation -> parkingSpot "Reserva espacio"
+            parkingReservation -> domainEventDispatcher "Publica creación, confirmación y cancelación de Reservation"
+            parkingSession -> domainEventDispatcher "Publica inicio y cierre de Parking Session"
             parkingGuest -> parkingAvailability "Selecciona un spot disponible"
             parkingGuest -> parkingSpot "Asigna el spot al Guest"
-            parkingNavigation -> parkingZone "Obtiene la Parking Zone seleccionada"
-            parkingNavigation -> googleMaps "Abre ruta hacia la Parking Zone" "Google Maps SDK / Deep Link"
+            parkingReservationChange -> parkingReservation "Registra cambios asociados a Reservation"
+            parkingReservationChange -> parkingPaymentAdapter "Solicita pago simulado o reembolso"
             parkingIdentityAdapter -> identityService "Valida rol y alcance"
             parkingProfileAdapter -> profileService "Consulta Driver, Vehicle y User Profile"
             parkingPaymentAdapter -> paymentService "Solicita pago o reembolso"
-            parkingOccupancyAdapter -> occupancyService "Consulta ocupación y recibe conflictos"
+            parkingOccupancyAdapter -> occupancyService "Consulta ocupación física confiable"
             parkingReservation -> parkingDb "Persistencia"
+            parkingReservationChange -> parkingDb "Persiste reservation_changes"
+            parkingFavorites -> parkingDb "Persiste favorite_tenants"
+            parkingTenant -> parkingDb "Persiste la empresa y rules JSONB"
             parkingZone -> parkingDb "Persistencia"
             parkingSpot -> parkingDb "Persistencia"
             parkingAllocation -> parkingDb "Persistencia"
@@ -339,19 +377,15 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             paymentProcessing -> paymentInvoice "Genera comprobante"
             paymentProcessing -> paymentBalance "Gestiona resultado"
             paymentProcessing -> paymentProviderAdapter "Envía operación con idempotencia"
-            paymentProcessing -> paymentEventPublisher "Publica resultado económico"
+            paymentProcessing -> domainEventDispatcher "Publica resultados de pagos y suscripciones"
+            domainEventDispatcher -> paymentOutcomeListener "Entrega resultados pendientes después del commit"
+            paymentOutcomeListener -> paymentProcessing "Concilia el resultado simulado"
             paymentRetry -> paymentProcessing "Coordina intentos y conciliaciones"
             paymentRetry -> paymentProviderAdapter "Reintenta errores transitorios"
-            paymentProviderAdapter -> internalPaymentSystem "Procesa operación mediante contrato interno" "HTTPS / REST"
             paymentAdditionalCharge -> paymentProcessing "Solicita procesamiento del cargo"
-            paymentOvertime -> paymentSubscription "Aplica descuento de suscripción"
+            paymentOvertime -> paymentSubscription "Mantiene multas y sobretiempo separados del descuento de reserva"
             paymentOvertime -> paymentAdditionalCharge "Calcula cargo adicional"
             paymentRefund -> paymentProviderAdapter "Solicita devolución"
-            paymentRefund -> paymentEventPublisher "Publica resultado del reembolso"
-            paymentBalance -> paymentEventPublisher "Publica cambios de saldo"
-            paymentInvoice -> paymentEventPublisher "Publica documento emitido"
-            paymentEventPublisher -> parkingService "Publica aprobación, rechazo o reembolso"
-            paymentEventPublisher -> occupancyService "Publica resultado de cargo adicional"
             paymentProcessing -> paymentDb "Persistencia"
             paymentToken -> paymentDb "Persistencia"
             paymentSubscription -> paymentDb "Persistencia"
@@ -368,7 +402,9 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
             apiGateway -> occupancyReport "Expone reportes operativos"
             apiGateway -> occupancyAlert "Expone gestión de alertas"
-            parkingSensors -> occupancySensor "Envía lecturas sin identidad del vehículo" "MQTT / HTTP"
+            occupancyService -> occupancyBillingGateway "Consulta cobertura de suscripción y límite de sensores"
+            occupancyBillingGateway -> paymentService "Consulta plan y spots incluidos"
+            parkingSensors -> occupancySensor "Envía lecturas sin identidad del vehículo; el backend recibe HTTPS / REST" "HTTPS / REST via external IoT gateway"
             occupancySensor -> occupancyStatus "Actualiza ocupación"
             occupancySensor -> occupancyHealth "Actualiza salud del sensor"
             occupancyStatus -> occupancyConflict "Compara con reservas"
@@ -379,12 +415,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             occupancyStatus -> occupancyReport "Proporciona datos para reportes"
             occupancyUnauthorized -> occupancyAlert "Genera alerta para Parking Admin"
             occupancyOvertime -> occupancyAlert "Genera señal operativa"
-            occupancyOvertime -> occupancyPaymentAdapter "Solicita cargo con evidencia"
-            occupancyParkingAdapter -> parkingService "Publica estados, conflictos y fallas"
-            occupancyPaymentAdapter -> paymentService "Publica AdditionalChargeRequested"
-            occupancyAlert -> occupancyFcmAdapter "Envía notificación"
-            occupancyFcmAdapter -> notificationProvider "Envía alerta mediante FCM" "HTTPS / FCM"
-            parkingService -> occupancyParkingAdapter "Entrega Reservation, Reassignment y Parking Session expectations"
+            occupancyAlert -> domainEventDispatcher "Publica alertas nuevas de sensores y conflictos"
             occupancySensor -> occupancyDb "Persistencia"
             occupancyStatus -> occupancyDb "Persistencia"
             occupancyHealth -> occupancyDb "Persistencia"
@@ -402,7 +433,6 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             parkingReservation -> parkingProfileAdapter "Consulta Driver y Vehicle"
             parkingReservation -> parkingPaymentAdapter "Solicita pago"
             parkingAllocation -> parkingOccupancyAdapter "Consulta estado de ocupación"
-            occupancyConflict -> occupancyParkingAdapter "Notifica conflicto"
             occupancyConflict -> parkingAllocation "Solicita reasignación"
         }
 
@@ -423,7 +453,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
                 containerInstance parkingAdminApp
             }
 
-            deploymentNode "SuperAdmin Device" "Navegador utilizado por SuperAdmin para provisionar Parking Admin y administrar Tenants" "Web Browser" {
+            deploymentNode "SuperAdmin Device" "Navegador utilizado por SuperAdmin para provisionar cuentas Parking Admin y SuperAdmin, y administrar Tenants" "Web Browser" {
             }
 
             // -----------------------------------------------------
@@ -455,7 +485,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             // INFRAESTRUCTURA DEL ESTACIONAMIENTO
             // -----------------------------------------------------
             deploymentNode "Parking Infrastructure" "Infraestructura física del estacionamiento" "IoT Environment" {
-                deploymentNode "IoT Sensor Network" "Red de sensores físicos instalados en los Parking Spots" "MQTT / HTTP" {
+                deploymentNode "IoT Sensor Network" "Sensores físicos que publican lecturas hacia el Backend por HTTPS / REST. Un despliegue MQTT requiere un gateway externo que convierta el protocolo." "HTTPS / REST; MQTT via external gateway" {
                     softwareSystemInstance parkingSensors
                 }
             }
@@ -466,6 +496,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
             deploymentNode "External Services" "Servicios externos utilizados por SpotGo" "Internet" {
                 softwareSystemInstance googleIdentity
                 softwareSystemInstance googleMaps
+                softwareSystemInstance openStreetMapTiles
                 softwareSystemInstance notificationProvider
             }
         }
@@ -512,7 +543,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
         // 4. COMPONENT DIAGRAM - PERFILES
 
-        component backend "Profile_Components_Diagram" {
+        component backend "Profiles_Components_Diagram" {
             include "element.group==Profiles & Vehicles Management" "element.group==Backend API" identityService parkingService spotgoDatabase driverApp parkingAdminApp webApp googleIdentity notificationProvider
             autoLayout lr
             title "SpotGo - Components Diagram - Profiles & Vehicles Management"
@@ -522,7 +553,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
         // 5. COMPONENT DIAGRAM - INFRAESTRUCTURA
 
         component backend "Parking_Components_Diagram" {
-            include "element.group==Parking Infrastructure" "element.group==Backend API" identityService profileService paymentService occupancyService spotgoDatabase driverApp parkingAdminApp webApp googleMaps notificationProvider
+            include "element.group==Parking Infrastructure" "element.group==Backend API" identityService profileService paymentService occupancyService spotgoDatabase driverApp parkingAdminApp webApp googleMaps openStreetMapTiles notificationProvider
             autoLayout lr
             title "SpotGo - Components Diagram - Parking Infrastructure"
             description "Módulo de Parking Infrastructure dentro del monolito modular y su partición lógica de datos."
@@ -530,7 +561,7 @@ workspace "SpotGo - Software Architecture" "Arquitectura de Software de SpotGo b
 
         // 6. COMPONENT DIAGRAM - PAGOS
 
-        component backend "Payment_Components_Diagram" {
+        component backend "Payments_Components_Diagram" {
             include "element.group==Payments & Billing" "element.group==Backend API" parkingService occupancyService spotgoDatabase driverApp parkingAdminApp webApp notificationProvider
             autoLayout lr
             title "SpotGo - Components Diagram - Payments & Billing"

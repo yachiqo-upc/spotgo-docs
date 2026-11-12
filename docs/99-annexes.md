@@ -1,13 +1,15 @@
-    # Anexos
+# Anexos
 
 **Anexo A. Diagramas**
+
 | Diagrama | Enlace al diagrama |
 | --- | --- |
 | **Big Picture EventStorming** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/big-picture-event-storming.svg](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/big-picture-event-storming.svg) |
 | **Design-Level EventStorming** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/design-level-event-storming.svg](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/design-level-event-storming.svg) |
 | **Software Architecture Diagrams (DSL Structurizr)** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/software-arquitecture-diagrams.dsl](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/software-arquitecture-diagrams.dsl) |
 | **Class Diagram (PlantUML)** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/class-diagram.puml](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/class-diagram.puml) |
-| **Database Diagram** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/database-diagram.svg](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/database-diagram.svg) |
+| **Database Diagram By Context** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/database-diagram-by-context.svg](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/database-diagram-by-context.svg) |
+| **Database Diagram Relational** | [https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/database-diagram-relational.svg](https://raw.githubusercontent.com/yachiqo-upc/spotgo-docs/refs/heads/main/assets/diagrams/database-diagram-relational.svg) |
 
 **Anexo B. Enlaces importantes**
 
@@ -17,8 +19,8 @@
 | Repositorio de la Documentación | [https://github.com/yachiqo-upc/spotgo-docs](https://github.com/yachiqo-upc/spotgo-docs) |
 | Repositorio de la Landing Page | [https://github.com/yachiqo-upc/spotgo-landing](https://github.com/yachiqo-upc/spotgo-landing) |
 | Repositorio del Backend | [https://github.com/yachiqo-upc/spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) |
-| Repositorio de la aplicación Android de Driver | [https://github.com/yachiqo-upc/spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) |
-| Repositorio de la aplicación Flutter de Parking Admin | [https://github.com/yachiqo-upc/spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) |
-| Repositorio de la página web administrativa de SpotGo | [https://github.com/yachiqo-upc/spotgo-admin-web-app](https://github.com/yachiqo-upc/spotgo-admin-web-app) |
+| Repositorio del Driver Android App | [https://github.com/yachiqo-upc/spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) |
+| Repositorio del Parking Admin Flutter App | [https://github.com/yachiqo-upc/spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) |
+| Repositorio del SpotGo Admin Web App | [https://github.com/yachiqo-upc/spotgo-admin-web-app](https://github.com/yachiqo-upc/spotgo-admin-web-app) |
 | Landing Page Desplegada | [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing) |
 | Backend Desplegado | [https://spotgo-backend.onrender.com/swagger-ui/index.html](https://spotgo-backend.onrender.com/swagger-ui/index.html) |

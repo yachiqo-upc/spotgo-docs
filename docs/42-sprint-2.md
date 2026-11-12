@@ -118,8 +118,8 @@ El Sprint Backlog 2 reúne las tareas vinculadas a los elementos planificados de
 
 **Trello Board Link:** [https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/spotgo-trello-board](https://trello.com/invite/b/6aa6e46ebebf57986f7fcd37/ATTIc1ae2804c4145e3b8bfd53325b170b9bFBAEB587/spotgo-trello-board)
 
-*Figura 100 (Trello Board: Sprint Backlog 2)*  
-![Trello Board: Sprint Backlog 2](../assets/images/figures/100-trello-board-sprint-backlog-2.png)
+*Figura 114 (Trello Board: Sprint Backlog 2)*  
+![Trello Board: Sprint Backlog 2](../assets/images/figures/114-trello-board-sprint-backlog-2.png)
 
 <table>
   <thead>
@@ -184,10 +184,17 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 | Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
 | --- | --- | --- | --- | --- |
 | [spotgo-landing](https://github.com/yachiqo-upc/spotgo-landing) | develop  | d6d9470 | feat: redesign SpotGo Landing Page for mobile apps | 2026-11-05 |
-| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) |  |  |  |  |
+| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | feature/update-backend | 9b41681 | feat(profiles): update bounded context, Swagger documentation, conditional database seeder and environment configuration | 2026-11-09 |
+| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | feature/update-backend | 5ed3ee1 | feat(iam): implement UUID accounts, credentials, roles, sessions and audit with JWT refresh, Swagger documentation and demo seeder | 2026-11-09 |
+| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | feature/update-backend | 5c572ca | feat(parking): implement UUID infrastructure and align IAM entity names | 2026-11-09 |
+| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | feature/update-backend | 59f0f7e | feat(billing): implement payments and integrate with parking, IAM and profiles | 2026-11-09 |
+| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | feature/update-backend | 4d19261 | feat(monitoring): implement occupancy tracking, alerts and photo evidence, and integrate all five bounded contexts | 2026-11-10 |
+| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | develop | 06a99f6 | feat: general guidelines for docs | 2026-11-11 |
+| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | develop | e21fdf1 | feat: android app alignments | 2026-11-12 |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/auth-access-flow | d1fda5c | feat: add driver access flow with in-memory data layer | 2026-11-08 |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/driver-workspace | ee730db | feat: add driver workspace screens and navigation | 2026-11-08 |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/tests | 697e391 | test: add unit and instrumented test suites | 2026-11-08 |
+| [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | develop | f8b9205 | feat: backend connection | 2026-11-12 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 2bf176a | chore(flutter): configure theme and assets | 2026-11-07 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 5db9354 | feat(auth): implement parking admin access | 2026-11-07 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 6a05d2b | feat(navigation): add admin navigation | 2026-11-07 |
@@ -202,73 +209,62 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 #### *4.2.2.5. Testing Suite Evidence for Sprint Review*
 
-*Figura 101 (Backend Test Evidence)*  
+*Figura 115 (Backend Test Evidence)*  
 
-**Ejecución de pruebas automatizadas: 178 pruebas aprobadas**
+![Backend Test Evidence Part 1](../assets/images/figures/115-backend-test-evidence-1.png)
 
-![Backend: ejecución de 178 pruebas automatizadas aprobadas](../assets/images/figures/101-backend-testing-evidence-1.png)
+![Backend Test Evidence Part 2](../assets/images/figures/115-backend-test-evidence-2.png)
 
-**Documentación de los servicios REST en Swagger UI**
+*Figura 116 (SpotGo Android App Test Evidence)*  
+![SpotGo Android App Test Evidence](../assets/images/figures/116-android-app-test-evidence.png)
 
-![Backend: documentación de los servicios REST en Swagger UI](../assets/images/figures/101-backend-testing-evidence-2.png)
-
-*Figura 102 (SpotGo Android App Test Evidence)*  
-
-![SpotGo Android App Test Evidence](../assets/images/figures/102-android-app-test-evidence.png)
-
-*Figura 103 (SpotGo Flutter App Test Evidence)*  
-![SpotGo Flutter App Test Evidence](../assets/images/figures/103-flutter-app-test-evidence.png)
+*Figura 117 (SpotGo Flutter App Test Evidence)*  
+![SpotGo Flutter App Test Evidence](../assets/images/figures/117-flutter-app-test-evidence.png)
 
 #### *4.2.2.6. Execution Evidence for Sprint Review*
 
 **Landing Page**
 
-*Figura 104 (SpotGo Landing Page: Home)*  
-![SpotGo Landing Page: Home](../assets/images/figures/104-landing-page-home.png)
+*Figura 118 (SpotGo Landing Page: Home)*  
+![SpotGo Landing Page: Home](../assets/images/figures/118-landing-page-home.png)
 
-*Figura 105 (SpotGo Landing Page: The Apps)*  
-![SpotGo Landing Page: The Apps](../assets/images/figures/105-landing-page-the-apps.png)
+*Figura 119 (SpotGo Landing Page: The Apps)*  
+![SpotGo Landing Page: The Apps](../assets/images/figures/119-landing-page-the-apps.png)
 
-*Figura 106 (SpotGo Landing Page: How it Works)*  
-![SpotGo Landing Page: How it Works](../assets/images/figures/106-landing-page-how-it-works.png)
+*Figura 120 (SpotGo Landing Page: How it Works)*  
+![SpotGo Landing Page: How it Works](../assets/images/figures/120-landing-page-how-it-works.png)
 
-*Figura 107 (SpotGo Landing Page: FAQ)*  
-![SpotGo Landing Page: FAQ](../assets/images/figures/107-landing-page-faq.png)
+*Figura 121 (SpotGo Landing Page: FAQ)*  
+![SpotGo Landing Page: FAQ](../assets/images/figures/121-landing-page-faq.png)
 
 **Landing Page Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQB_Jj5fMDvRTLXgP8g9FbLZAdG4cpDEmi_4JIVIlebIiy8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Jx3xOS](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQB_Jj5fMDvRTLXgP8g9FbLZAdG4cpDEmi_4JIVIlebIiy8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Jx3xOS)
 
 **SpotGo Android App**
 
-*Figura 108 (SpotGo Android App: Sign-up and Sign-in)*  
+*Figura 122 (SpotGo Android App: Sign-up and Sign-in)*  
+![SpotGo Android App: Sign-up and Sign-in](../assets/images/figures/122-android-app-sign-up-sign-in.jpeg)
 
-![SpotGo Flutter App: Sign-up and Sign-in](../assets/images/figures/108-android-app-sign-up-sign-in.jpeg)
+*Figura 123 (SpotGo Android App: Vehicle Registration)*  
+![SpotGo Android App: Vehicle Registration](../assets/images/figures/123-android-app-vehicle-registration.jpeg)
 
-*Figura 109 (SpotGo Android App: Vehicle Registration)*  
+*Figura 124 (SpotGo Android App: Availability and Reservations)*  
+![SpotGo Android App: Availability and Reservations](../assets/images/figures/124-android-app-availability-and-reservations.jpeg)
 
-![SpotGo Flutter App: Vehicle Registration](../assets/images/figures/109-android-app-vehicle-registration.jpeg)
-
-*Figura 110 (SpotGo Android App: Availability and Reservations)*  
-
-![SpotGo Flutter App: Availability and Reservations](../assets/images/figures/110-android-app-availability-and-reservations.jpeg)
-
-*Figura 111 (SpotGo Android App: Payments and Receipts)*  
-
-![SpotGo Flutter App: Payments and Receipts](../assets/images/figures/111-android-app-payments-and-receipts.jpeg)
+*Figura 125 (SpotGo Android App: Payments and Receipts)*  
+![SpotGo Android App: Payments and Receipts](../assets/images/figures/125-android-app-payments-and-receipts.jpeg)
 
 **Android App Demonstration Video Link:**[https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAxJsr3dLiDRaSmY9Q455szATUGQU5i1tn98g1UXWB7a6s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=61cAXb](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQAxJsr3dLiDRaSmY9Q455szATUGQU5i1tn98g1UXWB7a6s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=61cAXb)
 
 **SpotGo Flutter App**
 
-*Figura 112 (SpotGo Flutter App: Guest Parking Sessions)*  
-![SpotGo Flutter App: Guest Parking Sessions](../assets/images/figures/112-flutter-app-guest-parking-sessions.png)
+*Figura 126 (SpotGo Flutter App: Guest Parking Sessions)*  
+![SpotGo Flutter App: Guest Parking Sessions](../assets/images/figures/126-flutter-app-guest-parking-sessions.png)
 
-*Figura 113 (SpotGo Flutter App: Occupancy by Zone)*  
-![SpotGo Flutter App: Occupancy by Zone](../assets/images/figures/113-flutter-app-occupancy-by-zone.png)
+*Figura 127 (SpotGo Flutter App: Occupancy by Zone)*  
+![SpotGo Flutter App: Occupancy by Zone](../assets/images/figures/127-flutter-app-occupancy-by-zone.png)
 
-*Figura 114 (SpotGo Flutter App: Operational Alerts)*  
-![SpotGo Flutter App: Operational Alerts](../assets/images/figures/114-flutter-app-operational-alerts.png)
-
-**Demonstration Video Evidence for Sprint Review**
+*Figura 128 (SpotGo Flutter App: Operational Alerts)*  
+![SpotGo Flutter App: Operational Alerts](../assets/images/figures/128-flutter-app-operational-alerts.png)
 
 **Flutter App Demonstration Video Link:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQBJFOqkN5ELS4wAFnVd6_-9AShYNbDeE_IyNVA_xSh8Sfc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=KhjjCQ](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQBJFOqkN5ELS4wAFnVd6_-9AShYNbDeE_IyNVA_xSh8Sfc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=KhjjCQ)
 
@@ -360,11 +356,11 @@ Este JSON es el contenido de **Request body** de `POST /api/v1/guest-parking-ses
 }
 ```
 
-*Figura 115 (OpenAPI/Swagger: Guest Parking Session Services)*
+*Figura 129 (OpenAPI/Swagger: Guest Parking Session Services)*  
 
-![OpenAPI/Swagger: Guest Parking Session Services — parte 1](../assets/images/figures/115-swagger-guest-parking-session-1.png)
+![OpenAPI/Swagger: Guest Parking Session Services Part 1](../assets/images/figures/129-swagger-guest-parking-session-1.png)
 
-![OpenAPI/Swagger: Guest Parking Session Services — parte 2](../assets/images/figures/115-swagger-guest-parking-session-2.png)
+![OpenAPI/Swagger: Guest Parking Session Services Part 2](../assets/images/figures/129-swagger-guest-parking-session-2.png)
 
 **2. Consulta del historial de ocupación**
 
@@ -432,11 +428,11 @@ El siguiente JSON es la respuesta de la consulta, no un cuerpo que deba introduc
 
 Los tres registros pertenecen al mismo estacionamiento (`tenantId` terminado en `021`). El tercero resume todo el estacionamiento: **no representa una tercera zona ni se suma nuevamente a los dos primeros**. `observedAt` indica que estos datos corresponden al 9 de noviembre de 2026 a las 13:55:01 UTC (08:55:01 en Perú); consultar el historial hoy no convierte esas observaciones en mediciones actuales.
 
-*Figura 116 (OpenAPI/Swagger: Capacity Snapshot History Query)*
+*Figura 130 (OpenAPI/Swagger: Capacity Snapshot History Query)*  
 
-![OpenAPI/Swagger: Capacity Snapshot History Query — parte 1](../assets/images/figures/116-swagger-capacity-snapshots-1.png)
+![OpenAPI/Swagger: Capacity Snapshot History Query Part 1](../assets/images/figures/130-swagger-capacity-snapshots-1.png)
 
-![OpenAPI/Swagger: Capacity Snapshot History Query — parte 2](../assets/images/figures/116-swagger-capacity-snapshots-2.png)
+![OpenAPI/Swagger: Capacity Snapshot History Query Part 2](../assets/images/figures/130-swagger-capacity-snapshots-2.png)
 
 **3. Pago digital de una deuda por cargo adicional**
 
@@ -525,17 +521,19 @@ Después de procesar y confirmar el pago, se vuelve a ejecutar `GET /api/v1/outs
 
 La deuda pagada permanece en el historial con importe pendiente cero. Juan todavía debe regularizar los S/ 5 restantes antes de crear una nueva reserva.
 
-*Figura 117 (OpenAPI/Swagger: Outstanding Balance Payment Services)*
+*Figura 131 (OpenAPI/Swagger: Outstanding Balance Payment Services)*  
 
-![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 1](../assets/images/figures/117-swagger-reservation-digital-payments-1.png)
+![OpenAPI/Swagger: Outstanding Balance Payment Services Part 1](../assets/images/figures/131-swagger-reservation-digital-payments-1.png)
 
-![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 2](../assets/images/figures/117-swagger-reservation-digital-payments-2.png)
+![OpenAPI/Swagger: Outstanding Balance Payment Services Part 2](../assets/images/figures/131-swagger-reservation-digital-payments-2.png)
 
-![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 3](../assets/images/figures/117-swagger-reservation-digital-payments-3.png)
+![OpenAPI/Swagger: Outstanding Balance Payment Services Part 3](../assets/images/figures/131-swagger-reservation-digital-payments-3.png)
 
-![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 4](../assets/images/figures/117-swagger-reservation-digital-payments-4.png)
+![OpenAPI/Swagger: Outstanding Balance Payment Services Part 4](../assets/images/figures/131-swagger-reservation-digital-payments-4.png)
 
-![OpenAPI/Swagger: Outstanding Balance Payment Services — parte 5](../assets/images/figures/117-swagger-reservation-digital-payments-5.png)
+![OpenAPI/Swagger: Outstanding Balance Payment Services Part 5](../assets/images/figures/131-swagger-reservation-digital-payments-5.png)
+
+**Preview Backend Demonstration Video Link**: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQBL4K2it8FKQ4CyIIMMD2D2AVuOOP_7OsB9Oy0Bc-HG7QI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=YhLaIC](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241e177_upc_edu_pe/IQBL4K2it8FKQ4CyIIMMD2D2AVuOOP_7OsB9Oy0Bc-HG7QI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=YhLaIC)
 
 #### *4.2.2.8. Software Deployment Evidence for Sprint Review*
 
@@ -551,28 +549,28 @@ Durante el Sprint 2 se completará el despliegue de la Landing Page en GitHub Pa
 
 **Landing Page Deployment Link:** [https://yachiqo-upc.github.io/spotgo-landing](https://yachiqo-upc.github.io/spotgo-landing)
 
-*Figura 118 (Sprint 2: Deployment Evidence Landing Page)*  
-![Sprint 2: Deployment Evidence Landing Page](../assets/images/figures/118-s2-deployment-evidence-landing-page.png)
+*Figura 132 (Sprint 2: Deployment Evidence Landing Page)*  
+![Sprint 2: Deployment Evidence Landing Page](../assets/images/figures/132-s2-deployment-evidence-landing-page.png)
 
 **Backend: Render Web Service**
 
 **Backend Deployment Link:** [https://spotgo-backend.onrender.com/swagger-ui/index.html](https://spotgo-backend.onrender.com/swagger-ui/index.html)
 
-*Figura 119 (Sprint 2: Deployment Evidence Backend)*  
-![Sprint 2: Deployment Evidence Backend](../assets/images/figures/119-s2-deployment-evidence-backend.png)
+*Figura 133 (Sprint 2: Deployment Evidence Backend)*  
+![Sprint 2: Deployment Evidence Backend](../assets/images/figures/133-s2-deployment-evidence-backend.png)
 
 #### *4.2.2.9. Team Collaboration Insights during Sprint*
 
 Las siguientes capturas corresponden a la actividad de los repositorios `spotgo-landing`, `spotgo-backend`, `spotgo-android-app` y `spotgo-flutter-app` durante el Sprint 2.
 
-*Figura 120 (Sprint 2: Insights SpotGo Landing Page)*  
-![Sprint 2: Insights SpotGo Landing Page](../assets/images/figures/120-s2-insights-landing-page.png)
+*Figura 134 (Sprint 2: Insights SpotGo Landing Page)*  
+![Sprint 2: Insights SpotGo Landing Page](../assets/images/figures/134-s2-insights-landing-page.png)
 
-*Figura 121 (Sprint 2: Insights SpotGo Backend)*  
-![Sprint 2: Insights SpotGo Backend](../assets/images/figures/121-s2-insights-backend.png)
+*Figura 135 (Sprint 2: Insights SpotGo Backend)*  
+![Sprint 2: Insights SpotGo Backend](../assets/images/figures/135-s2-insights-backend.png)
 
-*Figura 122 (Sprint 2: Insights SpotGo Android App)*  
-![Sprint 2: Insights SpotGo Android App](../assets/images/figures/122-s2-insights-android-app.png)
+*Figura 136 (Sprint 2: Insights SpotGo Android App)*  
+![Sprint 2: Insights SpotGo Android App](../assets/images/figures/136-s2-insights-android-app.png)
 
-*Figura 123 (Sprint 2: Insights SpotGo Flutter App)*  
-![Sprint 2: Insights SpotGo Flutter App](../assets/images/figures/123-s2-insights-flutter-app.png)
+*Figura 137 (Sprint 2: Insights SpotGo Flutter App)*  
+![Sprint 2: Insights SpotGo Flutter App](../assets/images/figures/137-s2-insights-flutter-app.png)

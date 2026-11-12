@@ -67,11 +67,15 @@ Google. (s. f.). *Build your app from the command line*. https://developer.andro
 
 Google. (s. f.). *Get started with Jetpack Compose*. https://developer.android.com/develop/ui/compose/documentation
 
-Google. (s. f.). *Google Maps Platform documentation*. https://developers.google.com/maps/documentation
+Google. (s. f.). *Get started with Google Maps URLs*. https://developers.google.com/maps/documentation/urls/get-started
 
 Gradle. (s. f.). *The Gradle Wrapper*. https://docs.gradle.org/current/userguide/gradle_wrapper.html
 
 JetBrains. (s. f.). *Kotlin documentation*. https://kotlinlang.org/docs/home.html
+
+MapLibre. (s. f.). *MapLibre Android examples*. https://maplibre.org/maplibre-native/android/examples/
+
+OpenStreetMap. (s. f.). *Copyright and licence*. https://www.openstreetmap.org/copyright
 
 Lucid Software. (s. f.). *Lucidchart*. https://www.lucidchart.com/
 
@@ -81,9 +85,11 @@ Neon. (s. f.). *Neon documentation*. https://neon.com/docs/introduction
 
 OpenAPI Initiative. (s. f.). *OpenAPI specification*. https://spec.openapis.org/oas/latest.html
 
-PlantUML. (s. f.). *PlantUML Language Reference Guide*. https://plantuml.com/en/guide
-
 Oracle. (s. f.). *Java Platform, Standard Edition 25 documentation*. https://docs.oracle.com/en/java/javase/25/
+
+Overflow. (s. f.). *Overflow*. https://www.overflow.co/
+
+PlantUML. (s. f.). *PlantUML Language Reference Guide*. https://plantuml.com/en/guide
 
 PostgreSQL Global Development Group. (s. f.). *PostgreSQL documentation*. https://www.postgresql.org/docs/
 

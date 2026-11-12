@@ -122,7 +122,7 @@ SpotGo busca alcanzar los siguientes objetivos:
 - Mejorar la experiencia de los conductores durante el proceso de estacionamiento.
 - Proporcionar información que facilite la toma de decisiones operativas por parte de los administradores de estacionamientos.
 - Facilitar la gestión de las operaciones de estacionamiento y el seguimiento de la información asociada.
-- Integrar la API de Google Maps para mostrar los estacionamientos registrados en SpotGo y sus datos operativos, y permitir que los conductores abran una ruta hacia ellos en la aplicación de Google Maps.
+- Integrar un mapa de estacionamientos con MapLibre y cartografía de OpenStreetMap para mostrar los establecimientos registrados y sus datos operativos, y permitir que los conductores abran una ruta externa en Google Maps.
 
 **Restricciones de la solución**
 
@@ -135,7 +135,7 @@ La solución considera las siguientes restricciones:
 - La solución requerirá conectividad para aquellas funcionalidades que necesiten sincronización con el backend.
 - El alcance estará centrado en los administradores de estacionamientos y los conductores que utilizan estos espacios. La organización de las zonas considerará los tipos de usuario y las reglas definidas por cada establecimiento.
 - SpotGo no utilizará OCR, inteligencia artificial ni sensores para leer o identificar placas o vehículos. Los sensores solo detectarán la ocupación física de los espacios de estacionamiento.
-- SpotGo integrará la API de Google Maps para mostrar los estacionamientos registrados y sus datos operativos; la aplicación de Google Maps calculará la ruta externa hacia el estacionamiento seleccionado.
+- SpotGo mostrará los estacionamientos registrados y sus datos operativos en un mapa integrado con MapLibre y cartografía de OpenStreetMap; la aplicación de Google Maps calculará la ruta externa hacia el estacionamiento seleccionado.
 
 ### 1.2.2. Lean UX Process
 
@@ -219,7 +219,7 @@ Consideraremos que SpotGo contribuye a resolver el problema si reduce el tiempo 
 - **FA03 - Asignación de zonas según tipo de usuario:** Creemos que la asignación de zonas según el tipo de usuario permitirá reducir el uso indebido de espacios y mejorar la distribución de vehículos.
 - **FA04 - Sistema de alertas por uso indebido:** Creemos que un sistema de alertas permitirá a los administradores de estacionamientos identificar oportunamente posibles usos inadecuados de las zonas.
 - **FA05 - Panel de control para administradores de estacionamientos:** Creemos que un panel de control permitirá a los administradores supervisar de manera centralizada la ocupación y distribución de las zonas.
-- **FA06 - Visualización de disponibilidad y zonas de estacionamiento cercanas:** Creemos que mostrar en un mapa integrado mediante Google Maps la disponibilidad de los espacios y las zonas registradas en SpotGo permitirá a los conductores identificar dónde estacionar y cómo llegar.
+- **FA06 - Visualización de disponibilidad y zonas de estacionamiento cercanas:** Creemos que mostrar en un mapa integrado con MapLibre y cartografía de OpenStreetMap la disponibilidad de los espacios y las zonas registradas en SpotGo permitirá a los conductores identificar dónde estacionar y cómo llegar.
 - **FA07 - Reportes de ocupación:** Creemos que los reportes de ocupación permitirán a los administradores analizar los patrones de uso del estacionamiento y tomar decisiones operativas con esa información.
 - **FA08 - Reservas y pagos:** Creemos que facilitar la gestión de las reservas, los pagos y el seguimiento de las operaciones permitirá mejorar la experiencia de uso y la supervisión del servicio.
 - **FA09 - Suscripciones y facturación electrónica:** Creemos que ofrecer opciones de suscripción y comprobantes electrónicos facilitará el seguimiento de las operaciones de estacionamiento.
