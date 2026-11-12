@@ -655,38 +655,9 @@ Como Parking Admin, quiero iniciar sesión en SpotGo para acceder a las funcione
 *Figura 87 (User Flow 11: Acceder al panel administrativo)*  
 ![User Flow 11: Acceder al panel administrativo](../assets/diagrams/ui-ux/User-Flow-11-Acceder-al-panel-administrativo.png)
 
-**User Flow 12: Configurar Parking Zones**
+**User Flow 12: Cargar Floor Plan y generar Digital Parking Map**
 
 **User Goal 12**
-
-Como Parking Admin, quiero crear Parking Zones, asociarlas con User Profiles y configurar sus reglas operativas para organizar los Parking Spots del estacionamiento y aplicar condiciones consistentes de Reservation y facturación.
-
-**Task Flow**
-
-**Precondición:** los Parking Spots del estacionamiento ya están registrados.
-
-1. El Parking Admin inicia sesión y accede a la sección de configuración.
-2. Selecciona la opción para crear una Parking Zone.
-3. Ingresa los datos de la zona.
-4. Configura el horario operativo.
-5. Define una billing fraction unit positiva.
-6. Selecciona los Parking Spots que pertenecerán a la zona.
-7. Asocia los User Profiles autorizados para utilizarla.
-8. El sistema valida que los datos de configuración sean correctos.
-9. El sistema verifica que los Parking Spots seleccionados no pertenezcan a otra Parking Zone.
-10. Si todos los datos son válidos y no existen conflictos, el sistema guarda la zona, sus Parking Spots y las asociaciones con los User Profiles autorizados.
-11. Con la configuración guardada, el sistema solo permite Reservations dentro del horario operativo y calcula el tiempo adicional con la billing fraction unit configurada.
-12. Si un Parking Spot ya pertenece a otra zona, el sistema identifica el conflicto y no guarda la nueva relación hasta que se resuelva la asignación.
-13. Si los datos operativos no son válidos, el sistema solicita su corrección.
-
-**User Flow**
-
-*Figura 88 (User Flow 12: Configurar Parking Zones)*  
-![User Flow 12: Configurar Parking Zones](../assets/diagrams/ui-ux/User-Flow-12-Configurar-Parking-Zones.png)
-
-**User Flow 13: Cargar Floor Plan y generar Digital Parking Map**
-
-**User Goal 13**
 
 Como Parking Admin, quiero cargar el plano del estacionamiento y configurar sus espacios para generar un Digital Parking Map que represente la infraestructura operativa.
 
@@ -708,12 +679,12 @@ Como Parking Admin, quiero cargar el plano del estacionamiento y configurar sus 
 
 **User Flow**
 
-*Figura 89 (User Flow 13: Cargar Floor Plan y generar Digital Parking Map)*  
-![User Flow 13: Cargar Floor Plan y generar Digital Parking Map](../assets/diagrams/ui-ux/User-Flow-13-Cargar-Floor-Plan-y-generar-Digital-Parking-Map.png)
+*Figura 88 (User Flow 12: Cargar Floor Plan y generar Digital Parking Map)*  
+![User Flow 12: Cargar Floor Plan y generar Digital Parking Map](../assets/diagrams/ui-ux/User-Flow-12-Cargar-Floor-Plan-y-generar-Digital-Parking-Map.png)
 
-**User Flow 14: Monitorear ocupación por zona**
+**User Flow 13: Monitorear ocupación por zona**
 
-**User Goal 14**
+**User Goal 13**
 
 Como Parking Admin, quiero monitorear el Occupancy Status de los Parking Spots agrupados por zona, en un resumen operativo centralizado, para supervisar la operación actual del estacionamiento.
 
@@ -733,40 +704,12 @@ Como Parking Admin, quiero monitorear el Occupancy Status de los Parking Spots a
 
 **User Flow**
 
-*Figura 90 (User Flow 14: Monitorear ocupación por zona)*  
-![User Flow 14: Monitorear ocupación por zona](../assets/diagrams/ui-ux/User-Flow-14-Monitorear-ocupación-por-zona.png)
+*Figura 89 (User Flow 13: Monitorear ocupación por zona)*  
+![User Flow 13: Monitorear ocupación por zona](../assets/diagrams/ui-ux/User-Flow-13-Monitorear-ocupación-por-zona.png)
 
-**User Flow 15: Gestionar alertas operativas**
+**User Flow 14: Registrar Guest Parking Session**
 
-**User Goal 15**
-
-Como Parking Admin, quiero revisar y resolver las alertas de Unauthorized Parking y High Capacity para atender incidencias que puedan afectar el funcionamiento del estacionamiento antes de que se vea comprometida la operación.
-
-**Task Flow**
-
-1. El Parking Admin accede al panel operativo.
-2. Consulta la sección de alertas.
-3. Selecciona una alerta para revisar sus detalles.
-4. El sistema presenta la Parking Zone, el Parking Spot y la hora del evento.
-5. El Parking Admin revisa los Occupancy Status, Reservation Status, Guest Parking Sessions y Sensor Health relacionados.
-6. Identifica el tipo de incidencia:
-   - Unauthorized Parking: un Parking Spot Occupied sin Reservation ni Guest Parking Session activa que lo autorice. El sistema lo clasifica como ocupación no validada y no intenta identificar el vehículo mediante imágenes ni datos de placa.
-   - Reservation conflict: una Reservation futura asignada a un Parking Spot que sigue ocupado por una Parking Session anterior. El sistema busca un espacio disponible y compatible, conserva el registro de la incidencia y notifica al Parking Admin y al Driver cuando se confirma la reasignación o la alternativa.
-   - High Capacity: ver el paso siguiente.
-7. Si la alerta corresponde a High Capacity, el sistema la clasifica como crítica cuando la ocupación total del estacionamiento supera el 95% de los Parking Spots operativos disponibles para uso.
-8. El Parking Admin registra la clasificación de la incidencia y la acción tomada.
-9. Si la acción requerida se completó, marca la alerta como resuelta. El sistema solo la marca como resuelta cuando la acción requerida está completa.
-10. El sistema conserva el historial de la incidencia y de la acción administrativa.
-11. Si la acción requerida no se ha completado, la alerta permanece pendiente y el sistema informa qué falta atender.
-
-**User Flow**
-
-*Figura 91 (User Flow 15: Gestionar alertas operativas)*  
-![User Flow 15: Gestionar alertas operativas](../assets/diagrams/ui-ux/User-Flow-15-Gestionar-alertas-operativas.png)
-
-**User Flow 16: Registrar Guest Parking Session**
-
-**User Goal 16**
+**User Goal 14**
 
 Como Parking Admin, quiero registrar y finalizar una Guest Parking Session para atender a los Guests que llegan directamente al estacionamiento sin una cuenta de SpotGo, y que SpotGo calcule su tiempo de estacionamiento mientras el pago físico se liquida a la salida.
 
@@ -799,12 +742,12 @@ Como Parking Admin, quiero registrar y finalizar una Guest Parking Session para 
 
 **User Flow**
 
-*Figura 92 (User Flow 16: Registrar Guest Parking Session)*  
-![User Flow 16: Registrar Guest Parking Session](../assets/diagrams/ui-ux/User-Flow-16-Registrar-Guest-Parking-Session.png)
+*Figura 90 (User Flow 14: Registrar Guest Parking Session)*  
+![User Flow 14: Registrar Guest Parking Session](../assets/diagrams/ui-ux/User-Flow-14-Registrar-Guest-Parking-Session.png)
 
-**User Flow 17: Generar reportes de ocupación**
+**User Flow 15: Generar reportes de ocupación**
 
-**User Goal 17**
+**User Goal 15**
 
 Como Parking Admin, quiero consultar reportes de ocupación agrupados por periodo y Parking Zone para identificar patrones de uso y apoyar decisiones operativas.
 
@@ -821,12 +764,12 @@ Como Parking Admin, quiero consultar reportes de ocupación agrupados por period
 
 **User Flow**
 
-*Figura 93 (User Flow 17: Generar reportes de ocupación)*  
-![User Flow 17: Generar reportes de ocupación](../assets/diagrams/ui-ux/User-Flow-17-Generar-reportes-de-ocupación.png)
+*Figura 91 (User Flow 15: Generar reportes de ocupación)*  
+![User Flow 15: Generar reportes de ocupación](../assets/diagrams/ui-ux/User-Flow-15-Generar-reportes-de-ocupación.png)
 
-**User Flow 18: Gestionar facturación B2B**
+**User Flow 16: Gestionar facturación B2B**
 
-**User Goal 18**
+**User Goal 16**
 
 Como Parking Admin, quiero consultar las facturas del servicio SpotGo de mi Tenant y actualizar los datos tributarios autorizados para controlar la facturación B2B de mi estacionamiento.
 
@@ -843,8 +786,8 @@ Como Parking Admin, quiero consultar las facturas del servicio SpotGo de mi Tena
 
 **User Flow**
 
-*Figura 94 (User Flow 18: Gestionar facturación B2B)*  
-![User Flow 18: Gestionar facturación B2B](../assets/diagrams/ui-ux/User-Flow-18-Gestionar-facturación-B2B.png)
+*Figura 92 (User Flow 16: Gestionar facturación B2B)*  
+![User Flow 16: Gestionar facturación B2B](../assets/diagrams/ui-ux/User-Flow-16-Gestionar-facturación-B2B.png)
 
 #### *3.1.4.5. Applications Prototypes*
 
