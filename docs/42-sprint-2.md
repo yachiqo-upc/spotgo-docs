@@ -325,7 +325,11 @@ Las operaciones protegidas requieren el token obtenido al iniciar sesión, envia
 
 **1. Registro y salida de invitados**
 
-El Parking Admin registra estadías sin cuenta de conductor y confirma pagos físicos. Estas operaciones requieren `PARKING_ADMIN` y se limitan a su tenant.
+Este caso representa a una persona que llega físicamente al estacionamiento sin tener cuenta ni reserva en SpotGo. El Parking Admin registra la placa del vehículo y el espacio donde estacionará. El backend abre la estadía y guarda la hora de entrada. Cuando el vehículo se retira, el administrador registra la salida y confirma si se realizó el pago en efectivo o mediante POS.
+
+La persona conduce el vehículo, pero quien registra la operación en la aplicación es el administrador. Por eso este servicio requiere `PARKING_ADMIN` y solo permite gestionar invitados de su estacionamiento (tenant). El conductor con cuenta que reserva desde la app utiliza el servicio de reservas, no este registro de invitados.
+
+**Quién ejecuta y cómo autorizar:** el administrador del estacionamiento, no el invitado. Para ejecutar desde Swagger, iniciar sesión mediante `POST /api/v1/authentication/sign-in` con el correo y contraseña de una cuenta `PARKING_ADMIN`. Copiar el `accessToken` de la respuesta, pulsar **Authorize**, pegar únicamente ese token (sin anteponer `Bearer`) y confirmar. Luego abrir la operación, pulsar **Try it out**, completar los datos y pulsar **Execute**. Para consultar el esquema y tomar una captura de la documentación no es necesario ejecutar la operación.
 
 | Método y endpoint | Parámetros o cuerpo | Respuesta y comportamiento |
 | --- | --- | --- |
@@ -338,6 +342,8 @@ El Parking Admin registra estadías sin cuenta de conductor y confirma pagos fí
 
 Ejemplo ilustrativo de entrada; reemplazar el UUID por un espacio existente:
 
+Este JSON es el contenido de **Request body** de `POST /api/v1/guest-parking-sessions`: solicita registrar la entrada de un vehículo invitado. `spotId` identifica el espacio donde estacionará; obtenerlo de la consulta `GET /api/v1/parking-spots` dentro del alcance del administrador y elegir un espacio disponible. El UUID escrito abajo es ficticio: no crea un espacio ni garantiza que exista. `manualPlate` es la placa que ingresa el administrador y `physicalPaymentMethod` indica el medio de pago físico previsto: `CASH` para efectivo o `POS` para terminal de pago. Este campo no confirma que ya se haya pagado; la confirmación se registra al salir o mediante la operación de confirmar pago.
+
 ```json
 {
   "spotId": "11111111-1111-4111-8111-111111111111",
@@ -348,14 +354,15 @@ Ejemplo ilustrativo de entrada; reemplazar el UUID por un espacio existente:
 
 *Figura 115 (OpenAPI/Swagger: Guest Parking Session Services)*
 
-<!-- FOTO PENDIENTE: 115-swagger-guest-parking-sessions.png
-Ubicación: assets/images/figures/115-swagger-guest-parking-sessions.png
-Insertar aquí una captura de Swagger del grupo 03-parking, sección Guest parking sessions. Expandir POST /api/v1/guest-parking-sessions para mostrar GuestBody, campos obligatorios y respuesta 201 GuestView. Incluir las rutas de salida y confirmación de pago si caben. Ocultar tokens reales.
--->
+![OpenAPI/Swagger: Guest Parking Session Services](../assets/images/figures/115-swagger-guest-parking-sessions.png)
 
 **2. Cálculo y consulta de ocupación**
 
-El servicio calcula la ocupación de espacios operativos de un tenant o zona a partir de lecturas confiables. Si algún espacio tiene ocupación `UNAVAILABLE`, responde `409` en lugar de contabilizarlo como libre.
+Este caso representa al administrador que necesita conocer cuántos espacios están ocupados y qué porcentaje de su estacionamiento está en uso. El Parking Admin selecciona su estacionamiento completo o una zona y solicita el cálculo. El backend utiliza las lecturas de los sensores para generar un resumen con la cantidad de espacios ocupados, el total de espacios operativos, el porcentaje y la fecha de observación.
+
+El administrador solicita y consulta el resumen; no introduce manualmente cuántos vehículos hay ni el porcentaje. El conductor no realiza este cálculo administrativo. Si falta una lectura confiable y algún espacio tiene ocupación `UNAVAILABLE`, el backend responde `409` en lugar de presentarlo como libre. El historial permite consultar los resúmenes que ya se generaron.
+
+**Quién ejecuta y cómo autorizar:** el administrador del estacionamiento calcula la ocupación con una cuenta `PARKING_ADMIN`. Iniciar sesión en `POST /api/v1/authentication/sign-in` y pegar solo el `accessToken` en **Authorize**. Después abrir `POST /api/v1/capacity-snapshots`, pulsar **Try it out**, completar el cuerpo y pulsar **Execute**. `SUPER_ADMIN` puede consultar el historial mediante GET, pero el POST requiere `PARKING_ADMIN`. Solo visualizar la documentación no requiere ejecutar estas operaciones.
 
 | Método y endpoint | Parámetros o cuerpo y permisos | Respuesta y comportamiento |
 | --- | --- | --- |
@@ -365,6 +372,8 @@ El servicio calcula la ocupación de espacios operativos de un tenant o zona a p
 `SnapshotView` contiene `snapshotId`, `tenantId`, `zoneId`, `occupiedCount`, `totalCount`, `percentage` y `observedAt`. Errores documentados: `400` datos inválidos; `401` sesión inválida; `403` rol o tenant fuera del alcance; `404` recurso inexistente; `409` referencia o estado incompatible, incluidas lecturas no confiables.
 
 Ejemplo ilustrativo para calcular ocupación de todo un tenant existente:
+
+Este JSON se coloca en **Request body** de `POST /api/v1/capacity-snapshots`. `tenantId` es el identificador del estacionamiento administrado; obtener el `tenantId` correspondiente mediante `GET /api/v1/tenants`. El UUID del ejemplo es ficticio y debe reemplazarse por el real. `zoneId: null` pide calcular la ocupación de todo ese estacionamiento; para una zona concreta, reemplazar `null` por el UUID de una zona perteneciente al mismo tenant. El usuario no introduce cantidades ni porcentajes: el servidor los calcula a partir de las lecturas disponibles. Un identificador válido no garantiza el cálculo si faltan lecturas confiables.
 
 ```json
 {
@@ -382,7 +391,11 @@ Insertar aquí una captura de Swagger del grupo 05-monitoring, sección Capacity
 
 **3. Pago digital de reservas y seguimiento del resultado**
 
-El backend calcula el importe y utiliza una clave de idempotencia para evitar duplicados. Crear una operación no equivale a aprobar el cobro; su resultado depende del proveedor configurado.
+Este caso representa a un conductor con cuenta en SpotGo que ya creó una reserva y desea pagarla desde la aplicación. El Driver selecciona su reserva y un medio de pago previamente registrado. El backend toma el importe de la reserva y crea una operación de pago asociada al conductor; el usuario no envía el precio ni decide si el cobro fue aprobado.
+
+Quien inicia este pago es el Driver propietario de la reserva, no el Parking Admin. A diferencia del invitado del primer caso, este conductor tiene cuenta y utiliza un pago digital. Crear la operación es el primer paso: después se solicita su procesamiento y el proveedor determina el resultado. Si existe un fallo conocido, se puede reintentar; si el resultado quedó pendiente o desconocido, se consulta mediante conciliación sin efectuar otro cargo. La clave de idempotencia permite recuperar la misma operación al repetir su creación con los mismos datos, evitando duplicarla.
+
+**Quién ejecuta y cómo autorizar:** el conductor que es propietario de la reserva, con una cuenta `DRIVER`. Iniciar sesión en `POST /api/v1/authentication/sign-in`, copiar el `accessToken` y pegarlo en **Authorize**. Si antes se autorizó una cuenta `PARKING_ADMIN`, sustituir su token por el del conductor. Abrir `POST /api/v1/digital-payments/reservations/{reservationId}`, pulsar **Try it out**, completar el identificador de reserva y el cuerpo, y pulsar **Execute**. Un Parking Admin no puede crear este pago de reserva en nombre del conductor. Para la captura del contrato basta con desplegar la operación, sin ejecutarla.
 
 | Método y endpoint | Parámetros o cuerpo y permisos | Respuesta y comportamiento |
 | --- | --- | --- |
@@ -395,6 +408,8 @@ El backend calcula el importe y utiliza una clave de idempotencia para evitar du
 `PaymentView` contiene `paymentId`, `tokenId`, `profileId`, `operationType`, `amount`, `currency`, `status`, `providerOperationRef`, `idempotencyKey`, `requestHash`, `firstSeenAt`, `lastSeenAt`, `resultReference`, `createdAt` y `approvedAt`. El cliente no envía importe, estado ni fecha de aprobación. Errores documentados: `400` datos inválidos; `401` sesión inválida; `403` rol o alcance insuficiente; `404` recurso inexistente; `409` conflicto de estado o idempotencia; `503` proveedor no configurado o no disponible.
 
 Ejemplo ilustrativo del cuerpo para pagar una reserva propia existente, con un token de pago previamente registrado:
+
+Este JSON va en **Request body** de `POST /api/v1/digital-payments/reservations/{reservationId}`. Además del cuerpo, completar el parámetro de ruta `reservationId` con el UUID de una reserva propia, consultable mediante `GET /api/v1/reservations`. `tokenId` identifica un medio de pago tokenizado del conductor, consultable mediante `GET /api/v1/payment-tokens`: **no es el `accessToken` usado en Authorize**. El UUID mostrado abajo es ficticio y debe sustituirse por el real. `idempotencyKey` es una clave elegida para identificar ese intento de crear una operación: reutilizarla con los mismos datos recupera la operación anterior y evita duplicarla; usar una clave nueva para una operación distinta. Este POST crea la operación de pago; procesar el cobro es una acción posterior y requiere un proveedor disponible.
 
 ```json
 {
