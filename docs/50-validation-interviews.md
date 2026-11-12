@@ -94,7 +94,7 @@ Entrevista 1
 
 | | |
 |---|---|
-| **Screenshot:** |  ![Entrevista-Validación-Driver-1](Entrevista-Validación-Driver-1.png) |
+| **Screenshot:** |  ![Entrevista-Validación-Driver-1](../assets/images/interviews/needfinding/Entrevista-Validación-Driver-1.png) |
 | **Inicia:** | 00:00 |
 | **Duración:** | 12:49 |
 | **Nombre completo:** | Alberto Costa Franca |
@@ -106,7 +106,7 @@ Entrevista 2
 
 | | |
 |---|---|
-| **Screenshot:** | ![Entrevista-Validación-Driver-2](Entrevista-Validación-Driver-2.png) |
+| **Screenshot:** | ![Entrevista-Validación-Driver-2](../assets/images/interviews/needfinding/Entrevista-Validación-Driver-2.png) |
 | **Inicia:** | 12:50 |
 | **Duración:** | 13:17 |
 | **Nombre completo:** | Óscar Vara |
