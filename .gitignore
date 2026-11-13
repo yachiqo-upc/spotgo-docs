@@ -1,9 +1,9 @@
 *.log
 *.pdf
-
 .DS_Store
 Thumbs.db
-
 .vscode/
 .idea/
 tmp/
+output/
+combined.md

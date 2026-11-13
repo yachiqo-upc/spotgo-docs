@@ -1,5 +1,5 @@
 <div align="center" style="width: 100%; margin: 0 auto; text-align: center;">
-    <img src="../assets/images/others/upc-logo.png" alt="UPC Logo" width="150px">
+    <img src="../assets/images/others/upc-logo.png" alt="UPC Logo" width="150px"><br><br>
     <p>Universidad Peruana de Ciencias Aplicadas</p>
     <p>Carrera de Ingeniería de Software</p><br>
     <p><strong>1ACC0238</strong></p>
@@ -13,7 +13,7 @@
     <p><strong>Yachiqo</strong></p>
     <p>Proyecto</p>
     <p><strong>SpotGo</strong></p><br>
-    <p><strong>Integrantes</strong></p>
+    <p><strong>Integrantes</strong></p><br>
     <table style="width: auto; margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center;">
       <thead>
         <tr>
@@ -44,7 +44,7 @@
         </tr>
       </tbody>
     </table>
-    <br><p><strong>Período 202620</strong></p>
+    <br><p><strong>Período 202620</strong></p><br>
     <p><strong>Noviembre 2026</strong></p>
 </div>
 
@@ -250,7 +250,7 @@
 [**Conclusiones**](70-conclusions.md)  
 [**Glosario**](80-glossary.md)  
 [**Bibliografía**](90-bibliography.md)  
-[**Anexos**](99-annexes.md)
+[**Anexos**](99-annexes.md)  
 
 # Student Outcome
 
