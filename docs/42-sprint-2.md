@@ -191,10 +191,12 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 | [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | feature/update-backend | 4d19261 | feat(monitoring): implement occupancy tracking, alerts and photo evidence, and integrate all five bounded contexts | 2026-11-10 |
 | [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | develop | 06a99f6 | feat: general guidelines for docs | 2026-11-11 |
 | [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | develop | e21fdf1 | feat: android app alignments | 2026-11-12 |
+| [spotgo-backend](https://github.com/yachiqo-upc/spotgo-backend) | develop | 33eff27 | feat: add driver account updates and seed data | 2026-11-12 |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/auth-access-flow | d1fda5c | feat: add driver access flow with in-memory data layer | 2026-11-08 |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/driver-workspace | ee730db | feat: add driver workspace screens and navigation | 2026-11-08 |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | feature/tests | 697e391 | test: add unit and instrumented test suites | 2026-11-08 |
 | [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | develop | f8b9205 | feat: backend connection | 2026-11-12 |
+| [spotgo-android-app](https://github.com/yachiqo-upc/spotgo-android-app) | develop | b5aac5b | feat: improve driver account and payment flows | 2026-11-12 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 2bf176a | chore(flutter): configure theme and assets | 2026-11-07 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 5db9354 | feat(auth): implement parking admin access | 2026-11-07 |
 | [spotgo-flutter-app](https://github.com/yachiqo-upc/spotgo-flutter-app) | feature/parking-admin-flutter | 6a05d2b | feat(navigation): add admin navigation | 2026-11-07 |
@@ -270,7 +272,7 @@ La siguiente tabla reúne los commits de los repositorios en los que se trabajar
 
 #### *4.2.2.7. Services Documentation Evidence for Sprint Review*
 
-La documentación OpenAPI/Swagger del Sprint 2 presenta los contratos REST del backend actual de SpotGo. El inventario revisado en el código contiene **32 recursos o rutas base**, que agrupan **121 operaciones HTTP**. Cada operación se identifica por su método y ruta completa: por ejemplo, `GET /api/v1/additional-charges` y `POST /api/v1/additional-charges` son dos operaciones del mismo recurso.
+La documentación OpenAPI/Swagger del Sprint 2 presenta los contratos REST del backend actual de SpotGo. El inventario revisado en el código contiene **32 recursos o rutas base**, que agrupan **122 operaciones HTTP**. Cada operación se identifica por su método y ruta completa: por ejemplo, `GET /api/v1/additional-charges` y `POST /api/v1/additional-charges` son dos operaciones del mismo recurso.
 
 **Inventario completo de servicios del backend para Sprint 2**
 
@@ -288,7 +290,7 @@ Por ejemplo, Additional charges permite listar (`GET`), crear (`POST`) y marcar 
 | `/api/v1/payment-tokens` | 4 | `GET /api/v1/payment-tokens`<br>`POST /api/v1/payment-tokens`<br>`PUT /api/v1/payment-tokens/{tokenId}/default`<br>`DELETE /api/v1/payment-tokens/{tokenId}` |
 | `/api/v1/refunds` | 3 | `GET /api/v1/refunds`<br>`POST /api/v1/refunds`<br>`POST /api/v1/refunds/{refundId}/process` |
 | `/api/v1/subscriptions` | 5 | `GET /api/v1/subscriptions`<br>`GET /api/v1/subscriptions/plans`<br>`GET /api/v1/subscriptions/plans/{code}/quote`<br>`GET /api/v1/subscriptions/{subscriptionId}`<br>`POST /api/v1/subscriptions/{subscriptionId}/cancel` |
-| `/api/v1/accounts` | 9 | `GET /api/v1/accounts/me`<br>`GET /api/v1/accounts`<br>`GET /api/v1/accounts/{accountId}`<br>`PATCH /api/v1/accounts/{accountId}/status`<br>`GET /api/v1/accounts/me/role`<br>`GET /api/v1/accounts/{accountId}/role`<br>`PUT /api/v1/accounts/{accountId}/role`<br>`POST /api/v1/accounts/parking-admin`<br>`PATCH /api/v1/accounts/me/password` |
+| `/api/v1/accounts` | 10 | `GET /api/v1/accounts/me`<br>`PUT /api/v1/accounts/me`<br>`GET /api/v1/accounts`<br>`GET /api/v1/accounts/{accountId}`<br>`PATCH /api/v1/accounts/{accountId}/status`<br>`GET /api/v1/accounts/me/role`<br>`GET /api/v1/accounts/{accountId}/role`<br>`PUT /api/v1/accounts/{accountId}/role`<br>`POST /api/v1/accounts/parking-admin`<br>`PATCH /api/v1/accounts/me/password` |
 | `/api/v1/audit-entries` | 1 | `GET /api/v1/audit-entries` |
 | `/api/v1/authentication` | 8 | `POST /api/v1/authentication/sign-in`<br>`POST /api/v1/authentication/google`<br>`POST /api/v1/authentication/google/link`<br>`POST /api/v1/authentication/sign-up`<br>`POST /api/v1/authentication/refresh`<br>`POST /api/v1/authentication/sign-out`<br>`POST /api/v1/authentication/password-reset/request`<br>`POST /api/v1/authentication/password-reset/confirm` |
 | `/api/v1/sessions` | 2 | `GET /api/v1/sessions/me`<br>`DELETE /api/v1/sessions/{sessionId}` |
@@ -313,7 +315,7 @@ Por ejemplo, Additional charges permite listar (`GET`), crear (`POST`) y marcar 
 | `/api/v1/profiles` | 3 | `POST /api/v1/profiles`<br>`GET /api/v1/profiles/me`<br>`PUT /api/v1/profiles/me` |
 | `/api/v1/vehicles` | 4 | `GET /api/v1/vehicles`<br>`POST /api/v1/vehicles`<br>`PATCH /api/v1/vehicles/{vehicleId}`<br>`DELETE /api/v1/vehicles/{vehicleId}` |
 
-**Diferencia respecto del Sprint 1:** de las 121 operaciones HTTP del backend actual, 12 coinciden en método HTTP y ruta con la tabla del Sprint 1. Las otras 109 presentan una ruta distinta, un método HTTP distinto o ambos, o corresponden a servicios actualizados que no figuraban en dicha tabla.
+**Diferencia respecto del Sprint 1:** de las 122 operaciones HTTP del backend actual, 12 coinciden en método HTTP y ruta con la tabla del Sprint 1. Las otras 110 presentan una ruta distinta, un método HTTP distinto o ambos, o corresponden a servicios actualizados que no figuraban en dicha tabla.
 
 **Documentación y condiciones de uso**
 
